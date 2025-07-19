@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "ubm:blocks/blackstone_top",
+    "side": "ubm:blocks/blackstone"
+  }
+}

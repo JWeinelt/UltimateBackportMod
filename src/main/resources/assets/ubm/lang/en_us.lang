@@ -1,0 +1,57 @@
+tile.netherite_block.name=Netherite Block
+tile.ancient_debris.name=Ancient Debris
+tile.warped_stem.name=Warped Stem
+tile.warped_hyphae.name=Warped Hyphae
+tile.crimson_stem.name=Crimson Stem
+tile.crimson_hyphae.name=Crimson Hyphae
+tile.stripped_warped_stem.name=Stripped Warped Stem
+tile.stripped_warped_hyphae.name=Stripped Warped Hyphae
+tile.stripped_crimson_stem.name=Stripped Crimson Stem
+tile.stripped_crimson_hyphae.name=Stripped Crimson Hyphae
+tile.soul_soil.name=Soul Soil
+tile.nether_gold_ore.name=Nether Gold Ore
+tile.blackstone.name=Blackstone
+tile.warped_wart_block.name=Warped Wart Block
+tile.polished_blackstone.name=Polished Blackstone
+tile.cracked_polished_blackstone_bricks.name=Cracked Polished Blackstone Bricks
+tile.polished_blackstone_bricks.name=Polished Blackstone Bricks
+tile.gilded_blackstone.name=Gilded Blackstone
+tile.chiseled_polished_blackstone.name=Chiseled Polished Blackstone
+tile.warped_planks.name=Warped Planks
+tile.crimson_planks.name=Crimson Planks
+tile.warped_nylium.name=Warped Nylium
+tile.crimson_nylium.name=Crimson Nylium
+tile.crying_obsidian.name=Crying Obsidian
+
+item.netherite_scrap.name=Netherite Scrap
+item.netherite_ingot.name=Netherite Ingot
+item.netherite_sword.name=Netherite Sword
+item.netherite_axe.name=Netherite Axe
+item.netherite_pickaxe.name=Netherite Pickaxe
+item.netherite_shovel.name=Netherite Shovel
+item.netherite_hoe.name=Netherite Hoe
+item.netherite_helmet.name=Netherite Helmet
+item.netherite_chestplate.name=Netherite Chestplate
+item.netherite_leggings.name=Netherite Leggings
+item.netherite_boots.name=Netherite Boots
+
+itemGroup.ubm_tab_nether=Nether Update
+itemGroup.ubm_tab_trails_tales=Trails and Tails
+
+entity.Bee.name=Bee
+entity.Frog.name=Frog
+entity.Turtle.name=Turtle
+entity.Goat.name=Goat
+
+enchantment.swift_sneak=Swift Sneak
+
+generator.selectable_biome=Single Biome
+
+advancement.ubm.serious_dedication.title=Serious Dedication 2.0
+advancement.ubm.serious_dedication.desc=Use a Netherite Ingot to upgrade a Hoe, and then reevaluate your life choices
+advancement.ubm.ancient_debris.title=Hidden in the Depths
+advancement.ubm.ancient_debris.desc=Obtain Ancient Debris
+advancement.ubm.cover_debris.title=Cover Me in Debris
+advancement.ubm.cover_debris.desc=Get a full suit of Netherite armor
+advancement.ubm.boat_goat.title=Whatever floats your Goat
+advancement.ubm.boat_goat.desc=Get in a Boat and float with a Goat

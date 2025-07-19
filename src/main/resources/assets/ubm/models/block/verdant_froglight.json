@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "ubm:blocks/verdant_froglight_top",
+    "side": "ubm:blocks/verdant_froglight_side"
+  }
+}

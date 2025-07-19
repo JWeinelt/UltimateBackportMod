@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ubm:items/danger_pottery_sherd"
+  }
+}

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ubm",
+  "name": "Ultimate Backport Mod",
+  "description": "The ultimate backport mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Julian Weinelt"],
+  "credits": "Julian Weinelt",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

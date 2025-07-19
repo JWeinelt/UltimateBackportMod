@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "ubm:blocks/bee_nest_front",
+    "down": "ubm:blocks/bee_nest_bottom",
+    "up": "ubm:blocks/bee_nest_top",
+    "north": "ubm:blocks/bee_nest_front",
+    "east": "ubm:blocks/bee_nest_side",
+    "south": "ubm:blocks/bee_nest_side",
+    "west": "ubm:blocks/bee_nest_side"
+  }
+}

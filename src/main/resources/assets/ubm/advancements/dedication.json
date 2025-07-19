@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "display": {
+    "icon": {
+      "item": "ubm:netherite_hoe"
+    },
+    "title": {
+      "translate": "advancement.ubm.serious_dedication.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.serious_dedication.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_netherite_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ubm:netherite_hoe"
+          }
+        ]
+      }
+    }
+  }
+}

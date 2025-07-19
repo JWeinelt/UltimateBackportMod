@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "display": {
+    "icon": { "item": "ubm:powder_snow_bucket" },
+    "title": {
+      "translate": "advancement.ubm.boat_goat.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.boat_goat.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+package de.julianweinelt.ubm.misc;
+
+import de.julianweinelt.ubm.UBM;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+@Mod.EventBusSubscriber(modid = UBM.MODID)
+public class ModSounds {
+
+    public static SoundEvent BEE_AGGRESSIVE;
+    public static SoundEvent BEE_HURT;
+    public static SoundEvent BEE_DEATH;
+    public static SoundEvent BEE_POLLINATE;
+
+    public static SoundEvent BEE_HIVE_ENTER;
+    public static SoundEvent BEE_HIVE_EXIT;
+
+
+
+    public static SoundEvent FROG_DEATH;
+    public static SoundEvent FROG_EAT;
+    public static SoundEvent FROG_HURT;
+    public static SoundEvent FROG_IDLE;
+    public static SoundEvent FROG_LAY_SPAWN;
+    public static SoundEvent FROG_LONG_JUMP;
+    public static SoundEvent FROG_STEP;
+    public static SoundEvent FROG_TONGUE;
+
+    public static SoundEvent GOAT_DEATH;
+    public static SoundEvent GOAT_EAT;
+    public static SoundEvent GOAT_HORN_BREAK;
+    public static SoundEvent GOAT_HURT;
+    public static SoundEvent GOAT_IDLE;
+    public static SoundEvent GOAT_IMPACT;
+    public static SoundEvent GOAT_JUMP;
+    public static SoundEvent GOAT_PRE_RAM;
+    public static SoundEvent GOAT_SCREAM_DEATH;
+    public static SoundEvent GOAT_SCREAM_HURT;
+    public static SoundEvent GOAT_SCREAM_MILK;
+    public static SoundEvent GOAT_SCREAM_PRE_RAM;
+    public static SoundEvent GOAT_SCREAM;
+    public static SoundEvent GOAT_STEP;
+
+
+    @SubscribeEvent
+    public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
+        BEE_HURT = register(event, "mob.bee.hurt");
+        BEE_AGGRESSIVE = register(event, "mob.bee.aggressive");
+        BEE_DEATH = register(event, "mob.bee.death");
+        BEE_POLLINATE = register(event, "mob.bee.pollinate");
+
+        FROG_DEATH = register(event, "mob.frog.death");
+        FROG_EAT = register(event, "mob.frog.eat");
+        FROG_HURT = register(event, "mob.frog.hurt");
+        FROG_IDLE = register(event, "mob.frog.idle");
+        FROG_LAY_SPAWN = register(event, "mob.frog.lay_spawn");
+        FROG_LONG_JUMP = register(event, "mob.frog.long_jump");
+        FROG_STEP = register(event, "mob.frog.step");
+        FROG_TONGUE = register(event, "mob.frog.tongue");
+
+        GOAT_DEATH = register(event, "mob.goat.death");
+        GOAT_EAT = register(event, "mob.goat.eat");
+        GOAT_HORN_BREAK = register(event, "mob.goat.horn_break");
+        GOAT_HURT = register(event, "mob.goat.hurt");
+        GOAT_IDLE = register(event, "mob.goat.idle");
+        GOAT_IMPACT = register(event, "mob.goat.impact");
+        GOAT_JUMP = register(event, "mob.goat.jump");
+        GOAT_PRE_RAM = register(event, "mob.goat.pre_ram");
+        GOAT_SCREAM_DEATH = register(event, "mob.goat.scream.death");
+        GOAT_SCREAM_HURT = register(event, "mob.goat.scream.hurt");
+        GOAT_SCREAM_MILK = register(event, "mob.goat.scream.milk");
+        GOAT_SCREAM_PRE_RAM = register(event, "mob.goat.scream.pre_ram");
+        GOAT_SCREAM = register(event, "mob.goat.scream");
+        GOAT_STEP = register(event, "mob.goat.step");
+
+        BEE_HIVE_ENTER = register(event, "block.beehive.enter");
+        BEE_HIVE_EXIT = register(event, "block.beehive.exit");
+
+    }
+
+    private static SoundEvent register(RegistryEvent.Register<SoundEvent> event, String name) {
+        ResourceLocation rl = new ResourceLocation(UBM.MODID, name);
+        SoundEvent sound = new SoundEvent(rl).setRegistryName(rl);
+        event.getRegistry().register(sound);
+        return sound;
+    }
+}

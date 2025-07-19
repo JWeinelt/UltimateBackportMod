@@ -1,0 +1,58 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url = "https://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = '1.0'
+group = 'de.julianweinelt.ubm'
+archivesBaseName = 'ubm'
+
+sourceCompatibility = targetCompatibility = '1.8'
+
+minecraft {
+    version = "1.12.2-14.23.5.2768"
+    runDir = "run"
+
+    mappings = "snapshot_20171003"
+}
+
+dependencies {
+    // hier kommen weitere Abhängigkeiten hin, falls du welche brauchst
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", "1.12.2"
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+
+        expand 'version': project.version,
+                'mcversion': "1.12.2"
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+                'FMLCorePluginContainsFMLMod': 'true',
+                'Specification-Title': archivesBaseName,
+                'Specification-Vendor': 'YourNameHere',
+                'Specification-Version': version,
+                'Implementation-Title': archivesBaseName,
+                'Implementation-Version': version,
+                'Implementation-Vendor': 'YourNameHere'
+        )
+    }
+}

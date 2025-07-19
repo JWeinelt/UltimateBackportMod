@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "ubm:blocks/pearlescent_froglight_top",
+    "side": "ubm:blocks/pearlescent_froglight_side"
+  }
+}
