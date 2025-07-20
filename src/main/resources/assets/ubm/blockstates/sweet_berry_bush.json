@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "age=0": { "model": "ubm:sweet_berry_bush0" },
+    "age=1": { "model": "ubm:sweet_berry_bush1" },
+    "age=2": { "model": "ubm:sweet_berry_bush2" },
+    "age=3": { "model": "ubm:sweet_berry_bush3" }
+  }
+}

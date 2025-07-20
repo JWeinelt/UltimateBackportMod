@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.items;
 
 import de.julianweinelt.ubm.UBM;
+import de.julianweinelt.ubm.entities.*;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.misc.ModMaterials;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -57,6 +58,17 @@ public class ModItems {
     public static Item SNORT_POTTERY_SHERD;
 
     public static Item POWDER_SNOW_BUCKET;
+
+    public static Item SWEET_BERRY;
+    public static Item BAMBOO_RAFT;
+
+    public static Item SPAWN_EGG_BEE;
+    public static Item SPAWN_EGG_TURTLE;
+    public static Item SPAWN_EGG_GOAT;
+    public static Item SPAWN_EGG_DOLPHIN;
+    public static Item SPAWN_EGG_FROG;
+    public static Item SPAWN_EGG_WARDEN;
+    public static Item SPAWN_EGG_VILLAGER;
 
 
     @SubscribeEvent
@@ -213,6 +225,9 @@ public class ModItems {
                 .setMaxStackSize(1)
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
 
+        SWEET_BERRY = new ItemSweetBerry();
+        BAMBOO_RAFT = new ItemBambooRaft();
+
         event.getRegistry().register(ANGLER_POTTERY_SHERD);
         event.getRegistry().register(ARCHER_POTTERY_SHERD);
         event.getRegistry().register(ARMS_UP_POTTERY_SHERD);
@@ -235,8 +250,25 @@ public class ModItems {
         event.getRegistry().register(SNORT_POTTERY_SHERD);
         event.getRegistry().register(POWDER_SNOW_BUCKET);
 
+        event.getRegistry().register(SWEET_BERRY);
+        event.getRegistry().register(BAMBOO_RAFT);
 
 
+        // Spawn Eggs
+        SPAWN_EGG_FROG = new ItemSpawnEggCustom(EntityFrog.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "frog");
+        SPAWN_EGG_TURTLE = new ItemSpawnEggCustom(EntityTurtle.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "turtle");
+        SPAWN_EGG_GOAT = new ItemSpawnEggCustom(EntityGoat.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "goat");
+        SPAWN_EGG_BEE = new ItemSpawnEggCustom(EntityBee.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "bee");
+        SPAWN_EGG_WARDEN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "warden");
+        SPAWN_EGG_DOLPHIN = new ItemSpawnEggCustom(EntityBee.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "dolphin"); //TODO: Add Entity
+
+
+        event.getRegistry().register(SPAWN_EGG_FROG);
+        event.getRegistry().register(SPAWN_EGG_TURTLE);
+        event.getRegistry().register(SPAWN_EGG_GOAT);
+        event.getRegistry().register(SPAWN_EGG_BEE);
+        event.getRegistry().register(SPAWN_EGG_DOLPHIN);
+        event.getRegistry().register(SPAWN_EGG_WARDEN);
     }
 
     @SubscribeEvent
@@ -275,7 +307,16 @@ public class ModItems {
         registerItemModel(SNORT_POTTERY_SHERD);
 
         registerItemModel(POWDER_SNOW_BUCKET);
+        registerItemModel(SWEET_BERRY);
 
+        registerItemModel(BAMBOO_RAFT);
+
+        registerItemModel(SPAWN_EGG_FROG);
+        registerItemModel(SPAWN_EGG_TURTLE);
+        registerItemModel(SPAWN_EGG_BEE);
+        registerItemModel(SPAWN_EGG_GOAT);
+        registerItemModel(SPAWN_EGG_DOLPHIN);
+        registerItemModel(SPAWN_EGG_WARDEN);
     }
 
     @SideOnly(Side.CLIENT)

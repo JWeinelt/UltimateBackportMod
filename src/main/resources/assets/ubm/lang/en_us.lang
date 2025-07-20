@@ -22,6 +22,11 @@ tile.crimson_planks.name=Crimson Planks
 tile.warped_nylium.name=Warped Nylium
 tile.crimson_nylium.name=Crimson Nylium
 tile.crying_obsidian.name=Crying Obsidian
+tile.bee_nest.name=Bee Nest
+tile.bee_hive.name=Bee Hive
+tile.pearlescent_froglight.name=Pearlescent Froglight
+tile.ochre_froglight.name=Ochre Froglight
+tile.verdant_froglight.name=Verdant Froglight
 
 item.netherite_scrap.name=Netherite Scrap
 item.netherite_ingot.name=Netherite Ingot
@@ -34,14 +39,27 @@ item.netherite_helmet.name=Netherite Helmet
 item.netherite_chestplate.name=Netherite Chestplate
 item.netherite_leggings.name=Netherite Leggings
 item.netherite_boots.name=Netherite Boots
+item.sweet_berry.name=Sweet Berry
+item.powder_snow_bucket.name=Bucket of Powder Snow
 
 itemGroup.ubm_tab_nether=Nether Update
 itemGroup.ubm_tab_trails_tales=Trails and Tails
+itemGroup.ubm_tab_pillage=Village & Pillage
+itemGroup.ubm_tab_bees=Buzzy Bees
+itemGroup.ubm_tab_wild=Wild Update
+itemGroup.ubm_tab_caves=Caves & Cliffs
+itemGroup.ubm_tab_spawn_eggs=Spawn Eggs
 
 entity.Bee.name=Bee
 entity.Frog.name=Frog
 entity.Turtle.name=Turtle
 entity.Goat.name=Goat
+
+egg.frog.name=Spawn Frog
+egg.turtle.name=Spawn Turtle
+egg.goat.name=Spawn Goat
+egg.bee.name=Spawn Bee
+egg.dolphin.name=Spawn Dolphin
 
 enchantment.swift_sneak=Swift Sneak
 

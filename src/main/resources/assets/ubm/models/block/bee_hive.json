@@ -2,8 +2,8 @@
   "parent": "block/cube",
   "textures": {
     "particle": "ubm:blocks/beehive_front",
-    "down": "ubm:blocks/beehive_bottom",
-    "up": "ubm:blocks/beehive_top",
+    "down": "minecraft:blocks/planks_oak",
+    "up": "minecraft:blocks/planks_oak",
     "north": "ubm:blocks/beehive_front",
     "east": "ubm:blocks/beehive_side",
     "south": "ubm:blocks/beehive_side",

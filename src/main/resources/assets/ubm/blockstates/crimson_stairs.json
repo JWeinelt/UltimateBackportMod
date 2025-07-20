@@ -1,0 +1,28 @@
+{
+  "multipart": [
+    {
+      "when": { "half": "top" },
+      "apply": { "model": "ubm:crimson_stairs", "x": 180 }
+    },
+    {
+      "when": { "half": "bottom" },
+      "apply": { "model": "ubm:crimson_stairs" }
+    },
+    {
+      "when": { "facing": "north" },
+      "apply": { "model": "ubm:crimson_stairs" }
+    },
+    {
+      "when": { "facing": "south" },
+      "apply": { "model": "ubm:crimson_stairs" }
+    },
+    {
+      "when": { "facing": "west" },
+      "apply": { "model": "ubm:crimson_stairs" }
+    },
+    {
+      "when": { "facing": "east" },
+      "apply": { "model": "ubm:crimson_stairs", "y": 90 }
+    }
+  ]
+}

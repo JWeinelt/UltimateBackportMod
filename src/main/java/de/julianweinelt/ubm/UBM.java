@@ -3,6 +3,7 @@ package de.julianweinelt.ubm;
 
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
+import de.julianweinelt.ubm.worldgen.StructureWorldGen;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -30,6 +31,7 @@ public class UBM {
         ModEntities.registerRenders();
 
         GameRegistry.registerWorldGenerator(new PowderSnowWorldGen(), 0);
+        GameRegistry.registerWorldGenerator(new StructureWorldGen(), 0);
 
 
     }

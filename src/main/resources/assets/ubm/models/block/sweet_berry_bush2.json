@@ -1,0 +1,6 @@
+{
+	"parent": "block/cross",
+	"textures": {
+		"cross": "ubm:blocks/sweet_berry_bush_stage2"
+	}
+}

@@ -10,6 +10,9 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
@@ -20,6 +23,8 @@ import java.util.Random;
 
 
 public class EntityFrog extends EntityAnimal {
+    public static final DataParameter<Integer> STATE = EntityDataManager.createKey(EntityFrog.class, DataSerializers.VARINT);
+
     private FrogType frogType;
     private int jumpCooldown = 0;
     public Random rand = new Random();
@@ -35,11 +40,19 @@ public class EntityFrog extends EntityAnimal {
         Biome biome = world.getBiome(this.getPosition());
 
         if (biome.getTempCategory().equals(Biome.TempCategory.COLD)) {
-            this.frogType = FrogType.COOL;
+            setType(FrogType.COOL);
             System.out.println("Frog cool");
         }
-        else if (biome.getTempCategory().equals(Biome.TempCategory.WARM)) this.frogType = FrogType.WARM;
-        else this.frogType = FrogType.TEMPERATE;
+        else if (biome.getTempCategory().equals(Biome.TempCategory.WARM))
+            setType(FrogType.WARM);
+        else
+            setType(FrogType.TEMPERATE);
+    }
+
+    @Override
+    protected void entityInit() {
+        super.entityInit();
+        this.dataManager.register(STATE, 0);
     }
 
     @Override
@@ -60,6 +73,11 @@ public class EntityFrog extends EntityAnimal {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
+    }
+
+    @Override
+    public boolean canBeLeashedTo(EntityPlayer player) {
+        return true;
     }
 
     @Override
@@ -104,8 +122,12 @@ public class EntityFrog extends EntityAnimal {
         return ModSounds.FROG_DEATH;
     }
 
+    public void setType(FrogType type) {
+        this.dataManager.set(STATE, type.ordinal());
+    }
+
     public FrogType getFrogType() {
-        return frogType;
+        return FrogType.values()[this.dataManager.get(STATE)];
     }
 
     public enum FrogType {

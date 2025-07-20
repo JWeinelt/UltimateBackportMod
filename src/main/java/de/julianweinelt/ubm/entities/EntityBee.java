@@ -27,8 +27,6 @@ public class EntityBee extends EntityCreature {
     private boolean hasNectar = false;
     private boolean aggressive = false;
 
-    public BeeState state = BeeState.SEARCHING_FLOWER;
-
     public EntityBee(World worldIn) {
         super(worldIn);
         this.setSize(0.5f, 0.5f);

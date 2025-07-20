@@ -6,6 +6,18 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
 public class ModCreativeTabs {
+    public static final CreativeTabs UBM_TAB_SPAWN_EGGS = new CreativeTabs("ubm_tab_spawn_eggs") {
+        @Override
+        public ItemStack getTabIconItem() {
+            return new ItemStack(ModItems.SPAWN_EGG_FROG);
+        }
+    };
+    public static final CreativeTabs UBM_TAB_PILLAGE = new CreativeTabs("ubm_tab_pillage") {
+        @Override
+        public ItemStack getTabIconItem() {
+            return new ItemStack(ModBlocks.SWEET_BERRY_BUSH);
+        }
+    };
     public static final CreativeTabs UBM_TAB_BEES = new CreativeTabs("ubm_tab_bees") {
         @Override
         public ItemStack getTabIconItem() {

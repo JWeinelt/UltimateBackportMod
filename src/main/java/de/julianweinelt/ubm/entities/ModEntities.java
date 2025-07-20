@@ -1,12 +1,13 @@
 package de.julianweinelt.ubm.entities;
 
 import de.julianweinelt.ubm.UBM;
-import de.julianweinelt.ubm.entities.models.ModelBee;
-import de.julianweinelt.ubm.entities.models.ModelFrog;
-import de.julianweinelt.ubm.entities.models.ModelGoat;
-import de.julianweinelt.ubm.entities.models.ModelTurtle;
+import de.julianweinelt.ubm.entities.models.*;
+import de.julianweinelt.ubm.entities.render.RenderBambooRaft;
+import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
@@ -20,8 +21,7 @@ public class ModEntities {
                 "Bee",
                 1,
                 UBM.instance,
-                64, 1, true,
-                0x00FF00, 0xFF0000
+                64, 1, true
         );
         EntityRegistry.registerModEntity(
                 new ResourceLocation(MODID, "frog"),
@@ -29,8 +29,7 @@ public class ModEntities {
                 "Frog",
                 2,
                 UBM.instance,
-                64, 1, true,
-                0x00FF00, 0xFF0000
+                64, 1, true
         );
         EntityRegistry.registerModEntity(
                 new ResourceLocation(MODID, "turtle"),
@@ -38,8 +37,7 @@ public class ModEntities {
                 "Turtle",
                 3,
                 UBM.instance,
-                64, 1, true,
-                0x00FF00, 0xFF0000
+                64, 1, true
         );
         EntityRegistry.registerModEntity(
                 new ResourceLocation(MODID, "goat"),
@@ -47,8 +45,23 @@ public class ModEntities {
                 "Goat",
                 4,
                 UBM.instance,
-                64, 1, true,
-                0x00FF00, 0xFF0000
+                64, 1, true
+        );
+        EntityRegistry.registerModEntity(
+                new ResourceLocation(MODID, "bamboo_raft"),
+                EntityBambooRaft.class,
+                "bamboo_raft",
+                5,
+                UBM.instance,
+                64, 1, true
+        );
+        EntityRegistry.registerModEntity(
+                new ResourceLocation(MODID, "warden"),
+                EntityWarden.class,
+                "warden",
+                6,
+                UBM.instance,
+                64, 1, true
         );
     }
 
@@ -70,7 +83,7 @@ public class ModEntities {
                     protected ResourceLocation getEntityTexture(EntityFrog entity) {
                         switch (entity.getFrogType()) {
                             case COOL:
-                                return new ResourceLocation(MODID, "textures/entity/frog/cool_frog.png");
+                                return new ResourceLocation(MODID, "textures/entity/frog/cold_frog.png");
                             case WARM:
                                 return new ResourceLocation(MODID, "textures/entity/frog/warm_frog.png");
                         }
@@ -95,5 +108,14 @@ public class ModEntities {
                     }
                 }
         );
+        RenderingRegistry.registerEntityRenderingHandler(EntityWarden.class, renderManager ->
+                new RenderLiving<EntityWarden>(renderManager, new ModelWarden(), 0.5F) {
+                    @Override
+                    protected ResourceLocation getEntityTexture(EntityWarden entity) {
+                        return new ResourceLocation(MODID, "textures/entity/warden/warden.png");
+                    }
+                }
+        );
+        RenderingRegistry.registerEntityRenderingHandler(EntityBambooRaft.class, RenderBambooRaft::new);
     }
 }

@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.blocks;
 
 import de.julianweinelt.ubm.UBM;
+import de.julianweinelt.ubm.blocks.plant.BlockSweetBerry;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityBeeNest;
 import de.julianweinelt.ubm.worldgen.ModBiomes;
 import de.julianweinelt.ubm.worldgen.WorldGenBeeNest;
@@ -115,6 +116,8 @@ public class ModBlocks {
 
     public static Block BEE_NEST;
     public static Block BEE_HIVE;
+
+    public static Block SWEET_BERRY_BUSH;
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -247,6 +250,16 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         event.getRegistry().register(WARPED_PLANKS);
 
+        WARPED_STAIRS = new BlockModStairs(WARPED_PLANKS.getDefaultState(), "warped_stairs")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        event.getRegistry().register(WARPED_STAIRS);
+        CRIMSON_STAIRS = new BlockModStairs(CRIMSON_PLANKS.getDefaultState(), "crimson_stairs")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        event.getRegistry().register(CRIMSON_STAIRS);
+        WARPED_FENCE = new BlockModFence(Material.WOOD, "warped_fence")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        event.getRegistry().register(WARPED_FENCE);
+
         WARPED_WART_BLOCK = new Block(Material.PLANTS)
                 .setUnlocalizedName("warped_wart_block")
                 .setRegistryName("warped_wart_block")
@@ -294,6 +307,9 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
         event.getRegistry().register(BEE_HIVE);
 
+        SWEET_BERRY_BUSH = new BlockSweetBerry().setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
+        event.getRegistry().register(SWEET_BERRY_BUSH);
+
         ModBiomes.init();
         new WorldTypeSelectableBiome("selectable_biome");
         GameRegistry.registerTileEntity(TileEntityBeeNest.class, new ResourceLocation("ubm", "bee_nest"));
@@ -319,6 +335,15 @@ public class ModBlocks {
         Item warpedHyphae = new ItemBlock(WARPED_HYPHAE).setRegistryName(WARPED_HYPHAE.getRegistryName());
         event.getRegistry().register(warpedHyphae);
         registerItemModel(warpedHyphae);
+        Item warpedStairs = new ItemBlock(WARPED_STAIRS).setRegistryName(WARPED_STAIRS.getRegistryName());
+        event.getRegistry().register(warpedStairs);
+        registerItemModel(warpedStairs);
+        Item warpedFence = new ItemBlock(WARPED_FENCE).setRegistryName(WARPED_FENCE.getRegistryName());
+        event.getRegistry().register(warpedFence);
+        registerItemModel(warpedFence);
+        Item crimsonStairs = new ItemBlock(CRIMSON_STAIRS).setRegistryName(CRIMSON_STAIRS.getRegistryName());
+        event.getRegistry().register(crimsonStairs);
+        registerItemModel(crimsonStairs);
 
         Item blackStone = new ItemBlock(BLACKSTONE).setRegistryName(BLACKSTONE.getRegistryName());
         event.getRegistry().register(blackStone);
@@ -397,6 +422,10 @@ public class ModBlocks {
         Item beeHive = new ItemBlock(BEE_HIVE).setRegistryName(BEE_HIVE.getRegistryName());
         event.getRegistry().register(beeHive);
         registerItemModel(beeHive);
+
+        Item sweetBerry = new ItemBlock(SWEET_BERRY_BUSH).setRegistryName(SWEET_BERRY_BUSH.getRegistryName());
+        event.getRegistry().register(sweetBerry);
+        registerItemModel(sweetBerry);
     }
 
     @SubscribeEvent
@@ -425,8 +454,20 @@ public class ModBlocks {
             event.setCanceled(true);
             event.setCancellationResult(EnumActionResult.SUCCESS);
         }
-    }
+        if (!heldItem.isEmpty() && heldItem.getItem() == ModItems.SWEET_BERRY) {
+            if (!world.isRemote) {
+                BlockPos targetPos = pos.offset(event.getFace());
+                world.setBlockState(targetPos, ModBlocks.SWEET_BERRY_BUSH.getDefaultState());
 
+                if (!player.isCreative()) {
+                    heldItem.shrink(1);
+                }
+            }
+
+            event.setCanceled(true);
+            event.setCancellationResult(EnumActionResult.SUCCESS);
+        }
+    }
 
 
     @SideOnly(Side.CLIENT)
