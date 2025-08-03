@@ -1,28 +1,16 @@
 {
   "multipart": [
-    {
-      "when": { "half": "top" },
-      "apply": { "model": "ubm:warped_stairs", "x": 180 }
-    },
-    {
-      "when": { "half": "bottom" },
-      "apply": { "model": "ubm:warped_stairs" }
-    },
-    {
-      "when": { "facing": "north" },
-      "apply": {}
-    },
-    {
-      "when": { "facing": "south" },
-      "apply": { "y": 180 }
-    },
-    {
-      "when": { "facing": "west" },
-      "apply": { "y": 270 }
-    },
-    {
-      "when": { "facing": "east" },
-      "apply": { "y": 90 }
-    }
+    { "when": { "half": "top" },    "apply": { "model": "ubm:warped_stairs", "x": 180 } },
+    { "when": { "half": "bottom" }, "apply": { "model": "ubm:warped_stairs" } },
+
+    { "when": { "facing": "north" }, "apply": {} },
+    { "when": { "facing": "south" }, "apply": { "y": 180 } },
+    { "when": { "facing": "west" },  "apply": { "y": 270 } },
+    { "when": { "facing": "east" },  "apply": { "y": 90 } },
+
+    { "when": { "shape": "inner_left" },  "apply": { "model": "ubm:warped_stairs_inner" } },
+    { "when": { "shape": "inner_right" }, "apply": { "model": "ubm:warped_stairs_inner" , "y": 90 } },
+    { "when": { "shape": "outer_left" },  "apply": { "model": "ubm:warped_stairs_outer" } },
+    { "when": { "shape": "outer_right" }, "apply": { "model": "ubm:warped_stairs_outer" , "y": 90 } }
   ]
 }

@@ -120,6 +120,22 @@ public class ModBlocks {
     public static Block SWEET_BERRY_BUSH;
 
     public static Block CANDLE;
+    public static Block BLACK_CANDLE;
+    public static Block RED_CANDLE;
+    public static Block GREEN_CANDLE;
+    public static Block BROWN_CANDLE;
+    public static Block BLUE_CANDLE;
+    public static Block PURPLE_CANDLE;
+    public static Block CYAN_CANDLE;
+    public static Block LIGHT_GRAY_CANDLE;
+    public static Block GRAY_CANDLE;
+    public static Block PINK_CANDLE;
+    public static Block LIME_CANDLE;
+    public static Block YELLOW_CANDLE;
+    public static Block LIGHT_BLUE_CANDLE;
+    public static Block MAGENTA_CANDLE;
+    public static Block ORANGE_CANDLE;
+    public static Block WHITE_CANDLE;
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -318,13 +334,55 @@ public class ModBlocks {
                 .setRegistryName("candle").setUnlocalizedName("candle");
         event.getRegistry().register(CANDLE);
 
+        BLACK_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("black_candle").setUnlocalizedName("black_candle");
+        RED_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("red_candle").setUnlocalizedName("red_candle");
+        GREEN_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("green_candle").setUnlocalizedName("green_candle");
+        BROWN_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("brown_candle").setUnlocalizedName("brown_candle");
+        BLUE_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("blue_candle").setUnlocalizedName("blue_candle");
+        PURPLE_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("purple_candle").setUnlocalizedName("purple_candle");
+        CYAN_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("cyan_candle").setUnlocalizedName("cyan_candle");
+        LIGHT_GRAY_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("light_gray_candle").setUnlocalizedName("light_gray_candle");
+        GRAY_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("gray_candle").setUnlocalizedName("gray_candle");
+        PINK_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("pink_candle").setUnlocalizedName("pink_candle");
+        LIME_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("lime_candle.json").setUnlocalizedName("lime_candle.json");
+        YELLOW_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("yellow_candle").setUnlocalizedName("yellow_candle");
+        LIGHT_BLUE_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("light_blue_candle").setUnlocalizedName("light_blue_candle");
+        MAGENTA_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("magenta_candle").setUnlocalizedName("magenta_candle");
+        ORANGE_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("orange_candle").setUnlocalizedName("orange_candle");
+        WHITE_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("white_candle").setUnlocalizedName("white_candle");
+
+// Registrierung
+        event.getRegistry().registerAll(
+                BLACK_CANDLE, RED_CANDLE, GREEN_CANDLE, BROWN_CANDLE, BLUE_CANDLE,
+                PURPLE_CANDLE, CYAN_CANDLE, LIGHT_GRAY_CANDLE, GRAY_CANDLE, PINK_CANDLE,
+                LIME_CANDLE, YELLOW_CANDLE, LIGHT_BLUE_CANDLE, MAGENTA_CANDLE,
+                ORANGE_CANDLE, WHITE_CANDLE
+        );
+
+
         ModBiomes.init();
         new WorldTypeSelectableBiome("selectable_biome");
         GameRegistry.registerTileEntity(TileEntityBeeNest.class, new ResourceLocation("ubm", "bee_nest"));
         GameRegistry.registerWorldGenerator(new WorldGenBeeNest(), 0);
     }
     @SubscribeEvent
-    public static void registerItemBlocks(RegistryEvent.Register<net.minecraft.item.Item> event) {
+    public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
         Item netheriteBlock = new ItemBlock(NETHERITE_BLOCK).setRegistryName(NETHERITE_BLOCK.getRegistryName());
         event.getRegistry().register(netheriteBlock);
         registerItemModel(netheriteBlock);
@@ -475,10 +533,18 @@ public class ModBlocks {
             event.setCanceled(true);
             event.setCancellationResult(EnumActionResult.SUCCESS);
         }
-        if (!heldItem.isEmpty() && heldItem.getItem() == ModItems.CANDLE) {
+        if (!heldItem.isEmpty() && heldItem.getItem().getRegistryName().getResourcePath().toLowerCase().contains("candle")) {
             if (!world.isRemote) {
                 BlockPos targetPos = pos.offset(event.getFace());
-                world.setBlockState(targetPos, ModBlocks.CANDLE.getDefaultState());
+                String rawName = heldItem.getItem().getUnlocalizedName();
+                String blockName = rawName.replace("item.", "").toUpperCase();
+
+                try {
+                    Block block = (Block) ModBlocks.class.getField(blockName).get(null);
+                    world.setBlockState(targetPos, block.getDefaultState());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
                 if (!player.isCreative()) {
                     heldItem.shrink(1);

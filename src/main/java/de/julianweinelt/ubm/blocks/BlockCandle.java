@@ -154,19 +154,17 @@ public class BlockCandle extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rand) {
-        if (!state.getValue(LIT)) return; // Nur wenn die Kerzen an sind
+        if (!state.getValue(LIT)) return;
 
         int candles = state.getValue(CANDLES);
 
         for (Vec3d offset : PARTICLE_OFFSETS[candles - 1]) {
             double x = pos.getX() + 0.5D + offset.x;
-            double y = pos.getY() + 0.7D + offset.y;
+            double y = pos.getY() + 0.5D + offset.y;
             double z = pos.getZ() + 0.5D + offset.z;
 
             world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, x, y, z, 0, 0, 0);
             world.spawnParticle(EnumParticleTypes.FLAME, x, y, z, 0, 0, 0);
         }
     }
-
-
 }

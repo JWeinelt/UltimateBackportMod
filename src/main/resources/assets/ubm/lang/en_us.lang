@@ -41,6 +41,7 @@ item.netherite_leggings.name=Netherite Leggings
 item.netherite_boots.name=Netherite Boots
 item.sweet_berry.name=Sweet Berry
 item.powder_snow_bucket.name=Bucket of Powder Snow
+item.candle.name=Candle
 
 itemGroup.ubm_tab_nether=Nether Update
 itemGroup.ubm_tab_trails_tales=Trails and Tails

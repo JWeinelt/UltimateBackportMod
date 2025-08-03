@@ -72,6 +72,28 @@ public class ModItems {
 
 
     public static Item CANDLE;
+    public static Item BLACK_CANDLE;
+    public static Item RED_CANDLE;
+    public static Item GREEN_CANDLE;
+    public static Item BROWN_CANDLE;
+    public static Item BLUE_CANDLE;
+    public static Item PURPLE_CANDLE;
+    public static Item CYAN_CANDLE;
+    public static Item LIGHT_GRAY_CANDLE;
+    public static Item GRAY_CANDLE;
+    public static Item PINK_CANDLE;
+    public static Item LIME_CANDLE;
+    public static Item YELLOW_CANDLE;
+    public static Item LIGHT_BLUE_CANDLE;
+    public static Item MAGENTA_CANDLE;
+    public static Item ORANGE_CANDLE;
+    public static Item WHITE_CANDLE;
+
+    private static final String[] COLORS = {
+            "black", "red", "green", "brown", "blue", "purple", "cyan",
+            "light_gray", "gray", "pink", "lime", "yellow", "light_blue", "magenta",
+            "orange", "white"
+    };
 
 
     @SubscribeEvent
@@ -232,6 +254,23 @@ public class ModItems {
                 .setUnlocalizedName("candle")
                 .setRegistryName("candle")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
+        
+        for (String color : COLORS) {
+            Item item = new Item()
+                    .setRegistryName(color + "_candle")
+                    .setUnlocalizedName(color + "_candle")
+                    .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
+
+            event.getRegistry().register(item);
+
+            try {
+                ModItems.class.getField(color.toUpperCase() + "_CANDLE").set(null, item);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+
 
         SWEET_BERRY = new ItemSweetBerry();
         BAMBOO_RAFT = new ItemBambooRaft();
@@ -262,6 +301,22 @@ public class ModItems {
         event.getRegistry().register(BAMBOO_RAFT);
 
         event.getRegistry().register(CANDLE);
+        event.getRegistry().register(BLACK_CANDLE);
+        event.getRegistry().register(RED_CANDLE);
+        event.getRegistry().register(GREEN_CANDLE);
+        event.getRegistry().register(BROWN_CANDLE);
+        event.getRegistry().register(BLUE_CANDLE);
+        event.getRegistry().register(PURPLE_CANDLE);
+        event.getRegistry().register(CYAN_CANDLE);
+        event.getRegistry().register(LIGHT_GRAY_CANDLE);
+        event.getRegistry().register(GRAY_CANDLE);
+        event.getRegistry().register(PINK_CANDLE);
+        event.getRegistry().register(LIME_CANDLE);
+        event.getRegistry().register(YELLOW_CANDLE);
+        event.getRegistry().register(LIGHT_BLUE_CANDLE);
+        event.getRegistry().register(MAGENTA_CANDLE);
+        event.getRegistry().register(ORANGE_CANDLE);
+        event.getRegistry().register(WHITE_CANDLE);
 
 
         // Spawn Eggs
@@ -329,6 +384,23 @@ public class ModItems {
         registerItemModel(SPAWN_EGG_WARDEN);
 
         registerItemModel(CANDLE);
+        registerItemModel(BLACK_CANDLE);
+        registerItemModel(RED_CANDLE);
+        registerItemModel(GREEN_CANDLE);
+        registerItemModel(BROWN_CANDLE);
+        registerItemModel(BLUE_CANDLE);
+        registerItemModel(PURPLE_CANDLE);
+        registerItemModel(CYAN_CANDLE);
+        registerItemModel(LIGHT_GRAY_CANDLE);
+        registerItemModel(GRAY_CANDLE);
+        registerItemModel(PINK_CANDLE);
+        registerItemModel(LIME_CANDLE);
+        registerItemModel(YELLOW_CANDLE);
+        registerItemModel(LIGHT_BLUE_CANDLE);
+        registerItemModel(MAGENTA_CANDLE);
+        registerItemModel(ORANGE_CANDLE);
+        registerItemModel(WHITE_CANDLE);
+
     }
 
     @SideOnly(Side.CLIENT)
