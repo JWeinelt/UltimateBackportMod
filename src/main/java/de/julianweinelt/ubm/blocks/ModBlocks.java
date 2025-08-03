@@ -137,6 +137,16 @@ public class ModBlocks {
     public static Block ORANGE_CANDLE;
     public static Block WHITE_CANDLE;
 
+    public static Block COPPER_BLOCK, CHISELED_COPPER, COPPER_GRATE, CUT_COPPER, COPPER_BULB,
+        EXPOSED_COPPER_BLOCK, EXPOSED_CHISELED_COPPER, EXPOSED_COPPER_GRATE, EXPOSED_CUT_COPPER, EXPOSED_COPPER_BULB,
+        WEATHERED_COPPER_BLOCK, WEATHERED_CHISELED_COPPER, WEATHERED_COPPER_GRATE, WEATHERED_CUT_COPPER, WEATHERED_COPPER_BULB,
+        OXIDIZED_COPPER_BLOCK, OXIDIZED_CHISELED_COPPER, OXIDIZED_COPPER_GRATE, OXIDIZED_CUT_COPPER, OXIDIZED_COPPER_BULB,
+        WAXED_COPPER_BLOCK, WAXED_CHISELED_COPPER, WAXED_COPPER_GRATE, WAXED_CUT_COPPER, WAXED_COPPER_BULB,
+        WAXED_EXPOSED_COPPER_BLOCK, WAXED_EXPOSED_CHISELED_COPPER, WAXED_EXPOSED_COPPER_GRATE, WAXED_EXPOSED_CUT_COPPER, WAXED_EXPOSED_COPPER_BULB,
+        WAXED_WEATHERED_COPPER_BLOCK, WAXED_WEATHERED_CHISELED_COPPER, WAXED_WEATHERED_COPPER_GRATE, WAXED_WEATHERED_CUT_COPPER, WAXED_WEATHERED_COPPER_BULB,
+        WAXED_OXIDIZED_COPPER_BLOCK, WAXED_OXIDIZED_CHISELED_COPPER, WAXED_OXIDIZED_COPPER_GRATE, WAXED_OXIDIZED_CUT_COPPER, WAXED_OXIDIZED_COPPER_BULB
+    ;
+
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         NETHERITE_BLOCK = new Block(Material.ROCK)
@@ -355,7 +365,7 @@ public class ModBlocks {
         PINK_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
                 .setRegistryName("pink_candle").setUnlocalizedName("pink_candle");
         LIME_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
-                .setRegistryName("lime_candle.json").setUnlocalizedName("lime_candle.json");
+                .setRegistryName("lime_candle").setUnlocalizedName("lime_candle");
         YELLOW_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
                 .setRegistryName("yellow_candle").setUnlocalizedName("yellow_candle");
         LIGHT_BLUE_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
@@ -367,13 +377,258 @@ public class ModBlocks {
         WHITE_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
                 .setRegistryName("white_candle").setUnlocalizedName("white_candle");
 
-// Registrierung
         event.getRegistry().registerAll(
                 BLACK_CANDLE, RED_CANDLE, GREEN_CANDLE, BROWN_CANDLE, BLUE_CANDLE,
                 PURPLE_CANDLE, CYAN_CANDLE, LIGHT_GRAY_CANDLE, GRAY_CANDLE, PINK_CANDLE,
                 LIME_CANDLE, YELLOW_CANDLE, LIGHT_BLUE_CANDLE, MAGENTA_CANDLE,
                 ORANGE_CANDLE, WHITE_CANDLE
         );
+
+        COPPER_BLOCK = new Block(Material.ROCK)
+                .setUnlocalizedName("copper_block")
+                .setRegistryName("copper_block")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(COPPER_BLOCK);
+
+        CHISELED_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("chiseled_copper")
+                .setRegistryName("chiseled_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(CHISELED_COPPER);
+
+        COPPER_GRATE = new Block(Material.ROCK)
+                .setUnlocalizedName("copper_grate")
+                .setRegistryName("copper_grate")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(COPPER_GRATE);
+
+        CUT_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("cut_copper")
+                .setRegistryName("cut_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(CUT_COPPER);
+
+        COPPER_BULB = new Block(Material.ROCK)
+                .setUnlocalizedName("copper_bulb")
+                .setRegistryName("copper_bulb")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(COPPER_BULB);
+
+        EXPOSED_COPPER_BLOCK = new Block(Material.ROCK)
+                .setUnlocalizedName("exposed_copper_block")
+                .setRegistryName("exposed_copper_block")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(EXPOSED_COPPER_BLOCK);
+
+        EXPOSED_CHISELED_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("exposed_chiseled_copper")
+                .setRegistryName("exposed_chiseled_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(EXPOSED_CHISELED_COPPER);
+
+        EXPOSED_COPPER_GRATE = new Block(Material.ROCK)
+                .setUnlocalizedName("exposed_copper_grate")
+                .setRegistryName("exposed_copper_grate")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(EXPOSED_COPPER_GRATE);
+
+        EXPOSED_CUT_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("exposed_cut_copper")
+                .setRegistryName("exposed_cut_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(EXPOSED_CUT_COPPER);
+
+        EXPOSED_COPPER_BULB = new Block(Material.ROCK)
+                .setUnlocalizedName("exposed_copper_bulb")
+                .setRegistryName("exposed_copper_bulb")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(EXPOSED_COPPER_BULB);
+
+        WEATHERED_COPPER_BLOCK = new Block(Material.ROCK)
+                .setUnlocalizedName("weathered_copper_block")
+                .setRegistryName("weathered_copper_block")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WEATHERED_COPPER_BLOCK);
+
+        WEATHERED_CHISELED_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("weathered_chiseled_copper")
+                .setRegistryName("weathered_chiseled_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WEATHERED_CHISELED_COPPER);
+
+        WEATHERED_COPPER_GRATE = new Block(Material.ROCK)
+                .setUnlocalizedName("weathered_copper_grate")
+                .setRegistryName("weathered_copper_grate")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WEATHERED_COPPER_GRATE);
+
+        WEATHERED_CUT_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("weathered_cut_copper")
+                .setRegistryName("weathered_cut_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WEATHERED_CUT_COPPER);
+
+        WEATHERED_COPPER_BULB = new Block(Material.ROCK)
+                .setUnlocalizedName("weathered_copper_bulb")
+                .setRegistryName("weathered_copper_bulb")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WEATHERED_COPPER_BULB);
+
+        OXIDIZED_COPPER_BLOCK = new Block(Material.ROCK)
+                .setUnlocalizedName("oxidized_copper_block")
+                .setRegistryName("oxidized_copper_block")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(OXIDIZED_COPPER_BLOCK);
+
+        OXIDIZED_CHISELED_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("oxidized_chiseled_copper")
+                .setRegistryName("oxidized_chiseled_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(OXIDIZED_CHISELED_COPPER);
+
+        OXIDIZED_COPPER_GRATE = new Block(Material.ROCK)
+                .setUnlocalizedName("oxidized_copper_grate")
+                .setRegistryName("oxidized_copper_grate")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(OXIDIZED_COPPER_GRATE);
+
+        OXIDIZED_CUT_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("oxidized_cut_copper")
+                .setRegistryName("oxidized_cut_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(OXIDIZED_CUT_COPPER);
+
+        OXIDIZED_COPPER_BULB = new Block(Material.ROCK)
+                .setUnlocalizedName("oxidized_copper_bulb")
+                .setRegistryName("oxidized_copper_bulb")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(OXIDIZED_COPPER_BULB);
+
+        // WAXED
+        WAXED_COPPER_BLOCK = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_copper_block")
+                .setRegistryName("waxed_copper_block")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_COPPER_BLOCK);
+
+        WAXED_CHISELED_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_chiseled_copper")
+                .setRegistryName("waxed_chiseled_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_CHISELED_COPPER);
+
+        WAXED_COPPER_GRATE = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_copper_grate")
+                .setRegistryName("waxed_copper_grate")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_COPPER_GRATE);
+
+        WAXED_CUT_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_cut_copper")
+                .setRegistryName("waxed_cut_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_CUT_COPPER);
+
+        WAXED_COPPER_BULB = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_copper_bulb")
+                .setRegistryName("waxed_copper_bulb")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_COPPER_BULB);
+
+// WAXED_EXPOSED
+        WAXED_EXPOSED_COPPER_BLOCK = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_exposed_copper_block")
+                .setRegistryName("waxed_exposed_copper_block")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_EXPOSED_COPPER_BLOCK);
+
+        WAXED_EXPOSED_CHISELED_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_exposed_chiseled_copper")
+                .setRegistryName("waxed_exposed_chiseled_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_EXPOSED_CHISELED_COPPER);
+
+        WAXED_EXPOSED_COPPER_GRATE = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_exposed_copper_grate")
+                .setRegistryName("waxed_exposed_copper_grate")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_EXPOSED_COPPER_GRATE);
+
+        WAXED_EXPOSED_CUT_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_exposed_cut_copper")
+                .setRegistryName("waxed_exposed_cut_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_EXPOSED_CUT_COPPER);
+
+        WAXED_EXPOSED_COPPER_BULB = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_exposed_copper_bulb")
+                .setRegistryName("waxed_exposed_copper_bulb")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_EXPOSED_COPPER_BULB);
+
+// WAXED_WEATHERED
+        WAXED_WEATHERED_COPPER_BLOCK = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_weathered_copper_block")
+                .setRegistryName("waxed_weathered_copper_block")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_WEATHERED_COPPER_BLOCK);
+
+        WAXED_WEATHERED_CHISELED_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_weathered_chiseled_copper")
+                .setRegistryName("waxed_weathered_chiseled_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_WEATHERED_CHISELED_COPPER);
+
+        WAXED_WEATHERED_COPPER_GRATE = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_weathered_copper_grate")
+                .setRegistryName("waxed_weathered_copper_grate")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_WEATHERED_COPPER_GRATE);
+
+        WAXED_WEATHERED_CUT_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_weathered_cut_copper")
+                .setRegistryName("waxed_weathered_cut_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_WEATHERED_CUT_COPPER);
+
+        WAXED_WEATHERED_COPPER_BULB = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_weathered_copper_bulb")
+                .setRegistryName("waxed_weathered_copper_bulb")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_WEATHERED_COPPER_BULB);
+
+// WAXED_OXIDIZED
+        WAXED_OXIDIZED_COPPER_BLOCK = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_oxidized_copper_block")
+                .setRegistryName("waxed_oxidized_copper_block")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_OXIDIZED_COPPER_BLOCK);
+
+        WAXED_OXIDIZED_CHISELED_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_oxidized_chiseled_copper")
+                .setRegistryName("waxed_oxidized_chiseled_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_OXIDIZED_CHISELED_COPPER);
+
+        WAXED_OXIDIZED_COPPER_GRATE = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_oxidized_copper_grate")
+                .setRegistryName("waxed_oxidized_copper_grate")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_OXIDIZED_COPPER_GRATE);
+
+        WAXED_OXIDIZED_CUT_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_oxidized_cut_copper")
+                .setRegistryName("waxed_oxidized_cut_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_OXIDIZED_CUT_COPPER);
+
+        WAXED_OXIDIZED_COPPER_BULB = new Block(Material.ROCK)
+                .setUnlocalizedName("waxed_oxidized_copper_bulb")
+                .setRegistryName("waxed_oxidized_copper_bulb")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(WAXED_OXIDIZED_COPPER_BULB);
+
+
 
 
         ModBiomes.init();
@@ -492,6 +747,175 @@ public class ModBlocks {
         Item sweetBerry = new ItemBlock(SWEET_BERRY_BUSH).setRegistryName(SWEET_BERRY_BUSH.getRegistryName());
         event.getRegistry().register(sweetBerry);
         registerItemModel(sweetBerry);
+
+        // --- Normal Copper ---
+        Item copperBlockItem = new ItemBlock(COPPER_BLOCK).setRegistryName(COPPER_BLOCK.getRegistryName());
+        event.getRegistry().register(copperBlockItem);
+        registerItemModel(copperBlockItem);
+
+        Item chiseledCopperItem = new ItemBlock(CHISELED_COPPER).setRegistryName(CHISELED_COPPER.getRegistryName());
+        event.getRegistry().register(chiseledCopperItem);
+        registerItemModel(chiseledCopperItem);
+
+        Item copperGrateItem = new ItemBlock(COPPER_GRATE).setRegistryName(COPPER_GRATE.getRegistryName());
+        event.getRegistry().register(copperGrateItem);
+        registerItemModel(copperGrateItem);
+
+        Item cutCopperItem = new ItemBlock(CUT_COPPER).setRegistryName(CUT_COPPER.getRegistryName());
+        event.getRegistry().register(cutCopperItem);
+        registerItemModel(cutCopperItem);
+
+        Item copperBulbItem = new ItemBlock(COPPER_BULB).setRegistryName(COPPER_BULB.getRegistryName());
+        event.getRegistry().register(copperBulbItem);
+        registerItemModel(copperBulbItem);
+
+// --- Exposed Copper ---
+        Item exposedCopperBlockItem = new ItemBlock(EXPOSED_COPPER_BLOCK).setRegistryName(EXPOSED_COPPER_BLOCK.getRegistryName());
+        event.getRegistry().register(exposedCopperBlockItem);
+        registerItemModel(exposedCopperBlockItem);
+
+        Item exposedChiseledCopperItem = new ItemBlock(EXPOSED_CHISELED_COPPER).setRegistryName(EXPOSED_CHISELED_COPPER.getRegistryName());
+        event.getRegistry().register(exposedChiseledCopperItem);
+        registerItemModel(exposedChiseledCopperItem);
+
+        Item exposedCopperGrateItem = new ItemBlock(EXPOSED_COPPER_GRATE).setRegistryName(EXPOSED_COPPER_GRATE.getRegistryName());
+        event.getRegistry().register(exposedCopperGrateItem);
+        registerItemModel(exposedCopperGrateItem);
+
+        Item exposedCutCopperItem = new ItemBlock(EXPOSED_CUT_COPPER).setRegistryName(EXPOSED_CUT_COPPER.getRegistryName());
+        event.getRegistry().register(exposedCutCopperItem);
+        registerItemModel(exposedCutCopperItem);
+
+        Item exposedCopperBulbItem = new ItemBlock(EXPOSED_COPPER_BULB).setRegistryName(EXPOSED_COPPER_BULB.getRegistryName());
+        event.getRegistry().register(exposedCopperBulbItem);
+        registerItemModel(exposedCopperBulbItem);
+
+// --- Weathered Copper ---
+        Item weatheredCopperBlockItem = new ItemBlock(WEATHERED_COPPER_BLOCK).setRegistryName(WEATHERED_COPPER_BLOCK.getRegistryName());
+        event.getRegistry().register(weatheredCopperBlockItem);
+        registerItemModel(weatheredCopperBlockItem);
+
+        Item weatheredChiseledCopperItem = new ItemBlock(WEATHERED_CHISELED_COPPER).setRegistryName(WEATHERED_CHISELED_COPPER.getRegistryName());
+        event.getRegistry().register(weatheredChiseledCopperItem);
+        registerItemModel(weatheredChiseledCopperItem);
+
+        Item weatheredCopperGrateItem = new ItemBlock(WEATHERED_COPPER_GRATE).setRegistryName(WEATHERED_COPPER_GRATE.getRegistryName());
+        event.getRegistry().register(weatheredCopperGrateItem);
+        registerItemModel(weatheredCopperGrateItem);
+
+        Item weatheredCutCopperItem = new ItemBlock(WEATHERED_CUT_COPPER).setRegistryName(WEATHERED_CUT_COPPER.getRegistryName());
+        event.getRegistry().register(weatheredCutCopperItem);
+        registerItemModel(weatheredCutCopperItem);
+
+        Item weatheredCopperBulbItem = new ItemBlock(WEATHERED_COPPER_BULB).setRegistryName(WEATHERED_COPPER_BULB.getRegistryName());
+        event.getRegistry().register(weatheredCopperBulbItem);
+        registerItemModel(weatheredCopperBulbItem);
+
+// --- Oxidized Copper ---
+        Item oxidizedCopperBlockItem = new ItemBlock(OXIDIZED_COPPER_BLOCK).setRegistryName(OXIDIZED_COPPER_BLOCK.getRegistryName());
+        event.getRegistry().register(oxidizedCopperBlockItem);
+        registerItemModel(oxidizedCopperBlockItem);
+
+        Item oxidizedChiseledCopperItem = new ItemBlock(OXIDIZED_CHISELED_COPPER).setRegistryName(OXIDIZED_CHISELED_COPPER.getRegistryName());
+        event.getRegistry().register(oxidizedChiseledCopperItem);
+        registerItemModel(oxidizedChiseledCopperItem);
+
+        Item oxidizedCopperGrateItem = new ItemBlock(OXIDIZED_COPPER_GRATE).setRegistryName(OXIDIZED_COPPER_GRATE.getRegistryName());
+        event.getRegistry().register(oxidizedCopperGrateItem);
+        registerItemModel(oxidizedCopperGrateItem);
+
+        Item oxidizedCutCopperItem = new ItemBlock(OXIDIZED_CUT_COPPER).setRegistryName(OXIDIZED_CUT_COPPER.getRegistryName());
+        event.getRegistry().register(oxidizedCutCopperItem);
+        registerItemModel(oxidizedCutCopperItem);
+
+        Item oxidizedCopperBulbItem = new ItemBlock(OXIDIZED_COPPER_BULB).setRegistryName(OXIDIZED_COPPER_BULB.getRegistryName());
+        event.getRegistry().register(oxidizedCopperBulbItem);
+        registerItemModel(oxidizedCopperBulbItem);
+
+// --- Waxed Copper ---
+        Item waxedCopperBlockItem = new ItemBlock(WAXED_COPPER_BLOCK).setRegistryName(WAXED_COPPER_BLOCK.getRegistryName());
+        event.getRegistry().register(waxedCopperBlockItem);
+        registerItemModel(waxedCopperBlockItem);
+
+        Item waxedChiseledCopperItem = new ItemBlock(WAXED_CHISELED_COPPER).setRegistryName(WAXED_CHISELED_COPPER.getRegistryName());
+        event.getRegistry().register(waxedChiseledCopperItem);
+        registerItemModel(waxedChiseledCopperItem);
+
+        Item waxedCopperGrateItem = new ItemBlock(WAXED_COPPER_GRATE).setRegistryName(WAXED_COPPER_GRATE.getRegistryName());
+        event.getRegistry().register(waxedCopperGrateItem);
+        registerItemModel(waxedCopperGrateItem);
+
+        Item waxedCutCopperItem = new ItemBlock(WAXED_CUT_COPPER).setRegistryName(WAXED_CUT_COPPER.getRegistryName());
+        event.getRegistry().register(waxedCutCopperItem);
+        registerItemModel(waxedCutCopperItem);
+
+        Item waxedCopperBulbItem = new ItemBlock(WAXED_COPPER_BULB).setRegistryName(WAXED_COPPER_BULB.getRegistryName());
+        event.getRegistry().register(waxedCopperBulbItem);
+        registerItemModel(waxedCopperBulbItem);
+
+// --- Waxed Exposed Copper ---
+        Item waxedExposedCopperBlockItem = new ItemBlock(WAXED_EXPOSED_COPPER_BLOCK).setRegistryName(WAXED_EXPOSED_COPPER_BLOCK.getRegistryName());
+        event.getRegistry().register(waxedExposedCopperBlockItem);
+        registerItemModel(waxedExposedCopperBlockItem);
+
+        Item waxedExposedChiseledCopperItem = new ItemBlock(WAXED_EXPOSED_CHISELED_COPPER).setRegistryName(WAXED_EXPOSED_CHISELED_COPPER.getRegistryName());
+        event.getRegistry().register(waxedExposedChiseledCopperItem);
+        registerItemModel(waxedExposedChiseledCopperItem);
+
+        Item waxedExposedCopperGrateItem = new ItemBlock(WAXED_EXPOSED_COPPER_GRATE).setRegistryName(WAXED_EXPOSED_COPPER_GRATE.getRegistryName());
+        event.getRegistry().register(waxedExposedCopperGrateItem);
+        registerItemModel(waxedExposedCopperGrateItem);
+
+        Item waxedExposedCutCopperItem = new ItemBlock(WAXED_EXPOSED_CUT_COPPER).setRegistryName(WAXED_EXPOSED_CUT_COPPER.getRegistryName());
+        event.getRegistry().register(waxedExposedCutCopperItem);
+        registerItemModel(waxedExposedCutCopperItem);
+
+        Item waxedExposedCopperBulbItem = new ItemBlock(WAXED_EXPOSED_COPPER_BULB).setRegistryName(WAXED_EXPOSED_COPPER_BULB.getRegistryName());
+        event.getRegistry().register(waxedExposedCopperBulbItem);
+        registerItemModel(waxedExposedCopperBulbItem);
+
+// --- Waxed Weathered Copper ---
+        Item waxedWeatheredCopperBlockItem = new ItemBlock(WAXED_WEATHERED_COPPER_BLOCK).setRegistryName(WAXED_WEATHERED_COPPER_BLOCK.getRegistryName());
+        event.getRegistry().register(waxedWeatheredCopperBlockItem);
+        registerItemModel(waxedWeatheredCopperBlockItem);
+
+        Item waxedWeatheredChiseledCopperItem = new ItemBlock(WAXED_WEATHERED_CHISELED_COPPER).setRegistryName(WAXED_WEATHERED_CHISELED_COPPER.getRegistryName());
+        event.getRegistry().register(waxedWeatheredChiseledCopperItem);
+        registerItemModel(waxedWeatheredChiseledCopperItem);
+
+        Item waxedWeatheredCopperGrateItem = new ItemBlock(WAXED_WEATHERED_COPPER_GRATE).setRegistryName(WAXED_WEATHERED_COPPER_GRATE.getRegistryName());
+        event.getRegistry().register(waxedWeatheredCopperGrateItem);
+        registerItemModel(waxedWeatheredCopperGrateItem);
+
+        Item waxedWeatheredCutCopperItem = new ItemBlock(WAXED_WEATHERED_CUT_COPPER).setRegistryName(WAXED_WEATHERED_CUT_COPPER.getRegistryName());
+        event.getRegistry().register(waxedWeatheredCutCopperItem);
+        registerItemModel(waxedWeatheredCutCopperItem);
+
+        Item waxedWeatheredCopperBulbItem = new ItemBlock(WAXED_WEATHERED_COPPER_BULB).setRegistryName(WAXED_WEATHERED_COPPER_BULB.getRegistryName());
+        event.getRegistry().register(waxedWeatheredCopperBulbItem);
+        registerItemModel(waxedWeatheredCopperBulbItem);
+
+// --- Waxed Oxidized Copper ---
+        Item waxedOxidizedCopperBlockItem = new ItemBlock(WAXED_OXIDIZED_COPPER_BLOCK).setRegistryName(WAXED_OXIDIZED_COPPER_BLOCK.getRegistryName());
+        event.getRegistry().register(waxedOxidizedCopperBlockItem);
+        registerItemModel(waxedOxidizedCopperBlockItem);
+
+        Item waxedOxidizedChiseledCopperItem = new ItemBlock(WAXED_OXIDIZED_CHISELED_COPPER).setRegistryName(WAXED_OXIDIZED_CHISELED_COPPER.getRegistryName());
+        event.getRegistry().register(waxedOxidizedChiseledCopperItem);
+        registerItemModel(waxedOxidizedChiseledCopperItem);
+
+        Item waxedOxidizedCopperGrateItem = new ItemBlock(WAXED_OXIDIZED_COPPER_GRATE).setRegistryName(WAXED_OXIDIZED_COPPER_GRATE.getRegistryName());
+        event.getRegistry().register(waxedOxidizedCopperGrateItem);
+        registerItemModel(waxedOxidizedCopperGrateItem);
+
+        Item waxedOxidizedCutCopperItem = new ItemBlock(WAXED_OXIDIZED_CUT_COPPER).setRegistryName(WAXED_OXIDIZED_CUT_COPPER.getRegistryName());
+        event.getRegistry().register(waxedOxidizedCutCopperItem);
+        registerItemModel(waxedOxidizedCutCopperItem);
+
+        Item waxedOxidizedCopperBulbItem = new ItemBlock(WAXED_OXIDIZED_COPPER_BULB).setRegistryName(WAXED_OXIDIZED_COPPER_BULB.getRegistryName());
+        event.getRegistry().register(waxedOxidizedCopperBulbItem);
+        registerItemModel(waxedOxidizedCopperBulbItem);
+
     }
 
     @SubscribeEvent

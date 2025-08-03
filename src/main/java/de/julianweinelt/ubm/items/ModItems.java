@@ -89,6 +89,9 @@ public class ModItems {
     public static Item ORANGE_CANDLE;
     public static Item WHITE_CANDLE;
 
+    public static Item HONEYCOMB;
+    public static Item HONEY_BOTTLE;
+
     private static final String[] COLORS = {
             "black", "red", "green", "brown", "blue", "purple", "cyan",
             "light_gray", "gray", "pink", "lime", "yellow", "light_blue", "magenta",
@@ -254,6 +257,16 @@ public class ModItems {
                 .setUnlocalizedName("candle")
                 .setRegistryName("candle")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
+
+        HONEYCOMB = new Item()
+                .setUnlocalizedName("honeycomb")
+                .setRegistryName("honeycomb")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
+
+        HONEY_BOTTLE = new Item()
+                .setUnlocalizedName("honey_bottle")
+                .setRegistryName("honey_bottle")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
         
         for (String color : COLORS) {
             Item item = new Item()
@@ -317,6 +330,9 @@ public class ModItems {
         event.getRegistry().register(MAGENTA_CANDLE);
         event.getRegistry().register(ORANGE_CANDLE);
         event.getRegistry().register(WHITE_CANDLE);
+
+        event.getRegistry().register(HONEYCOMB);
+        event.getRegistry().register(HONEY_BOTTLE);
 
 
         // Spawn Eggs
@@ -401,6 +417,8 @@ public class ModItems {
         registerItemModel(ORANGE_CANDLE);
         registerItemModel(WHITE_CANDLE);
 
+        registerItemModel(HONEYCOMB);
+        registerItemModel(HONEY_BOTTLE);
     }
 
     @SideOnly(Side.CLIENT)

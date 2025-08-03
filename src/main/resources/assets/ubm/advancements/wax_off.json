@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "display": {
+    "icon": { "item": "ubm:honeycomb" },
+    "title": {
+      "translate": "advancement.ubm.wax_off.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.wax_off.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

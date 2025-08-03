@@ -28,6 +28,54 @@ tile.pearlescent_froglight.name=Pearlescent Froglight
 tile.ochre_froglight.name=Ochre Froglight
 tile.verdant_froglight.name=Verdant Froglight
 
+tile.ubm.copper_block.name=Copper Block
+tile.ubm.chiseled_copper.name=Chiseled Copper
+tile.ubm.copper_grate.name=Copper Grate
+tile.ubm.cut_copper.name=Cut Copper
+tile.ubm.copper_bulb.name=Copper Bulb
+
+tile.ubm.exposed_copper_block.name=Exposed Copper Block
+tile.ubm.exposed_chiseled_copper.name=Exposed Chiseled Copper
+tile.ubm.exposed_copper_grate.name=Exposed Copper Grate
+tile.ubm.exposed_cut_copper.name=Exposed Cut Copper
+tile.ubm.exposed_copper_bulb.name=Exposed Copper Bulb
+
+tile.ubm.weathered_copper_block.name=Weathered Copper Block
+tile.ubm.weathered_chiseled_copper.name=Weathered Chiseled Copper
+tile.ubm.weathered_copper_grate.name=Weathered Copper Grate
+tile.ubm.weathered_cut_copper.name=Weathered Cut Copper
+tile.ubm.weathered_copper_bulb.name=Weathered Copper Bulb
+
+tile.ubm.oxidized_copper_block.name=Oxidized Copper Block
+tile.ubm.oxidized_chiseled_copper.name=Oxidized Chiseled Copper
+tile.ubm.oxidized_copper_grate.name=Oxidized Copper Grate
+tile.ubm.oxidized_cut_copper.name=Oxidized Cut Copper
+tile.ubm.oxidized_copper_bulb.name=Oxidized Copper Bulb
+
+tile.ubm.waxed_copper_block.name=Waxed Copper Block
+tile.ubm.waxed_chiseled_copper.name=Waxed Chiseled Copper
+tile.ubm.waxed_copper_grate.name=Waxed Copper Grate
+tile.ubm.waxed_cut_copper.name=Waxed Cut Copper
+tile.ubm.waxed_copper_bulb.name=Waxed Copper Bulb
+
+tile.ubm.waxed_exposed_copper_block.name=Waxed Exposed Copper Block
+tile.ubm.waxed_exposed_chiseled_copper.name=Waxed Exposed Chiseled Copper
+tile.ubm.waxed_exposed_copper_grate.name=Waxed Exposed Copper Grate
+tile.ubm.waxed_exposed_cut_copper.name=Waxed Exposed Cut Copper
+tile.ubm.waxed_exposed_copper_bulb.name=Waxed Exposed Copper Bulb
+
+tile.ubm.waxed_weathered_copper_block.name=Waxed Weathered Copper Block
+tile.ubm.waxed_weathered_chiseled_copper.name=Waxed Weathered Chiseled Copper
+tile.ubm.waxed_weathered_copper_grate.name=Waxed Weathered Copper Grate
+tile.ubm.waxed_weathered_cut_copper.name=Waxed Weathered Cut Copper
+tile.ubm.waxed_weathered_copper_bulb.name=Waxed Weathered Copper Bulb
+
+tile.ubm.waxed_oxidized_copper_block.name=Waxed Oxidized Copper Block
+tile.ubm.waxed_oxidized_chiseled_copper.name=Waxed Oxidized Chiseled Copper
+tile.ubm.waxed_oxidized_copper_grate.name=Waxed Oxidized Copper Grate
+tile.ubm.waxed_oxidized_cut_copper.name=Waxed Oxidized Cut Copper
+tile.ubm.waxed_oxidized_copper_bulb.name=Waxed Oxidized Copper Bulb
+
 item.netherite_scrap.name=Netherite Scrap
 item.netherite_ingot.name=Netherite Ingot
 item.netherite_sword.name=Netherite Sword

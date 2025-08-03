@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "display": {
+    "icon": { "item": "minecraft:stone_axe" },
+    "title": {
+      "translate": "advancement.ubm.wax_on.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.wax_on.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}
