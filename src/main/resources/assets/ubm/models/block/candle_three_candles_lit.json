@@ -1,0 +1,7 @@
+{
+  "parent": "ubm:block/template_three_candles",
+  "textures": {
+    "all": "ubm:blocks/candle_lit",
+    "particle": "ubm:blocks/candle_lit"
+  }
+}

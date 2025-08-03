@@ -119,6 +119,8 @@ public class ModBlocks {
 
     public static Block SWEET_BERRY_BUSH;
 
+    public static Block CANDLE;
+
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         NETHERITE_BLOCK = new Block(Material.ROCK)
@@ -223,6 +225,8 @@ public class ModBlocks {
         WARPED_NYLIUM = new Block(Material.GROUND)
                 .setUnlocalizedName("warped_nylium")
                 .setRegistryName("warped_nylium")
+                .setHardness(2.0F)
+                .setResistance(5.0F)
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         event.getRegistry().register(WARPED_NYLIUM);
 
@@ -309,6 +313,10 @@ public class ModBlocks {
 
         SWEET_BERRY_BUSH = new BlockSweetBerry().setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
         event.getRegistry().register(SWEET_BERRY_BUSH);
+
+        CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setRegistryName("candle").setUnlocalizedName("candle");
+        event.getRegistry().register(CANDLE);
 
         ModBiomes.init();
         new WorldTypeSelectableBiome("selectable_biome");
@@ -458,6 +466,19 @@ public class ModBlocks {
             if (!world.isRemote) {
                 BlockPos targetPos = pos.offset(event.getFace());
                 world.setBlockState(targetPos, ModBlocks.SWEET_BERRY_BUSH.getDefaultState());
+
+                if (!player.isCreative()) {
+                    heldItem.shrink(1);
+                }
+            }
+
+            event.setCanceled(true);
+            event.setCancellationResult(EnumActionResult.SUCCESS);
+        }
+        if (!heldItem.isEmpty() && heldItem.getItem() == ModItems.CANDLE) {
+            if (!world.isRemote) {
+                BlockPos targetPos = pos.offset(event.getFace());
+                world.setBlockState(targetPos, ModBlocks.CANDLE.getDefaultState());
 
                 if (!player.isCreative()) {
                     heldItem.shrink(1);

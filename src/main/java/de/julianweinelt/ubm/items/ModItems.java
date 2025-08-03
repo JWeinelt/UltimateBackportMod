@@ -71,6 +71,9 @@ public class ModItems {
     public static Item SPAWN_EGG_VILLAGER;
 
 
+    public static Item CANDLE;
+
+
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         NETHERITE_SCRAP = new Item()
@@ -225,6 +228,11 @@ public class ModItems {
                 .setMaxStackSize(1)
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
 
+        CANDLE = new Item()
+                .setUnlocalizedName("candle")
+                .setRegistryName("candle")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
+
         SWEET_BERRY = new ItemSweetBerry();
         BAMBOO_RAFT = new ItemBambooRaft();
 
@@ -252,6 +260,8 @@ public class ModItems {
 
         event.getRegistry().register(SWEET_BERRY);
         event.getRegistry().register(BAMBOO_RAFT);
+
+        event.getRegistry().register(CANDLE);
 
 
         // Spawn Eggs
@@ -317,6 +327,8 @@ public class ModItems {
         registerItemModel(SPAWN_EGG_GOAT);
         registerItemModel(SPAWN_EGG_DOLPHIN);
         registerItemModel(SPAWN_EGG_WARDEN);
+
+        registerItemModel(CANDLE);
     }
 
     @SideOnly(Side.CLIENT)
