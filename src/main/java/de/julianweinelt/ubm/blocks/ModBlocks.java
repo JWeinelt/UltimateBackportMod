@@ -12,7 +12,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockWall;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
@@ -27,11 +29,14 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.Random;
 
 @Mod.EventBusSubscriber(modid = UBM.MODID)
 public class ModBlocks {
@@ -136,6 +141,9 @@ public class ModBlocks {
     public static Block MAGENTA_CANDLE;
     public static Block ORANGE_CANDLE;
     public static Block WHITE_CANDLE;
+
+    public static Block TINTED_GLASS;
+    public static Block AMETHYST_BLOCK;
 
     public static Block COPPER_BLOCK, CHISELED_COPPER, COPPER_GRATE, CUT_COPPER, COPPER_BULB,
         EXPOSED_COPPER_BLOCK, EXPOSED_CHISELED_COPPER, EXPOSED_COPPER_GRATE, EXPOSED_CUT_COPPER, EXPOSED_COPPER_BULB,
@@ -396,10 +404,7 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
         event.getRegistry().register(CHISELED_COPPER);
 
-        COPPER_GRATE = new Block(Material.ROCK)
-                .setUnlocalizedName("copper_grate")
-                .setRegistryName("copper_grate")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        COPPER_GRATE = new BlockCopperGrate("");
         event.getRegistry().register(COPPER_GRATE);
 
         CUT_COPPER = new Block(Material.ROCK)
@@ -426,10 +431,7 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
         event.getRegistry().register(EXPOSED_CHISELED_COPPER);
 
-        EXPOSED_COPPER_GRATE = new Block(Material.ROCK)
-                .setUnlocalizedName("exposed_copper_grate")
-                .setRegistryName("exposed_copper_grate")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        EXPOSED_COPPER_GRATE = new BlockCopperGrate("exposed");
         event.getRegistry().register(EXPOSED_COPPER_GRATE);
 
         EXPOSED_CUT_COPPER = new Block(Material.ROCK)
@@ -456,10 +458,7 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
         event.getRegistry().register(WEATHERED_CHISELED_COPPER);
 
-        WEATHERED_COPPER_GRATE = new Block(Material.ROCK)
-                .setUnlocalizedName("weathered_copper_grate")
-                .setRegistryName("weathered_copper_grate")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        WEATHERED_COPPER_GRATE = new BlockCopperGrate("weathered");
         event.getRegistry().register(WEATHERED_COPPER_GRATE);
 
         WEATHERED_CUT_COPPER = new Block(Material.ROCK)
@@ -486,10 +485,7 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
         event.getRegistry().register(OXIDIZED_CHISELED_COPPER);
 
-        OXIDIZED_COPPER_GRATE = new Block(Material.ROCK)
-                .setUnlocalizedName("oxidized_copper_grate")
-                .setRegistryName("oxidized_copper_grate")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        OXIDIZED_COPPER_GRATE = new BlockCopperGrate("oxidized");
         event.getRegistry().register(OXIDIZED_COPPER_GRATE);
 
         OXIDIZED_CUT_COPPER = new Block(Material.ROCK)
@@ -628,7 +624,14 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
         event.getRegistry().register(WAXED_OXIDIZED_COPPER_BULB);
 
+        TINTED_GLASS = new BlockTintedGlass();
+        event.getRegistry().register(TINTED_GLASS);
 
+        AMETHYST_BLOCK = new Block(Material.ROCK)
+                .setUnlocalizedName("amethyst")
+                .setRegistryName("amethyst")
+                        .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(AMETHYST_BLOCK);
 
 
         ModBiomes.init();
@@ -916,6 +919,14 @@ public class ModBlocks {
         event.getRegistry().register(waxedOxidizedCopperBulbItem);
         registerItemModel(waxedOxidizedCopperBulbItem);
 
+        Item tintedGlass = new ItemBlock(TINTED_GLASS).setRegistryName(TINTED_GLASS.getRegistryName());
+        event.getRegistry().register(tintedGlass);
+        registerItemModel(tintedGlass);
+
+        Item amethyst = new ItemBlock(AMETHYST_BLOCK).setRegistryName(AMETHYST_BLOCK.getRegistryName());
+        event.getRegistry().register(amethyst);
+        registerItemModel(amethyst);
+
     }
 
     @SubscribeEvent
@@ -979,6 +990,43 @@ public class ModBlocks {
             event.setCancellationResult(EnumActionResult.SUCCESS);
         }
     }
+
+    @SubscribeEvent
+    public static void onBlockDrop(BlockEvent.HarvestDropsEvent event) {
+        if (event.getState().getBlock() == Blocks.GOLD_ORE) {
+            event.getDrops().clear();
+
+            if (!event.isSilkTouching()) {
+                int fortune = event.getFortuneLevel();
+                Random rand = event.getWorld().rand;
+
+                int count = 1 + rand.nextInt(fortune + 1);
+
+                for (int i = 0; i < count; i++) {
+                    event.getDrops().add(new ItemStack(ModItems.RAW_GOLD));
+                }
+            } else {
+                event.getDrops().add(new ItemStack(Blocks.GOLD_ORE));
+            }
+        }
+        if (event.getState().getBlock() == Blocks.IRON_ORE) {
+            event.getDrops().clear();
+
+            if (!event.isSilkTouching()) {
+                int fortune = event.getFortuneLevel();
+                Random rand = event.getWorld().rand;
+
+                int count = 1 + rand.nextInt(fortune + 1);
+
+                for (int i = 0; i < count; i++) {
+                    event.getDrops().add(new ItemStack(ModItems.RAW_IRON));
+                }
+            } else {
+                event.getDrops().add(new ItemStack(Blocks.IRON_ORE));
+            }
+        }
+    }
+
 
 
     @SideOnly(Side.CLIENT)

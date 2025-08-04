@@ -92,6 +92,12 @@ public class ModItems {
     public static Item HONEYCOMB;
     public static Item HONEY_BOTTLE;
 
+    public static Item AMETHYST_SHARD;
+
+    public static Item RAW_IRON;
+    public static Item RAW_COPPER;
+    public static Item RAW_GOLD;
+
     private static final String[] COLORS = {
             "black", "red", "green", "brown", "blue", "purple", "cyan",
             "light_gray", "gray", "pink", "lime", "yellow", "light_blue", "magenta",
@@ -334,6 +340,27 @@ public class ModItems {
         event.getRegistry().register(SPAWN_EGG_BEE);
         event.getRegistry().register(SPAWN_EGG_DOLPHIN);
         event.getRegistry().register(SPAWN_EGG_WARDEN);
+
+        AMETHYST_SHARD = new Item()
+                .setUnlocalizedName("amethyst_shard")
+                .setRegistryName("amethyst_shard")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(AMETHYST_SHARD);
+        RAW_GOLD = new Item()
+                .setUnlocalizedName("raw_gold")
+                .setRegistryName("raw_gold")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(RAW_GOLD);
+        RAW_IRON = new Item()
+                .setUnlocalizedName("raw_iron")
+                .setRegistryName("raw_iron")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(RAW_IRON);
+        RAW_COPPER = new Item()
+                .setUnlocalizedName("raw_copper")
+                .setRegistryName("raw_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(RAW_COPPER);
     }
 
     @SubscribeEvent
@@ -403,6 +430,11 @@ public class ModItems {
 
         registerItemModel(HONEYCOMB);
         registerItemModel(HONEY_BOTTLE);
+        registerItemModel(AMETHYST_SHARD);
+
+        registerItemModel(RAW_IRON);
+        registerItemModel(RAW_GOLD);
+        registerItemModel(RAW_COPPER);
     }
 
     @SideOnly(Side.CLIENT)
