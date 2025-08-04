@@ -314,22 +314,6 @@ public class ModItems {
         event.getRegistry().register(BAMBOO_RAFT);
 
         event.getRegistry().register(CANDLE);
-        event.getRegistry().register(BLACK_CANDLE);
-        event.getRegistry().register(RED_CANDLE);
-        event.getRegistry().register(GREEN_CANDLE);
-        event.getRegistry().register(BROWN_CANDLE);
-        event.getRegistry().register(BLUE_CANDLE);
-        event.getRegistry().register(PURPLE_CANDLE);
-        event.getRegistry().register(CYAN_CANDLE);
-        event.getRegistry().register(LIGHT_GRAY_CANDLE);
-        event.getRegistry().register(GRAY_CANDLE);
-        event.getRegistry().register(PINK_CANDLE);
-        event.getRegistry().register(LIME_CANDLE);
-        event.getRegistry().register(YELLOW_CANDLE);
-        event.getRegistry().register(LIGHT_BLUE_CANDLE);
-        event.getRegistry().register(MAGENTA_CANDLE);
-        event.getRegistry().register(ORANGE_CANDLE);
-        event.getRegistry().register(WHITE_CANDLE);
 
         event.getRegistry().register(HONEYCOMB);
         event.getRegistry().register(HONEY_BOTTLE);
