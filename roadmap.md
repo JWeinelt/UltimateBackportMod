@@ -22,7 +22,7 @@ Please note: priorities may change depending on community feedback and technical
 * [ ] Backport: **1.18-1.21 blocks & items**
 * [ ] Backport: **1.13 blocks, items, mechanics and entites** (waterlogging, dolphins, etc.)
 * [ ] **Config system** to enable/disable features individually
-* [ ] Enhanced **multiplayer support** for modded servers
+* [ ] Support for 1.7.10
 * [ ] Expanded **datapack-style customization**
 
 ## 💡 Ideas / Under Discussion
