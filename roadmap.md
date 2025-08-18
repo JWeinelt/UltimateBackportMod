@@ -31,7 +31,7 @@ Please note: priorities may change depending on community feedback and technical
 * Integrations with popular mods (e.g., JEI, Biomes O’ Plenty)
 
 ## 📌 How to Contribute
-* Share your suggestions via [GitHub Issues](#)
+* Share your suggestions via [GitHub Issues](https://github.com/JWeinelt/UltimateBackportMod/issues)
 * Vote 👍 on features you care about most
 * Help us prioritize by giving feedback in discussions
 * Create textures and sounds for the mod!
