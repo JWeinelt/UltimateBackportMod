@@ -13,7 +13,7 @@ With UBM, you can experience the best of both worlds:
 
 
 ## 🚀 Getting Started
-* 📥 Download the latest release from the [Releases page](#)
+* 📥 Download the latest release from the [Releases page](https://github.com/JWeinelt/UltimateBackportMod/releases)
 * 📂 Install using **Minecraft Forge 1.12.2**
 * 🎮 Launch the game and enjoy modern Minecraft in a classic world!
 
@@ -21,7 +21,7 @@ With UBM, you can experience the best of both worlds:
 ## 🛠️ Contributing
 Want to help improve UBM? Contributions are very welcome!
 
-* Report bugs or suggest features via [GitHub Issues](#)
+* Report bugs or suggest features via [GitHub Issues](https://github.com/JWeinelt/UltimateBackportMod/issues)
 * Submit pull requests with improvements or fixes
 * Share your feedback and ideas with the community
 
