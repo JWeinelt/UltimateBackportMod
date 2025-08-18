@@ -1,4 +1,7 @@
 # 🌍 Ultimate Backport Mod (UBM)
+
+![Version 0.1.0](https://img.shields.io/badge/Version-0.1.0-blue)
+
 Welcome to the official GitHub repository of **UBM – Ultimate Backport Mod**!
 
 
