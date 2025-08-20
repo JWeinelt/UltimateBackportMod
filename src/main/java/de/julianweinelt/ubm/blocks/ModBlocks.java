@@ -155,106 +155,85 @@ public class ModBlocks {
         WAXED_OXIDIZED_COPPER_BLOCK, WAXED_OXIDIZED_CHISELED_COPPER, WAXED_OXIDIZED_COPPER_GRATE, WAXED_OXIDIZED_CUT_COPPER, WAXED_OXIDIZED_COPPER_BULB
     ;
 
+    // Helper Methods
+    private static Block createBasicBlock(String name, Material material, CreativeTabs tab) {
+        return new Block(material)
+                .setUnlocalizedName(name)
+                .setRegistryName(name)
+                .setCreativeTab(tab);
+    }
+
+    private static void registerBlock(RegistryEvent.Register<Block> event, Block block) {
+        event.getRegistry().register(block);
+    }
+
+    private static void registerBlockWithItem(RegistryEvent.Register<Item> event, Block block) {
+        Item item = new ItemBlock(block).setRegistryName(block.getRegistryName());
+        event.getRegistry().register(item);
+        registerItemModel(item);
+    }
+
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
-        NETHERITE_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("netherite_block")
-                .setRegistryName("netherite_block")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(NETHERITE_BLOCK);
-        ANCIENT_DEBRIS = new Block(Material.ROCK)
-                .setUnlocalizedName("ancient_debris")
-                .setRegistryName("ancient_debris")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(ANCIENT_DEBRIS);
+        // Netherite Blocks
+        NETHERITE_BLOCK = createBasicBlock("netherite_block", Material.ROCK, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, NETHERITE_BLOCK);
 
-        CRIMSON_STEM = new Block(Material.WOOD)
-                .setUnlocalizedName("crimson_stem")
-                .setRegistryName("crimson_stem")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(CRIMSON_STEM);
-        CRIMSON_HYPHAE = new Block(Material.WOOD)
-                .setUnlocalizedName("crimson_hyphae")
-                .setRegistryName("crimson_hyphae")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(CRIMSON_HYPHAE);
-        WARPED_STEM = new Block(Material.WOOD)
-                .setUnlocalizedName("warped_stem")
-                .setRegistryName("warped_stem")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(WARPED_STEM);
-        WARPED_HYPHAE = new Block(Material.WOOD)
-                .setUnlocalizedName("warped_hyphae")
-                .setRegistryName("warped_hyphae")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(WARPED_HYPHAE);
+        ANCIENT_DEBRIS = createBasicBlock("ancient_debris", Material.ROCK, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, ANCIENT_DEBRIS);
 
-        STRIPPED_CRIMSON_STEM = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_crimson_stem")
-                .setRegistryName("stripped_crimson_stem")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(STRIPPED_CRIMSON_STEM);
-        STRIPPED_CRIMSON_HYPHAE = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_crimson_hyphae")
-                .setRegistryName("stripped_crimson_hyphae")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(STRIPPED_CRIMSON_HYPHAE);
-        STRIPPED_WARPED_STEM = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_warped_stem")
-                .setRegistryName("stripped_warped_stem")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(STRIPPED_WARPED_STEM);
-        STRIPPED_WARPED_HYPHAE = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_warped_hyphae")
-                .setRegistryName("stripped_warped_hyphae")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(STRIPPED_WARPED_HYPHAE);
-        BLACKSTONE = new Block(Material.ROCK)
-                .setUnlocalizedName("blackstone")
-                .setRegistryName("blackstone")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(BLACKSTONE);
-        POLISHED_BLACKSTONE = new Block(Material.ROCK)
-                .setUnlocalizedName("polished_blackstone")
-                .setRegistryName("polished_blackstone")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(POLISHED_BLACKSTONE);
+        // Crimson Wood Blocks
+        CRIMSON_STEM = createBasicBlock("crimson_stem", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, CRIMSON_STEM);
 
-        CHISELED_POLISHED_BLACKSTONE = new Block(Material.ROCK)
-                .setUnlocalizedName("chiseled_polished_blackstone")
-                .setRegistryName("chiseled_polished_blackstone")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(CHISELED_POLISHED_BLACKSTONE);
+        CRIMSON_HYPHAE = createBasicBlock("crimson_hyphae", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, CRIMSON_HYPHAE);
 
-        POLISHED_BLACKSTONE_BRICKS = new Block(Material.ROCK)
-                .setUnlocalizedName("polished_blackstone_bricks")
-                .setRegistryName("polished_blackstone_bricks")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(POLISHED_BLACKSTONE_BRICKS);
+        // Warped Wood Blocks
+        WARPED_STEM = createBasicBlock("warped_stem", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, WARPED_STEM);
 
-        CRACKED_POLISHED_BLACKSTONE_BRICKS = new Block(Material.ROCK)
-                .setUnlocalizedName("cracked_polished_blackstone_bricks")
-                .setRegistryName("cracked_polished_blackstone_bricks")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(CRACKED_POLISHED_BLACKSTONE_BRICKS);
+        WARPED_HYPHAE = createBasicBlock("warped_hyphae", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, WARPED_HYPHAE);
 
-        GILDED_BLACKSTONE = new Block(Material.ROCK)
-                .setUnlocalizedName("gilded_blackstone")
-                .setRegistryName("gilded_blackstone")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(GILDED_BLACKSTONE);
+        // Stripped Wood Blocks
+        STRIPPED_CRIMSON_STEM = createBasicBlock("stripped_crimson_stem", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, STRIPPED_CRIMSON_STEM);
 
-        NETHER_GOLD_ORE = new Block(Material.ROCK)
-                .setUnlocalizedName("nether_gold_ore")
-                .setRegistryName("nether_gold_ore")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(NETHER_GOLD_ORE);
+        STRIPPED_CRIMSON_HYPHAE = createBasicBlock("stripped_crimson_hyphae", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, STRIPPED_CRIMSON_HYPHAE);
 
-        SOUL_SOIL = new Block(Material.GROUND)
-                .setUnlocalizedName("soul_soil")
-                .setRegistryName("soul_soil")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(SOUL_SOIL);
+        STRIPPED_WARPED_STEM = createBasicBlock("stripped_warped_stem", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, STRIPPED_WARPED_STEM);
+
+        STRIPPED_WARPED_HYPHAE = createBasicBlock("stripped_warped_hyphae", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, STRIPPED_WARPED_HYPHAE);
+
+        // Blackstone Blocks
+        BLACKSTONE = createBasicBlock("blackstone", Material.ROCK, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, BLACKSTONE);
+
+        POLISHED_BLACKSTONE = createBasicBlock("polished_blackstone", Material.ROCK, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, POLISHED_BLACKSTONE);
+
+        CHISELED_POLISHED_BLACKSTONE = createBasicBlock("chiseled_polished_blackstone", Material.ROCK, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, CHISELED_POLISHED_BLACKSTONE);
+
+        POLISHED_BLACKSTONE_BRICKS = createBasicBlock("polished_blackstone_bricks", Material.ROCK, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, POLISHED_BLACKSTONE_BRICKS);
+
+        CRACKED_POLISHED_BLACKSTONE_BRICKS = createBasicBlock("cracked_polished_blackstone_bricks", Material.ROCK, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, CRACKED_POLISHED_BLACKSTONE_BRICKS);
+
+        GILDED_BLACKSTONE = createBasicBlock("gilded_blackstone", Material.ROCK, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, GILDED_BLACKSTONE);
+
+        // Other Nether Blocks
+        NETHER_GOLD_ORE = createBasicBlock("nether_gold_ore", Material.ROCK, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, NETHER_GOLD_ORE);
+
+        SOUL_SOIL = createBasicBlock("soul_soil", Material.GROUND, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, SOUL_SOIL);
 
         WARPED_NYLIUM = new Block(Material.GROUND)
                 .setUnlocalizedName("warped_nylium")
@@ -262,95 +241,83 @@ public class ModBlocks {
                 .setHardness(2.0F)
                 .setResistance(5.0F)
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(WARPED_NYLIUM);
+        registerBlock(event, WARPED_NYLIUM);
 
-        CRYING_OBSIDIAN = new Block(Material.ROCK)
-                .setUnlocalizedName("crying_obsidian")
-                .setRegistryName("crying_obsidian")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(CRYING_OBSIDIAN);
+        CRYING_OBSIDIAN = createBasicBlock("crying_obsidian", Material.ROCK, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, CRYING_OBSIDIAN);
 
-        CRIMSON_NYLIUM = new Block(Material.GROUND)
-                .setUnlocalizedName("crimson_nylium")
-                .setRegistryName("crimson_nylium")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(CRIMSON_NYLIUM);
+        CRIMSON_NYLIUM = createBasicBlock("crimson_nylium", Material.GROUND, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, CRIMSON_NYLIUM);
 
-        CRIMSON_PLANKS = new Block(Material.WOOD)
-                .setUnlocalizedName("crimson_planks")
-                .setRegistryName("crimson_planks")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(CRIMSON_PLANKS);
+        CRIMSON_PLANKS = createBasicBlock("crimson_planks", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, CRIMSON_PLANKS);
 
-        WARPED_PLANKS = new Block(Material.WOOD)
-                .setUnlocalizedName("warped_planks")
-                .setRegistryName("warped_planks")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(WARPED_PLANKS);
+        WARPED_PLANKS = createBasicBlock("warped_planks", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, WARPED_PLANKS);
 
+        // Special Blocks
         WARPED_STAIRS = new BlockModStairs(WARPED_PLANKS.getDefaultState(), "warped_stairs")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(WARPED_STAIRS);
+        registerBlock(event, WARPED_STAIRS);
+
         CRIMSON_STAIRS = new BlockModStairs(CRIMSON_PLANKS.getDefaultState(), "crimson_stairs")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(CRIMSON_STAIRS);
+        registerBlock(event, CRIMSON_STAIRS);
+
         WARPED_FENCE = new BlockModFence(Material.WOOD, "warped_fence")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(WARPED_FENCE);
+        registerBlock(event, WARPED_FENCE);
 
-        WARPED_WART_BLOCK = new Block(Material.PLANTS)
-                .setUnlocalizedName("warped_wart_block")
-                .setRegistryName("warped_wart_block")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(WARPED_WART_BLOCK);
+        WARPED_WART_BLOCK = createBasicBlock("warped_wart_block", Material.PLANTS, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, WARPED_WART_BLOCK);
 
         BLACKSTONE_WALL = new BlockWall(BLACKSTONE)
                 .setUnlocalizedName("blackstone_wall")
                 .setRegistryName("blackstone_wall")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, BLACKSTONE_WALL);
 
+        // Froglight Blocks
         PEARLESCENT_FROGLIGHT = new Block(Material.PLANTS)
                 .setUnlocalizedName("pearlescent_froglight")
                 .setRegistryName("pearlescent_froglight")
                 .setLightLevel(1.0F)
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_WILD);
-        event.getRegistry().register(PEARLESCENT_FROGLIGHT);
+        registerBlock(event, PEARLESCENT_FROGLIGHT);
 
         OCHRE_FROGLIGHT = new Block(Material.PLANTS)
                 .setUnlocalizedName("ochre_froglight")
                 .setRegistryName("ochre_froglight")
                 .setLightLevel(1.0F)
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_WILD);
-        event.getRegistry().register(OCHRE_FROGLIGHT);
+        registerBlock(event, OCHRE_FROGLIGHT);
 
         VERDANT_FROGLIGHT = new Block(Material.PLANTS)
                 .setUnlocalizedName("verdant_froglight")
                 .setRegistryName("verdant_froglight")
                 .setLightLevel(1.0F)
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_WILD);
-        event.getRegistry().register(VERDANT_FROGLIGHT);
+        registerBlock(event, VERDANT_FROGLIGHT);
 
+        // Special Blocks
         POWDER_SNOW = new BlockPowderSnow();
-        event.getRegistry().register(POWDER_SNOW);
+        registerBlock(event, POWDER_SNOW);
 
+        // Bee Blocks
+        BEE_NEST = createBasicBlock("bee_nest", Material.WOOD, ModCreativeTabs.UBM_TAB_BEES);
+        registerBlock(event, BEE_NEST);
 
-        BEE_NEST = new Block(Material.WOOD)
-                .setUnlocalizedName("bee_nest")
-                .setRegistryName("bee_nest")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
-        event.getRegistry().register(BEE_NEST);
-        BEE_HIVE = new Block(Material.WOOD)
-                .setUnlocalizedName("bee_hive")
-                .setRegistryName("bee_hive")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
-        event.getRegistry().register(BEE_HIVE);
+        BEE_HIVE = createBasicBlock("bee_hive", Material.WOOD, ModCreativeTabs.UBM_TAB_BEES);
+        registerBlock(event, BEE_HIVE);
 
+        // Plant Blocks
         SWEET_BERRY_BUSH = new BlockSweetBerry().setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
-        event.getRegistry().register(SWEET_BERRY_BUSH);
+        registerBlock(event, SWEET_BERRY_BUSH);
 
+        // Candles
         CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
                 .setRegistryName("candle").setUnlocalizedName("candle");
-        event.getRegistry().register(CANDLE);
+        registerBlock(event, CANDLE);
 
         BLACK_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
                 .setRegistryName("black_candle").setUnlocalizedName("black_candle");
@@ -392,246 +359,140 @@ public class ModBlocks {
                 ORANGE_CANDLE, WHITE_CANDLE
         );
 
-        COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("copper_block")
-                .setRegistryName("copper_block")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(COPPER_BLOCK);
+        // Copper Blocks - Normal
+        COPPER_BLOCK = createBasicBlock("copper_block", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, COPPER_BLOCK);
 
-        CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("chiseled_copper")
-                .setRegistryName("chiseled_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(CHISELED_COPPER);
+        CHISELED_COPPER = createBasicBlock("chiseled_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, CHISELED_COPPER);
 
         COPPER_GRATE = new BlockCopperGrate("");
-        event.getRegistry().register(COPPER_GRATE);
+        registerBlock(event, COPPER_GRATE);
 
-        CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("cut_copper")
-                .setRegistryName("cut_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(CUT_COPPER);
+        CUT_COPPER = createBasicBlock("cut_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, CUT_COPPER);
 
-        COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("copper_bulb")
-                .setRegistryName("copper_bulb")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(COPPER_BULB);
+        COPPER_BULB = createBasicBlock("copper_bulb", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, COPPER_BULB);
 
-        EXPOSED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("exposed_copper_block")
-                .setRegistryName("exposed_copper_block")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(EXPOSED_COPPER_BLOCK);
+        // Copper Blocks - Exposed
+        EXPOSED_COPPER_BLOCK = createBasicBlock("exposed_copper_block", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, EXPOSED_COPPER_BLOCK);
 
-        EXPOSED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("exposed_chiseled_copper")
-                .setRegistryName("exposed_chiseled_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(EXPOSED_CHISELED_COPPER);
+        EXPOSED_CHISELED_COPPER = createBasicBlock("exposed_chiseled_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, EXPOSED_CHISELED_COPPER);
 
         EXPOSED_COPPER_GRATE = new BlockCopperGrate("exposed");
-        event.getRegistry().register(EXPOSED_COPPER_GRATE);
+        registerBlock(event, EXPOSED_COPPER_GRATE);
 
-        EXPOSED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("exposed_cut_copper")
-                .setRegistryName("exposed_cut_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(EXPOSED_CUT_COPPER);
+        EXPOSED_CUT_COPPER = createBasicBlock("exposed_cut_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, EXPOSED_CUT_COPPER);
 
-        EXPOSED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("exposed_copper_bulb")
-                .setRegistryName("exposed_copper_bulb")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(EXPOSED_COPPER_BULB);
+        EXPOSED_COPPER_BULB = createBasicBlock("exposed_copper_bulb", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, EXPOSED_COPPER_BULB);
 
-        WEATHERED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("weathered_copper_block")
-                .setRegistryName("weathered_copper_block")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WEATHERED_COPPER_BLOCK);
+        // Copper Blocks - Weathered
+        WEATHERED_COPPER_BLOCK = createBasicBlock("weathered_copper_block", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WEATHERED_COPPER_BLOCK);
 
-        WEATHERED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("weathered_chiseled_copper")
-                .setRegistryName("weathered_chiseled_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WEATHERED_CHISELED_COPPER);
+        WEATHERED_CHISELED_COPPER = createBasicBlock("weathered_chiseled_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WEATHERED_CHISELED_COPPER);
 
         WEATHERED_COPPER_GRATE = new BlockCopperGrate("weathered");
-        event.getRegistry().register(WEATHERED_COPPER_GRATE);
+        registerBlock(event, WEATHERED_COPPER_GRATE);
 
-        WEATHERED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("weathered_cut_copper")
-                .setRegistryName("weathered_cut_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WEATHERED_CUT_COPPER);
+        WEATHERED_CUT_COPPER = createBasicBlock("weathered_cut_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WEATHERED_CUT_COPPER);
 
-        WEATHERED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("weathered_copper_bulb")
-                .setRegistryName("weathered_copper_bulb")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WEATHERED_COPPER_BULB);
+        WEATHERED_COPPER_BULB = createBasicBlock("weathered_copper_bulb", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WEATHERED_COPPER_BULB);
 
-        OXIDIZED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("oxidized_copper_block")
-                .setRegistryName("oxidized_copper_block")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(OXIDIZED_COPPER_BLOCK);
+        // Copper Blocks - Oxidized
+        OXIDIZED_COPPER_BLOCK = createBasicBlock("oxidized_copper_block", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, OXIDIZED_COPPER_BLOCK);
 
-        OXIDIZED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("oxidized_chiseled_copper")
-                .setRegistryName("oxidized_chiseled_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(OXIDIZED_CHISELED_COPPER);
+        OXIDIZED_CHISELED_COPPER = createBasicBlock("oxidized_chiseled_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, OXIDIZED_CHISELED_COPPER);
 
         OXIDIZED_COPPER_GRATE = new BlockCopperGrate("oxidized");
-        event.getRegistry().register(OXIDIZED_COPPER_GRATE);
+        registerBlock(event, OXIDIZED_COPPER_GRATE);
 
-        OXIDIZED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("oxidized_cut_copper")
-                .setRegistryName("oxidized_cut_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(OXIDIZED_CUT_COPPER);
+        OXIDIZED_CUT_COPPER = createBasicBlock("oxidized_cut_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, OXIDIZED_CUT_COPPER);
 
-        OXIDIZED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("oxidized_copper_bulb")
-                .setRegistryName("oxidized_copper_bulb")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(OXIDIZED_COPPER_BULB);
+        OXIDIZED_COPPER_BULB = createBasicBlock("oxidized_copper_bulb", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, OXIDIZED_COPPER_BULB);
 
-        // WAXED
-        WAXED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_copper_block")
-                .setRegistryName("waxed_copper_block")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_COPPER_BLOCK);
+        // Copper Blocks - Waxed
+        WAXED_COPPER_BLOCK = createBasicBlock("waxed_copper_block", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_COPPER_BLOCK);
 
-        WAXED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_chiseled_copper")
-                .setRegistryName("waxed_chiseled_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_CHISELED_COPPER);
+        WAXED_CHISELED_COPPER = createBasicBlock("waxed_chiseled_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_CHISELED_COPPER);
 
-        WAXED_COPPER_GRATE = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_copper_grate")
-                .setRegistryName("waxed_copper_grate")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_COPPER_GRATE);
+        WAXED_COPPER_GRATE = createBasicBlock("waxed_copper_grate", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_COPPER_GRATE);
 
-        WAXED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_cut_copper")
-                .setRegistryName("waxed_cut_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_CUT_COPPER);
+        WAXED_CUT_COPPER = createBasicBlock("waxed_cut_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_CUT_COPPER);
 
-        WAXED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_copper_bulb")
-                .setRegistryName("waxed_copper_bulb")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_COPPER_BULB);
+        WAXED_COPPER_BULB = createBasicBlock("waxed_copper_bulb", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_COPPER_BULB);
 
-// WAXED_EXPOSED
-        WAXED_EXPOSED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_exposed_copper_block")
-                .setRegistryName("waxed_exposed_copper_block")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_EXPOSED_COPPER_BLOCK);
+        // Copper Blocks - Waxed Exposed
+        WAXED_EXPOSED_COPPER_BLOCK = createBasicBlock("waxed_exposed_copper_block", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_EXPOSED_COPPER_BLOCK);
 
-        WAXED_EXPOSED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_exposed_chiseled_copper")
-                .setRegistryName("waxed_exposed_chiseled_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_EXPOSED_CHISELED_COPPER);
+        WAXED_EXPOSED_CHISELED_COPPER = createBasicBlock("waxed_exposed_chiseled_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_EXPOSED_CHISELED_COPPER);
 
-        WAXED_EXPOSED_COPPER_GRATE = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_exposed_copper_grate")
-                .setRegistryName("waxed_exposed_copper_grate")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_EXPOSED_COPPER_GRATE);
+        WAXED_EXPOSED_COPPER_GRATE = createBasicBlock("waxed_exposed_copper_grate", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_EXPOSED_COPPER_GRATE);
 
-        WAXED_EXPOSED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_exposed_cut_copper")
-                .setRegistryName("waxed_exposed_cut_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_EXPOSED_CUT_COPPER);
+        WAXED_EXPOSED_CUT_COPPER = createBasicBlock("waxed_exposed_cut_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_EXPOSED_CUT_COPPER);
 
-        WAXED_EXPOSED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_exposed_copper_bulb")
-                .setRegistryName("waxed_exposed_copper_bulb")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_EXPOSED_COPPER_BULB);
+        WAXED_EXPOSED_COPPER_BULB = createBasicBlock("waxed_exposed_copper_bulb", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_EXPOSED_COPPER_BULB);
 
-// WAXED_WEATHERED
-        WAXED_WEATHERED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_weathered_copper_block")
-                .setRegistryName("waxed_weathered_copper_block")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_WEATHERED_COPPER_BLOCK);
+        // Copper Blocks - Waxed Weathered
+        WAXED_WEATHERED_COPPER_BLOCK = createBasicBlock("waxed_weathered_copper_block", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_WEATHERED_COPPER_BLOCK);
 
-        WAXED_WEATHERED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_weathered_chiseled_copper")
-                .setRegistryName("waxed_weathered_chiseled_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_WEATHERED_CHISELED_COPPER);
+        WAXED_WEATHERED_CHISELED_COPPER = createBasicBlock("waxed_weathered_chiseled_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_WEATHERED_CHISELED_COPPER);
 
-        WAXED_WEATHERED_COPPER_GRATE = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_weathered_copper_grate")
-                .setRegistryName("waxed_weathered_copper_grate")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_WEATHERED_COPPER_GRATE);
+        WAXED_WEATHERED_COPPER_GRATE = createBasicBlock("waxed_weathered_copper_grate", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_WEATHERED_COPPER_GRATE);
 
-        WAXED_WEATHERED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_weathered_cut_copper")
-                .setRegistryName("waxed_weathered_cut_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_WEATHERED_CUT_COPPER);
+        WAXED_WEATHERED_CUT_COPPER = createBasicBlock("waxed_weathered_cut_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_WEATHERED_CUT_COPPER);
 
-        WAXED_WEATHERED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_weathered_copper_bulb")
-                .setRegistryName("waxed_weathered_copper_bulb")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_WEATHERED_COPPER_BULB);
+        WAXED_WEATHERED_COPPER_BULB = createBasicBlock("waxed_weathered_copper_bulb", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_WEATHERED_COPPER_BULB);
 
-// WAXED_OXIDIZED
-        WAXED_OXIDIZED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_oxidized_copper_block")
-                .setRegistryName("waxed_oxidized_copper_block")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_OXIDIZED_COPPER_BLOCK);
+        // Copper Blocks - Waxed Oxidized
+        WAXED_OXIDIZED_COPPER_BLOCK = createBasicBlock("waxed_oxidized_copper_block", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_OXIDIZED_COPPER_BLOCK);
 
-        WAXED_OXIDIZED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_oxidized_chiseled_copper")
-                .setRegistryName("waxed_oxidized_chiseled_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_OXIDIZED_CHISELED_COPPER);
+        WAXED_OXIDIZED_CHISELED_COPPER = createBasicBlock("waxed_oxidized_chiseled_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_OXIDIZED_CHISELED_COPPER);
 
-        WAXED_OXIDIZED_COPPER_GRATE = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_oxidized_copper_grate")
-                .setRegistryName("waxed_oxidized_copper_grate")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_OXIDIZED_COPPER_GRATE);
+        WAXED_OXIDIZED_COPPER_GRATE = createBasicBlock("waxed_oxidized_copper_grate", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_OXIDIZED_COPPER_GRATE);
 
-        WAXED_OXIDIZED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_oxidized_cut_copper")
-                .setRegistryName("waxed_oxidized_cut_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_OXIDIZED_CUT_COPPER);
+        WAXED_OXIDIZED_CUT_COPPER = createBasicBlock("waxed_oxidized_cut_copper", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_OXIDIZED_CUT_COPPER);
 
-        WAXED_OXIDIZED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_oxidized_copper_bulb")
-                .setRegistryName("waxed_oxidized_copper_bulb")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(WAXED_OXIDIZED_COPPER_BULB);
+        WAXED_OXIDIZED_COPPER_BULB = createBasicBlock("waxed_oxidized_copper_bulb", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, WAXED_OXIDIZED_COPPER_BULB);
 
+        // Other Cave Blocks
         TINTED_GLASS = new BlockTintedGlass();
-        event.getRegistry().register(TINTED_GLASS);
+        registerBlock(event, TINTED_GLASS);
 
-        AMETHYST_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("amethyst")
-                .setRegistryName("amethyst")
-                        .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(AMETHYST_BLOCK);
+        AMETHYST_BLOCK = createBasicBlock("amethyst", Material.ROCK, ModCreativeTabs.UBM_TAB_CAVES);
+        registerBlock(event, AMETHYST_BLOCK);
 
 
         ModBiomes.init();
