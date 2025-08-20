@@ -3,21 +3,23 @@ package de.julianweinelt.ubm.blocks;
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.blocks.plant.BlockSweetBerry;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityBeeNest;
+import de.julianweinelt.ubm.items.BlockCopperTorch;
+import de.julianweinelt.ubm.items.ModItems;
+import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.worldgen.ModBiomes;
 import de.julianweinelt.ubm.worldgen.WorldGenBeeNest;
 import de.julianweinelt.ubm.worldgen.WorldTypeSelectableBiome;
-import de.julianweinelt.ubm.items.ModItems;
-import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockWall;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
@@ -25,6 +27,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -32,14 +35,23 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
+@SuppressWarnings("ConstantConditions")
 @Mod.EventBusSubscriber(modid = UBM.MODID)
 public class ModBlocks {
+    public static final Map<ResourceLocation, ResourceLocation> WAXED_VARIANTS = new HashMap<>();
+    public static final Map<ResourceLocation, ResourceLocation> UNWAXED_VARIANTS = new HashMap<>();
+    public static final Map<ResourceLocation, ResourceLocation> PREVIOUS_OXIDATION = new HashMap<>();
+
+
     public static Block NETHERITE_BLOCK;
     public static Block ANCIENT_DEBRIS;
 
@@ -85,6 +97,8 @@ public class ModBlocks {
     public static Block NETHER_SPROUTS;
 
     public static Block CRYING_OBSIDIAN;
+
+    public static Block COPPER_TORCH;
 
     public static Block SOUL_CAMPFIRE;
     public static Block SOUL_TORCH;
@@ -144,6 +158,29 @@ public class ModBlocks {
 
     public static Block TINTED_GLASS;
     public static Block AMETHYST_BLOCK;
+    public static Block CALCITE;
+    public static Block TUFF;
+    public static Block COPPER_ORE;
+    public static Block DEEPSLATE;
+    public static Block DEEPSLATE_ORE_COPPER;
+    public static Block DEEPSLATE_ORE_GOLD;
+    public static Block DEEPSLATE_ORE_IRON;
+    public static Block DEEPSLATE_ORE_REDSTONE;
+    public static Block DEEPSLATE_ORE_LAPISLAZULI;
+    public static Block DEEPSLATE_ORE_EMERALD;
+    public static Block DEEPSLATE_ORE_DIAMOND;
+    public static Block DEEPSLATE_COBBLED;
+    public static Block DEEPSLATE_BRICKS;
+    public static Block DEEPSLATE_TILES;
+    public static Block DEEPSLATE_POLISHED;
+    public static Block DEEPSLATE_BRICKS_CRACKED;
+    public static Block DEEPSLATE_TILES_CRACKED;
+
+    public static Block ROOTED_DIRT;
+    public static Block SMOOTH_BASALT;
+
+    public static Block MOSS_BLOCK;
+    public static Block MOSS_CARPET;
 
     public static Block COPPER_BLOCK, CHISELED_COPPER, COPPER_GRATE, CUT_COPPER, COPPER_BULB,
         EXPOSED_COPPER_BLOCK, EXPOSED_CHISELED_COPPER, EXPOSED_COPPER_GRATE, EXPOSED_CUT_COPPER, EXPOSED_COPPER_BULB,
@@ -157,6 +194,10 @@ public class ModBlocks {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
+        COPPER_TORCH = new BlockCopperTorch("copper_torch");
+        event.getRegistry().register(COPPER_TORCH);
+
+
         NETHERITE_BLOCK = new Block(Material.ROCK)
                 .setUnlocalizedName("netherite_block")
                 .setRegistryName("netherite_block")
@@ -633,6 +674,132 @@ public class ModBlocks {
                         .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
         event.getRegistry().register(AMETHYST_BLOCK);
 
+        CALCITE = new Block(Material.ROCK)
+                .setUnlocalizedName("calcite")
+                .setRegistryName("calcite")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(CALCITE);
+
+        TUFF = new Block(Material.ROCK)
+                .setUnlocalizedName("tuff")
+                .setRegistryName("tuff")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(TUFF);
+
+        COPPER_ORE = new Block(Material.ROCK)
+                .setUnlocalizedName("copper_ore")
+                .setRegistryName("copper_ore")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(COPPER_ORE);
+
+        DEEPSLATE = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate")
+                .setRegistryName("deepslate")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE);
+
+        DEEPSLATE_ORE_COPPER = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate_ore_copper")
+                .setRegistryName("deepslate_ore_copper")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_ORE_COPPER);
+
+        DEEPSLATE_ORE_GOLD = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate_ore_gold")
+                .setRegistryName("deepslate_ore_gold")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_ORE_GOLD);
+
+        DEEPSLATE_ORE_IRON = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate_ore_iron")
+                .setRegistryName("deepslate_ore_iron")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_ORE_IRON);
+
+        DEEPSLATE_ORE_REDSTONE = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate_ore_redstone")
+                .setRegistryName("deepslate_ore_redstone")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_ORE_REDSTONE);
+
+        DEEPSLATE_ORE_LAPISLAZULI = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate_ore_lapislazuli")
+                .setRegistryName("deepslate_ore_lapislazuli")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_ORE_LAPISLAZULI);
+
+        DEEPSLATE_ORE_EMERALD = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate_ore_emerald")
+                .setRegistryName("deepslate_ore_emerald")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_ORE_EMERALD);
+
+        DEEPSLATE_ORE_DIAMOND = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate_ore_diamond")
+                .setRegistryName("deepslate_ore_diamond")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_ORE_DIAMOND);
+
+        DEEPSLATE_COBBLED = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate_cobbled")
+                .setRegistryName("deepslate_cobbled")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_COBBLED);
+
+        DEEPSLATE_BRICKS = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate_bricks")
+                .setRegistryName("deepslate_bricks")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_BRICKS);
+
+        DEEPSLATE_TILES = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate_tiles")
+                .setRegistryName("deepslate_tiles")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_TILES);
+
+        DEEPSLATE_POLISHED = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate_polished")
+                .setRegistryName("deepslate_polished")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_POLISHED);
+
+        DEEPSLATE_BRICKS_CRACKED = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate_bricks_cracked")
+                .setRegistryName("deepslate_bricks_cracked")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_BRICKS_CRACKED);
+
+        DEEPSLATE_TILES_CRACKED = new Block(Material.ROCK)
+                .setUnlocalizedName("deepslate_tiles_cracked")
+                .setRegistryName("deepslate_tiles_cracked")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_TILES_CRACKED);
+
+        ROOTED_DIRT = new Block(Material.GROUND)
+                .setUnlocalizedName("rooted_dirt")
+                .setRegistryName("rooted_dirt")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(ROOTED_DIRT);
+
+        SMOOTH_BASALT = new Block(Material.ROCK)
+                .setUnlocalizedName("smooth_basalt")
+                .setRegistryName("smooth_basalt")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(SMOOTH_BASALT);
+
+        MOSS_BLOCK = new Block(Material.PLANTS)
+                .setUnlocalizedName("moss_block")
+                .setRegistryName("moss_block")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(MOSS_BLOCK);
+
+        MOSS_CARPET = new Block(Material.PLANTS)
+                .setUnlocalizedName("moss_carpet")
+                .setRegistryName("moss_carpet")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(MOSS_CARPET);
+
 
         ModBiomes.init();
         new WorldTypeSelectableBiome("selectable_biome");
@@ -641,6 +808,7 @@ public class ModBlocks {
     }
     @SubscribeEvent
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
+        event.getRegistry().register(new ItemBlock(COPPER_TORCH).setRegistryName(COPPER_TORCH.getRegistryName()));
         Item netheriteBlock = new ItemBlock(NETHERITE_BLOCK).setRegistryName(NETHERITE_BLOCK.getRegistryName());
         event.getRegistry().register(netheriteBlock);
         registerItemModel(netheriteBlock);
@@ -927,6 +1095,89 @@ public class ModBlocks {
         event.getRegistry().register(amethyst);
         registerItemModel(amethyst);
 
+        Item calcite = new ItemBlock(CALCITE).setRegistryName(CALCITE.getRegistryName());
+        event.getRegistry().register(calcite);
+        registerItemModel(calcite);
+
+        Item tuff = new ItemBlock(TUFF).setRegistryName(TUFF.getRegistryName());
+        event.getRegistry().register(tuff);
+        registerItemModel(tuff);
+
+        Item copperOre = new ItemBlock(COPPER_ORE).setRegistryName(COPPER_ORE.getRegistryName());
+        event.getRegistry().register(copperOre);
+        registerItemModel(copperOre);
+
+        Item deepslate = new ItemBlock(DEEPSLATE).setRegistryName(DEEPSLATE.getRegistryName());
+        event.getRegistry().register(deepslate);
+        registerItemModel(deepslate);
+
+        Item deepslateOreCopper = new ItemBlock(DEEPSLATE_ORE_COPPER).setRegistryName(DEEPSLATE_ORE_COPPER.getRegistryName());
+        event.getRegistry().register(deepslateOreCopper);
+        registerItemModel(deepslateOreCopper);
+
+        Item deepslateOreGold = new ItemBlock(DEEPSLATE_ORE_GOLD).setRegistryName(DEEPSLATE_ORE_GOLD.getRegistryName());
+        event.getRegistry().register(deepslateOreGold);
+        registerItemModel(deepslateOreGold);
+
+        Item deepslateOreIron = new ItemBlock(DEEPSLATE_ORE_IRON).setRegistryName(DEEPSLATE_ORE_IRON.getRegistryName());
+        event.getRegistry().register(deepslateOreIron);
+        registerItemModel(deepslateOreIron);
+
+        Item deepslateOreRedstone = new ItemBlock(DEEPSLATE_ORE_REDSTONE).setRegistryName(DEEPSLATE_ORE_REDSTONE.getRegistryName());
+        event.getRegistry().register(deepslateOreRedstone);
+        registerItemModel(deepslateOreRedstone);
+
+        Item deepslateOreLapis = new ItemBlock(DEEPSLATE_ORE_LAPISLAZULI).setRegistryName(DEEPSLATE_ORE_LAPISLAZULI.getRegistryName());
+        event.getRegistry().register(deepslateOreLapis);
+        registerItemModel(deepslateOreLapis);
+
+        Item deepslateOreEmerald = new ItemBlock(DEEPSLATE_ORE_EMERALD).setRegistryName(DEEPSLATE_ORE_EMERALD.getRegistryName());
+        event.getRegistry().register(deepslateOreEmerald);
+        registerItemModel(deepslateOreEmerald);
+
+        Item deepslateOreDiamond = new ItemBlock(DEEPSLATE_ORE_DIAMOND).setRegistryName(DEEPSLATE_ORE_DIAMOND.getRegistryName());
+        event.getRegistry().register(deepslateOreDiamond);
+        registerItemModel(deepslateOreDiamond);
+
+        Item deepslateCobbled = new ItemBlock(DEEPSLATE_COBBLED).setRegistryName(DEEPSLATE_COBBLED.getRegistryName());
+        event.getRegistry().register(deepslateCobbled);
+        registerItemModel(deepslateCobbled);
+
+        Item deepslateBricks = new ItemBlock(DEEPSLATE_BRICKS).setRegistryName(DEEPSLATE_BRICKS.getRegistryName());
+        event.getRegistry().register(deepslateBricks);
+        registerItemModel(deepslateBricks);
+
+        Item deepslateTiles = new ItemBlock(DEEPSLATE_TILES).setRegistryName(DEEPSLATE_TILES.getRegistryName());
+        event.getRegistry().register(deepslateTiles);
+        registerItemModel(deepslateTiles);
+
+        Item deepslatePolished = new ItemBlock(DEEPSLATE_POLISHED).setRegistryName(DEEPSLATE_POLISHED.getRegistryName());
+        event.getRegistry().register(deepslatePolished);
+        registerItemModel(deepslatePolished);
+
+        Item deepslateBricksCracked = new ItemBlock(DEEPSLATE_BRICKS_CRACKED).setRegistryName(DEEPSLATE_BRICKS_CRACKED.getRegistryName());
+        event.getRegistry().register(deepslateBricksCracked);
+        registerItemModel(deepslateBricksCracked);
+
+        Item deepslateTilesCracked = new ItemBlock(DEEPSLATE_TILES_CRACKED).setRegistryName(DEEPSLATE_TILES_CRACKED.getRegistryName());
+        event.getRegistry().register(deepslateTilesCracked);
+        registerItemModel(deepslateTilesCracked);
+
+        Item rootedDirt = new ItemBlock(ROOTED_DIRT).setRegistryName(ROOTED_DIRT.getRegistryName());
+        event.getRegistry().register(rootedDirt);
+        registerItemModel(rootedDirt);
+
+        Item smoothBasalt = new ItemBlock(SMOOTH_BASALT).setRegistryName(SMOOTH_BASALT.getRegistryName());
+        event.getRegistry().register(smoothBasalt);
+        registerItemModel(smoothBasalt);
+
+        Item mossBlock = new ItemBlock(MOSS_BLOCK).setRegistryName(MOSS_BLOCK.getRegistryName());
+        event.getRegistry().register(mossBlock);
+        registerItemModel(mossBlock);
+
+        Item mossCarpet = new ItemBlock(MOSS_CARPET).setRegistryName(MOSS_CARPET.getRegistryName());
+        event.getRegistry().register(mossCarpet);
+        registerItemModel(mossCarpet);
     }
 
     @SubscribeEvent
@@ -935,6 +1186,8 @@ public class ModBlocks {
         World world = event.getWorld();
         BlockPos pos = event.getPos();
         EnumHand hand = event.getHand();
+        IBlockState state = world.getBlockState(pos);
+        Block block = state.getBlock();
 
         ItemStack heldItem = player.getHeldItem(hand);
 
@@ -975,8 +1228,8 @@ public class ModBlocks {
                 String blockName = rawName.replace("item.", "").toUpperCase();
 
                 try {
-                    Block block = (Block) ModBlocks.class.getField(blockName).get(null);
-                    world.setBlockState(targetPos, block.getDefaultState());
+                    Block block2 = (Block) ModBlocks.class.getField(blockName).get(null);
+                    world.setBlockState(targetPos, block2.getDefaultState());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -988,6 +1241,37 @@ public class ModBlocks {
 
             event.setCanceled(true);
             event.setCancellationResult(EnumActionResult.SUCCESS);
+        }
+        if (!heldItem.isEmpty() && heldItem.getItem() == ModItems.HONEYCOMB) {
+            ResourceLocation res = block.getRegistryName();
+            if (WAXED_VARIANTS.containsKey(res)) {
+                if (!world.isRemote) {
+                    world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(WAXED_VARIANTS.get(res)).getDefaultState(), 3);
+                    if (!player.capabilities.isCreativeMode) heldItem.shrink(1);
+                    world.playSound(null, pos, SoundEvents.BLOCK_SLIME_HIT, SoundCategory.BLOCKS, 1f, 1f);
+                }
+                event.setCanceled(true);
+            }
+        }
+        if (!heldItem.isEmpty() && heldItem.getItem() instanceof ItemAxe) {
+            ResourceLocation res = block.getRegistryName();
+            if (UNWAXED_VARIANTS.containsKey(res)) {
+                if (!world.isRemote) {
+                    world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(UNWAXED_VARIANTS.get(res)).getDefaultState(), 3);
+                    heldItem.damageItem(1, player);
+                    world.playSound(null, pos, SoundEvents.BLOCK_WOOD_HIT, SoundCategory.BLOCKS, 1f, 0.8f);
+                }
+                event.setCanceled(true);
+            }
+            if (PREVIOUS_OXIDATION.containsKey(res)) {
+                if (!world.isRemote) {
+
+                    world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(PREVIOUS_OXIDATION.get(res)).getDefaultState(), 3);
+                    heldItem.damageItem(1, player);
+                    world.playSound(null, pos, SoundEvents.BLOCK_WOOD_HIT, SoundCategory.BLOCKS, 1f, 0.8f);
+                }
+                event.setCanceled(true);
+            }
         }
     }
 
@@ -1025,6 +1309,7 @@ public class ModBlocks {
                 event.getDrops().add(new ItemStack(Blocks.IRON_ORE));
             }
         }
+
     }
 
 
