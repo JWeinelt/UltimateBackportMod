@@ -40,5 +40,9 @@ If you like what we’re building:
 * Share 👥 it with friends and servers still using 1.12.2
 * Contribute 💻 to development
 
+## ♥️ Our contributors
+<a href="https://github.com/JWeinelt"><img src="https://github.com/JWeinelt.png" width="50" height="50" alt="@JWeinelt"/></a>
+<a href="https://github.com/ElF1ni"><img src="https://github.com/ElF1ni.png" width="50" height="50" alt="@ElF1ni"/></a>
+<a href="https://github.com/zCreeperYT"><img src="https://github.com/zCreeperYT.png" width="50" height="50" alt="@zCreeperYT"/></a>
 
 ✨ *"Bringing the future to the past – one block at a time."* ✨
