@@ -1,6 +1,6 @@
 # 🌍 Ultimate Backport Mod (UBM)
 
-![Version 0.1.0](https://img.shields.io/badge/Version-0.1.0-blue)[![Build](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml/badge.svg)](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml)
+![Version 0.1.0](https://img.shields.io/badge/Version-0.1.4-blue)[![Build](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml/badge.svg)](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml)
 
 Welcome to the official GitHub repository of **UBM – Ultimate Backport Mod**!
 
