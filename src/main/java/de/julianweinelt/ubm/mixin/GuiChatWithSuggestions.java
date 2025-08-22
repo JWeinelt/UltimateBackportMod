@@ -1,13 +1,11 @@
 package de.julianweinelt.ubm.mixin;
 
 import de.julianweinelt.ubm.UBM;
-import de.julianweinelt.ubm.util.StringUtil;
 import net.minecraft.client.gui.GuiChat;
 import org.lwjgl.input.Keyboard;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class GuiChatWithSuggestions extends GuiChat {
     private int suggestionIndex = 0;
