@@ -1,11 +1,13 @@
 package de.julianweinelt.ubm.mixin;
 
 import de.julianweinelt.ubm.UBM;
+import de.julianweinelt.ubm.util.StringUtil;
 import net.minecraft.client.gui.GuiChat;
 import org.lwjgl.input.Keyboard;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class GuiChatWithSuggestions extends GuiChat {
     private int suggestionIndex = 0;
@@ -14,8 +16,7 @@ public class GuiChatWithSuggestions extends GuiChat {
     @Override
     public void initGui() {
         super.initGui();
-        this.inputField.setFocused(true);
-        this.inputField.setText("/");
+        this.inputField.setFocused(true); //TODO: Text is being reset after window resize (Minecraft Bug)
     }
 
     @Override
@@ -66,10 +67,14 @@ public class GuiChatWithSuggestions extends GuiChat {
         String suggestion = (suggestionIndex > currentSuggestions.size() - 1) ? "" : this.currentSuggestions.get(suggestionIndex);
         int cursorPos = this.inputField.getCursorPosition();
         String textBeforeCursor = this.inputField.getText().substring(0, cursorPos);
+        String latestArg = textBeforeCursor.split(" ")[textBeforeCursor.split(" ").length - 1];
         int caretX = this.inputField.x + this.fontRenderer.getStringWidth(textBeforeCursor);
         int caretY = this.inputField.y;
 
-        this.fontRenderer.drawString(suggestion, caretX, caretY, 0x545454);
+        // clear
+        // cl
+        this.fontRenderer.drawString(suggestion.substring((latestArg.length() > suggestion.length()) ? 0 :
+                latestArg.length()), caretX, caretY, 0x545454);
 
         drawRect(caretX - 2, y - height, caretX + width, y, 0xEE000000);
 
@@ -90,6 +95,7 @@ public class GuiChatWithSuggestions extends GuiChat {
         if (text.startsWith("/")) {
             String[] parts = text.substring(1).split(" ");
             String base = parts[0];
+            String currentArg = (parts.length != 0) ? parts[parts.length - 1] : "";
 
             Map<String, List<String>> map = new HashMap<>();
             map.put("weather", Arrays.asList("thunder", "rain", "clear"));
