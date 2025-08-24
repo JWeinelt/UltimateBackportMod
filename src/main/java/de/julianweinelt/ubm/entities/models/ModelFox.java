@@ -1,10 +1,16 @@
-package de.julianweinelt.ubm.entities.models;
+package de.julianweinelt.ubm.entities.models;// Made with Blockbench 4.12.6
+// Exported for Minecraft version 1.7 - 1.12
+// Paste this class into your mod and generate all required imports
 
 
+import de.julianweinelt.ubm.entities.EntityFox;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+
+import javax.annotation.Nonnull;
 
 public class ModelFox extends ModelBase {
 	private final ModelRenderer body;
@@ -53,8 +59,9 @@ public class ModelFox extends ModelBase {
 		tail.cubeList.add(new ModelBox(tail, 30, 0, -2.0F, 1.0F, -2.25F, 4, 9, 5, 0.0F, false));
 	}
 
+
 	@Override
-	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+	public void render(@Nonnull Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
 		body.render(f5);
 		head.render(f5);
 		leg0.render(f5);
