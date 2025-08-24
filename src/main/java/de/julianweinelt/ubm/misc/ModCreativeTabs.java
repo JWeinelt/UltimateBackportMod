@@ -36,16 +36,22 @@ public class ModCreativeTabs {
             return new ItemStack(ModItems.POWDER_SNOW_BUCKET);
         }
     };
+    public static final CreativeTabs UBM_TAB_WILD = new CreativeTabs("ubm_tab_wild") {
+        @Override
+        public ItemStack getTabIconItem() {
+            return new ItemStack(ModBlocks.PEARLESCENT_FROGLIGHT);
+        }
+    };
     public static final CreativeTabs UBM_TAB_TRAILS_TALES = new CreativeTabs("ubm_tab_trails_tales") {
         @Override
         public ItemStack getTabIconItem() {
             return new ItemStack(ModItems.ANGLER_POTTERY_SHERD);
         }
     };
-    public static final CreativeTabs UBM_TAB_WILD = new CreativeTabs("ubm_tab_wild") {
+    public static final CreativeTabs UBM_TAB_3RD_DROP_25 = new CreativeTabs("ubm_tab_3rd_drop25") {
         @Override
         public ItemStack getTabIconItem() {
-            return new ItemStack(ModBlocks.PEARLESCENT_FROGLIGHT);
+            return new ItemStack(ModItems.COPPER_NUGGET);
         }
     };
 }
