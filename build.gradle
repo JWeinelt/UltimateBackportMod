@@ -2,6 +2,10 @@ buildscript {
     repositories {
         jcenter()
         maven { url = "https://files.minecraftforge.net/maven" }
+        maven {
+            name = "unifiedvisionReleases"
+            url = uri("https://repo.codeblocksmc.de/releases")
+        }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
@@ -21,6 +25,13 @@ minecraft {
     runDir = "run"
 
     mappings = "snapshot_20171003"
+}
+
+repositories {
+    maven {
+        name = "unifiedvisionReleases"
+        url = uri("https://repo.codeblocksmc.de/releases")
+    }
 }
 
 dependencies {
