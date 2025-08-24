@@ -1,1 +1,7 @@
-{"parent":"block/cube_all","textures":{"all":"ubm:blocks/moss"}}
+{
+  "parent": "block/carpet",
+  "textures": {
+    "particle": "ubm:blocks/moss",
+    "wool": "ubm:blocks/moss"
+  }
+}
