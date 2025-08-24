@@ -11,6 +11,8 @@
   "credits": "Julian Weinelt",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": []
+  "dependencies": [
+    "pathfinder"
+  ]
 }
 ]

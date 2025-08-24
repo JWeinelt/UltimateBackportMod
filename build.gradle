@@ -24,7 +24,7 @@ minecraft {
 }
 
 dependencies {
-    // hier kommen weitere Abhängigkeiten hin, falls du welche brauchst
+    implementation("de.julianweinelt.pathfinder:PathFinderAPI:1.0.1")
 }
 
 processResources {
