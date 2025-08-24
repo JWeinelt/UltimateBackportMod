@@ -35,7 +35,7 @@ repositories {
 }
 
 dependencies {
-    implementation("de.julianweinelt.pathfinder:PathFinderAPI:1.0.1")
+    implementation("de.julianweinelt.pathfinder:PathFinderAPI:1.0.4")
 }
 
 processResources {
