@@ -1,28 +1,44 @@
 {
-  "multipart": [
-    {
-      "when": { "half": "top" },
-      "apply": { "model": "ubm:crimson_stairs", "x": 180 }
-    },
-    {
-      "when": { "half": "bottom" },
-      "apply": { "model": "ubm:crimson_stairs" }
-    },
-    {
-      "when": { "facing": "north" },
-      "apply": { "model": "ubm:crimson_stairs" }
-    },
-    {
-      "when": { "facing": "south" },
-      "apply": { "model": "ubm:crimson_stairs" }
-    },
-    {
-      "when": { "facing": "west" },
-      "apply": { "model": "ubm:crimson_stairs" }
-    },
-    {
-      "when": { "facing": "east" },
-      "apply": { "model": "ubm:crimson_stairs", "y": 90 }
-    }
-  ]
+  "variants": {
+    "facing=east,half=bottom,shape=straight":  { "model": "ubm:crimson_stairs" },
+    "facing=west,half=bottom,shape=straight":  { "model": "ubm:crimson_stairs", "y": 180, "uvlock": true },
+    "facing=south,half=bottom,shape=straight": { "model": "ubm:crimson_stairs", "y": 90, "uvlock": true },
+    "facing=north,half=bottom,shape=straight": { "model": "ubm:crimson_stairs", "y": 270, "uvlock": true },
+    "facing=east,half=bottom,shape=outer_right":  { "model": "ubm:crimson_outer_stairs" },
+    "facing=west,half=bottom,shape=outer_right":  { "model": "ubm:crimson_outer_stairs", "y": 180, "uvlock": true },
+    "facing=south,half=bottom,shape=outer_right": { "model": "ubm:crimson_outer_stairs", "y": 90, "uvlock": true },
+    "facing=north,half=bottom,shape=outer_right": { "model": "ubm:crimson_outer_stairs", "y": 270, "uvlock": true },
+    "facing=east,half=bottom,shape=outer_left":  { "model": "ubm:crimson_outer_stairs", "y": 270, "uvlock": true },
+    "facing=west,half=bottom,shape=outer_left":  { "model": "ubm:crimson_outer_stairs", "y": 90, "uvlock": true },
+    "facing=south,half=bottom,shape=outer_left": { "model": "ubm:crimson_outer_stairs" },
+    "facing=north,half=bottom,shape=outer_left": { "model": "ubm:crimson_outer_stairs", "y": 180, "uvlock": true },
+    "facing=east,half=bottom,shape=inner_right":  { "model": "ubm:crimson_inner_stairs" },
+    "facing=west,half=bottom,shape=inner_right":  { "model": "ubm:crimson_inner_stairs", "y": 180, "uvlock": true },
+    "facing=south,half=bottom,shape=inner_right": { "model": "ubm:crimson_inner_stairs", "y": 90, "uvlock": true },
+    "facing=north,half=bottom,shape=inner_right": { "model": "ubm:crimson_inner_stairs", "y": 270, "uvlock": true },
+    "facing=east,half=bottom,shape=inner_left":  { "model": "ubm:crimson_inner_stairs", "y": 270, "uvlock": true },
+    "facing=west,half=bottom,shape=inner_left":  { "model": "ubm:crimson_inner_stairs", "y": 90, "uvlock": true },
+    "facing=south,half=bottom,shape=inner_left": { "model": "ubm:crimson_inner_stairs" },
+    "facing=north,half=bottom,shape=inner_left": { "model": "ubm:crimson_inner_stairs", "y": 180, "uvlock": true },
+    "facing=east,half=top,shape=straight":  { "model": "ubm:crimson_stairs", "x": 180, "uvlock": true },
+    "facing=west,half=top,shape=straight":  { "model": "ubm:crimson_stairs", "x": 180, "y": 180, "uvlock": true },
+    "facing=south,half=top,shape=straight": { "model": "ubm:crimson_stairs", "x": 180, "y": 90, "uvlock": true },
+    "facing=north,half=top,shape=straight": { "model": "ubm:crimson_stairs", "x": 180, "y": 270, "uvlock": true },
+    "facing=east,half=top,shape=outer_right":  { "model": "ubm:crimson_outer_stairs", "x": 180, "y": 90, "uvlock": true },
+    "facing=west,half=top,shape=outer_right":  { "model": "ubm:crimson_outer_stairs", "x": 180, "y": 270, "uvlock": true },
+    "facing=south,half=top,shape=outer_right": { "model": "ubm:crimson_outer_stairs", "x": 180, "y": 180, "uvlock": true },
+    "facing=north,half=top,shape=outer_right": { "model": "ubm:crimson_outer_stairs", "x": 180, "uvlock": true },
+    "facing=east,half=top,shape=outer_left":  { "model": "ubm:crimson_outer_stairs", "x": 180, "uvlock": true },
+    "facing=west,half=top,shape=outer_left":  { "model": "ubm:crimson_outer_stairs", "x": 180, "y": 180, "uvlock": true },
+    "facing=south,half=top,shape=outer_left": { "model": "ubm:crimson_outer_stairs", "x": 180, "y": 90, "uvlock": true },
+    "facing=north,half=top,shape=outer_left": { "model": "ubm:crimson_outer_stairs", "x": 180, "y": 270, "uvlock": true },
+    "facing=east,half=top,shape=inner_right":  { "model": "ubm:crimson_inner_stairs", "x": 180, "y": 90, "uvlock": true },
+    "facing=west,half=top,shape=inner_right":  { "model": "ubm:crimson_inner_stairs", "x": 180, "y": 270, "uvlock": true },
+    "facing=south,half=top,shape=inner_right": { "model": "ubm:crimson_inner_stairs", "x": 180, "y": 180, "uvlock": true },
+    "facing=north,half=top,shape=inner_right": { "model": "ubm:crimson_inner_stairs", "x": 180, "uvlock": true },
+    "facing=east,half=top,shape=inner_left":  { "model": "ubm:crimson_inner_stairs", "x": 180, "uvlock": true },
+    "facing=west,half=top,shape=inner_left":  { "model": "ubm:crimson_inner_stairs", "x": 180, "y": 180, "uvlock": true },
+    "facing=south,half=top,shape=inner_left": { "model": "ubm:crimson_inner_stairs", "x": 180, "y": 90, "uvlock": true },
+    "facing=north,half=top,shape=inner_left": { "model": "ubm:crimson_inner_stairs", "x": 180, "y": 270, "uvlock": true }
+  }
 }
