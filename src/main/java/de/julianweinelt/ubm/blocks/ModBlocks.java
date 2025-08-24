@@ -10,6 +10,7 @@ import de.julianweinelt.ubm.worldgen.ModBiomes;
 import de.julianweinelt.ubm.worldgen.WorldGenBeeNest;
 import de.julianweinelt.ubm.worldgen.WorldTypeSelectableBiome;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockCarpet;
 import net.minecraft.block.BlockWall;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -27,7 +28,6 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -349,6 +349,7 @@ public class ModBlocks {
                 .setUnlocalizedName("blackstone_wall")
                 .setRegistryName("blackstone_wall")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        event.getRegistry().register(BLACKSTONE_WALL);
 
         PEARLESCENT_FROGLIGHT = new Block(Material.PLANTS)
                 .setUnlocalizedName("pearlescent_froglight")
@@ -794,10 +795,7 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
         event.getRegistry().register(MOSS_BLOCK);
 
-        MOSS_CARPET = new Block(Material.PLANTS)
-                .setUnlocalizedName("moss_carpet")
-                .setRegistryName("moss_carpet")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        MOSS_CARPET = new BlockMossCarpet();
         event.getRegistry().register(MOSS_CARPET);
 
 
