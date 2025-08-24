@@ -1,5 +1,8 @@
 package de.julianweinelt.ubm.mixin;
 
+import de.julianweinelt.pathfinder.PathFinderAPI;
+import de.julianweinelt.pathfinder.command.Argument;
+import de.julianweinelt.pathfinder.command.Command;
 import de.julianweinelt.ubm.UBM;
 import net.minecraft.client.gui.GuiChat;
 import org.lwjgl.input.Keyboard;
@@ -19,7 +22,6 @@ public class GuiChatWithSuggestions extends GuiChat {
 
     @Override
     public void keyTyped(char typedChar, int keyCode) throws IOException {
-        updateSuggestions();
         if (keyCode == Keyboard.KEY_DOWN) {
             suggestionIndex = Math.max(0, suggestionIndex - 1);
             UBM.getLogger().info(suggestionIndex + "");
@@ -33,11 +35,14 @@ public class GuiChatWithSuggestions extends GuiChat {
         } else if (keyCode == Keyboard.KEY_TAB && !currentSuggestions.isEmpty()) {
             String base = getBaseCommand();
             UBM.getLogger().info(suggestionIndex + "");
-            this.inputField.setText("/" + base + " " + currentSuggestions.get(suggestionIndex));
+            if (inputField.getText().split(" ").length > 1)
+                this.inputField.setText("/" + base + " " + currentSuggestions.get(suggestionIndex));
+            else this.inputField.setText("/" + currentSuggestions.get(suggestionIndex));
             return;
         }
 
         super.keyTyped(typedChar, keyCode);
+        updateSuggestions();
     }
 
     @Override
@@ -70,8 +75,6 @@ public class GuiChatWithSuggestions extends GuiChat {
         int caretX = this.inputField.x + this.fontRenderer.getStringWidth(textBeforeCursor);
         int caretY = this.inputField.y;
 
-        // clear
-        // cl
         this.fontRenderer.drawString(suggestion.substring((latestArg.length() > suggestion.length()) ? 0 :
                 latestArg.length()), caretX, caretY, 0x545454);
 
@@ -94,12 +97,12 @@ public class GuiChatWithSuggestions extends GuiChat {
         if (text.startsWith("/")) {
             String[] parts = text.substring(1).split(" ");
             String base = parts[0];
+            UBM.getLogger().info(base);
             String currentArg = (parts.length != 0) ? parts[parts.length - 1] : "";
 
-            Map<String, List<String>> map = new HashMap<>();
-            map.put("weather", Arrays.asList("thunder", "rain", "clear"));
-
-            List<String> newSuggestions = map.getOrDefault(base, Collections.emptyList());
+            List<String> newSuggestions;
+            if (parts.length == 1) newSuggestions = getCommands(base);
+            else newSuggestions = getLastArgSuggestions(base, currentArg, inputField.getText());
 
             if (!newSuggestions.equals(this.currentSuggestions)) {
                 this.currentSuggestions = new ArrayList<>(newSuggestions);
@@ -111,6 +114,67 @@ public class GuiChatWithSuggestions extends GuiChat {
         }
     }
 
+    private List<String> getCommands() {
+        List<String> commands = new ArrayList<>();
+        for (String s : PathFinderAPI.commandRegistry.getCommandMap().keySet()) {
+            for (Command c : PathFinderAPI.commandRegistry.getCommandMap().get(s)) commands.add(c.getName());
+        }
+        commands.sort(Collections.reverseOrder());
+        return commands;
+    }
+
+    private List<String> getCommands(String input) {
+        List<String> commands = new ArrayList<>();
+        for (String s : PathFinderAPI.commandRegistry.getCommandMap().keySet()) {
+            for (Command c : PathFinderAPI.commandRegistry.getCommandMap().get(s)) if (c.getName().startsWith(input)) commands.add(c.getName());
+        }
+        commands.sort(Collections.reverseOrder());
+        return commands;
+    }
+
+    private List<String> getLastArgSuggestions(String command, String input, String fullText) {
+        Command cmd = PathFinderAPI.getCommandRegistry().getCommand("minecraft", command);
+        if (cmd == null) {
+            UBM.getLogger().warn("CMD is null");
+            return new ArrayList<>();
+        }
+
+        String[] args = fullText.substring(1).split(" ");
+        if (args.length == 0) return new ArrayList<>();
+
+        Argument current = null;
+        List<Argument> availableArgs = cmd.getArgs();
+
+        for (int i = 1; i < args.length; i++) {
+            String argInput = args[i];
+            Argument match = null;
+
+            for (Argument candidate : availableArgs) {
+                if (candidate.matches(argInput)) {
+                    match = candidate;
+                    break;
+                }
+            }
+
+            if (match == null) {
+                break;
+            }
+
+            current = match;
+            availableArgs = current.getArgs();
+        }
+
+        List<String> suggestions = new ArrayList<>();
+        for (Argument candidate : availableArgs) {
+            for (String suggestion : candidate.getSuggestions()) {
+                if (suggestion.toLowerCase().startsWith(input.toLowerCase())) {
+                    suggestions.add(suggestion);
+                }
+            }
+        }
+
+        return suggestions;
+    }
 
     private String getBaseCommand() {
         String text = this.inputField.getText();
