@@ -62,7 +62,8 @@ public class GuiChatWithSuggestions extends GuiChat {
 
         int height = currentSuggestions.size() * lineHeight;
 
-        String suggestion = (suggestionIndex > currentSuggestions.size() - 1) ? "" : this.currentSuggestions.get(suggestionIndex);
+        String suggestion = (suggestionIndex > currentSuggestions.size() - 1 || suggestionIndex < 0)
+                ? "" : this.currentSuggestions.get(suggestionIndex);
         int cursorPos = this.inputField.getCursorPosition();
         String textBeforeCursor = this.inputField.getText().substring(0, cursorPos);
         String latestArg = textBeforeCursor.split(" ")[textBeforeCursor.split(" ").length - 1];
