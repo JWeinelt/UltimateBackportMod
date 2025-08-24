@@ -2,6 +2,7 @@ package de.julianweinelt.ubm.items;
 
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.entities.*;
+import de.julianweinelt.ubm.entities.custom.EntityCustomWolf;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.misc.ModMaterials;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -80,6 +81,22 @@ public class ModItems {
     public static Item SPAWN_EGG_FROG;
     public static Item SPAWN_EGG_WARDEN;
     public static Item SPAWN_EGG_VILLAGER;
+    public static Item SPAWN_EGG_WOLF;
+    public static Item SPAWN_EGG_WANDERING_TRADER;
+    public static Item SPAWN_EGG_PHANTOM;
+    public static Item SPAWN_EGG_ARMADILLO;
+    public static Item SPAWN_EGG_STRIDER;
+    public static Item SPAWN_EGG_SNIFFER;
+    public static Item SPAWN_EGG_HOGLIN;
+    public static Item SPAWN_EGG_CAT;
+    public static Item SPAWN_EGG_CREAKING;
+    public static Item SPAWN_EGG_AXOLOTL;
+    public static Item SPAWN_EGG_BREEZE;
+    public static Item SPAWN_EGG_CAMEL;
+    public static Item SPAWN_EGG_ALLAY;
+    public static Item SPAWN_EGG_FOX;
+    public static Item SPAWN_EGG_PIGLIN;
+    public static Item SPAWN_EGG_ZOGLIN;
 
 
     public static Item CANDLE;
@@ -270,6 +287,11 @@ public class ModItems {
                 .setMaxStackSize(1)
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
 
+        COPPER_NUGGET = new Item()
+                .setUnlocalizedName("copper_nugget")
+                .setRegistryName("copper_nugget")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_3RD_DROP_25);
+
         CANDLE = new Item()
                 .setUnlocalizedName("candle")
                 .setRegistryName("candle")
@@ -334,6 +356,7 @@ public class ModItems {
 
         event.getRegistry().register(HONEYCOMB);
         event.getRegistry().register(HONEY_BOTTLE);
+        event.getRegistry().register(COPPER_NUGGET);
 
 
         // Spawn Eggs
@@ -342,7 +365,23 @@ public class ModItems {
         SPAWN_EGG_GOAT = new ItemSpawnEggCustom(EntityGoat.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "goat");
         SPAWN_EGG_BEE = new ItemSpawnEggCustom(EntityBee.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "bee");
         SPAWN_EGG_WARDEN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "warden");
-        SPAWN_EGG_DOLPHIN = new ItemSpawnEggCustom(EntityBee.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "dolphin"); //TODO: Add Entity
+        SPAWN_EGG_DOLPHIN = new ItemSpawnEggCustom(EntityDolphin.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "dolphin"); //TODO: Add Entity
+        SPAWN_EGG_WOLF = new ItemSpawnEggCustom(EntityCustomWolf.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "custom_wolf");
+        SPAWN_EGG_ALLAY = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "allay");//TODO: Add Entity
+        SPAWN_EGG_WANDERING_TRADER = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "wandering_trader");//TODO: Add Entity
+        SPAWN_EGG_STRIDER = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "strider");//TODO: Add Entity
+        SPAWN_EGG_SNIFFER = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "sniffer");//TODO: Add Entity
+        SPAWN_EGG_ARMADILLO = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "armadillo");//TODO: Add Entity
+        SPAWN_EGG_BREEZE = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "breeze");//TODO: Add Entity
+        SPAWN_EGG_CAMEL = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "camel");//TODO: Add Entity
+        SPAWN_EGG_CAT = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "cat");//TODO: Add Entity
+        SPAWN_EGG_HOGLIN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "hoglin");//TODO: Add Entity
+        SPAWN_EGG_PIGLIN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "piglin");//TODO: Add Entity
+        SPAWN_EGG_FOX = new ItemSpawnEggCustom(EntityFox.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "fox");
+        SPAWN_EGG_CREAKING = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "creaking");//TODO: Add Entity
+        SPAWN_EGG_PHANTOM = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "phantom");//TODO: Add Entity
+        SPAWN_EGG_AXOLOTL = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "axolotl");//TODO: Add Entity
+        SPAWN_EGG_ZOGLIN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "zoglin");//TODO: Add Entity
 
 
         event.getRegistry().register(SPAWN_EGG_FROG);
@@ -351,6 +390,22 @@ public class ModItems {
         event.getRegistry().register(SPAWN_EGG_BEE);
         event.getRegistry().register(SPAWN_EGG_DOLPHIN);
         event.getRegistry().register(SPAWN_EGG_WARDEN);
+        event.getRegistry().register(SPAWN_EGG_WOLF);
+        event.getRegistry().register(SPAWN_EGG_ALLAY);
+        event.getRegistry().register(SPAWN_EGG_WANDERING_TRADER);
+        event.getRegistry().register(SPAWN_EGG_STRIDER);
+        event.getRegistry().register(SPAWN_EGG_SNIFFER);
+        event.getRegistry().register(SPAWN_EGG_ARMADILLO);
+        event.getRegistry().register(SPAWN_EGG_BREEZE);
+        event.getRegistry().register(SPAWN_EGG_CAMEL);
+        event.getRegistry().register(SPAWN_EGG_CAT);
+        event.getRegistry().register(SPAWN_EGG_HOGLIN);
+        event.getRegistry().register(SPAWN_EGG_PIGLIN);
+        event.getRegistry().register(SPAWN_EGG_FOX);
+        event.getRegistry().register(SPAWN_EGG_CREAKING);
+        event.getRegistry().register(SPAWN_EGG_PHANTOM);
+        event.getRegistry().register(SPAWN_EGG_AXOLOTL);
+        event.getRegistry().register(SPAWN_EGG_ZOGLIN);
 
         AMETHYST_SHARD = new Item()
                 .setUnlocalizedName("amethyst_shard")
@@ -420,6 +475,7 @@ public class ModItems {
         registerItemModel(SPAWN_EGG_GOAT);
         registerItemModel(SPAWN_EGG_DOLPHIN);
         registerItemModel(SPAWN_EGG_WARDEN);
+        registerItemModel(SPAWN_EGG_WOLF);
 
         registerItemModel(CANDLE);
         registerItemModel(BLACK_CANDLE);
@@ -446,6 +502,24 @@ public class ModItems {
         registerItemModel(RAW_IRON);
         registerItemModel(RAW_GOLD);
         registerItemModel(RAW_COPPER);
+
+        registerItemModel(COPPER_NUGGET);
+
+        registerItemModel(SPAWN_EGG_ALLAY);
+        registerItemModel(SPAWN_EGG_SNIFFER);
+        registerItemModel(SPAWN_EGG_FOX);
+        registerItemModel(SPAWN_EGG_CAT);
+        registerItemModel(SPAWN_EGG_PHANTOM);
+        registerItemModel(SPAWN_EGG_AXOLOTL);
+        registerItemModel(SPAWN_EGG_STRIDER);
+        registerItemModel(SPAWN_EGG_WANDERING_TRADER);
+        registerItemModel(SPAWN_EGG_ZOGLIN);
+        registerItemModel(SPAWN_EGG_HOGLIN);
+        registerItemModel(SPAWN_EGG_PIGLIN);
+        registerItemModel(SPAWN_EGG_CAMEL);
+        registerItemModel(SPAWN_EGG_ARMADILLO);
+        registerItemModel(SPAWN_EGG_BREEZE);
+        registerItemModel(SPAWN_EGG_CREAKING);
     }
 
     @SideOnly(Side.CLIENT)
