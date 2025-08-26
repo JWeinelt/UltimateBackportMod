@@ -84,6 +84,14 @@ public class ModEntities {
                 UBM.instance,
                 64, 1, true
         );
+        EntityRegistry.registerModEntity(
+                new ResourceLocation("ubm", "dolphin"),
+                EntityDolphin.class,
+                "Dolphin",
+                9,
+                UBM.instance,
+                64, 1, true
+        );
 
     }
 
@@ -135,6 +143,14 @@ public class ModEntities {
                     @Override
                     protected ResourceLocation getEntityTexture(@Nullable EntityWarden entity) {
                         return new ResourceLocation(MODID, "textures/entity/warden/warden.png");
+                    }
+                }
+        );
+        RenderingRegistry.registerEntityRenderingHandler(EntityDolphin.class, renderManager ->
+                new RenderLiving<EntityDolphin>(renderManager, new ModelDolphin(), 0.5F) {
+                    @Override
+                    protected ResourceLocation getEntityTexture(@Nullable EntityDolphin entity) {
+                        return new ResourceLocation(MODID, "textures/entity/dolphin.png");
                     }
                 }
         );

@@ -44,6 +44,18 @@ public class ModSounds {
     public static SoundEvent GOAT_SCREAM;
     public static SoundEvent GOAT_STEP;
 
+    public static SoundEvent DOLPHIN_ATTACK;
+    public static SoundEvent DOLPHIN_BLOWHOLE;
+    public static SoundEvent DOLPHIN_DEATH;
+    public static SoundEvent DOLPHIN_EAT;
+    public static SoundEvent DOLPHIN_HURT;
+    public static SoundEvent DOLPHIN_IDLE_WATER;
+    public static SoundEvent DOLPHIN_IDLE;
+    public static SoundEvent DOLPHIN_JUMP;
+    public static SoundEvent DOLPHIN_PLAY;
+    public static SoundEvent DOLPHIN_SPLASH;
+    public static SoundEvent DOLPHIN_SWIM;
+
 
     @SubscribeEvent
     public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
@@ -78,6 +90,18 @@ public class ModSounds {
 
         BEE_HIVE_ENTER = register(event, "block.beehive.enter");
         BEE_HIVE_EXIT = register(event, "block.beehive.exit");
+
+        DOLPHIN_ATTACK = register(event, "mob.dolphin.attack");
+        DOLPHIN_BLOWHOLE = register(event, "mob.dolphin.blowhole");
+        DOLPHIN_DEATH = register(event, "mob.dolphin.death");
+        DOLPHIN_EAT = register(event, "mob.dolphin.eat");
+        DOLPHIN_HURT = register(event, "mob.dolphin.hurt");
+        DOLPHIN_IDLE_WATER = register(event, "mob.dolphin.idle_water");
+        DOLPHIN_IDLE = register(event, "mob.dolphin.idle");
+        DOLPHIN_JUMP = register(event, "mob.dolphin.jump");
+        DOLPHIN_PLAY = register(event, "mob.dolphin.play");
+        DOLPHIN_SPLASH = register(event, "mob.dolphin.splash");
+        DOLPHIN_SWIM = register(event, "mob.dolphin.swim");
 
     }
 
