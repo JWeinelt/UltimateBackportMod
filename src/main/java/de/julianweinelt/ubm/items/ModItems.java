@@ -33,7 +33,16 @@ public class ModItems {
     public static Item NETHERITE_LEGGINGS;
     public static Item NETHERITE_BOOTS;
 
-    // Nether Items
+    public static Item COPPER_NUGGET;
+    public static Item COPPER_HELMET;
+    public static Item COPPER_CHESTPLATE;
+    public static Item COPPER_LEGGINGS;
+    public static Item COPPER_BOOTS;
+    public static Item COPPER_SWORD;
+    public static Item COPPER_AXE;
+    public static Item COPPER_PICKAXE;
+    public static Item COPPER_SHOVEL;
+    public static Item COPPER_HOE;
     public static Item WARPED_FUNGUS_ON_A_STICK;
     public static Item SNOUT_BANNER_PATTERN;
 

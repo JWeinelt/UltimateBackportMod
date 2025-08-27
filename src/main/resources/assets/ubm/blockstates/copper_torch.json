@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up":  { "model": "ubm:copper_torch" },
+    "facing=north": { "model": "ubm:copper_torch_wall", "y": 270 },
+    "facing=south": { "model": "ubm:copper_torch_wall", "y": 90 },
+    "facing=west":  { "model": "ubm:copper_torch_wall", "y": 180 },
+    "facing=east":  { "model": "ubm:copper_torch_wall" }
+  }
+}
