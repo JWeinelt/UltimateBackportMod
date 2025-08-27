@@ -13,13 +13,18 @@ With UBM, you can experience the best of both worlds:
 * ✨ **Modern features** in a stable 1.12.2 environment
 * 🧱 **New blocks, items, and mechanics** faithfully backported
 * ⚙️ **Compatibility focus** to work seamlessly alongside other popular mods
+* 🔨 **Even features that didn't find a way in the game** will be added! F. ex. the Glare, Rascal, Moobloom, ...
 
 
 ## 🚀 Getting Started
 * 📥 Download the latest release from the [Releases page](https://github.com/JWeinelt/UltimateBackportMod/releases)
 * 📂 Install using **Minecraft Forge 1.12.2**
+* 📥 If not done yet, download and install [Pathfinder API](https://github.com/JWeinelt/Pathfinder-API)
 * 🎮 Launch the game and enjoy modern Minecraft in a classic world!
 
+## 📂 Dependencies
+- UBM needs **Pathfinder API** to run. This library helps it creating the **modern command suggestion UI.**
+- **GeckoLib** will be required in future to make mob animations more like in 1.21.x
 
 ## 🛠️ Contributing
 Want to help improve UBM? Contributions are very welcome!
