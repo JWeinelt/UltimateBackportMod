@@ -17,7 +17,7 @@ public class GuiSlotBiomes extends GuiSlot {
         this.parent = parent;
         for (Biome biome : Biome.REGISTRY) {
             ResourceLocation rl = Biome.REGISTRY.getNameForObject(biome);
-            if (rl != null && rl.getResourceDomain().equalsIgnoreCase("ubm")) {
+            if (rl != null) {
                 this.biomes.add(biome);
             }
         }
