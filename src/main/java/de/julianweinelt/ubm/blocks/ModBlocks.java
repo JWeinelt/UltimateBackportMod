@@ -815,28 +815,19 @@ public class ModBlocks {
         // Crimson Wood Blocks
         registerBlockWithItem(event, CRIMSON_STEM);
         registerBlockWithItem(event, CRIMSON_HYPHAE);
-        Item warpedStem = new ItemBlock(WARPED_STEM).setRegistryName(WARPED_STEM.getRegistryName());
-        event.getRegistry().register(warpedStem);
-        registerItemModel(warpedStem);
-        Item warpedHyphae = new ItemBlock(WARPED_HYPHAE).setRegistryName(WARPED_HYPHAE.getRegistryName());
-        event.getRegistry().register(warpedHyphae);
-        registerItemModel(warpedHyphae);
-        Item warpedStairs = new ItemBlock(WARPED_STAIRS).setRegistryName(WARPED_STAIRS.getRegistryName());
-        event.getRegistry().register(warpedStairs);
-        registerItemModel(warpedStairs);
-        Item warpedFence = new ItemBlock(WARPED_FENCE).setRegistryName(WARPED_FENCE.getRegistryName());
-        event.getRegistry().register(warpedFence);
-        registerItemModel(warpedFence);
-        Item crimsonStairs = new ItemBlock(CRIMSON_STAIRS).setRegistryName(CRIMSON_STAIRS.getRegistryName());
-        event.getRegistry().register(crimsonStairs);
-        registerItemModel(crimsonStairs);
 
-        Item blackStone = new ItemBlock(BLACKSTONE).setRegistryName(BLACKSTONE.getRegistryName());
-        event.getRegistry().register(blackStone);
-        registerItemModel(blackStone);
-        Item polishedBlackstone = new ItemBlock(POLISHED_BLACKSTONE).setRegistryName(POLISHED_BLACKSTONE.getRegistryName());
-        event.getRegistry().register(polishedBlackstone);
-        registerItemModel(polishedBlackstone);
+        // Warped Wood Blocks
+        registerBlockWithItem(event, WARPED_STEM);
+        registerBlockWithItem(event, WARPED_HYPHAE);
+
+        // Special Blocks
+        registerBlockWithItem(event, WARPED_STAIRS);
+        registerBlockWithItem(event, WARPED_FENCE);
+        registerBlockWithItem(event, CRIMSON_STAIRS);
+
+        // Blackstone Blocks
+        registerBlockWithItem(event, BLACKSTONE);
+        registerBlockWithItem(event, POLISHED_BLACKSTONE);
 
         Item chiseledPolishedBlackstone = new ItemBlock(CHISELED_POLISHED_BLACKSTONE).setRegistryName(CHISELED_POLISHED_BLACKSTONE.getRegistryName());
         event.getRegistry().register(chiseledPolishedBlackstone);
