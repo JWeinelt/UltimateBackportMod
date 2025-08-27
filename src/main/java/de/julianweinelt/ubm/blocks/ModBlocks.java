@@ -15,6 +15,7 @@ import net.minecraft.block.BlockWall;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -192,64 +193,62 @@ public class ModBlocks {
         WAXED_OXIDIZED_COPPER_BLOCK, WAXED_OXIDIZED_CHISELED_COPPER, WAXED_OXIDIZED_COPPER_GRATE, WAXED_OXIDIZED_CUT_COPPER, WAXED_OXIDIZED_COPPER_BULB
     ;
 
+    // Helper Methods
+    private static Block createBasicBlock(String name, Material material, CreativeTabs tab) {
+        return new Block(material)
+                .setUnlocalizedName(name)
+                .setRegistryName(name)
+                .setCreativeTab(tab);
+    }
+
+    private static void registerBlock(RegistryEvent.Register<Block> event, Block block) {
+        event.getRegistry().register(block);
+    }
+
+    private static void registerBlockWithItem(RegistryEvent.Register<Item> event, Block block) {
+        Item item = new ItemBlock(block).setRegistryName(block.getRegistryName());
+        event.getRegistry().register(item);
+        registerItemModel(item);
+    }
+
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         COPPER_TORCH = new BlockCopperTorch("copper_torch");
-        event.getRegistry().register(COPPER_TORCH);
+        registerBlock(event, COPPER_TORCH);
 
+        // Netherite Blocks
+        NETHERITE_BLOCK = createBasicBlock("netherite_block", Material.ROCK, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, NETHERITE_BLOCK);
 
-        NETHERITE_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("netherite_block")
-                .setRegistryName("netherite_block")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(NETHERITE_BLOCK);
-        ANCIENT_DEBRIS = new Block(Material.ROCK)
-                .setUnlocalizedName("ancient_debris")
-                .setRegistryName("ancient_debris")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(ANCIENT_DEBRIS);
+        ANCIENT_DEBRIS = createBasicBlock("ancient_debris", Material.ROCK, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, ANCIENT_DEBRIS);
 
-        CRIMSON_STEM = new Block(Material.WOOD)
-                .setUnlocalizedName("crimson_stem")
-                .setRegistryName("crimson_stem")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(CRIMSON_STEM);
-        CRIMSON_HYPHAE = new Block(Material.WOOD)
-                .setUnlocalizedName("crimson_hyphae")
-                .setRegistryName("crimson_hyphae")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(CRIMSON_HYPHAE);
-        WARPED_STEM = new Block(Material.WOOD)
-                .setUnlocalizedName("warped_stem")
-                .setRegistryName("warped_stem")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(WARPED_STEM);
-        WARPED_HYPHAE = new Block(Material.WOOD)
-                .setUnlocalizedName("warped_hyphae")
-                .setRegistryName("warped_hyphae")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(WARPED_HYPHAE);
+        // Crimson Wood Blocks
+        CRIMSON_STEM = createBasicBlock("crimson_stem", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, CRIMSON_STEM);
 
-        STRIPPED_CRIMSON_STEM = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_crimson_stem")
-                .setRegistryName("stripped_crimson_stem")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(STRIPPED_CRIMSON_STEM);
-        STRIPPED_CRIMSON_HYPHAE = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_crimson_hyphae")
-                .setRegistryName("stripped_crimson_hyphae")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(STRIPPED_CRIMSON_HYPHAE);
-        STRIPPED_WARPED_STEM = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_warped_stem")
-                .setRegistryName("stripped_warped_stem")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(STRIPPED_WARPED_STEM);
-        STRIPPED_WARPED_HYPHAE = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_warped_hyphae")
-                .setRegistryName("stripped_warped_hyphae")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(STRIPPED_WARPED_HYPHAE);
+        CRIMSON_HYPHAE = createBasicBlock("crimson_hyphae", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, CRIMSON_HYPHAE);
+
+        // Warped Wood Blocks
+        WARPED_STEM = createBasicBlock("warped_stem", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, WARPED_STEM);
+
+        WARPED_HYPHAE = createBasicBlock("warped_hyphae", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, WARPED_HYPHAE);
+
+        // Stripped Wood Blocks
+        STRIPPED_CRIMSON_STEM = createBasicBlock("stripped_crimson_stem", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, STRIPPED_CRIMSON_STEM);
+
+        STRIPPED_CRIMSON_HYPHAE = createBasicBlock("stripped_crimson_hyphae", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, STRIPPED_CRIMSON_HYPHAE);
+
+        STRIPPED_WARPED_STEM = createBasicBlock("stripped_warped_stem", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, STRIPPED_WARPED_STEM);
+
+        STRIPPED_WARPED_HYPHAE = createBasicBlock("stripped_warped_hyphae", Material.WOOD, ModCreativeTabs.UBM_TAB_NETHER);
+        registerBlock(event, STRIPPED_WARPED_HYPHAE);
         BLACKSTONE = new Block(Material.ROCK)
                 .setUnlocalizedName("blackstone")
                 .setRegistryName("blackstone")
@@ -806,19 +805,16 @@ public class ModBlocks {
     }
     @SubscribeEvent
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
+        // Special handling for copper torch
         event.getRegistry().register(new ItemBlock(COPPER_TORCH).setRegistryName(COPPER_TORCH.getRegistryName()));
-        Item netheriteBlock = new ItemBlock(NETHERITE_BLOCK).setRegistryName(NETHERITE_BLOCK.getRegistryName());
-        event.getRegistry().register(netheriteBlock);
-        registerItemModel(netheriteBlock);
-        Item ancientDebris = new ItemBlock(ANCIENT_DEBRIS).setRegistryName(ANCIENT_DEBRIS.getRegistryName());
-        event.getRegistry().register(ancientDebris);
-        registerItemModel(ancientDebris);
-        Item crimsonStem = new ItemBlock(CRIMSON_STEM).setRegistryName(CRIMSON_STEM.getRegistryName());
-        event.getRegistry().register(crimsonStem);
-        registerItemModel(crimsonStem);
-        Item crimsonHyphae = new ItemBlock(CRIMSON_HYPHAE).setRegistryName(CRIMSON_HYPHAE.getRegistryName());
-        event.getRegistry().register(crimsonHyphae);
-        registerItemModel(crimsonHyphae);
+
+        // Netherite Blocks
+        registerBlockWithItem(event, NETHERITE_BLOCK);
+        registerBlockWithItem(event, ANCIENT_DEBRIS);
+
+        // Crimson Wood Blocks
+        registerBlockWithItem(event, CRIMSON_STEM);
+        registerBlockWithItem(event, CRIMSON_HYPHAE);
         Item warpedStem = new ItemBlock(WARPED_STEM).setRegistryName(WARPED_STEM.getRegistryName());
         event.getRegistry().register(warpedStem);
         registerItemModel(warpedStem);
