@@ -5,8 +5,10 @@ import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.misc.ClientEventHandler;
 import de.julianweinelt.ubm.misc.ModRecipes;
+import de.julianweinelt.ubm.worldgen.ModDimensions;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
 import de.julianweinelt.ubm.worldgen.StructureWorldGen;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -55,6 +57,13 @@ public class UBM {
 
         ModRecipes.init();
         ClientEventHandler.registerParticles();
+
+
+        if (DimensionManager.isDimensionRegistered(-1)) {
+            DimensionManager.unregisterDimension(-1);
+        }
+
+        DimensionManager.registerDimension(-1, ModDimensions.CUSTOM_NETHER_TYPE);
     }
 
     public static Logger getLogger() {
