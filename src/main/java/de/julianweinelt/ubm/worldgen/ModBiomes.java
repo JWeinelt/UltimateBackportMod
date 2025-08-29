@@ -15,6 +15,9 @@ public class ModBiomes {
     private static final List<BiomeData> BIOMES = new ArrayList<>();
 
     public static final Biome NETHER_FOREST = register("nether_forest", new BiomeNetherForest(), BiomeManager.BiomeType.DESERT, 10, true);
+    public static final Biome CRIMSON_FOREST = register("crimson_forest", new BiomeCrimsonForest(), BiomeManager.BiomeType.DESERT, 10, true);
+    public static final Biome SOUL_SAND_VALLEY = register("soul_sand_valley", new BiomeSoulSandValley(), BiomeManager.BiomeType.DESERT, 10, true);
+    public static final Biome BASALT_DELTAS = register("basalt_deltas", new BiomeBasaltDeltas(), BiomeManager.BiomeType.DESERT, 10, true);
     public static final Biome SNOWY_SLOPES = register("snowy_slopes", new BiomeSnowySlopes(), BiomeManager.BiomeType.COOL, 10, true);
 
     private static Biome register(String name, Biome biome, BiomeManager.BiomeType type, int weight, boolean spawn) {

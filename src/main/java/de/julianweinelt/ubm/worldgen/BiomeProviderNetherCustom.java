@@ -12,7 +12,10 @@ public class BiomeProviderNetherCustom extends BiomeProvider {
 
     private final Biome[] netherBiomes = new Biome[] {
             Biomes.HELL,
-            //ModBiomes.NETHER_FOREST
+            ModBiomes.NETHER_FOREST,
+            ModBiomes.CRIMSON_FOREST,
+            ModBiomes.SOUL_SAND_VALLEY,
+            ModBiomes.BASALT_DELTAS
     };
 
     public BiomeProviderNetherCustom() {
@@ -22,7 +25,15 @@ public class BiomeProviderNetherCustom extends BiomeProvider {
 
     @Override
     public Biome getBiome(BlockPos pos) {
-        return (pos.getX() / 100 + pos.getZ() / 100) % 2 == 0 ? netherBiomes[0] : netherBiomes[0];
+        // More varied biome distribution using both coordinates and some noise
+        int x = pos.getX() / 200; // Larger biome regions
+        int z = pos.getZ() / 200;
+        
+        // Simple hash-based distribution
+        int hash = (x * 374761393 + z * 668265263) % netherBiomes.length;
+        if (hash < 0) hash += netherBiomes.length;
+        
+        return netherBiomes[hash];
     }
 
     @Override
