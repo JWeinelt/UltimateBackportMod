@@ -39,15 +39,26 @@ public class BiomeCrimsonForest extends Biome {
             new WorldGenCrimsonTree().generate(worldIn, rand, treePos);
         }
 
-        // Add some scattered nether wart blocks for atmosphere
-        for (int i = 0; i < 6; ++i) {
+        // Add some scattered nether wart blocks and crimson fungi for atmosphere
+        for (int i = 0; i < 8; ++i) {
             int x = pos.getX() + rand.nextInt(16) + 8;
             int z = pos.getZ() + rand.nextInt(16) + 8;
-            int y = worldIn.getHeight(x, z) + rand.nextInt(4);
+            int y = worldIn.getHeight(x, z);
 
             BlockPos decorPos = new BlockPos(x, y, z);
             if (worldIn.isAirBlock(decorPos) && worldIn.getBlockState(decorPos.down()).getBlock() == ModBlocks.CRIMSON_NYLIUM) {
-                if (rand.nextFloat() < 0.3f) {
+                if (rand.nextFloat() < 0.4f) {
+                    // Add crimson fungi if available
+                    if (ModBlocks.CRIMSON_FUNGUS != null) {
+                        worldIn.setBlockState(decorPos, ModBlocks.CRIMSON_FUNGUS.getDefaultState(), 2);
+                    }
+                } else if (rand.nextFloat() < 0.3f) {
+                    // Add crimson roots if available  
+                    if (ModBlocks.CRIMSON_ROOTS != null) {
+                        worldIn.setBlockState(decorPos, ModBlocks.CRIMSON_ROOTS.getDefaultState(), 2);
+                    }
+                } else if (rand.nextFloat() < 0.2f) {
+                    // Add nether wart occasionally
                     worldIn.setBlockState(decorPos, Blocks.NETHER_WART.getDefaultState(), 2);
                 }
             }
