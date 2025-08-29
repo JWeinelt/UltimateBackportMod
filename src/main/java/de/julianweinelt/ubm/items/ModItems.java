@@ -3,6 +3,7 @@ package de.julianweinelt.ubm.items;
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.entities.*;
 import de.julianweinelt.ubm.entities.custom.EntityCustomWolf;
+import de.julianweinelt.ubm.entities.EntitySalmon;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.misc.ModMaterials;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -75,6 +76,10 @@ public class ModItems {
     public static Item BAMBOO_RAFT;
 
     public static Item SPAWN_EGG_BEE;
+    public static Item SPAWN_EGG_COD;
+    public static Item SPAWN_EGG_SALMON;
+    public static Item SPAWN_EGG_PUFFERFISH;
+    public static Item SPAWN_EGG_TROPICAL_FISH;
     public static Item SPAWN_EGG_TURTLE;
     public static Item SPAWN_EGG_GOAT;
     public static Item SPAWN_EGG_DOLPHIN;
@@ -290,7 +295,7 @@ public class ModItems {
         COPPER_NUGGET = new Item()
                 .setUnlocalizedName("copper_nugget")
                 .setRegistryName("copper_nugget")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_3RD_DROP_25);
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_COPPER_AGE);
 
         CANDLE = new Item()
                 .setUnlocalizedName("candle")
@@ -380,8 +385,12 @@ public class ModItems {
         SPAWN_EGG_FOX = new ItemSpawnEggCustom(EntityFox.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "fox");
         SPAWN_EGG_CREAKING = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "creaking");//TODO: Add Entity
         SPAWN_EGG_PHANTOM = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "phantom");//TODO: Add Entity
-        SPAWN_EGG_AXOLOTL = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "axolotl");//TODO: Add Entity
+        SPAWN_EGG_AXOLOTL = new ItemSpawnEggCustom(EntityAxolotl.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "axolotl");
         SPAWN_EGG_ZOGLIN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "zoglin");//TODO: Add Entity
+        SPAWN_EGG_COD = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "cod");//TODO: Add Entity
+        SPAWN_EGG_SALMON = new ItemSpawnEggCustom(EntitySalmon.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "salmon");
+        SPAWN_EGG_PUFFERFISH = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "pufferfish");//TODO: Add Entity
+        SPAWN_EGG_TROPICAL_FISH = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "tropical_fish");//TODO: Add Entity
 
 
         event.getRegistry().register(SPAWN_EGG_FROG);
@@ -406,6 +415,11 @@ public class ModItems {
         event.getRegistry().register(SPAWN_EGG_PHANTOM);
         event.getRegistry().register(SPAWN_EGG_AXOLOTL);
         event.getRegistry().register(SPAWN_EGG_ZOGLIN);
+
+        event.getRegistry().register(SPAWN_EGG_COD);
+        event.getRegistry().register(SPAWN_EGG_SALMON);
+        event.getRegistry().register(SPAWN_EGG_PUFFERFISH);
+        event.getRegistry().register(SPAWN_EGG_TROPICAL_FISH);
 
         AMETHYST_SHARD = new Item()
                 .setUnlocalizedName("amethyst_shard")
@@ -520,6 +534,10 @@ public class ModItems {
         registerItemModel(SPAWN_EGG_ARMADILLO);
         registerItemModel(SPAWN_EGG_BREEZE);
         registerItemModel(SPAWN_EGG_CREAKING);
+        registerItemModel(SPAWN_EGG_COD);
+        registerItemModel(SPAWN_EGG_SALMON);
+        registerItemModel(SPAWN_EGG_PUFFERFISH);
+        registerItemModel(SPAWN_EGG_TROPICAL_FISH);
     }
 
     @SideOnly(Side.CLIENT)

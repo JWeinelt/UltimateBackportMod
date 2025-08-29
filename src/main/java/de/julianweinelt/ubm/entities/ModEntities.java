@@ -3,14 +3,12 @@ package de.julianweinelt.ubm.entities;
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.entities.custom.EntityCustomWolf;
 import de.julianweinelt.ubm.entities.models.*;
+import de.julianweinelt.ubm.entities.render.RenderAxolotl;
 import de.julianweinelt.ubm.entities.render.RenderBambooRaft;
 import de.julianweinelt.ubm.entities.render.RenderCustomWolf;
 import de.julianweinelt.ubm.entities.render.RenderFox;
-import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
-import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
@@ -92,6 +90,22 @@ public class ModEntities {
                 UBM.instance,
                 64, 1, true
         );
+        EntityRegistry.registerModEntity(
+                new ResourceLocation("ubm", "salmon"),
+                EntitySalmon.class,
+                "Salmon",
+                10,
+                UBM.instance,
+                64, 1, true
+        );
+        EntityRegistry.registerModEntity(
+                new ResourceLocation("ubm", "axolotl"),
+                EntityAxolotl.class,
+                "Axolotl",
+                11,
+                UBM.instance,
+                64, 1, true
+        );
 
     }
 
@@ -154,8 +168,17 @@ public class ModEntities {
                     }
                 }
         );
+        RenderingRegistry.registerEntityRenderingHandler(EntitySalmon.class, renderManager ->
+                new RenderLiving<EntitySalmon>(renderManager, new ModelSalmon(), 0.5F) {
+                    @Override
+                    protected ResourceLocation getEntityTexture(@Nullable EntitySalmon entity) {
+                        return new ResourceLocation(MODID, "textures/entity/fish/salmon.png");
+                    }
+                }
+        );
         RenderingRegistry.registerEntityRenderingHandler(EntityBambooRaft.class, RenderBambooRaft::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityFox.class, RenderFox::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityCustomWolf.class, RenderCustomWolf::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityAxolotl.class, RenderAxolotl::new);
     }
 }

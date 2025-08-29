@@ -15,7 +15,7 @@ public class ModCreativeTabs {
     public static final CreativeTabs UBM_TAB_PILLAGE = new CreativeTabs("ubm_tab_pillage") {
         @Override
         public ItemStack getTabIconItem() {
-            return new ItemStack(ModBlocks.SWEET_BERRY_BUSH);
+            return new ItemStack(ModItems.SWEET_BERRY);
         }
     };
     public static final CreativeTabs UBM_TAB_BEES = new CreativeTabs("ubm_tab_bees") {
@@ -48,7 +48,7 @@ public class ModCreativeTabs {
             return new ItemStack(ModItems.ANGLER_POTTERY_SHERD);
         }
     };
-    public static final CreativeTabs UBM_TAB_3RD_DROP_25 = new CreativeTabs("ubm_tab_3rd_drop25") {
+    public static final CreativeTabs UBM_TAB_COPPER_AGE = new CreativeTabs("ubm_tab_copper_age") {
         @Override
         public ItemStack getTabIconItem() {
             return new ItemStack(ModItems.COPPER_NUGGET);

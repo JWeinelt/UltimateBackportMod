@@ -913,10 +913,6 @@ public class ModBlocks {
         event.getRegistry().register(beeHive);
         registerItemModel(beeHive);
 
-        Item sweetBerry = new ItemBlock(SWEET_BERRY_BUSH).setRegistryName(SWEET_BERRY_BUSH.getRegistryName());
-        event.getRegistry().register(sweetBerry);
-        registerItemModel(sweetBerry);
-
         // --- Normal Copper ---
         Item copperBlockItem = new ItemBlock(COPPER_BLOCK).setRegistryName(COPPER_BLOCK.getRegistryName());
         event.getRegistry().register(copperBlockItem);
