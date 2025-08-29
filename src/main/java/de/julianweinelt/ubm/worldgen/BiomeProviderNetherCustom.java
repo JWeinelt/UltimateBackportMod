@@ -12,91 +12,103 @@ import java.util.List;
 
 public class BiomeProviderNetherCustom extends BiomeProvider {
 
-    private Biome[] netherBiomes;
-
     public BiomeProviderNetherCustom() {
-        // Initialize allowedBiomes list
-        if (allowedBiomes == null) {
-            allowedBiomes = new ArrayList<>();
-        }
-        // Don't initialize netherBiomes here - do it lazily to avoid timing issues
+        // Initialize allowedBiomes with vanilla nether first to prevent NPE
+        this.allowedBiomes = new ArrayList<>();
+        this.allowedBiomes.add(Biomes.HELL);
     }
 
-    private Biome[] getNetherBiomes() {
-        if (netherBiomes == null) {
-            // Initialize with null checks to handle registration timing issues
-            List<Biome> biomes = new ArrayList<>();
-            
-            // Always include vanilla nether as fallback
-            biomes.add(Biomes.HELL);
-            
-            // Add custom biomes if they're registered, otherwise use vanilla as fallback
-            if (ModBiomes.NETHER_FOREST != null) {
+    private Biome[] getAvailableBiomes() {
+        List<Biome> biomes = new ArrayList<>();
+        
+        // Always start with vanilla nether
+        biomes.add(Biomes.HELL);
+        
+        // Safely try to add custom biomes
+        try {
+            if (ModBiomes.NETHER_FOREST != null && ModBiomes.NETHER_FOREST.getRegistryName() != null) {
                 biomes.add(ModBiomes.NETHER_FOREST);
-            } else {
-                biomes.add(Biomes.HELL);
             }
-            
-            if (ModBiomes.CRIMSON_FOREST != null) {
+            if (ModBiomes.CRIMSON_FOREST != null && ModBiomes.CRIMSON_FOREST.getRegistryName() != null) {
                 biomes.add(ModBiomes.CRIMSON_FOREST);
-            } else {
-                biomes.add(Biomes.HELL);
             }
-            
-            if (ModBiomes.SOUL_SAND_VALLEY != null) {
+            if (ModBiomes.SOUL_SAND_VALLEY != null && ModBiomes.SOUL_SAND_VALLEY.getRegistryName() != null) {
                 biomes.add(ModBiomes.SOUL_SAND_VALLEY);
-            } else {
-                biomes.add(Biomes.HELL);
             }
-            
-            if (ModBiomes.BASALT_DELTAS != null) {
+            if (ModBiomes.BASALT_DELTAS != null && ModBiomes.BASALT_DELTAS.getRegistryName() != null) {
                 biomes.add(ModBiomes.BASALT_DELTAS);
-            } else {
-                biomes.add(Biomes.HELL);
             }
-            
-            netherBiomes = biomes.toArray(new Biome[0]);
-            
-            // Update allowedBiomes list
-            allowedBiomes.clear();
-            allowedBiomes.addAll(Arrays.asList(netherBiomes));
+        } catch (Exception e) {
+            // If any error occurs, continue with just vanilla nether
         }
-        return netherBiomes;
+        
+        return biomes.toArray(new Biome[0]);
     }
 
     @Override
     public Biome getBiome(BlockPos pos) {
-        Biome[] biomes = getNetherBiomes();
-        
-        // More varied biome distribution using both coordinates and some noise
-        int x = pos.getX() / 200; // Larger biome regions
-        int z = pos.getZ() / 200;
-        
-        // Simple hash-based distribution
-        int hash = (x * 374761393 + z * 668265263) % biomes.length;
-        if (hash < 0) hash += biomes.length;
-        
-        return biomes[hash];
+        try {
+            Biome[] biomes = getAvailableBiomes();
+            
+            // Always return vanilla nether if only one biome available
+            if (biomes.length <= 1) {
+                return Biomes.HELL;
+            }
+            
+            // Hash-based biome distribution with larger regions
+            int x = pos.getX() / 200;
+            int z = pos.getZ() / 200;
+            int hash = Math.abs((x * 374761393 + z * 668265263) % biomes.length);
+            
+            return biomes[hash];
+        } catch (Exception e) {
+            // Always fallback to vanilla nether on any error
+            return Biomes.HELL;
+        }
     }
 
     @Override
-    public Biome[] getBiomes(Biome[] oldBiomeList, int x, int z, int width, int length) {
-        if (oldBiomeList == null || oldBiomeList.length < width * length) {
-            oldBiomeList = new Biome[width * length];
-        }
+    public Biome[] getBiomes(Biome[] biomeArray, int x, int z, int width, int length) {
+        try {
+            int arraySize = width * length;
+            if (biomeArray == null || biomeArray.length < arraySize) {
+                biomeArray = new Biome[arraySize];
+            }
 
-        for (int i = 0; i < width * length; i++) {
-            int bx = x + (i % width);
-            int bz = z + (i / width);
-            oldBiomeList[i] = getBiome(new BlockPos(bx, 0, bz));
-        }
+            for (int i = 0; i < arraySize; i++) {
+                int localX = x + (i % width);
+                int localZ = z + (i / width);
+                biomeArray[i] = getBiome(new BlockPos(localX, 0, localZ));
+            }
 
-        return oldBiomeList;
+            return biomeArray;
+        } catch (Exception e) {
+            // Fallback: fill with vanilla nether
+            if (biomeArray == null || biomeArray.length < width * length) {
+                biomeArray = new Biome[width * length];
+            }
+            Arrays.fill(biomeArray, Biomes.HELL);
+            return biomeArray;
+        }
     }
 
     @Override
     public List<Biome> getBiomesToSpawnIn() {
-        getNetherBiomes(); // Ensure biomes are initialized
-        return allowedBiomes;
+        try {
+            // Update the list with current biomes
+            List<Biome> spawningBiomes = new ArrayList<>();
+            spawningBiomes.addAll(Arrays.asList(getAvailableBiomes()));
+            
+            // Update the instance variable too
+            this.allowedBiomes = spawningBiomes;
+            
+            return spawningBiomes;
+        } catch (Exception e) {
+            // Fallback to vanilla nether only
+            List<Biome> fallback = new ArrayList<>();
+            fallback.add(Biomes.HELL);
+            this.allowedBiomes = fallback;
+            return fallback;
+        }
     }
 }
