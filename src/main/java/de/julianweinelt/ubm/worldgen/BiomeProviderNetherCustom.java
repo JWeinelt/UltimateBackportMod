@@ -7,33 +7,76 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeProvider;
 
 import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BiomeProviderNetherCustom extends BiomeProvider {
 
-    private final Biome[] netherBiomes = new Biome[] {
-            Biomes.HELL,
-            ModBiomes.NETHER_FOREST,
-            ModBiomes.CRIMSON_FOREST,
-            ModBiomes.SOUL_SAND_VALLEY,
-            ModBiomes.BASALT_DELTAS
-    };
+    private Biome[] netherBiomes;
 
     public BiomeProviderNetherCustom() {
-        allowedBiomes.clear();
-        allowedBiomes.addAll(Arrays.asList(netherBiomes));
+        // Initialize allowedBiomes list
+        if (allowedBiomes == null) {
+            allowedBiomes = new ArrayList<>();
+        }
+        // Don't initialize netherBiomes here - do it lazily to avoid timing issues
+    }
+
+    private Biome[] getNetherBiomes() {
+        if (netherBiomes == null) {
+            // Initialize with null checks to handle registration timing issues
+            List<Biome> biomes = new ArrayList<>();
+            
+            // Always include vanilla nether as fallback
+            biomes.add(Biomes.HELL);
+            
+            // Add custom biomes if they're registered, otherwise use vanilla as fallback
+            if (ModBiomes.NETHER_FOREST != null) {
+                biomes.add(ModBiomes.NETHER_FOREST);
+            } else {
+                biomes.add(Biomes.HELL);
+            }
+            
+            if (ModBiomes.CRIMSON_FOREST != null) {
+                biomes.add(ModBiomes.CRIMSON_FOREST);
+            } else {
+                biomes.add(Biomes.HELL);
+            }
+            
+            if (ModBiomes.SOUL_SAND_VALLEY != null) {
+                biomes.add(ModBiomes.SOUL_SAND_VALLEY);
+            } else {
+                biomes.add(Biomes.HELL);
+            }
+            
+            if (ModBiomes.BASALT_DELTAS != null) {
+                biomes.add(ModBiomes.BASALT_DELTAS);
+            } else {
+                biomes.add(Biomes.HELL);
+            }
+            
+            netherBiomes = biomes.toArray(new Biome[0]);
+            
+            // Update allowedBiomes list
+            allowedBiomes.clear();
+            allowedBiomes.addAll(Arrays.asList(netherBiomes));
+        }
+        return netherBiomes;
     }
 
     @Override
     public Biome getBiome(BlockPos pos) {
+        Biome[] biomes = getNetherBiomes();
+        
         // More varied biome distribution using both coordinates and some noise
         int x = pos.getX() / 200; // Larger biome regions
         int z = pos.getZ() / 200;
         
         // Simple hash-based distribution
-        int hash = (x * 374761393 + z * 668265263) % netherBiomes.length;
-        if (hash < 0) hash += netherBiomes.length;
+        int hash = (x * 374761393 + z * 668265263) % biomes.length;
+        if (hash < 0) hash += biomes.length;
         
-        return netherBiomes[hash];
+        return biomes[hash];
     }
 
     @Override
@@ -49,5 +92,11 @@ public class BiomeProviderNetherCustom extends BiomeProvider {
         }
 
         return oldBiomeList;
+    }
+
+    @Override
+    public List<Biome> getBiomesToSpawnIn() {
+        getNetherBiomes(); // Ensure biomes are initialized
+        return allowedBiomes;
     }
 }
