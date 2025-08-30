@@ -378,8 +378,6 @@ public class ModItems {
         event.getRegistry().register(HONEY_BOTTLE);
         event.getRegistry().register(COPPER_NUGGET);
 
-        event.getRegistry().register(WOLF_ARMOR);
-
 
         // Spawn Eggs
         SPAWN_EGG_FROG = new ItemSpawnEggCustom(EntityFrog.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "frog");
