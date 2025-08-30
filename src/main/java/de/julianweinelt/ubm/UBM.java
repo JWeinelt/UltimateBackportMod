@@ -2,6 +2,7 @@ package de.julianweinelt.ubm;
 
 
 import de.julianweinelt.ubm.blocks.ModBlocks;
+import de.julianweinelt.ubm.blocks.interactable.smithing.GuiHandler;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.misc.ClientEventHandler;
 import de.julianweinelt.ubm.misc.CommonProxy;
@@ -14,6 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
 
@@ -49,6 +51,7 @@ public class UBM {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        NetworkRegistry.INSTANCE.registerGuiHandler(UBM.instance, new GuiHandler());
         proxy.init(event);
         ModBlocks.WAXED_VARIANTS.put(ModBlocks.COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_COPPER_BLOCK.getRegistryName());
         ModBlocks.WAXED_VARIANTS.put(ModBlocks.EXPOSED_COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_EXPOSED_COPPER_BLOCK.getRegistryName());
