@@ -1,7 +1,10 @@
 package de.julianweinelt.ubm.entities;
 
+import de.julianweinelt.ubm.entities.ai.EntityAISwimAround;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityWaterMob;
+import net.minecraft.pathfinding.PathNavigate;
+import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.world.World;
 
 public class EntitySalmon extends EntityWaterMob {
@@ -13,8 +16,9 @@ public class EntitySalmon extends EntityWaterMob {
 
     @Override
     protected void initEntityAI() {
-
+        this.tasks.addTask(0, new EntityAISwimAround(this, 1.0D));
     }
+
 
     @Override
     protected void applyEntityAttributes() {
@@ -26,23 +30,25 @@ public class EntitySalmon extends EntityWaterMob {
     }
 
     @Override
+    protected PathNavigate createNavigator(World worldIn) {
+        return new PathNavigateSwimmer(this, worldIn);
+    }
+
+
+    @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
 
         if (this.isInWater()) {
-            if (this.ticksExisted % 40 == 0) {
-                this.motionX += (this.rand.nextDouble() - 0.5D) * 0.1D;
-                this.motionY += (this.rand.nextDouble() - 0.5D) * 0.05D;
-                this.motionZ += (this.rand.nextDouble() - 0.5D) * 0.1D;
-            }
-        } else {
-            if (this.onGround) {
-                this.motionY += 0.3D;
-                this.motionX += (this.rand.nextDouble() - 0.5D) * 0.4D;
-                this.motionZ += (this.rand.nextDouble() - 0.5D) * 0.4D;
-            }
+            this.motionY += 0.02D;
+        } else if (this.onGround) {
+            this.motionY += 0.3D;
+            this.motionX += (this.rand.nextDouble() - 0.5D) * 0.4D;
+            this.motionZ += (this.rand.nextDouble() - 0.5D) * 0.4D;
         }
     }
+
+
 
     /*
     @Nullable
