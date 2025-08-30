@@ -19,7 +19,6 @@ public class EntityAxolotl extends EntityWaterMob {
 
     private static final DataParameter<Integer> VARIANT = EntityDataManager.createKey(EntityAxolotl.class, DataSerializers.VARINT);
 
-    // Deine Texturen – hier als Beispiel
     private static final ResourceLocation[] TEXTURES = new ResourceLocation[] {
             new ResourceLocation("ubm:textures/entity/axolotl/axolotl_lucy.png"),
             new ResourceLocation("ubm:textures/entity/axolotl/axolotl_wild.png"),
