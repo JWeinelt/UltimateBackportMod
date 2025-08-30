@@ -1,7 +1,7 @@
 {
   "variants": {
     "normal": {
-      "model": "ubm:block/smithing_table"
+      "model": "ubm:smithing_table"
     }
   }
 }
