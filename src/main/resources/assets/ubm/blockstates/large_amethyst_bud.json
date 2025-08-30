@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "ubm:large_amethyst_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "ubm:large_amethyst_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "ubm:large_amethyst_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "ubm:large_amethyst_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "ubm:large_amethyst_bud"
+    },
+    "facing=west": {
+      "model": "ubm:large_amethyst_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

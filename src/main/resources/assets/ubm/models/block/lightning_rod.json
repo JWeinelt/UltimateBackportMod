@@ -1,0 +1,6 @@
+{
+  "parent": "ubm:block/template_lightning_rod",
+  "textures": {
+    "texture": "ubm:blocks/lightning_rod"
+  }
+}

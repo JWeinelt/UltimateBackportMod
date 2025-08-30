@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.blocks;
 
 import de.julianweinelt.ubm.UBM;
+import de.julianweinelt.ubm.blocks.api.BlockAmethystBud;
 import de.julianweinelt.ubm.blocks.plant.BlockGlowBerryVine;
 import de.julianweinelt.ubm.blocks.plant.BlockGlowLichen;
 import de.julianweinelt.ubm.blocks.plant.BlockSweetBerry;
@@ -17,6 +18,7 @@ import net.minecraft.block.BlockWall;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -30,6 +32,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -52,6 +55,7 @@ public class ModBlocks {
 
 
     public static Block NETHERITE_BLOCK;
+    private static Block LIGHTNING_ROD;
     public static Block ANCIENT_DEBRIS;
 
     public static Block CRIMSON_STEM;
@@ -160,6 +164,11 @@ public class ModBlocks {
 
     public static Block TINTED_GLASS;
     public static Block AMETHYST_BLOCK;
+    public static Block BUDDING_AMETHYST;
+    public static Block AMETHYST_CLUSTER;
+    public static Block SMALL_AMETHYST_BUD;
+    public static Block MEDIUM_AMETHYST_BUD;
+    public static Block LARGE_AMETHYST_BUD;
     public static Block CALCITE;
     public static Block TUFF;
     public static Block COPPER_ORE;
@@ -198,6 +207,22 @@ public class ModBlocks {
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         COPPER_TORCH = new BlockCopperTorch("copper_torch");
         event.getRegistry().register(COPPER_TORCH);
+        LIGHTNING_ROD = new BlockLightningRod();
+        event.getRegistry().register(LIGHTNING_ROD);
+
+        SMALL_AMETHYST_BUD = new BlockAmethystBud("small_amethyst_bud");
+        event.getRegistry().register(SMALL_AMETHYST_BUD);
+        MEDIUM_AMETHYST_BUD = new BlockAmethystBud("medium_amethyst_bud");
+        event.getRegistry().register(MEDIUM_AMETHYST_BUD);
+        LARGE_AMETHYST_BUD = new BlockAmethystBud("large_amethyst_bud");
+        event.getRegistry().register(LARGE_AMETHYST_BUD);
+        AMETHYST_CLUSTER = new BlockAmethystBud("amethyst_cluster");
+        event.getRegistry().register(AMETHYST_CLUSTER);
+        BUDDING_AMETHYST = new Block(Material.ROCK)
+                .setUnlocalizedName("budding_amethyst")
+                .setRegistryName("budding_amethyst")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(BUDDING_AMETHYST);
 
 
         NETHERITE_BLOCK = new Block(Material.ROCK)
@@ -815,6 +840,13 @@ public class ModBlocks {
     @SubscribeEvent
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new ItemBlock(COPPER_TORCH).setRegistryName(COPPER_TORCH.getRegistryName()));
+
+        registerItem(AMETHYST_CLUSTER, event);
+        registerItem(BUDDING_AMETHYST, event);
+        registerItem(SMALL_AMETHYST_BUD, event);
+        registerItem(MEDIUM_AMETHYST_BUD, event);
+        registerItem(LARGE_AMETHYST_BUD, event);
+
         registerItem(NETHERITE_BLOCK, event);
         registerItem(GLOW_LICHEN, event);
         registerItem(ANCIENT_DEBRIS, event);
@@ -926,7 +958,10 @@ public class ModBlocks {
         registerItem(SMOOTH_BASALT, event);
         registerItem(MOSS_BLOCK, event);
         registerItem(MOSS_CARPET, event);
+        registerItem(LIGHTNING_ROD, event);
     }
+
+
 
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
