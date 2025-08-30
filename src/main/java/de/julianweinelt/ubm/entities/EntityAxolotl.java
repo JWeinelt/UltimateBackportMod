@@ -1,5 +1,6 @@
 package de.julianweinelt.ubm.entities;
 
+import de.julianweinelt.ubm.entities.ai.EntityAISwimAround;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityWaterMob;
@@ -30,6 +31,12 @@ public class EntityAxolotl extends EntityWaterMob {
     public EntityAxolotl(World worldIn) {
         super(worldIn);
         this.setSize(0.7F, 0.5F);
+    }
+
+
+    @Override
+    protected void initEntityAI() {
+        this.tasks.addTask(0, new EntityAISwimAround(this, 1.0D));
     }
 
     @Override
