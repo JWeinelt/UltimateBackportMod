@@ -2,6 +2,7 @@ package de.julianweinelt.ubm.blocks;
 
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.blocks.api.BlockAmethystBud;
+import de.julianweinelt.ubm.blocks.interactable.BlockSmithingTable;
 import de.julianweinelt.ubm.blocks.plant.BlockGlowBerryVine;
 import de.julianweinelt.ubm.blocks.plant.BlockGlowLichen;
 import de.julianweinelt.ubm.blocks.plant.BlockSweetBerry;
@@ -57,6 +58,14 @@ public class ModBlocks {
     public static Block NETHERITE_BLOCK;
     private static Block LIGHTNING_ROD;
     public static Block ANCIENT_DEBRIS;
+
+    public static Block SMITHING_TABLE;
+    public static Block FLETCHING_TABLE;
+    public static Block LOOM;
+    public static Block SMOKER;
+    public static Block BLAST_FURNACE;
+    public static Block BARREL;
+    public static Block BELL;
 
     public static Block CRIMSON_STEM;
     public static Block CRIMSON_HYPHAE;
@@ -205,6 +214,9 @@ public class ModBlocks {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
+        SMITHING_TABLE = new BlockSmithingTable();
+        event.getRegistry().register(SMITHING_TABLE);
+
         COPPER_TORCH = new BlockCopperTorch("copper_torch");
         event.getRegistry().register(COPPER_TORCH);
         LIGHTNING_ROD = new BlockLightningRod();
@@ -840,6 +852,8 @@ public class ModBlocks {
     @SubscribeEvent
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new ItemBlock(COPPER_TORCH).setRegistryName(COPPER_TORCH.getRegistryName()));
+
+        registerItem(SMITHING_TABLE, event);
 
         registerItem(AMETHYST_CLUSTER, event);
         registerItem(BUDDING_AMETHYST, event);
