@@ -3,11 +3,10 @@ package de.julianweinelt.ubm.entities;
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.entities.custom.EntityCustomWolf;
 import de.julianweinelt.ubm.entities.models.*;
-import de.julianweinelt.ubm.entities.render.RenderAxolotl;
-import de.julianweinelt.ubm.entities.render.RenderBambooRaft;
-import de.julianweinelt.ubm.entities.render.RenderCustomWolf;
-import de.julianweinelt.ubm.entities.render.RenderFox;
+import de.julianweinelt.ubm.entities.render.*;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
@@ -18,12 +17,25 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import java.util.Random;
 
 import static de.julianweinelt.ubm.UBM.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID)
 public class ModEntities {
+    private static final Biome[] FISH_BIOMES = {
+            Biomes.FROZEN_RIVER,
+            Biomes.FROZEN_OCEAN,
+            Biomes.RIVER,
+            Biomes.DEEP_OCEAN,
+            Biomes.OCEAN
+            //TODO: Lukewarm Ocean, Warm Ocean, Deep Lukewarm Ocean, Cold / Deep cold ocean
+    };
+
+
     public static void init() {
         EntityRegistry.registerModEntity(
                 new ResourceLocation(MODID, "bee"),
@@ -121,7 +133,20 @@ public class ModEntities {
                 UBM.instance,
                 64, 1, true
         );
+        EntityRegistry.registerModEntity(
+                new ResourceLocation("ubm", "glow_squid"),
+                EntityGlowSquid.class,
+                "GlowSquid",
+                13,
+                UBM.instance,
+                64, 1, true
+        );
 
+    }
+
+    public static void addSpawns() {
+        EntityRegistry.addSpawn(EntitySalmon.class, 10, 1, 5, EnumCreatureType.WATER_CREATURE, FISH_BIOMES);
+        EntityRegistry.addSpawn(EntityCod.class, 10, 1, 5, EnumCreatureType.WATER_CREATURE, FISH_BIOMES);
     }
 
     public static void registerRenders() {
@@ -167,6 +192,11 @@ public class ModEntities {
                     protected ResourceLocation getEntityTexture(@Nullable EntityGoat entity) {
                         return new ResourceLocation(MODID, "textures/entity/goat.png");
                     }
+                    @Override
+                    protected void preRenderCallback(@Nonnull EntityGoat entityLivingBaseIn, float partialTickTime) {
+                        float scale = entityLivingBaseIn.isChild() ? 0.5F : 1.0F;
+                        GlStateManager.scale(scale, scale, scale);
+                    }
                 }
         );
         RenderingRegistry.registerEntityRenderingHandler(EntityWarden.class, renderManager ->
@@ -191,6 +221,16 @@ public class ModEntities {
                     protected ResourceLocation getEntityTexture(@Nullable EntitySalmon entity) {
                         return new ResourceLocation(MODID, "textures/entity/fish/salmon.png");
                     }
+
+                    @Override
+                    protected void preRenderCallback(@Nonnull EntitySalmon entityLivingBaseIn, float partialTickTime) {
+                        Random random = entityLivingBaseIn.getRNG();
+                        float min = 0.3F;
+                        float max = 1.2F;
+
+                        float scale = random.nextFloat() * (max - min) + min;
+                        //GlStateManager.scale(scale, scale, scale);
+                    }
                 }
         );
         RenderingRegistry.registerEntityRenderingHandler(EntityCod.class, renderManager ->
@@ -205,6 +245,7 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntityFox.class, RenderFox::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityCustomWolf.class, RenderCustomWolf::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityAxolotl.class, RenderAxolotl::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityGlowSquid.class, RenderGlowSquid::new);
     }
 
     @SubscribeEvent
