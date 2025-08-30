@@ -44,6 +44,8 @@ public class ModItems {
     public static Item COPPER_SHOVEL;
     public static Item COPPER_HOE;
 
+    public static Item WOLF_ARMOR;
+
     public static Item WARPED_FUNGUS_ON_A_STICK;
 
     public static Item GLOW_BERRIES;
@@ -104,6 +106,7 @@ public class ModItems {
     public static Item SPAWN_EGG_FOX;
     public static Item SPAWN_EGG_PIGLIN;
     public static Item SPAWN_EGG_ZOGLIN;
+    public static Item SPAWN_EGG_GLOW_SQUID;
 
 
     public static Item CANDLE;
@@ -152,6 +155,14 @@ public class ModItems {
                 .setRegistryName("netherite_ingot")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         event.getRegistry().register(NETHERITE_INGOT);
+        WOLF_ARMOR = new Item()
+                .setUnlocalizedName("wolf_armor")
+                .setRegistryName("wolf_armor")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setMaxDamage(200)
+                .setMaxStackSize(1)
+        ;
+        event.getRegistry().register(WOLF_ARMOR);
         NETHERITE_SWORD = new NetheriteSword(ModMaterials.NETHERITE);
         event.getRegistry().register(NETHERITE_SWORD);
         NETHERITE_AXE = new NetheriteAxe(Item.ToolMaterial.DIAMOND);
@@ -367,6 +378,8 @@ public class ModItems {
         event.getRegistry().register(HONEY_BOTTLE);
         event.getRegistry().register(COPPER_NUGGET);
 
+        event.getRegistry().register(WOLF_ARMOR);
+
 
         // Spawn Eggs
         SPAWN_EGG_FROG = new ItemSpawnEggCustom(EntityFrog.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "frog");
@@ -395,6 +408,7 @@ public class ModItems {
         SPAWN_EGG_SALMON = new ItemSpawnEggCustom(EntitySalmon.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "salmon");
         SPAWN_EGG_PUFFERFISH = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "pufferfish");//TODO: Add Entity
         SPAWN_EGG_TROPICAL_FISH = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "tropical_fish");//TODO: Add Entity
+        SPAWN_EGG_GLOW_SQUID = new ItemSpawnEggCustom(EntityGlowSquid.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "glow_squid");
 
 
         event.getRegistry().register(SPAWN_EGG_FROG);
@@ -424,6 +438,7 @@ public class ModItems {
         event.getRegistry().register(SPAWN_EGG_SALMON);
         event.getRegistry().register(SPAWN_EGG_PUFFERFISH);
         event.getRegistry().register(SPAWN_EGG_TROPICAL_FISH);
+        event.getRegistry().register(SPAWN_EGG_GLOW_SQUID);
 
         AMETHYST_SHARD = new Item()
                 .setUnlocalizedName("amethyst_shard")
@@ -543,6 +558,9 @@ public class ModItems {
         registerItemModel(SPAWN_EGG_SALMON);
         registerItemModel(SPAWN_EGG_PUFFERFISH);
         registerItemModel(SPAWN_EGG_TROPICAL_FISH);
+        registerItemModel(SPAWN_EGG_GLOW_SQUID);
+
+        registerItemModel(WOLF_ARMOR);
     }
 
     @SideOnly(Side.CLIENT)
