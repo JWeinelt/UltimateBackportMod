@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "berries=false": {
+      "model": "ubm:glow_berries_plant"
+    },
+    "berries=true": {
+      "model": "ubm:glow_berries_plant_lit"
+    }
+  }
+}

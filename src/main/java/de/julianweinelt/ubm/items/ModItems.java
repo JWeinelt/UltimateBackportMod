@@ -46,6 +46,8 @@ public class ModItems {
 
     public static Item WARPED_FUNGUS_ON_A_STICK;
 
+    public static Item GLOW_BERRIES;
+
 
     public static Item SNOUT_BANNER_PATTERN;
 
@@ -330,6 +332,7 @@ public class ModItems {
 
 
         SWEET_BERRY = new ItemSweetBerry();
+        GLOW_BERRIES = new ItemGlowBerry();
         BAMBOO_RAFT = new ItemBambooRaft();
 
         event.getRegistry().register(ANGLER_POTTERY_SHERD);
@@ -355,6 +358,7 @@ public class ModItems {
         event.getRegistry().register(POWDER_SNOW_BUCKET);
 
         event.getRegistry().register(SWEET_BERRY);
+        event.getRegistry().register(GLOW_BERRIES);
         event.getRegistry().register(BAMBOO_RAFT);
 
         event.getRegistry().register(CANDLE);
@@ -387,7 +391,7 @@ public class ModItems {
         SPAWN_EGG_PHANTOM = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "phantom");//TODO: Add Entity
         SPAWN_EGG_AXOLOTL = new ItemSpawnEggCustom(EntityAxolotl.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "axolotl");
         SPAWN_EGG_ZOGLIN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "zoglin");//TODO: Add Entity
-        SPAWN_EGG_COD = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "cod");//TODO: Add Entity
+        SPAWN_EGG_COD = new ItemSpawnEggCustom(EntityCod.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "cod");//TODO: Add Entity
         SPAWN_EGG_SALMON = new ItemSpawnEggCustom(EntitySalmon.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "salmon");
         SPAWN_EGG_PUFFERFISH = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "pufferfish");//TODO: Add Entity
         SPAWN_EGG_TROPICAL_FISH = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "tropical_fish");//TODO: Add Entity
@@ -480,6 +484,7 @@ public class ModItems {
 
         registerItemModel(POWDER_SNOW_BUCKET);
         registerItemModel(SWEET_BERRY);
+        registerItemModel(GLOW_BERRIES);
 
         registerItemModel(BAMBOO_RAFT);
 
