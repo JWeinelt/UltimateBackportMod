@@ -14,8 +14,9 @@ import java.util.List;
 public class ModBiomes {
     private static final List<BiomeData> BIOMES = new ArrayList<>();
 
-    public static final Biome NETHER_FOREST = register("nether_forest", new BiomeNetherForest(), BiomeManager.BiomeType.DESERT, 10, true);
+    public static final Biome NETHER_FOREST = register("nether_forest", new BiomeNetherForest(), BiomeManager.BiomeType.DESERT, 10, false);
     public static final Biome SNOWY_SLOPES = register("snowy_slopes", new BiomeSnowySlopes(), BiomeManager.BiomeType.COOL, 10, true);
+    public static final Biome GROVE = register("grove", new BiomeGrove(), BiomeManager.BiomeType.COOL, 10, true);
 
     private static Biome register(String name, Biome biome, BiomeManager.BiomeType type, int weight, boolean spawn) {
         BiomeData data = new BiomeData(name, biome, type, weight, spawn);
