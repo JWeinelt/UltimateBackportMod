@@ -19,6 +19,7 @@ public class RenderCustomWolf extends RenderWolf {
 
     public RenderCustomWolf(RenderManager renderManagerIn) {
         super(renderManagerIn);
+        this.addLayer(new LayerWolfArmor(this));
     }
 
     @Override
