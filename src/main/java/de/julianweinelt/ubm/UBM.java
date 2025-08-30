@@ -3,6 +3,7 @@ package de.julianweinelt.ubm;
 
 import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.blocks.interactable.smithing.GuiHandler;
+import de.julianweinelt.ubm.blocks.interactable.smithing.TileEntitySmithingTable;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.misc.ClientEventHandler;
 import de.julianweinelt.ubm.misc.CommonProxy;
@@ -10,6 +11,7 @@ import de.julianweinelt.ubm.misc.ModRecipes;
 import de.julianweinelt.ubm.qol.SwimClientHandler;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
 import de.julianweinelt.ubm.worldgen.StructureWorldGen;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -47,6 +49,8 @@ public class UBM {
         GameRegistry.registerWorldGenerator(new PowderSnowWorldGen(), 0);
         GameRegistry.registerWorldGenerator(new StructureWorldGen(), 0);
         MinecraftForge.EVENT_BUS.register(new SwimClientHandler());
+
+        GameRegistry.registerTileEntity(TileEntitySmithingTable.class, new ResourceLocation("ubm", "smithing_table"));
     }
 
     @Mod.EventHandler
