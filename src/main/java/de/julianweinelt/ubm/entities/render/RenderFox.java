@@ -11,15 +11,13 @@ import javax.annotation.Nonnull;
 
 public class RenderFox extends RenderLiving<EntityFox> {
 
-    private static final ResourceLocation FOX_TEXTURE = new ResourceLocation("ubm:textures/entity/fox/fox.png");
-
     public RenderFox(RenderManager renderManager) {
         super(renderManager, new ModelFox(), 0.5F);
     }
 
     @Override
     protected ResourceLocation getEntityTexture(@Nonnull EntityFox entity) {
-        return FOX_TEXTURE;
+        return entity.getTexture();
     }
 
     @Override
