@@ -2,6 +2,7 @@ package de.julianweinelt.ubm;
 
 
 import de.julianweinelt.ubm.blocks.ModBlocks;
+import de.julianweinelt.ubm.blocks.api.LightningRodHandler;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.misc.ClientEventHandler;
 import de.julianweinelt.ubm.misc.ModRecipes;
