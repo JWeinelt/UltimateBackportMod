@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "ubm:items/spawn_egg/piglin_spawn_egg"
+  }
+}

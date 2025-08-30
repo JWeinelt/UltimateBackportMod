@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "berries=false,end=false": { "model": "ubm:glow_berries_plant" },
+    "berries=true,end=false":  { "model": "ubm:glow_berries_plant_lit" },
+    "berries=false,end=true":  { "model": "ubm:glow_berries" },
+    "berries=true,end=true":   { "model": "ubm:glow_berries_lit" }
+  }
+}

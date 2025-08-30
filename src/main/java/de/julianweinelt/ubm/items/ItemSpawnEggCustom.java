@@ -14,6 +14,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 public class ItemSpawnEggCustom extends Item {
     private final Class<? extends Entity> entityClass;
     private final String entityName;
@@ -25,13 +28,15 @@ public class ItemSpawnEggCustom extends Item {
         setRegistryName(entityName + "_spawn_egg");
     }
 
+    @Nonnull
     @Override
-    public String getItemStackDisplayName(ItemStack stack) {
+    public String getItemStackDisplayName(@Nullable ItemStack stack) {
         return I18n.format("egg." + entityName + ".name");
     }
 
+    @Nonnull
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
+    public ActionResult<ItemStack> onItemRightClick(@Nonnull World worldIn, EntityPlayer playerIn, @Nullable EnumHand handIn) {
         ItemStack stack = playerIn.getHeldItem(handIn);
         RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn, true);
 

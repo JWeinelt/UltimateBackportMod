@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "side=north": { "model": "ubm:glow_lichen_north" },
+    "side=south": { "model": "ubm:glow_lichen_south" },
+    "side=east":  { "model": "ubm:glow_lichen_east" },
+    "side=west":  { "model": "ubm:glow_lichen_west" },
+    "side=up":    { "model": "ubm:glow_lichen_up" },
+    "side=down":  { "model": "ubm:glow_lichen_down" }
+  }
+}

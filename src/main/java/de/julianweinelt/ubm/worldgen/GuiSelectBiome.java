@@ -18,7 +18,7 @@ public class GuiSelectBiome extends GuiScreen {
     @Override
     public void initGui() {
         this.slot = new GuiSlotBiomes(this.mc, this);
-        this.buttonList.add(new GuiButton(0, this.width / 2 - 100, this.height - 30, "Zurück"));
+        this.buttonList.add(new GuiButton(0, this.width / 2 - 100, this.height - 30, "Done"));
     }
 
     @Override
@@ -33,7 +33,7 @@ public class GuiSelectBiome extends GuiScreen {
         this.drawDefaultBackground();
         this.slot.drawScreen(mouseX, mouseY, partialTicks);
         super.drawScreen(mouseX, mouseY, partialTicks);
-        this.drawCenteredString(this.fontRenderer, "Wähle ein Biome", this.width / 2, 15, 0xFFFFFF);
+        this.drawCenteredString(this.fontRenderer, "Select a Biome", this.width / 2, 15, 0xFFFFFF);
     }
 
     public void setBiome(ResourceLocation biome) {
@@ -52,6 +52,4 @@ public class GuiSelectBiome extends GuiScreen {
         super.mouseClicked(mouseX, mouseY, mouseButton);
         this.slot.handleMouseInput();
     }
-
-
 }

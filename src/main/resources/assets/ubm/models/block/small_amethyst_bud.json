@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "ubm:blocks/small_amethyst_bud"
+  }
+}

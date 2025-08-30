@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "ubm:amethyst_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "ubm:amethyst_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "ubm:amethyst_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "ubm:amethyst_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "ubm:amethyst_cluster"
+    },
+    "facing=west": {
+      "model": "ubm:amethyst_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}
