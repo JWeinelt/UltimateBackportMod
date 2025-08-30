@@ -8,14 +8,21 @@ import de.julianweinelt.ubm.entities.render.RenderBambooRaft;
 import de.julianweinelt.ubm.entities.render.RenderCustomWolf;
 import de.julianweinelt.ubm.entities.render.RenderFox;
 import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.Biome;
+import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.Event;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 import javax.annotation.Nullable;
 
 import static de.julianweinelt.ubm.UBM.MODID;
 
+@Mod.EventBusSubscriber(modid = MODID)
 public class ModEntities {
     public static void init() {
         EntityRegistry.registerModEntity(
@@ -106,6 +113,14 @@ public class ModEntities {
                 UBM.instance,
                 64, 1, true
         );
+        EntityRegistry.registerModEntity(
+                new ResourceLocation("ubm", "cod"),
+                EntityCod.class,
+                "Cod",
+                12,
+                UBM.instance,
+                64, 1, true
+        );
 
     }
 
@@ -114,6 +129,7 @@ public class ModEntities {
                 new RenderLiving<EntityBee>(renderManager, new ModelBee(), 0.5F) {
                     @Override
                     protected ResourceLocation getEntityTexture(@Nullable EntityBee entity) {
+                        if (entity == null) return new ResourceLocation(MODID, "textures/entity/bee/bee.png");
                         if (entity.getBeeState().equals(EntityBee.BeeState.RETURN_TO_NEST)) return new ResourceLocation(MODID, "textures/entity/bee/bee_nectar.png");
                         if (entity.isAggressive()) return new ResourceLocation(MODID, "textures/entity/bee/bee_angry.png");
                         return new ResourceLocation(MODID, "textures/entity/bee/bee.png");
@@ -125,6 +141,7 @@ public class ModEntities {
                 new RenderLiving<EntityFrog>(renderManager, new ModelFrog(), 0.5F) {
                     @Override
                     protected ResourceLocation getEntityTexture(@Nullable EntityFrog entity) {
+                        if (entity == null) return new ResourceLocation(MODID, "textures/entity/frog/temperate_frog.png");
                         switch (entity.getFrogType()) {
                             case COOL:
                                 return new ResourceLocation(MODID, "textures/entity/frog/cold_frog.png");
@@ -176,9 +193,28 @@ public class ModEntities {
                     }
                 }
         );
+        RenderingRegistry.registerEntityRenderingHandler(EntityCod.class, renderManager ->
+                new RenderLiving<EntityCod>(renderManager, new ModelCod(), 0.5F) {
+                    @Override
+                    protected ResourceLocation getEntityTexture(@Nullable EntityCod entity) {
+                        return new ResourceLocation(MODID, "textures/entity/fish/cod.png");
+                    }
+                }
+        );
         RenderingRegistry.registerEntityRenderingHandler(EntityBambooRaft.class, RenderBambooRaft::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityFox.class, RenderFox::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityCustomWolf.class, RenderCustomWolf::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityAxolotl.class, RenderAxolotl::new);
+    }
+
+    @SubscribeEvent
+    public void onMobSpawn(LivingSpawnEvent.CheckSpawn event) {
+        if (event.getEntity() instanceof EntitySalmon) {
+            UBM.getLogger().info("Tried to spawn salmon");
+            Biome biome = event.getWorld().getBiome(event.getEntity().getPosition());
+            if (biome != Biomes.OCEAN && biome != Biomes.DEEP_OCEAN && biome != Biomes.RIVER) {
+                event.setResult(Event.Result.DENY);
+            }
+        }
     }
 }
