@@ -2,13 +2,16 @@ package de.julianweinelt.ubm;
 
 
 import de.julianweinelt.ubm.blocks.ModBlocks;
-import de.julianweinelt.ubm.blocks.api.LightningRodHandler;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.misc.ClientEventHandler;
+import de.julianweinelt.ubm.misc.CommonProxy;
 import de.julianweinelt.ubm.misc.ModRecipes;
+import de.julianweinelt.ubm.qol.SwimClientHandler;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
 import de.julianweinelt.ubm.worldgen.StructureWorldGen;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -24,6 +27,10 @@ public class UBM {
     private static Logger logger;
     public static UBM instance;
 
+    @SidedProxy(clientSide = "de.julianweinelt.ubm.misc.ClientProxy",
+            serverSide = "de.julianweinelt.ubm.misc.CommonProxy")
+    public static CommonProxy proxy;
+
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -33,13 +40,16 @@ public class UBM {
 
         ModEntities.init();
         ModEntities.registerRenders();
+        ModEntities.addSpawns();
 
         GameRegistry.registerWorldGenerator(new PowderSnowWorldGen(), 0);
         GameRegistry.registerWorldGenerator(new StructureWorldGen(), 0);
+        MinecraftForge.EVENT_BUS.register(new SwimClientHandler());
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        proxy.init(event);
         ModBlocks.WAXED_VARIANTS.put(ModBlocks.COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_COPPER_BLOCK.getRegistryName());
         ModBlocks.WAXED_VARIANTS.put(ModBlocks.EXPOSED_COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_EXPOSED_COPPER_BLOCK.getRegistryName());
         ModBlocks.WAXED_VARIANTS.put(ModBlocks.WEATHERED_COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_WEATHERED_COPPER_BLOCK.getRegistryName());
