@@ -7,9 +7,13 @@ import de.julianweinelt.ubm.entities.EntitySalmon;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.misc.ModMaterials;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -20,6 +24,25 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod.EventBusSubscriber(modid = UBM.MODID)
 public class ModItems {
+    public static Item TRIM_NETHERITE_UPGRADE;
+    public static Item TRIM_SENTRY;
+    public static Item TRIM_DUNE;
+    public static Item TRIM_WARD;
+    public static Item TRIM_EYE;
+    public static Item TRIM_VEX;
+    public static Item TRIM_WAYFINDER;
+    public static Item TRIM_SILENCE;
+    public static Item TRIM_SPIRE;
+    public static Item TRIM_WILD;
+    public static Item TRIM_RAISER;
+    public static Item TRIM_TIDE;
+    public static Item TRIM_FLOW;
+    public static Item TRIM_COAST;
+    public static Item TRIM_SHAPER;
+    public static Item TRIM_SNOUT;
+    public static Item TRIM_BOLT;
+    public static Item TRIM_HOST;
+    public static Item TRIM_RIB;
 
     public static Item NETHERITE_SCRAP;
     public static Item NETHERITE_INGOT;
@@ -45,6 +68,12 @@ public class ModItems {
     public static Item COPPER_HOE;
 
     public static Item WOLF_ARMOR;
+
+    public static Item TRIDENT;
+    public static Item CROSSBOW;
+
+    public static Item TADPOLE_BUCKET;
+    public static Item AXOLOTL_BUCKET;
 
     public static Item WARPED_FUNGUS_ON_A_STICK;
 
@@ -107,6 +136,8 @@ public class ModItems {
     public static Item SPAWN_EGG_PIGLIN;
     public static Item SPAWN_EGG_ZOGLIN;
     public static Item SPAWN_EGG_GLOW_SQUID;
+    public static Item SPAWN_EGG_PILLAGER;
+    public static Item SPAWN_EGG_RAVAGER;
 
 
     public static Item CANDLE;
@@ -142,9 +173,36 @@ public class ModItems {
             "orange", "white"
     };
 
+    private static final String[] TRIMS = {
+            "SENTRY", "DUNE", "WARD", "EYE", "VEX", "WAYFINDER", "SILENCE",
+            "SPIRE", "WILD", "RAISER", "TIDE", "FLOW", "COAST", "SHAPER",
+            "SNOUT", "BOLT", "HOST", "RIB"
+    };
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
+        //Armor trims
+        TRIM_NETHERITE_UPGRADE = new ItemArmorTrim()
+                .setRegistryName("netherite_upgrade_template")
+                .setUnlocalizedName("netherite_upgrade_template")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_WILD);
+        event.getRegistry().register(TRIM_NETHERITE_UPGRADE);
+
+        for (String s : TRIMS) {
+            Item item = new ItemArmorTrim()
+                    .setRegistryName(s.toLowerCase() + "_armor_trim")
+                    .setUnlocalizedName(s.toLowerCase() + "_armor_trim")
+                    .setCreativeTab(ModCreativeTabs.UBM_TAB_WILD);
+            event.getRegistry().register(item);
+
+            try {
+                ModItems.class.getField("TRIM_" + s).set(null, item);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+
         NETHERITE_SCRAP = new Item()
                 .setUnlocalizedName("netherite_scrap")
                 .setRegistryName("netherite_scrap")
@@ -160,8 +218,7 @@ public class ModItems {
                 .setRegistryName("wolf_armor")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
                 .setMaxDamage(200)
-                .setMaxStackSize(1)
-        ;
+                .setMaxStackSize(1);
         event.getRegistry().register(WOLF_ARMOR);
         NETHERITE_SWORD = new NetheriteSword(ModMaterials.NETHERITE);
         event.getRegistry().register(NETHERITE_SWORD);
@@ -402,12 +459,13 @@ public class ModItems {
         SPAWN_EGG_PHANTOM = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "phantom");//TODO: Add Entity
         SPAWN_EGG_AXOLOTL = new ItemSpawnEggCustom(EntityAxolotl.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "axolotl");
         SPAWN_EGG_ZOGLIN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "zoglin");//TODO: Add Entity
-        SPAWN_EGG_COD = new ItemSpawnEggCustom(EntityCod.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "cod");//TODO: Add Entity
+        SPAWN_EGG_COD = new ItemSpawnEggCustom(EntityCod.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "cod");
         SPAWN_EGG_SALMON = new ItemSpawnEggCustom(EntitySalmon.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "salmon");
         SPAWN_EGG_PUFFERFISH = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "pufferfish");//TODO: Add Entity
-        SPAWN_EGG_TROPICAL_FISH = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "tropical_fish");//TODO: Add Entity
+        SPAWN_EGG_TROPICAL_FISH = new ItemSpawnEggCustom(EntityTropicalFish.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "tropical_fish");
         SPAWN_EGG_GLOW_SQUID = new ItemSpawnEggCustom(EntityGlowSquid.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "glow_squid");
-
+        SPAWN_EGG_PILLAGER = new ItemSpawnEggCustom(EntityPillager.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "pillager");
+        SPAWN_EGG_RAVAGER = new ItemSpawnEggCustom(EntityGlowSquid.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "ravager");//TODO: Add Entity
 
         event.getRegistry().register(SPAWN_EGG_FROG);
         event.getRegistry().register(SPAWN_EGG_TURTLE);
@@ -438,11 +496,31 @@ public class ModItems {
         event.getRegistry().register(SPAWN_EGG_TROPICAL_FISH);
         event.getRegistry().register(SPAWN_EGG_GLOW_SQUID);
 
+        event.getRegistry().register(SPAWN_EGG_PILLAGER);
+        event.getRegistry().register(SPAWN_EGG_RAVAGER);
+
         AMETHYST_SHARD = new Item()
                 .setUnlocalizedName("amethyst_shard")
                 .setRegistryName("amethyst_shard")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
         event.getRegistry().register(AMETHYST_SHARD);
+
+        TADPOLE_BUCKET = new Item()
+                .setUnlocalizedName("bucket_tadpole")
+                .setRegistryName("bucket_tadpole")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(TADPOLE_BUCKET);
+
+        TRIDENT = new Item()
+                .setUnlocalizedName("trident")
+                .setRegistryName("trident")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_AQUATIC);
+        event.getRegistry().register(TRIDENT);
+
+        CROSSBOW = new ItemCrossbow()
+                .setUnlocalizedName("crossbow")
+                .setRegistryName("crossbow");
+        event.getRegistry().register(CROSSBOW);
         RAW_GOLD = new Item()
                 .setUnlocalizedName("raw_gold")
                 .setRegistryName("raw_gold")
@@ -530,6 +608,7 @@ public class ModItems {
         registerItemModel(HONEYCOMB);
         registerItemModel(HONEY_BOTTLE);
         registerItemModel(AMETHYST_SHARD);
+        registerItemModel(TADPOLE_BUCKET);
 
         registerItemModel(RAW_IRON);
         registerItemModel(RAW_GOLD);
@@ -557,8 +636,21 @@ public class ModItems {
         registerItemModel(SPAWN_EGG_PUFFERFISH);
         registerItemModel(SPAWN_EGG_TROPICAL_FISH);
         registerItemModel(SPAWN_EGG_GLOW_SQUID);
+        registerItemModel(SPAWN_EGG_PILLAGER);
+        registerItemModel(SPAWN_EGG_RAVAGER);
 
         registerItemModel(WOLF_ARMOR);
+        registerItemModel(TRIDENT);
+        registerItemModel(CROSSBOW);
+        registerItemModel(TRIM_NETHERITE_UPGRADE);
+
+        for (String s : TRIMS) {
+            try {
+                registerItemModel((Item) ModItems.class.getField("TRIM_" + s).get(null));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @SideOnly(Side.CLIENT)
@@ -570,5 +662,49 @@ public class ModItems {
     public static void registerItemModel(Item parItem, int parMetaData) {
         ModelLoader.setCustomModelResourceLocation(parItem, parMetaData,
                 new ModelResourceLocation(parItem.getRegistryName(), "inventory"));
+    }
+
+
+    public static ItemStack getOminousBanner() {
+        ItemStack banner = new ItemStack(Items.BANNER, 1, 15);
+
+        NBTTagCompound blockEntityTag = new NBTTagCompound();
+        NBTTagList patterns = new NBTTagList();
+
+        NBTTagCompound pattern1 = new NBTTagCompound();
+        pattern1.setInteger("Color", 6);
+        pattern1.setString("Pattern", "mr");
+        patterns.appendTag(pattern1);
+
+        NBTTagCompound pattern2 = new NBTTagCompound();
+        pattern2.setInteger("Color", 7);
+        pattern2.setString("Pattern", "bs");
+        patterns.appendTag(pattern2);
+
+        NBTTagCompound pattern3 = new NBTTagCompound();
+        pattern3.setInteger("Color", 0);
+        pattern3.setString("Pattern", "cs");
+        patterns.appendTag(pattern3);
+
+        NBTTagCompound pattern4 = new NBTTagCompound();
+        pattern4.setInteger("Color", 0);
+        pattern4.setString("Pattern", "ms");
+        patterns.appendTag(pattern4);
+
+        NBTTagCompound pattern5 = new NBTTagCompound();
+        pattern5.setInteger("Color", 7);
+        pattern5.setString("Pattern", "hh");
+        patterns.appendTag(pattern5);
+
+        NBTTagCompound pattern6 = new NBTTagCompound();
+        pattern6.setInteger("Color", 0);
+        pattern6.setString("Pattern", "bo");
+        patterns.appendTag(pattern6);
+
+        blockEntityTag.setTag("Patterns", patterns);
+
+        banner.setTagInfo("BlockEntityTag", blockEntityTag);
+
+        return banner;
     }
 }
