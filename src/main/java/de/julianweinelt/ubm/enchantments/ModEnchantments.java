@@ -2,6 +2,7 @@ package de.julianweinelt.ubm.enchantments;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -16,11 +17,13 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ModEnchantments {
 
     public static final Enchantment SWIFT_SNEAK = new EnchantmentSwiftSneak();
+    public static final Enchantment QUICK_CHARGE = new EnchantmentQuickCharge();
 
     @SubscribeEvent
     public static void registerEnchantments(RegistryEvent.Register<Enchantment> event) {
         event.getRegistry().registerAll(
-                SWIFT_SNEAK
+                SWIFT_SNEAK,
+                QUICK_CHARGE
         );
     }
 
