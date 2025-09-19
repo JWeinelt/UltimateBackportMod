@@ -1,5 +1,9 @@
 package de.julianweinelt.ubm.worldgen;
 
+import de.julianweinelt.ubm.worldgen.biome.BiomeGrove;
+import de.julianweinelt.ubm.worldgen.biome.BiomeNetherForest;
+import de.julianweinelt.ubm.worldgen.biome.BiomeSnowySlopes;
+import de.julianweinelt.ubm.worldgen.biome.BiomeWarmOcean;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.event.RegistryEvent;
@@ -17,6 +21,7 @@ public class ModBiomes {
     public static final Biome NETHER_FOREST = register("nether_forest", new BiomeNetherForest(), BiomeManager.BiomeType.DESERT, 10, false);
     public static final Biome SNOWY_SLOPES = register("snowy_slopes", new BiomeSnowySlopes(), BiomeManager.BiomeType.COOL, 10, true);
     public static final Biome GROVE = register("grove", new BiomeGrove(), BiomeManager.BiomeType.COOL, 10, true);
+    public static final Biome WARM_OCEAN = register("warm_ocean", new BiomeWarmOcean(), BiomeManager.BiomeType.WARM, 10, true);
 
     private static Biome register(String name, Biome biome, BiomeManager.BiomeType type, int weight, boolean spawn) {
         BiomeData data = new BiomeData(name, biome, type, weight, spawn);
