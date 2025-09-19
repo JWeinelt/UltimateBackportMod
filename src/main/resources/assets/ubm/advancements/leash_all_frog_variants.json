@@ -1,0 +1,21 @@
+{
+  "parent": "ubm:tadpole_in_a_bucket",
+  "display": {
+    "icon": { "item": "minecraft:lead" },
+    "title": {
+      "translate": "advancement.ubm.leash_all_frog_variants.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.leash_all_frog_variants.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}
