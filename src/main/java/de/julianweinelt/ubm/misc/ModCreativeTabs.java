@@ -12,6 +12,12 @@ public class ModCreativeTabs {
             return new ItemStack(ModItems.SPAWN_EGG_FROG);
         }
     };
+    public static final CreativeTabs UBM_TAB_AQUATIC = new CreativeTabs("ubm_tab_aquatic") {
+        @Override
+        public ItemStack getTabIconItem() {
+            return new ItemStack(ModItems.TRIDENT);
+        }
+    };
     public static final CreativeTabs UBM_TAB_PILLAGE = new CreativeTabs("ubm_tab_pillage") {
         @Override
         public ItemStack getTabIconItem() {
