@@ -2,10 +2,16 @@ package de.julianweinelt.ubm.entities;
 
 import de.julianweinelt.ubm.entities.ai.EntityAISwimAround;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityWaterMob;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
 
 public class EntitySalmon extends EntityWaterMob {
 
@@ -48,7 +54,11 @@ public class EntitySalmon extends EntityWaterMob {
         }
     }
 
-
+    @Nullable
+    @Override
+    protected Item getDropItem() {
+        return Items.FISH;
+    }
 
     /*
     @Nullable
