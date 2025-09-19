@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:adventure/sleep_in_bed",
+  "display": {
+    "icon": { "item": "minecraft:leather_boots" },
+    "title": {
+      "translate": "advancement.ubm.walk_on_powder_snow_with_leather_boots.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.walk_on_powder_snow_with_leather_boots.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

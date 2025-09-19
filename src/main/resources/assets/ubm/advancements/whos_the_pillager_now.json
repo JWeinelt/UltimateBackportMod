@@ -1,0 +1,21 @@
+{
+  "parent": "ubm:ol_betsy",
+  "display": {
+    "icon": { "item": "ubm:crossbow" },
+    "title": {
+      "translate": "advancement.ubm.whos_the_pillager_now.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.whos_the_pillager_now.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

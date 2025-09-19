@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:adventure/sleep_in_bed",
+  "display": {
+    "icon": { "item": "minecraft:jukebox" },
+    "title": {
+      "translate": "advancement.ubm.play_jukebox_in_meadows.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.play_jukebox_in_meadows.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

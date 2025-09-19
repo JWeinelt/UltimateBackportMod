@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "display": {
+    "icon": { "item": "minecraft:fish" },
+    "title": {
+      "translate": "advancement.ubm.tactical_fishing.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.tactical_fishing.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

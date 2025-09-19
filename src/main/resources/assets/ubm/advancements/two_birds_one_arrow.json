@@ -1,0 +1,21 @@
+{
+  "parent": "ubm:ol_betsy",
+  "display": {
+    "icon": { "item": "ubm:crossbow" },
+    "title": {
+      "translate": "advancement.ubm.two_birds_one_arrow.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.two_birds_one_arrow.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}
