@@ -77,6 +77,7 @@ public class EntityCustomWolf extends EntityWolf {
         ItemStack heldItem = player.getHeldItem(hand);
 
         if (!heldItem.isEmpty() && heldItem.getItem() == ModItems.WOLF_ARMOR) {
+            if (!this.isTamed()) return false;
             if (!this.hasArmor()) {
                 this.setArmorItem(heldItem.copy());
                 this.armorItem.setCount(1);
