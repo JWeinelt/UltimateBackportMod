@@ -5,6 +5,7 @@ import de.julianweinelt.pathfinder.command.Argument;
 import de.julianweinelt.pathfinder.command.Command;
 import de.julianweinelt.ubm.UBM;
 import net.minecraft.client.gui.GuiChat;
+import net.minecraft.entity.player.EntityPlayer;
 import org.lwjgl.input.Keyboard;
 
 import java.io.IOException;
@@ -94,25 +95,37 @@ public class GuiChatWithSuggestions extends GuiChat {
 
     private void updateSuggestions() {
         String text = this.inputField.getText();
-        if (text.startsWith("/")) {
-            String[] parts = text.substring(1).split(" ");
-            String base = parts[0];
-            UBM.getLogger().info(base);
-            String currentArg = (parts.length != 0) ? parts[parts.length - 1] : "";
-
-            List<String> newSuggestions;
-            if (parts.length == 1) newSuggestions = getCommands(base);
-            else newSuggestions = getLastArgSuggestions(base, currentArg, inputField.getText());
-
-            if (!newSuggestions.equals(this.currentSuggestions)) {
-                this.currentSuggestions = new ArrayList<>(newSuggestions);
-                this.suggestionIndex = currentSuggestions.size() - 1;
-            }
-        } else {
+        if (!text.startsWith("/")) {
             this.currentSuggestions = new ArrayList<>();
             this.suggestionIndex = 0;
+            return;
+        }
+
+        String[] parts = text.substring(1).split(" ");
+        String base = parts[0];
+
+        boolean newArg = text.endsWith(" ");
+
+        String currentArg;
+        if (newArg && parts.length > 1) {
+            currentArg = "";
+        } else {
+            currentArg = parts[parts.length - 1];
+        }
+
+        List<String> newSuggestions;
+        if (parts.length == 1 && !newArg) {
+            newSuggestions =  getCommands(base);
+        } else {
+            newSuggestions = getLastArgSuggestions(base, currentArg, text);
+        }
+
+        if (!newSuggestions.equals(this.currentSuggestions)) {
+            this.currentSuggestions = new ArrayList<>(newSuggestions);
+            this.suggestionIndex = currentSuggestions.size() - 1;
         }
     }
+
 
     private List<String> getCommands() {
         List<String> commands = new ArrayList<>();
@@ -140,41 +153,59 @@ public class GuiChatWithSuggestions extends GuiChat {
         }
 
         String[] args = fullText.substring(1).split(" ");
-        if (args.length == 0) return new ArrayList<>();
-
-        Argument current = null;
         List<Argument> availableArgs = cmd.getArgs();
+        Argument current = null;
+
 
         for (int i = 1; i < args.length; i++) {
             String argInput = args[i];
             Argument match = null;
 
             for (Argument candidate : availableArgs) {
-                if (candidate.matches(argInput)) {
+                if (candidate == null) continue;
+
+                if (argInput.isEmpty() || candidate.matches(argInput)) {
                     match = candidate;
                     break;
                 }
             }
 
-            if (match == null) {
-                break;
-            }
+            if (match == null) break;
 
             current = match;
             availableArgs = current.getArgs();
         }
 
         List<String> suggestions = new ArrayList<>();
-        for (Argument candidate : availableArgs) {
-            for (String suggestion : candidate.getSuggestions()) {
-                if (suggestion.toLowerCase().startsWith(input.toLowerCase())) {
-                    suggestions.add(suggestion);
+
+        if (current != null) {
+            if (current.getSuggestions() != null) {
+                for (String s : current.getSuggestions()) {
+                    if (s.toLowerCase().startsWith(input.toLowerCase())) suggestions.add(s);
                 }
             }
         }
 
+        for (Argument candidate : availableArgs) {
+            if (candidate.getSuggestions() != null) {
+                for (String suggestion : candidate.getSuggestions()) {
+                    if (suggestion.toLowerCase().startsWith(input.toLowerCase())) {
+                        suggestions.add(suggestion);
+                    }
+                }
+            }
+            suggestions.add(candidate.getName());
+            if (candidate.getSuggestion_type() != null) {
+                if (!Objects.equals(candidate.getSuggestion_type(), "list") && !Objects.equals(candidate.getSuggestion_type(), "custom")) {
+                    suggestions.addAll(PathFinderAPI.getSuggestionTypeEntries(candidate.getSuggestion_type(), null));
+                }
+            }
+        }
+
+        Collections.sort(suggestions);
         return suggestions;
     }
+
 
     private String getBaseCommand() {
         String text = this.inputField.getText();
