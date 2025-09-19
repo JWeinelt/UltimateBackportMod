@@ -1,0 +1,24 @@
+WARNING: You are using an unsupported version of ForgeGradle.
+Please consider upgrading to ForgeGradle 4 and helping in the efforts to get old versions working on the modern toolchain.
+See https://gist.github.com/TheCurle/fe7ad3ede188cbdd15c235cc75d52d4a for more info on contributing.
+:extractMcpData UP-TO-DATE
+:getVersionJsonhttp://s3.amazonaws.com/Minecraft.Download/versions/1.7.10/1.7.10.json  404'ed!
+
+:extractUserDev UP-TO-DATE
+:genSrgs SKIPPED
+:extractNatives UP-TO-DATE
+:getAssetsIndexhttps://s3.amazonaws.com/Minecraft.Download/indexes/1.7.10.json  404'ed!
+ FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':getAssetsIndex'.
+> java.io.FileNotFoundException: C:\Users\nunds\.gradle\caches\minecraft\assets\indexes\1.7.10.json (Das System kann die angegebene Datei nicht finden)
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 0.962 secs

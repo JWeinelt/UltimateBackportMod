@@ -1,0 +1,193 @@
+[20:31:46] [main/INFO]: Extra: []
+[20:31:46] [main/INFO]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/nunds/.gradle/caches/minecraft/assets, --assetIndex, 1.7.10, --accessToken, {REDACTED}, --version, 1.7.10, --tweakClass, cpw.mods.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[20:31:46] [main/INFO]: Loading tweak class name cpw.mods.fml.common.launcher.FMLTweaker
+[20:31:46] [main/INFO]: Using primary tweak class name cpw.mods.fml.common.launcher.FMLTweaker
+[20:31:46] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[20:31:46] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.FMLTweaker
+[20:31:46] [main/INFO]: Forge Mod Loader version 7.99.40.1614 for Minecraft 1.7.10 loading
+[20:31:46] [main/INFO]: Java is OpenJDK 64-Bit Server VM, version 1.8.0_462, running on Windows 11:amd64:10.0, installed at C:\Users\nunds\.jdks\corretto-1.8.0_462\jre
+[20:31:46] [main/INFO]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[20:31:46] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[20:31:46] [main/INFO]: Injecting location in coremod cpw.mods.fml.relauncher.FMLCorePlugin
+[20:31:46] [main/INFO]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[20:31:46] [main/INFO]: Loading tweak class name cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:31:46] [main/INFO]: Loading tweak class name cpw.mods.fml.common.launcher.FMLDeobfTweaker
+[20:31:46] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[20:31:46] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:31:46] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:31:46] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:31:46] [main/ERROR]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
+[20:31:47] [main/ERROR]: FML appears to be missing any signature data. This is not a good thing
+[20:31:47] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:31:47] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.FMLDeobfTweaker
+[20:31:47] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[20:31:47] [main/INFO]: Loading tweak class name cpw.mods.fml.common.launcher.TerminalTweaker
+[20:31:47] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.TerminalTweaker
+[20:31:47] [main/INFO]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[20:31:48] [main/INFO]: Setting user: Player718
+[20:31:49] [Client thread/INFO]: LWJGL Version: 2.9.1
+[20:31:49] [Client thread/INFO]: Could not load splash.properties, will create a default one
+[20:31:49] [Client thread/INFO]: [cpw.mods.fml.client.SplashProgress:start:188]: ---- Minecraft Crash Report ----
+// I'm sorry, Dave.
+
+Time: 19.09.25 20:31
+Description: Loading screen debug info
+
+This is just a prompt for computer specs to be printed. THIS IS NOT A ERROR
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 1.8.0_462, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 123447384 bytes (117 MB) / 188219392 bytes (179 MB) up to 3316645888 bytes (3163 MB)
+	JVM Flags: 0 total; 
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: 
+	GL info: ' Vendor: 'ATI Technologies Inc.' Version: '4.6.0 Compatibility Profile Context 25.8.1.250617' Renderer: 'AMD Radeon(TM) Graphics'
+[20:31:49] [Client thread/INFO]: Attempting early MinecraftForge initialization
+[20:31:49] [Client thread/INFO]: MinecraftForge v10.13.4.1614 Initialized
+[20:31:49] [Client thread/INFO]: Replaced 183 ore recipies
+[20:31:49] [Client thread/INFO]: Completed early MinecraftForge initialization
+[20:31:50] [Client thread/INFO]: Found 0 mods from the command line. Injecting into mod discoverer
+[20:31:50] [Client thread/INFO]: Searching C:\Users\nunds\IdeaProjects\1710Forge\eclipse\mods for mods
+[20:31:53] [Client thread/INFO]: Forge Mod Loader has identified 4 mods to load
+[20:31:53] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, examplemod] at CLIENT
+[20:31:53] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, examplemod] at SERVER
+[20:31:53] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Example Mod
+[20:31:53] [Client thread/INFO]: Processing ObjectHolder annotations
+[20:31:53] [Client thread/INFO]: Found 341 ObjectHolder annotations
+[20:31:53] [Client thread/INFO]: Identifying ItemStackHolder annotations
+[20:31:53] [Client thread/INFO]: Found 0 ItemStackHolder annotations
+[20:31:53] [Client thread/INFO]: Configured a dormant chunk cache size of 0
+[20:31:53] [Client thread/INFO]: Applying holder lookups
+[20:31:53] [Client thread/INFO]: Holder lookups applied
+[20:31:53] [Client thread/INFO]: Injecting itemstacks
+[20:31:53] [Client thread/INFO]: Itemstack injection complete
+[20:31:53] [Sound Library Loader/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[20:31:53] [Sound Library Loader/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: Starting up SoundSystem...
+[20:31:54] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+[20:31:54] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:815)
+[20:31:54] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:768)
+[20:31:54] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:717)
+[20:31:54] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:689)
+[20:31:54] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraftforge.common.ForgeVersion$1.run(ForgeVersion.java:94)
+[20:31:54] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+[20:31:54] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+[20:31:54] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:183)
+[20:31:54] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+[20:31:54] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:803)
+[20:31:54] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	... 4 more
+[20:31:54] [Thread-8/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: Initializing LWJGL OpenAL
+[20:31:54] [Thread-8/INFO]: [paulscode.sound.SoundSystemLogger:message:69]:     (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[20:31:54] [Thread-8/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: OpenAL initialized.
+[20:31:54] [Sound Library Loader/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[20:31:54] [Sound Library Loader/INFO]: Sound engine started
+[20:31:54] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[20:31:54] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[20:31:54] [Client thread/INFO]: [com.example.examplemod.ExampleMod:init:18]: DIRT BLOCK >> tile.dirt
+[20:31:54] [Client thread/INFO]: Injecting itemstacks
+[20:31:54] [Client thread/INFO]: Itemstack injection complete
+[20:31:54] [Client thread/INFO]: Forge Mod Loader has successfully loaded 4 mods
+[20:31:54] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Example Mod
+[20:31:54] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[20:31:54] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[20:31:54] [Client thread/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[20:31:54] [Client thread/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: SoundSystem shutting down...
+[20:31:55] [Client thread/INFO]: [paulscode.sound.SoundSystemLogger:importantMessage:90]:     Author: Paul Lamb, www.paulscode.com
+[20:31:55] [Client thread/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[20:31:55] [Sound Library Loader/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[20:31:55] [Sound Library Loader/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: Starting up SoundSystem...
+[20:31:55] [Thread-10/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: Initializing LWJGL OpenAL
+[20:31:55] [Thread-10/INFO]: [paulscode.sound.SoundSystemLogger:message:69]:     (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[20:31:55] [Thread-10/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: OpenAL initialized.
+[20:31:55] [Sound Library Loader/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[20:31:55] [Sound Library Loader/INFO]: Sound engine started
+[20:32:02] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[20:32:02] [Server thread/INFO]: Generating keypair
+[20:32:02] [Server thread/INFO]: Converting map!
+[20:32:02] [Server thread/INFO]: Scanning folders...
+[20:32:02] [Server thread/INFO]: Total conversion count is 0
+[20:32:02] [Server thread/INFO]: Injecting existing block and item data into this server instance
+[20:32:02] [Server thread/INFO]: Applying holder lookups
+[20:32:02] [Server thread/INFO]: Holder lookups applied
+[20:32:02] [Server thread/INFO]: Loading dimension 0 (New World) (net.minecraft.server.integrated.IntegratedServer@7bdaa1b7)
+[20:32:02] [Server thread/INFO]: Loading dimension 1 (New World) (net.minecraft.server.integrated.IntegratedServer@7bdaa1b7)
+[20:32:02] [Server thread/INFO]: Loading dimension -1 (New World) (net.minecraft.server.integrated.IntegratedServer@7bdaa1b7)
+[20:32:02] [Server thread/INFO]: Preparing start region for level 0
+[20:32:03] [Server thread/INFO]: Preparing spawn area: 28%
+[20:32:04] [Server thread/INFO]: Preparing spawn area: 69%
+[20:32:05] [Server thread/INFO]: Changing view distance to 12, from 10
+[20:32:05] [Netty Client IO #0/INFO]: Server protocol version 2
+[20:32:05] [Netty IO #1/INFO]: Client protocol version 2
+[20:32:05] [Netty IO #1/INFO]: Client attempting to join with 4 mods : FML@7.10.99.99,Forge@10.13.4.1614,mcp@9.05,examplemod@1.0
+[20:32:05] [Netty IO #1/INFO]: Attempting connection with missing mods [] at CLIENT
+[20:32:05] [Netty Client IO #0/INFO]: Attempting connection with missing mods [] at SERVER
+[20:32:05] [Client thread/INFO]: [Client thread] Client side modded connection established
+[20:32:06] [Server thread/INFO]: [Server thread] Server side modded connection established
+[20:32:06] [Server thread/INFO]: Player718[local:E:728b2333] logged in with entity id 205 at (-180.5, 72.0, 254.5)
+[20:32:06] [Server thread/INFO]: Player718 joined the game
+[20:32:13] [Client thread/INFO]: Warning: Clientside chunk ticking took 118 ms
+[20:32:13] [Client thread/INFO]: Warning: Clientside chunk ticking took 126 ms
+[20:32:17] [Server thread/INFO]: Saving and pausing game...
+[20:32:17] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:32:17] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:32:17] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:33:07] [Server thread/INFO]: Saving and pausing game...
+[20:33:07] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:33:07] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:33:07] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:33:09] [Client thread/INFO]: Selecting effect minecraft:shaders/post/notch.json
+[20:33:10] [Client thread/INFO]: Selecting effect minecraft:shaders/post/fxaa.json
+[20:33:12] [Server thread/INFO]: Saving and pausing game...
+[20:33:12] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:33:13] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:33:13] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:33:13] [Server thread/INFO]: Saving and pausing game...
+[20:33:13] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:33:13] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:33:13] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:33:14] [Client thread/INFO]: Selecting effect minecraft:shaders/post/art.json
+[20:33:14] [Client thread/WARN]: Could not find uniform named LumaRamp in the specified shader program.
+[20:33:23] [Server thread/INFO]: Saving and pausing game...
+[20:33:23] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:33:23] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:33:23] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:33:25] [Client thread/INFO]: Selecting effect minecraft:shaders/post/bumpy.json
+[20:33:25] [Client thread/WARN]: Could not find uniform named OutSize in the specified shader program.
+[20:33:30] [Server thread/INFO]: Saving and pausing game...
+[20:33:30] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:33:30] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:33:30] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:33:31] [Client thread/INFO]: Selecting effect minecraft:shaders/post/blobs2.json
+[20:33:33] [Server thread/INFO]: Saving and pausing game...
+[20:33:33] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:33:33] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:33:33] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:33:33] [Client thread/INFO]: Selecting effect minecraft:shaders/post/pencil.json
+[20:33:38] [Server thread/INFO]: Saving and pausing game...
+[20:33:38] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:33:38] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:33:38] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:33:39] [Server thread/INFO]: Stopping server
+[20:33:39] [Server thread/INFO]: Saving players
+[20:33:39] [Server thread/INFO]: Saving worlds
+[20:33:39] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:33:39] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:33:39] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:33:39] [Server thread/INFO]: Unloading dimension 0
+[20:33:39] [Server thread/INFO]: Unloading dimension -1
+[20:33:39] [Server thread/INFO]: Unloading dimension 1
+[20:33:39] [Server thread/INFO]: Applying holder lookups
+[20:33:39] [Server thread/INFO]: Holder lookups applied
+[20:33:40] [Client thread/INFO]: Stopping!
+[20:33:40] [Client thread/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[20:33:40] [Client thread/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: SoundSystem shutting down...
+[20:33:40] [Client thread/INFO]: [paulscode.sound.SoundSystemLogger:importantMessage:90]:     Author: Paul Lamb, www.paulscode.com
+[20:33:40] [Client thread/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
