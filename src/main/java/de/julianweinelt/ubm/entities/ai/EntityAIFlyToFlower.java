@@ -1,5 +1,7 @@
 package de.julianweinelt.ubm.entities.ai;
 
+import de.julianweinelt.ubm.UBM;
+import de.julianweinelt.ubm.blocks.BlockBeeNest;
 import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityBeeNest;
 import de.julianweinelt.ubm.entities.EntityBee;
@@ -103,7 +105,7 @@ public class EntityAIFlyToFlower extends EntityAIBase {
         int radius = 32;
 
         for (int x = -radius; x <= radius; x++) {
-            for (int y = -2; y <= 2; y++) {
+            for (int y = -8; y <= 8; y++) {
                 for (int z = -radius; z <= radius; z++) {
                     BlockPos pos = beePos.add(x, y, z);
                     IBlockState state = bee.world.getBlockState(pos);
@@ -123,7 +125,7 @@ public class EntityAIFlyToFlower extends EntityAIBase {
         int radius = 2;
 
         for (int x = -radius; x <= radius; x++) {
-            for (int y = -2; y <= 2; y++) {
+            for (int y = 0; y <= 2; y++) {
                 for (int z = -radius; z <= radius; z++) {
                     BlockPos pos = beePos.add(x, y, z);
                     IBlockState state = bee.world.getBlockState(pos);
@@ -147,25 +149,14 @@ public class EntityAIFlyToFlower extends EntityAIBase {
             IBlockState state = bee.world.getBlockState(pos);
 
             if (state.getBlock() == ModBlocks.BEE_HIVE || state.getBlock() == ModBlocks.BEE_NEST) {
-                System.out.println("Entering nearby hive");
-                TileEntity te = bee.world.getTileEntity(pos);
-                if (te instanceof TileEntityBeeNest) {
-                    TileEntityBeeNest hive = (TileEntityBeeNest) te;
+                int currentBees = state.getValue(BlockBeeNest.BEES);
 
-                    hive.setBees(hive.getBees() + 1);
-                    bee.setDead();
-
-                    bee.world.playSound(
-                            null,
+                if (currentBees < 3) {
+                    bee.world.setBlockState(
                             pos,
-                            ModSounds.BEE_HIVE_ENTER,
-                            SoundCategory.BLOCKS,
-                            1.0F,
-                            1.0F
+                            state.withProperty(BlockBeeNest.BEES, currentBees + 1),
+                            2
                     );
-
-                    return;
-                } else {
 
                     bee.setDead();
 
@@ -177,15 +168,19 @@ public class EntityAIFlyToFlower extends EntityAIBase {
                             1.0F,
                             1.0F
                     );
-                    return;
                 }
+                return;
             }
+
         }
     }
 
 
     private BlockPos findNest() {
         BlockPos beePos = bee.getPosition();
+        if (bee.getNestPos() != null) {
+            return bee.getNestPos();
+        }
         int radius = 32;
 
         for (int x = -radius; x <= radius; x++) {
@@ -199,14 +194,12 @@ public class EntityAIFlyToFlower extends EntityAIBase {
 
                     ResourceLocation name = state.getBlock().getRegistryName();
                     if (name != null && name.getResourcePath().contains("bee_")) {
-                        System.out.println("Found nest by name at: " + pos);
                         return pos;
                     }
                 }
             }
         }
 
-        System.out.println("Could not find nest");
         return null;
     }
 

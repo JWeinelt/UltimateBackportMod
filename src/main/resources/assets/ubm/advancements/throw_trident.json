@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": { "item": "ubm:trident" },
+    "title": {
+      "translate": "advancement.ubm.throw_trident.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.throw_trident.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

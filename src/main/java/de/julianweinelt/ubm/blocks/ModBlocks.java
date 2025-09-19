@@ -9,17 +9,17 @@ import de.julianweinelt.ubm.blocks.plant.BlockSweetBerry;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityBeeNest;
 import de.julianweinelt.ubm.items.BlockCopperTorch;
 import de.julianweinelt.ubm.items.ModItems;
+import de.julianweinelt.ubm.misc.AdvancementHelper;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.worldgen.ModBiomes;
 import de.julianweinelt.ubm.worldgen.WorldGenBeeNest;
+import de.julianweinelt.ubm.worldgen.WorldTypeModern;
 import de.julianweinelt.ubm.worldgen.WorldTypeSelectableBiome;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockCarpet;
 import net.minecraft.block.BlockWall;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -33,7 +33,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -214,6 +213,9 @@ public class ModBlocks {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
+        CRIMSON_BUTTON = new BlockModButton(true, "crimson_button")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        event.getRegistry().register(CRIMSON_BUTTON);
         SMITHING_TABLE = new BlockSmithingTable();
         event.getRegistry().register(SMITHING_TABLE);
 
@@ -419,10 +421,7 @@ public class ModBlocks {
         event.getRegistry().register(POWDER_SNOW);
 
 
-        BEE_NEST = new Block(Material.WOOD)
-                .setUnlocalizedName("bee_nest")
-                .setRegistryName("bee_nest")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
+        BEE_NEST = new BlockBeeNest();
         event.getRegistry().register(BEE_NEST);
         BEE_HIVE = new Block(Material.WOOD)
                 .setUnlocalizedName("bee_hive")
@@ -846,6 +845,7 @@ public class ModBlocks {
 
         ModBiomes.init();
         new WorldTypeSelectableBiome("selectable_biome");
+        new WorldTypeModern();
         GameRegistry.registerTileEntity(TileEntityBeeNest.class, new ResourceLocation("ubm", "bee_nest"));
         GameRegistry.registerWorldGenerator(new WorldGenBeeNest(), 0);
     }
@@ -853,6 +853,7 @@ public class ModBlocks {
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new ItemBlock(COPPER_TORCH).setRegistryName(COPPER_TORCH.getRegistryName()));
 
+        registerItem(CRIMSON_BUTTON, event);
         registerItem(SMITHING_TABLE, event);
 
         registerItem(AMETHYST_CLUSTER, event);
@@ -1060,6 +1061,7 @@ public class ModBlocks {
         if (!heldItem.isEmpty() && heldItem.getItem() == ModItems.HONEYCOMB) {
             ResourceLocation res = block.getRegistryName();
             if (WAXED_VARIANTS.containsKey(res)) {
+                AdvancementHelper.grantAdvancement(player, "wax_on");
                 if (!world.isRemote) {
                     world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(WAXED_VARIANTS.get(res)).getDefaultState(), 3);
                     if (!player.capabilities.isCreativeMode) heldItem.shrink(1);
@@ -1071,6 +1073,7 @@ public class ModBlocks {
         if (!heldItem.isEmpty() && heldItem.getItem() instanceof ItemAxe) {
             ResourceLocation res = block.getRegistryName();
             if (UNWAXED_VARIANTS.containsKey(res)) {
+                AdvancementHelper.grantAdvancement(player, "wax_off");
                 if (!world.isRemote) {
                     world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(UNWAXED_VARIANTS.get(res)).getDefaultState(), 3);
                     heldItem.damageItem(1, player);
@@ -1080,7 +1083,6 @@ public class ModBlocks {
             }
             if (PREVIOUS_OXIDATION.containsKey(res)) {
                 if (!world.isRemote) {
-
                     world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(PREVIOUS_OXIDATION.get(res)).getDefaultState(), 3);
                     heldItem.damageItem(1, player);
                     world.playSound(null, pos, SoundEvents.BLOCK_WOOD_HIT, SoundCategory.BLOCKS, 1f, 0.8f);

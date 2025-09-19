@@ -1,0 +1,21 @@
+{
+  "parent": "ubm:throw_trident",
+  "display": {
+    "icon": { "item": "ubm:trident" },
+    "title": {
+      "translate": "advancement.ubm.very_very_frightening.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.very_very_frightening.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

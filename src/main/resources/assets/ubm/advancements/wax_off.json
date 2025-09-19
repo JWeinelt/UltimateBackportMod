@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:husbandry/root",
+  "parent": "ubm:wax_on",
   "display": {
-    "icon": { "item": "ubm:honeycomb" },
+    "icon": { "item": "minecraft:stone_axe" },
     "title": {
       "translate": "advancement.ubm.wax_off.title"
     },

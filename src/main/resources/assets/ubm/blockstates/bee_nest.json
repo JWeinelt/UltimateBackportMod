@@ -1,5 +1,31 @@
 {
   "variants": {
-    "normal": { "model": "ubm:bee_nest" }
+    "bees=0,honey_level=0": { "model": "ubm:bee_nest" },
+    "bees=0,honey_level=1": { "model": "ubm:bee_nest" },
+    "bees=0,honey_level=2": { "model": "ubm:bee_nest" },
+    "bees=0,honey_level=3": { "model": "ubm:bee_nest" },
+    "bees=0,honey_level=4": { "model": "ubm:bee_nest" },
+    "bees=0,honey_level=5": { "model": "ubm:bee_nest_honey" },
+
+    "bees=1,honey_level=0": { "model": "ubm:bee_nest" },
+    "bees=1,honey_level=1": { "model": "ubm:bee_nest" },
+    "bees=1,honey_level=2": { "model": "ubm:bee_nest" },
+    "bees=1,honey_level=3": { "model": "ubm:bee_nest" },
+    "bees=1,honey_level=4": { "model": "ubm:bee_nest" },
+    "bees=1,honey_level=5": { "model": "ubm:bee_nest_honey" },
+
+    "bees=2,honey_level=0": { "model": "ubm:bee_nest" },
+    "bees=2,honey_level=1": { "model": "ubm:bee_nest" },
+    "bees=2,honey_level=2": { "model": "ubm:bee_nest" },
+    "bees=2,honey_level=3": { "model": "ubm:bee_nest" },
+    "bees=2,honey_level=4": { "model": "ubm:bee_nest" },
+    "bees=2,honey_level=5": { "model": "ubm:bee_nest_honey" },
+
+    "bees=3,honey_level=0": { "model": "ubm:bee_nest" },
+    "bees=3,honey_level=1": { "model": "ubm:bee_nest" },
+    "bees=3,honey_level=2": { "model": "ubm:bee_nest" },
+    "bees=3,honey_level=3": { "model": "ubm:bee_nest" },
+    "bees=3,honey_level=4": { "model": "ubm:bee_nest" },
+    "bees=3,honey_level=5": { "model": "ubm:bee_nest_honey" }
   }
 }

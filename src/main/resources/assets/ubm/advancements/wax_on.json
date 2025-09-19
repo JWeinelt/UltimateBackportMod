@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:husbandry/root",
+  "parent": "ubm:safely_harvest_honey",
   "display": {
-    "icon": { "item": "minecraft:stone_axe" },
+    "icon": { "item": "ubm:honeycomb" },
     "title": {
       "translate": "advancement.ubm.wax_on.title"
     },

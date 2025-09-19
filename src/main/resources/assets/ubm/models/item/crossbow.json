@@ -1,0 +1,34 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "ubm:items/crossbow_standby"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-90, 0, -60],
+			"translation": [2, 0.1, -3],
+			"scale": [0.9, 0.9, 0.9]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-90, 0, 30],
+			"translation": [2, 0.1, -3],
+			"scale": [0.9, 0.9, 0.9]
+		},
+		"firstperson_righthand": {
+			"rotation": [-85, 0, -50],
+			"translation": [-9.12, 3.2, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-90, 0, 44],
+			"translation": [-8.87, 3.2, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		}
+	},
+	"overrides": [
+		{ "predicate": { "pull_custom": 0.1 }, "model": "ubm:item/crossbow_pulling_0" },
+		{ "predicate": { "pull_custom": 0.65 }, "model": "ubm:item/crossbow_pulling_1" },
+		{ "predicate": { "pull_custom": 0.9 }, "model": "ubm:item/crossbow_pulling_2" },
+		{ "predicate": { "pull_custom": 1.0 }, "model": "ubm:item/crossbow_arrow" }
+	]
+}

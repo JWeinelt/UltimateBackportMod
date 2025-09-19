@@ -1,12 +1,7 @@
-package de.julianweinelt.ubm.worldgen;
+package de.julianweinelt.ubm.worldgen.biome;
 
-import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.entities.EntityFox;
-import de.julianweinelt.ubm.entities.EntityFrog;
-import de.julianweinelt.ubm.entities.EntityGoat;
 import de.julianweinelt.ubm.entities.custom.EntityCustomWolf;
-import de.julianweinelt.ubm.worldgen.misc.WorldGenPowderSnow;
-import de.julianweinelt.ubm.worldgen.tree.WorldGenMyNetherTree;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntityRabbit;

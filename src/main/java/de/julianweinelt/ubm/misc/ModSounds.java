@@ -56,6 +56,11 @@ public class ModSounds {
     public static SoundEvent DOLPHIN_SPLASH;
     public static SoundEvent DOLPHIN_SWIM;
 
+    public static SoundEvent ITEM_CROSSBOW_LOADING_START;
+    public static SoundEvent ITEM_CROSSBOW_LOADING_MIDDLE;
+    public static SoundEvent ITEM_CROSSBOW_LOADING_END;
+    public static SoundEvent ITEM_CROSSBOW_SHOOT;
+
 
     @SubscribeEvent
     public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
@@ -103,6 +108,10 @@ public class ModSounds {
         DOLPHIN_SPLASH = register(event, "mob.dolphin.splash");
         DOLPHIN_SWIM = register(event, "mob.dolphin.swim");
 
+        ITEM_CROSSBOW_LOADING_START = register(event,"item.crossbow.loading.start");
+        ITEM_CROSSBOW_LOADING_MIDDLE = register(event, "item.crossbow.loading.middle");
+        ITEM_CROSSBOW_LOADING_END = register(event,"item.crossbow.loading.end");
+        ITEM_CROSSBOW_SHOOT = register(event, "item.crossbow.shoot");
     }
 
     private static SoundEvent register(RegistryEvent.Register<SoundEvent> event, String name) {

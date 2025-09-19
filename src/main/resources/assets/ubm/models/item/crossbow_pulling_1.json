@@ -1,0 +1,6 @@
+{
+  "parent": "ubm:item/crossbow",
+  "textures": {
+    "layer0": "ubm:items/crossbow_pulling_1"
+  }
+}

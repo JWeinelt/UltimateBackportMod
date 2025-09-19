@@ -141,6 +141,22 @@ public class ModEntities {
                 UBM.instance,
                 64, 1, true
         );
+        EntityRegistry.registerModEntity(
+                new ResourceLocation("ubm", "tropical_fish"),
+                EntityTropicalFish.class,
+                "TropicalFish",
+                14,
+                UBM.instance,
+                64, 1, true
+        );
+        EntityRegistry.registerModEntity(
+                new ResourceLocation("ubm", "pillager"),
+                EntityPillager.class,
+                "Pillager",
+                15,
+                UBM.instance,
+                64, 1, true
+        );
 
     }
 
@@ -246,6 +262,8 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntityCustomWolf.class, RenderCustomWolf::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityAxolotl.class, RenderAxolotl::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityGlowSquid.class, RenderGlowSquid::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityTropicalFish.class, RenderTropicalFish::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityPillager.class, RenderPillager::new);
     }
 
     @SubscribeEvent

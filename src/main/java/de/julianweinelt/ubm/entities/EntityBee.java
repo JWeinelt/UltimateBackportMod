@@ -3,10 +3,7 @@ package de.julianweinelt.ubm.entities;
 import de.julianweinelt.ubm.entities.ai.EntityAIFlyToFlower;
 import de.julianweinelt.ubm.entities.ai.EntityAIHurtByTargetFlying;
 import de.julianweinelt.ubm.misc.ModSounds;
-import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.EntityCreature;
-import net.minecraft.entity.EntityFlying;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.datasync.DataParameter;
@@ -16,6 +13,7 @@ import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateFlying;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
@@ -26,6 +24,8 @@ public class EntityBee extends EntityCreature {
 
     private boolean hasNectar = false;
     private boolean aggressive = false;
+
+    private BlockPos nestPos = null;
 
     public EntityBee(World worldIn) {
         super(worldIn);
@@ -97,6 +97,18 @@ public class EntityBee extends EntityCreature {
 
     public void setAggressive(boolean aggressive) {
         this.aggressive = aggressive;
+    }
+    public void setAggressive(EntityPlayer toAttackIn) {
+        this.aggressive = true;
+        setAttackTarget(toAttackIn);
+    }
+
+    public BlockPos getNestPos() {
+        return nestPos;
+    }
+
+    public void setNestPos(BlockPos nestPos) {
+        this.nestPos = nestPos;
     }
 
     public void setState(BeeState bState) {

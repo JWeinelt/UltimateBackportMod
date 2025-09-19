@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "display": {
+    "icon": { "item": "minecraft:fishing_rod" },
+    "title": {
+      "translate": "advancement.ubm.fishy_business.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.fishy_business.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

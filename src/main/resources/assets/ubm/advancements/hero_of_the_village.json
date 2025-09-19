@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": {
+      "item": "minecraft:banner",
+      "count": 1,
+      "data": 15,
+      "nbt": "{BlockEntityTag:{Patterns:[{Color:6,Pattern:mr},{Color:7,Pattern:bs},{Color:0,Pattern:cs},{Color:0,Pattern:ms},{Color:7,Pattern:hh},{Color:0,Pattern:bo}]}}"
+    },
+    "title": {
+      "translate": "advancement.ubm.hero_of_the_village.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.hero_of_the_village.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

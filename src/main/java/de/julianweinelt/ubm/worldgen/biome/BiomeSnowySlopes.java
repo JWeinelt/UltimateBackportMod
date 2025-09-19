@@ -1,4 +1,4 @@
-package de.julianweinelt.ubm.worldgen;
+package de.julianweinelt.ubm.worldgen.biome;
 
 import de.julianweinelt.ubm.entities.EntityGoat;
 import net.minecraft.entity.monster.*;

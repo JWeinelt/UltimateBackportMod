@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.worldgen;
 
 import de.julianweinelt.ubm.blocks.ModBlocks;
+import de.julianweinelt.ubm.worldgen.biome.BiomeSnowySlopes;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;

@@ -3133,5 +3133,62 @@
         "stream": false
       }
     ]
+  },
+
+  "item.crossbow.loading.end": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "ubm:item/crossbow/loading_end",
+        "stream": false
+      }
+    ]
+  },
+  "item.crossbow.loading.middle": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "ubm:item/crossbow/loading_middle1",
+        "stream": false
+      },
+      {
+        "name": "ubm:item/crossbow/loading_middle2",
+        "stream": false
+      },
+      {
+        "name": "ubm:item/crossbow/loading_middle3",
+        "stream": false
+      },
+      {
+        "name": "ubm:item/crossbow/loading_middle4",
+        "stream": false
+      }
+    ]
+  },
+  "item.crossbow.loading.start": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "ubm:item/crossbow/loading_start",
+        "stream": false
+      }
+    ]
+  },
+  "item.crossbow.shoot": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "ubm:item/crossbow/shoot1",
+        "stream": false
+      },
+      {
+        "name": "ubm:item/crossbow/shoot2",
+        "stream": false
+      },
+      {
+        "name": "ubm:item/crossbow/shoot3",
+        "stream": false
+      }
+    ]
   }
 }
