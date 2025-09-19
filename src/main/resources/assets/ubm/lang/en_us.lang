@@ -198,6 +198,7 @@ egg.ravager.name=Spawn Ravager
 enchantment.swift_sneak=Swift Sneak
 
 generator.selectable_biome=Single Biome
+generator.modern_world=Modern World
 
 advancement.ubm.serious_dedication.title=Serious Dedication 2.0
 advancement.ubm.serious_dedication.desc=Use a Netherite Ingot to upgrade a Hoe, and then reevaluate your life choices
