@@ -4,6 +4,7 @@ import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.entities.*;
 import de.julianweinelt.ubm.entities.custom.EntityCustomWolf;
 import de.julianweinelt.ubm.entities.EntitySalmon;
+import de.julianweinelt.ubm.entities.custom.EntityNewVillager;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.misc.ModMaterials;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -444,6 +445,7 @@ public class ModItems {
         SPAWN_EGG_WARDEN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "warden");
         SPAWN_EGG_DOLPHIN = new ItemSpawnEggCustom(EntityDolphin.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "dolphin");
         SPAWN_EGG_WOLF = new ItemSpawnEggCustom(EntityCustomWolf.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "custom_wolf");
+        SPAWN_EGG_VILLAGER = new ItemSpawnEggCustom(EntityNewVillager.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "villager");
         SPAWN_EGG_ALLAY = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "allay");//TODO: Add Entity
         SPAWN_EGG_WANDERING_TRADER = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "wandering_trader");//TODO: Add Entity
         SPAWN_EGG_STRIDER = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "strider");//TODO: Add Entity
@@ -456,7 +458,7 @@ public class ModItems {
         SPAWN_EGG_PIGLIN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "piglin");//TODO: Add Entity
         SPAWN_EGG_FOX = new ItemSpawnEggCustom(EntityFox.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "fox");
         SPAWN_EGG_CREAKING = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "creaking");//TODO: Add Entity
-        SPAWN_EGG_PHANTOM = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "phantom");//TODO: Add Entity
+        SPAWN_EGG_PHANTOM = new ItemSpawnEggCustom(EntityPhantom.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "phantom");
         SPAWN_EGG_AXOLOTL = new ItemSpawnEggCustom(EntityAxolotl.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "axolotl");
         SPAWN_EGG_ZOGLIN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "zoglin");//TODO: Add Entity
         SPAWN_EGG_COD = new ItemSpawnEggCustom(EntityCod.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "cod");
@@ -474,6 +476,7 @@ public class ModItems {
         event.getRegistry().register(SPAWN_EGG_DOLPHIN);
         event.getRegistry().register(SPAWN_EGG_WARDEN);
         event.getRegistry().register(SPAWN_EGG_WOLF);
+        event.getRegistry().register(SPAWN_EGG_VILLAGER);
         event.getRegistry().register(SPAWN_EGG_ALLAY);
         event.getRegistry().register(SPAWN_EGG_WANDERING_TRADER);
         event.getRegistry().register(SPAWN_EGG_STRIDER);
@@ -586,6 +589,7 @@ public class ModItems {
         registerItemModel(SPAWN_EGG_DOLPHIN);
         registerItemModel(SPAWN_EGG_WARDEN);
         registerItemModel(SPAWN_EGG_WOLF);
+        registerItemModel(SPAWN_EGG_VILLAGER);
 
         registerItemModel(CANDLE);
         registerItemModel(BLACK_CANDLE);

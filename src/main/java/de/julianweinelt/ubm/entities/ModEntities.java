@@ -2,6 +2,7 @@ package de.julianweinelt.ubm.entities;
 
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.entities.custom.EntityCustomWolf;
+import de.julianweinelt.ubm.entities.custom.EntityNewVillager;
 import de.julianweinelt.ubm.entities.models.*;
 import de.julianweinelt.ubm.entities.render.*;
 import net.minecraft.client.renderer.GlStateManager;
@@ -157,6 +158,22 @@ public class ModEntities {
                 UBM.instance,
                 64, 1, true
         );
+        EntityRegistry.registerModEntity(
+                new ResourceLocation("ubm", "phantom"),
+                EntityPhantom.class,
+                "Phantom",
+                16,
+                UBM.instance,
+                64, 1, true
+        );
+        EntityRegistry.registerModEntity(
+                new ResourceLocation("ubm", "villager"),
+                EntityNewVillager.class,
+                "Villager",
+                17,
+                UBM.instance,
+                64, 1, true
+        );
 
     }
 
@@ -257,9 +274,18 @@ public class ModEntities {
                     }
                 }
         );
+        RenderingRegistry.registerEntityRenderingHandler(EntityPhantom.class, renderManager ->
+                new RenderLiving<EntityPhantom>(renderManager, new ModelPhantom(), 0.5F) {
+                    @Override
+                    protected ResourceLocation getEntityTexture(@Nullable EntityPhantom entity) {
+                        return new ResourceLocation(MODID, "textures/entity/phantom.png");
+                    }
+                }
+        );
         RenderingRegistry.registerEntityRenderingHandler(EntityBambooRaft.class, RenderBambooRaft::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityFox.class, RenderFox::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityCustomWolf.class, RenderCustomWolf::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityNewVillager.class, RenderNewVillager::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityAxolotl.class, RenderAxolotl::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityGlowSquid.class, RenderGlowSquid::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityTropicalFish.class, RenderTropicalFish::new);
