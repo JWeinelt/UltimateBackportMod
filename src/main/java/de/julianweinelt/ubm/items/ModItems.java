@@ -189,14 +189,14 @@ public class ModItems {
         event.getRegistry().register(OMINOUS_BOTTLE);
 
         //Armor trims
-        TRIM_NETHERITE_UPGRADE = new ItemArmorTrim()
+        TRIM_NETHERITE_UPGRADE = new ItemArmorTrim("netherite_upgrade")
                 .setRegistryName("netherite_upgrade_template")
                 .setUnlocalizedName("netherite_upgrade_template")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_WILD);
         event.getRegistry().register(TRIM_NETHERITE_UPGRADE);
 
         for (String s : TRIMS) {
-            Item item = new ItemArmorTrim()
+            Item item = new ItemArmorTrim(s.toLowerCase())
                     .setRegistryName(s.toLowerCase() + "_armor_trim")
                     .setUnlocalizedName(s.toLowerCase() + "_armor_trim")
                     .setCreativeTab(ModCreativeTabs.UBM_TAB_WILD);
