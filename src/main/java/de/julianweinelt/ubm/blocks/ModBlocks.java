@@ -68,6 +68,8 @@ public class ModBlocks {
     public static Block BELL;
     public static Block CAMPFIRE;
 
+    public static Block TARGET;
+
     public static Block CRIMSON_STEM;
     public static Block CRIMSON_HYPHAE;
     public static Block STRIPPED_CRIMSON_STEM;
@@ -249,6 +251,12 @@ public class ModBlocks {
                 .setRegistryName("netherite_block")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         event.getRegistry().register(NETHERITE_BLOCK);
+
+        TARGET = new Block(Material.PLANTS)
+                .setUnlocalizedName("target")
+                .setRegistryName("target")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
+        event.getRegistry().register(TARGET);
 
         GLOW_LICHEN = new BlockGlowLichen();
         event.getRegistry().register(GLOW_LICHEN);
@@ -868,6 +876,8 @@ public class ModBlocks {
         registerItem(SMALL_AMETHYST_BUD, event);
         registerItem(MEDIUM_AMETHYST_BUD, event);
         registerItem(LARGE_AMETHYST_BUD, event);
+
+        registerItem(TARGET, event);
 
         registerItem(NETHERITE_BLOCK, event);
         registerItem(GLOW_LICHEN, event);

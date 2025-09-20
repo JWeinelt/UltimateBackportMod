@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "ubm:blocks/target_top",
+    "side": "ubm:blocks/target_side"
+  }
+}
