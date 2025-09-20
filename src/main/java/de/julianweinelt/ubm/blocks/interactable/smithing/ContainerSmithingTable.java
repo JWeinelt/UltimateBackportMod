@@ -1,21 +1,24 @@
 package de.julianweinelt.ubm.blocks.interactable.smithing;
 
+import de.julianweinelt.ubm.UBM;
+import de.julianweinelt.ubm.items.ItemArmorTrim;
 import de.julianweinelt.ubm.items.ModItems;
 import de.julianweinelt.ubm.util.ItemStackHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.InventoryBasic;
-import net.minecraft.inventory.Slot;
+import net.minecraft.inventory.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
 import javax.annotation.Nonnull;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ContainerSmithingTable extends Container {
-    private final IInventory craftMatrix = new InventoryBasic("Smithing", false, 3);
+    private final IInventory craftMatrix = new InventorySmithing(this, "Smithing", false, 3);
     private final IInventory craftResult = new InventoryBasic("Result", false, 1);
 
     public ContainerSmithingTable(InventoryPlayer playerInv) {
@@ -23,7 +26,7 @@ public class ContainerSmithingTable extends Container {
         this.addSlotToContainer(new Slot(craftMatrix, 1, 26, 48));
         this.addSlotToContainer(new Slot(craftMatrix, 2, 44, 48));
 
-        this.addSlotToContainer(new SlotSmithingResult(craftResult, craftMatrix, 1, 98, 48));
+        this.addSlotToContainer(new SlotSmithingResult(craftResult, craftMatrix, 0, 98, 48));
 
         for (int y = 0; y < 3; ++y) {
             for (int x = 0; x < 9; ++x) {
@@ -35,6 +38,8 @@ public class ContainerSmithingTable extends Container {
         }
     }
 
+
+
     @Override
     public boolean canInteractWith(@Nonnull EntityPlayer playerIn) {
         return true;
@@ -43,7 +48,7 @@ public class ContainerSmithingTable extends Container {
     @Override
     public void onCraftMatrixChanged(@Nonnull IInventory inventoryIn) {
         super.onCraftMatrixChanged(inventoryIn);
-        System.out.println("Matrix");
+        UBM.getLogger().info("Matrix");
         updateOutput();
     }
 
@@ -54,16 +59,28 @@ public class ContainerSmithingTable extends Container {
 
         ItemStack result = ItemStack.EMPTY;
 
-        if (!trim.isEmpty() && !piece.isEmpty() && !material.isEmpty()) {
-            if (trim.getItem() == ModItems.TRIM_BOLT && material.getItem() == Items.GOLD_INGOT && piece.getItem() == ModItems.NETHERITE_CHESTPLATE) {
-                result = new ItemStack(ModItems.NETHERITE_CHESTPLATE);
-                if (!result.hasTagCompound()) {
-                    result.setTagCompound(new NBTTagCompound());
-                }
-                result.getTagCompound().setString("trim", "bolt");
-                result.getTagCompound().setString("trimMaterial", "GOLD");
-                result = ItemStackHelper.setLore(result, "§5Armor Trim: Bolt", "§6Material: GOLD");
+        Map<Item, String> materials = new HashMap<>();
+        materials.put(Items.GOLD_INGOT, "gold");
+        materials.put(Items.IRON_INGOT, "iron");
+        materials.put(Items.EMERALD, "emerald");
+        materials.put(Items.DYE, "lapis");
+        materials.put(ModItems.NETHERITE_INGOT, "netherite");
+        materials.put(Items.QUARTZ, "quartz");
+        materials.put(Items.DIAMOND, "diamond");
+        materials.put(ModItems.AMETHYST_SHARD, "amethyst");
+        materials.put(Items.REDSTONE, "redstone");
+
+        if (trim.getItem() instanceof ItemArmorTrim && materials.containsKey(material.getItem()) && piece.getItem() instanceof ItemArmor) {
+            result = new ItemStack(piece.getItem());
+            if (!result.hasTagCompound()) {
+                result.setTagCompound(new NBTTagCompound());
             }
+            String mat = materials.get(material.getItem());
+            NBTTagCompound compound = result.getTagCompound();
+            compound.setString("trim", ((ItemArmorTrim) trim.getItem()).getArmorTrim());
+            compound.setString("trimMaterial", mat.toUpperCase());
+            result.setTagCompound(compound);
+            ItemStackHelper.setLore(result, "§5Armor Trim: " + ((ItemArmorTrim) trim.getItem()).getArmorTrim(), "§6Material: " + mat);
         }
 
         if (result == ItemStack.EMPTY) return;
