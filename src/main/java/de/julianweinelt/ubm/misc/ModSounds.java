@@ -61,6 +61,8 @@ public class ModSounds {
     public static SoundEvent ITEM_CROSSBOW_LOADING_END;
     public static SoundEvent ITEM_CROSSBOW_SHOOT;
 
+    public static SoundEvent BLOCK_SMITHING_TABLE;
+
 
     @SubscribeEvent
     public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
@@ -112,6 +114,8 @@ public class ModSounds {
         ITEM_CROSSBOW_LOADING_MIDDLE = register(event, "item.crossbow.loading.middle");
         ITEM_CROSSBOW_LOADING_END = register(event,"item.crossbow.loading.end");
         ITEM_CROSSBOW_SHOOT = register(event, "item.crossbow.shoot");
+
+        BLOCK_SMITHING_TABLE = register(event, "block.smithing_table");
     }
 
     private static SoundEvent register(RegistryEvent.Register<SoundEvent> event, String name) {
