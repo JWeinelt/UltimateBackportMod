@@ -21,16 +21,7 @@
       "conditions": {
         "items": [
           {
-            "item": "ubm:netherite_helmet"
-          },
-          {
-            "item": "ubm:netherite_chestplate"
-          },
-          {
-            "item": "ubm:netherite_leggings"
-          },
-          {
-            "item": "ubm:netherite_boots"
+            "item": "ubm:ancient_debris"
           }
         ]
       }
