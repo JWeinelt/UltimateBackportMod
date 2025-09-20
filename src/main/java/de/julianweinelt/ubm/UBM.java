@@ -10,6 +10,8 @@ import de.julianweinelt.ubm.misc.ClientProxy;
 import de.julianweinelt.ubm.misc.CommonProxy;
 import de.julianweinelt.ubm.misc.ModRecipes;
 import de.julianweinelt.ubm.qol.SwimClientHandler;
+import de.julianweinelt.ubm.trims.LayerArmorTrim;
+import de.julianweinelt.ubm.trims.TrimColorHelper;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
 import de.julianweinelt.ubm.worldgen.StructureWorldGen;
 import net.minecraft.util.ResourceLocation;
@@ -21,6 +23,9 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
+
+import java.awt.*;
+import java.io.File;
 
 
 @Mod(modid = UBM.MODID, name = UBM.NAME, version = UBM.VERSION)
@@ -36,11 +41,22 @@ public class UBM {
             serverSide = "de.julianweinelt.ubm.misc.CommonProxy")
     public static CommonProxy proxy;
 
+    public static String[] colorPalettes = {
+            "amethyst", "copper", "diamond", "emerald", "gold", "iron", "lapis", "netherite",
+            "quartz", "redstone", "resin"
+    };
+
+    public static File config;
+
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
         instance = this;
+        config = event.getModConfigurationDirectory();
+        if (!config.exists()) {
+            config.mkdirs();
+        }
 
         ModEntities.init();
         ModEntities.registerRenders();
@@ -73,6 +89,13 @@ public class UBM {
 
         ModRecipes.init();
         ClientEventHandler.registerParticles();
+
+        String basePath = "textures/equipment/trims/color_palettes/";
+        for (String material : colorPalettes) {
+            getLogger().info("Registering color palette: " + material);
+            Color[] palette = TrimColorHelper.extractPalette(basePath + material + ".png");
+            LayerArmorTrim.MATERIAL_TO_PALETTE.put(material, palette);
+        }
     }
 
     public static Logger getLogger() {
