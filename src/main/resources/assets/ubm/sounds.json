@@ -3190,5 +3190,22 @@
         "stream": false
       }
     ]
+  },
+  "block.smithing_table": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "ubm:block/smithing_table/smithing_table1",
+        "stream": false
+      },
+      {
+        "name": "ubm:block/smithing_table/smithing_table2",
+        "stream": false
+      },
+      {
+        "name": "ubm:block/smithing_table/smithing_table3",
+        "stream": false
+      }
+    ]
   }
 }
