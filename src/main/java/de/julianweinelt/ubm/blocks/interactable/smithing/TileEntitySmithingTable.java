@@ -6,6 +6,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.NonNullList;
 
+import javax.annotation.Nonnull;
+
 public class TileEntitySmithingTable extends TileEntity implements IInventory {
     private NonNullList<ItemStack> items = NonNullList.withSize(4, ItemStack.EMPTY);
 
@@ -38,7 +40,7 @@ public class TileEntitySmithingTable extends TileEntity implements IInventory {
     }
 
     @Override
-    public void setInventorySlotContents(int index, ItemStack stack) {
+    public void setInventorySlotContents(int index, @Nonnull ItemStack stack) {
         items.set(index, stack);
         markDirty();
     }
