@@ -1,0 +1,7 @@
+{
+  "parent": "ubm:block/template_campfire",
+  "textures": {
+    "fire": "ubm:blocks/campfire_fire",
+    "lit_log": "ubm:blocks/campfire_log_lit"
+  }
+}

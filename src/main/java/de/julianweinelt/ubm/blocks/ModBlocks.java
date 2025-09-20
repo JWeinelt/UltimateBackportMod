@@ -65,6 +65,7 @@ public class ModBlocks {
     public static Block BLAST_FURNACE;
     public static Block BARREL;
     public static Block BELL;
+    public static Block CAMPFIRE;
 
     public static Block CRIMSON_STEM;
     public static Block CRIMSON_HYPHAE;
@@ -213,6 +214,9 @@ public class ModBlocks {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
+        CAMPFIRE = new BlockCampFire();
+        event.getRegistry().register(CAMPFIRE);
+
         CRIMSON_BUTTON = new BlockModButton(true, "crimson_button")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         event.getRegistry().register(CRIMSON_BUTTON);
@@ -853,6 +857,7 @@ public class ModBlocks {
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new ItemBlock(COPPER_TORCH).setRegistryName(COPPER_TORCH.getRegistryName()));
 
+        registerItem(CAMPFIRE, event);
         registerItem(CRIMSON_BUTTON, event);
         registerItem(SMITHING_TABLE, event);
 

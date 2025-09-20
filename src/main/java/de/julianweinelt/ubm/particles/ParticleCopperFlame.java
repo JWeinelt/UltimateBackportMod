@@ -22,7 +22,6 @@ public class ParticleCopperFlame extends Particle {
         TextureAtlasSprite sprite = Minecraft.getMinecraft().getTextureMapBlocks()
                 .getAtlasSprite(new ResourceLocation("ubm:particle/copper_flame").toString());
         this.setParticleTexture(sprite);
-
     }
 
     @Override
