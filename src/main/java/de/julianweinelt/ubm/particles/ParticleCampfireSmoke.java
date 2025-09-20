@@ -12,10 +12,12 @@ import net.minecraft.world.World;
 import net.minecraft.util.math.MathHelper;
 
 public class ParticleCampfireSmoke extends Particle {
-    public ParticleCampfireSmoke(World worldIn, double x, double y, double z, double vx, double vy, double vz, int lifetime) {
+    public static TextureAtlasSprite SPRITE;
+
+    public ParticleCampfireSmoke(World worldIn, double x, double y, double z, double vx, double vy, double vz) {
         super(worldIn, x, y, z, vx, vy, vz);
 
-        this.particleMaxAge = lifetime + this.rand.nextInt(20);
+        this.particleMaxAge = 60 + this.rand.nextInt(20);
 
         this.particleScale = 5F;
 
@@ -23,9 +25,9 @@ public class ParticleCampfireSmoke extends Particle {
         this.motionY = vy;
         this.motionZ = vz;
 
-        TextureAtlasSprite sprite = Minecraft.getMinecraft().getTextureMapBlocks()
-                .getAtlasSprite(new ResourceLocation("ubm:particle/big_smoke_2").toString());
-        setParticleTexture(sprite);
+        if (SPRITE != null) {
+            setParticleTexture(SPRITE);
+        }
     }
 
     @Override

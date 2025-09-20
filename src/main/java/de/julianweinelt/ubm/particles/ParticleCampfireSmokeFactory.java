@@ -11,6 +11,6 @@ public class ParticleCampfireSmokeFactory implements IParticleFactory {
     @Override
     public Particle createParticle(int particleID, @Nonnull World worldIn, double x, double y, double z,
                                    double xSpeed, double ySpeed, double zSpeed, @Nonnull int... parameters) {
-        return new ParticleCampfireSmoke(worldIn, x, y, z, xSpeed, ySpeed, zSpeed, 40);
+        return new ParticleCampfireSmoke(worldIn, x, y, z, xSpeed, ySpeed, zSpeed);
     }
 }

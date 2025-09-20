@@ -13,4 +13,9 @@ public class ParticleTextureRegistry {
         event.getMap().registerSprite(new ResourceLocation("ubm:particle/copper_flame"));
         event.getMap().registerSprite(new ResourceLocation("ubm:particle/big_smoke_2"));
     }
+
+    @SubscribeEvent
+    public static void onTextureStitchPost(TextureStitchEvent.Post event) {
+        ParticleCampfireSmoke.SPRITE = event.getMap().getAtlasSprite("ubm:particle/big_smoke_2");
+    }
 }
