@@ -7,6 +7,7 @@ import de.julianweinelt.ubm.blocks.plant.BlockGlowBerryVine;
 import de.julianweinelt.ubm.blocks.plant.BlockGlowLichen;
 import de.julianweinelt.ubm.blocks.plant.BlockSweetBerry;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityBeeNest;
+import de.julianweinelt.ubm.blocks.tiles.TileEntityCampfire;
 import de.julianweinelt.ubm.items.BlockCopperTorch;
 import de.julianweinelt.ubm.items.ModItems;
 import de.julianweinelt.ubm.misc.AdvancementHelper;
@@ -852,6 +853,7 @@ public class ModBlocks {
         new WorldTypeModern();
         GameRegistry.registerTileEntity(TileEntityBeeNest.class, new ResourceLocation("ubm", "bee_nest"));
         GameRegistry.registerWorldGenerator(new WorldGenBeeNest(), 0);
+        GameRegistry.registerTileEntity(TileEntityCampfire.class, "ubm:campfire");
     }
     @SubscribeEvent
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
