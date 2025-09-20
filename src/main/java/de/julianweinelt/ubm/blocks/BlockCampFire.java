@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.blocks;
 
 import de.julianweinelt.ubm.blocks.api.EnumHorizontalFacing;
+import de.julianweinelt.ubm.blocks.tiles.TileEntityCampfire;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.particles.ParticleCampfireSmoke;
 import net.minecraft.block.Block;
@@ -14,8 +15,10 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -25,6 +28,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 @SuppressWarnings("deprecation")
@@ -156,6 +161,34 @@ public class BlockCampFire extends Block {
                     return true;
                 }
             }
+
+            Item[] beef = {
+                    Items.BEEF,
+                    Items.CHICKEN,
+                    Items.MUTTON,
+                    Items.RABBIT,
+                    Items.POTATO
+            };
+            Item[] cooked = {
+                    Items.COOKED_BEEF,
+                    Items.COOKED_CHICKEN,
+                    Items.COOKED_MUTTON,
+                    Items.COOKED_RABBIT,
+                    Items.BAKED_POTATO
+            };
+            List<Item> beefList = Arrays.asList(beef);
+
+            int beefSlot = beefList.indexOf(heldItem.getItem());
+            if (!heldItem.isEmpty() && beefList.contains(heldItem.getItem())) {
+                TileEntity te = worldIn.getTileEntity(pos);
+                if (te instanceof TileEntityCampfire) {
+                    boolean added = ((TileEntityCampfire) te).addItem(heldItem.splitStack(1), new ItemStack(cooked[beefSlot]));
+                    if (added && !worldIn.isRemote) {
+                        worldIn.notifyBlockUpdate(pos, state, state, 3);
+                    }
+                    return true;
+                }
+            }
         }
 
         return false;
@@ -177,9 +210,20 @@ public class BlockCampFire extends Block {
 
             Minecraft.getMinecraft().addScheduledTask(() -> {
                 Minecraft.getMinecraft().effectRenderer.addEffect(
-                        new ParticleCampfireSmoke(worldIn, x, y, z, 0, velocityY, 0, 60)
+                        new ParticleCampfireSmoke(worldIn, x + offsetX, y + 0.5F, z + offsetZ, 0, velocityY, 0)
                 );
             });
         }
     }
+
+    @Override
+    public boolean hasTileEntity(IBlockState state) {
+        return true;
+    }
+
+    @Override
+    public TileEntity createTileEntity(World world, IBlockState state) {
+        return new TileEntityCampfire();
+    }
+
 }
