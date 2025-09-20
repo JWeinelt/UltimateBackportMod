@@ -129,6 +129,7 @@ item.raw_copper.name=Raw Copper
 item.crossbow.name=Crossbow
 item.trident.name=Trident
 item.copper_nugget.name=Copper Nugget
+item.ominous_bottle.name=Ominous Bottle
 
 itemGroup.ubm_tab_nether=Nether Update
 itemGroup.ubm_tab_trails_tales=Trails and Tails

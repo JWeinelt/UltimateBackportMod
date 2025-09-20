@@ -6,6 +6,7 @@ import de.julianweinelt.ubm.blocks.interactable.smithing.GuiHandler;
 import de.julianweinelt.ubm.blocks.interactable.smithing.TileEntitySmithingTable;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.misc.ClientEventHandler;
+import de.julianweinelt.ubm.misc.ClientProxy;
 import de.julianweinelt.ubm.misc.CommonProxy;
 import de.julianweinelt.ubm.misc.ModRecipes;
 import de.julianweinelt.ubm.qol.SwimClientHandler;
@@ -40,7 +41,6 @@ public class UBM {
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
         instance = this;
-
 
         ModEntities.init();
         ModEntities.registerRenders();

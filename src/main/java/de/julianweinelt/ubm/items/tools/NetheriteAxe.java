@@ -1,10 +1,10 @@
-package de.julianweinelt.ubm.items;
+package de.julianweinelt.ubm.items.tools;
 
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import net.minecraft.item.ItemAxe;
 
 public class NetheriteAxe extends ItemAxe {
-    protected NetheriteAxe(ToolMaterial material) {
+    public NetheriteAxe(ToolMaterial material) {
         super(material);
         this.setUnlocalizedName("netherite_axe");
         this.setRegistryName("netherite_axe");

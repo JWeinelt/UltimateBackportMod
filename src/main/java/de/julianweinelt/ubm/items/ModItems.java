@@ -5,6 +5,7 @@ import de.julianweinelt.ubm.entities.*;
 import de.julianweinelt.ubm.entities.custom.EntityCustomWolf;
 import de.julianweinelt.ubm.entities.EntitySalmon;
 import de.julianweinelt.ubm.entities.custom.EntityNewVillager;
+import de.julianweinelt.ubm.items.tools.*;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.misc.ModMaterials;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -44,6 +45,8 @@ public class ModItems {
     public static Item TRIM_BOLT;
     public static Item TRIM_HOST;
     public static Item TRIM_RIB;
+
+    public static Item OMINOUS_BOTTLE;
 
     public static Item NETHERITE_SCRAP;
     public static Item NETHERITE_INGOT;
@@ -182,6 +185,9 @@ public class ModItems {
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
+        OMINOUS_BOTTLE = new ItemOminousBottle();
+        event.getRegistry().register(OMINOUS_BOTTLE);
+
         //Armor trims
         TRIM_NETHERITE_UPGRADE = new ItemArmorTrim()
                 .setRegistryName("netherite_upgrade_template")
@@ -231,6 +237,43 @@ public class ModItems {
         event.getRegistry().register(NETHERITE_SHOVEL);
         NETHERITE_HOE = new NetheriteHoe(Item.ToolMaterial.DIAMOND);
         event.getRegistry().register(NETHERITE_HOE);
+
+        COPPER_SWORD = new CopperSword(ModMaterials.COPPER);
+        event.getRegistry().register(COPPER_SWORD);
+        COPPER_AXE = new CopperAxe(Item.ToolMaterial.DIAMOND);
+        event.getRegistry().register(COPPER_AXE);
+        COPPER_PICKAXE = new CopperPickAxe(Item.ToolMaterial.DIAMOND);
+        event.getRegistry().register(COPPER_PICKAXE);
+        COPPER_SHOVEL = new CopperShovel(Item.ToolMaterial.DIAMOND);
+        event.getRegistry().register(COPPER_SHOVEL);
+        COPPER_HOE = new CopperHoe(Item.ToolMaterial.DIAMOND);
+        event.getRegistry().register(COPPER_HOE);
+
+        COPPER_HELMET = new ItemArmor(ModMaterials.COPPER_ARMOR, 0, EntityEquipmentSlot.HEAD)
+                .setUnlocalizedName("copper_helmet")
+                .setRegistryName("copper_helmet")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_COPPER_AGE);
+
+        COPPER_CHESTPLATE = new ItemArmor(ModMaterials.COPPER_ARMOR, 0, EntityEquipmentSlot.CHEST)
+                .setUnlocalizedName("copper_chestplate")
+                .setRegistryName("copper_chestplate")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_COPPER_AGE);
+
+        COPPER_LEGGINGS = new ItemArmor(ModMaterials.COPPER_ARMOR, 0, EntityEquipmentSlot.LEGS)
+                .setUnlocalizedName("copper_leggings")
+                .setRegistryName("copper_leggings")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_COPPER_AGE);
+
+        COPPER_BOOTS = new ItemArmor(ModMaterials.COPPER_ARMOR, 0, EntityEquipmentSlot.FEET)
+                .setUnlocalizedName("copper_boots")
+                .setRegistryName("copper_boots")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_COPPER_AGE);
+
+
+        event.getRegistry().register(COPPER_HELMET);
+        event.getRegistry().register(COPPER_CHESTPLATE);
+        event.getRegistry().register(COPPER_LEGGINGS);
+        event.getRegistry().register(COPPER_BOOTS);
 
 
         NETHERITE_HELMET = new ItemArmor(ModMaterials.NETHERITE_ARMOR, 0, EntityEquipmentSlot.HEAD)
@@ -544,6 +587,7 @@ public class ModItems {
     @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void onModelEvent(final ModelRegistryEvent event) {
+        registerItemModel(OMINOUS_BOTTLE);
         registerItemModel(NETHERITE_SCRAP);
         registerItemModel(NETHERITE_INGOT);
         registerItemModel(NETHERITE_SWORD);
@@ -555,6 +599,17 @@ public class ModItems {
         registerItemModel(NETHERITE_CHESTPLATE);
         registerItemModel(NETHERITE_LEGGINGS);
         registerItemModel(NETHERITE_BOOTS);
+
+        registerItemModel(COPPER_SWORD);
+        registerItemModel(COPPER_PICKAXE);
+        registerItemModel(COPPER_SHOVEL);
+        registerItemModel(COPPER_AXE);
+        registerItemModel(COPPER_HOE);
+        registerItemModel(COPPER_HELMET);
+        registerItemModel(COPPER_CHESTPLATE);
+        registerItemModel(COPPER_LEGGINGS);
+        registerItemModel(COPPER_BOOTS);
+
         registerItemModel(ANGLER_POTTERY_SHERD);
         registerItemModel(ARCHER_POTTERY_SHERD);
         registerItemModel(ARMS_UP_POTTERY_SHERD);

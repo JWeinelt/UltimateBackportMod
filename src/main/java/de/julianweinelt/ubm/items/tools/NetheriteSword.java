@@ -1,4 +1,4 @@
-package de.julianweinelt.ubm.items;
+package de.julianweinelt.ubm.items.tools;
 
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import net.minecraft.entity.item.EntityItem;
