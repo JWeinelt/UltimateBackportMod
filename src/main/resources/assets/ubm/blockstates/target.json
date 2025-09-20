@@ -1,7 +1,7 @@
 {
   "variants": {
-    "": {
-      "model": "target"
+    "normal": {
+      "model": "ubm:target"
     }
   }
 }
