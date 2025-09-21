@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "ubm:blocks/smoker_side",
+    "down": "ubm:blocks/smoker_top",
+    "up": "ubm:blocks/smoker_top",
+    "north": "ubm:blocks/smoker_front_on",
+    "east": "ubm:blocks/smoker_side",
+    "south": "ubm:blocks/smoker_side",
+    "west": "ubm:blocks/smoker_side"
+  }
+}

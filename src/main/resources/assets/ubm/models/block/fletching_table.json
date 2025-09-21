@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "ubm:blocks/fletching_table_side",
+    "down": "minecraft:blocks/planks_birch",
+    "up": "ubm:blocks/fletching_table_top",
+    "north": "ubm:blocks/fletching_table_front",
+    "east": "ubm:blocks/fletching_table_side",
+    "south": "ubm:blocks/fletching_table_side",
+    "west": "ubm:blocks/fletching_table_side"
+  }
+}

@@ -2,6 +2,8 @@
 
 ![Version 0.1.0](https://img.shields.io/badge/Version-0.1.4-blue)[![Build](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml/badge.svg)](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml)![CurseForge](https://img.shields.io/curseforge/v/494079?label=CurseForge)![Modrinth](https://img.shields.io/modrinth/v/R8jBhfbN?label=Modrinth)
 
+[![Crowdin](https://badges.crowdin.net/ultimate-backport-mod/localized.svg)](https://crowdin.com/project/ultimate-backport-mod)
+
 Welcome to the official GitHub repository of **UBM – Ultimate Backport Mod**!
 
 👉 Looking for 1.7.10 support? [View this branch!](https://github.com/JWeinelt/UltimateBackportMod/tree/1.7.10)

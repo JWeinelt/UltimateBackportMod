@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "ubm:fletching_table" },
+    "facing=south": { "model": "ubm:fletching_table", "y": 180 },
+    "facing=west":  { "model": "ubm:fletching_table", "y": 270 },
+    "facing=east":  { "model": "ubm:fletching_table", "y": 90 }
+  }
+}

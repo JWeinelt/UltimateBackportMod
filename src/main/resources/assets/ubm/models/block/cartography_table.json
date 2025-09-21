@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "ubm:blocks/cartography_table_side1",
+    "down": "ubm:blocks/cartography_table_side3",
+    "up": "ubm:blocks/cartography_table_top",
+    "north": "ubm:blocks/cartography_table_side2",
+    "east": "ubm:blocks/cartography_table_side1",
+    "south": "ubm:blocks/cartography_table_side2",
+    "west": "ubm:blocks/cartography_table_side3"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "ubm:blast_furnace" },
+    "facing=south": { "model": "ubm:blast_furnace", "y": 180 },
+    "facing=west":  { "model": "ubm:blast_furnace", "y": 270 },
+    "facing=east":  { "model": "ubm:blast_furnace", "y": 90 }
+  }
+}

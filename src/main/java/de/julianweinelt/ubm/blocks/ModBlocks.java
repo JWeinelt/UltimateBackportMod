@@ -62,11 +62,14 @@ public class ModBlocks {
     public static Block SMITHING_TABLE;
     public static Block FLETCHING_TABLE;
     public static Block LOOM;
+    public static Block CARTOGRAPHY_TABLE;
     public static Block SMOKER;
     public static Block BLAST_FURNACE;
     public static Block BARREL;
     public static Block BELL;
+    public static Block SMOOTH_STONE;
     public static Block CAMPFIRE;
+    public static Block GRINDSTONE;
 
     public static Block TARGET;
 
@@ -217,8 +220,50 @@ public class ModBlocks {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
-        CAMPFIRE = new BlockCampFire();
+        CAMPFIRE = new BlockCampFire(false);
         event.getRegistry().register(CAMPFIRE);
+
+        LOOM = new BlockRotated(Material.WOOD)
+                .setUnlocalizedName("loom")
+                .setRegistryName("loom")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
+        event.getRegistry().register(LOOM);
+        SMOOTH_STONE = new Block(Material.ROCK)
+                .setUnlocalizedName("smooth_stone")
+                .setRegistryName("smooth_stone")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
+        event.getRegistry().register(SMOOTH_STONE);
+
+        GRINDSTONE = new BlockRotated(Material.ROCK)
+                .setUnlocalizedName("grindstone")
+                .setRegistryName("grindstone")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
+        event.getRegistry().register(GRINDSTONE);
+
+        SOUL_CAMPFIRE = new BlockCampFire(true)
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        event.getRegistry().register(SOUL_CAMPFIRE);
+
+        FLETCHING_TABLE = new BlockRotated(Material.WOOD)
+                .setRegistryName("fletching_table")
+                .setUnlocalizedName("fletching_table")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
+        event.getRegistry().register(FLETCHING_TABLE);
+        SMOKER = new BlockRotated(Material.ROCK)
+                .setRegistryName("smoker")
+                .setUnlocalizedName("smoker")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
+        event.getRegistry().register(SMOKER);
+        BLAST_FURNACE = new BlockRotated(Material.ROCK)
+                .setRegistryName("blast_furnace")
+                .setUnlocalizedName("blast_furnace")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
+        event.getRegistry().register(BLAST_FURNACE);
+        CARTOGRAPHY_TABLE = new BlockRotated(Material.WOOD)
+                .setRegistryName("cartography_table")
+                .setUnlocalizedName("cartography_table")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
+        event.getRegistry().register(CARTOGRAPHY_TABLE);
 
         CRIMSON_BUTTON = new BlockModButton(true, "crimson_button")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
@@ -867,7 +912,17 @@ public class ModBlocks {
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new ItemBlock(COPPER_TORCH).setRegistryName(COPPER_TORCH.getRegistryName()));
 
+        registerItem(GRINDSTONE, event);
+        registerItem(SMOOTH_STONE, event);
+        registerItem(LOOM, event);
+
+        registerItem(CARTOGRAPHY_TABLE, event);
+        registerItem(FLETCHING_TABLE, event);
+        registerItem(BLAST_FURNACE, event);
+        registerItem(SMOKER, event);
+
         registerItem(CAMPFIRE, event);
+        registerItem(SOUL_CAMPFIRE, event);
         registerItem(CRIMSON_BUTTON, event);
         registerItem(SMITHING_TABLE, event);
 

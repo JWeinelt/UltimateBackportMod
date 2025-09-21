@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "ubm:smoker" },
+    "facing=south": { "model": "ubm:smoker", "y": 180 },
+    "facing=west":  { "model": "ubm:smoker", "y": 270 },
+    "facing=east":  { "model": "ubm:smoker", "y": 90 }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "ubm:blocks/loom_side",
+    "down": "ubm:blocks/loom_bottom",
+    "up": "ubm:blocks/loom_top",
+    "north": "ubm:blocks/loom_front",
+    "east": "ubm:blocks/loom_side",
+    "south": "ubm:blocks/loom_side",
+    "west": "ubm:blocks/loom_side"
+  }
+}

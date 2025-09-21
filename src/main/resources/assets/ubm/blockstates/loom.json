@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "ubm:loom" },
+    "facing=south": { "model": "ubm:loom", "y": 180 },
+    "facing=west":  { "model": "ubm:loom", "y": 270 },
+    "facing=east":  { "model": "ubm:loom", "y": 90 }
+  }
+}

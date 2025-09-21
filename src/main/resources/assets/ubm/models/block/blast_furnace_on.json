@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "ubm:blocks/blast_furnace_side",
+    "down": "ubm:blocks/blast_furnace_top",
+    "up": "ubm:blocks/blast_furnace_top",
+    "north": "ubm:blocks/blast_furnace_front_on",
+    "east": "ubm:blocks/blast_furnace_side",
+    "south": "ubm:blocks/blast_furnace_side",
+    "west": "ubm:blocks/blast_furnace_side"
+  }
+}

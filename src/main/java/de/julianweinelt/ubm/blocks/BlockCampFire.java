@@ -43,10 +43,10 @@ public class BlockCampFire extends Block {
             PropertyEnum.create("facing", EnumHorizontalFacing.class);
     public static final PropertyBool LIT = PropertyBool.create("lit");
 
-    public BlockCampFire() {
+    public BlockCampFire(boolean soul) {
         super(Material.WOOD);
-        this.setRegistryName("ubm", "campfire");
-        this.setUnlocalizedName("campfire");
+        this.setRegistryName("ubm", (soul ? "soul_" : "") + "campfire");
+        this.setUnlocalizedName((soul ? "soul_" : "") + "campfire");
         this.setLightLevel(1.0F);
         this.setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
         this.setDefaultState(this.blockState.getBaseState()
