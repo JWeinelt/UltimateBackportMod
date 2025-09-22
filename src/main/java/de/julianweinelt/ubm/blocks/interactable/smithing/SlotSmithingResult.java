@@ -1,9 +1,11 @@
 package de.julianweinelt.ubm.blocks.interactable.smithing;
 
+import de.julianweinelt.ubm.misc.ModSounds;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundCategory;
 
 import javax.annotation.Nonnull;
 
@@ -23,6 +25,7 @@ public class SlotSmithingResult extends Slot {
     @Override
     @Nonnull
     public ItemStack onTake(@Nonnull EntityPlayer player, @Nonnull ItemStack stack) {
+        player.world.playSound(null, player.getPosition(), ModSounds.BLOCK_SMITHING_TABLE, SoundCategory.BLOCKS, 1F, 1F);
         craftMatrix.decrStackSize(0, 1);
         craftMatrix.decrStackSize(1, 1);
         craftMatrix.decrStackSize(2, 1);

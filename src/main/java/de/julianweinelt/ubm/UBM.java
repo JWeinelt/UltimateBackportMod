@@ -14,6 +14,7 @@ import de.julianweinelt.ubm.trims.LayerArmorTrim;
 import de.julianweinelt.ubm.trims.TrimColorHelper;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
 import de.julianweinelt.ubm.worldgen.StructureWorldGen;
+import de.julianweinelt.ubm.worldgen.structure.village.ModCustomVillage;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -67,6 +68,8 @@ public class UBM {
         MinecraftForge.EVENT_BUS.register(new SwimClientHandler());
 
         GameRegistry.registerTileEntity(TileEntitySmithingTable.class, new ResourceLocation("ubm", "smithing_table"));
+
+        ModCustomVillage.preInit();
     }
 
     @Mod.EventHandler
@@ -96,6 +99,8 @@ public class UBM {
             Color[] palette = TrimColorHelper.extractPalette(basePath + material + ".png");
             LayerArmorTrim.MATERIAL_TO_PALETTE.put(material, palette);
         }
+
+        ModCustomVillage.init();
     }
 
     public static Logger getLogger() {

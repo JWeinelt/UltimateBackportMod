@@ -3192,7 +3192,7 @@
     ]
   },
   "block.smithing_table": {
-    "category": "block",
+    "category": "blocks",
     "sounds": [
       {
         "name": "ubm:block/smithing_table/smithing_table1",
