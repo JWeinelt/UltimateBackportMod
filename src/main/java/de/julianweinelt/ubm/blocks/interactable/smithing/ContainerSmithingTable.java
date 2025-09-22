@@ -104,4 +104,66 @@ public class ContainerSmithingTable extends Container {
             playerIn.dropItem(trim, false);
         }
     }
+
+    @Override
+    @Nonnull
+    public ItemStack transferStackInSlot(@Nonnull EntityPlayer playerIn, int index) {
+        ItemStack stack = ItemStack.EMPTY;
+        Slot slot = this.inventorySlots.get(index);
+        if (slot != null && slot.getHasStack()) {
+            ItemStack stackInSlot = slot.getStack();
+            stack = stackInSlot.copy();
+
+            if (index == 3) {
+                if (!this.mergeItemStack(stackInSlot, 4, this.inventorySlots.size(), true)) {
+                    return ItemStack.EMPTY;
+                }
+                slot.onSlotChange(stackInSlot, stack);
+            } else if (index >= 0 && index <= 2) {
+                if (!this.mergeItemStack(stackInSlot, 4, this.inventorySlots.size(), true)) {
+                    return ItemStack.EMPTY;
+                }
+            } else {
+                if (stackInSlot.getItem() instanceof ItemArmorTrim) {
+                    if (!this.mergeItemStack(stackInSlot, 0, 1, false)) return ItemStack.EMPTY;
+                } else if (stackInSlot.getItem() instanceof ItemArmor) {
+                    if (!this.mergeItemStack(stackInSlot, 1, 2, false)) return ItemStack.EMPTY;
+                } else if (isValidMaterial(stackInSlot.getItem())) {
+                    if (!this.mergeItemStack(stackInSlot, 2, 3, false)) return ItemStack.EMPTY;
+                } else {
+                    if (index >= 4 && index <= 31) {
+                        if (!this.mergeItemStack(stackInSlot, 31, this.inventorySlots.size(), false)) return ItemStack.EMPTY;
+                    } else if (index >= 31 && index < this.inventorySlots.size()) {
+                        if (!this.mergeItemStack(stackInSlot, 4, 31, false)) {
+                            return ItemStack.EMPTY;
+                        }
+                    }
+                }
+            }
+
+            if (stackInSlot.isEmpty()) {
+                slot.putStack(ItemStack.EMPTY);
+            } else {
+                slot.onSlotChanged();
+            }
+
+            if (stackInSlot.getCount() == stack.getCount()) {
+                return ItemStack.EMPTY;
+            }
+
+            slot.onTake(playerIn, stackInSlot);
+        }
+        return stack;
+    }
+
+    private boolean isValidMaterial(Item item) {
+        return item == Items.GOLD_INGOT
+                || item == Items.IRON_INGOT
+                || item == Items.EMERALD
+                || item == Items.QUARTZ
+                || item == Items.DIAMOND
+                || item == Items.REDSTONE
+                || item == ModItems.AMETHYST_SHARD
+                || item == ModItems.NETHERITE_INGOT;
+    }
 }
