@@ -8,11 +8,15 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 
@@ -20,7 +24,7 @@ public class BlockGrindstone extends Block {
     public BlockGrindstone(Material materialIn) {
         super(materialIn);
         this.setDefaultState(this.blockState.getBaseState()
-                .withProperty(FACING, EnumHorizontalFacing.NORTH));
+                .withProperty(FACING, EnumHorizontalFacing.NORTH).withProperty(FACE, EnumBlockFace.FLOOR));
     }
 
 
@@ -85,6 +89,25 @@ public class BlockGrindstone extends Block {
     @Nonnull
     public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
         return state.withRotation(mirrorIn.toRotation(state.getValue(FACING).toEnumFacing()));
+    }
+
+    @Override
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
+    }
+
+    @Override
+    public boolean isFullCube(IBlockState state) {
+        return false;
+    }
+    @Override
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.CUTOUT_MIPPED;
+    }
+    @Override
+    public boolean shouldSideBeRendered(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing side) {
+        return true;
     }
 
 }

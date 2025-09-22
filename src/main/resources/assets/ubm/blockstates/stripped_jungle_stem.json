@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "ubm:stripped_jungle_stem",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ubm:stripped_jungle_stem"
+    },
+    "axis=z": {
+      "model": "ubm:stripped_jungle_stem",
+      "x": 90
+    }
+  }
+}

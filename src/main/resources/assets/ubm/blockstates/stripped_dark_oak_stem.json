@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "ubm:stripped_dark_oak_stem",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ubm:stripped_dark_oak_stem"
+    },
+    "axis=z": {
+      "model": "ubm:stripped_dark_oak_stem",
+      "x": 90
+    }
+  }
+}
