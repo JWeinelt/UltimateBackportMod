@@ -6,7 +6,7 @@
 
 Welcome to the official GitHub repository of **UBM – Ultimate Backport Mod**!
 
-👉 Looking for 1.7.10 support? [View this branch!](https://github.com/JWeinelt/UltimateBackportMod/tree/1.7.10)
+👉 Looking for 1.16.5 support? [View this branch!](https://github.com/JWeinelt/UltimateBackportMod/tree/1.16.5)
 
 
 ## ❓ What is UBM?
@@ -48,6 +48,7 @@ If you like what we’re building:
 * Star ⭐ this repository
 * Share 👥 it with friends and servers still using 1.12.2
 * Contribute 💻 to development
+* Translate it at [Crowdin](https://crowdin.com/project/ultimate-backport-mod)
 
 ## ♥️ Our contributors
 <a href="https://github.com/JWeinelt"><img src="https://github.com/JWeinelt.png" width="50" height="50" alt="@JWeinelt"/></a>
