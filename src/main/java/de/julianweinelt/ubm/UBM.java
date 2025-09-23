@@ -29,7 +29,7 @@ import java.awt.*;
 import java.io.File;
 
 
-@Mod(modid = UBM.MODID, name = UBM.NAME, version = UBM.VERSION)
+@Mod(modid = UBM.MODID, name = UBM.NAME, version = UBM.VERSION, dependencies = "required-after:pathfinder@[1.1,)")
 public class UBM {
     public static final String MODID = "ubm";
     public static final String NAME = "Ultimate Backport Mod";
