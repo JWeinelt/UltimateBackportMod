@@ -2,11 +2,13 @@
 
 ## Supported Versions
 
-UBM follows a simple support policy focused on stability for servers running **Forge 1.12.2**.
-
 | Version branch | Status        | Notes                                 |
 | -------------- | ------------- | ------------------------------------- |
-| `master`       | ✅ Supported   | Receives security fixes and patches.  |
+| `1.12.2`       | ✅ Supported  | Main version of the mod.            |
+| `1.7.10`       | ⚠️ Partially Supported | [Info about 1.7.10](#) |
+| `1.16.5`       | ⚠️ Partially Supported | Planned for the future. |
+
+Only the latest version of each branch is supported.
 
 > Security fixes are released as patch builds. Feature updates may be deferred.
 
