@@ -40,7 +40,7 @@ public class EntityAIFlyToFlower extends EntityAIBase {
         }
     
         if (bee.getBeeState() == EntityBee.BeeState.RETURN_TO_NEST) {
-            if (nest == null) {
+            if (nest == null) { //TODO: Or if the Block type at this position isn't BEE_HIVE or BEE_NEST
                 nest = findNest();
                 bee.setNestPos(nest);
             }
