@@ -1,12 +1,12 @@
 # 🌍 Ultimate Backport Mod (UBM)
 
-![Version 0.1.0](https://img.shields.io/badge/Version-0.1.4-blue)[![Build](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml/badge.svg)](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml)![CurseForge](https://img.shields.io/curseforge/v/494079?label=CurseForge)![Modrinth](https://img.shields.io/modrinth/v/R8jBhfbN?label=Modrinth)
+![Version 0.1.0](https://img.shields.io/badge/Version-Pre--Release%201-blue)[![Build](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml/badge.svg)](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml)![CurseForge](https://img.shields.io/curseforge/v/494079?label=CurseForge)![Modrinth](https://img.shields.io/modrinth/v/R8jBhfbN?label=Modrinth)
 
 [![Crowdin](https://badges.crowdin.net/ultimate-backport-mod/localized.svg)](https://crowdin.com/project/ultimate-backport-mod)
 
 Welcome to the official GitHub repository of **UBM – Ultimate Backport Mod**!
 
-👉 Looking for 1.7.10 support? [View this branch!](https://github.com/JWeinelt/UltimateBackportMod/tree/1.7.10)
+👉 Looking for 1.16.5 support? [View this branch!](https://github.com/JWeinelt/UltimateBackportMod/tree/1.16.5)
 
 
 ## ❓ What is UBM?
@@ -48,10 +48,12 @@ If you like what we’re building:
 * Star ⭐ this repository
 * Share 👥 it with friends and servers still using 1.12.2
 * Contribute 💻 to development
+* Translate it at [Crowdin](https://crowdin.com/project/ultimate-backport-mod)
 
 ## ♥️ Our contributors
 <a href="https://github.com/JWeinelt"><img src="https://github.com/JWeinelt.png" width="50" height="50" alt="@JWeinelt"/></a>
 <a href="https://github.com/ElF1ni"><img src="https://github.com/ElF1ni.png" width="50" height="50" alt="@ElF1ni"/></a>
 <a href="https://github.com/zCreeperYT"><img src="https://github.com/zCreeperYT.png" width="50" height="50" alt="@zCreeperYT"/></a>
+<a href="https://github.com/FlashTalkN"><img src="https://github.com/FlashTalkN.png" width="50" height="50" alt="@FlashTalkN"/></a>
 
 ✨ *"Bringing the future to the past – one block at a time."* ✨

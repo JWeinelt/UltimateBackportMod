@@ -13,6 +13,8 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -28,6 +30,7 @@ public class ItemSpawnEggCustom extends Item {
         setRegistryName(entityName + "_spawn_egg");
     }
 
+    @SideOnly(Side.CLIENT)
     @Nonnull
     @Override
     public String getItemStackDisplayName(@Nullable ItemStack stack) {

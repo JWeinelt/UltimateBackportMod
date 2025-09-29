@@ -26,7 +26,6 @@ public class EntityAIFlyToFlower extends EntityAIBase {
         this.bee = bee;
         this.speed = speed;
         this.setMutexBits(1);
-        nest = findNest();
     }
 
     @Override
@@ -34,10 +33,21 @@ public class EntityAIFlyToFlower extends EntityAIBase {
         if (bee.getRNG().nextInt(20) != 0) {
             return false;
         }
-
-        targetFlower = findNearbyFlower();
-        nest = findNest();
-        return targetFlower != null;
+    
+        if (bee.getBeeState() == EntityBee.BeeState.SEARCHING_FLOWER) {
+            targetFlower = findNearbyFlower();
+            return targetFlower != null;
+        }
+    
+        if (bee.getBeeState() == EntityBee.BeeState.RETURN_TO_NEST) {
+            if (nest == null) { //TODO: Or if the Block type at this position isn't BEE_HIVE or BEE_NEST
+                nest = findNest();
+                bee.setNestPos(nest);
+            }
+            return nest != null;
+        }
+    
+        return false;
     }
 
     @Override

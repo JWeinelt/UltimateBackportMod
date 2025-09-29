@@ -17,6 +17,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -182,6 +184,8 @@ public class ModEntities {
         EntityRegistry.addSpawn(EntityCod.class, 10, 1, 5, EnumCreatureType.WATER_CREATURE, FISH_BIOMES);
     }
 
+
+    @SideOnly(Side.CLIENT)
     public static void registerRenders() {
         RenderingRegistry.registerEntityRenderingHandler(EntityBee.class, renderManager ->
                 new RenderLiving<EntityBee>(renderManager, new ModelBee(), 0.5F) {
