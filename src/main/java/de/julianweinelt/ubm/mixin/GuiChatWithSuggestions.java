@@ -6,11 +6,14 @@ import de.julianweinelt.pathfinder.command.Command;
 import de.julianweinelt.ubm.UBM;
 import net.minecraft.client.gui.GuiChat;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
 
 import java.io.IOException;
 import java.util.*;
 
+@SideOnly(Side.CLIENT)
 public class GuiChatWithSuggestions extends GuiChat {
     private int suggestionIndex = 0;
     private List<String> currentSuggestions = new ArrayList<>();

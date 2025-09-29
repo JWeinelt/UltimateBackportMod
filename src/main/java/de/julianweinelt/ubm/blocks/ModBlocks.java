@@ -972,12 +972,174 @@ public class ModBlocks {
 
 
         ModBiomes.init();
-        new WorldTypeSelectableBiome("selectable_biome");
-        new WorldTypeModern();
         GameRegistry.registerTileEntity(TileEntityBeeNest.class, new ResourceLocation("ubm", "bee_nest"));
         GameRegistry.registerWorldGenerator(new WorldGenBeeNest(), 0);
         GameRegistry.registerTileEntity(TileEntityCampfire.class, "ubm:campfire");
     }
+
+    @SideOnly(Side.SERVER)
+    @SubscribeEvent
+    public static void registerItemServerBlocks(RegistryEvent.Register<Item> event) {
+        event.getRegistry().register(new ItemBlock(COPPER_TORCH).setRegistryName(COPPER_TORCH.getRegistryName()));
+
+        registerItemServer(GRINDSTONE, event);
+        registerItemServer(SMOOTH_STONE, event);
+        registerItemServer(LOOM, event);
+
+        registerItemServer(CARTOGRAPHY_TABLE, event);
+        registerItemServer(FLETCHING_TABLE, event);
+        registerItemServer(BLAST_FURNACE, event);
+        registerItemServer(SMOKER, event);
+
+        registerItemServer(CAMPFIRE, event);
+        registerItemServer(SOUL_CAMPFIRE, event);
+        registerItemServer(CRIMSON_BUTTON, event);
+        registerItemServer(SMITHING_TABLE, event);
+
+        registerItemServer(AMETHYST_CLUSTER, event);
+        registerItemServer(BUDDING_AMETHYST, event);
+        registerItemServer(SMALL_AMETHYST_BUD, event);
+        registerItemServer(MEDIUM_AMETHYST_BUD, event);
+        registerItemServer(LARGE_AMETHYST_BUD, event);
+
+        registerItemServer(TARGET, event);
+
+        registerItemServer(NETHERITE_BLOCK, event);
+        registerItemServer(GLOW_LICHEN, event);
+        registerItemServer(ANCIENT_DEBRIS, event);
+        registerItemServer(CRIMSON_STEM, event);
+        registerItemServer(CRIMSON_HYPHAE, event);
+        registerItemServer(WARPED_STEM, event);
+        registerItemServer(WARPED_HYPHAE, event);
+        registerItemServer(WARPED_STAIRS, event);
+        registerItemServer(WARPED_FENCE, event);
+        registerItemServer(CRIMSON_STAIRS, event);
+
+        registerItemServer(BLACKSTONE, event);
+        registerItemServer(POLISHED_BLACKSTONE, event);
+        registerItemServer(CHISELED_POLISHED_BLACKSTONE, event);
+        registerItemServer(POLISHED_BLACKSTONE_BRICKS, event);
+        registerItemServer(CRACKED_POLISHED_BLACKSTONE_BRICKS, event);
+        registerItemServer(GILDED_BLACKSTONE, event);
+
+        registerItemServer(NETHER_GOLD_ORE, event);
+        registerItemServer(SOUL_SOIL, event);
+        registerItemServer(WARPED_NYLIUM, event);
+        registerItemServer(CRYING_OBSIDIAN, event);
+        registerItemServer(CRIMSON_NYLIUM, event);
+        registerItemServer(CRIMSON_PLANKS, event);
+        registerItemServer(WARPED_PLANKS, event);
+        registerItemServer(WARPED_WART_BLOCK, event);
+        registerItemServer(BLACKSTONE_WALL, event);
+
+        registerItemServer(OCHRE_FROGLIGHT, event);
+        registerItemServer(VERDANT_FROGLIGHT, event);
+        registerItemServer(PEARLESCENT_FROGLIGHT, event);
+
+        registerItemServer(BEE_NEST, event);
+        registerItemServer(BEE_HIVE, event);
+
+
+        registerItemServer(COPPER_BLOCK, event);
+        registerItemServer(CHISELED_COPPER, event);
+        registerItemServer(COPPER_GRATE, event);
+        registerItemServer(CUT_COPPER, event);
+        registerItemServer(COPPER_BULB, event);
+
+        registerItemServer(EXPOSED_COPPER_BLOCK, event);
+        registerItemServer(EXPOSED_CHISELED_COPPER, event);
+        registerItemServer(EXPOSED_COPPER_GRATE, event);
+        registerItemServer(EXPOSED_CUT_COPPER, event);
+        registerItemServer(EXPOSED_COPPER_BULB, event);
+
+        registerItemServer(WEATHERED_COPPER_BLOCK, event);
+        registerItemServer(WEATHERED_CHISELED_COPPER, event);
+        registerItemServer(WEATHERED_COPPER_GRATE, event);
+        registerItemServer(WEATHERED_CUT_COPPER, event);
+        registerItemServer(WEATHERED_COPPER_BULB, event);
+
+        registerItemServer(OXIDIZED_COPPER_BLOCK, event);
+        registerItemServer(OXIDIZED_CHISELED_COPPER, event);
+        registerItemServer(OXIDIZED_COPPER_GRATE, event);
+        registerItemServer(OXIDIZED_CUT_COPPER, event);
+        registerItemServer(OXIDIZED_COPPER_BULB, event);
+
+        registerItemServer(WAXED_COPPER_BLOCK, event);
+        registerItemServer(WAXED_CHISELED_COPPER, event);
+        registerItemServer(WAXED_COPPER_GRATE, event);
+        registerItemServer(WAXED_CUT_COPPER, event);
+        registerItemServer(WAXED_COPPER_BULB, event);
+
+        registerItemServer(WAXED_EXPOSED_COPPER_BLOCK, event);
+        registerItemServer(WAXED_EXPOSED_CHISELED_COPPER, event);
+        registerItemServer(WAXED_EXPOSED_COPPER_GRATE, event);
+        registerItemServer(WAXED_EXPOSED_CUT_COPPER, event);
+        registerItemServer(WAXED_EXPOSED_COPPER_BULB, event);
+
+        registerItemServer(WAXED_WEATHERED_COPPER_BLOCK, event);
+        registerItemServer(WAXED_WEATHERED_CHISELED_COPPER, event);
+        registerItemServer(WAXED_WEATHERED_COPPER_GRATE, event);
+        registerItemServer(WAXED_WEATHERED_CUT_COPPER, event);
+        registerItemServer(WAXED_WEATHERED_COPPER_BULB, event);
+
+        registerItemServer(WAXED_OXIDIZED_COPPER_BLOCK, event);
+        registerItemServer(WAXED_OXIDIZED_CHISELED_COPPER, event);
+        registerItemServer(WAXED_OXIDIZED_COPPER_GRATE, event);
+        registerItemServer(WAXED_OXIDIZED_CUT_COPPER, event);
+        registerItemServer(WAXED_OXIDIZED_COPPER_BULB, event);
+
+        registerItemServer(TINTED_GLASS, event);
+        registerItemServer(AMETHYST_BLOCK, event);
+        registerItemServer(CALCITE, event);
+        registerItemServer(TUFF, event);
+        registerItemServer(COPPER_ORE, event);
+
+        registerItemServer(DEEPSLATE, event);
+
+        registerItemServer(DEEPSLATE_ORE_COPPER, event);
+        registerItemServer(DEEPSLATE_ORE_GOLD, event);
+        registerItemServer(DEEPSLATE_ORE_IRON, event);
+        registerItemServer(DEEPSLATE_ORE_REDSTONE, event);
+        registerItemServer(DEEPSLATE_ORE_LAPISLAZULI, event);
+        registerItemServer(DEEPSLATE_ORE_EMERALD, event);
+        registerItemServer(DEEPSLATE_ORE_DIAMOND, event);
+
+        registerItemServer(DEEPSLATE_COBBLED, event);
+        registerItemServer(DEEPSLATE_BRICKS, event);
+        registerItemServer(DEEPSLATE_TILES, event);
+        registerItemServer(DEEPSLATE_POLISHED, event);
+        registerItemServer(DEEPSLATE_BRICKS_CRACKED, event);
+        registerItemServer(DEEPSLATE_TILES_CRACKED, event);
+
+        registerItemServer(ROOTED_DIRT, event);
+        registerItemServer(SMOOTH_BASALT, event);
+        registerItemServer(MOSS_BLOCK, event);
+        registerItemServer(MOSS_CARPET, event);
+        registerItemServer(LIGHTNING_ROD, event);
+
+
+        registerItemServer(STRIPPED_OAK_STEM, event);
+        registerItemServer(STRIPPED_OAK_WOOD, event);
+
+        registerItemServer(STRIPPED_SPRUCE_STEM, event);
+        registerItemServer(STRIPPED_SPRUCE_WOOD, event);
+
+        registerItemServer(STRIPPED_BIRCH_STEM, event);
+        registerItemServer(STRIPPED_BIRCH_WOOD, event);
+
+        registerItemServer(STRIPPED_DARK_OAK_STEM, event);
+        registerItemServer(STRIPPED_DARK_OAK_WOOD, event);
+
+        registerItemServer(STRIPPED_ACACIA_STEM, event);
+        registerItemServer(STRIPPED_ACACIA_WOOD, event);
+
+        registerItemServer(STRIPPED_JUNGLE_STEM, event);
+        registerItemServer(STRIPPED_JUNGLE_WOOD, event);
+
+    }
+
+
+    @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new ItemBlock(COPPER_TORCH).setRegistryName(COPPER_TORCH.getRegistryName()));
@@ -1296,6 +1458,12 @@ public class ModBlocks {
         Item item = new ItemBlock(block).setRegistryName(block.getRegistryName());
         event.getRegistry().register(item);
         registerItemModel(item);
+    }
+
+
+    public static void registerItemServer(Block block, RegistryEvent.Register<Item> event) {
+        Item item = new ItemBlock(block).setRegistryName(block.getRegistryName());
+        event.getRegistry().register(item);
     }
 
 
