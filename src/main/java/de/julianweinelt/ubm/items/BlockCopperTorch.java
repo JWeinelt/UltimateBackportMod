@@ -9,6 +9,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import java.util.Random;
@@ -24,6 +26,7 @@ public class BlockCopperTorch extends BlockTorch {
         setSoundType(SoundType.WOOD);
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public void randomDisplayTick(@Nonnull IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
         //super.randomDisplayTick(stateIn, worldIn, pos, rand);
@@ -50,5 +53,4 @@ public class BlockCopperTorch extends BlockTorch {
             }
         }
     }
-
 }

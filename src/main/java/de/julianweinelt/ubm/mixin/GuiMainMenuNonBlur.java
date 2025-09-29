@@ -24,6 +24,8 @@ import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.client.gui.NotificationModUpdateScreen;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -42,6 +44,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+@SideOnly(Side.CLIENT)
 public class GuiMainMenuNonBlur extends GuiScreen {
     private static final Logger LOGGER = LogManager.getLogger();
     private static final Random RANDOM = new Random();

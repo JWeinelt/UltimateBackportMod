@@ -62,12 +62,10 @@ public class UBM {
         }
 
         ModEntities.init();
-        ModEntities.registerRenders();
         ModEntities.addSpawns();
 
         GameRegistry.registerWorldGenerator(new PowderSnowWorldGen(), 0);
         GameRegistry.registerWorldGenerator(new StructureWorldGen(), 0);
-        MinecraftForge.EVENT_BUS.register(new SwimClientHandler());
 
         GameRegistry.registerTileEntity(TileEntitySmithingTable.class, new ResourceLocation("ubm", "smithing_table"));
 
@@ -93,16 +91,6 @@ public class UBM {
         ModBlocks.PREVIOUS_OXIDATION.put(ModBlocks.OXIDIZED_COPPER_BLOCK.getRegistryName(), ModBlocks.WEATHERED_COPPER_BLOCK.getRegistryName());
 
         ModRecipes.init();
-        ClientEventHandler.registerParticles();
-
-        String basePath = "textures/equipment/trims/color_palettes/";
-        for (String material : colorPalettes) {
-            getLogger().info("Registering color palette: " + material);
-            Color[] palette = TrimColorHelper.extractPalette(basePath + material + ".png");
-            LayerArmorTrim.MATERIAL_TO_PALETTE.put(material, palette);
-        }
-
-        ModCustomVillage.init();
     }
 
     public static Logger getLogger() {
