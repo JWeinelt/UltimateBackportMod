@@ -17,6 +17,7 @@ import de.julianweinelt.ubm.worldgen.StructureWorldGen;
 import de.julianweinelt.ubm.worldgen.structure.village.ModCustomVillage;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -29,7 +30,7 @@ import java.awt.*;
 import java.io.File;
 
 
-@Mod(modid = UBM.MODID, name = UBM.NAME, version = UBM.VERSION, dependencies = "required-after:pathfinder@[1.1,)")
+@Mod(modid = UBM.MODID, name = UBM.NAME, version = UBM.VERSION)
 public class UBM {
     public static final String MODID = "ubm";
     public static final String NAME = "Ultimate Backport Mod";
@@ -54,6 +55,7 @@ public class UBM {
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
         instance = this;
+
         config = event.getModConfigurationDirectory();
         if (!config.exists()) {
             config.mkdirs();
