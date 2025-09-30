@@ -547,6 +547,9 @@ public class ModBlocks {
         DEEPSLATE_POLISHED_STAIRS = new BlockModStairs(DEEPSLATE_POLISHED.getDefaultState(), "deepslate_polished_stairs")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
         event.getRegistry().register(DEEPSLATE_POLISHED_STAIRS);
+        DEEPSLATE_TILE_STAIRS = new BlockModStairs(DEEPSLATE_TILES.getDefaultState(), "deepslate_tile_stairs")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_TILE_STAIRS);
 
         WARPED_WART_BLOCK = new Block(Material.PLANTS)
                 .setUnlocalizedName("warped_wart_block")
