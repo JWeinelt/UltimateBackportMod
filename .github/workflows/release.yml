@@ -1,0 +1,42 @@
+name: Release Mod
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build with Gradle
+        run: ./gradlew build
+      - uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: R8jBhfbN
+          modrinth-token: ${{ secrets.MODRINTH_API_TOKEN }}
+
+          curseforge-id: 494079
+          curseforge-token: ${{ secrets.CURSEFORGE_API_TOKEN }}
+
+          loaders: |
+            forge
+          game-versions: |
+            1.12.2
+            
+          dependencies: |
+            pathfinder-api
+          files: |
+            build/libs/!(*-@(dev|sources|javadoc)).jar
