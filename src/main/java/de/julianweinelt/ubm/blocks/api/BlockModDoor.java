@@ -10,6 +10,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nonnull;
+
 public class BlockModDoor extends BlockDoor {
     protected BlockModDoor(Material materialIn, String name) {
         super(materialIn);
@@ -19,21 +21,24 @@ public class BlockModDoor extends BlockDoor {
 
 
     @Override
-    public boolean isOpaqueCube(IBlockState state) {
+    public boolean isOpaqueCube(@Nonnull IBlockState state) {
         return false;
     }
 
     @Override
-    public boolean isFullCube(IBlockState state) {
+    public boolean isFullCube(@Nonnull IBlockState state) {
         return false;
     }
+
     @Override
     @SideOnly(Side.CLIENT)
+    @Nonnull
     public BlockRenderLayer getBlockLayer() {
         return BlockRenderLayer.CUTOUT_MIPPED;
     }
     @Override
-    public boolean shouldSideBeRendered(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing side) {
+    public boolean shouldSideBeRendered(@Nonnull IBlockState state, @Nonnull IBlockAccess world,
+                                        @Nonnull BlockPos pos, @Nonnull EnumFacing side) {
         return true;
     }
 }
