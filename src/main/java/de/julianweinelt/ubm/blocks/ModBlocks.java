@@ -511,6 +511,9 @@ public class ModBlocks {
         WARPED_FENCE = new BlockModFence(Material.WOOD, "warped_fence")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         event.getRegistry().register(WARPED_FENCE);
+        CRIMSON_FENCE = new BlockModFence(Material.WOOD, "crimson_fence")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        event.getRegistry().register(CRIMSON_FENCE);
 
         WARPED_WART_BLOCK = new Block(Material.PLANTS)
                 .setUnlocalizedName("warped_wart_block")
@@ -1014,6 +1017,7 @@ public class ModBlocks {
         registerItemServer(WARPED_STAIRS, event);
         registerItemServer(WARPED_FENCE, event);
         registerItemServer(CRIMSON_STAIRS, event);
+        registerItemServer(CRIMSON_FENCE, event);
 
         registerItemServer(BLACKSTONE, event);
         registerItemServer(POLISHED_BLACKSTONE, event);
@@ -1176,6 +1180,7 @@ public class ModBlocks {
         registerItem(WARPED_STAIRS, event);
         registerItem(WARPED_FENCE, event);
         registerItem(CRIMSON_STAIRS, event);
+        registerItem(CRIMSON_FENCE, event);
 
         registerItem(BLACKSTONE, event);
         registerItem(POLISHED_BLACKSTONE, event);
