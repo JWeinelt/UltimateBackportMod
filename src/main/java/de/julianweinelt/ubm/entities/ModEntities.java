@@ -172,6 +172,13 @@ public class ModEntities {
                     protected ResourceLocation getEntityTexture(@Nullable EntityDolphin entity) {
                         return new ResourceLocation(MODID, "textures/entity/dolphin.png");
                     }
+
+
+                    @Override
+                    protected void preRenderCallback(@Nullable EntityDolphin entitylivingbaseIn, float partialTickTime) {
+                        float scale = entitylivingbaseIn.isChild() ? 0.5F : 1.0F;
+                        GlStateManager.scale(scale, scale, scale);
+                    }
                 }
         );
         RenderingRegistry.registerEntityRenderingHandler(EntitySalmon.class, renderManager ->
@@ -189,6 +196,7 @@ public class ModEntities {
 
                         float scale = random.nextFloat() * (max - min) + min;
                         //GlStateManager.scale(scale, scale, scale);
+                        //TODO: add scale to salmons
                     }
                 }
         );
