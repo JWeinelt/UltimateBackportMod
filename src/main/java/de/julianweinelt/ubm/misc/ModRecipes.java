@@ -26,6 +26,7 @@ public class ModRecipes {
 
         GameRegistry.addSmelting(ModBlocks.DEEPSLATE_COBBLED, new ItemStack(ModBlocks.DEEPSLATE, 1), 0.1F);
         GameRegistry.addSmelting(ModBlocks.DEEPSLATE_TILES, new ItemStack(ModBlocks.DEEPSLATE_TILES_CRACKED, 1), 0.1F);
+        GameRegistry.addSmelting(ModBlocks.DEEPSLATE_BRICKS, new ItemStack(ModBlocks.DEEPSLATE_BRICKS_CRACKED, 1), 0.1F);
 
     }
 }
