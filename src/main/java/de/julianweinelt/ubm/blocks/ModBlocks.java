@@ -54,7 +54,7 @@ public class ModBlocks {
     private static final List<Block> blocks = new ArrayList<>();
 
     public static Block NETHERITE_BLOCK;
-    private static Block LIGHTNING_ROD;
+    public static Block LIGHTNING_ROD;
     public static Block ANCIENT_DEBRIS;
 
     public static Block SMITHING_TABLE;
@@ -1035,7 +1035,7 @@ public class ModBlocks {
         ModBiomes.init();
         GameRegistry.registerTileEntity(TileEntityBeeNest.class, new ResourceLocation("ubm", "bee_nest"));
         GameRegistry.registerWorldGenerator(new WorldGenBeeNest(), 0);
-        GameRegistry.registerTileEntity(TileEntityCampfire.class, "ubm:campfire");
+        GameRegistry.registerTileEntity(TileEntityCampfire.class, new ResourceLocation("ubm", "campfire"));
     }
 
     @SideOnly(Side.SERVER)
@@ -1127,7 +1127,7 @@ public class ModBlocks {
                     Block block2 = (Block) ModBlocks.class.getField(blockName).get(null);
                     world.setBlockState(targetPos, block2.getDefaultState());
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    UBM.getLogger().warn(e.getMessage());
                 }
 
                 if (!player.isCreative()) {
