@@ -14,9 +14,7 @@ import de.julianweinelt.ubm.misc.AdvancementHelper;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.worldgen.ModBiomes;
 import de.julianweinelt.ubm.worldgen.WorldGenBeeNest;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockNewLog;
-import net.minecraft.block.BlockWall;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -24,10 +22,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemAxe;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -1211,14 +1206,22 @@ public class ModBlocks {
 
 
     public static void registerItem(Block block, RegistryEvent.Register<Item> event) {
-        Item item = new ItemBlock(block).setRegistryName(block.getRegistryName());
+        Item item;
+        if (block instanceof BlockDoor) {
+            item = new ItemDoor(block).setRegistryName(block.getRegistryName());
+        } //TODO: Add handling for signs
+        else item = new ItemBlock(block).setRegistryName(block.getRegistryName());
         event.getRegistry().register(item);
         registerItemModel(item);
     }
 
 
     public static void registerItemServer(Block block, RegistryEvent.Register<Item> event) {
-        Item item = new ItemBlock(block).setRegistryName(block.getRegistryName());
+        Item item;
+        if (block instanceof BlockDoor) {
+            item = new ItemDoor(block).setRegistryName(block.getRegistryName());
+        } //TODO: Add handling for signs
+        else item = new ItemBlock(block).setRegistryName(block.getRegistryName());
         event.getRegistry().register(item);
     }
     
