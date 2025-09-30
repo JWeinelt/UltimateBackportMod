@@ -283,6 +283,9 @@ public class ModBlocks {
         CRIMSON_BUTTON = new BlockModButton(true, "crimson_button")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         event.getRegistry().register(CRIMSON_BUTTON);
+        WARPED_BUTTON = new BlockModButton(true, "warped_button")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        event.getRegistry().register(WARPED_BUTTON);
         SMITHING_TABLE = new BlockSmithingTable();
         event.getRegistry().register(SMITHING_TABLE);
 
@@ -1016,6 +1019,7 @@ public class ModBlocks {
         registerItemServer(WARPED_HYPHAE, event);
         registerItemServer(WARPED_STAIRS, event);
         registerItemServer(WARPED_FENCE, event);
+        registerItemServer(WARPED_BUTTON, event);
         registerItemServer(CRIMSON_STAIRS, event);
         registerItemServer(CRIMSON_FENCE, event);
 
@@ -1160,6 +1164,7 @@ public class ModBlocks {
         registerItem(CAMPFIRE, event);
         registerItem(SOUL_CAMPFIRE, event);
         registerItem(CRIMSON_BUTTON, event);
+        registerItem(WARPED_BUTTON, event);
         registerItem(SMITHING_TABLE, event);
 
         registerItem(AMETHYST_CLUSTER, event);
