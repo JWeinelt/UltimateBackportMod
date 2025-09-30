@@ -105,6 +105,7 @@ public class GuiChatWithSuggestions extends GuiChat {
         }
 
         String[] parts = text.substring(1).split(" ");
+        if (parts.length == 0) return;
         String base = parts[0];
 
         boolean newArg = text.endsWith(" ");

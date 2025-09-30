@@ -9,11 +9,11 @@ import net.minecraft.util.ResourceLocation;
 public class VilliProfLayer implements LayerRenderer<EntityNewVillager> {
     private static final ResourceLocation PROFESSION_TEXTURE = new ResourceLocation("ubm:textures/entity/villager/profession/armorer.png");
     private final RenderLivingBase<?> renderer;
-    private final ModelVillager villagerModel;
+    private final ModelVillager villagerModel = new ModelVillager();
 
     public VilliProfLayer(RenderLivingBase<?> rendererIn) {
         this.renderer = rendererIn;
-        villagerModel = (ModelVillager) this.renderer.getMainModel();
+        //villagerModel = (ModelVillager) this.renderer.getMainModel();
     }
 
     @Override
