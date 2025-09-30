@@ -42,9 +42,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 @SuppressWarnings({"ConstantConditions", "SpellCheckingInspection"})
 @Mod.EventBusSubscriber(modid = UBM.MODID)
@@ -52,7 +50,6 @@ public class ModBlocks {
     public static final Map<ResourceLocation, ResourceLocation> WAXED_VARIANTS = new HashMap<>();
     public static final Map<ResourceLocation, ResourceLocation> UNWAXED_VARIANTS = new HashMap<>();
     public static final Map<ResourceLocation, ResourceLocation> PREVIOUS_OXIDATION = new HashMap<>();
-
 
     public static Block NETHERITE_BLOCK;
     private static Block LIGHTNING_ROD;
@@ -121,6 +118,16 @@ public class ModBlocks {
     public static Block STRIPPED_JUNGLE_STEM;
     public static Block STRIPPED_JUNGLE_WOOD;
 
+    public static Block STRIPPED_PALE_OAK_LOG;
+    public static Block PALE_OAK_LOG;
+    public static Block PALE_OAK_PLANKS;
+    public static Block PALE_OAK_LEAVES;
+    public static Block PALE_OAK_DOOR;
+    public static Block PALE_OAK_TRAPDOOR;
+    public static Block PALE_OAK_SAPLING;
+    public static Block PALE_OAK_MOSS;
+    public static Block PALE_OAK_MOSS_CARPET;
+
     public static Block GLOW_LICHEN;
     public static Block GLOW_BERRIES;
 
@@ -140,6 +147,7 @@ public class ModBlocks {
     public static Block NETHER_GOLD_ORE;
     public static Block SOUL_SOIL;
     public static Block BLACKSTONE;
+    public static Block BLACKSTONE_CHISELED;
     public static Block POLISHED_BLACKSTONE;
     public static Block CHISELED_POLISHED_BLACKSTONE;
     public static Block POLISHED_BLACKSTONE_BRICKS;
@@ -275,6 +283,12 @@ public class ModBlocks {
         SOUL_CAMPFIRE = new BlockCampFire(true)
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         event.getRegistry().register(SOUL_CAMPFIRE);
+
+        BLACKSTONE_CHISELED = new Block(Material.ROCK)
+                .setUnlocalizedName("chiseled_polished_blackstone")
+                .setRegistryName("chiseled_polished_blackstone")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        event.getRegistry().register(BLACKSTONE_CHISELED);
 
         FLETCHING_TABLE = new BlockRotated(Material.WOOD)
                 .setRegistryName("fletching_table")
@@ -1028,6 +1042,7 @@ public class ModBlocks {
         event.getRegistry().register(new ItemBlock(COPPER_TORCH).setRegistryName(COPPER_TORCH.getRegistryName()));
 
         registerItemServer(GRINDSTONE, event);
+        registerItemServer(BLACKSTONE_CHISELED, event);
         registerItemServer(SMOOTH_STONE, event);
         registerItemServer(LOOM, event);
 
@@ -1200,6 +1215,7 @@ public class ModBlocks {
         event.getRegistry().register(new ItemBlock(COPPER_TORCH).setRegistryName(COPPER_TORCH.getRegistryName()));
 
         registerItem(GRINDSTONE, event);
+        registerItem(BLACKSTONE_CHISELED, event);
         registerItem(SMOOTH_STONE, event);
         registerItem(LOOM, event);
 
