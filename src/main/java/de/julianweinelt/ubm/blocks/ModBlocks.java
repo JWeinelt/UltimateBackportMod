@@ -49,7 +49,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-@SuppressWarnings("ConstantConditions")
+@SuppressWarnings({"ConstantConditions", "SpellCheckingInspection"})
 @Mod.EventBusSubscriber(modid = UBM.MODID)
 public class ModBlocks {
     public static final Map<ResourceLocation, ResourceLocation> WAXED_VARIANTS = new HashMap<>();
@@ -537,6 +537,11 @@ public class ModBlocks {
         CRIMSON_FENCE = new BlockModFence(Material.WOOD, "crimson_fence")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         event.getRegistry().register(CRIMSON_FENCE);
+
+        DEEPSLATE_COBBLED_STAIRS = new BlockModStairs(DEEPSLATE_COBBLED.getDefaultState(), "deepslate_cobbled_stairs")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(DEEPSLATE_COBBLED_STAIRS);
+
 
         WARPED_WART_BLOCK = new Block(Material.PLANTS)
                 .setUnlocalizedName("warped_wart_block")
