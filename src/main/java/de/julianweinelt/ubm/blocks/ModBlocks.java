@@ -1050,6 +1050,14 @@ public class ModBlocks {
         registerItemServer(MEDIUM_AMETHYST_BUD, event);
         registerItemServer(LARGE_AMETHYST_BUD, event);
 
+        registerItemServer(BLACKSTONE_STAIRS, event);
+        registerItemServer(DEEPSLATE_BRICK_STAIRS, event);
+        registerItemServer(DEEPSLATE_COBBLED_STAIRS, event);
+        registerItemServer(DEEPSLATE_POLISHED_STAIRS, event);
+        registerItemServer(DEEPSLATE_TILE_STAIRS, event);
+        registerItemServer(POLISHED_BLACKSTONE_BRICK_STAIRS, event);
+        registerItemServer(POLISHED_BLACKSTONE_STAIRS, event);
+
         registerItemServer(TARGET, event);
 
         registerItemServer(NETHERITE_BLOCK, event);
@@ -1216,6 +1224,14 @@ public class ModBlocks {
         registerItem(LARGE_AMETHYST_BUD, event);
 
         registerItem(TARGET, event);
+
+        registerItem(BLACKSTONE_STAIRS, event);
+        registerItem(DEEPSLATE_BRICK_STAIRS, event);
+        registerItem(DEEPSLATE_COBBLED_STAIRS, event);
+        registerItem(DEEPSLATE_POLISHED_STAIRS, event);
+        registerItem(DEEPSLATE_TILE_STAIRS, event);
+        registerItem(POLISHED_BLACKSTONE_BRICK_STAIRS, event);
+        registerItem(POLISHED_BLACKSTONE_STAIRS, event);
 
         registerItem(NETHERITE_BLOCK, event);
         registerItem(GLOW_LICHEN, event);
