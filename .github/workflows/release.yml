@@ -31,7 +31,7 @@ jobs:
       - name: Upload to CurseForge
         uses: itsmeow/curseforge-upload@v1
         with:
-          token: ${{ secrets.CURSEFORGE_TOKEN }}
+          token: ${{ secrets.CURSEFORGE_API_TOKEN }}
           project_id: "494079"
           file_path: "build/libs/ubm-${{ steps.build.outputs.version }}.jar"
           game_endpoint: "minecraft"
