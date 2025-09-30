@@ -26,3 +26,5 @@ jobs:
             
           dependencies: |
             pathfinder-api
+          files: |
+            build/libs/!(*-@(dev|sources|javadoc)).jar
