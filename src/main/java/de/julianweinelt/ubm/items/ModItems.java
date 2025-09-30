@@ -46,6 +46,8 @@ public class ModItems {
     public static Item TRIM_HOST;
     public static Item TRIM_RIB;
 
+    public static Item COPPER_TORCH;
+
     public static Item COPPER_INGOT;
 
     public static Item OMINOUS_BOTTLE;
@@ -221,6 +223,11 @@ public class ModItems {
                 .setUnlocalizedName("copper_ingot")
                 .setRegistryName("copper_ingot")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(COPPER_INGOT);
+        COPPER_TORCH = new Item()
+                .setUnlocalizedName("copper_torch")
+                .setRegistryName("copper_torch")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_COPPER_AGE);
         event.getRegistry().register(COPPER_INGOT);
         NETHERITE_INGOT = new Item()
                 .setUnlocalizedName("netherite_ingot")
@@ -637,6 +644,8 @@ public class ModItems {
         registerItemModel(SHELTER_POTTERY_SHERD);
         registerItemModel(SKULL_POTTERY_SHERD);
         registerItemModel(SNORT_POTTERY_SHERD);
+
+        registerItemModel(COPPER_TORCH);
 
         registerItemModel(POWDER_SNOW_BUCKET);
         registerItemModel(SWEET_BERRY);

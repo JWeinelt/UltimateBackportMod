@@ -144,7 +144,6 @@ public class ModBlocks {
     public static Block NETHER_GOLD_ORE;
     public static Block SOUL_SOIL;
     public static Block BLACKSTONE;
-    public static Block BLACKSTONE_CHISELED;
     public static Block POLISHED_BLACKSTONE;
     public static Block CHISELED_POLISHED_BLACKSTONE;
     public static Block POLISHED_BLACKSTONE_BRICKS;
@@ -280,12 +279,6 @@ public class ModBlocks {
         SOUL_CAMPFIRE = new BlockCampFire(true)
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         register(SOUL_CAMPFIRE, event);
-
-        BLACKSTONE_CHISELED = new Block(Material.ROCK)
-                .setUnlocalizedName("chiseled_polished_blackstone")
-                .setRegistryName("chiseled_polished_blackstone")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        register(BLACKSTONE_CHISELED, event);
 
         FLETCHING_TABLE = new BlockRotated(Material.WOOD)
                 .setRegistryName("fletching_table")
@@ -472,7 +465,7 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         register(CRIMSON_PLANKS, event);
 
-        WARPED_PLANKS = new BlockNewLog()
+        WARPED_PLANKS = new Block(Material.WOOD)
                 .setUnlocalizedName("warped_planks")
                 .setRegistryName("warped_planks")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
@@ -546,28 +539,6 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         register(CRIMSON_FENCE, event);
 
-        DEEPSLATE_COBBLED_STAIRS = new BlockModStairs(DEEPSLATE_COBBLED.getDefaultState(), "deepslate_cobbled_stairs")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        register(DEEPSLATE_COBBLED_STAIRS, event);
-        DEEPSLATE_BRICK_STAIRS = new BlockModStairs(DEEPSLATE_BRICKS.getDefaultState(), "deepslate_brick_stairs")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        register(DEEPSLATE_BRICK_STAIRS, event);
-        DEEPSLATE_POLISHED_STAIRS = new BlockModStairs(DEEPSLATE_POLISHED.getDefaultState(), "deepslate_polished_stairs")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        register(DEEPSLATE_POLISHED_STAIRS, event);
-        DEEPSLATE_TILE_STAIRS = new BlockModStairs(DEEPSLATE_TILES.getDefaultState(), "deepslate_tile_stairs")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        register(DEEPSLATE_TILE_STAIRS, event);
-        BLACKSTONE_STAIRS = new BlockModStairs(BLACKSTONE.getDefaultState(), "blackstone_stairs")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        register(BLACKSTONE_STAIRS, event);
-        POLISHED_BLACKSTONE_BRICK_STAIRS = new BlockModStairs(POLISHED_BLACKSTONE_BRICKS.getDefaultState(), "polished_blackstone_brick_stairs")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        register(POLISHED_BLACKSTONE_BRICK_STAIRS, event);
-        POLISHED_BLACKSTONE_STAIRS = new BlockModStairs(POLISHED_BLACKSTONE.getDefaultState(), "polished_blackstone_stairs")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        register(POLISHED_BLACKSTONE_BRICK_STAIRS, event);
-
         WARPED_WART_BLOCK = new Block(Material.PLANTS)
                 .setUnlocalizedName("warped_wart_block")
                 .setRegistryName("warped_wart_block")
@@ -602,7 +573,7 @@ public class ModBlocks {
         register(VERDANT_FROGLIGHT, event);
 
         POWDER_SNOW = new BlockPowderSnow();
-        register(POWDER_SNOW, event);
+        event.getRegistry().register(POWDER_SNOW);
 
 
         BEE_NEST = new BlockBeeNest();
@@ -614,13 +585,13 @@ public class ModBlocks {
         register(BEE_HIVE, event);
 
         SWEET_BERRY_BUSH = new BlockSweetBerry().setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
-        register(SWEET_BERRY_BUSH, event);
+        event.getRegistry().register(SWEET_BERRY_BUSH);
         GLOW_BERRIES = new BlockGlowBerryVine();
-        register(GLOW_BERRIES, event);
+        event.getRegistry().register(GLOW_BERRIES);
 
         CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
                 .setRegistryName("candle").setUnlocalizedName("candle");
-        register(CANDLE, event);
+        event.getRegistry().register(CANDLE);
 
         BLACK_CANDLE = new BlockCandle().setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
                 .setRegistryName("black_candle").setUnlocalizedName("black_candle");
@@ -1026,6 +997,28 @@ public class ModBlocks {
         MOSS_CARPET = new BlockMossCarpet();
         register(MOSS_CARPET, event);
 
+        DEEPSLATE_COBBLED_STAIRS = new BlockModStairs(DEEPSLATE_COBBLED.getDefaultState(), "deepslate_cobbled_stairs")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        register(DEEPSLATE_COBBLED_STAIRS, event);
+        DEEPSLATE_BRICK_STAIRS = new BlockModStairs(DEEPSLATE_BRICKS.getDefaultState(), "deepslate_brick_stairs")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        register(DEEPSLATE_BRICK_STAIRS, event);
+        DEEPSLATE_POLISHED_STAIRS = new BlockModStairs(DEEPSLATE_POLISHED.getDefaultState(), "deepslate_polished_stairs")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        register(DEEPSLATE_POLISHED_STAIRS, event);
+        DEEPSLATE_TILE_STAIRS = new BlockModStairs(DEEPSLATE_TILES.getDefaultState(), "deepslate_tile_stairs")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        register(DEEPSLATE_TILE_STAIRS, event);
+        BLACKSTONE_STAIRS = new BlockModStairs(BLACKSTONE.getDefaultState(), "blackstone_stairs")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        register(BLACKSTONE_STAIRS, event);
+        POLISHED_BLACKSTONE_BRICK_STAIRS = new BlockModStairs(POLISHED_BLACKSTONE_BRICKS.getDefaultState(), "polished_blackstone_brick_stairs")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        register(POLISHED_BLACKSTONE_BRICK_STAIRS, event);
+        POLISHED_BLACKSTONE_STAIRS = new BlockModStairs(POLISHED_BLACKSTONE.getDefaultState(), "polished_blackstone_stairs")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        register(POLISHED_BLACKSTONE_STAIRS, event);
+
 
         ModBiomes.init();
         GameRegistry.registerTileEntity(TileEntityBeeNest.class, new ResourceLocation("ubm", "bee_nest"));
@@ -1210,6 +1203,7 @@ public class ModBlocks {
         if (block instanceof BlockDoor) {
             item = new ItemDoor(block).setRegistryName(block.getRegistryName());
         } //TODO: Add handling for signs
+        else if (block instanceof BlockCopperTorch) return;
         else item = new ItemBlock(block).setRegistryName(block.getRegistryName());
         event.getRegistry().register(item);
         registerItemModel(item);
@@ -1221,6 +1215,7 @@ public class ModBlocks {
         if (block instanceof BlockDoor) {
             item = new ItemDoor(block).setRegistryName(block.getRegistryName());
         } //TODO: Add handling for signs
+        else if (block instanceof BlockCopperTorch) return;
         else item = new ItemBlock(block).setRegistryName(block.getRegistryName());
         event.getRegistry().register(item);
     }
@@ -1228,6 +1223,10 @@ public class ModBlocks {
     public static void register(Block block, RegistryEvent.Register<Block> event) {
         event.getRegistry().register(block);
         blocks.add(block);
+    }
+
+    public static void registerAll(List<Block> blockss, RegistryEvent.Register<Block> event) {
+        //for (Block block : blockss) register(block, event);
     }
 
 
@@ -1238,7 +1237,6 @@ public class ModBlocks {
 
     @SideOnly(Side.CLIENT)
     public static void registerItemModel(Item parItem, int parMetaData) {
-
         ModelLoader.setCustomModelResourceLocation(parItem, parMetaData,
                 new ModelResourceLocation(parItem.getRegistryName(), "inventory"));
     }

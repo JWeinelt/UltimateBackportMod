@@ -58,7 +58,7 @@ public class BlockCandle extends Block {
     };
 
     public BlockCandle() {
-        super(Material.CIRCUITS); // oder Material.WOOD je nach Optik
+        super(Material.CIRCUITS);
         this.setDefaultState(this.blockState.getBaseState()
             .withProperty(CANDLES, 1)
             .withProperty(LIT, false));
