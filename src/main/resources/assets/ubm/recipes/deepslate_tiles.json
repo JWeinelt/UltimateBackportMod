@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "ubm:deepslate_bricks"},
+    {"item": "ubm:deepslate_bricks"},
+    {"item": "ubm:deepslate_bricks"},
+    {"item": "ubm:deepslate_bricks"}
+  ],
+  "result": {
+    "item": "ubm:deepslate_tiles",
+    "count": 9
+  }
+}
