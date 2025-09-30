@@ -12,6 +12,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 
+//TODO: IMPORTANT: We need to use ItemDoor to register it correctly.
+
 public class BlockModDoor extends BlockDoor {
     protected BlockModDoor(Material materialIn, String name) {
         super(materialIn);
