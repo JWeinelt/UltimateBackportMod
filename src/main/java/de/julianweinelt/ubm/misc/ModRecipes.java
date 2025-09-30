@@ -1,5 +1,6 @@
 package de.julianweinelt.ubm.misc;
 
+import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.items.ModItems;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -9,5 +10,8 @@ public class ModRecipes {
     public static void init() {
         GameRegistry.addSmelting(ModItems.RAW_GOLD, new ItemStack(Items.GOLD_INGOT, 1), 0.7F);
         GameRegistry.addSmelting(ModItems.RAW_IRON, new ItemStack(Items.IRON_INGOT, 1), 0.7F);
+        GameRegistry.addSmelting(ModItems.RAW_COPPER, new ItemStack(ModItems.COPPER_INGOT, 1), 0.7F);
+        GameRegistry.addSmelting(ModBlocks.ANCIENT_DEBRIS, new ItemStack(ModItems.NETHERITE_SCRAP, 1), 0.7F);
+
     }
 }
