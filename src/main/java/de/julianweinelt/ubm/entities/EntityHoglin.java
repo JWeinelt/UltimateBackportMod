@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.entities;
 
 import de.julianweinelt.ubm.configuration.ModConfig;
+import de.julianweinelt.ubm.entities.ai.EntityAIHoglinFleeBlock;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
@@ -31,6 +32,7 @@ public class EntityHoglin extends EntityAnimal {
     protected void initEntityAI() {
         this.tasks.addTask(1, new EntityAIWanderAvoidWater(this, 1.0D));
         this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
+        this.targetTasks.addTask(1, new EntityAIHoglinFleeBlock(this, 1, 10));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<>(this, EntityPlayer.class, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<>(this, EntityPigZombie.class, false));
     }
