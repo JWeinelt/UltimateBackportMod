@@ -1,5 +1,6 @@
 package de.julianweinelt.ubm.entities;
 
+import de.julianweinelt.ubm.configuration.ModConfig;
 import de.julianweinelt.ubm.entities.ai.EntityAISwimAround;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -45,7 +46,7 @@ public class EntityTropicalFish extends EntityWaterMob {
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(6.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ModConfig.getEntityConfig("tropicalfish").getHealth() / 2.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(1.0D);
     }
 

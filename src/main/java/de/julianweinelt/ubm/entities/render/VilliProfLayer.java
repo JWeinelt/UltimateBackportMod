@@ -13,14 +13,13 @@ public class VilliProfLayer implements LayerRenderer<EntityNewVillager> {
 
     public VilliProfLayer(RenderLivingBase<?> rendererIn) {
         this.renderer = rendererIn;
+        //villagerModel = (ModelVillager) this.renderer.getMainModel();
     }
 
     @Override
     public void doRenderLayer(EntityNewVillager entity, float limbSwing, float limbSwingAmount,
                               float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
         this.renderer.bindTexture(PROFESSION_TEXTURE);
-        this.villagerModel.setModelAttributes(this.renderer.getMainModel());
-        this.villagerModel.setLivingAnimations(entity, limbSwing, limbSwingAmount, partialTicks);
         this.villagerModel.render(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
     }
 

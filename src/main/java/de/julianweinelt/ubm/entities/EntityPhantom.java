@@ -1,6 +1,8 @@
 package de.julianweinelt.ubm.entities;
 
+import de.julianweinelt.ubm.configuration.ModConfig;
 import de.julianweinelt.ubm.entities.ai.EntityAIPhantomAttack;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.IMob;
@@ -12,6 +14,13 @@ public class EntityPhantom extends EntityMob implements IMob {
     public EntityPhantom(World worldIn) {
         super(worldIn);
         this.setSize(0.9F, 0.5F);
+    }
+
+    @Override
+    protected void applyEntityAttributes() {
+        super.applyEntityAttributes();
+
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ModConfig.getEntityConfig("phantom").getHealth() / 2.0D);
     }
 
     @Override

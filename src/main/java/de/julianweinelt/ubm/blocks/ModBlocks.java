@@ -351,20 +351,14 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         register(ANCIENT_DEBRIS, event);
 
-        CRIMSON_STEM = new Block(Material.WOOD)
-                .setUnlocalizedName("crimson_stem")
-                .setRegistryName("crimson_stem")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        CRIMSON_STEM = new BlockStrippedStem("crimson", ModCreativeTabs.UBM_TAB_NETHER, false);
         register(CRIMSON_STEM, event);
         CRIMSON_HYPHAE = new Block(Material.WOOD)
                 .setUnlocalizedName("crimson_hyphae")
                 .setRegistryName("crimson_hyphae")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         register(CRIMSON_HYPHAE, event);
-        WARPED_STEM = new Block(Material.WOOD)
-                .setUnlocalizedName("warped_stem")
-                .setRegistryName("warped_stem")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        WARPED_STEM = new BlockStrippedStem("warped", ModCreativeTabs.UBM_TAB_NETHER, false);
         register(WARPED_STEM, event);
         WARPED_HYPHAE = new Block(Material.WOOD)
                 .setUnlocalizedName("warped_hyphae")
@@ -471,7 +465,7 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         register(WARPED_PLANKS, event);
 
-        STRIPPED_OAK_STEM = new BlockStrippedStem("oak", ModCreativeTabs.UBM_TAB_PILLAGE);
+        STRIPPED_OAK_STEM = new BlockStrippedStem("oak", ModCreativeTabs.UBM_TAB_PILLAGE, true);
         register(STRIPPED_OAK_STEM, event);
 
         STRIPPED_OAK_WOOD = new Block(Material.WOOD)
@@ -480,7 +474,7 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
         register(STRIPPED_OAK_WOOD, event);
 
-        STRIPPED_SPRUCE_STEM = new BlockStrippedStem("spruce", ModCreativeTabs.UBM_TAB_PILLAGE);
+        STRIPPED_SPRUCE_STEM = new BlockStrippedStem("spruce", ModCreativeTabs.UBM_TAB_PILLAGE, true);
         register(STRIPPED_SPRUCE_STEM, event);
         STRIPPED_SPRUCE_WOOD = new Block(Material.WOOD)
                 .setUnlocalizedName("stripped_spruce_wood")
@@ -488,7 +482,7 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
         register(STRIPPED_SPRUCE_WOOD, event);
 
-        STRIPPED_BIRCH_STEM = new BlockStrippedStem("birch", ModCreativeTabs.UBM_TAB_PILLAGE);
+        STRIPPED_BIRCH_STEM = new BlockStrippedStem("birch", ModCreativeTabs.UBM_TAB_PILLAGE, true);
         register(STRIPPED_BIRCH_STEM, event);
 
         STRIPPED_BIRCH_WOOD = new Block(Material.WOOD)
@@ -498,7 +492,7 @@ public class ModBlocks {
         register(STRIPPED_BIRCH_WOOD, event);
 
 
-        STRIPPED_DARK_OAK_STEM = new BlockStrippedStem("dark_oak", ModCreativeTabs.UBM_TAB_PILLAGE);
+        STRIPPED_DARK_OAK_STEM = new BlockStrippedStem("dark_oak", ModCreativeTabs.UBM_TAB_PILLAGE, true);
         register(STRIPPED_DARK_OAK_STEM, event);
 
         STRIPPED_DARK_OAK_WOOD = new Block(Material.WOOD)
@@ -507,7 +501,7 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
         register(STRIPPED_DARK_OAK_WOOD, event);
 
-        STRIPPED_ACACIA_STEM = new BlockStrippedStem("acacia", ModCreativeTabs.UBM_TAB_PILLAGE);
+        STRIPPED_ACACIA_STEM = new BlockStrippedStem("acacia", ModCreativeTabs.UBM_TAB_PILLAGE, true);
         register(STRIPPED_ACACIA_STEM, event);
 
         STRIPPED_ACACIA_WOOD = new Block(Material.WOOD)
@@ -516,7 +510,7 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
         register(STRIPPED_ACACIA_WOOD, event);
 
-        STRIPPED_JUNGLE_STEM = new BlockStrippedStem("jungle", ModCreativeTabs.UBM_TAB_PILLAGE);
+        STRIPPED_JUNGLE_STEM = new BlockStrippedStem("jungle", ModCreativeTabs.UBM_TAB_PILLAGE, true);
         register(STRIPPED_JUNGLE_STEM, event);
 
         STRIPPED_JUNGLE_WOOD = new Block(Material.WOOD)

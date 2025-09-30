@@ -7,6 +7,7 @@ import de.julianweinelt.ubm.entities.models.*;
 import de.julianweinelt.ubm.entities.render.*;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
@@ -38,146 +39,67 @@ public class ModEntities {
             //TODO: Lukewarm Ocean, Warm Ocean, Deep Lukewarm Ocean, Cold / Deep cold ocean
     };
 
+    private static int currentID = 1;
+
 
     public static void init() {
-        EntityRegistry.registerModEntity(
-                new ResourceLocation(MODID, "bee"),
-                EntityBee.class,
-                "Bee",
-                1,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation(MODID, "frog"),
-                EntityFrog.class,
-                "Frog",
-                2,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation(MODID, "turtle"),
-                EntityTurtle.class,
-                "Turtle",
-                3,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation(MODID, "goat"),
-                EntityGoat.class,
-                "Goat",
-                4,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation(MODID, "bamboo_raft"),
-                EntityBambooRaft.class,
-                "bamboo_raft",
-                5,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation(MODID, "warden"),
-                EntityWarden.class,
-                "warden",
-                6,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation("ubm", "custom_wolf"),
-                EntityCustomWolf.class,
-                "CustomWolf",
-                7,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation("ubm", "fox"),
-                EntityFox.class,
-                "Fox",
-                8,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation("ubm", "dolphin"),
-                EntityDolphin.class,
-                "Dolphin",
-                9,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation("ubm", "salmon"),
-                EntitySalmon.class,
-                "Salmon",
-                10,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation("ubm", "axolotl"),
-                EntityAxolotl.class,
-                "Axolotl",
-                11,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation("ubm", "cod"),
-                EntityCod.class,
-                "Cod",
-                12,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation("ubm", "glow_squid"),
-                EntityGlowSquid.class,
-                "GlowSquid",
-                13,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation("ubm", "tropical_fish"),
-                EntityTropicalFish.class,
-                "TropicalFish",
-                14,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation("ubm", "pillager"),
-                EntityPillager.class,
-                "Pillager",
-                15,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation("ubm", "phantom"),
-                EntityPhantom.class,
-                "Phantom",
-                16,
-                UBM.instance,
-                64, 1, true
-        );
-        EntityRegistry.registerModEntity(
-                new ResourceLocation("ubm", "villager"),
-                EntityNewVillager.class,
-                "Villager",
-                17,
-                UBM.instance,
-                64, 1, true
-        );
+        register(EntityBee.class, "bee");
+        register(EntityFrog.class, "frog");
+        register(EntityTurtle.class, "turtle");
+        register(EntityGoat.class, "goat");
+        register(EntityBambooRaft.class, "bamboo_raft");
+        register(EntityWarden.class, "warden");
+        register(EntityCustomWolf.class, "custom_wolf");
+        register(EntityFox.class, "fox");
+        register(EntityDolphin.class, "dolphin");
+        register(EntitySalmon.class, "salmon");
+        register(EntityCod.class, "cod");
+        register(EntityAxolotl.class, "axolotl");
+        register(EntityGlowSquid.class, "glow_squid");
+        register(EntityTropicalFish.class, "tropical_fish");
+        register(EntityPillager.class, "pillager");
+        register(EntityPhantom.class, "phantom");
+        register(EntityNewVillager.class, "villager");
 
     }
+
+    private static void register(Class<? extends Entity> clazz, String name) {
+        name = name.toLowerCase();
+        String entityName = convertName(name);
+
+
+
+        EntityRegistry.registerModEntity(
+                new ResourceLocation(MODID, name),
+                clazz,
+                entityName,
+                currentID,
+                UBM.instance,
+                64, 1, true
+        );
+        currentID++;
+    }
+
+    private static String convertName(String input) {
+        StringBuilder sb = new StringBuilder();
+        boolean capitalizeNext = true;
+
+        for (char c : input.toCharArray()) {
+            if (c == '_') {
+                capitalizeNext = true;
+            } else {
+                if (capitalizeNext) {
+                    sb.append(Character.toUpperCase(c));
+                    capitalizeNext = false;
+                } else {
+                    sb.append(Character.toLowerCase(c));
+                }
+            }
+        }
+
+        return sb.toString();
+    }
+
 
     public static void addSpawns() {
         EntityRegistry.addSpawn(EntitySalmon.class, 10, 1, 5, EnumCreatureType.WATER_CREATURE, FISH_BIOMES);
