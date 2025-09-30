@@ -35,7 +35,7 @@ jobs:
           project_id: "494079"
           file_path: "build/libs/ubm-${{ steps.build.outputs.version }}.jar"
           game_endpoint: "minecraft"
-          game_versions: "Minecraft 1.12.2,Java 8,Forge"
+          game_versions: "Minecraft 1.12:1.12.2,Java 8,Forge"
           changelog: ${{ github.event.release.body }}
           release-type: release
           relations: "pathfinder-api:requiredDependency"
