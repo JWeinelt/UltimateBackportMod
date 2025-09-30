@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "ubm:deepslate_cobbled"},
+    {"item": "ubm:deepslate_cobbled"},
+    {"item": "ubm:deepslate_cobbled"},
+    {"item": "ubm:deepslate_cobbled"}
+  ],
+  "result": {
+    "item": "ubm:deepslate_polished",
+    "count": 9
+  }
+}
