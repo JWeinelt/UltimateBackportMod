@@ -213,9 +213,29 @@ public class ModBlocks {
     public static Block DEEPSLATE_COBBLED;
     public static Block DEEPSLATE_BRICKS;
     public static Block DEEPSLATE_TILES;
+    public static Block DEEPSLATE_CHISELED;
     public static Block DEEPSLATE_POLISHED;
     public static Block DEEPSLATE_BRICKS_CRACKED;
     public static Block DEEPSLATE_TILES_CRACKED;
+    public static Block DEEPSLATE_COBBLED_STAIRS;
+    public static Block DEEPSLATE_COBBLED_WALL;
+    public static Block DEEPSLATE_COBBLED_SLAB;
+    public static Block DEEPSLATE_POLISHED_STAIRS;
+    public static Block DEEPSLATE_POLISHED_SLAB;
+    public static Block DEEPSLATE_POLISHED_WALL;
+    public static Block DEEPSLATE_BRICK_STAIRS;
+    public static Block DEEPSLATE_BRICK_SLAB;
+    public static Block DEEPSLATE_BRICK_WALL;
+    public static Block DEEPSLATE_TILE_STAIRS;
+    public static Block DEEPSLATE_TILE_SLAB;
+    public static Block DEEPSLATE_TILE_WALL;
+
+    public static Block ANDESITE_POLISHED_STAIRS;
+    public static Block GRANITE_POLISHED_STAIRS;
+    public static Block DIORITE_POLISHED_STAIRS;
+    public static Block ANDESITE_STAIRS;
+    public static Block GRANITE_STAIRS;
+    public static Block DIORITE_STAIRS;
 
     public static Block ROOTED_DIRT;
     public static Block SMOOTH_BASALT;
