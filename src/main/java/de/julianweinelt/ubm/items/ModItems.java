@@ -46,6 +46,8 @@ public class ModItems {
     public static Item TRIM_HOST;
     public static Item TRIM_RIB;
 
+    public static Item COPPER_INGOT;
+
     public static Item OMINOUS_BOTTLE;
 
     public static Item NETHERITE_SCRAP;
@@ -215,6 +217,11 @@ public class ModItems {
                 .setRegistryName("netherite_scrap")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         event.getRegistry().register(NETHERITE_SCRAP);
+        COPPER_INGOT = new Item()
+                .setUnlocalizedName("copper_ingot")
+                .setRegistryName("copper_ingot")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(COPPER_INGOT);
         NETHERITE_INGOT = new Item()
                 .setUnlocalizedName("netherite_ingot")
                 .setRegistryName("netherite_ingot")
@@ -697,6 +704,7 @@ public class ModItems {
         registerItemModel(SPAWN_EGG_GLOW_SQUID);
         registerItemModel(SPAWN_EGG_PILLAGER);
         registerItemModel(SPAWN_EGG_RAVAGER);
+        registerItemModel(COPPER_INGOT);
 
         registerItemModel(WOLF_ARMOR);
         registerItemModel(TRIDENT);
