@@ -13,6 +13,7 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -435,7 +436,7 @@ public class ModItems {
                 .setRegistryName("honeycomb")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
 
-        HONEY_BOTTLE = new Item()
+        HONEY_BOTTLE = new ItemFood(2, 2, false) //TODO: Move to dedicated class
                 .setUnlocalizedName("honey_bottle")
                 .setRegistryName("honey_bottle")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
