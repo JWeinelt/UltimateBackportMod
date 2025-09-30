@@ -1,0 +1,41 @@
+name: Release Mod
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 8
+
+      - name: Build mod
+        run: ./gradlew clean build
+
+      - name: Publish to Modrinth
+        run: ./gradlew publishModrinth
+        env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+
+      - name: Upload to CurseForge
+        uses: itsmeow/curseforge-upload@v1
+        with:
+          token: ${{ secrets.CURSEFORGE_TOKEN }}
+          project_id: "494079"
+          file_path: "build/libs/ubm-${{ steps.build.outputs.version }}.jar"
+          game_endpoint: "minecraft"
+          game_versions: "Minecraft 1.12.2,Java 8,Forge"
+          changelog: ${{ github.event.release.body }}
+          release-type: release
+          relations: "pathfinder-api:requiredDependency"
