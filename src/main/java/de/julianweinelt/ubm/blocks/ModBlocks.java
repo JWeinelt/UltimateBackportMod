@@ -1,7 +1,7 @@
 package de.julianweinelt.ubm.blocks;
 
 import de.julianweinelt.ubm.UBM;
-import de.julianweinelt.ubm.blocks.api.BlockAmethystBud;
+import de.julianweinelt.ubm.blocks.api.*;
 import de.julianweinelt.ubm.blocks.interactable.BlockSmithingTable;
 import de.julianweinelt.ubm.blocks.plant.BlockGlowBerryVine;
 import de.julianweinelt.ubm.blocks.plant.BlockGlowLichen;

@@ -1,4 +1,4 @@
-package de.julianweinelt.ubm.blocks;
+package de.julianweinelt.ubm.blocks.api;
 
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.state.IBlockState;
