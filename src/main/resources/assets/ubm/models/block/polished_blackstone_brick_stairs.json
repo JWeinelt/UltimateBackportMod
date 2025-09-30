@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "ubm:blocks/polished_blackstone_bricks",
+    "top": "ubm:blocks/polished_blackstone_bricks",
+    "side": "ubm:blocks/polished_blackstone_bricks"
+  }
+}
