@@ -33,6 +33,6 @@ public class VilliBiomeLayer implements LayerRenderer<EntityNewVillager> {
 
     @Override
     public boolean shouldCombineTextures() {
-        return false; // wichtig gegen Z-Fighting
+        return false;
     }
 }
