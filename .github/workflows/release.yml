@@ -8,34 +8,21 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     
+    permissions:
+      contents: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: Kir-Antipov/mc-publish@v3.3
         with:
-          fetch-depth: 0
+          modrinth-id: R8jBhfbN
+          modrinth-token: ${{ secrets.MODRINTH_API_TOKEN }}
 
-      - name: Set up JDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 8
+          curseforge-id: 494079
+          curseforge-token: ${{ secrets.CURSEFORGE_API_TOKEN }}
 
-      - name: Build mod
-        run: ./gradlew clean build
-
-      - name: Publish to Modrinth
-        run: ./gradlew publishModrinth
-        env:
-          MODRINTH_TOKEN: ${{ secrets.MODRINTH_API_TOKEN }}
-
-      - name: Upload to CurseForge
-        uses: itsmeow/curseforge-upload@v1
-        with:
-          token: ${{ secrets.CURSEFORGE_API_TOKEN }}
-          project_id: "494079"
-          file_path: "build/libs/ubm-${{ steps.build.outputs.version }}.jar"
-          game_endpoint: "minecraft"
-          game_versions: "Minecraft 1.12:1.12.2,Java 8,Forge"
-          changelog: ${{ github.event.release.body }}
-          release-type: release
-          relations: "pathfinder-api:requiredDependency"
+          loaders: |
+            forge
+          game-versions: |
+            1.12.2
+            
+          dependencies: |
+            pathfinder-api
