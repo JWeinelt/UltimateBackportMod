@@ -26,7 +26,7 @@ jobs:
       - name: Publish to Modrinth
         run: ./gradlew publishModrinth
         env:
-          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_API_TOKEN }}
 
       - name: Upload to CurseForge
         uses: itsmeow/curseforge-upload@v1
