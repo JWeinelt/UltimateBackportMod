@@ -76,7 +76,7 @@ public class ModEntities {
         register(EntityBreeze.class, "breeze");
         register(EntityWanderingTrader.class, "wandering_trader");
 
-        //TODO: Add piglin brute, zombified piglin, Tadpole, Copper Golem, Boat Variants
+        //TODO: Add piglin brute, zombified piglin, Tadpole, Copper Golem, Boat Variants, Happy Ghast
     }
 
     private static void register(Class<? extends Entity> clazz, String name) {
