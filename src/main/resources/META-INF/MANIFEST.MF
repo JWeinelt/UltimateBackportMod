@@ -1,1 +1,2 @@
 FMLCorePlugin: de.julianweinelt.ubm.core.UBMCore
+FMLCorePluginContainsFMLMod: true
