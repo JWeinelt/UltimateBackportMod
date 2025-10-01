@@ -278,6 +278,14 @@ public class ModBlocks {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
         register(GRINDSTONE, event);
 
+        CRIMSON_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "crimson_pressure_plate")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        register(CRIMSON_PRESSURE_PLATE, event);
+
+        WARPED_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "warped_pressure_plate")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        register(WARPED_PRESSURE_PLATE, event);
+
         SOUL_CAMPFIRE = new BlockCampFire(true)
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         register(SOUL_CAMPFIRE, event);
