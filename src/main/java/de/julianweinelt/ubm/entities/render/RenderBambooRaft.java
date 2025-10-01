@@ -29,8 +29,6 @@ public class RenderBambooRaft extends RenderBoat {
         model.render(entity, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
 
         GlStateManager.popMatrix();
-
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
     }
 
     @Nonnull
