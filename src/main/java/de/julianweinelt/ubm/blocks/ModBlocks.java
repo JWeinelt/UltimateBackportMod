@@ -172,6 +172,8 @@ public class ModBlocks {
 
     public static Block BEE_NEST;
     public static Block BEE_HIVE;
+    public static Block HONEYCOMB_BLOCK;
+    public static Block HONEY_BLOCK;
 
     public static Block SWEET_BERRY_BUSH;
 
@@ -981,6 +983,17 @@ public class ModBlocks {
                 .setRegistryName("smooth_basalt")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
         register(SMOOTH_BASALT, event);
+
+        HONEYCOMB_BLOCK = new Block(Material.ROCK)
+                .setUnlocalizedName("honeycomb_block")
+                .setRegistryName("honeycomb_block")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
+        register(HONEYCOMB_BLOCK, event);
+        HONEY_BLOCK = new Block(Material.ROCK)
+                .setUnlocalizedName("honey_block")
+                .setRegistryName("honey_block")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
+        register(HONEY_BLOCK, event); //TODO: Move to its own class due to its unique properties
 
         MOSS_BLOCK = new Block(Material.PLANTS)
                 .setUnlocalizedName("moss_block")
