@@ -1,16 +1,16 @@
 package de.julianweinelt.ubm.entities;
 
+import de.julianweinelt.ubm.configuration.ModConfig;
 import de.julianweinelt.ubm.entities.ai.EntityAISwimAround;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public class EntitySalmon extends EntityWaterMob {
@@ -30,13 +30,14 @@ public class EntitySalmon extends EntityWaterMob {
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
 
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(6.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ModConfig.getEntityConfig("salmon").getHealth() / 2.0D);
 
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(1.0D);
     }
 
     @Override
-    protected PathNavigate createNavigator(World worldIn) {
+    @Nonnull
+    protected PathNavigate createNavigator(@Nonnull World worldIn) {
         return new PathNavigateSwimmer(this, worldIn);
     }
 
@@ -59,25 +60,6 @@ public class EntitySalmon extends EntityWaterMob {
     protected Item getDropItem() {
         return Items.FISH;
     }
-
-    /*
-    @Nullable
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return SoundEvents.ENTITY_COD_AMBIENT;
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-        return SoundEvents.ENTITY_COD_HURT;
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return SoundEvents.ENTITY_COD_DEATH;
-    }*/
 
     @Override
     public boolean getCanSpawnHere() {

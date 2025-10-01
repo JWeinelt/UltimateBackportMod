@@ -9,10 +9,11 @@ import net.minecraft.util.ResourceLocation;
 public class VilliProfLevelLayer implements LayerRenderer<EntityNewVillager> {
     private static final ResourceLocation LEVEL_TEXTURE = new ResourceLocation("ubm:textures/entity/villager/profession_level/stone.png");
     private final RenderLivingBase<?> renderer;
-    private final ModelVillager villagerModel = new ModelVillager();
+    private final ModelVillager villagerModel;
 
     public VilliProfLevelLayer(RenderLivingBase<?> rendererIn) {
         this.renderer = rendererIn;
+        villagerModel = (ModelVillager) this.renderer.getMainModel();
     }
 
     @Override

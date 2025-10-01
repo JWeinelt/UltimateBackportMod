@@ -1,9 +1,11 @@
 package de.julianweinelt.ubm.entities;
 
+import de.julianweinelt.ubm.configuration.ModConfig;
 import de.julianweinelt.ubm.items.ModItems;
 import de.julianweinelt.ubm.misc.ModSounds;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityVillager;
@@ -27,6 +29,13 @@ public class EntityPillager extends EntityMob implements IRangedAttackMob {
     @Override
     protected void entityInit() {
         super.entityInit();
+    }
+
+    @Override
+    protected void applyEntityAttributes() {
+        super.applyEntityAttributes();
+
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ModConfig.getEntityConfig("pillager").getHealth() / 2.0D);
     }
 
     @Override

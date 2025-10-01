@@ -1,5 +1,6 @@
 package de.julianweinelt.ubm.entities;
 
+import de.julianweinelt.ubm.configuration.ModConfig;
 import de.julianweinelt.ubm.entities.ai.EntityAIEatSlime;
 import de.julianweinelt.ubm.entities.ai.EntityAISpontaneousJump;
 import de.julianweinelt.ubm.misc.ModSounds;
@@ -71,7 +72,7 @@ public class EntityFrog extends EntityAnimal {
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ModConfig.getEntityConfig("frog").getHealth() / 2.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
     }
 

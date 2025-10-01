@@ -1,5 +1,19 @@
 {
   "variants": {
-    "normal": { "model": "ubm:crimson_stem" }
+    "axis=x": {
+      "model": "ubm:crimson_stem",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ubm:crimson_stem"
+    },
+    "axis=none": {
+      "model": "ubm:crimson_stem"
+    },
+    "axis=z": {
+      "model": "ubm:crimson_stem",
+      "x": 90
+    }
   }
 }

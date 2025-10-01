@@ -1,5 +1,6 @@
 package de.julianweinelt.ubm.entities;
 
+import de.julianweinelt.ubm.configuration.ModConfig;
 import de.julianweinelt.ubm.entities.ai.EntityAISwimAround;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityWaterMob;
@@ -24,7 +25,7 @@ public class EntityCod extends EntityWaterMob {
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
 
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(6.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ModConfig.getEntityConfig("cod").getHealth() / 2.0D);
 
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(1.0D);
     }

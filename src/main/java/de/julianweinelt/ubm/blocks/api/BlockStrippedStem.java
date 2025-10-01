@@ -7,10 +7,10 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockStrippedStem extends BlockLog {
 
-    public BlockStrippedStem(String name, CreativeTabs tab) {
+    public BlockStrippedStem(String name, CreativeTabs tab, boolean stripped) {
         super();
-        this.setUnlocalizedName("stripped_" + name + "_stem");
-        this.setRegistryName("stripped_" + name + "_stem");
+        this.setUnlocalizedName((stripped ? "stripped_" : "") + name + "_stem");
+        this.setRegistryName((stripped ? "stripped_" : "") + name + "_stem");
         this.setCreativeTab(tab);
         this.setHardness(2.0F);
         this.setResistance(5.0F);
@@ -36,7 +36,7 @@ public class BlockStrippedStem extends BlockLog {
                 state = state.withProperty(LOG_AXIS, EnumAxis.Z);
                 break;
             default:
-                state = state.withProperty(LOG_AXIS, EnumAxis.NONE);
+                state = state.withProperty(LOG_AXIS, EnumAxis.X);
         }
         return state;
     }
@@ -46,8 +46,7 @@ public class BlockStrippedStem extends BlockLog {
         switch (state.getValue(LOG_AXIS)) {
             case X: return 1;
             case Z: return 2;
-            case NONE: return 3;
-            case Y:
+            case Y: return 0;
             default: return 0;
         }
     }

@@ -5,20 +5,14 @@ import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.blocks.api.sign.TileEntityModSign;
 import de.julianweinelt.ubm.blocks.interactable.smithing.GuiHandler;
 import de.julianweinelt.ubm.blocks.interactable.smithing.TileEntitySmithingTable;
+import de.julianweinelt.ubm.configuration.ModConfig;
 import de.julianweinelt.ubm.entities.ModEntities;
-import de.julianweinelt.ubm.misc.ClientEventHandler;
-import de.julianweinelt.ubm.misc.ClientProxy;
 import de.julianweinelt.ubm.misc.CommonProxy;
 import de.julianweinelt.ubm.misc.ModRecipes;
-import de.julianweinelt.ubm.qol.SwimClientHandler;
-import de.julianweinelt.ubm.trims.LayerArmorTrim;
-import de.julianweinelt.ubm.trims.TrimColorHelper;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
 import de.julianweinelt.ubm.worldgen.StructureWorldGen;
 import de.julianweinelt.ubm.worldgen.structure.village.ModCustomVillage;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -27,8 +21,9 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
 
-import java.awt.*;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
 
 @Mod(modid = UBM.MODID, name = UBM.NAME, version = UBM.VERSION)
@@ -49,7 +44,7 @@ public class UBM {
             "quartz", "redstone", "resin"
     };
 
-    public static File config;
+    public static File configDir;
 
 
     @Mod.EventHandler
@@ -57,10 +52,26 @@ public class UBM {
         logger = event.getModLog();
         instance = this;
 
-        config = event.getModConfigurationDirectory();
-        if (!config.exists()) {
-            config.mkdirs();
+        configDir = event.getModConfigurationDirectory();
+        if (!configDir.exists()) {
+            configDir.mkdirs();
         }
+
+        File configFile = new File(configDir, MODID + ".cfg");
+
+        if (!configFile.exists()) {
+            try (InputStream in = getClass().getResourceAsStream("/assets/ubm/ubm.cfg")) {
+                if (in != null) {
+                    java.nio.file.Files.copy(in, configFile.toPath());
+                } else {
+                    logger.fatal("Failed to load ubm.cfg! The file seems not to be in the mod itself. That is a problem.");
+                }
+            } catch (IOException e) {
+                logger.error("Failed to load config file!", e);
+            }
+        }
+
+        ModConfig.init(configFile);
 
         ModEntities.init();
         ModEntities.addSpawns();

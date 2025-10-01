@@ -53,7 +53,7 @@ public class TrimColorHelper {
             ResourceLocation location = Minecraft.getMinecraft().getTextureManager().getDynamicTextureLocation("trim_colored", dynTex);
             textureCache.put(cacheKey, location);
             try {
-                File outFile = new File(UBM.config, overlayPath.contains("legg") ? "leg_" : "ot" + "test.png");
+                File outFile = new File(UBM.configDir, overlayPath.contains("legg") ? "leg_" : "ot" + "test.png");
                 ImageIO.write(colored, "PNG", outFile);
                 System.out.println("Textur gespeichert: " + outFile.getAbsolutePath());
             } catch (IOException e) {
