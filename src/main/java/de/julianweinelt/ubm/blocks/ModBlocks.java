@@ -55,6 +55,7 @@ public class ModBlocks {
     private static final CreativeTabs TB_WILD = ModCreativeTabs.UBM_TAB_WILD;
     private static final CreativeTabs TB_AQUATIC = ModCreativeTabs.UBM_TAB_AQUATIC;
     private static final CreativeTabs TB_PILLAGE = ModCreativeTabs.UBM_TAB_PILLAGE;
+    private static final CreativeTabs TB_TRAILS_TALES = ModCreativeTabs.UBM_TAB_TRAILS_TALES;
 
     public static Block NETHERITE_BLOCK;
     public static Block LIGHTNING_ROD;
@@ -264,6 +265,145 @@ public class ModBlocks {
         WAXED_OXIDIZED_COPPER_BLOCK, WAXED_OXIDIZED_CHISELED_COPPER, WAXED_OXIDIZED_COPPER_GRATE, WAXED_OXIDIZED_CUT_COPPER, WAXED_OXIDIZED_COPPER_BULB
     ;
 
+    public static Block DRIED_KELP_BLOCK;
+    public static Block SEAGRASS;
+    public static Block KELP;
+    public static Block BLUE_ICE;
+    public static Block TURTLE_EGG;
+    public static Block CONDUIT;
+    public static Block SEA_PICKLE;
+    public static Block TUBE_CORAL_BLOCK;
+    public static Block TUBE_CORAL;
+    public static Block BRAIN_CORAL_BLOCK;
+    public static Block BRAIN_CORAL;
+    public static Block BUBBLE_CORAL_BLOCK;
+    public static Block BUBBLE_CORAL;
+    public static Block FIRE_CORAL_BLOCK;
+    public static Block FIRE_CORAL;
+    public static Block HORN_CORAL_BLOCK;
+    public static Block HORN_CORAL;
+    public static Block TUBE_CORAL_FAN;
+    public static Block BRAIN_CORAL_FAN;
+    public static Block BUBBLE_CORAL_FAN;
+    public static Block FIRE_CORAL_FAN;
+    public static Block HORN_CORAL_FAN;
+    public static Block DEAD_TUBE_CORAL;
+    public static Block DEAD_BRAIN_CORAL;
+    public static Block DEAD_BUBBLE_CORAL;
+    public static Block DEAD_FIRE_CORAL;
+    public static Block DEAD_HORN_CORAL;
+    public static Block DEAD_TUBE_CORAL_FAN;
+    public static Block DEAD_BRAIN_CORAL_FAN;
+    public static Block DEAD_BUBBLE_CORAL_FAN;
+    public static Block DEAD_FIRE_CORAL_FAN;
+    public static Block DEAD_HORN_CORAL_FAN;
+    public static Block SPRUCE_TRAPDOOR;
+    public static Block BIRCH_TRAPDOOR;
+    public static Block JUNGLE_TRAPDOOR;
+    public static Block ACACIA_TRAPDOOR;
+    public static Block DARK_OAK_TRAPDOOR;
+    public static Block SPRUCE_BUTTON;
+    public static Block BIRCH_BUTTON;
+    public static Block JUNGLE_BUTTON;
+    public static Block ACACIA_BUTTON;
+    public static Block DARK_OAK_BUTTON;
+    public static Block SPRUCE_PRESSURE_PLATE;
+    public static Block BIRCH_PRESSURE_PLATE;
+    public static Block JUNGLE_PRESSURE_PLATE;
+    public static Block ACACIA_PRESSURE_PLATE;
+    public static Block DARK_OAK_PRESSURE_PLATE;
+
+    public static Block DECORATED_POT;
+    public static Block AZALEA;
+    public static Block FLOWERING_AZALEA;
+    public static Block AZALEA_LEAVES;
+    public static Block FLOWERING_AZALEA_LEAVES;
+    public static Block DRIPSTONE;
+    public static Block DRIPSTONE_BLOCK;
+    public static Block DRIPLEAF;
+    public static Block SMALL_DRIPLEAF;
+    public static Block HANGING_ROOTS;
+
+    public static Block SCULK_SENSOR;
+    public static Block SCULK_CATALYST;
+    public static Block SCULK;
+    public static Block SCULK_SHRIEKER;
+    public static Block CALIBRATED_SCULK_SENSOR;
+    public static Block SCULK_VEINS;
+    public static Block SPORE_BLOSSOM;
+
+    public static Block MUD;
+    public static Block PACKED_MUD;
+    public static Block MUD_BRICKS;
+    public static Block MUD_BRICK_SLAB;
+    public static Block MUD_BRICK_STAIRS;
+    public static Block MUD_BRICK_WALL;
+    public static Block MUDDY_MANGROVE_ROOTS;
+
+    public static Block CHISILED_BOOKSHELF;
+    public static Block SNIFFER_EGG;
+    public static Block SUSPICIOUS_SAND;
+    public static Block SUSPICIOUS_GRAVEL;
+    public static Block PIGLIN_HEAD;
+    public static Block PITCHER_PLANTS;
+    public static Block TORCHFLOWER;
+    public static Block PINK_PETALS;
+
+    public static Block HANGING_SIGN_OAK;
+    public static Block HANGING_SIGN_SPRUCE;
+    public static Block HANGING_SIGN_BIRCH;
+    public static Block HANGING_SIGN_ACACIA;
+    public static Block HANGING_SIGN_JUNGLE;
+    public static Block HANGING_SIGN_DARK_OAK;
+    public static Block HANGING_SIGN_PALE_OAK;
+    public static Block HANGING_SIGN_MANGROVE;
+    public static Block HANGING_SIGN_CHERRY;
+    public static Block HANGING_SIGN_BAMBOO;
+
+    public static Block MANGROVE_PLANKS;
+    public static Block MANGROVE_LOGS;
+    public static Block MANGROVE_WOOD;
+    public static Block MANGROVE_DOOR;
+    public static Block MANGROVE_BUTTON;
+    public static Block MANGROVE_PRESSURE_PLATE;
+    public static Block MANGROVE_TRAPDOOR;
+    public static Block MANGROVE_STAIRS;
+    public static Block MANGROVE_SLAB;
+    public static Block MANGROVE_FENCE;
+    public static Block MANGROVE_FENCE_GATE;
+    public static Block STRIPPED_MANGROVE_LOGS;
+    public static Block STRIPPED_MANGROVE_WOOD;
+    public static Block MANGROVE_SIGN;
+    public static Block BLOCK_OF_BAMBOO;
+    public static Block STRIPPED_BAMBOO;
+    public static Block BAMBOO_MOSAIC;
+    public static Block BAMBOO_DOOR;
+    public static Block BAMBOO_TRAPDOOR;
+    public static Block BAMBOO_STAIRS;
+    public static Block BAMBOO_SLAB;
+    public static Block BAMBOO_BUTTON;
+    public static Block BAMBOO_PRESSURE_PLATE;
+    public static Block BAMBOO_FENCE;
+    public static Block BAMBOO_FENCE_GATE;
+    public static Block BAMBOO_MOSAIC_STAIRS;
+    public static Block BAMBOO_MOSAIC_SLAB;
+    public static Block CHERRY_PLANKS;
+    public static Block CHERRY_LOGS;
+    public static Block CHERRY_WOOD;
+    public static Block CHERRY_DOOR;
+    public static Block CHERRY_BUTTON;
+    public static Block CHERRY_PRESSURE_PLATE;
+    public static Block CHERRY_TRAPDOOR;
+    public static Block CHERRY_STAIRS;
+    public static Block CHERRY_SLAB;
+    public static Block CHERRY_FENCE;
+    public static Block CHERRY_FENCE_GATE;
+    public static Block STRIPPED_CHERRY_LOGS;
+    public static Block STRIPPED_CHERRY_WOOD;
+    public static Block CHERRY_SIGN;
+    public static Block CHERRY_SAPLING;
+    public static Block CHERRY_LEAVES;
+
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         CAMPFIRE = new BlockCampFire(false);
@@ -343,6 +483,12 @@ public class ModBlocks {
         WARPED_BUTTON = new BlockModButton(true, "warped_button")
                 .setCreativeTab(TB_NETHER);
         register(WARPED_BUTTON, event);
+
+        PALE_OAK_PLANKS = new Block(Material.WOOD)
+                .setUnlocalizedName("pale_oak_planks")
+                .setRegistryName("pale_oak_planks")
+                .setCreativeTab(TB_TRAILS_TALES);
+
         SMITHING_TABLE = new BlockSmithingTable();
         register(SMITHING_TABLE, event);
 

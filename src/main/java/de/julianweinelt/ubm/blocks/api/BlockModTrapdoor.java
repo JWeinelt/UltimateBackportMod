@@ -1,6 +1,6 @@
 package de.julianweinelt.ubm.blocks.api;
 
-import net.minecraft.block.BlockDoor;
+import net.minecraft.block.BlockTrapDoor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockRenderLayer;
@@ -12,15 +12,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 
-//TODO: IMPORTANT: We need to use ItemDoor to register it correctly.
-
-public class BlockModDoor extends BlockDoor {
-    public BlockModDoor(Material materialIn, String name) {
+public class BlockModTrapdoor extends BlockTrapDoor {
+    public BlockModTrapdoor(Material materialIn, String name) {
         super(materialIn);
         this.setUnlocalizedName(name);
         this.setRegistryName(name);
     }
-
 
     @Override
     public boolean isOpaqueCube(@Nonnull IBlockState state) {
