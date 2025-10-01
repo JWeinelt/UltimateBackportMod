@@ -1,8 +1,8 @@
 package de.julianweinelt.ubm.entities.ai;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.Random;
 public class PiglinAIHuntHoglin extends EntityAIBase {
 
     private final EntityMob piglin;
-    private EntityMob targetHoglin;
+    private EntityLivingBase targetHoglin;
     private final Random random = new Random();
 
     public PiglinAIHuntHoglin(EntityMob piglin) {
@@ -21,10 +21,9 @@ public class PiglinAIHuntHoglin extends EntityAIBase {
 
     @Override
     public boolean shouldExecute() {
-        if (piglin.ticksExisted % 20 != 0) return false; // nur einmal pro Sekunde prüfen
-        if (random.nextFloat() > 0.1F) return false; // 10% Chance
+        if (piglin.ticksExisted % 20 != 0) return false;
+        if (random.nextFloat() > 0.1F) return false;
 
-        // Suche Hoglins in einem Radius von 16 Blöcken
         AxisAlignedBB box = piglin.getEntityBoundingBox().grow(16.0D, 8.0D, 16.0D);
         List<EntityMob> hoglins = piglin.world.getEntitiesWithinAABB(EntityMob.class, box,
                 e -> e.getClass().getSimpleName().equals("EntityHoglin"));
