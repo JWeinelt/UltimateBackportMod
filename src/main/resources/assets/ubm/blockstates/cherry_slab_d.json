@@ -1,5 +1,10 @@
 {
-  "variants": {
-    "normal": { "model": "ubm:cherry_planks" }
-  }
+	"variants": {
+		"half=bottom,variant=default": {
+			"model": "ubm:cherry_planks"
+		},
+		"half=top,variant=default": {
+			"model": "ubm:cherry_planks"
+		}
+	}
 }

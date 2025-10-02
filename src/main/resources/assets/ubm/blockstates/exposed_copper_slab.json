@@ -1,6 +1,6 @@
 {
   "variants": {
-    "half=bottom": { "model": "ubm:half_slab_exposed_copper" },
-    "half=top": { "model": "ubm:upper_slab_exposed_copper" }
+    "half=bottom,variant=default": { "model": "ubm:half_slab_exposed_copper" },
+    "half=top,variant=default": { "model": "ubm:upper_slab_exposed_copper" }
   }
 }

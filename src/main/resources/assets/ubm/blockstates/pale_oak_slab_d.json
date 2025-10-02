@@ -1,5 +1,10 @@
 {
-  "variants": {
-    "normal": { "model": "ubm:pale_oak_planks" }
-  }
+	"variants": {
+		"half=bottom,variant=default": {
+			"model": "ubm:pale_oak_planks"
+		},
+		"half=top,variant=default": {
+			"model": "ubm:pale_oak_planks"
+		}
+	}
 }

@@ -1,5 +1,10 @@
 {
-  "variants": {
-    "normal": { "model": "ubm:crimson_planks" }
-  }
+	"variants": {
+		"half=bottom,variant=default": {
+			"model": "ubm:crimson_planks"
+		},
+		"half=top,variant=default": {
+			"model": "ubm:crimson_planks"
+		}
+	}
 }

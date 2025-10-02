@@ -1,5 +1,6 @@
 {
   "variants": {
-    "normal": { "model": "ubm:mangrove_planks" }
+    "half=bottom,variant=default": { "model": "ubm:mangrove_planks" },
+    "half=top,variant=default": { "model": "ubm:mangrove_planks" }
   }
 }

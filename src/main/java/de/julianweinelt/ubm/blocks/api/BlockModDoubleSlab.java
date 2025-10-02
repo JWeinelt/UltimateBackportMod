@@ -10,7 +10,7 @@ public class BlockModDoubleSlab extends BlockModSlab {
     private final String uName;
 
     public BlockModDoubleSlab(String name, Material material, Block baseSlab) {
-        super(name + "_d", material, false);
+        super(name + "_d", material, true);
         this.baseSlab = (BlockModSlab) baseSlab;
         uName = name + "_d";
     }

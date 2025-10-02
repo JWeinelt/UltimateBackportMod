@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "particle": "ubm:blocks/honey_block_top",
+    "bottom": "ubm:blocks/honey_block_bottom",
+    "top": "ubm:blocks/honey_block_top",
+    "side": "ubm:blocks/honey_block_side"
+  }
+}

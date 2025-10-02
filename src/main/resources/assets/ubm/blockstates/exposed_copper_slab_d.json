@@ -1,5 +1,10 @@
 {
-  "variants": {
-    "normal": { "model": "ubm:exposed_copper_block" }
-  }
+	"variants": {
+		"half=bottom,variant=default": {
+			"model": "ubm:exposed_copper_block"
+		},
+		"half=top,variant=default": {
+			"model": "ubm:exposed_copper_block"
+		}
+	}
 }

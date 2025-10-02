@@ -1,5 +1,10 @@
 {
-  "variants": {
-    "normal": { "model": "ubm:deepslate_bricks" }
-  }
+	"variants": {
+		"half=bottom,variant=default": {
+			"model": "ubm:deepslate_bricks"
+		},
+		"half=top,variant=default": {
+			"model": "ubm:deepslate_bricks"
+		}
+	}
 }

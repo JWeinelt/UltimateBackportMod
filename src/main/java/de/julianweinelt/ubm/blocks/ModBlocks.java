@@ -1708,7 +1708,7 @@ public class ModBlocks {
     public static void registerItem(Block block, RegistryEvent.Register<Item> event) {
         Item item;
         if (block instanceof BlockDoor) {
-            item = new ItemDoor(block).setRegistryName(block.getRegistryName());
+            item = new ItemDoor(block).setRegistryName(block.getRegistryName()).setCreativeTab(block.getCreativeTabToDisplayOn());
         } //TODO: Add handling for signs
         else if (block instanceof BlockCopperTorch) return;
         else item = new ItemBlock(block).setRegistryName(block.getRegistryName());
@@ -1720,7 +1720,10 @@ public class ModBlocks {
     public static void registerItemServer(Block block, RegistryEvent.Register<Item> event) {
         Item item;
         if (block instanceof BlockDoor) {
-            item = new ItemDoor(block).setRegistryName(block.getRegistryName());
+            item = new ItemDoor(block)
+                    .setRegistryName(block.getRegistryName())
+                    .setUnlocalizedName(block.getUnlocalizedName())
+                    .setCreativeTab(block.getCreativeTabToDisplayOn());
         } //TODO: Add handling for signs
         else if (block instanceof BlockCopperTorch) return;
         else item = new ItemBlock(block).setRegistryName(block.getRegistryName());

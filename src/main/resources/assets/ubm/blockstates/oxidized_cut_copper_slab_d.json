@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"half=bottom,variant=default": {
+			"model": "ubm:oxidized_cut_copper_block"
+		},
+		"half=top,variant=default": {
+			"model": "ubm:oxidized_cut_copper_block"
+		}
+	}
+}
