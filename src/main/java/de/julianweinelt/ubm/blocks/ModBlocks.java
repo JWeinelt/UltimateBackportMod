@@ -361,7 +361,7 @@ public class ModBlocks {
     public static Block HANGING_SIGN_BAMBOO;
 
     public static Block MANGROVE_PLANKS;
-    public static Block MANGROVE_LOGS;
+    public static Block MANGROVE_LOG;
     public static Block MANGROVE_WOOD;
     public static Block MANGROVE_DOOR;
     public static Block MANGROVE_BUTTON;
@@ -371,7 +371,7 @@ public class ModBlocks {
     public static Block MANGROVE_SLAB;
     public static Block MANGROVE_FENCE;
     public static Block MANGROVE_FENCE_GATE;
-    public static Block STRIPPED_MANGROVE_LOGS;
+    public static Block STRIPPED_MANGROVE_LOG;
     public static Block STRIPPED_MANGROVE_WOOD;
     public static Block MANGROVE_SIGN;
     public static Block BLOCK_OF_BAMBOO;
@@ -1205,6 +1205,41 @@ public class ModBlocks {
         POLISHED_BLACKSTONE_STAIRS = new BlockModStairs(POLISHED_BLACKSTONE.getDefaultState(), "polished_blackstone_stairs")
                 .setCreativeTab(TB_NETHER);
         register(POLISHED_BLACKSTONE_STAIRS, event);
+
+
+        MANGROVE_PLANKS = new Block(Material.WOOD)
+                .setUnlocalizedName("mangrove_planks")
+                .setRegistryName("mangrove_planks")
+                .setCreativeTab(TB_WILD);
+        register(MANGROVE_PLANKS, event);
+        MANGROVE_LOG = new BlockNewLog()
+                .setUnlocalizedName("mangrove_log")
+                .setRegistryName("mangrove_log")
+                .setCreativeTab(TB_WILD);
+        register(MANGROVE_LOG, event);
+        MANGROVE_WOOD = new BlockNewLog()
+                .setUnlocalizedName("mangrove_wood")
+                .setRegistryName("mangrove_wood")
+                .setCreativeTab(TB_WILD);
+        register(MANGROVE_WOOD, event);
+        MANGROVE_FENCE = new BlockModFence(Material.WOOD, "mangrove_fence")
+                .setCreativeTab(TB_WILD);
+        register(MANGROVE_FENCE, event);
+        MANGROVE_STAIRS = new BlockModStairs(MANGROVE_PLANKS.getDefaultState(), "mangrove_stairs")
+                .setCreativeTab(TB_WILD);
+        register(MANGROVE_STAIRS, event);
+        MANGROVE_BUTTON = new BlockModButton(true, "mangrove_button")
+                .setCreativeTab(TB_WILD);
+        register(MANGROVE_BUTTON, event);
+        MANGROVE_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "mangrove_pressure_plate")
+                .setCreativeTab(TB_WILD);
+        register(MANGROVE_PRESSURE_PLATE, event);
+        MANGROVE_DOOR = new BlockModDoor(Material.WOOD, "mangrove_door")
+                .setCreativeTab(TB_WILD);
+        register(MANGROVE_DOOR, event);
+        MANGROVE_TRAPDOOR = new BlockModTrapdoor(Material.WOOD, "mangrove_trapdoor")
+                .setCreativeTab(TB_WILD);
+        register(MANGROVE_TRAPDOOR, event);
 
 
         ModBiomes.init();
