@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "ubm:half_slab_crimson" },
+    "half=top": { "model": "ubm:upper_slab_crimson" }
+  }
+}
