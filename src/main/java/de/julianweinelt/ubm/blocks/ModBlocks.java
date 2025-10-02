@@ -773,6 +773,9 @@ public class ModBlocks {
         DEEPSLATE_TILE_WALL = new BlockModWall(DEEPSLATE_TILES, "deepslate_tiles_wall")
                 .setCreativeTab(TB_CAVES);
         register(DEEPSLATE_TILE_WALL, event);
+        DEEPSLATE_BRICK_WALL = new BlockModWall(DEEPSLATE_BRICKS, "deepslate_brick_wall")
+                .setCreativeTab(TB_CAVES);
+        register(DEEPSLATE_BRICK_WALL, event);
 
         PEARLESCENT_FROGLIGHT = new Block(Material.PLANTS)
                 .setUnlocalizedName("pearlescent_froglight")
