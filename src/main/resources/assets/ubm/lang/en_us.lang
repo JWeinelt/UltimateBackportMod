@@ -245,3 +245,5 @@ advancement.ubm.leash_all_frog_variants.title=When the Squad Hops into Town
 advancement.ubm.leash_all_frog_variants.desc=Get each Frog variant on a Lead
 advancement.ubm.tadpole_in_a_bucket.title=
 advancement.ubm.tadpole_in_a_bucket.desc=
+
+death.attack.frostbite=%1$s froze to death
