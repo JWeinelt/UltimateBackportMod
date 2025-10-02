@@ -1272,6 +1272,9 @@ public class ModBlocks {
         SPRUCE_BUTTON = new BlockModButton(true, "spruce_button")
                 .setCreativeTab(TB_AQUATIC);
         register(SPRUCE_BUTTON, event);
+        BAMBOO_BUTTON = new BlockModButton(true, "bamboo_button")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(BAMBOO_BUTTON, event);
 
 
         ModBiomes.init();
