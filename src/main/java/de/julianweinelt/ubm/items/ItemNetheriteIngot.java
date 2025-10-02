@@ -4,6 +4,8 @@ import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import javax.annotation.Nonnull;
+
 public class ItemNetheriteIngot extends Item {
     public ItemNetheriteIngot() {
         setUnlocalizedName("netherite_ingot");
@@ -12,7 +14,7 @@ public class ItemNetheriteIngot extends Item {
     }
 
     @Override
-    public boolean isBeaconPayment(ItemStack stack) {
+    public boolean isBeaconPayment(@Nonnull ItemStack stack) {
         return true;
     }
 }
