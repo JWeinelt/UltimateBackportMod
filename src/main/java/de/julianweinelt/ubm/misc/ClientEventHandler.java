@@ -38,9 +38,9 @@ public class ClientEventHandler {
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public static void onGuiOpen(GuiOpenEvent event) {
-        if (event.getGui() instanceof GuiChat) {
+        /*if (event.getGui() instanceof GuiChat) {
             event.setGui(new GuiChatWithSuggestions());
-        }
+        }*/
         if (event.getGui() instanceof GuiMainMenu) {
             //event.setGui(new GuiMainMenuNonBlur());
         }
