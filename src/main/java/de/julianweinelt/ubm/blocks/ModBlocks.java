@@ -124,16 +124,6 @@ public class ModBlocks {
     public static Block STRIPPED_JUNGLE_STEM;
     public static Block STRIPPED_JUNGLE_WOOD;
 
-    public static Block STRIPPED_PALE_OAK_LOG;
-    public static Block PALE_OAK_LOG;
-    public static Block PALE_OAK_PLANKS;
-    public static Block PALE_OAK_LEAVES;
-    public static Block PALE_OAK_DOOR;
-    public static Block PALE_OAK_TRAPDOOR;
-    public static Block PALE_OAK_SAPLING;
-    public static Block PALE_OAK_MOSS;
-    public static Block PALE_OAK_MOSS_CARPET;
-
     public static Block GLOW_LICHEN;
     public static Block GLOW_BERRIES;
 
@@ -403,6 +393,23 @@ public class ModBlocks {
     public static Block CHERRY_SIGN;
     public static Block CHERRY_SAPLING;
     public static Block CHERRY_LEAVES;
+
+    public static Block PALE_OAK_PLANKS;
+    public static Block PALE_OAK_LOGS;
+    public static Block PALE_OAK_WOOD;
+    public static Block PALE_OAK_DOOR;
+    public static Block PALE_OAK_BUTTON;
+    public static Block PALE_OAK_PRESSURE_PLATE;
+    public static Block PALE_OAK_TRAPDOOR;
+    public static Block PALE_OAK_STAIRS;
+    public static Block PALE_OAK_SLAB;
+    public static Block PALE_OAK_FENCE;
+    public static Block PALE_OAK_FENCE_GATE;
+    public static Block STRIPPED_PALE_OAK_LOGS;
+    public static Block STRIPPED_PALE_OAK_WOOD;
+    public static Block PALE_OAK_SIGN;
+    public static Block PALE_OAK_SAPLING;
+    public static Block PALE_OAK_LEAVES;
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -1240,6 +1247,31 @@ public class ModBlocks {
         MANGROVE_TRAPDOOR = new BlockModTrapdoor(Material.WOOD, "mangrove_trapdoor")
                 .setCreativeTab(TB_WILD);
         register(MANGROVE_TRAPDOOR, event);
+
+        // Buttons
+
+        CHERRY_BUTTON = new BlockModButton(true, "cherry_button")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(CHERRY_BUTTON, event);
+
+        PALE_OAK_BUTTON = new BlockModButton(true, "pale_oak_button")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(PALE_OAK_BUTTON, event);
+        ACACIA_BUTTON = new BlockModButton(true, "acacia_button")
+                .setCreativeTab(TB_AQUATIC);
+        register(ACACIA_BUTTON, event);
+        JUNGLE_BUTTON = new BlockModButton(true, "jungle_button")
+                .setCreativeTab(TB_AQUATIC);
+        register(JUNGLE_BUTTON, event);
+        DARK_OAK_BUTTON = new BlockModButton(true, "dark_oak_button")
+                .setCreativeTab(TB_AQUATIC);
+        register(DARK_OAK_BUTTON, event);
+        BIRCH_BUTTON = new BlockModButton(true, "birch_button")
+                .setCreativeTab(TB_AQUATIC);
+        register(BIRCH_BUTTON, event);
+        SPRUCE_BUTTON = new BlockModButton(true, "spruce_button")
+                .setCreativeTab(TB_AQUATIC);
+        register(SPRUCE_BUTTON, event);
 
 
         ModBiomes.init();
