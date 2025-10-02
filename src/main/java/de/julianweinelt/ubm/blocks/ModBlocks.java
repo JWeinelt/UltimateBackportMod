@@ -1277,6 +1277,8 @@ public class ModBlocks {
         register(BAMBOO_BUTTON, event);
 
 
+
+
         ModBiomes.init();
         GameRegistry.registerTileEntity(TileEntityBeeNest.class, new ResourceLocation("ubm", "bee_nest"));
         GameRegistry.registerWorldGenerator(new WorldGenBeeNest(), 0);
