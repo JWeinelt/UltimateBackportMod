@@ -1365,6 +1365,16 @@ public class ModBlocks {
         MANGROVE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("mangrove_slab", Material.WOOD, MANGROVE_SLAB)
                 .setCreativeTab(TB_WILD);
         registerSlab(MANGROVE_SLAB, MANGROVE_SLAB_D, event);
+        CHERRY_SLAB = (BlockSlab) new BlockModHalfSlab("cherry_slab", Material.WOOD, CHERRY_SLAB)
+                .setCreativeTab(TB_TRAILS_TALES);
+        CHERRY_SLAB_D = (BlockSlab) new BlockModDoubleSlab("cherry_slab", Material.WOOD, CHERRY_SLAB)
+                .setCreativeTab(TB_TRAILS_TALES);
+        registerSlab(CHERRY_SLAB, CHERRY_SLAB_D, event);
+        DEEPSLATE_COBBLED_SLAB = (BlockSlab) new BlockModHalfSlab("deepslate_cobbled_slab", Material.ROCK, DEEPSLATE_COBBLED_SLAB)
+                .setCreativeTab(TB_CAVES);
+        DEEPSLATE_COBBLED_SLAB_D = (BlockSlab) new BlockModDoubleSlab("deepslate_cobbled_slab", Material.ROCK, DEEPSLATE_COBBLED_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(DEEPSLATE_COBBLED_SLAB, DEEPSLATE_COBBLED_SLAB_D, event);
     }
 
     @SideOnly(Side.SERVER)
