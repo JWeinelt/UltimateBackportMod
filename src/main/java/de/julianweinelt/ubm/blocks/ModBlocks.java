@@ -330,10 +330,7 @@ public class ModBlocks {
         register(BUDDING_AMETHYST, event);
 
 
-        NETHERITE_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("netherite_block")
-                .setRegistryName("netherite_block")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        NETHERITE_BLOCK = new BlockNetheriteBlock();
         register(NETHERITE_BLOCK, event);
 
         TARGET = new Block(Material.PLANTS)
