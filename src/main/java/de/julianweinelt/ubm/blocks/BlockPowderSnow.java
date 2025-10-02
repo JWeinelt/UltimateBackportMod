@@ -11,6 +11,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -22,6 +24,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
@@ -56,27 +59,66 @@ public class BlockPowderSnow extends Block {
     }
 
     @Override
-    public boolean isOpaqueCube(IBlockState state) {
+    public boolean shouldSideBeRendered(@Nonnull IBlockState state, @Nullable IBlockAccess world,
+                                        @Nullable BlockPos pos, @Nullable EnumFacing side) {
+        return true;
+    }
+
+
+    @Override
+    public boolean isOpaqueCube(@Nonnull IBlockState state) {
         return false;
     }
 
     @Override
-    public boolean isFullCube(IBlockState state) {
+    public boolean isFullCube(@Nonnull IBlockState state) {
         return false;
     }
 
     @Override
-    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos,
-                                      AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState) {
+    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox,
+                                      List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState) {
+        if (entityIn instanceof EntityPlayer) {
+            EntityPlayer player = (EntityPlayer) entityIn;
+
+            ItemStack boots = player.getItemStackFromSlot(EntityEquipmentSlot.FEET);
+            if (!boots.isEmpty() && boots.getItem() instanceof ItemArmor) {
+                ItemArmor armor = (ItemArmor) boots.getItem();
+                if (armor.getArmorMaterial() == ItemArmor.ArmorMaterial.LEATHER) {
+                    if (entityIn.isSneaking()) return;
+                    AxisAlignedBB bb = FULL_BLOCK_AABB.offset(pos);
+                    if (entityBox.intersects(bb)) {
+                        collidingBoxes.add(bb);
+                    }
+                }
+            }
+        }
     }
 
+
     @Override
-    protected ItemStack getSilkTouchDrop(IBlockState state) {
+    @Nonnull
+    protected ItemStack getSilkTouchDrop(@Nonnull IBlockState state) {
         return new ItemStack(ModItems.POWDER_SNOW_BUCKET);
+    }
+
+    @Override
+    @Nonnull
+    public Item getItemDropped(@Nullable IBlockState state, @Nullable Random rand, int fortune) {
+        return ModItems.POWDER_SNOW_BUCKET;
     }
 
     @Override
     public int quantityDroppedWithBonus(int fortune, Random random) {
         return 1;
     }
+
+    @Override
+    public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
+        entity.motionX *= 0.5;
+        entity.motionZ *= 0.5;
+        entity.motionY *= 0.8;
+        entity.fallDistance = 0.0F;
+    }
+
 }
