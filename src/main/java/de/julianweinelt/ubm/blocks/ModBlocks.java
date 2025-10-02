@@ -1124,6 +1124,8 @@ public class ModBlocks {
                 .setCreativeTab(TB_CAVES);
         register(DEEPSLATE, event);
 
+        //TODO: Add chiseled deepslate
+
         DEEPSLATE_ORE_COPPER = new Block(Material.ROCK)
                 .setUnlocalizedName("deepslate_ore_copper")
                 .setRegistryName("deepslate_ore_copper")
@@ -1258,6 +1260,22 @@ public class ModBlocks {
                 .setUnlocalizedName("dried_kelp_block")
                 .setCreativeTab(TB_AQUATIC);
         register(DRIED_KELP_BLOCK, event);
+
+        MUD = new Block(Material.GROUND)
+                .setRegistryName("mud")
+                .setUnlocalizedName("mud")
+                .setCreativeTab(TB_WILD);
+        register(MUD, event);
+        MUD_BRICKS = new Block(Material.GROUND)
+                .setRegistryName("mud_bricks")
+                .setUnlocalizedName("mud_bricks")
+                .setCreativeTab(TB_WILD);
+        register(MUD_BRICKS, event);
+        PACKED_MUD = new Block(Material.GROUND)
+                .setRegistryName("packed_mud")
+                .setUnlocalizedName("packed_mud")
+                .setCreativeTab(TB_WILD);
+        register(PACKED_MUD, event);
 
 
         MANGROVE_PLANKS = new Block(Material.WOOD)
