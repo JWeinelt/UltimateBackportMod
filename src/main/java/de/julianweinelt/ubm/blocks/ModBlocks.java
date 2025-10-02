@@ -1427,6 +1427,14 @@ public class ModBlocks {
         DEEPSLATE_POLISHED_SLAB_D = (BlockSlab) new BlockModDoubleSlab("deepslate_polished_slab", Material.ROCK, DEEPSLATE_POLISHED_SLAB)
                 .setCreativeTab(TB_CAVES);
         registerSlab(DEEPSLATE_POLISHED_SLAB, DEEPSLATE_POLISHED_SLAB_D, event);
+
+
+        // Copper
+        COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("copper_slab", Material.ROCK, COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(COPPER_SLAB, COPPER_SLAB_D, event);
     }
 
     @SideOnly(Side.SERVER)
