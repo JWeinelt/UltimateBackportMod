@@ -8,7 +8,9 @@ import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.DamageSource;
+import net.minecraft.init.Items;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -36,6 +38,8 @@ public class EntityEvents {
         }
     }
 
+
+
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
@@ -44,11 +48,23 @@ public class EntityEvents {
             IBlockState state = player.world.getBlockState(pos);
 
             if (state.getBlock() == ModBlocks.POWDER_SNOW) {
+                if (isWearingLeather(player)) return;
                 player.getEntityData().setBoolean("inFrozenBlock", true);
                 player.getEntityData().setFloat("freezeTime", player.getEntityData().getFloat("freezeTime") + 0.005f);
             } else {
-                player.getEntityData().setBoolean("inFrozenBlock", false);
-                player.getEntityData().setFloat("freezeTime", 0F);
+                if (player.getEntityData().getBoolean("inFrozenBlock"))
+                    player.getEntityData().setFloat("freezeTime", Math.max(0, player.getEntityData().getFloat("freezeTime") - 0.05f));
+                else player.getEntityData().setFloat("freezeTime", Math.min(1, player.getEntityData().getFloat("freezeTime")));
+                if (player.getEntityData().getFloat("freezeTime") <= 0)
+                    player.getEntityData().setBoolean("inFrozenBlock", false);
+            }
+
+
+            if (player.getEntityData().getBoolean("inFrozenBlock")) {
+                int timer = Math.round(player.getEntityData().getFloat("freezeTime") * 100);
+                if (timer % 10 == 0) {
+                    player.attackEntityFrom(ModDamageSource.frostbite(), 1.0F);
+                }
             }
         }
     }
@@ -60,6 +76,8 @@ public class EntityEvents {
 
         if (player != null && player.getEntityData().getBoolean("inFrozenBlock")) {
             if (event.getType() == RenderGameOverlayEvent.ElementType.ALL) {
+                GlStateManager.enableBlend();
+                GlStateManager.enableAlpha();
                 mc.getTextureManager().bindTexture(new ResourceLocation("ubm", "textures/gui/powder_snow_outline.png"));
                 GlStateManager.color(1F, 1F, 1F, Math.min(1.0F, player.getEntityData().getFloat("freezeTime")));
                 Gui.drawModalRectWithCustomSizedTexture(0, 0, 0, 0,
@@ -71,8 +89,8 @@ public class EntityEvents {
         }
     }
 
-    @SubscribeEvent
-    public void onRenderHearts(RenderGameOverlayEvent.Pre event) {
+    //@SubscribeEvent
+    public static void onRenderHearts(RenderGameOverlayEvent.Pre event) {
         if (event.getType() != RenderGameOverlayEvent.ElementType.HEALTH) return;
 
         Minecraft mc = Minecraft.getMinecraft();
@@ -108,30 +126,26 @@ public class EntityEvents {
         }
     }
 
-
-    @SubscribeEvent
-    public void onPlayerTickDamage(TickEvent.PlayerTickEvent event) {
-        if (event.phase == TickEvent.Phase.END) {
-            EntityPlayer player = event.player;
-
-            if (player.getEntityData().getBoolean("inFrozenBlock")) {
-                int timer = player.getEntityData().getInteger("freezeTime");
-                timer++;
-                if (timer >= 100) {
-                    player.attackEntityFrom(ModDamageSource.frostbite(), 1.0F);
-                    timer = 0;
-                }
-            } else {
-                player.getEntityData().setFloat("freezeTime", 0);
-            }
-        }
-    }
-
-
-
     private static void applySlowdown(Entity entity) {
         entity.motionX *= 0.2D;
         entity.motionZ *= 0.2D;
         entity.motionY *= 0.6D;
+    }
+
+    private static boolean isWearingLeather(EntityPlayer player) {
+        for (EntityEquipmentSlot slot : EntityEquipmentSlot.values()) {
+            if (slot.getSlotType() == EntityEquipmentSlot.Type.ARMOR) {
+                ItemStack stack = player.getItemStackFromSlot(slot);
+                if (!stack.isEmpty()) {
+                    if (stack.getItem() == Items.LEATHER_HELMET ||
+                            stack.getItem() == Items.LEATHER_CHESTPLATE ||
+                            stack.getItem() == Items.LEATHER_LEGGINGS ||
+                            stack.getItem() == Items.LEATHER_BOOTS) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }
