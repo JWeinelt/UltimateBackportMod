@@ -1222,6 +1222,18 @@ public class ModBlocks {
                 .setRegistryName("mangrove_wood")
                 .setCreativeTab(TB_WILD);
         register(MANGROVE_WOOD, event);
+
+        STRIPPED_MANGROVE_LOG = new BlockNewLog()
+                .setUnlocalizedName("stripped_mangrove_log")
+                .setRegistryName("stripped_mangrove_log")
+                .setCreativeTab(TB_WILD);
+        register(STRIPPED_MANGROVE_LOG, event);
+        STRIPPED_MANGROVE_WOOD = new BlockNewLog()
+                .setUnlocalizedName("stripped_mangrove_wood")
+                .setRegistryName("stripped_mangrove_wood")
+                .setCreativeTab(TB_WILD);
+        register(STRIPPED_MANGROVE_WOOD, event);
+
         MANGROVE_FENCE = new BlockModFence(Material.WOOD, "mangrove_fence")
                 .setCreativeTab(TB_WILD);
         register(MANGROVE_FENCE, event);
@@ -1243,6 +1255,8 @@ public class ModBlocks {
 
         SCULK = new BlockSculk();
         register(SCULK, event);
+        SCULK_SENSOR = new BlockSculkSensor();
+        register(SCULK_SENSOR, event);
 
 
         ModBiomes.init();

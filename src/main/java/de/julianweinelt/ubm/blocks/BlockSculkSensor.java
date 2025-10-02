@@ -38,7 +38,7 @@ public class BlockSculkSensor extends Block {
                             @Nonnull EnumFacing side) {
         TileEntity te = world.getTileEntity(pos);
         if (te instanceof TileEntitySculkSensor) {
-            return ((TileEntitySculkSensor) te).isActive() ? 15 : 0;
+            return ((TileEntitySculkSensor) te).isActive() ? 15 : 0; //TODO: Add steps
         }
         return 0;
     }
