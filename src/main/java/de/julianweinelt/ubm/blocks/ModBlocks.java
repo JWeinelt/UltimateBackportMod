@@ -49,6 +49,7 @@ public class ModBlocks {
     public static final Map<ResourceLocation, ResourceLocation> PREVIOUS_OXIDATION = new HashMap<>();
     
     private static final List<Block> blocks = new ArrayList<>();
+    private static final HashMap<BlockSlab, BlockSlab> slabs = new HashMap<>();
     
     private static final CreativeTabs TB_NETHER = ModCreativeTabs.UBM_TAB_NETHER;
     private static final CreativeTabs TB_CAVES = ModCreativeTabs.UBM_TAB_CAVES;
@@ -81,7 +82,8 @@ public class ModBlocks {
     public static Block STRIPPED_CRIMSON_HYPHAE;
     public static Block CRIMSON_FUNGUS;
     public static Block CRIMSON_ROOTS;
-    public static Block CRIMSON_SLAB;
+    public static BlockSlab CRIMSON_SLAB;
+    public static BlockSlab CRIMSON_SLAB_D;
     public static Block CRIMSON_STAIRS;
     public static Block CRIMSON_PRESSURE_PLATE;
     public static Block CRIMSON_BUTTON;
@@ -98,7 +100,8 @@ public class ModBlocks {
     public static Block STRIPPED_WARPED_HYPHAE;
     public static Block WARPED_FUNGUS;
     public static Block WARPED_ROOTS;
-    public static Block WARPED_SLAB;
+    public static BlockSlab WARPED_SLAB;
+    public static BlockSlab WARPED_SLAB_D;
     public static Block WARPED_STAIRS;
     public static Block WARPED_PRESSURE_PLATE;
     public static Block WARPED_BUTTON;
@@ -148,11 +151,14 @@ public class ModBlocks {
     public static Block POLISHED_BLACKSTONE_BRICKS;
     public static Block CRACKED_POLISHED_BLACKSTONE_BRICKS;
     public static Block GILDED_BLACKSTONE;
-    public static Block BLACKSTONE_SLAB;
+    public static BlockSlab BLACKSTONE_SLAB;
+    public static BlockSlab BLACKSTONE_SLAB_D;
     public static Block BLACKSTONE_STAIRS;
-    public static Block POLISHED_BLACKSTONE_SLAB;
+    public static BlockSlab POLISHED_BLACKSTONE_SLAB;
+    public static BlockSlab POLISHED_BLACKSTONE_SLAB_D;
     public static Block POLISHED_BLACKSTONE_STAIRS;
-    public static Block POLISHED_BLACKSTONE_BRICK_SLAB;
+    public static BlockSlab POLISHED_BLACKSTONE_BRICK_SLAB;
+    public static BlockSlab POLISHED_BLACKSTONE_BRICK_SLAB_D;
     public static Block POLISHED_BLACKSTONE_BRICK_STAIRS;
     public static Block POLISHED_BLACKSTONE_BUTTON;
     public static Block POLISHED_BLACKSTONE_PRESSURE_PLATE;
@@ -221,15 +227,19 @@ public class ModBlocks {
     public static Block DEEPSLATE_TILES_CRACKED;
     public static Block DEEPSLATE_COBBLED_STAIRS;
     public static Block DEEPSLATE_COBBLED_WALL;
-    public static Block DEEPSLATE_COBBLED_SLAB;
+    public static BlockSlab DEEPSLATE_COBBLED_SLAB;
+    public static BlockSlab DEEPSLATE_COBBLED_SLAB_D;
     public static Block DEEPSLATE_POLISHED_STAIRS;
-    public static Block DEEPSLATE_POLISHED_SLAB;
+    public static BlockSlab DEEPSLATE_POLISHED_SLAB;
+    public static BlockSlab DEEPSLATE_POLISHED_SLAB_D;
     public static Block DEEPSLATE_POLISHED_WALL;
     public static Block DEEPSLATE_BRICK_STAIRS;
-    public static Block DEEPSLATE_BRICK_SLAB;
+    public static BlockSlab DEEPSLATE_BRICK_SLAB;
+    public static BlockSlab DEEPSLATE_BRICK_SLAB_D;
     public static Block DEEPSLATE_BRICK_WALL;
     public static Block DEEPSLATE_TILE_STAIRS;
-    public static Block DEEPSLATE_TILE_SLAB;
+    public static BlockSlab DEEPSLATE_TILE_SLAB;
+    public static BlockSlab DEEPSLATE_TILE_SLAB_D;
     public static Block DEEPSLATE_TILE_WALL;
 
     public static Block ANDESITE_POLISHED_STAIRS;
@@ -238,6 +248,18 @@ public class ModBlocks {
     public static Block ANDESITE_STAIRS;
     public static Block GRANITE_STAIRS;
     public static Block DIORITE_STAIRS;
+    public static BlockSlab ANDESITE_POLISHED_SLAB;
+    public static BlockSlab ANDESITE_POLISHED_SLAB_D;
+    public static BlockSlab GRANITE_POLISHED_SLAB;
+    public static BlockSlab GRANITE_POLISHED_SLAB_D;
+    public static BlockSlab DIORITE_POLISHED_SLAB;
+    public static BlockSlab DIORITE_POLISHED_SLAB_D;
+    public static BlockSlab ANDESITE_SLAB;
+    public static BlockSlab ANDESITE_SLAB_D;
+    public static BlockSlab GRANITE_SLAB;
+    public static BlockSlab GRANITE_SLAB_D;
+    public static BlockSlab DIORITE_SLAB;
+    public static BlockSlab DIORITE_SLAB_D;
 
     public static Block ROOTED_DIRT;
     public static Block SMOOTH_BASALT;
@@ -325,7 +347,8 @@ public class ModBlocks {
     public static Block MUD;
     public static Block PACKED_MUD;
     public static Block MUD_BRICKS;
-    public static Block MUD_BRICK_SLAB;
+    public static BlockSlab MUD_BRICK_SLAB;
+    public static BlockSlab MUD_BRICK_SLAB_D;
     public static Block MUD_BRICK_STAIRS;
     public static Block MUD_BRICK_WALL;
     public static Block MUDDY_MANGROVE_ROOTS;
@@ -358,7 +381,8 @@ public class ModBlocks {
     public static Block MANGROVE_PRESSURE_PLATE;
     public static Block MANGROVE_TRAPDOOR;
     public static Block MANGROVE_STAIRS;
-    public static Block MANGROVE_SLAB;
+    public static BlockSlab MANGROVE_SLAB;
+    public static BlockSlab MANGROVE_SLAB_D;
     public static Block MANGROVE_FENCE;
     public static Block MANGROVE_FENCE_GATE;
     public static Block STRIPPED_MANGROVE_LOG;
@@ -370,7 +394,8 @@ public class ModBlocks {
     public static Block BAMBOO_DOOR;
     public static Block BAMBOO_TRAPDOOR;
     public static Block BAMBOO_STAIRS;
-    public static Block BAMBOO_SLAB;
+    public static BlockSlab BAMBOO_SLAB;
+    public static BlockSlab BAMBOO_SLAB_D;
     public static Block BAMBOO_BUTTON;
     public static Block BAMBOO_PRESSURE_PLATE;
     public static Block BAMBOO_FENCE;
@@ -385,7 +410,8 @@ public class ModBlocks {
     public static Block CHERRY_PRESSURE_PLATE;
     public static Block CHERRY_TRAPDOOR;
     public static Block CHERRY_STAIRS;
-    public static Block CHERRY_SLAB;
+    public static BlockSlab CHERRY_SLAB;
+    public static BlockSlab CHERRY_SLAB_D;
     public static Block CHERRY_FENCE;
     public static Block CHERRY_FENCE_GATE;
     public static Block STRIPPED_CHERRY_LOG;
@@ -402,7 +428,8 @@ public class ModBlocks {
     public static Block PALE_OAK_PRESSURE_PLATE;
     public static Block PALE_OAK_TRAPDOOR;
     public static Block PALE_OAK_STAIRS;
-    public static Block PALE_OAK_SLAB;
+    public static BlockSlab PALE_OAK_SLAB;
+    public static BlockSlab PALE_OAK_SLAB_D;
     public static Block PALE_OAK_FENCE;
     public static Block PALE_OAK_FENCE_GATE;
     public static Block STRIPPED_PALE_OAK_LOG;
@@ -1323,7 +1350,7 @@ public class ModBlocks {
         register(BAMBOO_BUTTON, event);
 
 
-
+        registerSlabs(event);
 
 
         ModBiomes.init();
@@ -1332,12 +1359,21 @@ public class ModBlocks {
         GameRegistry.registerTileEntity(TileEntityCampfire.class, new ResourceLocation("ubm", "campfire"));
     }
 
+    private static void registerSlabs(RegistryEvent.Register<Block> event) {
+        MANGROVE_SLAB = (BlockSlab) new BlockModHalfSlab("mangrove_slab", Material.WOOD, MANGROVE_SLAB)
+                .setCreativeTab(TB_WILD);
+        MANGROVE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("mangrove_slab", Material.WOOD, MANGROVE_SLAB)
+                .setCreativeTab(TB_WILD);
+        registerSlab(MANGROVE_SLAB, MANGROVE_SLAB_D, event);
+    }
+
     @SideOnly(Side.SERVER)
     @SubscribeEvent
     public static void registerItemServerBlocks(RegistryEvent.Register<Item> event) {
         for (Block b : blocks) {
             registerItemServer(b, event);
         }
+        registerSlabItemsServer(event);
 
     }
 
@@ -1348,6 +1384,7 @@ public class ModBlocks {
         for (Block b : blocks) {
             registerItem(b, event);
         }
+        registerSlabItems(event);
     }
 
 
@@ -1528,15 +1565,33 @@ public class ModBlocks {
         event.getRegistry().register(item);
     }
     
-    public static void register(Block block, RegistryEvent.Register<Block> event) {
+    private static void register(Block block, RegistryEvent.Register<Block> event) {
         event.getRegistry().register(block);
         blocks.add(block);
     }
 
-    public static void registerAll(List<Block> blockss, RegistryEvent.Register<Block> event) {
-        //for (Block block : blockss) register(block, event);
+    private static void registerSlab(BlockSlab half, BlockSlab doubleSlab, RegistryEvent.Register<Block> event) {
+        event.getRegistry().register(half);
+        event.getRegistry().register(doubleSlab);
+        slabs.put(half, doubleSlab);
     }
 
+    private static void registerSlabItems(RegistryEvent.Register<Item> event) {
+        for (BlockSlab h : slabs.keySet()) {
+            BlockSlab d = slabs.get(h);
+            Item item = new ItemSlab(h, h, d).setRegistryName(h.getRegistryName());
+            event.getRegistry().register(item);
+            registerItemModel(item);
+        }
+    }
+
+    private static void registerSlabItemsServer(RegistryEvent.Register<Item> event) {
+        for (BlockSlab h : slabs.keySet()) {
+            BlockSlab d = slabs.get(h);
+            Item item = new ItemSlab(h, h, d).setRegistryName(h.getRegistryName());
+            event.getRegistry().register(item);
+        }
+    }
 
     @SideOnly(Side.CLIENT)
     public static void registerItemModel(Item parItem) {
