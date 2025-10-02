@@ -2,9 +2,18 @@ package de.julianweinelt.ubm.misc;
 
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.blocks.ModBlocks;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Gui;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
@@ -26,6 +35,8 @@ public class EntityEvents {
             applySlowdown(entity);
         }
     }
+
+
 
     private static void applySlowdown(Entity entity) {
         entity.motionX *= 0.2D;

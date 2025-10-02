@@ -1,7 +1,6 @@
-package de.julianweinelt.ubm.blocks;
+package de.julianweinelt.ubm.blocks.api;
 
 import net.minecraft.block.BlockLog;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;

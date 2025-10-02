@@ -100,8 +100,8 @@ public class BlockCandle extends Block {
                 boolean lit = true;
                 world.setBlockState(pos, state.withProperty(LIT, lit), 3);
                 setLightLevel(1.0F);
-                if (!player.capabilities.isCreativeMode) {
-                    heldItem.shrink(1);
+                if (!player.isCreative()) {
+                    heldItem.damageItem(1, player);
                 }
                 return true;
             } else if (heldItem.isEmpty()) {
@@ -114,8 +114,8 @@ public class BlockCandle extends Block {
                     if (!world.isRemote) {
                         world.setBlockState(pos, state.withProperty(CANDLES, candles + 1), 3);
 
-                        if (!player.capabilities.isCreativeMode) {
-                            heldItem.shrink(1);
+                        if (!player.isCreative()) {
+                            heldItem.damageItem(1, player);
                         }
                     }
                     return true;

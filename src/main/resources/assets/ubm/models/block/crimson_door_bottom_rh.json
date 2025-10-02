@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom_rh",
+  "textures": {
+    "bottom": "ubm:blocks/crimson_door_bottom",
+    "top": "ubm:blocks/crimson_door_top"
+  }
+}

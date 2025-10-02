@@ -1,4 +1,4 @@
-package de.julianweinelt.ubm.blocks;
+package de.julianweinelt.ubm.blocks.api;
 
 import net.minecraft.block.BlockButton;
 import net.minecraft.entity.player.EntityPlayer;
