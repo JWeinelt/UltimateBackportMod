@@ -1395,6 +1395,12 @@ public class ModBlocks {
         WARPED_SLAB_D = (BlockSlab) new BlockModDoubleSlab("warped_slab", Material.WOOD, WARPED_SLAB)
                 .setCreativeTab(TB_NETHER);
         registerSlab(WARPED_SLAB, WARPED_SLAB_D, event);
+
+        DEEPSLATE_TILE_SLAB = (BlockSlab) new BlockModHalfSlab("deepslate_tile_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        DEEPSLATE_TILE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("deepslate_tile_slab", Material.ROCK, DEEPSLATE_TILE_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(DEEPSLATE_TILE_SLAB, DEEPSLATE_TILE_SLAB_D, event);
     }
 
     @SideOnly(Side.SERVER)
