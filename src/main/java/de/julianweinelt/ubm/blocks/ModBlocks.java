@@ -378,7 +378,7 @@ public class ModBlocks {
     public static Block BAMBOO_MOSAIC_STAIRS;
     public static Block BAMBOO_MOSAIC_SLAB;
     public static Block CHERRY_PLANKS;
-    public static Block CHERRY_LOGS;
+    public static Block CHERRY_LOG;
     public static Block CHERRY_WOOD;
     public static Block CHERRY_DOOR;
     public static Block CHERRY_BUTTON;
@@ -388,14 +388,14 @@ public class ModBlocks {
     public static Block CHERRY_SLAB;
     public static Block CHERRY_FENCE;
     public static Block CHERRY_FENCE_GATE;
-    public static Block STRIPPED_CHERRY_LOGS;
+    public static Block STRIPPED_CHERRY_LOG;
     public static Block STRIPPED_CHERRY_WOOD;
     public static Block CHERRY_SIGN;
     public static Block CHERRY_SAPLING;
     public static Block CHERRY_LEAVES;
 
     public static Block PALE_OAK_PLANKS;
-    public static Block PALE_OAK_LOGS;
+    public static Block PALE_OAK_LOG;
     public static Block PALE_OAK_WOOD;
     public static Block PALE_OAK_DOOR;
     public static Block PALE_OAK_BUTTON;
@@ -405,7 +405,7 @@ public class ModBlocks {
     public static Block PALE_OAK_SLAB;
     public static Block PALE_OAK_FENCE;
     public static Block PALE_OAK_FENCE_GATE;
-    public static Block STRIPPED_PALE_OAK_LOGS;
+    public static Block STRIPPED_PALE_OAK_LOG;
     public static Block STRIPPED_PALE_OAK_WOOD;
     public static Block PALE_OAK_SIGN;
     public static Block PALE_OAK_SAPLING;
@@ -1248,6 +1248,46 @@ public class ModBlocks {
                 .setCreativeTab(TB_WILD);
         register(MANGROVE_TRAPDOOR, event);
 
+        // Cherry
+        CHERRY_PLANKS = new Block(Material.WOOD)
+                .setUnlocalizedName("cherry_planks")
+                .setRegistryName("cherry_planks")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(CHERRY_PLANKS, event);
+        CHERRY_LOG = new BlockNewLog()
+                .setUnlocalizedName("cherry_log")
+                .setRegistryName("cherry_log")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(CHERRY_LOG, event);
+        CHERRY_WOOD = new BlockNewLog()
+                .setUnlocalizedName("cherry_wood")
+                .setRegistryName("cherry_wood")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(CHERRY_WOOD, event);
+        CHERRY_STAIRS = new BlockModStairs(CHERRY_PLANKS.getDefaultState(), "cherry_stairs")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(CHERRY_STAIRS, event);
+        CHERRY_FENCE = new BlockModFence(Material.WOOD, "cherry_fence")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(CHERRY_FENCE, event);
+        CHERRY_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "cherry_pressure_plate")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(CHERRY_PRESSURE_PLATE, event);
+        CHERRY_DOOR = new BlockModDoor(Material.WOOD, "cherry_door")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(CHERRY_DOOR, event);
+        CHERRY_TRAPDOOR = new BlockModTrapdoor(Material.WOOD, "cherry_trapdoor")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(CHERRY_TRAPDOOR, event);
+        CHERRY_LEAVES = new Block(Material.LEAVES)
+                .setRegistryName("cherry_leaves")
+                .setUnlocalizedName("cherry_leaves")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(CHERRY_LEAVES, event);
+        CHERRY_SAPLING = new BlockModPlant("cherry_sapling")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(CHERRY_SAPLING, event);
+
         // Buttons
 
         CHERRY_BUTTON = new BlockModButton(true, "cherry_button")
@@ -1275,6 +1315,7 @@ public class ModBlocks {
         BAMBOO_BUTTON = new BlockModButton(true, "bamboo_button")
                 .setCreativeTab(TB_TRAILS_TALES);
         register(BAMBOO_BUTTON, event);
+
 
 
 
