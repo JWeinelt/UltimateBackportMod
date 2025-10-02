@@ -1299,6 +1299,8 @@ public class ModBlocks {
         if (!heldItem.isEmpty() && heldItem.getItem() == ModItems.SWEET_BERRY) {
             if (!world.isRemote) {
                 BlockPos targetPos = pos.offset(event.getFace());
+                BlockPos downPos = new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ());
+                if (!world.getBlockState(downPos).isFullBlock()) return;
                 world.setBlockState(targetPos, ModBlocks.SWEET_BERRY_BUSH.getDefaultState());
 
                 if (!player.isCreative()) {
@@ -1384,7 +1386,7 @@ public class ModBlocks {
 
     @SubscribeEvent
     public static void onBlockDrop(BlockEvent.HarvestDropsEvent event) {
-        if (event.getState().getBlock() == Blocks.GOLD_ORE) {
+        if (event.getState().getBlock() == Blocks.GOLD_ORE || event.getState().getBlock() == DEEPSLATE_ORE_GOLD) {
             event.getDrops().clear();
 
             if (!event.isSilkTouching()) {
@@ -1400,7 +1402,7 @@ public class ModBlocks {
                 event.getDrops().add(new ItemStack(Blocks.GOLD_ORE));
             }
         }
-        if (event.getState().getBlock() == Blocks.IRON_ORE) {
+        if (event.getState().getBlock() == Blocks.IRON_ORE || event.getState().getBlock() == DEEPSLATE_ORE_IRON) {
             event.getDrops().clear();
 
             if (!event.isSilkTouching()) {
