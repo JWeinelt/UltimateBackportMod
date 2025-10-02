@@ -1212,11 +1212,8 @@ public class ModBlocks {
                 .setRegistryName("honeycomb_block")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
         register(HONEYCOMB_BLOCK, event);
-        HONEY_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("honey_block")
-                .setRegistryName("honey_block")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
-        register(HONEY_BLOCK, event); //TODO: Move to its own class due to its unique properties
+        HONEY_BLOCK = new BlockHoneyBlock();
+        register(HONEY_BLOCK, event);
 
         MOSS_BLOCK = new Block(Material.PLANTS)
                 .setUnlocalizedName("moss_block")
