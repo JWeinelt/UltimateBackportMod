@@ -1276,6 +1276,9 @@ public class ModBlocks {
                 .setUnlocalizedName("packed_mud")
                 .setCreativeTab(TB_WILD);
         register(PACKED_MUD, event);
+        MUD_BRICK_STAIRS = new BlockModStairs(MUD_BRICKS.getDefaultState(), "mud_brick_stairs")
+                .setCreativeTab(TB_WILD);
+        register(MUD_BRICK_STAIRS, event);
 
 
         MANGROVE_PLANKS = new Block(Material.WOOD)
