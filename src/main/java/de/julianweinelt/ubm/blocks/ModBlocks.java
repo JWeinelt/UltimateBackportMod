@@ -1241,6 +1241,9 @@ public class ModBlocks {
                 .setCreativeTab(TB_WILD);
         register(MANGROVE_TRAPDOOR, event);
 
+        SCULK = new BlockSculk();
+        register(SCULK, event);
+
 
         ModBiomes.init();
         GameRegistry.registerTileEntity(TileEntityBeeNest.class, new ResourceLocation("ubm", "bee_nest"));
