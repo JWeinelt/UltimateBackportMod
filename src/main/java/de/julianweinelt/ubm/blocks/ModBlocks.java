@@ -402,6 +402,7 @@ public class ModBlocks {
     public static Block BAMBOO_FENCE_GATE;
     public static Block BAMBOO_MOSAIC_STAIRS;
     public static Block BAMBOO_MOSAIC_SLAB;
+    public static Block BAMBOO_MOSAIC_SLAB_D;
     public static Block CHERRY_PLANKS;
     public static Block CHERRY_LOG;
     public static Block CHERRY_WOOD;
@@ -1395,6 +1396,12 @@ public class ModBlocks {
         WARPED_SLAB_D = (BlockSlab) new BlockModDoubleSlab("warped_slab", Material.WOOD, WARPED_SLAB)
                 .setCreativeTab(TB_NETHER);
         registerSlab(WARPED_SLAB, WARPED_SLAB_D, event);
+
+        PALE_OAK_SLAB = (BlockSlab) new BlockModHalfSlab("pale_oak_slab", Material.WOOD)
+                .setCreativeTab(TB_TRAILS_TALES);
+        PALE_OAK_SLAB_D = (BlockSlab) new BlockModDoubleSlab("pale_oak_slab", Material.WOOD, PALE_OAK_SLAB)
+                .setCreativeTab(TB_TRAILS_TALES);
+        registerSlab(PALE_OAK_SLAB, PALE_OAK_SLAB_D, event);
 
         DEEPSLATE_TILE_SLAB = (BlockSlab) new BlockModHalfSlab("deepslate_tile_slab", Material.ROCK)
                 .setCreativeTab(TB_CAVES);

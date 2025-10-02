@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "ubm:half_slab_pale_oak" },
+    "half=top": { "model": "ubm:upper_slab_pale_oak" }
+  }
+}
