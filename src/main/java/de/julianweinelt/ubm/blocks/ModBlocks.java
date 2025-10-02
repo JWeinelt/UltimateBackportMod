@@ -764,9 +764,7 @@ public class ModBlocks {
                 .setCreativeTab(TB_NETHER);
         register(WARPED_WART_BLOCK, event);
 
-        BLACKSTONE_WALL = new BlockWall(BLACKSTONE)
-                .setUnlocalizedName("blackstone_wall")
-                .setRegistryName("blackstone_wall")
+        BLACKSTONE_WALL = new BlockModWall(BLACKSTONE, "blackstone_wall")
                 .setCreativeTab(TB_NETHER);
         register(BLACKSTONE_WALL, event);
 
@@ -1258,14 +1256,10 @@ public class ModBlocks {
                 .setRegistryName("mangrove_planks")
                 .setCreativeTab(TB_WILD);
         register(MANGROVE_PLANKS, event);
-        MANGROVE_LOG = new BlockNewLog()
-                .setUnlocalizedName("mangrove_log")
-                .setRegistryName("mangrove_log")
+        MANGROVE_LOG = new BlockModLog("mangrove_log")
                 .setCreativeTab(TB_WILD);
         register(MANGROVE_LOG, event);
-        MANGROVE_WOOD = new BlockNewLog()
-                .setUnlocalizedName("mangrove_wood")
-                .setRegistryName("mangrove_wood")
+        MANGROVE_WOOD = new BlockModLog("mangrove_wood")
                 .setCreativeTab(TB_WILD);
         register(MANGROVE_WOOD, event);
         MANGROVE_FENCE = new BlockModFence(Material.WOOD, "mangrove_fence")
@@ -1286,6 +1280,9 @@ public class ModBlocks {
         MANGROVE_TRAPDOOR = new BlockModTrapdoor(Material.WOOD, "mangrove_trapdoor")
                 .setCreativeTab(TB_WILD);
         register(MANGROVE_TRAPDOOR, event);
+        MANGROVE_FENCE_GATE = new BlockModFenceGate("mangrove_fence_gate")
+                .setCreativeTab(TB_WILD);
+        register(MANGROVE_FENCE_GATE, event);
 
         // Cherry
         CHERRY_PLANKS = new Block(Material.WOOD)
@@ -1293,14 +1290,10 @@ public class ModBlocks {
                 .setRegistryName("cherry_planks")
                 .setCreativeTab(TB_TRAILS_TALES);
         register(CHERRY_PLANKS, event);
-        CHERRY_LOG = new BlockNewLog()
-                .setUnlocalizedName("cherry_log")
-                .setRegistryName("cherry_log")
+        CHERRY_LOG = new BlockModLog("cherry_log")
                 .setCreativeTab(TB_TRAILS_TALES);
         register(CHERRY_LOG, event);
-        CHERRY_WOOD = new BlockNewLog()
-                .setUnlocalizedName("cherry_wood")
-                .setRegistryName("cherry_wood")
+        CHERRY_WOOD = new BlockModLog("cherry_wood")
                 .setCreativeTab(TB_TRAILS_TALES);
         register(CHERRY_WOOD, event);
         CHERRY_STAIRS = new BlockModStairs(CHERRY_PLANKS.getDefaultState(), "cherry_stairs")
@@ -1309,6 +1302,9 @@ public class ModBlocks {
         CHERRY_FENCE = new BlockModFence(Material.WOOD, "cherry_fence")
                 .setCreativeTab(TB_TRAILS_TALES);
         register(CHERRY_FENCE, event);
+        CHERRY_FENCE_GATE = new BlockModFenceGate("cherry_fence_gate")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(CHERRY_FENCE_GATE, event);
         CHERRY_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "cherry_pressure_plate")
                 .setCreativeTab(TB_TRAILS_TALES);
         register(CHERRY_PRESSURE_PLATE, event);
@@ -1354,6 +1350,13 @@ public class ModBlocks {
         BAMBOO_BUTTON = new BlockModButton(true, "bamboo_button")
                 .setCreativeTab(TB_TRAILS_TALES);
         register(BAMBOO_BUTTON, event);
+
+        PALE_OAK_FENCE = new BlockModFence(Material.WOOD, "pale_oak_fence")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(PALE_OAK_FENCE, event);
+        PALE_OAK_FENCE_GATE = new BlockModFenceGate("pale_oak_fence_gate")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(PALE_OAK_FENCE_GATE, event);
 
 
         registerSlabs(event);
@@ -1708,7 +1711,10 @@ public class ModBlocks {
     public static void registerItem(Block block, RegistryEvent.Register<Item> event) {
         Item item;
         if (block instanceof BlockDoor) {
-            item = new ItemDoor(block).setRegistryName(block.getRegistryName()).setCreativeTab(block.getCreativeTabToDisplayOn());
+            item = new ItemDoor(block)
+                    .setRegistryName(block.getRegistryName())
+                    .setUnlocalizedName(block.getUnlocalizedName().replace("tile.", ""))
+                    .setCreativeTab(block.getCreativeTabToDisplayOn());
         } //TODO: Add handling for signs
         else if (block instanceof BlockCopperTorch) return;
         else item = new ItemBlock(block).setRegistryName(block.getRegistryName());
@@ -1722,7 +1728,7 @@ public class ModBlocks {
         if (block instanceof BlockDoor) {
             item = new ItemDoor(block)
                     .setRegistryName(block.getRegistryName())
-                    .setUnlocalizedName(block.getUnlocalizedName())
+                    .setUnlocalizedName(block.getUnlocalizedName().replace("tile.", ""))
                     .setCreativeTab(block.getCreativeTabToDisplayOn());
         } //TODO: Add handling for signs
         else if (block instanceof BlockCopperTorch) return;
