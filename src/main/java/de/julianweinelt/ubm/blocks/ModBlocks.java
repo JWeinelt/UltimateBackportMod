@@ -761,22 +761,6 @@ public class ModBlocks {
                 .setCreativeTab(TB_NETHER);
         register(WARPED_WART_BLOCK, event);
 
-        BLACKSTONE_WALL = new BlockModWall(BLACKSTONE, "blackstone_wall")
-                .setCreativeTab(TB_NETHER);
-        register(BLACKSTONE_WALL, event);
-        DEEPSLATE_POLISHED_WALL = new BlockModWall(DEEPSLATE_POLISHED, "deepslate_polished_wall")
-                .setCreativeTab(TB_CAVES);
-        register(DEEPSLATE_POLISHED_WALL, event);
-        DEEPSLATE_COBBLED_WALL = new BlockModWall(DEEPSLATE_COBBLED, "deepslate_cobbled_wall")
-                .setCreativeTab(TB_CAVES);
-        register(DEEPSLATE_COBBLED_WALL, event);
-        DEEPSLATE_TILE_WALL = new BlockModWall(DEEPSLATE_TILES, "deepslate_tiles_wall")
-                .setCreativeTab(TB_CAVES);
-        register(DEEPSLATE_TILE_WALL, event);
-        DEEPSLATE_BRICK_WALL = new BlockModWall(DEEPSLATE_BRICKS, "deepslate_brick_wall")
-                .setCreativeTab(TB_CAVES);
-        register(DEEPSLATE_BRICK_WALL, event);
-
         PEARLESCENT_FROGLIGHT = new Block(Material.PLANTS)
                 .setUnlocalizedName("pearlescent_froglight")
                 .setRegistryName("pearlescent_froglight")
@@ -1279,7 +1263,9 @@ public class ModBlocks {
         MUD_BRICK_STAIRS = new BlockModStairs(MUD_BRICKS.getDefaultState(), "mud_brick_stairs")
                 .setCreativeTab(TB_WILD);
         register(MUD_BRICK_STAIRS, event);
-
+        MUD_BRICK_WALL = new BlockModWall(MUD_BRICKS, "mud_brick_wall")
+                .setCreativeTab(TB_WILD);
+        register(MUD_BRICK_WALL, event);
 
         MANGROVE_PLANKS = new Block(Material.WOOD)
                 .setUnlocalizedName("mangrove_planks")
@@ -1400,11 +1386,29 @@ public class ModBlocks {
                 .setCreativeTab(TB_TRAILS_TALES);
         register(PALE_OAK_PRESSURE_PLATE, event);
         PALE_OAK_STAIRS = new BlockModStairs(PALE_OAK_PLANKS.getDefaultState(), "pale_oak_stairs")
-                .setCreativeTab(TB_WILD);
+                .setCreativeTab(TB_TRAILS_TALES);
         register(PALE_OAK_STAIRS, event);
         PALE_OAK_TRAPDOOR = new BlockModTrapdoor(Material.WOOD, "pale_oak_trapdoor")
                 .setCreativeTab(TB_TRAILS_TALES);
         register(PALE_OAK_TRAPDOOR, event);
+
+
+
+        BLACKSTONE_WALL = new BlockModWall(BLACKSTONE, "blackstone_wall")
+                .setCreativeTab(TB_NETHER);
+        register(BLACKSTONE_WALL, event);
+        DEEPSLATE_POLISHED_WALL = new BlockModWall(DEEPSLATE_POLISHED, "deepslate_polished_wall")
+                .setCreativeTab(TB_CAVES);
+        register(DEEPSLATE_POLISHED_WALL, event);
+        DEEPSLATE_COBBLED_WALL = new BlockModWall(DEEPSLATE_COBBLED, "deepslate_cobbled_wall")
+                .setCreativeTab(TB_CAVES);
+        register(DEEPSLATE_COBBLED_WALL, event);
+        DEEPSLATE_TILE_WALL = new BlockModWall(DEEPSLATE_TILES, "deepslate_tiles_wall")
+                .setCreativeTab(TB_CAVES);
+        register(DEEPSLATE_TILE_WALL, event);
+        DEEPSLATE_BRICK_WALL = new BlockModWall(DEEPSLATE_BRICKS, "deepslate_brick_wall")
+                .setCreativeTab(TB_CAVES);
+        register(DEEPSLATE_BRICK_WALL, event);
 
         registerSlabs(event);
 
