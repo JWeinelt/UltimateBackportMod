@@ -34,6 +34,13 @@ repositories {
     }
 }
 
+jar {
+    manifest {
+        attributes "FMLCorePlugin": "de.julianweinelt.ubm.core.UBMCore"
+        attributes "FMLCorePluginContainsFMLMod": true
+    }
+}
+
 dependencies {
     implementation("de.julianweinelt.pathfinder:PathFinderAPI:1.1.1")
 }

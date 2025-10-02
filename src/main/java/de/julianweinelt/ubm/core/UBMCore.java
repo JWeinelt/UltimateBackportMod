@@ -9,18 +9,18 @@ import java.util.Map;
 public class UBMCore implements IFMLLoadingPlugin {
     @Override
     public String[] getASMTransformerClass() {
-        return new String[]{"de.julianweinelt.ubm.core.ChunkTransformer"};
+        return new String[]{"de.julianweinelt.ubm.core.ChunkProviderTransformer"};
     }
 
     @Override
     public String getModContainerClass() {
-        return "";
+        return null;
     }
 
     @Nullable
     @Override
     public String getSetupClass() {
-        return "";
+        return null;
     }
 
     @Override
@@ -30,6 +30,6 @@ public class UBMCore implements IFMLLoadingPlugin {
 
     @Override
     public String getAccessTransformerClass() {
-        return "";
+        return null;
     }
 }

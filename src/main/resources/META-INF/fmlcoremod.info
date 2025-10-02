@@ -1,0 +1,11 @@
+{
+  "modid": "ubmcore",
+  "name": "UBM Coremod",
+  "version": "1.0",
+  "mcversion": "1.12.2",
+  "description": "Mein Coremod",
+  "credits": "",
+  "logoFile": "",
+  "authorList": ["Julian"],
+  "transformerClasses": ["de.julianweinelt.ubm.core.UBMCore"]
+}
