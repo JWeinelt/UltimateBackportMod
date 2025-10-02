@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "ubm:half_slab_deepslate_polished" },
+    "half=top": { "model": "ubm:upper_slab_deepslate_polished" }
+  }
+}
