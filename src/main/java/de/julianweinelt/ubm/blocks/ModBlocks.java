@@ -1357,6 +1357,9 @@ public class ModBlocks {
         PALE_OAK_FENCE_GATE = new BlockModFenceGate("pale_oak_fence_gate")
                 .setCreativeTab(TB_TRAILS_TALES);
         register(PALE_OAK_FENCE_GATE, event);
+        PALE_OAK_DOOR = new BlockModDoor(Material.WOOD, "pale_oak_door")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(PALE_OAK_DOOR, event);
 
 
         registerSlabs(event);
