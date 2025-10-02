@@ -14,15 +14,14 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.SoundCategory;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -64,11 +63,20 @@ public class BlockPowderSnow extends Block {
         return true;
     }
 
+    @Override
+    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
+        return true;
+    }
 
     @Override
     public boolean isOpaqueCube(@Nonnull IBlockState state) {
         return false;
     }
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.TRANSLUCENT;
+    }
+
 
     @Override
     public boolean isFullCube(@Nonnull IBlockState state) {
@@ -117,7 +125,7 @@ public class BlockPowderSnow extends Block {
     public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
         entity.motionX *= 0.5;
         entity.motionZ *= 0.5;
-        entity.motionY *= 0.8;
+        entity.motionY *= 0.3;
         entity.fallDistance = 0.0F;
     }
 
