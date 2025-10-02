@@ -1401,6 +1401,12 @@ public class ModBlocks {
         DEEPSLATE_TILE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("deepslate_tile_slab", Material.ROCK, DEEPSLATE_TILE_SLAB)
                 .setCreativeTab(TB_CAVES);
         registerSlab(DEEPSLATE_TILE_SLAB, DEEPSLATE_TILE_SLAB_D, event);
+
+        DEEPSLATE_BRICK_SLAB = (BlockSlab) new BlockModHalfSlab("deepslate_brick_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        DEEPSLATE_BRICK_SLAB_D = (BlockSlab) new BlockModDoubleSlab("deepslate_brick_slab", Material.ROCK, DEEPSLATE_BRICK_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(DEEPSLATE_BRICK_SLAB, DEEPSLATE_BRICK_SLAB_D, event);
     }
 
     @SideOnly(Side.SERVER)
