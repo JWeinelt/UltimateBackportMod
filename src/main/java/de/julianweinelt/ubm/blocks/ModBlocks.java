@@ -1360,7 +1360,21 @@ public class ModBlocks {
         PALE_OAK_DOOR = new BlockModDoor(Material.WOOD, "pale_oak_door")
                 .setCreativeTab(TB_TRAILS_TALES);
         register(PALE_OAK_DOOR, event);
-
+        PALE_OAK_LOG = new BlockModLog("pale_oak_log")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(PALE_OAK_LOG, event);
+        PALE_OAK_WOOD = new BlockModLog("pale_oak_wood")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(PALE_OAK_WOOD, event);
+        PALE_OAK_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "pale_oak_pressure_plate")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(PALE_OAK_PRESSURE_PLATE, event);
+        PALE_OAK_STAIRS = new BlockModStairs(PALE_OAK_PLANKS.getDefaultState(), "pale_oak_stairs")
+                .setCreativeTab(TB_WILD);
+        register(PALE_OAK_STAIRS, event);
+        PALE_OAK_TRAPDOOR = new BlockModTrapdoor(Material.WOOD, "pale_oak_trapdoor")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(PALE_OAK_TRAPDOOR, event);
 
         registerSlabs(event);
 
