@@ -1356,7 +1356,7 @@ public class ModBlocks {
                 AdvancementHelper.grantAdvancement(player, "wax_on");
                 if (!world.isRemote) {
                     world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(WAXED_VARIANTS.get(res)).getDefaultState(), 3);
-                    if (!player.capabilities.isCreativeMode) heldItem.shrink(1);
+                    if (!player.isCreative()) heldItem.shrink(1);
                     world.playSound(null, pos, SoundEvents.BLOCK_SLIME_HIT, SoundCategory.BLOCKS, 1f, 1f);
                 }
                 event.setCanceled(true);
@@ -1368,7 +1368,7 @@ public class ModBlocks {
                 AdvancementHelper.grantAdvancement(player, "wax_off");
                 if (!world.isRemote) {
                     world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(UNWAXED_VARIANTS.get(res)).getDefaultState(), 3);
-                    heldItem.damageItem(1, player);
+                    if (!player.isCreative()) heldItem.damageItem(1, player);
                     world.playSound(null, pos, SoundEvents.BLOCK_WOOD_HIT, SoundCategory.BLOCKS, 1f, 0.8f);
                 }
                 event.setCanceled(true);
@@ -1376,7 +1376,7 @@ public class ModBlocks {
             if (PREVIOUS_OXIDATION.containsKey(res)) {
                 if (!world.isRemote) {
                     world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(PREVIOUS_OXIDATION.get(res)).getDefaultState(), 3);
-                    heldItem.damageItem(1, player);
+                    if (!player.isCreative()) heldItem.damageItem(1, player);
                     world.playSound(null, pos, SoundEvents.BLOCK_WOOD_HIT, SoundCategory.BLOCKS, 1f, 0.8f);
                 }
                 event.setCanceled(true);
