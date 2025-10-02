@@ -1213,6 +1213,12 @@ public class ModBlocks {
                 .setCreativeTab(TB_NETHER);
         register(POLISHED_BLACKSTONE_STAIRS, event);
 
+        DRIED_KELP_BLOCK = new Block(Material.WOOD)
+                .setRegistryName("dried_kelp_block")
+                .setUnlocalizedName("dried_kelp_block")
+                .setCreativeTab(TB_AQUATIC);
+        register(DRIED_KELP_BLOCK, event);
+
 
         MANGROVE_PLANKS = new Block(Material.WOOD)
                 .setUnlocalizedName("mangrove_planks")
