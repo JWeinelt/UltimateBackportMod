@@ -1390,6 +1390,11 @@ public class ModBlocks {
                 .setCreativeTab(TB_NETHER);
         registerSlab(CRIMSON_SLAB, CRIMSON_SLAB_D, event);
 
+        WARPED_SLAB = (BlockSlab) new BlockModHalfSlab("warped_slab", Material.WOOD)
+                .setCreativeTab(TB_NETHER);
+        WARPED_SLAB_D = (BlockSlab) new BlockModDoubleSlab("warped_slab", Material.WOOD, WARPED_SLAB)
+                .setCreativeTab(TB_NETHER);
+        registerSlab(WARPED_SLAB, WARPED_SLAB_D, event);
     }
 
     @SideOnly(Side.SERVER)
