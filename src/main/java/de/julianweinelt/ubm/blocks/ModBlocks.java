@@ -764,6 +764,12 @@ public class ModBlocks {
         BLACKSTONE_WALL = new BlockModWall(BLACKSTONE, "blackstone_wall")
                 .setCreativeTab(TB_NETHER);
         register(BLACKSTONE_WALL, event);
+        DEEPSLATE_POLISHED_WALL = new BlockModWall(DEEPSLATE_POLISHED, "deepslate_polished_wall")
+                .setCreativeTab(TB_CAVES);
+        register(DEEPSLATE_POLISHED_WALL, event);
+        DEEPSLATE_COBBLED_WALL = new BlockModWall(DEEPSLATE_COBBLED, "deepslate_cobbled_wall")
+                .setCreativeTab(TB_CAVES);
+        register(DEEPSLATE_COBBLED_WALL, event);
 
         PEARLESCENT_FROGLIGHT = new Block(Material.PLANTS)
                 .setUnlocalizedName("pearlescent_froglight")
