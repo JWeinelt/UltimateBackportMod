@@ -281,8 +281,9 @@ public class ModBlocks {
         WAXED_COPPER_SLAB, WAXED_COPPER_SLAB_D, WAXED_EXPOSED_COPPER_SLAB, WAXED_EXPOSED_COPPER_SLAB_D,
         WAXED_WEATHERED_COPPER_SLAB, WAXED_WEATHERED_COPPER_SLAB_D, WAXED_OXIDIZED_COPPER_SLAB, WAXED_OXIDIZED_COPPER_SLAB_D,
         CUT_COPPER_SLAB, CUT_COPPER_SLAB_D, EXPOSED_CUT_COPPER_SLAB, EXPOSED_CUT_COPPER_SLAB_D, WEATHERED_CUT_COPPER_SLAB, WEATHERED_CUT_COPPER_SLAB_D,
-        OXIDIZED_CUT_COPPER_SLAB, OXIDIZED_CUT_COPPER_SLAB_D, WAXED_CUT_COPPER_SLAB, WAXED_CUT_COPPER_SLAB_D, EXPOSED_WAXED_CUT_COPPER_SLAB, EXPOSED_WAXED_CUT_COPPER_SLAB_D,
-        WEATHERED_WAXED_CUT_COPPER_SLAB, WEATHERED_WAXED_CUT_COPPER_SLAB_D, OXIDIZED_WAXED_CUT_COPPER_SLAB, OXIDIZED_WAXED_CUT_COPPER_SLAB_D;
+        OXIDIZED_CUT_COPPER_SLAB, OXIDIZED_CUT_COPPER_SLAB_D, WAXED_CUT_COPPER_SLAB, WAXED_CUT_COPPER_SLAB_D, WAXED_EXPOSED_CUT_COPPER_SLAB,
+        WAXED_EXPOSED_CUT_COPPER_SLAB_D, WAXED_WEATHERED_CUT_COPPER_SLAB, WAXED_WEATHERED_CUT_COPPER_SLAB_D,
+        WAXED_OXIDIZED_CUT_COPPER_SLAB, WAXED_OXIDIZED_CUT_COPPER_SLAB_D;
 
     public static Block DRIED_KELP_BLOCK;
     public static Block SEAGRASS;
@@ -1435,6 +1436,100 @@ public class ModBlocks {
         COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("copper_slab", Material.ROCK, COPPER_SLAB)
                 .setCreativeTab(TB_CAVES);
         registerSlab(COPPER_SLAB, COPPER_SLAB_D, event);
+
+        EXPOSED_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("exposed_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        EXPOSED_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("exposed_copper_slab", Material.ROCK, EXPOSED_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(EXPOSED_COPPER_SLAB, EXPOSED_COPPER_SLAB_D, event);
+
+        WEATHERED_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("weathered_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        WEATHERED_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("weathered_copper_slab", Material.ROCK, WEATHERED_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(WEATHERED_COPPER_SLAB, WEATHERED_COPPER_SLAB_D, event);
+
+        OXIDIZED_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("oxidized_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        OXIDIZED_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("oxidized_copper_slab", Material.ROCK, OXIDIZED_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(OXIDIZED_COPPER_SLAB, OXIDIZED_COPPER_SLAB_D, event);
+
+
+        CUT_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("cut_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        CUT_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("cut_copper_slab", Material.ROCK, CUT_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(CUT_COPPER_SLAB, CUT_COPPER_SLAB_D, event);
+
+        EXPOSED_CUT_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("exposed_cut_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        EXPOSED_CUT_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("exposed_cut_copper_slab", Material.ROCK, EXPOSED_CUT_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(EXPOSED_CUT_COPPER_SLAB, EXPOSED_CUT_COPPER_SLAB_D, event);
+
+        WEATHERED_CUT_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("weathered_cut_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        WEATHERED_CUT_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("weathered_cut_copper_slab", Material.ROCK, WEATHERED_CUT_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(WEATHERED_CUT_COPPER_SLAB, WEATHERED_CUT_COPPER_SLAB_D, event);
+
+        OXIDIZED_CUT_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("oxidized_cut_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        OXIDIZED_CUT_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("oxidized_cut_copper_slab", Material.ROCK, OXIDIZED_CUT_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(OXIDIZED_CUT_COPPER_SLAB, OXIDIZED_CUT_COPPER_SLAB_D, event);
+
+
+        WAXED_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("waxed_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        WAXED_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("waxed_copper_slab", Material.ROCK, WAXED_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(WAXED_COPPER_SLAB, WAXED_COPPER_SLAB_D, event);
+
+        WAXED_EXPOSED_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("waxed_exposed_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        WAXED_EXPOSED_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("waxed_exposed_copper_slab", Material.ROCK, WAXED_EXPOSED_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(WAXED_EXPOSED_COPPER_SLAB, WAXED_EXPOSED_COPPER_SLAB_D, event);
+
+        WAXED_WEATHERED_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("waxed_weathered_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        WAXED_WEATHERED_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("waxed_weathered_copper_slab", Material.ROCK, WAXED_WEATHERED_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(WAXED_WEATHERED_COPPER_SLAB, WAXED_WEATHERED_COPPER_SLAB_D, event);
+
+        WAXED_OXIDIZED_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("waxed_oxidized_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        WAXED_OXIDIZED_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("waxed_oxidized_copper_slab", Material.ROCK, WAXED_OXIDIZED_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(WAXED_OXIDIZED_COPPER_SLAB, WAXED_OXIDIZED_COPPER_SLAB_D, event);
+
+
+        WAXED_CUT_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("waxed_cut_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        WAXED_CUT_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("waxed_cut_copper_slab", Material.ROCK, WAXED_CUT_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(WAXED_CUT_COPPER_SLAB, WAXED_CUT_COPPER_SLAB_D, event);
+
+        WAXED_EXPOSED_CUT_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("waxed_exposed_cut_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        WAXED_EXPOSED_CUT_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("waxed_exposed_cut_copper_slab", Material.ROCK, WAXED_EXPOSED_CUT_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(WAXED_EXPOSED_CUT_COPPER_SLAB, WAXED_EXPOSED_CUT_COPPER_SLAB_D, event);
+
+        WAXED_WEATHERED_CUT_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("waxed_weathered_cut_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        WAXED_WEATHERED_CUT_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("waxed_weathered_cut_copper_slab", Material.ROCK, WAXED_WEATHERED_CUT_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(WAXED_WEATHERED_CUT_COPPER_SLAB, WAXED_WEATHERED_CUT_COPPER_SLAB_D, event);
+
+        WAXED_OXIDIZED_CUT_COPPER_SLAB = (BlockSlab) new BlockModHalfSlab("waxed_oxidized_cut_copper_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        WAXED_OXIDIZED_CUT_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("waxed_oxidized_cut_copper_slab", Material.ROCK, WAXED_OXIDIZED_CUT_COPPER_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(WAXED_OXIDIZED_CUT_COPPER_SLAB, WAXED_OXIDIZED_CUT_COPPER_SLAB_D, event);
+
     }
 
     @SideOnly(Side.SERVER)
