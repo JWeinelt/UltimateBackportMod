@@ -1,12 +1,13 @@
 package de.julianweinelt.ubm.blocks.api;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockWall;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+
+import javax.annotation.Nonnull;
 
 /**
  * Custom Wall Block, based on a parent block (like cobblestone).
@@ -19,10 +20,6 @@ public class BlockModWall extends BlockWall {
         setRegistryName(name);
         setUnlocalizedName(name);
         setSoundType(SoundType.STONE);
-        setHardness(parent.getBlockHardness(parent.getDefaultState(), null, null));
-        setResistance(parent.getExplosionResistance(null) * 5.0F);
-        setHarvestLevel(parent.getHarvestTool(parent.getDefaultState()),
-                parent.getHarvestLevel(parent.getDefaultState()));
 
         this.setDefaultState(this.blockState.getBaseState()
                 .withProperty(NORTH, false)
@@ -34,17 +31,17 @@ public class BlockModWall extends BlockWall {
     }
 
     @Override
-    public boolean isOpaqueCube(IBlockState state) {
+    public boolean isOpaqueCube(@Nonnull IBlockState state) {
         return false;
     }
 
     @Override
-    public boolean isFullCube(IBlockState state) {
+    public boolean isFullCube(@Nonnull IBlockState state) {
         return false;
     }
 
     @Override
-    public boolean isPassable(IBlockAccess world, BlockPos pos) {
+    public boolean isPassable(@Nonnull IBlockAccess world, @Nonnull BlockPos pos) {
         return false;
     }
 }
