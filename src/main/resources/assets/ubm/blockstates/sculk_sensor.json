@@ -1,1 +1,6 @@
-{"variants":{"normal":{"model":"ubm:sculk_sensor"}}}
+{"variants":
+  {
+    "triggered=false":{"model":"ubm:sculk_sensor"},
+    "triggered=true":{"model":"ubm:sculk_sensor_active"}
+  }
+}

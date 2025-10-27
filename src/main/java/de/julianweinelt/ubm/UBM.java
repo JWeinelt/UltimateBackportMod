@@ -5,6 +5,7 @@ import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.blocks.api.sign.TileEntityModSign;
 import de.julianweinelt.ubm.blocks.interactable.smithing.GuiHandler;
 import de.julianweinelt.ubm.blocks.interactable.smithing.TileEntitySmithingTable;
+import de.julianweinelt.ubm.blocks.tiles.TileEntitySculkSensor;
 import de.julianweinelt.ubm.configuration.ModConfig;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.misc.CommonProxy;
@@ -81,6 +82,7 @@ public class UBM {
 
         GameRegistry.registerTileEntity(TileEntitySmithingTable.class, new ResourceLocation("ubm", "smithing_table"));
         GameRegistry.registerTileEntity(TileEntityModSign.class, new ResourceLocation("ubm", "sign_te"));
+        GameRegistry.registerTileEntity(TileEntitySculkSensor.class, new ResourceLocation("ubm", "sculk_sensor_te"));
 
 
         ModCustomVillage.preInit();

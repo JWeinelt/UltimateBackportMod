@@ -1402,10 +1402,7 @@ public class ModBlocks {
                 .setRegistryName("sculk_catalyst")
                 .setUnlocalizedName("sculk_catalyst");
         register(SCULK_CATALYST, event);
-        SCULK_SENSOR = new Block(Material.ROCK)
-                .setCreativeTab(TB_TRAILS_TALES)
-                .setRegistryName("sculk_sensor")
-                .setUnlocalizedName("sculk_sensor");
+        SCULK_SENSOR = new BlockSculkSensor();
         register(SCULK_SENSOR, event);
         SCULK_SHRIEKER = new Block(Material.ROCK)
                 .setCreativeTab(TB_TRAILS_TALES)
@@ -1617,6 +1614,7 @@ public class ModBlocks {
     @SubscribeEvent
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
         for (Block b : blocks) {
+            UBM.getLogger().info("Registering item blocks for " + b.getRegistryName().toString());
             registerItem(b, event);
         }
         registerSlabItems(event);
