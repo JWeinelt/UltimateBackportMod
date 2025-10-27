@@ -1392,7 +1392,26 @@ public class ModBlocks {
                 .setCreativeTab(TB_TRAILS_TALES);
         register(PALE_OAK_TRAPDOOR, event);
 
-
+        SCULK = new Block(Material.ROCK)
+                .setCreativeTab(TB_TRAILS_TALES)
+                .setRegistryName("sculk")
+                .setUnlocalizedName("sculk");
+        register(SCULK, event);
+        SCULK_CATALYST = new Block(Material.ROCK)
+                .setCreativeTab(TB_TRAILS_TALES)
+                .setRegistryName("sculk_catalyst")
+                .setUnlocalizedName("sculk_catalyst");
+        register(SCULK_CATALYST, event);
+        SCULK_SENSOR = new Block(Material.ROCK)
+                .setCreativeTab(TB_TRAILS_TALES)
+                .setRegistryName("sculk_sensor")
+                .setUnlocalizedName("sculk_sensor");
+        register(SCULK_SENSOR, event);
+        SCULK_SHRIEKER = new Block(Material.ROCK)
+                .setCreativeTab(TB_TRAILS_TALES)
+                .setRegistryName("sculk_shrieker")
+                .setUnlocalizedName("sculk_shrieker");
+        register(SCULK_SHRIEKER, event);
 
         BLACKSTONE_WALL = new BlockModWall(BLACKSTONE, "blackstone_wall")
                 .setCreativeTab(TB_NETHER);
