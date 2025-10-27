@@ -1,13 +1,1 @@
-{
-  "variants": {
-    "sculk_sensor_phase=active": {
-      "model": "ubm:sculk_sensor_active"
-    },
-    "sculk_sensor_phase=cooldown": {
-      "model": "ubm:sculk_sensor_active"
-    },
-    "sculk_sensor_phase=inactive": {
-      "model": "ubm:sculk_sensor_inactive"
-    }
-  }
-}
+{"variants":{"normal":{"model":"ubm:sculk_sensor"}}}
