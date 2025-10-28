@@ -9,6 +9,7 @@ import de.julianweinelt.ubm.blocks.tiles.TileEntitySculkSensor;
 import de.julianweinelt.ubm.configuration.ModConfig;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.misc.CommonProxy;
+import de.julianweinelt.ubm.misc.KeyBindings;
 import de.julianweinelt.ubm.misc.ModRecipes;
 import de.julianweinelt.ubm.misc.ModSounds;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
@@ -58,6 +59,8 @@ public class UBM {
         if (!configDir.exists()) {
             configDir.mkdirs();
         }
+
+        KeyBindings.init();
 
         File configFile = new File(configDir, MODID + ".cfg");
 
