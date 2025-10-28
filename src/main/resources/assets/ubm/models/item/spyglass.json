@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ubm:items/spyglass"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "in_hand": 1
+      },
+      "model": "ubm:item/spyglass_in_hand"
+    }
+  ]
+}
