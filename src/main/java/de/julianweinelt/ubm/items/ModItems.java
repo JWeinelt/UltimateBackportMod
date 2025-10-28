@@ -230,10 +230,7 @@ public class ModItems {
                 .setRegistryName("copper_torch")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_COPPER_AGE);
         event.getRegistry().register(COPPER_INGOT);
-        NETHERITE_INGOT = new Item()
-                .setUnlocalizedName("netherite_ingot")
-                .setRegistryName("netherite_ingot")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        NETHERITE_INGOT = new ItemNetheriteIngot();
         event.getRegistry().register(NETHERITE_INGOT);
         WOLF_ARMOR = new Item()
                 .setUnlocalizedName("wolf_armor")
