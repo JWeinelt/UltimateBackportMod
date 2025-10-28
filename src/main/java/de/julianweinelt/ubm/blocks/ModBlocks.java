@@ -248,12 +248,12 @@ public class ModBlocks {
     public static Block ANDESITE_STAIRS;
     public static Block GRANITE_STAIRS;
     public static Block DIORITE_STAIRS;
-    public static BlockSlab ANDESITE_POLISHED_SLAB;
-    public static BlockSlab ANDESITE_POLISHED_SLAB_D;
-    public static BlockSlab GRANITE_POLISHED_SLAB;
-    public static BlockSlab GRANITE_POLISHED_SLAB_D;
-    public static BlockSlab DIORITE_POLISHED_SLAB;
-    public static BlockSlab DIORITE_POLISHED_SLAB_D;
+    public static BlockSlab POLISHED_ANDESITE_SLAB;
+    public static BlockSlab POLISHED_ANDESITE_SLAB_D;
+    public static BlockSlab POLISHED_GRANITE_SLAB;
+    public static BlockSlab POLISHED_GRANITE_SLAB_D;
+    public static BlockSlab POLISHED_DIORITE_SLAB;
+    public static BlockSlab POLISHED_DIORITE_SLAB_D;
     public static BlockSlab ANDESITE_SLAB;
     public static BlockSlab ANDESITE_SLAB_D;
     public static BlockSlab GRANITE_SLAB;
@@ -407,6 +407,7 @@ public class ModBlocks {
     public static Block BLOCK_OF_BAMBOO;
     public static Block STRIPPED_BAMBOO;
     public static Block BAMBOO_MOSAIC;
+    public static Block BAMBOO_PLANKS;
     public static Block BAMBOO_DOOR;
     public static Block BAMBOO_TRAPDOOR;
     public static Block BAMBOO_STAIRS;
@@ -1441,6 +1442,36 @@ public class ModBlocks {
                 .setCreativeTab(TB_WILD);
         register(MANGROVE_FENCE_GATE, event);
 
+        // Bamboo
+
+
+        BAMBOO_PLANKS = new Block(Material.WOOD)
+                .setUnlocalizedName("bamboo_planks")
+                .setRegistryName("bamboo_planks")
+                .setCreativeTab(TB_WILD);
+        register(BAMBOO_PLANKS, event);
+        BAMBOO_FENCE = new BlockModFence(Material.WOOD, "bamboo_fence")
+                .setCreativeTab(TB_WILD);
+        register(BAMBOO_FENCE, event);
+        BAMBOO_STAIRS = new BlockModStairs(BAMBOO_PLANKS.getDefaultState(), "bamboo_stairs")
+                .setCreativeTab(TB_WILD);
+        register(BAMBOO_STAIRS, event);
+        BAMBOO_BUTTON = new BlockModButton(true, "bamboo_button")
+                .setCreativeTab(TB_WILD);
+        register(BAMBOO_BUTTON, event);
+        BAMBOO_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "bamboo_pressure_plate")
+                .setCreativeTab(TB_WILD);
+        register(BAMBOO_PRESSURE_PLATE, event);
+        BAMBOO_DOOR = new BlockModDoor(Material.WOOD, "bamboo_door")
+                .setCreativeTab(TB_WILD);
+        register(BAMBOO_DOOR, event);
+        BAMBOO_TRAPDOOR = new BlockModTrapdoor(Material.WOOD, "bamboo_trapdoor")
+                .setCreativeTab(TB_WILD);
+        register(BAMBOO_TRAPDOOR, event);
+        BAMBOO_FENCE_GATE = new BlockModFenceGate("bamboo_fence_gate")
+                .setCreativeTab(TB_WILD);
+        register(BAMBOO_FENCE_GATE, event);
+
         // Cherry
         CHERRY_PLANKS = new Block(Material.WOOD)
                 .setUnlocalizedName("cherry_planks")
@@ -1753,6 +1784,57 @@ public class ModBlocks {
         WAXED_OXIDIZED_CUT_COPPER_SLAB_D = (BlockSlab) new BlockModDoubleSlab("waxed_oxidized_cut_copper_slab", Material.ROCK, WAXED_OXIDIZED_CUT_COPPER_SLAB)
                 .setCreativeTab(TB_CAVES);
         registerSlab(WAXED_OXIDIZED_CUT_COPPER_SLAB, WAXED_OXIDIZED_CUT_COPPER_SLAB_D, event);
+
+
+        POLISHED_BLACKSTONE_SLAB = (BlockSlab) new BlockModHalfSlab("polished_blackstone_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        POLISHED_BLACKSTONE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("polished_blackstone_slab", Material.ROCK, POLISHED_BLACKSTONE_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(POLISHED_BLACKSTONE_SLAB, POLISHED_BLACKSTONE_SLAB_D, event);
+
+        POLISHED_BLACKSTONE_BRICK_SLAB = (BlockSlab) new BlockModHalfSlab("polished_blackstone_bricks_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        POLISHED_BLACKSTONE_BRICK_SLAB_D = (BlockSlab) new BlockModDoubleSlab("polished_blackstone_bricks_slab", Material.ROCK, POLISHED_BLACKSTONE_BRICK_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(POLISHED_BLACKSTONE_BRICK_SLAB, POLISHED_BLACKSTONE_BRICK_SLAB_D, event);
+
+        POLISHED_DIORITE_SLAB = (BlockSlab) new BlockModHalfSlab("polished_diorite_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        POLISHED_DIORITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("polished_diorite_slab", Material.ROCK, POLISHED_DIORITE_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(POLISHED_DIORITE_SLAB, POLISHED_DIORITE_SLAB_D, event);
+
+        POLISHED_ANDESITE_SLAB = (BlockSlab) new BlockModHalfSlab("polished_andesite_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        POLISHED_ANDESITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("polished_andesite_slab", Material.ROCK, POLISHED_ANDESITE_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(POLISHED_ANDESITE_SLAB, POLISHED_ANDESITE_SLAB_D, event);
+
+        POLISHED_GRANITE_SLAB = (BlockSlab) new BlockModHalfSlab("polished_granite_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        POLISHED_GRANITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("polished_granite_slab", Material.ROCK, POLISHED_GRANITE_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(POLISHED_GRANITE_SLAB, POLISHED_GRANITE_SLAB_D, event);
+
+        DIORITE_SLAB = (BlockSlab) new BlockModHalfSlab("diorite_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        DIORITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("diorite_slab", Material.ROCK, DIORITE_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(DIORITE_SLAB, DIORITE_SLAB_D, event);
+
+        ANDESITE_SLAB = (BlockSlab) new BlockModHalfSlab("andesite_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        ANDESITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("andesite_slab", Material.ROCK, ANDESITE_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(ANDESITE_SLAB, ANDESITE_SLAB_D, event);
+
+        GRANITE_SLAB = (BlockSlab) new BlockModHalfSlab("granite_slab", Material.ROCK)
+                .setCreativeTab(TB_CAVES);
+        GRANITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("granite_slab", Material.ROCK, GRANITE_SLAB)
+                .setCreativeTab(TB_CAVES);
+        registerSlab(GRANITE_SLAB, GRANITE_SLAB_D, event);
+
+
 
     }
 

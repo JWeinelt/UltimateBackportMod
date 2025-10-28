@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "ubm:polished_granite"
+    },
+    "half=top,variant=default": {
+      "model": "ubm:polished_granite"
+    }
+  }
+}
