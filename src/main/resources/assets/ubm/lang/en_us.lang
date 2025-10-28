@@ -375,7 +375,9 @@ advancement.ubm.silk_touch_nest.title=Total Beelocation
 advancement.ubm.silk_touch_nest.desc=Move a Bee Nest, with 3 Bees inside, using Silk Touch
 advancement.ubm.leash_all_frog_variants.title=When the Squad Hops into Town
 advancement.ubm.leash_all_frog_variants.desc=Get each Frog variant on a Lead
-advancement.ubm.tadpole_in_a_bucket.title=
-advancement.ubm.tadpole_in_a_bucket.desc=
+advancement.ubm.tadpole_in_a_bucket.title=Bukkit Bukkit
+advancement.ubm.tadpole_in_a_bucket.desc=Catch a Tadpole in a Bucket
+advancement.ubm.hero_of_the_village.title=Hero of the Village
+advancement.ubm.hero_of_the_village.desc=Successfully defend a village from a raid
 
 death.attack.frostbite=%1$s froze to death
