@@ -91,6 +91,8 @@ public class ModItems {
 
     public static Item SNOUT_BANNER_PATTERN;
 
+    public static Item SPYGLASS;
+
     public static Item ANGLER_POTTERY_SHERD;
     public static Item ARCHER_POTTERY_SHERD;
     public static Item ARMS_UP_POTTERY_SHERD;
@@ -594,6 +596,12 @@ public class ModItems {
                 .setRegistryName("raw_copper")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
         event.getRegistry().register(RAW_COPPER);
+
+        SPYGLASS = new ItemSpyglass()
+                .setUnlocalizedName("spyglass")
+                .setRegistryName("spyglass")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(SPYGLASS);
     }
 
     @SubscribeEvent
@@ -611,6 +619,8 @@ public class ModItems {
         registerItemModel(NETHERITE_CHESTPLATE);
         registerItemModel(NETHERITE_LEGGINGS);
         registerItemModel(NETHERITE_BOOTS);
+
+        registerItemModel(SPYGLASS);
 
         registerItemModel(COPPER_SWORD);
         registerItemModel(COPPER_PICKAXE);
