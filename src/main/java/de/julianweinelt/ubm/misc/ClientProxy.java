@@ -65,8 +65,6 @@ public class ClientProxy extends CommonProxy {
         ClientEventHandler.registerParticles();
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCampfire.class, new RenderTileEntityCampfire());
 
-        ModEntities.registerRenders();
-
         MinecraftForge.EVENT_BUS.register(new SwimClientHandler());
 
         new WorldTypeSelectableBiome("selectable_biome");
@@ -95,5 +93,6 @@ public class ClientProxy extends CommonProxy {
     @SubscribeEvent
     public static void onModelRegistry(ModelRegistryEvent event) {
         ModModels.registerAllArmorModels();
+        ModEntities.registerRenders();
     }
 }
