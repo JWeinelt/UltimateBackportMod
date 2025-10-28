@@ -45,7 +45,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.*;
 
-@SuppressWarnings({"ConstantConditions", "SpellCheckingInspection"})
+@SuppressWarnings({"ConstantConditions", "SpellCheckingInspection", "unused"}) // Just for cleaner git
 @Mod.EventBusSubscriber(modid = UBM.MODID)
 public class ModBlocks {
     public static final Map<ResourceLocation, ResourceLocation> WAXED_VARIANTS = new HashMap<>();
