@@ -1085,16 +1085,10 @@ public class ModBlocks {
         AMETHYST_BLOCK = new BlockMod(Material.ROCK, "amethyst").creativeTab(TB_CAVES).soundType(ModSounds.SoundTypes.AMETHYST_BLOCK);
         register(AMETHYST_BLOCK, event);
 
-        CALCITE = new Block(Material.ROCK)
-                .setUnlocalizedName("calcite")
-                .setRegistryName("calcite")
-                .setCreativeTab(TB_CAVES);
+        CALCITE = new BlockMod(Material.ROCK, "calcite").creativeTab(TB_CAVES).soundType(ModSounds.SoundTypes.CALCITE);
         register(CALCITE, event);
 
-        TUFF = new Block(Material.ROCK)
-                .setUnlocalizedName("tuff")
-                .setRegistryName("tuff")
-                .setCreativeTab(TB_CAVES);
+        TUFF = new BlockMod(Material.ROCK, "tuff").creativeTab(TB_CAVES).soundType(ModSounds.SoundTypes.TUFF);
         register(TUFF, event);
 
         COPPER_ORE = new Block(Material.ROCK)
