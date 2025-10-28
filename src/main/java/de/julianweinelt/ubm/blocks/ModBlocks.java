@@ -291,7 +291,7 @@ public class ModBlocks {
     public static Block COPPER_DOOR, EXPOSED_COPPER_DOOR, WEATHERED_COPPER_DOOR, OXIDIZED_COPPER_DOOR,
         WAXED_COPPER_DOOR, WAXED_EXPOSED_COPPER_DOOR, WAXED_WEATHERED_COPPER_DOOR, WAXED_OXIDIZED_COPPER_DOOR;
     public static Block COPPER_TRAPDOOR, EXPOSED_COPPER_TRAPDOOR, WEATHERED_COPPER_TRAPDOOR, OXIDIZED_COPPER_TRAPDOOR,
-        WAXED_COPPER_TRAPDOOR, WAXED_EXPOSED_COPPER_TRAPDOOR, WAXED_WEATHERED_COPPER_TRAPDOOR, WAXED_OXIDZED_COPPER_TRAPDOOR;
+        WAXED_COPPER_TRAPDOOR, WAXED_EXPOSED_COPPER_TRAPDOOR, WAXED_WEATHERED_COPPER_TRAPDOOR, WAXED_OXIDIZED_COPPER_TRAPDOOR;
 
     public static Block DRIED_KELP_BLOCK;
     public static Block SEAGRASS;
@@ -1321,6 +1321,31 @@ public class ModBlocks {
         WAXED_OXIDIZED_COPPER_DOOR = new BlockModDoor(Material.ROCK, "waxed_oxidized_copper_door")
                 .setCreativeTab(TB_TRAILS_TALES);
         register(WAXED_OXIDIZED_COPPER_DOOR, event);
+
+
+        COPPER_TRAPDOOR = new BlockModTrapdoor(Material.ROCK, "copper_trapdoor").setCreativeTab(TB_TRAILS_TALES);
+        register(COPPER_TRAPDOOR, event);
+
+        EXPOSED_COPPER_TRAPDOOR = new BlockModTrapdoor(Material.ROCK, "exposed_copper_trapdoor").setCreativeTab(TB_TRAILS_TALES);
+        register(EXPOSED_COPPER_TRAPDOOR, event);
+
+        WEATHERED_COPPER_TRAPDOOR = new BlockModTrapdoor(Material.ROCK, "weathered_copper_trapdoor").setCreativeTab(TB_TRAILS_TALES);
+        register(WEATHERED_COPPER_TRAPDOOR, event);
+
+        OXIDIZED_COPPER_TRAPDOOR = new BlockModTrapdoor(Material.ROCK, "oxidized_copper_trapdoor").setCreativeTab(TB_TRAILS_TALES);
+        register(OXIDIZED_COPPER_TRAPDOOR, event);
+
+        WAXED_COPPER_TRAPDOOR = new BlockModTrapdoor(Material.ROCK, "waxed_copper_trapdoor").setCreativeTab(TB_TRAILS_TALES);
+        register(WAXED_COPPER_TRAPDOOR, event);
+
+        WAXED_EXPOSED_COPPER_TRAPDOOR = new BlockModTrapdoor(Material.ROCK, "waxed_exposed_copper_trapdoor").setCreativeTab(TB_TRAILS_TALES);
+        register(WAXED_EXPOSED_COPPER_TRAPDOOR, event);
+
+        WAXED_WEATHERED_COPPER_TRAPDOOR = new BlockModTrapdoor(Material.ROCK, "waxed_weathered_copper_trapdoor").setCreativeTab(TB_TRAILS_TALES);
+        register(WAXED_WEATHERED_COPPER_TRAPDOOR, event);
+
+        WAXED_OXIDIZED_COPPER_TRAPDOOR = new BlockModTrapdoor(Material.ROCK, "waxed_oxidized_copper_trapdoor").setCreativeTab(TB_TRAILS_TALES);
+        register(WAXED_OXIDIZED_COPPER_TRAPDOOR, event);
         
         
         DEEPSLATE_COBBLED_STAIRS = new BlockModStairs(DEEPSLATE_COBBLED.getDefaultState(), "deepslate_cobbled_stairs")
