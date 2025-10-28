@@ -284,6 +284,10 @@ public class ModBlocks {
         OXIDIZED_CUT_COPPER_SLAB, OXIDIZED_CUT_COPPER_SLAB_D, WAXED_CUT_COPPER_SLAB, WAXED_CUT_COPPER_SLAB_D, WAXED_EXPOSED_CUT_COPPER_SLAB,
         WAXED_EXPOSED_CUT_COPPER_SLAB_D, WAXED_WEATHERED_CUT_COPPER_SLAB, WAXED_WEATHERED_CUT_COPPER_SLAB_D,
         WAXED_OXIDIZED_CUT_COPPER_SLAB, WAXED_OXIDIZED_CUT_COPPER_SLAB_D;
+    public static Block COPPER_STAIRS, EXPOSED_COPPER_STAIRS, WEATHERED_COPPER_STAIRS, OXIDIZED_COPPER_STAIRS,
+        CUT_COPPER_STAIRS, EXPOSED_CUT_COPPER_STAIRS, WEATHERED_CUT_COPPER_STAIRS, OXIDIZED_CUT_COPPER_STAIRS,
+            WAXED_COPPER_STAIRS, WAXED_EXPOSED_COPPER_STAIRS, WAXED_WEATHERED_COPPER_STAIRS, WAXED_OXIDIZED_COPPER_STAIRS,
+            WAXED_CUT_COPPER_STAIRS, WAXED_EXPOSED_CUT_COPPER_STAIRS, WAXED_WEATHERED_CUT_COPPER_STAIRS, WAXED_OXIDIZED_CUT_COPPER_STAIRS;
 
     public static Block DRIED_KELP_BLOCK;
     public static Block SEAGRASS;
@@ -1216,6 +1220,70 @@ public class ModBlocks {
 
         MOSS_CARPET = new BlockMossCarpet();
         register(MOSS_CARPET, event);
+
+        COPPER_STAIRS = new BlockModStairs(COPPER_BLOCK.getDefaultState(), "copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(COPPER_STAIRS, event);
+
+        EXPOSED_COPPER_STAIRS = new BlockModStairs(EXPOSED_COPPER_BLOCK.getDefaultState(), "exposed_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(EXPOSED_COPPER_STAIRS, event);
+
+        WEATHERED_COPPER_STAIRS = new BlockModStairs(WEATHERED_COPPER_BLOCK.getDefaultState(), "weathered_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(WEATHERED_COPPER_STAIRS, event);
+
+        OXIDIZED_COPPER_STAIRS = new BlockModStairs(OXIDIZED_COPPER_BLOCK.getDefaultState(), "oxidized_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(OXIDIZED_COPPER_STAIRS, event);
+
+        CUT_COPPER_STAIRS = new BlockModStairs(CUT_COPPER.getDefaultState(), "cut_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(CUT_COPPER_STAIRS, event);
+
+        EXPOSED_CUT_COPPER_STAIRS = new BlockModStairs(EXPOSED_CUT_COPPER.getDefaultState(), "exposed_cut_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(EXPOSED_CUT_COPPER_STAIRS, event);
+
+        WEATHERED_CUT_COPPER_STAIRS = new BlockModStairs(WEATHERED_CUT_COPPER.getDefaultState(), "weathered_cut_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(WEATHERED_CUT_COPPER_STAIRS, event);
+
+        OXIDIZED_CUT_COPPER_STAIRS = new BlockModStairs(OXIDIZED_CUT_COPPER.getDefaultState(), "oxidized_cut_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(OXIDIZED_CUT_COPPER_STAIRS, event);
+
+        WAXED_COPPER_STAIRS = new BlockModStairs(WAXED_COPPER_BLOCK.getDefaultState(), "waxed_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(WAXED_COPPER_STAIRS, event);
+
+        WAXED_EXPOSED_COPPER_STAIRS = new BlockModStairs(WAXED_EXPOSED_COPPER_BLOCK.getDefaultState(), "waxed_exposed_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(WAXED_EXPOSED_COPPER_STAIRS, event);
+
+        WAXED_WEATHERED_COPPER_STAIRS = new BlockModStairs(WAXED_WEATHERED_COPPER_BLOCK.getDefaultState(), "waxed_weathered_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(WAXED_WEATHERED_COPPER_STAIRS, event);
+
+        WAXED_OXIDIZED_COPPER_STAIRS = new BlockModStairs(WAXED_OXIDIZED_COPPER_BLOCK.getDefaultState(), "waxed_oxidized_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(WAXED_OXIDIZED_COPPER_STAIRS, event);
+
+        WAXED_CUT_COPPER_STAIRS = new BlockModStairs(WAXED_CUT_COPPER.getDefaultState(), "waxed_cut_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(WAXED_CUT_COPPER_STAIRS, event);
+
+        WAXED_EXPOSED_CUT_COPPER_STAIRS = new BlockModStairs(WAXED_EXPOSED_CUT_COPPER.getDefaultState(), "waxed_exposed_cut_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(WAXED_EXPOSED_CUT_COPPER_STAIRS, event);
+
+        WAXED_WEATHERED_CUT_COPPER_STAIRS = new BlockModStairs(WAXED_WEATHERED_CUT_COPPER.getDefaultState(), "waxed_weathered_cut_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(WAXED_WEATHERED_CUT_COPPER_STAIRS, event);
+
+        WAXED_OXIDIZED_CUT_COPPER_STAIRS = new BlockModStairs(WAXED_OXIDIZED_CUT_COPPER.getDefaultState(), "waxed_oxidized_cut_copper_stairs")
+                .setCreativeTab(TB_CAVES);
+        register(WAXED_OXIDIZED_CUT_COPPER_STAIRS, event);
 
         DEEPSLATE_COBBLED_STAIRS = new BlockModStairs(DEEPSLATE_COBBLED.getDefaultState(), "deepslate_cobbled_stairs")
                 .setCreativeTab(TB_CAVES);
