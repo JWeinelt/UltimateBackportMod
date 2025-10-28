@@ -247,3 +247,6 @@ advancement.ubm.tadpole_in_a_bucket.title=Bukkit Bukkit
 advancement.ubm.tadpole_in_a_bucket.desc=Catch a Tadpole in a Bucket
 
 death.attack.frostbite=%1$s froze to death
+
+key.categories.ubm=Ultimate Backport Mod
+key.ubm.open_new_chat=Open New Chat GUI (Beta)

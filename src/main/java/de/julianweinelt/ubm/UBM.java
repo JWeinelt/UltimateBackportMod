@@ -8,6 +8,7 @@ import de.julianweinelt.ubm.blocks.interactable.smithing.TileEntitySmithingTable
 import de.julianweinelt.ubm.configuration.ModConfig;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.misc.CommonProxy;
+import de.julianweinelt.ubm.misc.KeyBindings;
 import de.julianweinelt.ubm.misc.ModRecipes;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
 import de.julianweinelt.ubm.worldgen.StructureWorldGen;
@@ -56,6 +57,8 @@ public class UBM {
         if (!configDir.exists()) {
             configDir.mkdirs();
         }
+
+        KeyBindings.init();
 
         File configFile = new File(configDir, MODID + ".cfg");
 

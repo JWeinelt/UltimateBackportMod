@@ -29,7 +29,7 @@ public class ClientEventHandler {
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public static void onKeyInput(InputEvent.KeyInputEvent event) {
-        if (Keyboard.getEventKeyState() && Keyboard.getEventKey() == Keyboard.KEY_U) {
+        if (KeyBindings.openNewChat.isPressed()) {
             Minecraft.getMinecraft().displayGuiScreen(new GuiChatWithSuggestions());
             UBM.getLogger().info("Opening chat gui");
         }
