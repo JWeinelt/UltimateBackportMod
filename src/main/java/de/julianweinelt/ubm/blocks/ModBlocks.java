@@ -1267,6 +1267,16 @@ public class ModBlocks {
                 .setCreativeTab(TB_WILD);
         register(MUD_BRICK_WALL, event);
 
+        ANDESITE_STAIRS = new BlockModStairs(Blocks.STONE.getDefaultState(), "andesite_stairs")
+                .setCreativeTab(TB_AQUATIC);
+        register(ANDESITE_STAIRS, event);
+        DIORITE_STAIRS = new BlockModStairs(Blocks.STONE.getDefaultState(), "diorite_stairs")
+                .setCreativeTab(TB_AQUATIC);
+        register(DIORITE_STAIRS, event);
+        GRANITE_STAIRS = new BlockModStairs(Blocks.STONE.getDefaultState(), "granite_stairs")
+                .setCreativeTab(TB_AQUATIC);
+        register(GRANITE_STAIRS, event);
+
         MANGROVE_PLANKS = new Block(Material.WOOD)
                 .setUnlocalizedName("mangrove_planks")
                 .setRegistryName("mangrove_planks")
