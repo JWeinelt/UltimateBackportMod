@@ -1,10 +1,10 @@
 {
 	"variants": {
 		"half=bottom,variant=default": {
-			"model": "ubm:waxed_oxidized_copper_block"
+			"model": "ubm:waxed_oxidized_copper"
 		},
 		"half=top,variant=default": {
-			"model": "ubm:waxed_oxidized_copper_block"
+			"model": "ubm:waxed_oxidized_copper"
 		}
 	}
 }

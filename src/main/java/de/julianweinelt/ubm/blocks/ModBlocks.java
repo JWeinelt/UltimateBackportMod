@@ -16,10 +16,7 @@ import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.misc.ModSounds;
 import de.julianweinelt.ubm.worldgen.ModBiomes;
 import de.julianweinelt.ubm.worldgen.WorldGenBeeNest;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockDoor;
-import net.minecraft.block.BlockPressurePlate;
-import net.minecraft.block.BlockSlab;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -205,16 +202,16 @@ public class ModBlocks {
     public static Block WHITE_CANDLE;
 
     public static Block TINTED_GLASS;
-    public static Block AMETHYST_BLOCK;
+    public static BlockMod AMETHYST_BLOCK;
     public static Block BUDDING_AMETHYST;
     public static Block AMETHYST_CLUSTER;
     public static Block SMALL_AMETHYST_BUD;
     public static Block MEDIUM_AMETHYST_BUD;
     public static Block LARGE_AMETHYST_BUD;
-    public static Block CALCITE;
-    public static Block TUFF;
+    public static BlockMod CALCITE;
+    public static BlockMod TUFF;
     public static Block COPPER_ORE;
-    public static Block DEEPSLATE;
+    public static BlockMod DEEPSLATE;
     public static Block DEEPSLATE_ORE_COPPER;
     public static Block DEEPSLATE_ORE_GOLD;
     public static Block DEEPSLATE_ORE_IRON;
@@ -544,6 +541,7 @@ public class ModBlocks {
                 .setUnlocalizedName("pale_oak_planks")
                 .setRegistryName("pale_oak_planks")
                 .setCreativeTab(TB_TRAILS_TALES);
+        register(PALE_OAK_PLANKS, event);
 
         SMITHING_TABLE = new BlockSmithingTable();
         register(SMITHING_TABLE, event);
@@ -1085,13 +1083,13 @@ public class ModBlocks {
         TINTED_GLASS = new BlockTintedGlass();
         register(TINTED_GLASS, event);
 
-        AMETHYST_BLOCK = new BlockMod(Material.ROCK, "amethyst").creativeTab(TB_CAVES).soundType(ModSounds.SoundTypes.AMETHYST_BLOCK);
+        AMETHYST_BLOCK = new BlockMod(Material.ROCK, "amethyst").creativeTab(TB_CAVES).soundType(SoundType.STONE);
         register(AMETHYST_BLOCK, event);
 
-        CALCITE = new BlockMod(Material.ROCK, "calcite").creativeTab(TB_CAVES).soundType(ModSounds.SoundTypes.CALCITE);
+        CALCITE = new BlockMod(Material.ROCK, "calcite").creativeTab(TB_CAVES).soundType(SoundType.STONE);
         register(CALCITE, event);
 
-        TUFF = new BlockMod(Material.ROCK, "tuff").creativeTab(TB_CAVES).soundType(ModSounds.SoundTypes.TUFF);
+        TUFF = new BlockMod(Material.ROCK, "tuff").creativeTab(TB_CAVES).soundType(SoundType.STONE);
         register(TUFF, event);
 
         COPPER_ORE = new Block(Material.ROCK)
@@ -1100,7 +1098,7 @@ public class ModBlocks {
                 .setCreativeTab(TB_CAVES);
         register(COPPER_ORE, event);
 
-        DEEPSLATE = new BlockMod(Material.ROCK, "deepslate").creativeTab(TB_CAVES).soundType(ModSounds.SoundTypes.DEEPSLATE);
+        DEEPSLATE = new BlockMod(Material.ROCK, "deepslate").creativeTab(TB_CAVES).soundType(SoundType.STONE);
         register(DEEPSLATE, event);
 
         //TODO: Add chiseled deepslate
@@ -1442,9 +1440,6 @@ public class ModBlocks {
         BAMBOO_STAIRS = new BlockModStairs(BAMBOO_PLANKS.getDefaultState(), "bamboo_stairs")
                 .setCreativeTab(TB_WILD);
         register(BAMBOO_STAIRS, event);
-        BAMBOO_BUTTON = new BlockModButton(true, "bamboo_button")
-                .setCreativeTab(TB_WILD);
-        register(BAMBOO_BUTTON, event);
         BAMBOO_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "bamboo_pressure_plate")
                 .setCreativeTab(TB_WILD);
         register(BAMBOO_PRESSURE_PLATE, event);
@@ -1555,21 +1550,18 @@ public class ModBlocks {
         register(PALE_OAK_TRAPDOOR, event);
 
         SCULK = new Block(Material.ROCK)
-                .setCreativeTab(TB_TRAILS_TALES)
+                .setCreativeTab(TB_CAVES)
                 .setRegistryName("sculk")
                 .setUnlocalizedName("sculk");
         register(SCULK, event);
         SCULK_CATALYST = new Block(Material.ROCK)
-                .setCreativeTab(TB_TRAILS_TALES)
+                .setCreativeTab(TB_CAVES)
                 .setRegistryName("sculk_catalyst")
                 .setUnlocalizedName("sculk_catalyst");
         register(SCULK_CATALYST, event);
         SCULK_SENSOR = new BlockSculkSensor();
         register(SCULK_SENSOR, event);
-        SCULK_SHRIEKER = new Block(Material.ROCK)
-                .setCreativeTab(TB_TRAILS_TALES)
-                .setRegistryName("sculk_shrieker")
-                .setUnlocalizedName("sculk_shrieker");
+        SCULK_SHRIEKER = new BlockMod(Material.ROCK, "sculk_shrieker").creativeTab(TB_CAVES).transparent();
         register(SCULK_SHRIEKER, event);
 
 
@@ -1773,51 +1765,51 @@ public class ModBlocks {
 
 
         POLISHED_BLACKSTONE_SLAB = (BlockSlab) new BlockModHalfSlab("polished_blackstone_slab", Material.ROCK)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_NETHER);
         POLISHED_BLACKSTONE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("polished_blackstone_slab", Material.ROCK, POLISHED_BLACKSTONE_SLAB)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_NETHER);
         registerSlab(POLISHED_BLACKSTONE_SLAB, POLISHED_BLACKSTONE_SLAB_D, event);
 
         POLISHED_BLACKSTONE_BRICK_SLAB = (BlockSlab) new BlockModHalfSlab("polished_blackstone_bricks_slab", Material.ROCK)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_NETHER);
         POLISHED_BLACKSTONE_BRICK_SLAB_D = (BlockSlab) new BlockModDoubleSlab("polished_blackstone_bricks_slab", Material.ROCK, POLISHED_BLACKSTONE_BRICK_SLAB)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_NETHER);
         registerSlab(POLISHED_BLACKSTONE_BRICK_SLAB, POLISHED_BLACKSTONE_BRICK_SLAB_D, event);
 
         POLISHED_DIORITE_SLAB = (BlockSlab) new BlockModHalfSlab("polished_diorite_slab", Material.ROCK)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_AQUATIC);
         POLISHED_DIORITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("polished_diorite_slab", Material.ROCK, POLISHED_DIORITE_SLAB)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_AQUATIC);
         registerSlab(POLISHED_DIORITE_SLAB, POLISHED_DIORITE_SLAB_D, event);
 
         POLISHED_ANDESITE_SLAB = (BlockSlab) new BlockModHalfSlab("polished_andesite_slab", Material.ROCK)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_AQUATIC);
         POLISHED_ANDESITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("polished_andesite_slab", Material.ROCK, POLISHED_ANDESITE_SLAB)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_AQUATIC);
         registerSlab(POLISHED_ANDESITE_SLAB, POLISHED_ANDESITE_SLAB_D, event);
 
         POLISHED_GRANITE_SLAB = (BlockSlab) new BlockModHalfSlab("polished_granite_slab", Material.ROCK)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_AQUATIC);
         POLISHED_GRANITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("polished_granite_slab", Material.ROCK, POLISHED_GRANITE_SLAB)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_AQUATIC);
         registerSlab(POLISHED_GRANITE_SLAB, POLISHED_GRANITE_SLAB_D, event);
 
         DIORITE_SLAB = (BlockSlab) new BlockModHalfSlab("diorite_slab", Material.ROCK)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_AQUATIC);
         DIORITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("diorite_slab", Material.ROCK, DIORITE_SLAB)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_AQUATIC);
         registerSlab(DIORITE_SLAB, DIORITE_SLAB_D, event);
 
         ANDESITE_SLAB = (BlockSlab) new BlockModHalfSlab("andesite_slab", Material.ROCK)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_AQUATIC);
         ANDESITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("andesite_slab", Material.ROCK, ANDESITE_SLAB)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_AQUATIC);
         registerSlab(ANDESITE_SLAB, ANDESITE_SLAB_D, event);
 
         GRANITE_SLAB = (BlockSlab) new BlockModHalfSlab("granite_slab", Material.ROCK)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_AQUATIC);
         GRANITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("granite_slab", Material.ROCK, GRANITE_SLAB)
-                .setCreativeTab(TB_CAVES);
+                .setCreativeTab(TB_AQUATIC);
         registerSlab(GRANITE_SLAB, GRANITE_SLAB_D, event);
 
 
@@ -2015,6 +2007,7 @@ public class ModBlocks {
 
     public static void registerItem(Block block, RegistryEvent.Register<Item> event) {
         Item item = createItem(block);
+        if (item == null) return;
         event.getRegistry().register(item);
         registerItemModel(item);
     }
@@ -2022,6 +2015,7 @@ public class ModBlocks {
 
     public static void registerItemServer(Block block, RegistryEvent.Register<Item> event) {
         Item item = createItem(block);
+        if (item == null) return;
         event.getRegistry().register(item);
     }
     

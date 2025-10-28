@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom",
+  "textures": {
+    "bottom": "ubm:blocks/warped_door_bottom",
+    "top": "ubm:blocks/warped_door_top"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "parent": "block/stairs",
   "textures": {
-    "bottom": "minecraft:blocks/andesite",
-    "top": "minecraft:blocks/andesite",
-    "side": "minecraft:blocks/andesite"
+    "bottom": "ubm:blocks/andesite",
+    "top": "ubm:blocks/andesite",
+    "side": "ubm:blocks/andesite"
   }
 }

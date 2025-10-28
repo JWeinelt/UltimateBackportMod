@@ -1,8 +1,8 @@
 {
   "parent": "block/inner_stairs",
   "textures": {
-    "bottom": "minecraft:blocks/granite",
-    "top": "minecraft:blocks/granite",
-    "side": "minecraft:blocks/granite"
+    "bottom": "ubm:blocks/granite",
+    "top": "ubm:blocks/granite",
+    "side": "ubm:blocks/granite"
   }
 }

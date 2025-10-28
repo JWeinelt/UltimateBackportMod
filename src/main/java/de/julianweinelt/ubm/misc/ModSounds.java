@@ -331,7 +331,6 @@ public class ModSounds {
         BLOCK_SWEET_BERRY_BUSH_PLACE = register(event, "block.sweet_berry_bush.place");
         BLOCK_TUFF_BREAK = register(event, "block.tuff.break");
         BLOCK_TUFF_STEP = register(event, "block.tuff.step");
-
     }
 
     private static SoundEvent register(RegistryEvent.Register<SoundEvent> event, String name) {
@@ -342,53 +341,62 @@ public class ModSounds {
     }
 
     public static class SoundTypes {
-        public static SoundType NETHERITE_BLOCK = new SoundType(
-                1.0F, 1.0F,
-                BLOCK_NETHERITE_BLOCK_BREAK,
-                BLOCK_NETHERITE_BLOCK_STEP,
-                BLOCK_NETHERITE_BLOCK_PLACE,
-                SoundEvents.BLOCK_STONE_HIT,
-                SoundEvents.BLOCK_STONE_FALL
-        );
-        public static SoundType SWEET_BERRY_BUSH = new SoundType(
-                1, 1,
-                BLOCK_SWEET_BERRY_BUSH_BREAK,
-                BLOCK_SWEET_BERRY_BUSH_PLACE,
-                BLOCK_SWEET_BERRY_BUSH_PLACE,
-                SoundEvents.BLOCK_STONE_HIT,
-                SoundEvents.BLOCK_STONE_FALL
-        );
-        public static SoundType AMETHYST_BLOCK = new SoundType(
-                1, 1,
-                BLOCK_AMETHYST_BREAK,
-                BLOCK_AMETHYST_STEP,
-                BLOCK_AMETHYST_PLACE,
-                SoundEvents.BLOCK_STONE_HIT,
-                SoundEvents.BLOCK_STONE_FALL
-        );
-        public static SoundType CALCITE = new SoundType(
-                1,1,
-                BLOCK_CALCITE_BREAK,
-                BLOCK_CALCITE_STEP,
-                BLOCK_CALCITE_PLACE,
-                SoundEvents.BLOCK_STONE_HIT,
-                SoundEvents.BLOCK_STONE_FALL
-        );
-        public static SoundType TUFF = new SoundType(
-                1,1,
-                BLOCK_TUFF_BREAK,
-                BLOCK_TUFF_STEP,
-                BLOCK_TUFF_BREAK,
-                SoundEvents.BLOCK_STONE_HIT,
-                SoundEvents.BLOCK_STONE_FALL
-        );
-        public static SoundType DEEPSLATE = new SoundType(
-                1,1,
-                BLOCK_DEEPSLATE_BREAK,
-                BLOCK_DEEPSLATE_STEP,
-                BLOCK_DEEPSLATE_PLACE,
-                SoundEvents.BLOCK_STONE_HIT,
-                SoundEvents.BLOCK_STONE_FALL
-        );
+        public static SoundType NETHERITE_BLOCK;
+        public static SoundType SWEET_BERRY_BUSH;
+        public static SoundType AMETHYST_BLOCK;
+        public static SoundType CALCITE;
+        public static SoundType TUFF;
+        public static SoundType DEEPSLATE;
+
+        public static void init() {
+            NETHERITE_BLOCK = new SoundType(
+                    1.0F, 1.0F,
+                    BLOCK_NETHERITE_BLOCK_BREAK,
+                    BLOCK_NETHERITE_BLOCK_STEP,
+                    BLOCK_NETHERITE_BLOCK_PLACE,
+                    SoundEvents.BLOCK_STONE_HIT,
+                    SoundEvents.BLOCK_STONE_FALL
+            );
+            SWEET_BERRY_BUSH = new SoundType(
+                    1, 1,
+                    BLOCK_SWEET_BERRY_BUSH_BREAK,
+                    BLOCK_SWEET_BERRY_BUSH_PLACE,
+                    BLOCK_SWEET_BERRY_BUSH_PLACE,
+                    SoundEvents.BLOCK_STONE_HIT,
+                    SoundEvents.BLOCK_STONE_FALL
+            );
+            CALCITE = new SoundType(
+                    1,1,
+                    BLOCK_CALCITE_BREAK,
+                    BLOCK_CALCITE_STEP,
+                    BLOCK_CALCITE_PLACE,
+                    SoundEvents.BLOCK_STONE_HIT,
+                    SoundEvents.BLOCK_STONE_FALL
+            );
+            AMETHYST_BLOCK = new SoundType(
+                    1, 1,
+                    BLOCK_AMETHYST_BREAK,
+                    BLOCK_AMETHYST_STEP,
+                    BLOCK_AMETHYST_PLACE,
+                    SoundEvents.BLOCK_STONE_HIT,
+                    SoundEvents.BLOCK_STONE_FALL
+            );
+            TUFF = new SoundType(
+                    1,1,
+                    BLOCK_TUFF_BREAK,
+                    BLOCK_TUFF_STEP,
+                    BLOCK_TUFF_BREAK,
+                    SoundEvents.BLOCK_STONE_HIT,
+                    SoundEvents.BLOCK_STONE_FALL
+            );
+            DEEPSLATE = new SoundType(
+                    1,1,
+                    BLOCK_DEEPSLATE_BREAK,
+                    BLOCK_DEEPSLATE_STEP,
+                    BLOCK_DEEPSLATE_PLACE,
+                    SoundEvents.BLOCK_STONE_HIT,
+                    SoundEvents.BLOCK_STONE_FALL
+            );
+        }
     }
 }
