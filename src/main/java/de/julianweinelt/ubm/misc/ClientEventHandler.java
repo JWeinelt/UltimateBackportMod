@@ -8,6 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraftforge.client.event.GuiOpenEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -38,11 +39,16 @@ public class ClientEventHandler {
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public static void onGuiOpen(GuiOpenEvent event) {
-        if (event.getGui() instanceof GuiChat) {
+        /*if (event.getGui() instanceof GuiChat) {
             event.setGui(new GuiChatWithSuggestions());
-        }
+        }*/
         if (event.getGui() instanceof GuiMainMenu) {
             //event.setGui(new GuiMainMenuNonBlur());
+            if (!Loader.isModLoaded("pathfinder")) {
+                event.setGui(new MissingDependencyScreen());
+                //Minecraft.getMinecraft().displayGuiScreen(new MissingDependencyScreen());
+                UBM.getLogger().info("Missing dep");
+            }
         }
     }
 }

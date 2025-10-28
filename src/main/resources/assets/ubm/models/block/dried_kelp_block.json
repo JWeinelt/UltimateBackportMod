@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "particle": "ubm:blocks/dried_kelp_top",
+    "bottom": "ubm:blocks/dried_kelp_bottom",
+    "top": "ubm:blocks/dried_kelp_top",
+    "side": "ubm:blocks/dried_kelp_side"
+  }
+}

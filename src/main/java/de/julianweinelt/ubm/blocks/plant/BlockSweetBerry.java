@@ -3,6 +3,7 @@ package de.julianweinelt.ubm.blocks.plant;
 import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.items.ModItems;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
+import de.julianweinelt.ubm.misc.ModSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -24,6 +25,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -145,6 +147,10 @@ public class BlockSweetBerry extends BlockBush implements IGrowable {
         return 0;
     }
 
+    @Override
+    public SoundType getSoundType(IBlockState state, World world, BlockPos pos, @Nullable Entity entity) {
+        return ModSounds.SoundTypes.SWEET_BERRY_BUSH;
+    }
 
     @Override
     public boolean onBlockActivated(

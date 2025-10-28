@@ -1,0 +1,8 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "bottom": "ubm:blocks/",
+    "top": "ubm:blocks/",
+    "side": "ubm:blocks/"
+  }
+}
