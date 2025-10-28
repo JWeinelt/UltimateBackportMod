@@ -19,6 +19,7 @@ import de.julianweinelt.ubm.worldgen.WorldGenBeeNest;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.LoadingScreenRenderer;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -1097,10 +1098,7 @@ public class ModBlocks {
                 .setCreativeTab(TB_CAVES);
         register(COPPER_ORE, event);
 
-        DEEPSLATE = new Block(Material.ROCK)
-                .setUnlocalizedName("deepslate")
-                .setRegistryName("deepslate")
-                .setCreativeTab(TB_CAVES);
+        DEEPSLATE = new BlockMod(Material.ROCK, "deepslate").creativeTab(TB_CAVES).soundType(ModSounds.SoundTypes.DEEPSLATE);
         register(DEEPSLATE, event);
 
         //TODO: Add chiseled deepslate
