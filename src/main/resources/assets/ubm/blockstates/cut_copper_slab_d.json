@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"half=bottom,variant=default": {
+			"model": "ubm:waxed_cut_copper"
+		},
+		"half=top,variant=default": {
+			"model": "ubm:waxed_cut_copper"
+		}
+	}
+}

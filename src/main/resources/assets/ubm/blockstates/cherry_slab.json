@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom,variant=default": { "model": "ubm:half_slab_cherry" },
+    "half=top,variant=default": { "model": "ubm:upper_slab_cherry" }
+  }
+}

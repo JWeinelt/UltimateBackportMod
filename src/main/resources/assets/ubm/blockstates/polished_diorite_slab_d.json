@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "minecraft:diorite_smooth"
+    },
+    "half=top,variant=default": {
+      "model": "minecraft:diorite_smooth"
+    }
+  }
+}

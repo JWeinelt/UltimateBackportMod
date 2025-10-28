@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "ubm:blocks/cut_copper",
+    "top": "ubm:blocks/cut_copper",
+    "side": "ubm:blocks/cut_copper"
+  }
+}
