@@ -1839,7 +1839,7 @@ public class ModBlocks {
     @SubscribeEvent
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
         for (Block b : blocks) {
-            UBM.getLogger().info("Registering item blocks for " + b.getRegistryName().toString());
+            UBM.getLogger().info("Registering item blocks for {}", b.getRegistryName().toString());
             registerItem(b, event);
         }
         registerSlabItems(event);
@@ -2000,8 +2000,7 @@ public class ModBlocks {
 
     }
 
-
-    public static void registerItem(Block block, RegistryEvent.Register<Item> event) {
+    private static Item createItem(Block block) {
         Item item;
         if (block instanceof BlockDoor) {
             item = new ItemDoor(block)
@@ -2009,23 +2008,20 @@ public class ModBlocks {
                     .setUnlocalizedName(block.getUnlocalizedName().replace("tile.", ""))
                     .setCreativeTab(block.getCreativeTabToDisplayOn());
         } //TODO: Add handling for signs
-        else if (block instanceof BlockCopperTorch) return;
+        else if (block instanceof BlockCopperTorch) return null;
         else item = new ItemBlock(block).setRegistryName(block.getRegistryName());
+        return item;
+    }
+
+    public static void registerItem(Block block, RegistryEvent.Register<Item> event) {
+        Item item = createItem(block);
         event.getRegistry().register(item);
         registerItemModel(item);
     }
 
 
     public static void registerItemServer(Block block, RegistryEvent.Register<Item> event) {
-        Item item;
-        if (block instanceof BlockDoor) {
-            item = new ItemDoor(block)
-                    .setRegistryName(block.getRegistryName())
-                    .setUnlocalizedName(block.getUnlocalizedName().replace("tile.", ""))
-                    .setCreativeTab(block.getCreativeTabToDisplayOn());
-        } //TODO: Add handling for signs
-        else if (block instanceof BlockCopperTorch) return;
-        else item = new ItemBlock(block).setRegistryName(block.getRegistryName());
+        Item item = createItem(block);
         event.getRegistry().register(item);
     }
     
