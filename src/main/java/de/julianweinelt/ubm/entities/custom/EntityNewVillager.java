@@ -9,6 +9,7 @@ import net.minecraft.entity.ai.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -84,24 +85,25 @@ public class EntityNewVillager extends EntityCreature implements INpc {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return super.getAmbientSound();
+        return SoundEvents.ENTITY_VILLAGER_AMBIENT;
     }
 
     @Nullable
     @Override
     protected SoundEvent getDeathSound() {
-        return super.getDeathSound();
+        return SoundEvents.ENTITY_VILLAGER_DEATH;
     }
 
     @Nullable
     @Override
     protected SoundEvent getHurtSound(@Nonnull DamageSource damageSourceIn) {
-        return super.getHurtSound(damageSourceIn);
+        return SoundEvents.ENTITY_VILLAGER_HURT;
     }
 
     @Override
     public boolean processInteract(@Nonnull EntityPlayer player, @Nonnull EnumHand hand) {
         if (!world.isRemote) {
+            if (isChild()) return false;
             NetworkHandler.INSTANCE.sendTo(new PacketSyncTrades(this), (EntityPlayerMP) player);
         }
         return true;
