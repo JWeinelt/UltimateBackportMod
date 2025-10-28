@@ -1,0 +1,156 @@
+{
+  "variants": {
+    "facing=south,in_fence=false,open=false,powered=true": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true
+    },
+    "facing=west,in_fence=false,open=false,powered=true": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,in_fence=false,open=false,powered=true": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=east,in_fence=false,open=false,powered=true": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=south,in_fence=false,open=true,powered=true": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true
+    },
+    "facing=west,in_fence=false,open=true,powered=true": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,in_fence=false,open=true,powered=true": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=east,in_fence=false,open=true,powered=true": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=south,in_fence=true,open=false,powered=true": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true
+    },
+    "facing=west,in_fence=true,open=false,powered=true": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,in_fence=true,open=false,powered=true": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=east,in_fence=true,open=false,powered=true": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=south,in_fence=true,open=true,powered=true": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true
+    },
+    "facing=west,in_fence=true,open=true,powered=true": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,in_fence=true,open=true,powered=true": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=east,in_fence=true,open=true,powered=true": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=south,in_fence=false,open=false,powered=false": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true
+    },
+    "facing=west,in_fence=false,open=false,powered=false": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,in_fence=false,open=false,powered=false": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=east,in_fence=false,open=false,powered=false": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=south,in_fence=false,open=true,powered=false": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true
+    },
+    "facing=west,in_fence=false,open=true,powered=false": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,in_fence=false,open=true,powered=false": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=east,in_fence=false,open=true,powered=false": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=south,in_fence=true,open=false,powered=false": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true
+    },
+    "facing=west,in_fence=true,open=false,powered=false": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,in_fence=true,open=false,powered=false": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=east,in_fence=true,open=false,powered=false": {
+      "model": "ubm:bamboo_fence_gate_closed",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=south,in_fence=true,open=true,powered=false": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true
+    },
+    "facing=west,in_fence=true,open=true,powered=false": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,in_fence=true,open=true,powered=false": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=east,in_fence=true,open=true,powered=false": {
+      "model": "ubm:bamboo_fence_gate_open",
+      "uvlock": true,
+      "y": 270
+    }
+  }
+}
