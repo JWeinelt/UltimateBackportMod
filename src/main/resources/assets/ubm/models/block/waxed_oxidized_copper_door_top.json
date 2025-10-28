@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_top",
+  "textures": {
+    "bottom": "ubm:blocks/oxidized_copper_door_bottom",
+    "top": "ubm:blocks/oxidized_copper_door_top"
+  }
+}

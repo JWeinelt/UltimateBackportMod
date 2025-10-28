@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_top_rh",
+  "textures": {
+    "bottom": "ubm:blocks/copper_block_door_bottom",
+    "top": "ubm:blocks/copper_block_door_top"
+  }
+}
