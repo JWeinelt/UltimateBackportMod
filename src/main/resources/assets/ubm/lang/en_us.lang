@@ -174,7 +174,76 @@ tile.packed_mud.name=Packed Mud
 tile.mangrove_button.name=Mangrove Button
 tile.mud_bricks.name=Mud Bricks
 
+tile.blackstone_polished_wall.name=Polished Blackstone Wall
+tile.blackstone_polished_brick_wall.name=Polished Blackstone Brick Wall
+tile.diorite_stairs.name=Diorite Stairs
+tile.granite_stairs.name=Granite Stairs
+tile.andesite_stairs.name=Andesite Stairs
+tile.polished_diorite_stairs.name=Polished Diorite Stairs
+tile.polished_granite_stairs.name=Polished Granite Stairs
+tile.polished_andesite_stairs.name=Polished Andesite Stairs
+
+tile.waxed_oxidized_cut_copper_stairs.name=Waxed Oxidized Cut Copper Stairs
+tile.waxed_oxidized_copper_stairs.name=Waxed Oxidized Copper Stairs
+tile.oxidized_cut_copper_stairs.name=Oxidized Cut Copper Stairs
+tile.oxidized_copper_stairs.name=Oxidized Copper Stairs
+tile.waxed_weathered_cut_copper_stairs.name=Waxed Weathered Cut Copper Stairs
+tile.waxed_weathered_copper_stairs.name=Weathered Cut Copper Stairs
+tile.weathered_cut_copper_stairs.name=Waxed Weathered Cut Copper Stairs
+tile.weathered_copper_stairs.name=Weathered Copper Stairs
+tile.waxed_exposed_cut_copper_stairs.name=Waxed Exposed Cut Copper Stairs
+tile.waxed_exposed_copper_stairs.name=Waxed Exposed Copper Stairs
+tile.exposed_cut_copper_stairs.name=Exposed Cut Copper Stairs
+tile.exposed_copper_stairs.name=Exposed Copper Stairs
+tile.waxed_cut_copper_stairs.name=Waxed Cut Copper Stairs
+tile.waxed_copper_stairs.name=Waxed Copper Stairs
+tile.cut_copper_stairs.name=Cut Copper Stairs
+tile.copper_stairs.name=Copper Stairs
+
+tile.cherry_fence.name=Cherry Fence
+tile.cherry_fence_gate.name=Cherry Fence Gate
+tile.cherry_stairs.name=Cherry Stairs
+tile.cherry_trapdoor.name=Cherry Trapdoor
+tile.cherry_sapling.name=Cherry Sapling
+tile.cherry_planks.name=Cherry Planks
+tile.cherry_wood.name=Cherry Wood
+tile.cherry_log.name=Cherry Log
+tile.cherry_button.name=Cherry Button
+item.cherry_door.name=Cherry Door
+tile.cherry_leaves.name=Cherry Leaves
+tile.cherry_pressure_plate.name=Cherry Pressure Plate
+cherry_slab.name=Cherry Slab
+tile.pale_oak_fence_gate.name=Pale Oak Fence Gate
+tile.pale_oak_fence.name=Pale Oak Fence
+tile.pale_oak_stairs.name=Pale Oak Stairs
+tile.pale_oak_trapdoor.name=Pale Oak Trapdoor
+tile.pale_oak_sapling.name=Pale Oak Sapling
+tile.pale_oak_planks.name=Pale Oak Planks
+tile.pale_oak_wood.name=Pale Oak Wood
+tile.pale_oak_log.name=Pale Oak Log
+tile.pale_oak_button.name=Pale Oak Button
+item.pale_oak_door.name=Pale Oak Door
+tile.pale_oak_pressure_plate.name=Pale Oak Pressure Plate
+pale_oak_slab.name=Pale Oak Slab
+
+tile.bamboo_fence.name=Bamboo Fence
+tile.bamboo_trapdoor.name=Bamboo Trapdoor
+tile.bamboo_fence_gate.name=Bamboo Fence Gate
+tile.bamboo_pressure_plate.name=Bamboo Pressure Plate
+tile.bamboo_stairs.name=Bamboo Stairs
+tile.bamboo_planks.name=Bamboo Planks
+
+tile.polished_blackstone_slab.name=Polished Blackstone Slab
+tile.polished_blackstone_bricks_slab.name=Polished Blackstone Brick Slab
+
+tile.sculk_sensor.name=Sculk Sensor
+tile.sculk.name=Sculk
+tile.sculk_shrieker.name=Sculk Shrieker
+tile.sculk_catalyst.name=Sculk Catalyst
+
 item.mangrove_door.name=Mangrove Door
+
+item.bamboo_door.name=Bamboo Door
 
 item.sentry_armor_trim.name=Sentry Armor Trim
 item.flow_armor_trim.name=Flow Armor Trim
@@ -196,6 +265,8 @@ item.shaper_armor_trim.name=Shaper Armor Trim
 item.host_armor_trim.name=Host Armor Trim
 item.netherite_upgrade_template.name=Netherite Upgrade Template
 
+item.wolf_armor.name=Wolf Armor
+
 item.copper_helmet.name=Copper Helmet
 item.copper_chestplate.name=Copper Chestplate
 item.copper_leggings.name=Copper Leggings
@@ -205,6 +276,24 @@ item.copper_axe.name=Copper Axe
 item.copper_pickaxe.name=Copper Pickaxe
 item.copper_shovel.name=Copper Shovel
 item.copper_hoe.name=Copper Hoe
+
+item.waxed_copper_door.name=Waxed Copper Door
+item.copper_door.name=Copper Door
+item.waxed_exposed_copper_door.name=Waxed Exposed Copper Door
+item.exposed_copper_door.name=Exposed Copper Door
+item.waxed_weathered_copper_door.name=Waxed Weathered Copper Door
+item.weathered_copper_door.name=Weathered Copper Door
+item.waxed_oxidized_copper_door.name=Waxed Oxidized Copper Door
+item.oxidized_copper_door.name=Oxidized Copper Door
+
+tile.waxed_copper_trapdoor.name=Waxed Copper Trapdoor
+tile.copper_trapdoor.name=Copper Trapdoor
+tile.waxed_exposed_copper_trapdoor.name=Waxed Exposed Copper Trapdoor
+tile.exposed_copper_trapdoor.name=Exposed Copper Trapdoor
+tile.waxed_weathered_copper_trapdoor.name=Waxed Weathered Copper Trapdoor
+tile.weathered_copper_trapdoor.name=Weathered Copper Trapdoor
+tile.waxed_oxidized_copper_trapdoor.name=Waxed Oxidized Copper Trapdoor
+tile.oxidized_copper_trapdoor.name=Oxidized Copper Trapdoor
 
 item.glow_berries.name=Glow Berries
 item.bucket_tadpole.name=Bucket of Tadpole
@@ -262,6 +351,25 @@ item.crossbow.name=Crossbow
 item.trident.name=Trident
 item.copper_nugget.name=Copper Nugget
 item.ominous_bottle.name=Ominous Bottle
+
+item.red_candle.name=Red Candle
+item.black_candle.name=Black Candle
+item.green_candle.name=Green Candle
+item.brown_candle.name=Brown Candle
+item.blue_candle.name=Blue Candle
+item.purple_candle.name=Purple Candle
+item.cyan_candle.name=Cyan Candle
+item.light_gray_candle.name=Light Gray Candle
+item.gray_candle.name=Gray Candle
+item.pink_candle.name=Pink Candle
+item.lime_candle.name=Lime Candle
+item.yellow_candle.name=Yellow Candle
+item.light_blue_candle.name=Light Blue Candle
+item.magenta_candle.name=Magenta Candle
+item.orange_candle.name=Orange Candle
+item.white_candle.name=White Candle
+
+item.bamboo_raft.name=Bamboo Raft
 
 itemGroup.ubm_tab_nether=Nether Update
 itemGroup.ubm_tab_trails_tales=Trails and Tails
