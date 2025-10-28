@@ -1339,6 +1339,10 @@ public class ModBlocks {
                 .setCreativeTab(TB_TRAILS_TALES);
         register(CHERRY_SAPLING, event);
 
+        PALE_OAK_SAPLING = new BlockModPlant("pale_oak_sapling")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(PALE_OAK_SAPLING, event);
+
         // Buttons
 
         CHERRY_BUTTON = new BlockModButton(true, "cherry_button")
@@ -1410,9 +1414,17 @@ public class ModBlocks {
                 .setUnlocalizedName("sculk_shrieker");
         register(SCULK_SHRIEKER, event);
 
+
+
         BLACKSTONE_WALL = new BlockModWall(BLACKSTONE, "blackstone_wall")
                 .setCreativeTab(TB_NETHER);
         register(BLACKSTONE_WALL, event);
+
+        POLISHED_BLACKSTONE_WALL = new BlockModWall(BLACKSTONE, "blackstone_polished_wall")
+                .setCreativeTab(TB_NETHER);
+        register(POLISHED_BLACKSTONE_WALL, event);
+
+
         DEEPSLATE_POLISHED_WALL = new BlockModWall(DEEPSLATE_POLISHED, "deepslate_polished_wall")
                 .setCreativeTab(TB_CAVES);
         register(DEEPSLATE_POLISHED_WALL, event);
