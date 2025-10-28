@@ -770,23 +770,17 @@ public class ModBlocks {
                 .setCreativeTab(TB_NETHER);
         register(WARPED_WART_BLOCK, event);
 
-        PEARLESCENT_FROGLIGHT = new Block(Material.PLANTS)
-                .setUnlocalizedName("pearlescent_froglight")
-                .setRegistryName("pearlescent_froglight")
+        PEARLESCENT_FROGLIGHT = new BlockModLog("pearlescent_froglight")
                 .setLightLevel(1.0F)
                 .setCreativeTab(TB_WILD);
         register(PEARLESCENT_FROGLIGHT, event);
 
-        OCHRE_FROGLIGHT = new Block(Material.PLANTS)
-                .setUnlocalizedName("ochre_froglight")
-                .setRegistryName("ochre_froglight")
+        OCHRE_FROGLIGHT = new BlockModLog("ochre_froglight")
                 .setLightLevel(1.0F)
                 .setCreativeTab(TB_WILD);
         register(OCHRE_FROGLIGHT, event);
 
-        VERDANT_FROGLIGHT = new Block(Material.PLANTS)
-                .setUnlocalizedName("verdant_froglight")
-                .setRegistryName("verdant_froglight")
+        VERDANT_FROGLIGHT = new BlockModLog("verdant_froglight")
                 .setLightLevel(1.0F)
                 .setCreativeTab(TB_WILD);
         register(VERDANT_FROGLIGHT, event);
