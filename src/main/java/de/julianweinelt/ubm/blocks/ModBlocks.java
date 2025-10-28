@@ -13,6 +13,7 @@ import de.julianweinelt.ubm.items.BlockCopperTorch;
 import de.julianweinelt.ubm.items.ModItems;
 import de.julianweinelt.ubm.misc.AdvancementHelper;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
+import de.julianweinelt.ubm.misc.ModSounds;
 import de.julianweinelt.ubm.worldgen.ModBiomes;
 import de.julianweinelt.ubm.worldgen.WorldGenBeeNest;
 import net.minecraft.block.*;
@@ -1081,10 +1082,7 @@ public class ModBlocks {
         TINTED_GLASS = new BlockTintedGlass();
         register(TINTED_GLASS, event);
 
-        AMETHYST_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("amethyst")
-                .setRegistryName("amethyst")
-                        .setCreativeTab(TB_CAVES);
+        AMETHYST_BLOCK = new BlockMod(Material.ROCK, "amethyst").creativeTab(TB_CAVES).soundType(ModSounds.SoundTypes.AMETHYST_BLOCK);
         register(AMETHYST_BLOCK, event);
 
         CALCITE = new Block(Material.ROCK)

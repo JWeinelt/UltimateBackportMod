@@ -2,6 +2,7 @@ package de.julianweinelt.ubm.misc;
 
 import de.julianweinelt.ubm.UBM;
 import net.minecraft.block.SoundType;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -347,7 +348,7 @@ public class ModSounds {
                 BLOCK_NETHERITE_BLOCK_STEP,
                 BLOCK_NETHERITE_BLOCK_PLACE,
                 BLOCK_NETHERITE_BLOCK_STEP,
-                BLOCK_NETHERITE_BLOCK_BREAK
+                SoundEvents.BLOCK_STONE_FALL
         );
         public static SoundType SWEET_BERRY_BUSH = new SoundType(
                 1, 1,
@@ -355,7 +356,15 @@ public class ModSounds {
                 BLOCK_SWEET_BERRY_BUSH_PLACE,
                 BLOCK_SWEET_BERRY_BUSH_PLACE,
                 BLOCK_SWEET_BERRY_BUSH_PLACE,
-                BLOCK_SWEET_BERRY_BUSH_PLACE
+                SoundEvents.BLOCK_STONE_FALL
+        );
+        public static SoundType AMETHYST_BLOCK = new SoundType(
+                1, 1,
+                BLOCK_AMETHYST_BREAK,
+                BLOCK_AMETHYST_STEP,
+                BLOCK_AMETHYST_PLACE,
+                BLOCK_AMETHYST_STEP,
+                SoundEvents.BLOCK_STONE_FALL
         );
     }
 }

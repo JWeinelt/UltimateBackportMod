@@ -18,13 +18,11 @@ import java.util.Random;
 public class BlockMod extends Block {
     private boolean transparent = false;
     private ItemStack silkTouchDrop;
-    private final Item drop;
     private int quantity = 0;
     private SoundType type = SoundType.STONE;
 
-    public BlockMod(Material materialIn, String name, Item drop) {
+    public BlockMod(Material materialIn, String name) {
         super(materialIn);
-        this.drop = drop;
         setRegistryName(name);
         setUnlocalizedName(name);
         silkTouchDrop = new ItemStack(this);
@@ -78,12 +76,6 @@ public class BlockMod extends Block {
     @Nonnull
     protected ItemStack getSilkTouchDrop(@Nonnull IBlockState state) {
         return silkTouchDrop;
-    }
-
-    @Override
-    @Nonnull
-    public Item getItemDropped(@Nonnull IBlockState state, @Nonnull Random rand, int fortune) {
-        return drop;
     }
 
     @Override
