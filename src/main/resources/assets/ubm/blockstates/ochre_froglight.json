@@ -1,5 +1,19 @@
 {
   "variants": {
-    "normal": { "model": "ubm:ochre_froglight" }
+    "axis=x": {
+      "model": "ubm:ochre_froglight",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ubm:ochre_froglight"
+    },
+    "axis=none": {
+      "model": "ubm:ochre_froglight"
+    },
+    "axis=z": {
+      "model": "ubm:ochre_froglight",
+      "x": 90
+    }
   }
 }

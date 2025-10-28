@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "ubm:half_slab_polished_blackstone_bricks"
+    },
+    "half=top,variant=default": {
+      "model": "ubm:upper_slab_polished_blackstone_bricks"
+    }
+  }
+}

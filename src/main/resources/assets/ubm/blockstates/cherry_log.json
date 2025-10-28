@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "ubm:cherry_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ubm:cherry_log"
+    },
+    "axis=none": {
+      "model": "ubm:cherry_log"
+    },
+    "axis=z": {
+      "model": "ubm:cherry_log",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/trapdoor_open",
+  "textures": {
+    "texture": "ubm:blocks/oxidized_copper_trapdoor"
+  }
+}
