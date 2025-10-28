@@ -244,8 +244,10 @@ tile.bamboo_pressure_plate.name=Bamboo Pressure Plate
 tile.bamboo_stairs.name=Bamboo Stairs
 tile.bamboo_planks.name=Bamboo Planks
 
-tile.polished_blackstone_slab.name=Polished Blackstone Slab
-tile.polished_blackstone_bricks_slab.name=Polished Blackstone Brick Slab
+polished_blackstone_slab.name=Polished Blackstone Slab
+polished_blackstone_bricks_slab.name=Polished Blackstone Brick Slab
+
+item.copper_torch.name=Copper Torch
 
 tile.sculk_sensor.name=Sculk Sensor
 tile.sculk.name=Sculk
@@ -348,10 +350,10 @@ weathered_copper_slab.name=Weathered Copper Slab
 weathered_cut_copper_slab.name=Weathered Cut Copper Slab
 waxed_weathered_copper_slab.name=Waxed Weathered Copper Slab
 waxed_weathered_cut_copper_slab.name=Waxed Weathered Cut Copper Slab
-oxidizied_copper_slab.name=Oxidized Copper Slab
-oxidizied_cut_copper_slab.name=Oxidized Cut Copper Slab
-waxed_oxidizied_copper_slab.name=Waxed Oxidized Copper Slab
-waxed_oxidizied_cut_copper_slab.name=Waxed Oxidized Cut Copper Slab
+oxidized_copper_slab.name=Oxidized Copper Slab
+oxidized_cut_copper_slab.name=Oxidized Cut Copper Slab
+waxed_oxidized_copper_slab.name=Waxed Oxidized Copper Slab
+waxed_oxidized_cut_copper_slab.name=Waxed Oxidized Cut Copper Slab
 deepslate_polished_slab.name=Polished Deepslate Slab
 deepslate_cobbled_slab.name=Cobbled Deepslate Slab
 deepslate_tile_slab.name=Deepslate Tile Slab
@@ -400,6 +402,8 @@ item.light_blue_candle.name=Light Blue Candle
 item.magenta_candle.name=Magenta Candle
 item.orange_candle.name=Orange Candle
 item.white_candle.name=White Candle
+
+item.copper_ingot.name=Copper Ingot
 
 item.bamboo_raft.name=Bamboo Raft
 
@@ -467,6 +471,8 @@ egg.pufferfish.name=Spawn Pufferfish
 egg.tropical_fish.name=Spawn Tropical Fish
 egg.pillager.name=Spawn Pillager
 egg.ravager.name=Spawn Ravager
+egg.villager.name=Spawn Villager
+egg.glow_squid.name=Spawn Glow Squid
 
 enchantment.swift_sneak=Swift Sneak
 
