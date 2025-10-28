@@ -7,7 +7,8 @@
   ],
   "key": {
     "X": {
-      "item": "minecraft:andesite"
+      "item": "minecraft:stone",
+      "data": 5
     }
   },
   "result": {
