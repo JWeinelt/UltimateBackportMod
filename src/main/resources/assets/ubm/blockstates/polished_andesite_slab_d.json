@@ -1,10 +1,10 @@
 {
   "variants": {
     "half=bottom,variant=default": {
-      "model": "minecraft:polished_andesite"
+      "model": "minecraft:andesite_smooth"
     },
     "half=top,variant=default": {
-      "model": "minecraft:polished_andesite"
+      "model": "minecraft:andesite_smooth"
     }
   }
 }

@@ -182,6 +182,12 @@ tile.andesite_stairs.name=Andesite Stairs
 tile.polished_diorite_stairs.name=Polished Diorite Stairs
 tile.polished_granite_stairs.name=Polished Granite Stairs
 tile.polished_andesite_stairs.name=Polished Andesite Stairs
+andesite_slab.name=Andesite Slab
+diorite_slab.name=Diorite Slab
+granite_slab.name=Granite Slab
+polished_andesite_slab.name=Polished Andesite Slab
+polished_diorite_slab.name=Polished Diorite Slab
+polished_granite_slab.name=Polished Granite Slab
 
 tile.waxed_oxidized_cut_copper_stairs.name=Waxed Oxidized Cut Copper Stairs
 tile.waxed_oxidized_copper_stairs.name=Waxed Oxidized Copper Stairs
@@ -227,6 +233,7 @@ tile.pale_oak_pressure_plate.name=Pale Oak Pressure Plate
 pale_oak_slab.name=Pale Oak Slab
 
 tile.bamboo_fence.name=Bamboo Fence
+tile.bamboo_button.name=Bamboo Button
 tile.bamboo_trapdoor.name=Bamboo Trapdoor
 tile.bamboo_fence_gate.name=Bamboo Fence Gate
 tile.bamboo_pressure_plate.name=Bamboo Pressure Plate
@@ -264,6 +271,27 @@ item.raiser_armor_trim.name=Raiser Armor Trim
 item.shaper_armor_trim.name=Shaper Armor Trim
 item.host_armor_trim.name=Host Armor Trim
 item.netherite_upgrade_template.name=Netherite Upgrade Template
+
+item.angler_pottery_sherd.name=Angler Pottery Sherd
+item.archer_pottery_sherd.name=Archer Pottery Sherd
+item.arms_up_pottery_sherd.name=Arms Up Pottery Sherd
+item.blade_pottery_sherd.name=Blade Pottery Sherd
+item.brewer_pottery_sherd.name=Brewer Pottery Sherd
+item.burn_pottery_sherd.name=Burn Pottery Sherd
+item.danger_pottery_sherd.name=Danger Pottery Sherd
+item.explorer_pottery_sherd.name=Explorer Pottery Sherd
+item.friend_pottery_sherd.name=Friend Pottery Sherd
+item.heart_pottery_sherd.name=Heart Pottery Sherd
+item.heartbreak_pottery_sherd.name=Heartbreak Pottery Sherd
+item.howl_pottery_sherd.name=Howl Pottery Sherd
+item.miner_pottery_sherd.name=Miner Pottery Sherd
+item.mourner_pottery_sherd.name=Mourner Pottery Sherd
+item.plenty_pottery_sherd.name=Plenty Pottery Sherd
+item.prize_pottery_sherd.name=Prize Pottery Sherd
+item.sheaf_pottery_sherd.name=Sheaf Pottery Sherd
+item.shelter_pottery_sherd.name=Shelter Pottery Sherd
+item.skull_pottery_sherd.name=Skull Pottery Sherd
+item.snort_pottery_sherd.name=Snort Pottery Sherd
 
 item.wolf_armor.name=Wolf Armor
 

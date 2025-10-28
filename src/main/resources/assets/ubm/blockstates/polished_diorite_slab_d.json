@@ -1,10 +1,10 @@
 {
   "variants": {
     "half=bottom,variant=default": {
-      "model": "minecraft:polished_diorite"
+      "model": "minecraft:diorite_smooth"
     },
     "half=top,variant=default": {
-      "model": "minecraft:polished_diorite"
+      "model": "minecraft:diorite_smooth"
     }
   }
 }
