@@ -1,12 +1,15 @@
 package de.julianweinelt.ubm.entities.models;
 
 
+import de.julianweinelt.ubm.entities.EntityPhantom;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class ModelPhantom extends ModelBase {
 	private final ModelRenderer body;
@@ -69,7 +72,7 @@ public class ModelPhantom extends ModelBase {
 	}
 
 	@Override
-	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+	public void render(@Nullable Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
 		body.render(f5);
 	}
 
@@ -78,4 +81,27 @@ public class ModelPhantom extends ModelBase {
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;
 	}
+
+	@Override
+	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
+								  float headPitch, float scaleFactor, @Nonnull Entity entityIn) {
+		float wingSpeed = 0.3F;
+		float wingAmplitude = 0.6F;
+
+		wing0.rotateAngleZ = 0.0873F + MathHelper.cos(ageInTicks * wingSpeed) * wingAmplitude;
+		wingtip0.rotateAngleZ = 0.1745F + MathHelper.cos(ageInTicks * wingSpeed + 0.5F) * wingAmplitude;
+
+		wing1.rotateAngleZ = -0.0873F - MathHelper.cos(ageInTicks * wingSpeed) * wingAmplitude;
+		wingtip1.rotateAngleZ = -0.1745F - MathHelper.cos(ageInTicks * wingSpeed + 0.5F) * wingAmplitude;
+
+		head.rotateAngleY = netHeadYaw * 0.017453292F;
+		head.rotateAngleX = headPitch * 0.017453292F;
+
+		if (entityIn instanceof EntityPhantom) {
+			EntityPhantom phantom = (EntityPhantom) entityIn;
+			double motionY = phantom.motionY;
+			body.rotateAngleX = (float) -motionY * 0.5F;
+		}
+	}
+
 }

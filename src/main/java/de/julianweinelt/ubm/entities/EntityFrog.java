@@ -30,11 +30,20 @@ public class EntityFrog extends EntityAnimal {
     private int jumpCooldown = 0;
     public Random rand = new Random();
 
+    public boolean jumping = false;
+
     public EntityFrog(World worldIn) {
         super(worldIn);
         this.setSize(0.5F, 0.5F);
         this.experienceValue = 1;
         updateType(worldIn);
+    }
+
+    @Override
+    public void fall(float distance, float damageMultiplier) {
+        if (!this.jumping) {
+            super.fall(distance, damageMultiplier);
+        } else this.jumping = false;
     }
 
     private void updateType(World world) {

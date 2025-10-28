@@ -19,6 +19,7 @@ public class EntityAISpontaneousJump extends EntityAIBase {
 
     @Override
     public void startExecuting() {
+        frog.jumping = true;
         frog.playSound(ModSounds.FROG_LONG_JUMP, 1, 1);
         frog.motionY = 0.4D + frog.rand.nextDouble() * 0.5D;
         double dir = frog.rand.nextDouble() * 2 * Math.PI;

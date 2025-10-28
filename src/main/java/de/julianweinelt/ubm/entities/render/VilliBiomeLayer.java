@@ -7,9 +7,6 @@ import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 
 public class VilliBiomeLayer implements LayerRenderer<EntityNewVillager> {
-    private static final ResourceLocation BIOME_TEXTURE =
-            new ResourceLocation("ubm:textures/entity/villager/type/savanna.png");
-
     private final RenderLivingBase<EntityNewVillager> renderer;
 
     public VilliBiomeLayer(RenderLivingBase<EntityNewVillager> rendererIn) {
@@ -21,7 +18,8 @@ public class VilliBiomeLayer implements LayerRenderer<EntityNewVillager> {
                               float partialTicks, float ageInTicks, float netHeadYaw,
                               float headPitch, float scale) {
 
-        this.renderer.bindTexture(BIOME_TEXTURE);
+        this.renderer.bindTexture(new ResourceLocation("ubm:textures/entity/villager/type/"
+                + entity.getBiome().name().toLowerCase() + ".png"));
 
         GlStateManager.color(1F, 1F, 1F, 1F);
 

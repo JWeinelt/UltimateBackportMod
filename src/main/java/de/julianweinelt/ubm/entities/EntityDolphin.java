@@ -14,9 +14,12 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityGuardian;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.passive.EntityWaterMob;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
 
 public class EntityDolphin extends EntityWaterMob {
 
@@ -52,6 +55,10 @@ public class EntityDolphin extends EntityWaterMob {
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
     }
 
+    @Override
+    public boolean canBeLeashedTo(@Nullable EntityPlayer player) {
+        return true;
+    }
 
     @Override
     protected SoundEvent getAmbientSound() {
