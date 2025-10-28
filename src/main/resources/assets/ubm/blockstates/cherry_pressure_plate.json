@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "powered=false": { "model": "ubm:cherry_pressure_plate_up" },
+    "powered=true": { "model": "ubm:cherry_pressure_plate_down" }
+  }
+}

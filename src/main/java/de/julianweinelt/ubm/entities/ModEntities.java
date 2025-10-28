@@ -30,14 +30,14 @@ import static de.julianweinelt.ubm.UBM.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID)
 public class ModEntities {
-    private static final Biome[] FISH_BIOMES = {
+    /*private static final Biome[] FISH_BIOMES = {
             Biomes.FROZEN_RIVER,
             Biomes.FROZEN_OCEAN,
             Biomes.RIVER,
             Biomes.DEEP_OCEAN,
             Biomes.OCEAN
             //TODO: Lukewarm Ocean, Warm Ocean, Deep Lukewarm Ocean, Cold / Deep cold ocean
-    };
+    };*/
 
     private static int currentID = 1;
 
@@ -118,8 +118,8 @@ public class ModEntities {
 
 
     public static void addSpawns() {
-        EntityRegistry.addSpawn(EntitySalmon.class, 10, 1, 5, EnumCreatureType.WATER_CREATURE, FISH_BIOMES);
-        EntityRegistry.addSpawn(EntityCod.class, 10, 1, 5, EnumCreatureType.WATER_CREATURE, FISH_BIOMES);
+        //EntityRegistry.addSpawn(EntitySalmon.class, 10, 1, 5, EnumCreatureType.WATER_CREATURE, FISH_BIOMES);
+        //EntityRegistry.addSpawn(EntityCod.class, 10, 1, 5, EnumCreatureType.WATER_CREATURE, FISH_BIOMES);
     }
 
 

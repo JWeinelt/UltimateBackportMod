@@ -34,7 +34,7 @@ public abstract class BlockModSlab extends BlockSlab {
         }
         this.setDefaultState(state);
 
-        this.useNeighborBrightness = true; // wichtig für Beleuchtung
+        this.useNeighborBrightness = true;
     }
 
     @Override

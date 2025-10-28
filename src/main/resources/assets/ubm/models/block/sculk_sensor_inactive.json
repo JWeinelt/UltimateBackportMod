@@ -1,0 +1,6 @@
+{
+    "parent": "ubm:block/sculk_sensor",
+    "textures": {
+        "tendrils": "ubm:blocks/sculk_sensor_tendril_inactive"
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "ubm:blocks/cherry_planks",
+    "top": "ubm:blocks/cherry_planks",
+    "side": "ubm:blocks/cherry_planks"
+  }
+}

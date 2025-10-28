@@ -1,5 +1,19 @@
 {
   "variants": {
-    "normal": { "model": "ubm:verdant_froglight" }
+    "axis=x": {
+      "model": "ubm:verdant_froglight",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ubm:verdant_froglight"
+    },
+    "axis=none": {
+      "model": "ubm:verdant_froglight"
+    },
+    "axis=z": {
+      "model": "ubm:verdant_froglight",
+      "x": 90
+    }
   }
 }
