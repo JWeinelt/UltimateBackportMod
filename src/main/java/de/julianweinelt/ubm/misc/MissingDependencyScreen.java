@@ -26,7 +26,7 @@ public class MissingDependencyScreen extends GuiScreen {
     }
 
     @Override
-    protected void keyTyped(char typedChar, int keyCode) throws IOException {
+    protected void keyTyped(char typedChar, int keyCode) {
         if (keyCode == 1) {
             Minecraft.getMinecraft().shutdown();
         }
