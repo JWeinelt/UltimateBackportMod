@@ -25,12 +25,13 @@ public class VilliBiomeLayer implements LayerRenderer<EntityNewVillager> {
 
         this.renderer.getMainModel().render(entity,
                 limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+        GlStateManager.scale(1.01F, 1.01F, 1.01F);
 
         GlStateManager.color(1F, 1F, 1F, 1F);
     }
 
     @Override
     public boolean shouldCombineTextures() {
-        return false; // wichtig gegen Z-Fighting
+        return false;
     }
 }

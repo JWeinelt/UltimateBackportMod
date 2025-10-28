@@ -13,6 +13,7 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -45,6 +46,10 @@ public class ModItems {
     public static Item TRIM_BOLT;
     public static Item TRIM_HOST;
     public static Item TRIM_RIB;
+
+    public static Item COPPER_TORCH;
+
+    public static Item COPPER_INGOT;
 
     public static Item OMINOUS_BOTTLE;
 
@@ -215,10 +220,17 @@ public class ModItems {
                 .setRegistryName("netherite_scrap")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
         event.getRegistry().register(NETHERITE_SCRAP);
-        NETHERITE_INGOT = new Item()
-                .setUnlocalizedName("netherite_ingot")
-                .setRegistryName("netherite_ingot")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+        COPPER_INGOT = new Item()
+                .setUnlocalizedName("copper_ingot")
+                .setRegistryName("copper_ingot")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+        event.getRegistry().register(COPPER_INGOT);
+        COPPER_TORCH = new Item()
+                .setUnlocalizedName("copper_torch")
+                .setRegistryName("copper_torch")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_COPPER_AGE);
+        event.getRegistry().register(COPPER_INGOT);
+        NETHERITE_INGOT = new ItemNetheriteIngot();
         event.getRegistry().register(NETHERITE_INGOT);
         WOLF_ARMOR = new Item()
                 .setUnlocalizedName("wolf_armor")
@@ -421,7 +433,7 @@ public class ModItems {
                 .setRegistryName("honeycomb")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
 
-        HONEY_BOTTLE = new Item()
+        HONEY_BOTTLE = new ItemFood(2, 2, false) //TODO: Move to dedicated class
                 .setUnlocalizedName("honey_bottle")
                 .setRegistryName("honey_bottle")
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
@@ -631,6 +643,8 @@ public class ModItems {
         registerItemModel(SKULL_POTTERY_SHERD);
         registerItemModel(SNORT_POTTERY_SHERD);
 
+        registerItemModel(COPPER_TORCH);
+
         registerItemModel(POWDER_SNOW_BUCKET);
         registerItemModel(SWEET_BERRY);
         registerItemModel(GLOW_BERRIES);
@@ -697,6 +711,7 @@ public class ModItems {
         registerItemModel(SPAWN_EGG_GLOW_SQUID);
         registerItemModel(SPAWN_EGG_PILLAGER);
         registerItemModel(SPAWN_EGG_RAVAGER);
+        registerItemModel(COPPER_INGOT);
 
         registerItemModel(WOLF_ARMOR);
         registerItemModel(TRIDENT);

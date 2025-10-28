@@ -2,6 +2,7 @@ package de.julianweinelt.ubm;
 
 
 import de.julianweinelt.ubm.blocks.ModBlocks;
+import de.julianweinelt.ubm.blocks.api.sign.TileEntityModSign;
 import de.julianweinelt.ubm.blocks.interactable.smithing.GuiHandler;
 import de.julianweinelt.ubm.blocks.interactable.smithing.TileEntitySmithingTable;
 import de.julianweinelt.ubm.configuration.ModConfig;
@@ -80,6 +81,8 @@ public class UBM {
         GameRegistry.registerWorldGenerator(new StructureWorldGen(), 0);
 
         GameRegistry.registerTileEntity(TileEntitySmithingTable.class, new ResourceLocation("ubm", "smithing_table"));
+        GameRegistry.registerTileEntity(TileEntityModSign.class, new ResourceLocation("ubm", "sign_te"));
+
 
         ModCustomVillage.preInit();
     }

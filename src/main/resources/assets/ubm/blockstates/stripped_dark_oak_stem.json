@@ -8,6 +8,9 @@
     "axis=y": {
       "model": "ubm:stripped_dark_oak_stem"
     },
+    "axis=none": {
+      "model": "ubm:stripped_dark_oak_stem"
+    },
     "axis=z": {
       "model": "ubm:stripped_dark_oak_stem",
       "x": 90

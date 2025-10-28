@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    "XYX",
+    " X "
+  ],
+  "key": {
+    "X": {
+      "item": "ubm:amethyst_shard"
+    },
+    "Y": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "ubm:tinted_glass",
+    "count": 1
+  }
+}

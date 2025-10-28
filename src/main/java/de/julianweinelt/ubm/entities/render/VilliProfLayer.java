@@ -12,6 +12,7 @@ public class VilliProfLayer implements LayerRenderer<EntityNewVillager> {
 
     public VilliProfLayer(RenderLivingBase<?> rendererIn) {
         this.renderer = rendererIn;
+        //villagerModel = (ModelVillager) this.renderer.getMainModel();
     }
 
     @Override
