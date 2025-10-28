@@ -349,5 +349,13 @@ public class ModSounds {
                 BLOCK_NETHERITE_BLOCK_STEP,
                 BLOCK_NETHERITE_BLOCK_BREAK
         );
+        public static SoundType SWEET_BERRY_BUSH = new SoundType(
+                1, 1,
+                BLOCK_SWEET_BERRY_BUSH_BREAK,
+                BLOCK_SWEET_BERRY_BUSH_PLACE,
+                BLOCK_SWEET_BERRY_BUSH_PLACE,
+                BLOCK_SWEET_BERRY_BUSH_PLACE,
+                BLOCK_SWEET_BERRY_BUSH_PLACE
+        );
     }
 }
