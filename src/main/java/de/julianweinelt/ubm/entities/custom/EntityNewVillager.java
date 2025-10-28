@@ -3,10 +3,15 @@ package de.julianweinelt.ubm.entities.custom;
 import de.julianweinelt.ubm.entities.sync.NetworkHandler;
 import de.julianweinelt.ubm.entities.sync.PacketSyncTrades;
 import net.minecraft.entity.EntityCreature;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.INpc;
-import net.minecraft.entity.ai.*;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIPanic;
+import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.datasync.DataParameter;
@@ -16,8 +21,8 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.village.MerchantRecipe;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
@@ -89,19 +94,25 @@ public class EntityNewVillager extends EntityCreature implements INpc {
 
     @Nullable
     @Override
-    protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
+    protected SoundEvent getHurtSound(@Nonnull DamageSource damageSourceIn) {
         return super.getHurtSound(damageSourceIn);
     }
 
     @Override
-    public boolean processInteract(EntityPlayer player, EnumHand hand) {
+    public boolean processInteract(@Nonnull EntityPlayer player, @Nonnull EnumHand hand) {
         if (!world.isRemote) {
             NetworkHandler.INSTANCE.sendTo(new PacketSyncTrades(this), (EntityPlayerMP) player);
         }
         return true;
     }
 
-
+    @Nullable
+    @Override
+    public IEntityLivingData onInitialSpawn(@Nonnull DifficultyInstance difficulty,
+                                            @Nullable IEntityLivingData livingData) {
+        initDefaultTrades();
+        return super.onInitialSpawn(difficulty, livingData);
+    }
 
     @Override
     public void writeEntityToNBT(@Nonnull NBTTagCompound compound) {
@@ -192,6 +203,26 @@ public class EntityNewVillager extends EntityCreature implements INpc {
             }
         }
     }
+
+    public void initDefaultTrades() {
+        trades = new ArrayList<>();
+
+        trades.add(new MerchantRecipe(
+                new ItemStack(Items.EMERALD, 1),
+                new ItemStack(Items.BREAD, 5)
+        ));
+
+        trades.add(new MerchantRecipe(
+                new ItemStack(Items.EMERALD, 3),
+                new ItemStack(Items.IRON_SWORD, 1)
+        ));
+
+        trades.add(new MerchantRecipe(
+                new ItemStack(Items.EMERALD, 1),
+                new ItemStack(Items.ARROW, 16)
+        ));
+    }
+
 
 
     public List<MerchantRecipe> getTrades() {
