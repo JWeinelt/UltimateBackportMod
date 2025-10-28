@@ -7,7 +7,6 @@ import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 
 public class VilliProfLayer implements LayerRenderer<EntityNewVillager> {
-    private static final ResourceLocation PROFESSION_TEXTURE = new ResourceLocation("ubm:textures/entity/villager/profession/armorer.png");
     private final RenderLivingBase<?> renderer;
     private final ModelVillager villagerModel = new ModelVillager();
 
@@ -18,7 +17,8 @@ public class VilliProfLayer implements LayerRenderer<EntityNewVillager> {
     @Override
     public void doRenderLayer(EntityNewVillager entity, float limbSwing, float limbSwingAmount,
                               float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
-        this.renderer.bindTexture(PROFESSION_TEXTURE);
+        this.renderer.bindTexture(new ResourceLocation("ubm:textures/entity/villager/profession/"
+                + entity.getProfession().name().toLowerCase() + ".png"));
         this.villagerModel.setModelAttributes(this.renderer.getMainModel());
         this.villagerModel.setLivingAnimations(entity, limbSwing, limbSwingAmount, partialTicks);
         this.villagerModel.render(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
