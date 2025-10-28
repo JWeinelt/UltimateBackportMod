@@ -1420,9 +1420,13 @@ public class ModBlocks {
                 .setCreativeTab(TB_NETHER);
         register(BLACKSTONE_WALL, event);
 
-        POLISHED_BLACKSTONE_WALL = new BlockModWall(BLACKSTONE, "blackstone_polished_wall")
+        POLISHED_BLACKSTONE_WALL = new BlockModWall(POLISHED_BLACKSTONE, "blackstone_polished_wall")
                 .setCreativeTab(TB_NETHER);
         register(POLISHED_BLACKSTONE_WALL, event);
+
+        POLISHED_BLACKSTONE_BRICK_WALL = new BlockModWall(POLISHED_BLACKSTONE_BRICKS, "blackstone_polished_brick_wall")
+                .setCreativeTab(TB_NETHER);
+        register(POLISHED_BLACKSTONE_BRICK_WALL, event);
 
 
         DEEPSLATE_POLISHED_WALL = new BlockModWall(DEEPSLATE_POLISHED, "deepslate_polished_wall")
