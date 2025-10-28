@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "ubm:blocks/pale_oak_log",
+    "side": "ubm:blocks/pale_oak_log"
+  }
+}

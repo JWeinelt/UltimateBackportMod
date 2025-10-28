@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "ubm:bamboo_pressure_plate_up"
+    },
+    "powered=true": {
+      "model": "ubm:bamboo_pressure_plate_down"
+    }
+  }
+}

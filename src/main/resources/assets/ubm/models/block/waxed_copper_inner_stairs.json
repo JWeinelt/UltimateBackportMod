@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "ubm:blocks/copper_block",
+    "top": "ubm:blocks/copper_block",
+    "side": "ubm:blocks/copper_block"
+  }
+}
