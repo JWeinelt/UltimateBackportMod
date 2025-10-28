@@ -5,9 +5,7 @@ import de.julianweinelt.ubm.entities.sync.PacketSyncTrades;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.INpc;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIPanic;
-import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.ai.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
@@ -78,6 +76,9 @@ public class EntityNewVillager extends EntityCreature implements INpc {
         this.tasks.addTask(0, new EntityAIPanic(this, 1.5F));
         this.tasks.addTask(1, new EntityAILookIdle(this));
         this.tasks.addTask(1, new EntityAIWander(this, 1F));
+        this.tasks.addTask(2, new EntityAIOpenDoor(this, true));
+        this.tasks.addTask(2, new EntityAIMoveIndoors(this));
+        this.tasks.addTask(3, new EntityAIMoveThroughVillage(this, 1, false));
     }
 
     @Nullable
