@@ -36,15 +36,9 @@ public class ClientEventHandler {
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public static void onGuiOpen(GuiOpenEvent event) {
-        /*if (event.getGui() instanceof GuiChat) {
-            event.setGui(new GuiChatWithSuggestions());
-        }*/
         if (event.getGui() instanceof GuiMainMenu) {
-            //event.setGui(new GuiMainMenuNonBlur());
             if (!Loader.isModLoaded("pathfinder")) {
                 event.setGui(new MissingDependencyScreen());
-                //Minecraft.getMinecraft().displayGuiScreen(new MissingDependencyScreen());
-                UBM.getLogger().info("Missing dep");
             }
         }
     }
