@@ -1,0 +1,21 @@
+{
+  "parent": "ubm:loot_bastion",
+  "display": {
+    "icon": { "item": "minecraft:chest" },
+    "title": {
+      "translate": "advancement.ubm.loot_bastion.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.loot_bastion.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

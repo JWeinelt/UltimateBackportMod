@@ -1,0 +1,21 @@
+{
+  "parent": "ubm:who_is_cutting_onions",
+  "display": {
+    "icon": { "item": "minecraft:chest" },
+    "title": {
+      "translate": "advancement.ubm.charge_respawn_anchor.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.charge_respawn_anchor.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

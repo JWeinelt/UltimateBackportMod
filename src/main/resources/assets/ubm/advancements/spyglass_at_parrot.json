@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": { "item": "ubm:spyglass" },
+    "title": {
+      "translate": "advancement.ubm.spyglass_at_parrot.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.spyglass_at_parrot.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:nether/root",
+  "display": {
+    "icon": { "item": "ubm:blackstone_bricks_polished" },
+    "title": {
+      "translate": "advancement.ubm.find_bastion.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.find_bastion.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

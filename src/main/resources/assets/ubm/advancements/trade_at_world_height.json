@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:adventure/trade",
+  "display": {
+    "icon": { "item": "minecraft:emerald" },
+    "title": {
+      "translate": "advancement.ubm.trade_at_world_height.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.trade_at_world_height.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

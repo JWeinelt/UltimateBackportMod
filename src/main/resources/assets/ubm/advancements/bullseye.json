@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:adventure/shoot_arrow",
+  "display": {
+    "icon": { "item": "ubm:target" },
+    "title": {
+      "translate": "advancement.ubm.bullseye.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.bullseye.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

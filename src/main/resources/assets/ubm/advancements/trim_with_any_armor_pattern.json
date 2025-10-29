@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": { "item": "ubm:eye_armor_trim" },
+    "title": {
+      "translate": "advancement.ubm.trim_with_any_armor_pattern.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.trim_with_any_armor_pattern.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

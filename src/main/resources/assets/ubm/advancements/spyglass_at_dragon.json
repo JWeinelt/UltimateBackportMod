@@ -1,0 +1,21 @@
+{
+  "parent": "ubm:spyglass_at_ghast",
+  "display": {
+    "icon": { "item": "ubm:spyglass" },
+    "title": {
+      "translate": "advancement.ubm.spyglass_at_dragon.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.spyglass_at_dragon.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

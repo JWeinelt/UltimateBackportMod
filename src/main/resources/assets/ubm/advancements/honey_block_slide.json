@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": { "item": "ubm:honey_block" },
+    "title": {
+      "translate": "advancement.ubm.honey_block_slide.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.honey_block_slide.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}
