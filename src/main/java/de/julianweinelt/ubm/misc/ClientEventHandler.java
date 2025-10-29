@@ -4,7 +4,6 @@ import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.mixin.GuiChatWithSuggestions;
 import de.julianweinelt.ubm.particles.ParticleCopperFlameFactory;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.fml.common.Loader;
