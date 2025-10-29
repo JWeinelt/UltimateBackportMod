@@ -503,28 +503,28 @@ public class ModItems {
         SPAWN_EGG_DOLPHIN = new ItemSpawnEggCustom(EntityDolphin.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "dolphin");
         SPAWN_EGG_WOLF = new ItemSpawnEggCustom(EntityCustomWolf.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "custom_wolf");
         SPAWN_EGG_VILLAGER = new ItemSpawnEggCustom(EntityNewVillager.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "villager");
-        SPAWN_EGG_ALLAY = new ItemSpawnEggCustom(EntityAllay.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "allay");
-        SPAWN_EGG_WANDERING_TRADER = new ItemSpawnEggCustom(EntityWanderingTrader.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "wandering_trader");
-        SPAWN_EGG_STRIDER = new ItemSpawnEggCustom(EntityStrider.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "strider");
-        SPAWN_EGG_SNIFFER = new ItemSpawnEggCustom(EntitySniffer.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "sniffer");
-        SPAWN_EGG_ARMADILLO = new ItemSpawnEggCustom(EntityArmadillo.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "armadillo");
-        SPAWN_EGG_BREEZE = new ItemSpawnEggCustom(EntityBreeze.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "breeze");
-        SPAWN_EGG_CAMEL = new ItemSpawnEggCustom(EntityCamel.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "camel");
-        SPAWN_EGG_CAT = new ItemSpawnEggCustom(EntityCat.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "cat");
-        SPAWN_EGG_HOGLIN = new ItemSpawnEggCustom(EntityHoglin.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "hoglin");
-        SPAWN_EGG_PIGLIN = new ItemSpawnEggCustom(EntityPiglin.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "piglin");
+        SPAWN_EGG_ALLAY = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "allay");//TODO: Add Entity
+        SPAWN_EGG_WANDERING_TRADER = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "wandering_trader");//TODO: Add Entity
+        SPAWN_EGG_STRIDER = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "strider");//TODO: Add Entity
+        SPAWN_EGG_SNIFFER = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "sniffer");//TODO: Add Entity
+        SPAWN_EGG_ARMADILLO = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "armadillo");//TODO: Add Entity
+        SPAWN_EGG_BREEZE = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "breeze");//TODO: Add Entity
+        SPAWN_EGG_CAMEL = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "camel");//TODO: Add Entity
+        SPAWN_EGG_CAT = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "cat");//TODO: Add Entity
+        SPAWN_EGG_HOGLIN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "hoglin");//TODO: Add Entity
+        SPAWN_EGG_PIGLIN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "piglin");//TODO: Add Entity
         SPAWN_EGG_FOX = new ItemSpawnEggCustom(EntityFox.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "fox");
-        SPAWN_EGG_CREAKING = new ItemSpawnEggCustom(EntityCreaking.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "creaking");
+        SPAWN_EGG_CREAKING = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "creaking");//TODO: Add Entity
         SPAWN_EGG_PHANTOM = new ItemSpawnEggCustom(EntityPhantom.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "phantom");
         SPAWN_EGG_AXOLOTL = new ItemSpawnEggCustom(EntityAxolotl.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "axolotl");
-        SPAWN_EGG_ZOGLIN = new ItemSpawnEggCustom(EntityZoglin.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "zoglin");
+        SPAWN_EGG_ZOGLIN = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "zoglin");//TODO: Add Entity
         SPAWN_EGG_COD = new ItemSpawnEggCustom(EntityCod.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "cod");
         SPAWN_EGG_SALMON = new ItemSpawnEggCustom(EntitySalmon.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "salmon");
-        SPAWN_EGG_PUFFERFISH = new ItemSpawnEggCustom(EntityCod.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "pufferfish");//TODO: Add Entity
+        SPAWN_EGG_PUFFERFISH = new ItemSpawnEggCustom(EntityWarden.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "pufferfish");//TODO: Add Entity
         SPAWN_EGG_TROPICAL_FISH = new ItemSpawnEggCustom(EntityTropicalFish.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "tropical_fish");
         SPAWN_EGG_GLOW_SQUID = new ItemSpawnEggCustom(EntityGlowSquid.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "glow_squid");
         SPAWN_EGG_PILLAGER = new ItemSpawnEggCustom(EntityPillager.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "pillager");
-        SPAWN_EGG_RAVAGER = new ItemSpawnEggCustom(EntityRavager.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "ravager");
+        SPAWN_EGG_RAVAGER = new ItemSpawnEggCustom(EntityGlowSquid.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "ravager");//TODO: Add Entity
 
         event.getRegistry().register(SPAWN_EGG_FROG);
         event.getRegistry().register(SPAWN_EGG_TURTLE);

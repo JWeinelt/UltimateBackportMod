@@ -8,7 +8,6 @@ import de.julianweinelt.ubm.blocks.interactable.smithing.TileEntitySmithingTable
 import de.julianweinelt.ubm.blocks.tiles.TileEntitySculkSensor;
 import de.julianweinelt.ubm.configuration.ModConfig;
 import de.julianweinelt.ubm.entities.ModEntities;
-import de.julianweinelt.ubm.entities.sync.NetworkHandler;
 import de.julianweinelt.ubm.misc.CommonProxy;
 import de.julianweinelt.ubm.misc.KeyBindings;
 import de.julianweinelt.ubm.misc.ModRecipes;
@@ -95,7 +94,6 @@ public class UBM {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        NetworkHandler.registerMessages();
         NetworkRegistry.INSTANCE.registerGuiHandler(UBM.instance, new GuiHandler());
         proxy.init(event);
         ModBlocks.WAXED_VARIANTS.put(ModBlocks.COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_COPPER_BLOCK.getRegistryName());
