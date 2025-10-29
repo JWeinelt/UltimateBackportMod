@@ -4,8 +4,8 @@
 [![Build](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml/badge.svg)](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml)
 [![Crowdin](https://badges.crowdin.net/ultimate-backport-mod/localized.svg)](https://crowdin.com/project/ultimate-backport-mod)
 
-[![CurseForge](https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/available/curseforge_64h.png?raw=true)](https://www.curseforge.com/minecraft/mc-mods/ubp)
 [![ModRinth](https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/available/modrinth_64h.png?raw=true)](https://modrinth.com/mod/ubm)
+[![CurseForge](https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/available/curseforge_64h.png?raw=true)](https://www.curseforge.com/minecraft/mc-mods/ubp)
 
 Welcome to the official GitHub repository of **UBM – Ultimate Backport Mod**!
 
