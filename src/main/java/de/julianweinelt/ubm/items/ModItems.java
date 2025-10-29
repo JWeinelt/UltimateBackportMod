@@ -28,6 +28,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @Mod.EventBusSubscriber(modid = UBM.MODID)
 public class ModItems {
     public static Item TRIM_NETHERITE_UPGRADE;
+    // Do not touch. They are referenced via Reflection
     public static Item TRIM_SENTRY;
     public static Item TRIM_DUNE;
     public static Item TRIM_WARD;
@@ -178,6 +179,9 @@ public class ModItems {
     public static Item RAW_COPPER;
     public static Item RAW_GOLD;
 
+    public static Item TRIAL_KEY;
+    public static Item TRIAL_KEY_OMINOUS;
+
     private static final String[] COLORS = {
             "black", "red", "green", "brown", "blue", "purple", "cyan",
             "light_gray", "gray", "pink", "lime", "yellow", "light_blue", "magenta",
@@ -216,6 +220,17 @@ public class ModItems {
             }
         }
 
+        TRIAL_KEY = new Item()
+                .setUnlocalizedName("trial_key")
+                .setRegistryName("trial_key")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
+        event.getRegistry().register(TRIAL_KEY);
+
+        TRIAL_KEY_OMINOUS = new Item()
+                .setUnlocalizedName("trial_key_ominous")
+                .setRegistryName("trial_key_ominous")
+                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
+        event.getRegistry().register(TRIAL_KEY_OMINOUS);
 
         NETHERITE_SCRAP = new Item()
                 .setUnlocalizedName("netherite_scrap")
