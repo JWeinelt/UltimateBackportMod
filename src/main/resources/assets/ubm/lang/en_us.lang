@@ -173,10 +173,6 @@ tile.mangrove_pressure_plate.name=Mangrove Pressure Plate
 tile.packed_mud.name=Packed Mud
 tile.mangrove_button.name=Mangrove Button
 tile.mud_bricks.name=Mud Bricks
-tile.jungle_button.name=Jungle Button
-tile.lightning_rod.name=Lightning Rod
-
-item.spyglass.name=Spyglass
 
 tile.blackstone_polished_wall.name=Polished Blackstone Wall
 tile.blackstone_polished_brick_wall.name=Polished Blackstone Brick Wall
