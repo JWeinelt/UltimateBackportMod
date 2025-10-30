@@ -24,11 +24,11 @@ public class ItemPotterySherd extends Item {
         BREWER(4, "brewer"),
         BURN(5, "burn"),
         DANGER(6, "danger"),
-        EMPTY(7, "empty"),
+        //EMPTY(7, "empty"),
         EXPLORER(8, "explorer"),
-        FLOW(9, "flow"),
+        //FLOW(9, "flow"),
         FRIEND(10, "friend"),
-        GUSTER(11, "guster"),
+        //GUSTER(11, "guster"),
         HEART(12, "heart"),
         HEARTBREAK(13, "heartbreak"),
         HOWL(14, "howl"),
@@ -36,7 +36,7 @@ public class ItemPotterySherd extends Item {
         MOURNER(16, "mourner"),
         PLENTY(17, "plenty"),
         PRIZE(18, "prize"),
-        SCRAPE(19, "scrape"),
+        //SCRAPE(19, "scrape"),
         SHEAF(20, "sheaf"),
         SHELTER(21, "shelter"),
         SKULL(22, "skull"),
@@ -103,6 +103,6 @@ public class ItemPotterySherd extends Item {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, @Nullable ITooltipFlag flagIn) {
         SherdType type = SherdType.byId(stack.getMetadata());
-        tooltip.add(TextFormatting.GRAY + I18n.translateToLocal("tooltip.ubm.sherd." + type.getName()));
+        //tooltip.add(TextFormatting.GRAY + I18n.translateToLocal("tooltip.ubm.sherd." + type.getName()));
     }
 }

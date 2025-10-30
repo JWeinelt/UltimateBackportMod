@@ -197,6 +197,7 @@ public class ModItems {
             }
         }
 
+        POTTERY_SHERD = new ItemPotterySherd();
         event.getRegistry().register(POTTERY_SHERD);
 
         NETHERITE_SCRAP = new Item()
