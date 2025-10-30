@@ -106,26 +106,7 @@ public class ModItems {
 
     public static Item SPYGLASS;
 
-    public static Item ANGLER_POTTERY_SHERD;
-    public static Item ARCHER_POTTERY_SHERD;
-    public static Item ARMS_UP_POTTERY_SHERD;
-    public static Item BLADE_POTTERY_SHERD;
-    public static Item BURN_POTTERY_SHERD;
-    public static Item BREWER_POTTERY_SHERD;
-    public static Item DANGER_POTTERY_SHERD;
-    public static Item EXPLORER_POTTERY_SHERD;
-    public static Item FRIEND_POTTERY_SHERD;
-    public static Item HEART_POTTERY_SHERD;
-    public static Item HEARTBREAK_POTTERY_SHERD;
-    public static Item HOWL_POTTERY_SHERD;
-    public static Item MINER_POTTERY_SHERD;
-    public static Item MOURNER_POTTERY_SHERD;
-    public static Item PLENTY_POTTERY_SHERD;
-    public static Item PRIZE_POTTERY_SHERD;
-    public static Item SHEAF_POTTERY_SHERD;
-    public static Item SHELTER_POTTERY_SHERD;
-    public static Item SKULL_POTTERY_SHERD;
-    public static Item SNORT_POTTERY_SHERD;
+    public static Item POTTERY_SHERD;
 
     public static Item POWDER_SNOW_BUCKET;
 
@@ -232,6 +213,8 @@ public class ModItems {
             }
         }
 
+        POTTERY_SHERD = new ItemPotterySherd();
+        event.getRegistry().register(POTTERY_SHERD);
 
         NETHERITE_SCRAP = new ModItem("netherite_scrap", TB_NETHER);
         register(NETHERITE_SCRAP, event);

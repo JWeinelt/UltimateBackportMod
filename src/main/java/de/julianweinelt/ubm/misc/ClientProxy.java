@@ -5,7 +5,6 @@ import de.julianweinelt.ubm.blocks.tiles.RenderTileEntityCampfire;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityCampfire;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.items.ModItems;
-import de.julianweinelt.ubm.misc.client.SpyglassOverlayRenderer;
 import de.julianweinelt.ubm.qol.SwimClientHandler;
 import de.julianweinelt.ubm.trims.LayerArmorTrim;
 import de.julianweinelt.ubm.trims.TrimColorHelper;
@@ -25,7 +24,6 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -41,13 +39,12 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
+        ModEntities.registerRenders();
     }
 
     @Override
     public void init(FMLInitializationEvent e) {
-        if (!Loader.isModLoaded("pathfinder")) {
-            Minecraft.getMinecraft().displayGuiScreen(new MissingDependencyScreen());
-        }
+        UBM.getLogger().info("✅ ClientProxy init aufgerufen!");
 
         Map<Class<? extends Entity>, Render<? extends Entity>> renderMap =
                 Minecraft.getMinecraft().getRenderManager().entityRenderMap;
@@ -65,7 +62,6 @@ public class ClientProxy extends CommonProxy {
         ClientEventHandler.registerParticles();
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCampfire.class, new RenderTileEntityCampfire());
 
-        ModEntities.registerRenders();
 
         MinecraftForge.EVENT_BUS.register(new SwimClientHandler());
 

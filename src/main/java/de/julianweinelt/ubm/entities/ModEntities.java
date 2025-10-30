@@ -109,6 +109,7 @@ public class ModEntities {
 
     @SideOnly(Side.CLIENT)
     public static void registerRenders() {
+        UBM.getLogger().info("Registering Renderers");
         RenderingRegistry.registerEntityRenderingHandler(EntityBee.class, renderManager ->
                 new RenderLiving<EntityBee>(renderManager, new ModelBee(), 0.5F) {
                     @Override
@@ -216,6 +217,7 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntityGlowSquid.class, RenderGlowSquid::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityTropicalFish.class, RenderTropicalFish::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityPillager.class, RenderPillager::new);
+        UBM.getLogger().info("Registered Renderers");
     }
 
     @SubscribeEvent
