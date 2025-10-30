@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.blocks;
 
 import de.julianweinelt.ubm.blocks.tiles.TileEntityDecoratedPot;
+import de.julianweinelt.ubm.items.ItemPotterySherd;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockRendererDispatcher;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -23,16 +24,7 @@ public class RenderDecoratedPottery extends FastTESR<TileEntityDecoratedPot> {
 
     static {
         for (int i = 0; i < 24; i++) {
-            PATTERN_TEXTURES[i] = new ResourceLocation("ubm", "textures/blocks/decorated_pot/" + getName(i) + "_pottery_pattern.png");
-        }
-    }
-
-    private static String getName(int id) {
-        switch (id) {
-            case 0: return "angler";
-            case 1: return "howl";
-            case 2: return "snort";
-            default: return "empty";
+            PATTERN_TEXTURES[i] = new ResourceLocation("ubm", "textures/blocks/decorated_pot/" + ItemPotterySherd.SherdType.byId(i).getName() + "_pottery_pattern.png");
         }
     }
 
