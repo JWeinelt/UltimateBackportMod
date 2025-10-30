@@ -60,23 +60,7 @@ public class ModEntities {
         register(EntityPillager.class, "pillager");
         register(EntityPhantom.class, "phantom");
         register(EntityNewVillager.class, "villager");
-        register(EntityHoglin.class, "hoglin");
-        register(EntityZoglin.class, "zoglin");
 
-        register(EntityCreaking.class, "creaking");
-        register(EntitySniffer.class, "sniffer");
-        register(EntityStrider.class, "strider");
-        register(EntityAllay.class, "allay");
-        register(EntityArmadillo.class, "armadillo");
-        register(EntityPanda.class, "panda");
-        register(EntityRavager.class, "ravager");
-        register(EntityPiglin.class, "piglin");
-        register(EntityCamel.class, "camel");
-        register(EntityCat.class, "cat");
-        register(EntityBreeze.class, "breeze");
-        register(EntityWanderingTrader.class, "wandering_trader");
-
-        //TODO: Add piglin brute, zombified piglin, Tadpole, Copper Golem, Boat Variants, Happy Ghast
     }
 
     private static void register(Class<? extends Entity> clazz, String name) {
@@ -188,13 +172,6 @@ public class ModEntities {
                     protected ResourceLocation getEntityTexture(@Nullable EntityDolphin entity) {
                         return new ResourceLocation(MODID, "textures/entity/dolphin.png");
                     }
-
-
-                    @Override
-                    protected void preRenderCallback(@Nullable EntityDolphin entitylivingbaseIn, float partialTickTime) {
-                        float scale = entitylivingbaseIn.isChild() ? 0.5F : 1.0F;
-                        GlStateManager.scale(scale, scale, scale);
-                    }
                 }
         );
         RenderingRegistry.registerEntityRenderingHandler(EntitySalmon.class, renderManager ->
@@ -212,7 +189,6 @@ public class ModEntities {
 
                         float scale = random.nextFloat() * (max - min) + min;
                         //GlStateManager.scale(scale, scale, scale);
-                        //TODO: add scale to salmons
                     }
                 }
         );
@@ -232,88 +208,6 @@ public class ModEntities {
                     }
                 }
         );
-        RenderingRegistry.registerEntityRenderingHandler(EntityHoglin.class, renderManager ->
-                new RenderLiving<EntityHoglin>(renderManager, new ModelHoglin(), 0.5F) {
-                    @Override
-                    protected ResourceLocation getEntityTexture(@Nullable EntityHoglin entity) {
-                        return new ResourceLocation(MODID, "textures/entity/hoglin/hoglin.png");
-                    }
-                }
-        );
-        RenderingRegistry.registerEntityRenderingHandler(EntityZoglin.class, renderManager ->
-                new RenderLiving<EntityZoglin>(renderManager, new ModelHoglin(), 0.5F) {
-                    @Override
-                    protected ResourceLocation getEntityTexture(@Nullable EntityZoglin entity) {
-                        return new ResourceLocation(MODID, "textures/entity/hoglin/zoglin.png");
-                    }
-                }
-        );
-        RenderingRegistry.registerEntityRenderingHandler(EntityWanderingTrader.class, renderManager ->
-                new RenderLiving<EntityWanderingTrader>(renderManager, new ModelVillager(), 0.5F) {
-                    @Override
-                    protected ResourceLocation getEntityTexture(@Nullable EntityWanderingTrader entity) {
-                        return new ResourceLocation(MODID, "textures/entity/wandering_trader.png");
-                    }
-                }
-        );
-        RenderingRegistry.registerEntityRenderingHandler(EntityArmadillo.class, renderManager ->
-                new RenderLiving<EntityArmadillo>(renderManager, new ModelArmadillo(), 0.5F) {
-                    @Override
-                    protected ResourceLocation getEntityTexture(@Nullable EntityArmadillo entity) {
-                        return new ResourceLocation(MODID, "textures/entity/armadillo.png");
-                    }
-                }
-        );
-        RenderingRegistry.registerEntityRenderingHandler(EntityAllay.class, renderManager ->
-                new RenderLiving<EntityAllay>(renderManager, new ModelAllay(), 0.5F) {
-                    @Override
-                    protected ResourceLocation getEntityTexture(@Nullable EntityAllay entity) {
-                        return new ResourceLocation(MODID, "textures/entity/allay/allay.png");
-                    }
-                }
-        );
-        RenderingRegistry.registerEntityRenderingHandler(EntityCreaking.class, renderManager ->
-                new RenderLiving<EntityCreaking>(renderManager, new ModelCreaking(), 0.5F) {
-                    @Override
-                    protected ResourceLocation getEntityTexture(@Nullable EntityCreaking entity) {
-                        return new ResourceLocation(MODID, "textures/entity/creaking/creaking.png");
-                    }
-                }
-        );
-        RenderingRegistry.registerEntityRenderingHandler(EntityRavager.class, renderManager ->
-                new RenderLiving<EntityRavager>(renderManager, new ModelRavager(), 0.5F) {
-                    @Override
-                    protected ResourceLocation getEntityTexture(@Nullable EntityRavager entity) {
-                        return new ResourceLocation(MODID, "textures/entity/illager/ravager.png");
-                    }
-                }
-        );
-        RenderingRegistry.registerEntityRenderingHandler(EntitySniffer.class, renderManager ->
-                new RenderLiving<EntitySniffer>(renderManager, new ModelSniffer(), 0.5F) {
-                    @Override
-                    protected ResourceLocation getEntityTexture(@Nullable EntitySniffer entity) {
-                        return new ResourceLocation(MODID, "textures/entity/sniffer/sniffer.png");
-                    }
-                }
-        );
-        RenderingRegistry.registerEntityRenderingHandler(EntityCamel.class, renderManager ->
-                new RenderLiving<EntityCamel>(renderManager, new ModelCamel(), 0.5F) {
-                    @Override
-                    protected ResourceLocation getEntityTexture(@Nullable EntityCamel entity) {
-                        return new ResourceLocation(MODID, "textures/entity/camel/camel.png");
-                    }
-                }
-        );
-        RenderingRegistry.registerEntityRenderingHandler(EntityBreeze.class, renderManager ->
-                new RenderLiving<EntityBreeze>(renderManager, new ModelBreeze(), 0.5F) {
-                    @Override
-                    protected ResourceLocation getEntityTexture(@Nullable EntityBreeze entity) {
-                        return new ResourceLocation(MODID, "textures/entity/breeze/breeze.png");
-                    }
-                }
-        );
-
-        //TODO: Cat, Panda, Strider, Piglin, Zombified Piglin, Piglin Brute
         RenderingRegistry.registerEntityRenderingHandler(EntityBambooRaft.class, RenderBambooRaft::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityFox.class, RenderFox::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityCustomWolf.class, RenderCustomWolf::new);

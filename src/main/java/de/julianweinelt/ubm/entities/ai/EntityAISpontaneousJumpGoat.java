@@ -20,7 +20,6 @@ public class EntityAISpontaneousJumpGoat extends EntityAIBase {
 
     @Override
     public void startExecuting() {
-        goat.jumping = true;
         goat.playSound(ModSounds.GOAT_JUMP, 1, 1);
         goat.motionY = 0.4D + goat.rand.nextDouble() * 0.5D;
         double dir = goat.rand.nextDouble() * 2 * Math.PI;

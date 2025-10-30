@@ -2,7 +2,6 @@ package de.julianweinelt.ubm.entities;
 
 import de.julianweinelt.ubm.configuration.ModConfig;
 import de.julianweinelt.ubm.entities.ai.EntityAIPhantomAttack;
-import de.julianweinelt.ubm.entities.ai.EntityAIPhantomOrbit;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.monster.EntityMob;
@@ -27,7 +26,6 @@ public class EntityPhantom extends EntityMob implements IMob {
     @Override
     protected void initEntityAI() {
         this.tasks.addTask(1, new EntityAIPhantomAttack(this));
-        this.tasks.addTask(2, new EntityAIPhantomOrbit(this));
         this.targetTasks.addTask(1, new EntityAINearestAttackableTarget<>(this, EntityPlayer.class, true));
     }
 
@@ -46,4 +44,5 @@ public class EntityPhantom extends EntityMob implements IMob {
             this.setFire(8);
         }
     }
+
 }

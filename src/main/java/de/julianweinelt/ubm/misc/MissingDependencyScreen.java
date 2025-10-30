@@ -15,7 +15,9 @@ public class MissingDependencyScreen extends GuiScreen {
         this.drawDefaultBackground();
 
         String title = "Missing Dependency!";
-        String text = "The required mod 'PathfinderAPI' was not found.\nPlease install it to use this mod.";
+        String text = "You need to install the 'Pathfinder API' mod\n" +
+                "to use 'Ultimate Backport' as it provides essential\n" +
+                "things to make the new chat suggestion UI working.";
 
         this.drawCenteredString(this.fontRenderer, title, this.width / 2, this.height / 2 - 30, 0xFF5555);
         for (int i = 0; i < text.split("\n").length; i++) {

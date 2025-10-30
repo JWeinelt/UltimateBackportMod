@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.misc;
 
 import de.julianweinelt.ubm.UBM;
+import de.julianweinelt.ubm.items.ItemPotterySherd;
 import de.julianweinelt.ubm.items.ModItems;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -24,8 +25,18 @@ public class ModModelRegistry {
         Item item = ModItems.SPYGLASS;
         item.addPropertyOverride(new ResourceLocation("in_hand"), (stack, world, entity) -> {
             if (entity == null) return 0.0F;
-            boolean holding = entity.getHeldItemMainhand() == stack || entity.getHeldItemOffhand() == stack;
+            boolean holding = (entity.getHeldItemMainhand() == stack || entity.getHeldItemOffhand() == stack) && entity.getActiveItemStack() == stack;
             return holding ? 1.0F : 0.0F;
         });
+
+        for (ItemPotterySherd.SherdType type : ItemPotterySherd.SherdType.values()) {
+            if (type == ItemPotterySherd.SherdType.UNKNOWN) continue;
+
+            ModelLoader.setCustomModelResourceLocation(
+                    ModItems.POTTERY_SHERD,
+                    type.getId(),
+                    new ModelResourceLocation("ubm:" + type.getName() + "_pottery_sherd", "inventory")
+            );
+        }
     }
 }
