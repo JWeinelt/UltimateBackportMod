@@ -55,6 +55,8 @@ public class UBM {
         logger = event.getModLog();
         instance = this;
 
+        proxy.preInit(event);
+
         configDir = event.getModConfigurationDirectory();
         if (!configDir.exists()) {
             configDir.mkdirs();

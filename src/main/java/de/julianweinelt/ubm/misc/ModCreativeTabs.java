@@ -51,7 +51,7 @@ public class ModCreativeTabs {
     public static final CreativeTabs UBM_TAB_TRAILS_TALES = new CreativeTabs("ubm_tab_trails_tales") {
         @Override
         public ItemStack getTabIconItem() {
-            return new ItemStack(ModItems.ANGLER_POTTERY_SHERD);
+            return new ItemStack(ModItems.CANDLE);
         }
     };
     public static final CreativeTabs UBM_TAB_COPPER_AGE = new CreativeTabs("ubm_tab_copper_age") {
