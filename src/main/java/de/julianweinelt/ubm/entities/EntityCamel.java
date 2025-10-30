@@ -3,7 +3,12 @@ package de.julianweinelt.ubm.entities;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
@@ -16,12 +21,26 @@ public class EntityCamel extends EntityAnimal {
         setSize(1.7F, 2.375F);
     }
 
+    @Override
+    protected void initEntityAI() {
+        super.initEntityAI();
+
+        this.tasks.addTask(0, new EntityAIWander(this, 0.5));
+        this.tasks.addTask(0, new EntityAILookIdle(this));
+    }
+
     @Nullable
     @Override
     public EntityAgeable createChild(@Nonnull EntityAgeable ageAble) {
         EntityCamel child = new EntityCamel(this.world);
         child.setGrowingAge(-24000);
         return child;
+    }
+
+    @Override
+    public boolean isBreedingItem(ItemStack stack) {
+        if (stack.getItem().getRegistryName() == null) return false;
+        return stack.getItem().getRegistryName().equals(Blocks.HAY_BLOCK.getRegistryName());
     }
 
     @Override
