@@ -396,30 +396,30 @@ public class ModItems {
         event.getRegistry().register(SPAWN_EGG_WARDEN);
         event.getRegistry().register(SPAWN_EGG_WOLF);
         event.getRegistry().register(SPAWN_EGG_VILLAGER);
-        event.getRegistry().register(SPAWN_EGG_ALLAY);
-        event.getRegistry().register(SPAWN_EGG_WANDERING_TRADER);
-        event.getRegistry().register(SPAWN_EGG_STRIDER);
-        event.getRegistry().register(SPAWN_EGG_SNIFFER);
-        event.getRegistry().register(SPAWN_EGG_ARMADILLO);
-        event.getRegistry().register(SPAWN_EGG_BREEZE);
-        event.getRegistry().register(SPAWN_EGG_CAMEL);
-        event.getRegistry().register(SPAWN_EGG_CAT);
-        event.getRegistry().register(SPAWN_EGG_HOGLIN);
-        event.getRegistry().register(SPAWN_EGG_PIGLIN);
+        //event.getRegistry().register(SPAWN_EGG_ALLAY);
+        //event.getRegistry().register(SPAWN_EGG_WANDERING_TRADER);
+        //event.getRegistry().register(SPAWN_EGG_STRIDER);
+        //event.getRegistry().register(SPAWN_EGG_SNIFFER);
+        //event.getRegistry().register(SPAWN_EGG_ARMADILLO);
+        //event.getRegistry().register(SPAWN_EGG_BREEZE);
+        //event.getRegistry().register(SPAWN_EGG_CAMEL);
+        //event.getRegistry().register(SPAWN_EGG_CAT);
+        //event.getRegistry().register(SPAWN_EGG_HOGLIN);
+        //event.getRegistry().register(SPAWN_EGG_PIGLIN);
         event.getRegistry().register(SPAWN_EGG_FOX);
-        event.getRegistry().register(SPAWN_EGG_CREAKING);
+        //event.getRegistry().register(SPAWN_EGG_CREAKING);
         event.getRegistry().register(SPAWN_EGG_PHANTOM);
         event.getRegistry().register(SPAWN_EGG_AXOLOTL);
-        event.getRegistry().register(SPAWN_EGG_ZOGLIN);
+        //event.getRegistry().register(SPAWN_EGG_ZOGLIN);
 
         event.getRegistry().register(SPAWN_EGG_COD);
         event.getRegistry().register(SPAWN_EGG_SALMON);
-        event.getRegistry().register(SPAWN_EGG_PUFFERFISH);
+        //event.getRegistry().register(SPAWN_EGG_PUFFERFISH);
         event.getRegistry().register(SPAWN_EGG_TROPICAL_FISH);
         event.getRegistry().register(SPAWN_EGG_GLOW_SQUID);
 
         event.getRegistry().register(SPAWN_EGG_PILLAGER);
-        event.getRegistry().register(SPAWN_EGG_RAVAGER);
+        //event.getRegistry().register(SPAWN_EGG_RAVAGER);
 
         AMETHYST_SHARD = new Item()
                 .setUnlocalizedName("amethyst_shard")
