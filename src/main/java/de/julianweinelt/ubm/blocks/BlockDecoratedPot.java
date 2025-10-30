@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.blocks;
 
 import de.julianweinelt.ubm.blocks.tiles.TileEntityDecoratedPot;
+import de.julianweinelt.ubm.items.ItemPotterySherd;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
