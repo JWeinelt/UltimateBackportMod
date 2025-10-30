@@ -326,47 +326,6 @@ public class ModItems {
 
         register(NETHERITE_BOOTS, event);
 
-
-
-        ANGLER_POTTERY_SHERD = new ModItem("angler_pottery_sherd", TB_TRAILS_TALES);
-        ARCHER_POTTERY_SHERD = new ModItem("archer_pottery_sherd", TB_TRAILS_TALES);
-
-        ARMS_UP_POTTERY_SHERD = new ModItem("arms_up_pottery_sherd", TB_TRAILS_TALES);
-
-        BLADE_POTTERY_SHERD = new ModItem("blade_pottery_sherd", TB_TRAILS_TALES);
-
-        BURN_POTTERY_SHERD = new ModItem("burn_pottery_sherd", TB_TRAILS_TALES);
-
-        BREWER_POTTERY_SHERD = new ModItem("brewer_pottery_sherd", TB_TRAILS_TALES);
-
-        DANGER_POTTERY_SHERD = new ModItem("danger_pottery_sherd", TB_TRAILS_TALES);
-
-        EXPLORER_POTTERY_SHERD = new ModItem("explorer_pottery_sherd", TB_TRAILS_TALES);
-
-        FRIEND_POTTERY_SHERD = new ModItem("friend_pottery_sherd", TB_TRAILS_TALES);
-
-        HEART_POTTERY_SHERD = new ModItem("heart_pottery_sherd", TB_TRAILS_TALES);
-
-        HEARTBREAK_POTTERY_SHERD = new ModItem("heartbreak_pottery_sherd", TB_TRAILS_TALES);
-
-        HOWL_POTTERY_SHERD = new ModItem("howl_pottery_sherd", TB_TRAILS_TALES);
-
-        MINER_POTTERY_SHERD = new ModItem("miner_pottery_sherd", TB_TRAILS_TALES);
-
-        MOURNER_POTTERY_SHERD = new ModItem("mourner_pottery_sherd", TB_TRAILS_TALES);
-
-        PLENTY_POTTERY_SHERD = new ModItem("plenty_pottery_sherd", TB_TRAILS_TALES);
-
-        PRIZE_POTTERY_SHERD = new ModItem("prize_pottery_sherd", TB_TRAILS_TALES);
-
-        SHEAF_POTTERY_SHERD = new ModItem("sheaf_pottery_sherd", TB_TRAILS_TALES);
-
-        SHELTER_POTTERY_SHERD = new ModItem("shelter_pottery_sherd", TB_TRAILS_TALES);
-
-        SKULL_POTTERY_SHERD = new ModItem("skull_pottery_sherd", TB_TRAILS_TALES);
-
-        SNORT_POTTERY_SHERD = new ModItem("snort_pottery_sherd", TB_TRAILS_TALES);
-
         POWDER_SNOW_BUCKET = new Item()
                 .setUnlocalizedName("powder_snow_bucket")
                 .setRegistryName("powder_snow_bucket")
@@ -405,46 +364,6 @@ public class ModItems {
         SWEET_BERRY = new ItemSweetBerry();
         GLOW_BERRIES = new ItemGlowBerry();
         BAMBOO_RAFT = new ItemBambooRaft();
-
-        register(ANGLER_POTTERY_SHERD, event);
-
-        register(ARCHER_POTTERY_SHERD, event);
-
-        register(ARMS_UP_POTTERY_SHERD, event);
-
-        register(BLADE_POTTERY_SHERD, event);
-
-        register(BREWER_POTTERY_SHERD, event);
-
-        register(BURN_POTTERY_SHERD, event);
-
-        register(DANGER_POTTERY_SHERD, event);
-
-        register(EXPLORER_POTTERY_SHERD, event);
-
-        register(FRIEND_POTTERY_SHERD, event);
-
-        register(HEART_POTTERY_SHERD, event);
-
-        register(HEARTBREAK_POTTERY_SHERD, event);
-
-        register(HOWL_POTTERY_SHERD, event);
-
-        register(MINER_POTTERY_SHERD, event);
-
-        register(MOURNER_POTTERY_SHERD, event);
-
-        register(PLENTY_POTTERY_SHERD, event);
-
-        register(PRIZE_POTTERY_SHERD, event);
-
-        register(SHEAF_POTTERY_SHERD, event);
-
-        register(SHELTER_POTTERY_SHERD, event);
-
-        register(SKULL_POTTERY_SHERD, event);
-
-        register(SNORT_POTTERY_SHERD, event);
 
         register(POWDER_SNOW_BUCKET, event);
 
