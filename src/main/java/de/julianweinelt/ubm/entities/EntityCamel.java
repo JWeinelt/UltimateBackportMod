@@ -8,8 +8,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class EntityCamel extends EntityAnimal {
 
@@ -32,12 +30,12 @@ public class EntityCamel extends EntityAnimal {
     }
 
     @Override
-    protected boolean canFitPassenger(Entity passenger) {
+    protected boolean canFitPassenger(@Nonnull Entity passenger) {
         return this.getPassengers().size() < 2 && passenger instanceof EntityLivingBase;
     }
 
     @Override
-    public boolean isPassenger(Entity entityIn) {
+    public boolean isPassenger(@Nonnull Entity entityIn) {
         return this.getPassengers().contains(entityIn);
     }
 
