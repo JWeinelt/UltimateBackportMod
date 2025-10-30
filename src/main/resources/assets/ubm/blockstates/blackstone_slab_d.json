@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"half=bottom,variant=default": {
+			"model": "ubm:blackstone"
+		},
+		"half=top,variant=default": {
+			"model": "ubm:blackstone"
+		}
+	}
+}

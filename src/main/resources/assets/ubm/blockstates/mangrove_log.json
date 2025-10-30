@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "ubm:mangrove_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ubm:mangrove_log"
+    },
+    "axis=none": {
+      "model": "ubm:mangrove_log"
+    },
+    "axis=z": {
+      "model": "ubm:mangrove_log",
+      "x": 90
+    }
+  }
+}

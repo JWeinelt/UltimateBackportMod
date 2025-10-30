@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ubm:copper_nugget"
+    }
+  },
+  "result": {
+    "item": "ubm:copper_ingot",
+    "count": 1
+  }
+}

@@ -25,8 +25,6 @@ public class EntityGoat extends EntityAnimal {
     private int ramCooldown = 0;
     public boolean screaming = false;
 
-    public boolean jumping = false;
-
     public Random rand = new Random();
 
     public EntityGoat(World worldIn) {
@@ -34,13 +32,6 @@ public class EntityGoat extends EntityAnimal {
         this.setSize(0.9F, 1.3F);
         this.experienceValue = 2;
         screaming = rand.nextBoolean();
-    }
-
-    @Override
-    public void fall(float distance, float damageMultiplier) {
-        if (!this.jumping) {
-            super.fall(distance, damageMultiplier);
-        } else this.jumping = false;
     }
 
     @Override

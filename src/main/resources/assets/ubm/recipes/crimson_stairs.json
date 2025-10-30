@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X  ",
+    "XX ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ubm:crimson_planks"
+    }
+  },
+  "result": {
+    "item": "ubm:crimson_stairs",
+    "count": 4
+  }
+}

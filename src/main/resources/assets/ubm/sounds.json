@@ -101,8 +101,6 @@
       }
     ]
   },
-
-
   "mob.frog.death": {
     "category": "neutral",
     "sounds": [
@@ -279,8 +277,6 @@
       }
     ]
   },
-
-
   "mob.goat.death": {
     "category": "neutral",
     "sounds": [
@@ -607,7 +603,6 @@
       }
     ]
   },
-
   "mob.dolphin.attack": {
     "category": "neutral",
     "sounds": [
@@ -625,7 +620,6 @@
       }
     ]
   },
-
   "mob.dolphin.blowhole": {
     "category": "neutral",
     "sounds": [
@@ -639,7 +633,6 @@
       }
     ]
   },
-
   "mob.dolphin.death": {
     "category": "neutral",
     "sounds": [
@@ -653,7 +646,6 @@
       }
     ]
   },
-
   "mob.dolphin.eat": {
     "category": "neutral",
     "sounds": [
@@ -671,7 +663,6 @@
       }
     ]
   },
-
   "mob.dolphin.hurt": {
     "category": "neutral",
     "sounds": [
@@ -689,7 +680,6 @@
       }
     ]
   },
-
   "mob.dolphin.idle_water": {
     "category": "neutral",
     "sounds": [
@@ -735,7 +725,6 @@
       }
     ]
   },
-
   "mob.dolphin.idle": {
     "category": "neutral",
     "sounds": [
@@ -765,7 +754,6 @@
       }
     ]
   },
-
   "mob.dolphin.jump": {
     "category": "neutral",
     "sounds": [
@@ -783,7 +771,6 @@
       }
     ]
   },
-
   "mob.dolphin.play": {
     "category": "neutral",
     "sounds": [
@@ -797,7 +784,6 @@
       }
     ]
   },
-
   "mob.dolphin.splash": {
     "category": "neutral",
     "sounds": [
@@ -815,7 +801,6 @@
       }
     ]
   },
-
   "mob.dolphin.swim": {
     "category": "neutral",
     "sounds": [
@@ -837,7 +822,6 @@
       }
     ]
   },
-
   "mob.wandering_trader.appeared": {
     "category": "neutral",
     "sounds": [
@@ -1024,7 +1008,6 @@
       }
     ]
   },
-
   "mob.ravager.bite": {
     "category": "neutral",
     "sounds": [
@@ -3114,8 +3097,6 @@
       }
     ]
   },
-
-
   "block.beehive.enter": {
     "category": "neutral",
     "sounds": [
@@ -3134,7 +3115,6 @@
       }
     ]
   },
-
   "item.crossbow.loading.end": {
     "category": "neutral",
     "sounds": [
@@ -3206,6 +3186,1027 @@
         "name": "ubm:block/smithing_table/smithing_table3",
         "stream": false
       }
+    ]
+  },
+  "block.amethyst.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/amethyst/break1",
+      "ubm:block/amethyst/break2",
+      "ubm:block/amethyst/break3",
+      "ubm:block/amethyst/break4"
+    ]
+  },
+  "block.amethyst.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/amethyst/step1",
+      "ubm:block/amethyst/step10",
+      "ubm:block/amethyst/step11",
+      "ubm:block/amethyst/step12",
+      "ubm:block/amethyst/step13",
+      "ubm:block/amethyst/step14",
+      "ubm:block/amethyst/step2",
+      "ubm:block/amethyst/step3",
+      "ubm:block/amethyst/step4",
+      "ubm:block/amethyst/step5",
+      "ubm:block/amethyst/step6",
+      "ubm:block/amethyst/step7",
+      "ubm:block/amethyst/step8",
+      "ubm:block/amethyst/step9"
+    ]
+  },
+  "block.amethyst.place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/amethyst/place1",
+      "ubm:block/amethyst/place2",
+      "ubm:block/amethyst/place3",
+      "ubm:block/amethyst/place4"
+    ]
+  },
+  "block.amethyst.shimmer": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/amethyst/shimmer"
+    ]
+  },
+  "block.amethyst_cluster.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/amethyst_cluster/break1",
+      "ubm:block/amethyst_cluster/break2",
+      "ubm:block/amethyst_cluster/break3",
+      "ubm:block/amethyst_cluster/break4"
+    ]
+  },
+  "block.amethyst_cluster.place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/amethyst_cluster/place1",
+      "ubm:block/amethyst_cluster/place2",
+      "ubm:block/amethyst_cluster/place3",
+      "ubm:block/amethyst_cluster/place4"
+    ]
+  },
+  "block.ancient_debris.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/ancient_debris/break1",
+      "ubm:block/ancient_debris/break2",
+      "ubm:block/ancient_debris/break3",
+      "ubm:block/ancient_debris/break4",
+      "ubm:block/ancient_debris/break5"
+    ]
+  },
+  "block.azalea.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/azalea/break1",
+      "ubm:block/azalea/break2",
+      "ubm:block/azalea/break3",
+      "ubm:block/azalea/break4",
+      "ubm:block/azalea/break5",
+      "ubm:block/azalea/break6"
+    ]
+  },
+  "block.azalea.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/azalea/step1",
+      "ubm:block/azalea/step2",
+      "ubm:block/azalea/step3",
+      "ubm:block/azalea/step4",
+      "ubm:block/azalea/step5",
+      "ubm:block/azalea/step6"
+    ]
+  },
+  "block.azalea_leaves.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/azalea_leaves/break1",
+      "ubm:block/azalea_leaves/break2",
+      "ubm:block/azalea_leaves/break3",
+      "ubm:block/azalea_leaves/break4",
+      "ubm:block/azalea_leaves/break5",
+      "ubm:block/azalea_leaves/break6",
+      "ubm:block/azalea_leaves/break7"
+    ]
+  },
+  "block.azalea_leaves.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/azalea_leaves/step1",
+      "ubm:block/azalea_leaves/step2",
+      "ubm:block/azalea_leaves/step3",
+      "ubm:block/azalea_leaves/step4",
+      "ubm:block/azalea_leaves/step5"
+    ]
+  },
+  "block.bamboo.sapling_place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/bamboo/sapling_place1",
+      "ubm:block/bamboo/sapling_place2",
+      "ubm:block/bamboo/sapling_place3",
+      "ubm:block/bamboo/sapling_place4",
+      "ubm:block/bamboo/sapling_place5",
+      "ubm:block/bamboo/sapling_place6"
+    ]
+  },
+  "block.bamboo.sapling_hit": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/bamboo/sapling_hit1",
+      "ubm:block/bamboo/sapling_hit2",
+      "ubm:block/bamboo/sapling_hit3",
+      "ubm:block/bamboo/sapling_hit4",
+      "ubm:block/bamboo/sapling_hit5"
+    ]
+  },
+  "block.bamboo.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/bamboo/step1",
+      "ubm:block/bamboo/step2",
+      "ubm:block/bamboo/step3",
+      "ubm:block/bamboo/step4",
+      "ubm:block/bamboo/step5",
+      "ubm:block/bamboo/step6"
+    ]
+  },
+  "block.bamboo.place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/bamboo/place1",
+      "ubm:block/bamboo/place2",
+      "ubm:block/bamboo/place3",
+      "ubm:block/bamboo/place4",
+      "ubm:block/bamboo/place5",
+      "ubm:block/bamboo/place6"
+    ]
+  },
+  "block.barrel.close": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/barrel/close"
+    ]
+  },
+  "block.barrel.open": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/barrel/open1",
+      "ubm:block/barrel/open2"
+    ]
+  },
+  "block.basalt.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/basalt/break1",
+      "ubm:block/basalt/break2",
+      "ubm:block/basalt/break3",
+      "ubm:block/basalt/break4",
+      "ubm:block/basalt/break5"
+    ]
+  },
+  "block.basalt.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/basalt/step1",
+      "ubm:block/basalt/step2",
+      "ubm:block/basalt/step3",
+      "ubm:block/basalt/step4",
+      "ubm:block/basalt/step5",
+      "ubm:block/basalt/step6"
+    ]
+  },
+  "block.beehive.shear": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/beehive/shear"
+    ]
+  },
+  "block.beehive.work": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/beehive/work1",
+      "ubm:block/beehive/work2",
+      "ubm:block/beehive/work3",
+      "ubm:block/beehive/work4"
+    ]
+  },
+  "block.beehive.drip": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/beehive/drip1",
+      "ubm:block/beehive/drip2",
+      "ubm:block/beehive/drip3",
+      "ubm:block/beehive/drip4",
+      "ubm:block/beehive/drip5",
+      "ubm:block/beehive/drip6"
+    ]
+  },
+  "block.bell.bell_use": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/bell/bell_use01",
+      "ubm:block/bell/bell_use02"
+    ]
+  },
+  "block.bell.resonate": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/bell/resonate"
+    ]
+  },
+  "block.big_dripleaf.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/big_dripleaf/break1",
+      "ubm:block/big_dripleaf/break2",
+      "ubm:block/big_dripleaf/break3",
+      "ubm:block/big_dripleaf/break4",
+      "ubm:block/big_dripleaf/break5",
+      "ubm:block/big_dripleaf/break6"
+    ]
+  },
+  "block.big_dripleaf.tilt_up": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/big_dripleaf/tilt_up1",
+      "ubm:block/big_dripleaf/tilt_up2",
+      "ubm:block/big_dripleaf/tilt_up3",
+      "ubm:block/big_dripleaf/tilt_up4"
+    ]
+  },
+  "block.big_dripleaf.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/big_dripleaf/step1",
+      "ubm:block/big_dripleaf/step2",
+      "ubm:block/big_dripleaf/step3",
+      "ubm:block/big_dripleaf/step4",
+      "ubm:block/big_dripleaf/step5",
+      "ubm:block/big_dripleaf/step6"
+    ]
+  },
+  "block.big_dripleaf.tilt_down": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/big_dripleaf/tilt_down1",
+      "ubm:block/big_dripleaf/tilt_down2",
+      "ubm:block/big_dripleaf/tilt_down3",
+      "ubm:block/big_dripleaf/tilt_down4",
+      "ubm:block/big_dripleaf/tilt_down5"
+    ]
+  },
+  "block.blastfurnace.blastfurnace": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/blastfurnace/blastfurnace1",
+      "ubm:block/blastfurnace/blastfurnace2",
+      "ubm:block/blastfurnace/blastfurnace3",
+      "ubm:block/blastfurnace/blastfurnace4",
+      "ubm:block/blastfurnace/blastfurnace5"
+    ]
+  },
+  "block.calcite.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/calcite/break1",
+      "ubm:block/calcite/break2",
+      "ubm:block/calcite/break3",
+      "ubm:block/calcite/break4"
+    ]
+  },
+  "block.calcite.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/calcite/step1",
+      "ubm:block/calcite/step2",
+      "ubm:block/calcite/step3",
+      "ubm:block/calcite/step4",
+      "ubm:block/calcite/step5",
+      "ubm:block/calcite/step6"
+    ]
+  },
+  "block.calcite.place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/calcite/place1",
+      "ubm:block/calcite/place2",
+      "ubm:block/calcite/place3",
+      "ubm:block/calcite/place4"
+    ]
+  },
+  "block.campfire.crackle": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/campfire/crackle1",
+      "ubm:block/campfire/crackle2",
+      "ubm:block/campfire/crackle3",
+      "ubm:block/campfire/crackle4",
+      "ubm:block/campfire/crackle5",
+      "ubm:block/campfire/crackle6"
+    ]
+  },
+  "block.candle.extinguish": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/candle/extinguish1",
+      "ubm:block/candle/extinguish2",
+      "ubm:block/candle/extinguish3"
+    ]
+  },
+  "block.candle.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/candle/break1",
+      "ubm:block/candle/break2",
+      "ubm:block/candle/break3",
+      "ubm:block/candle/break4",
+      "ubm:block/candle/break5"
+    ]
+  },
+  "block.candle.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/candle/step1",
+      "ubm:block/candle/step2",
+      "ubm:block/candle/step3",
+      "ubm:block/candle/step4",
+      "ubm:block/candle/step5"
+    ]
+  },
+  "block.candle.ambient": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/candle/ambient1",
+      "ubm:block/candle/ambient2",
+      "ubm:block/candle/ambient3",
+      "ubm:block/candle/ambient4",
+      "ubm:block/candle/ambient5",
+      "ubm:block/candle/ambient6",
+      "ubm:block/candle/ambient7",
+      "ubm:block/candle/ambient8",
+      "ubm:block/candle/ambient9"
+    ]
+  },
+  "block.chain.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/chain/break1",
+      "ubm:block/chain/break2",
+      "ubm:block/chain/break3",
+      "ubm:block/chain/break4"
+    ]
+  },
+  "block.chain.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/chain/step1",
+      "ubm:block/chain/step2",
+      "ubm:block/chain/step3",
+      "ubm:block/chain/step4",
+      "ubm:block/chain/step5",
+      "ubm:block/chain/step6"
+    ]
+  },
+  "block.composter.fill_success": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/composter/fill_success1",
+      "ubm:block/composter/fill_success2",
+      "ubm:block/composter/fill_success3",
+      "ubm:block/composter/fill_success4"
+    ]
+  },
+  "block.composter.ready": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/composter/ready1",
+      "ubm:block/composter/ready2",
+      "ubm:block/composter/ready3",
+      "ubm:block/composter/ready4"
+    ]
+  },
+  "block.composter.fill": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/composter/fill1",
+      "ubm:block/composter/fill2",
+      "ubm:block/composter/fill3",
+      "ubm:block/composter/fill4"
+    ]
+  },
+  "block.composter.empty": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/composter/empty1",
+      "ubm:block/composter/empty2",
+      "ubm:block/composter/empty3"
+    ]
+  },
+  "block.conduit.attack": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/conduit/attack1",
+      "ubm:block/conduit/attack2",
+      "ubm:block/conduit/attack3"
+    ]
+  },
+  "block.conduit.activate": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/conduit/activate"
+    ]
+  },
+  "block.conduit.short": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/conduit/short1",
+      "ubm:block/conduit/short2",
+      "ubm:block/conduit/short3",
+      "ubm:block/conduit/short4",
+      "ubm:block/conduit/short5",
+      "ubm:block/conduit/short6",
+      "ubm:block/conduit/short7",
+      "ubm:block/conduit/short8",
+      "ubm:block/conduit/short9"
+    ]
+  },
+  "block.conduit.ambient": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/conduit/ambient"
+    ]
+  },
+  "block.conduit.deactivate": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/conduit/deactivate"
+    ]
+  },
+  "block.copper.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/copper/break1",
+      "ubm:block/copper/break2",
+      "ubm:block/copper/break3",
+      "ubm:block/copper/break4"
+    ]
+  },
+  "block.copper.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/copper/step1",
+      "ubm:block/copper/step2",
+      "ubm:block/copper/step3",
+      "ubm:block/copper/step4",
+      "ubm:block/copper/step5",
+      "ubm:block/copper/step6"
+    ]
+  },
+  "block.deepslate.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/deepslate/break1",
+      "ubm:block/deepslate/break2",
+      "ubm:block/deepslate/break3",
+      "ubm:block/deepslate/break4"
+    ]
+  },
+  "block.deepslate.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/deepslate/step1",
+      "ubm:block/deepslate/step2",
+      "ubm:block/deepslate/step3",
+      "ubm:block/deepslate/step4",
+      "ubm:block/deepslate/step5",
+      "ubm:block/deepslate/step6"
+    ]
+  },
+  "block.deepslate.place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/deepslate/place1",
+      "ubm:block/deepslate/place2",
+      "ubm:block/deepslate/place3",
+      "ubm:block/deepslate/place4",
+      "ubm:block/deepslate/place5",
+      "ubm:block/deepslate/place6"
+    ]
+  },
+  "block.deepslate_bricks.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/deepslate_bricks/step1",
+      "ubm:block/deepslate_bricks/step2",
+      "ubm:block/deepslate_bricks/step3",
+      "ubm:block/deepslate_bricks/step4",
+      "ubm:block/deepslate_bricks/step5"
+    ]
+  },
+  "block.deepslate_bricks.place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/deepslate_bricks/place1",
+      "ubm:block/deepslate_bricks/place2",
+      "ubm:block/deepslate_bricks/place3",
+      "ubm:block/deepslate_bricks/place4",
+      "ubm:block/deepslate_bricks/place5",
+      "ubm:block/deepslate_bricks/place6"
+    ]
+  },
+  "block.dripstone.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/dripstone/break1",
+      "ubm:block/dripstone/break2",
+      "ubm:block/dripstone/break3",
+      "ubm:block/dripstone/break4",
+      "ubm:block/dripstone/break5"
+    ]
+  },
+  "block.dripstone.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/dripstone/step1",
+      "ubm:block/dripstone/step2",
+      "ubm:block/dripstone/step3",
+      "ubm:block/dripstone/step4",
+      "ubm:block/dripstone/step5",
+      "ubm:block/dripstone/step6"
+    ]
+  },
+  "block.fletching_table.fletching_table": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/fletching_table/fletching_table1",
+      "ubm:block/fletching_table/fletching_table2"
+    ]
+  },
+  "block.grindstone.grindstone": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/grindstone/grindstone1",
+      "ubm:block/grindstone/grindstone2",
+      "ubm:block/grindstone/grindstone3"
+    ]
+  },
+  "block.honeyblock.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/honeyblock/break1",
+      "ubm:block/honeyblock/break2",
+      "ubm:block/honeyblock/break3",
+      "ubm:block/honeyblock/break4",
+      "ubm:block/honeyblock/break5"
+    ]
+  },
+  "block.honeyblock.slide": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/honeyblock/slide1",
+      "ubm:block/honeyblock/slide2",
+      "ubm:block/honeyblock/slide3",
+      "ubm:block/honeyblock/slide4"
+    ]
+  },
+  "block.honeyblock.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/honeyblock/step1",
+      "ubm:block/honeyblock/step2",
+      "ubm:block/honeyblock/step3",
+      "ubm:block/honeyblock/step4",
+      "ubm:block/honeyblock/step5"
+    ]
+  },
+  "block.lantern.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/lantern/break1",
+      "ubm:block/lantern/break2",
+      "ubm:block/lantern/break3",
+      "ubm:block/lantern/break4",
+      "ubm:block/lantern/break5",
+      "ubm:block/lantern/break6"
+    ]
+  },
+  "block.lantern.place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/lantern/place1",
+      "ubm:block/lantern/place2",
+      "ubm:block/lantern/place3",
+      "ubm:block/lantern/place4",
+      "ubm:block/lantern/place5",
+      "ubm:block/lantern/place6"
+    ]
+  },
+  "block.lodestone.lock": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/lodestone/lock1",
+      "ubm:block/lodestone/lock2"
+    ]
+  },
+  "block.lodestone.place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/lodestone/place1",
+      "ubm:block/lodestone/place2",
+      "ubm:block/lodestone/place3",
+      "ubm:block/lodestone/place4"
+    ]
+  },
+  "block.moss.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/moss/break1",
+      "ubm:block/moss/break2",
+      "ubm:block/moss/break3",
+      "ubm:block/moss/break4",
+      "ubm:block/moss/break5"
+    ]
+  },
+  "block.moss.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/moss/step1",
+      "ubm:block/moss/step2",
+      "ubm:block/moss/step3",
+      "ubm:block/moss/step4",
+      "ubm:block/moss/step5",
+      "ubm:block/moss/step6"
+    ]
+  },
+  "block.netherite.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/netherite/break1",
+      "ubm:block/netherite/break2",
+      "ubm:block/netherite/break3",
+      "ubm:block/netherite/break4"
+    ]
+  },
+  "block.netherite.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/netherite/step1",
+      "ubm:block/netherite/step2",
+      "ubm:block/netherite/step3",
+      "ubm:block/netherite/step4",
+      "ubm:block/netherite/step5",
+      "ubm:block/netherite/step6"
+    ]
+  },
+  "block.nylium.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/nylium/break1",
+      "ubm:block/nylium/break2",
+      "ubm:block/nylium/break3",
+      "ubm:block/nylium/break4",
+      "ubm:block/nylium/break5",
+      "ubm:block/nylium/break6"
+    ]
+  },
+  "block.nylium.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/nylium/step1",
+      "ubm:block/nylium/step2",
+      "ubm:block/nylium/step3",
+      "ubm:block/nylium/step4",
+      "ubm:block/nylium/step5",
+      "ubm:block/nylium/step6"
+    ]
+  },
+  "block.pointed_dripstone.drip_lava": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/pointed_dripstone/drip_lava1",
+      "ubm:block/pointed_dripstone/drip_lava2",
+      "ubm:block/pointed_dripstone/drip_lava3",
+      "ubm:block/pointed_dripstone/drip_lava4",
+      "ubm:block/pointed_dripstone/drip_lava5",
+      "ubm:block/pointed_dripstone/drip_lava6"
+    ]
+  },
+  "block.pointed_dripstone.drip_lava_cauldron": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/pointed_dripstone/drip_lava_cauldron1",
+      "ubm:block/pointed_dripstone/drip_lava_cauldron2",
+      "ubm:block/pointed_dripstone/drip_lava_cauldron3",
+      "ubm:block/pointed_dripstone/drip_lava_cauldron4"
+    ]
+  },
+  "block.pointed_dripstone.land": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/pointed_dripstone/land1",
+      "ubm:block/pointed_dripstone/land2",
+      "ubm:block/pointed_dripstone/land3",
+      "ubm:block/pointed_dripstone/land4",
+      "ubm:block/pointed_dripstone/land5"
+    ]
+  },
+  "block.pointed_dripstone.drip_water": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/pointed_dripstone/drip_water1",
+      "ubm:block/pointed_dripstone/drip_water10",
+      "ubm:block/pointed_dripstone/drip_water11",
+      "ubm:block/pointed_dripstone/drip_water12",
+      "ubm:block/pointed_dripstone/drip_water13",
+      "ubm:block/pointed_dripstone/drip_water14",
+      "ubm:block/pointed_dripstone/drip_water15",
+      "ubm:block/pointed_dripstone/drip_water2",
+      "ubm:block/pointed_dripstone/drip_water3",
+      "ubm:block/pointed_dripstone/drip_water4",
+      "ubm:block/pointed_dripstone/drip_water5",
+      "ubm:block/pointed_dripstone/drip_water6",
+      "ubm:block/pointed_dripstone/drip_water7",
+      "ubm:block/pointed_dripstone/drip_water8",
+      "ubm:block/pointed_dripstone/drip_water9"
+    ]
+  },
+  "block.pointed_dripstone.drip_water_cauldron": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/pointed_dripstone/drip_water_cauldron1",
+      "ubm:block/pointed_dripstone/drip_water_cauldron2",
+      "ubm:block/pointed_dripstone/drip_water_cauldron3",
+      "ubm:block/pointed_dripstone/drip_water_cauldron4",
+      "ubm:block/pointed_dripstone/drip_water_cauldron5",
+      "ubm:block/pointed_dripstone/drip_water_cauldron6",
+      "ubm:block/pointed_dripstone/drip_water_cauldron7",
+      "ubm:block/pointed_dripstone/drip_water_cauldron8"
+    ]
+  },
+  "block.powder_snow.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/powder_snow/break1",
+      "ubm:block/powder_snow/break2",
+      "ubm:block/powder_snow/break3",
+      "ubm:block/powder_snow/break4",
+      "ubm:block/powder_snow/break5",
+      "ubm:block/powder_snow/break6",
+      "ubm:block/powder_snow/break7"
+    ]
+  },
+  "block.powder_snow.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/powder_snow/step1",
+      "ubm:block/powder_snow/step10",
+      "ubm:block/powder_snow/step2",
+      "ubm:block/powder_snow/step3",
+      "ubm:block/powder_snow/step4",
+      "ubm:block/powder_snow/step5",
+      "ubm:block/powder_snow/step6",
+      "ubm:block/powder_snow/step7",
+      "ubm:block/powder_snow/step8",
+      "ubm:block/powder_snow/step9"
+    ]
+  },
+  "block.respawn_anchor.set_spawn": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/respawn_anchor/set_spawn1",
+      "ubm:block/respawn_anchor/set_spawn2",
+      "ubm:block/respawn_anchor/set_spawn3"
+    ]
+  },
+  "block.respawn_anchor.charge": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/respawn_anchor/charge1",
+      "ubm:block/respawn_anchor/charge2",
+      "ubm:block/respawn_anchor/charge3"
+    ]
+  },
+  "block.respawn_anchor.ambient": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/respawn_anchor/ambient1",
+      "ubm:block/respawn_anchor/ambient2",
+      "ubm:block/respawn_anchor/ambient3"
+    ]
+  },
+  "block.respawn_anchor.deplete": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/respawn_anchor/deplete1",
+      "ubm:block/respawn_anchor/deplete2"
+    ]
+  },
+  "block.rooted_dirt.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/rooted_dirt/break1",
+      "ubm:block/rooted_dirt/break2",
+      "ubm:block/rooted_dirt/break3",
+      "ubm:block/rooted_dirt/break4"
+    ]
+  },
+  "block.rooted_dirt.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/rooted_dirt/step1",
+      "ubm:block/rooted_dirt/step2",
+      "ubm:block/rooted_dirt/step3",
+      "ubm:block/rooted_dirt/step4",
+      "ubm:block/rooted_dirt/step5",
+      "ubm:block/rooted_dirt/step6"
+    ]
+  },
+  "block.scaffold.place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/scaffold/place1",
+      "ubm:block/scaffold/place2",
+      "ubm:block/scaffold/place3",
+      "ubm:block/scaffold/place4"
+    ]
+  },
+  "block.sculk.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/sculk/step1",
+      "ubm:block/sculk/step2",
+      "ubm:block/sculk/step3",
+      "ubm:block/sculk/step4",
+      "ubm:block/sculk/step5",
+      "ubm:block/sculk/step6"
+    ]
+  },
+  "block.sculk_sensor.sculk_clicking_stop": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/sculk_sensor/sculk_clicking_stop1",
+      "ubm:block/sculk_sensor/sculk_clicking_stop2",
+      "ubm:block/sculk_sensor/sculk_clicking_stop3",
+      "ubm:block/sculk_sensor/sculk_clicking_stop4",
+      "ubm:block/sculk_sensor/sculk_clicking_stop5"
+    ]
+  },
+  "block.sculk_sensor.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/sculk_sensor/break1",
+      "ubm:block/sculk_sensor/break2",
+      "ubm:block/sculk_sensor/break3",
+      "ubm:block/sculk_sensor/break4",
+      "ubm:block/sculk_sensor/break5"
+    ]
+  },
+  "block.sculk_sensor.place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/sculk_sensor/place1",
+      "ubm:block/sculk_sensor/place2",
+      "ubm:block/sculk_sensor/place3",
+      "ubm:block/sculk_sensor/place4",
+      "ubm:block/sculk_sensor/place5"
+    ]
+  },
+  "block.sculk_sensor.sculk_clicking": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/sculk_sensor/sculk_clicking1",
+      "ubm:block/sculk_sensor/sculk_clicking2",
+      "ubm:block/sculk_sensor/sculk_clicking3",
+      "ubm:block/sculk_sensor/sculk_clicking4",
+      "ubm:block/sculk_sensor/sculk_clicking5",
+      "ubm:block/sculk_sensor/sculk_clicking6"
+    ]
+  },
+  "block.shroomlight.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/shroomlight/break1",
+      "ubm:block/shroomlight/break2",
+      "ubm:block/shroomlight/break3",
+      "ubm:block/shroomlight/break4",
+      "ubm:block/shroomlight/break5"
+    ]
+  },
+  "block.shroomlight.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/shroomlight/step1",
+      "ubm:block/shroomlight/step2",
+      "ubm:block/shroomlight/step3",
+      "ubm:block/shroomlight/step4",
+      "ubm:block/shroomlight/step5",
+      "ubm:block/shroomlight/step6"
+    ]
+  },
+  "block.smithing_table.smithing_table": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/smithing_table/smithing_table1",
+      "ubm:block/smithing_table/smithing_table2",
+      "ubm:block/smithing_table/smithing_table3"
+    ]
+  },
+  "block.smoker.smoker": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/smoker/smoker1",
+      "ubm:block/smoker/smoker2",
+      "ubm:block/smoker/smoker3",
+      "ubm:block/smoker/smoker4",
+      "ubm:block/smoker/smoker5"
+    ]
+  },
+  "block.soul_soil.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/soul_soil/break1",
+      "ubm:block/soul_soil/break2",
+      "ubm:block/soul_soil/break3",
+      "ubm:block/soul_soil/break4",
+      "ubm:block/soul_soil/break5",
+      "ubm:block/soul_soil/break6"
+    ]
+  },
+  "block.soul_soil.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/soul_soil/step1",
+      "ubm:block/soul_soil/step2",
+      "ubm:block/soul_soil/step3",
+      "ubm:block/soul_soil/step4",
+      "ubm:block/soul_soil/step5"
+    ]
+  },
+  "block.spore_blossom.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/spore_blossom/break1",
+      "ubm:block/spore_blossom/break2",
+      "ubm:block/spore_blossom/break3",
+      "ubm:block/spore_blossom/break4",
+      "ubm:block/spore_blossom/break5"
+    ]
+  },
+  "block.spore_blossom.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/spore_blossom/step1",
+      "ubm:block/spore_blossom/step2",
+      "ubm:block/spore_blossom/step3",
+      "ubm:block/spore_blossom/step4",
+      "ubm:block/spore_blossom/step5",
+      "ubm:block/spore_blossom/step6"
+    ]
+  },
+  "block.sweet_berry_bush.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/sweet_berry_bush/break1",
+      "ubm:block/sweet_berry_bush/break2",
+      "ubm:block/sweet_berry_bush/break3",
+      "ubm:block/sweet_berry_bush/break4"
+    ]
+  },
+  "block.sweet_berry_bush.place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/sweet_berry_bush/place1",
+      "ubm:block/sweet_berry_bush/place2",
+      "ubm:block/sweet_berry_bush/place3",
+      "ubm:block/sweet_berry_bush/place4",
+      "ubm:block/sweet_berry_bush/place5",
+      "ubm:block/sweet_berry_bush/place6"
+    ]
+  },
+  "block.tuff.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/tuff/break1",
+      "ubm:block/tuff/break2",
+      "ubm:block/tuff/break3",
+      "ubm:block/tuff/break4",
+      "ubm:block/tuff/break5"
+    ]
+  },
+  "block.tuff.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/tuff/step1",
+      "ubm:block/tuff/step2",
+      "ubm:block/tuff/step3",
+      "ubm:block/tuff/step4",
+      "ubm:block/tuff/step5",
+      "ubm:block/tuff/step6"
     ]
   }
 }

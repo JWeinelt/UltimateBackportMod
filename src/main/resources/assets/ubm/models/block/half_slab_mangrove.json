@@ -1,0 +1,8 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "bottom": "ubm:blocks/mangrove_planks",
+    "top": "ubm:blocks/mangrove_planks",
+    "side": "ubm:blocks/mangrove_planks"
+  }
+}

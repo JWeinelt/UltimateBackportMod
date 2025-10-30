@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX ",
+    " Y ",
+    " Y "
+  ],
+  "key": {
+    "X": {
+      "item": "ubm:netherite_ingot"
+    },
+    "Y": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "ubm:netherite_hoe",
+    "count": 1
+  }
+}

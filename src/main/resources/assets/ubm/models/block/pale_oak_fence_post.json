@@ -1,0 +1,6 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "ubm:blocks/pale_oak_planks"
+  }
+}

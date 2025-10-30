@@ -1,0 +1,7 @@
+
+{
+    "parent": "block/button",
+    "textures": {
+        "texture": "ubm:blocks/pale_oak_planks"
+    }
+}

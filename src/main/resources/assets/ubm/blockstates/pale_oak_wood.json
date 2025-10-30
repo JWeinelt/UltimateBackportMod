@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "ubm:pale_oak_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ubm:pale_oak_wood"
+    },
+    "axis=none": {
+      "model": "ubm:pale_oak_wood"
+    },
+    "axis=z": {
+      "model": "ubm:pale_oak_wood",
+      "x": 90
+    }
+  }
+}

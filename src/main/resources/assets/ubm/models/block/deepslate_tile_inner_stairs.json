@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "ubm:blocks/deepslate_tiles",
+    "top": "ubm:blocks/deepslate_tiles",
+    "side": "ubm:blocks/deepslate_tiles"
+  }
+}

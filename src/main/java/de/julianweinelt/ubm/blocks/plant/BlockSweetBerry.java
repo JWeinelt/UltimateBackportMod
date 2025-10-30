@@ -1,7 +1,10 @@
 package de.julianweinelt.ubm.blocks.plant;
 
+import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.items.ModItems;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
+import de.julianweinelt.ubm.misc.ModSounds;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -11,6 +14,7 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -18,8 +22,12 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class BlockSweetBerry extends BlockBush implements IGrowable {
@@ -34,6 +42,34 @@ public class BlockSweetBerry extends BlockBush implements IGrowable {
         setSoundType(SoundType.PLANT);
         setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
         setDefaultState(this.blockState.getBaseState().withProperty(AGE, 0));
+    }
+
+    @Override
+    public boolean isFlammable(IBlockAccess world, BlockPos pos, EnumFacing face) {
+        return true;
+    }
+
+    @Override
+    public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+        return 60;
+    }
+
+    @Override
+    public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
+        Block[] possibleBlocks = {
+                Blocks.DIRT,
+                Blocks.GRASS,
+                //TODO: Rooted dirt
+                Blocks.FARMLAND,
+                //TODO: Find out which ID podzol has, if any
+                Blocks.MYCELIUM,
+                ModBlocks.MOSS_BLOCK,
+                //TODO: Mud
+                //TODO: Muddy Mangrove roots
+        };
+        BlockPos down = pos.down();
+        Block block = worldIn.getBlockState(down).getBlock();
+        return Arrays.asList(possibleBlocks).contains(block);
     }
 
     @Override
@@ -111,6 +147,10 @@ public class BlockSweetBerry extends BlockBush implements IGrowable {
         return 0;
     }
 
+    @Override
+    public SoundType getSoundType(IBlockState state, World world, BlockPos pos, @Nullable Entity entity) {
+        return ModSounds.SoundTypes.SWEET_BERRY_BUSH;
+    }
 
     @Override
     public boolean onBlockActivated(
