@@ -39,10 +39,13 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
+        ModEntities.registerRenders();
     }
 
     @Override
     public void init(FMLInitializationEvent e) {
+        UBM.getLogger().info("✅ ClientProxy init aufgerufen!");
+
         Map<Class<? extends Entity>, Render<? extends Entity>> renderMap =
                 Minecraft.getMinecraft().getRenderManager().entityRenderMap;
 
@@ -59,7 +62,6 @@ public class ClientProxy extends CommonProxy {
         ClientEventHandler.registerParticles();
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCampfire.class, new RenderTileEntityCampfire());
 
-        ModEntities.registerRenders();
 
         MinecraftForge.EVENT_BUS.register(new SwimClientHandler());
 

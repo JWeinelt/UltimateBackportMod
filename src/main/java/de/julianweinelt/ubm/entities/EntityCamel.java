@@ -36,12 +36,6 @@ public class EntityCamel extends EntityAnimal {
     }
 
     @Override
-    @Nonnull
-    public List<Entity> getPassengers() {
-        return this.getPassengers();
-    }
-
-    @Override
     public boolean isPassenger(Entity entityIn) {
         return this.getPassengers().contains(entityIn);
     }

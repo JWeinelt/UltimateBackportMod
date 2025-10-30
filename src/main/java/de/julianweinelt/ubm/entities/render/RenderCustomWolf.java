@@ -1,5 +1,6 @@
 package de.julianweinelt.ubm.entities.render;
 
+import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.entities.custom.EntityCustomWolf;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RenderWolf;
@@ -38,6 +39,7 @@ public class RenderCustomWolf extends RenderWolf {
     public RenderCustomWolf(RenderManager renderManagerIn) {
         super(renderManagerIn);
         this.addLayer(new LayerWolfArmor(this));
+        UBM.getLogger().info("Render Custom Wolf");
     }
 
     @Override
