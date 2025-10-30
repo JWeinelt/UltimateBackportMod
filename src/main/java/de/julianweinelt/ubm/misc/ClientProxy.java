@@ -41,6 +41,7 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
+        ModEntities.registerRenders();
     }
 
     @Override
@@ -93,6 +94,5 @@ public class ClientProxy extends CommonProxy {
     @SubscribeEvent
     public static void onModelRegistry(ModelRegistryEvent event) {
         ModModels.registerAllArmorModels();
-        ModEntities.registerRenders();
     }
 }
