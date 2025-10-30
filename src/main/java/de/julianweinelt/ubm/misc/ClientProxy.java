@@ -1,8 +1,10 @@
 package de.julianweinelt.ubm.misc;
 
 import de.julianweinelt.ubm.UBM;
+import de.julianweinelt.ubm.blocks.RenderDecoratedPottery;
 import de.julianweinelt.ubm.blocks.tiles.RenderTileEntityCampfire;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityCampfire;
+import de.julianweinelt.ubm.blocks.tiles.TileEntityDecoratedPot;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.items.ModItems;
 import de.julianweinelt.ubm.misc.client.SpyglassOverlayRenderer;
@@ -38,6 +40,11 @@ import java.util.Map;
 @SideOnly(Side.CLIENT)
 public class ClientProxy extends CommonProxy {
 
+    @SideOnly(Side.CLIENT)
+    public static void initTESRs() {
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDecoratedPot.class, new RenderDecoratedPottery());
+    }
+
     @Override
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
@@ -45,6 +52,7 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void init(FMLInitializationEvent e) {
+        initTESRs();
         if (!Loader.isModLoaded("pathfinder")) {
             Minecraft.getMinecraft().displayGuiScreen(new MissingDependencyScreen());
         }
