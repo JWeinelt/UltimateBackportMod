@@ -40,6 +40,9 @@ public class ModRecipes {
         OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_OAK_STEM);
         OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_OAK_WOOD);
 
+        OreDictionary.registerOre("cobblestone", ModBlocks.DEEPSLATE_COBBLED);
+        OreDictionary.registerOre("cobblestone", ModBlocks.BLACKSTONE);
+
         GameRegistry.addSmelting(ModItems.RAW_GOLD, new ItemStack(Items.GOLD_INGOT, 1), 0.7F);
         GameRegistry.addSmelting(ModItems.RAW_IRON, new ItemStack(Items.IRON_INGOT, 1), 0.7F);
         GameRegistry.addSmelting(ModItems.RAW_COPPER, new ItemStack(ModItems.COPPER_INGOT, 1), 0.7F);
