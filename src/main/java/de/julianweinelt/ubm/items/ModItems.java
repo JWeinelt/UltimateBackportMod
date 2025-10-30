@@ -517,67 +517,35 @@ public class ModItems {
         SPAWN_EGG_RAVAGER = new ItemSpawnEggCustom(EntityGlowSquid.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "ravager");//TODO: Add Entity
 
         register(SPAWN_EGG_FROG, event);
-
         register(SPAWN_EGG_TURTLE, event);
-
         register(SPAWN_EGG_GOAT, event);
-
         register(SPAWN_EGG_BEE, event);
-
         register(SPAWN_EGG_DOLPHIN, event);
-
         register(SPAWN_EGG_WARDEN, event);
-
         register(SPAWN_EGG_WOLF, event);
-
         register(SPAWN_EGG_VILLAGER, event);
-
         register(SPAWN_EGG_ALLAY, event);
-
         register(SPAWN_EGG_WANDERING_TRADER, event);
-
         register(SPAWN_EGG_STRIDER, event);
-
         register(SPAWN_EGG_SNIFFER, event);
-
         register(SPAWN_EGG_ARMADILLO, event);
-
         register(SPAWN_EGG_BREEZE, event);
-
         register(SPAWN_EGG_CAMEL, event);
-
         register(SPAWN_EGG_CAT, event);
-
         register(SPAWN_EGG_HOGLIN, event);
-
         register(SPAWN_EGG_PIGLIN, event);
-
         register(SPAWN_EGG_FOX, event);
-
         register(SPAWN_EGG_CREAKING, event);
-
         register(SPAWN_EGG_PHANTOM, event);
-
         register(SPAWN_EGG_AXOLOTL, event);
-
         register(SPAWN_EGG_ZOGLIN, event);
-
-
         register(SPAWN_EGG_COD, event);
-
         register(SPAWN_EGG_SALMON, event);
-
         register(SPAWN_EGG_PUFFERFISH, event);
-
         register(SPAWN_EGG_TROPICAL_FISH, event);
-
         register(SPAWN_EGG_GLOW_SQUID, event);
-
-
         register(SPAWN_EGG_PILLAGER, event);
-
         register(SPAWN_EGG_RAVAGER, event);
-
 
         AMETHYST_SHARD = new ModItem("amethyst_shard", TB_CAVES);
         register(AMETHYST_SHARD, event);
