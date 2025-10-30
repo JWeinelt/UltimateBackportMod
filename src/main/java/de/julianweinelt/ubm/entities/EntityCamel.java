@@ -15,6 +15,7 @@ public class EntityCamel extends EntityAnimal {
 
     public EntityCamel(World worldIn) {
         super(worldIn);
+        setSize(1.7F, 2.375F);
     }
 
     @Nullable
