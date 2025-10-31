@@ -1,8 +1,13 @@
 # 🌍 Ultimate Backport Mod (UBM)
 
-![Version 0.1.0](https://img.shields.io/badge/Version-Pre--Release%201-blue)[![Build](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml/badge.svg)](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml)![CurseForge](https://img.shields.io/curseforge/v/494079?label=CurseForge)![Modrinth](https://img.shields.io/modrinth/v/R8jBhfbN?label=Modrinth)
-
+![Version 0.1.0](https://img.shields.io/badge/Version-Pre--Release%202-blue)
+[![Build](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml/badge.svg)](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml)
 [![Crowdin](https://badges.crowdin.net/ultimate-backport-mod/localized.svg)](https://crowdin.com/project/ultimate-backport-mod)
+
+[![ModRinth](https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/available/modrinth_64h.png?raw=true)](https://modrinth.com/mod/ubm)
+[![CurseForge](https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/available/curseforge_64h.png?raw=true)](https://www.curseforge.com/minecraft/mc-mods/ubp)
+[![Crowdin](https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/translate/crowdin_64h.png?raw=true)](https://crowdin.com/project/ultimate-backport-mod)
+[![Discord](https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/social/discord-plural_64h.png?raw=true)](https://discord.gg/6mbckRWD8f)
 
 Welcome to the official GitHub repository of **UBM – Ultimate Backport Mod**!
 
@@ -53,7 +58,7 @@ If you like what we’re building:
 ## ♥️ Our contributors
 <a href="https://github.com/JWeinelt"><img src="https://github.com/JWeinelt.png" width="50" height="50" alt="@JWeinelt"/></a>
 <a href="https://github.com/ElF1ni"><img src="https://github.com/ElF1ni.png" width="50" height="50" alt="@ElF1ni"/></a>
-<a href="https://github.com/zCreeperYT"><img src="https://github.com/zCreeperYT.png" width="50" height="50" alt="@zCreeperYT"/></a>
+<a href="https://github.com/michaelmawick"><img src="https://github.com/michaelmawick.png" width="50" height="50" alt="@michaelmawick"/></a>
 <a href="https://github.com/FlashTalkN"><img src="https://github.com/FlashTalkN.png" width="50" height="50" alt="@FlashTalkN"/></a>
 
 ✨ *"Bringing the future to the past – one block at a time."* ✨
