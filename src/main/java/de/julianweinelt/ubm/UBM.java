@@ -7,6 +7,8 @@ import de.julianweinelt.ubm.blocks.interactable.smithing.GuiHandler;
 import de.julianweinelt.ubm.blocks.interactable.smithing.TileEntitySmithingTable;
 import de.julianweinelt.ubm.blocks.tiles.TileEntitySculkSensor;
 import de.julianweinelt.ubm.configuration.ModConfig;
+import de.julianweinelt.ubm.effects.ModEffects;
+import de.julianweinelt.ubm.effects.ModPotionTypes;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.misc.CommonProxy;
 import de.julianweinelt.ubm.misc.KeyBindings;
@@ -63,6 +65,8 @@ public class UBM {
         }
 
         KeyBindings.init();
+        ModEffects.init();
+        ModPotionTypes.init();
 
         File configFile = new File(configDir, MODID + ".cfg");
 
