@@ -217,17 +217,11 @@ public class ModItems {
             }
         }
 
-        TRIAL_KEY = new Item()
-                .setUnlocalizedName("trial_key")
-                .setRegistryName("trial_key")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-        event.getRegistry().register(TRIAL_KEY);
+        TRIAL_KEY = new ModItem("trial_key", TB_TRAILS_TALES);
+        register(TRIAL_KEY, event);
+        TRIAL_KEY_OMINOUS = new ModItem("trial_key_ominous", TB_TRAILS_TALES);
+        register(TRIAL_KEY_OMINOUS, event);
 
-        TRIAL_KEY_OMINOUS = new Item()
-                .setUnlocalizedName("trial_key_ominous")
-                .setRegistryName("trial_key_ominous")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-        event.getRegistry().register(TRIAL_KEY_OMINOUS);
         POTTERY_SHERD = new ItemPotterySherd();
         event.getRegistry().register(POTTERY_SHERD);
 
