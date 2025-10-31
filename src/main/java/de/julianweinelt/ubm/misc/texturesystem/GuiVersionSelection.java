@@ -7,7 +7,6 @@ import net.minecraft.client.gui.GuiScreen;
 
 import java.awt.*;
 import java.io.File;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 
@@ -63,8 +62,10 @@ public class GuiVersionSelection extends GuiScreen {
     @Override
     protected void actionPerformed(GuiButton button) {
         if (button.id == BTN_START) {
-            startExtraction(dropdown.getSelectedOption());
             button.visible = false;
+            startExtraction(dropdown.getSelectedOption()).thenAccept(success -> {
+
+            });
         }
     }
 
