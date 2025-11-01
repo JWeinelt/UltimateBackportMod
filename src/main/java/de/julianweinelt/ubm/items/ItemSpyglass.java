@@ -32,6 +32,6 @@ public class ItemSpyglass extends Item {
     @Override
     @Nonnull
     public EnumAction getItemUseAction(@Nonnull ItemStack stack) {
-        return EnumAction.BOW;
+        return EnumAction.NONE;
     }
 }

@@ -3,6 +3,7 @@ package de.julianweinelt.ubm.misc;
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.items.ItemSpyglass;
+import de.julianweinelt.ubm.items.ModItems;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
@@ -25,12 +26,13 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 @Mod.EventBusSubscriber(modid = UBM.MODID)
 public class EntityEvents {
 
-    private static float spyglassZoom = 1.0F; // Standard-FOV (kein Zoom)
+    private static float spyglassZoom = 1.0F;
 
     @SubscribeEvent
     public static void onFovUpdate(FOVUpdateEvent event) {
         EntityPlayer player = event.getEntity();
         ItemStack stack = player.getActiveItemStack();
+        if (stack.getItem() != ModItems.SPYGLASS) return;
 
         boolean active = !stack.isEmpty() && stack.getItem() instanceof ItemSpyglass;
 
@@ -40,6 +42,7 @@ public class EntityEvents {
             spyglassZoom += (1.0F - spyglassZoom) * 0.2F;
         }
 
+        Minecraft.getMinecraft().renderGlobal.setDisplayListEntitiesDirty();
         event.setNewfov(spyglassZoom);
     }
     @SubscribeEvent
