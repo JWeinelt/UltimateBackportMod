@@ -14,6 +14,7 @@ import de.julianweinelt.ubm.items.ModItems;
 import de.julianweinelt.ubm.misc.AdvancementHelper;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.worldgen.ModBiomes;
+import de.julianweinelt.ubm.worldgen.ModDimension;
 import de.julianweinelt.ubm.worldgen.WorldGenBeeNest;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;

@@ -14,14 +14,17 @@ import de.julianweinelt.ubm.misc.CommonProxy;
 import de.julianweinelt.ubm.misc.KeyBindings;
 import de.julianweinelt.ubm.misc.ModRecipes;
 import de.julianweinelt.ubm.misc.ModSounds;
+import de.julianweinelt.ubm.worldgen.ModDimension;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
 import de.julianweinelt.ubm.worldgen.StructureWorldGen;
+import de.julianweinelt.ubm.worldgen.misc.CommandGotoCustomNether;
 import de.julianweinelt.ubm.worldgen.structure.village.ModCustomVillage;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
@@ -96,6 +99,7 @@ public class UBM {
 
 
         ModCustomVillage.preInit();
+        ModDimension.registerDimensions();
     }
 
     @Mod.EventHandler
@@ -120,6 +124,12 @@ public class UBM {
         ModSounds.SoundTypes.init();
         ModBlocks.AMETHYST_BLOCK.soundType(ModSounds.SoundTypes.AMETHYST_BLOCK);
     }
+
+    @Mod.EventHandler
+    public void onServerStarting(FMLServerStartingEvent event) {
+        event.registerServerCommand(new CommandGotoCustomNether());
+    }
+
 
     public static Logger getLogger() {
         return logger;

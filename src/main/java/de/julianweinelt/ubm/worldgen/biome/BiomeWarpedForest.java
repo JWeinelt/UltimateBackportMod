@@ -1,6 +1,6 @@
 package de.julianweinelt.ubm.worldgen.biome;
 
-import de.julianweinelt.ubm.worldgen.tree.WorldGenMyNetherTree;
+import de.julianweinelt.ubm.worldgen.tree.WorldGenWarpedTree;
 import de.julianweinelt.ubm.blocks.ModBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -9,9 +9,9 @@ import net.minecraft.world.biome.Biome;
 
 import java.util.Random;
 
-public class BiomeNetherForest extends Biome {
-    public BiomeNetherForest() {
-        super(new BiomeProperties("Nether Forest")
+public class BiomeWarpedForest extends Biome {
+    public BiomeWarpedForest() {
+        super(new BiomeProperties("Warped Forest")
                 .setTemperature(2.0F)
                 .setRainDisabled());
 
@@ -36,7 +36,7 @@ public class BiomeNetherForest extends Biome {
 
             BlockPos treePos = new BlockPos(x, y, z);
 
-            new WorldGenMyNetherTree().generate(worldIn, rand, treePos);
+            new WorldGenWarpedTree().generate(worldIn, rand, treePos);
         }
     }
 }
