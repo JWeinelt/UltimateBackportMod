@@ -8,8 +8,11 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -69,6 +72,14 @@ public class BlockMod extends Block {
     @Override
     public boolean isFullCube(@Nonnull IBlockState state) {
         return !transparent;
+    }
+
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    @Nonnull
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.CUTOUT_MIPPED;
     }
 
 

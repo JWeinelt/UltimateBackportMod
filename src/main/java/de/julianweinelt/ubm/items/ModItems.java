@@ -347,10 +347,7 @@ public class ModItems {
 
         HONEYCOMB = new ModItem("honeycomb", ModCreativeTabs.UBM_TAB_BEES);
 
-        HONEY_BOTTLE = new ItemFood(2, 2, false) //TODO: Move to dedicated class
-                .setUnlocalizedName("honey_bottle")
-                .setRegistryName("honey_bottle")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
+        HONEY_BOTTLE = new ItemHoneyBottle();
         
         for (String color : COLORS) {
             Item item = new Item()

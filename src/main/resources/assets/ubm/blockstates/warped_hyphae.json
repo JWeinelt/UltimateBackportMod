@@ -1,5 +1,19 @@
 {
   "variants": {
-    "normal": { "model": "ubm:warped_hyphae" }
+    "axis=x": {
+      "model": "ubm:warped_hyphae",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ubm:warped_hyphae"
+    },
+    "axis=none": {
+      "model": "ubm:warped_hyphae"
+    },
+    "axis=z": {
+      "model": "ubm:warped_hyphae",
+      "x": 90
+    }
   }
 }
