@@ -27,7 +27,8 @@ public class WorldGenWarpedTree extends WorldGenAbstractTree {
             return false;
         }
 
-        int height = 4 + rand.nextInt(4);
+        int height = 4 + rand.nextInt(9);
+        if (rand.nextInt(12) == 0) height *= 2;
 
         for (int y = 0; y <= height + 1; y++) {
             BlockPos checkPos = pos.up(y);
