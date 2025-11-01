@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.worldgen.tree;
 
 import de.julianweinelt.ubm.blocks.ModBlocks;
+import net.minecraft.block.BlockLog;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -11,11 +12,12 @@ import java.util.Random;
 
 public class WorldGenWarpedTree extends WorldGenAbstractTree {
 
-    private static final IBlockState LOG = ModBlocks.WARPED_STEM.getDefaultState();
-    private static final IBlockState LEAVES = ModBlocks.WARPED_WART_BLOCK.getDefaultState();
+    private IBlockState LOG = ModBlocks.WARPED_STEM.getDefaultState();
+    private final IBlockState LEAVES = ModBlocks.WARPED_WART_BLOCK.getDefaultState();
 
     public WorldGenWarpedTree() {
         super(false);
+        LOG = LOG.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.NONE);
     }
 
     @Override
