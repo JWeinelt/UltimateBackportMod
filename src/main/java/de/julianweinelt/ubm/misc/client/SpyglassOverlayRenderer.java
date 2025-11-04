@@ -20,13 +20,13 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-@SideOnly(Side.CLIENT)
 @Mod.EventBusSubscriber(modid = UBM.MODID)
 public class SpyglassOverlayRenderer {
 
     private static final ResourceLocation OVERLAY = new ResourceLocation("ubm:textures/misc/spyglass_scope.png");
 
     @SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public static void onRenderOverlay(RenderGameOverlayEvent.Post event) {
         Minecraft mc = Minecraft.getMinecraft();
 
@@ -41,6 +41,7 @@ public class SpyglassOverlayRenderer {
         }
     }
 
+    @SideOnly(Side.CLIENT)
     private static void renderOverlay(int width, int height) {
         GlStateManager.disableDepth();
         GlStateManager.depthMask(false);

@@ -59,6 +59,13 @@ public class RenderTropicalFish extends RenderLiving<EntityTropicalFish> {
                                 float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
         super.renderLayers(entity, limbSwing, limbSwingAmount, partialTicks, ageInTicks, netHeadYaw, headPitch, scale);
 
+        int bColor = entity.getBaseColor().getRGB();
+        float rB = ((bColor >> 16) & 255) / 255.0F;
+        float gB = ((bColor >> 8) & 255) / 255.0F;
+        float bB = (bColor & 255) / 255.0F;
+
+        GlStateManager.color(rB, gB, bB);
+
         int patternIndex = entity.getPattern();
         ResourceLocation[] PATTERN_TEXTURES = (entity.getFishModel() == 0) ? PATTERN_TEXTURES_A :  PATTERN_TEXTURES_B;
 
@@ -72,13 +79,6 @@ public class RenderTropicalFish extends RenderLiving<EntityTropicalFish> {
 
             GlStateManager.color(r, g, b);
             GlStateManager.enableBlend();
-            GlStateManager.tryBlendFuncSeparate(
-                    GlStateManager.SourceFactor.SRC_ALPHA,
-                    GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
-                    GlStateManager.SourceFactor.ONE,
-                    GlStateManager.DestFactor.ZERO
-            );
-            GlStateManager.alphaFunc(516, 0.1F);
             this.mainModel.render(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
             GlStateManager.disableBlend();
             GlStateManager.color(1F, 1F, 1F);

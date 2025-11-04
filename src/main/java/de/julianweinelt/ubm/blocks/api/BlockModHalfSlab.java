@@ -1,6 +1,5 @@
 package de.julianweinelt.ubm.blocks.api;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 import javax.annotation.Nonnull;

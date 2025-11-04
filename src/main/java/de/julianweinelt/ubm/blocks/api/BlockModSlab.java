@@ -81,12 +81,6 @@ public abstract class BlockModSlab extends BlockSlab {
         }
     }
 
-    @Override
-    @Nonnull
-    public Item getItemDropped(@Nonnull IBlockState state, @Nonnull Random rand, int fortune) {
-        return getItemDroppedSlab().getItemDropped(state, rand, fortune);
-    }
-
     protected abstract BlockModSlab getItemDroppedSlab();
 
     public enum Variant implements IStringSerializable {

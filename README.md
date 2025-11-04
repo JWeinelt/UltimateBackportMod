@@ -1,6 +1,6 @@
 # 🌍 Ultimate Backport Mod (UBM)
 
-![Version 0.1.0](https://img.shields.io/badge/Version-Pre--Release%203-blue)
+![Version 0.1.0](https://img.shields.io/badge/Version-Pre--Release%202-blue)
 [![Build](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml/badge.svg)](https://github.com/JWeinelt/UltimateBackportMod/actions/workflows/gradle.yml)
 [![Crowdin](https://badges.crowdin.net/ultimate-backport-mod/localized.svg)](https://crowdin.com/project/ultimate-backport-mod)
 

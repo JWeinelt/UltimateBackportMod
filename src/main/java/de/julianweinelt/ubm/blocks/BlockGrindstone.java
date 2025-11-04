@@ -2,6 +2,7 @@ package de.julianweinelt.ubm.blocks;
 
 import de.julianweinelt.ubm.blocks.api.EnumBlockFace;
 import de.julianweinelt.ubm.blocks.api.EnumHorizontalFacing;
+import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -23,6 +24,9 @@ import javax.annotation.Nonnull;
 public class BlockGrindstone extends Block {
     public BlockGrindstone(Material materialIn) {
         super(materialIn);
+        this.setCreativeTab(ModCreativeTabs.UBM_TAB_PILLAGE);
+        this.setRegistryName("grindstone");
+        this.setUnlocalizedName("grindstone");
         this.setDefaultState(this.blockState.getBaseState()
                 .withProperty(FACING, EnumHorizontalFacing.NORTH).withProperty(FACE, EnumBlockFace.FLOOR));
     }
