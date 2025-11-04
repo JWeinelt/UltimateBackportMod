@@ -41,6 +41,7 @@ public class ModItems {
     private static final CreativeTabs TB_TRAILS_TALES = ModCreativeTabs.UBM_TAB_TRAILS_TALES;
 
     public static Item TRIM_NETHERITE_UPGRADE;
+    // Do not touch. They are referenced via Reflection
     public static Item TRIM_SENTRY;
     public static Item TRIM_DUNE;
     public static Item TRIM_WARD;
@@ -172,6 +173,9 @@ public class ModItems {
     public static Item RAW_COPPER;
     public static Item RAW_GOLD;
 
+    public static Item TRIAL_KEY;
+    public static Item TRIAL_KEY_OMINOUS;
+
     private static final String[] COLORS = {
             "black", "red", "green", "brown", "blue", "purple", "cyan",
             "light_gray", "gray", "pink", "lime", "yellow", "light_blue", "magenta",
@@ -212,6 +216,11 @@ public class ModItems {
                 e.printStackTrace();
             }
         }
+
+        TRIAL_KEY = new ModItem("trial_key", TB_TRAILS_TALES);
+        register(TRIAL_KEY, event);
+        TRIAL_KEY_OMINOUS = new ModItem("trial_key_ominous", TB_TRAILS_TALES);
+        register(TRIAL_KEY_OMINOUS, event);
 
         POTTERY_SHERD = new ItemPotterySherd();
         event.getRegistry().register(POTTERY_SHERD);
@@ -338,10 +347,7 @@ public class ModItems {
 
         HONEYCOMB = new ModItem("honeycomb", ModCreativeTabs.UBM_TAB_BEES);
 
-        HONEY_BOTTLE = new ItemFood(2, 2, false) //TODO: Move to dedicated class
-                .setUnlocalizedName("honey_bottle")
-                .setRegistryName("honey_bottle")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
+        HONEY_BOTTLE = new ItemHoneyBottle();
         
         for (String color : COLORS) {
             Item item = new Item()
