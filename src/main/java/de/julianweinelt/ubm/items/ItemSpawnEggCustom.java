@@ -58,7 +58,7 @@ public class ItemSpawnEggCustom extends Item {
                     double z = blockpos.getZ() + 0.5;
 
                     Entity entity = EntityList.createEntityByIDFromName(EntityList.getKey(entityClass), worldIn);
-                    if (!Objects.equals(entityName, "warden") && !(entity instanceof EntityWarden)) {
+                    if (Objects.equals(entityName, "warden") && !(entity instanceof EntityWarden)) {
                         playerIn.sendMessage(new TextComponentString("§cThis entity has not been added yet!"));
                         return new ActionResult<>(EnumActionResult.PASS, stack);
                     }

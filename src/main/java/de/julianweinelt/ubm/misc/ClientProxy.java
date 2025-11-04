@@ -3,6 +3,7 @@ package de.julianweinelt.ubm.misc;
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.blocks.tiles.RenderTileEntityCampfire;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityCampfire;
+import de.julianweinelt.ubm.effects.PotionIconRenderer;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.items.ModItems;
 import de.julianweinelt.ubm.qol.SwimClientHandler;
@@ -44,7 +45,7 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void init(FMLInitializationEvent e) {
-        UBM.getLogger().info("✅ ClientProxy init aufgerufen!");
+        MinecraftForge.EVENT_BUS.register(new PotionIconRenderer());
 
         Map<Class<? extends Entity>, Render<? extends Entity>> renderMap =
                 Minecraft.getMinecraft().getRenderManager().entityRenderMap;
@@ -62,6 +63,7 @@ public class ClientProxy extends CommonProxy {
         ClientEventHandler.registerParticles();
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCampfire.class, new RenderTileEntityCampfire());
 
+        KeyBindings.init();
 
         MinecraftForge.EVENT_BUS.register(new SwimClientHandler());
 

@@ -12,12 +12,20 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.security.SecureRandom;
+import java.util.Random;
 
 public class EntitySalmon extends EntityWaterMob {
+    private float scale;
 
     public EntitySalmon(World worldIn) {
         super(worldIn);
         this.setSize(0.5F, 0.5F);
+        scale = new Random().nextFloat() * 1.8F + 0.3F;
+    }
+
+    public float getScale() {
+        return scale;
     }
 
     @Override

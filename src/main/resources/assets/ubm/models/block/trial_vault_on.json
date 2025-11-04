@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "ubm:blocks/vault_front_on",
+    "down": "ubm:blocks/vault_bottom",
+    "up": "ubm:blocks/vault_top",
+    "north": "ubm:blocks/vault_front_on",
+    "east": "ubm:blocks/vault_side_on",
+    "south": "ubm:blocks/vault_side_on",
+    "west": "ubm:blocks/vault_side_on"
+  }
+}
