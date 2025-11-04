@@ -12,10 +12,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockCopperGrate extends Block {
-    public BlockCopperGrate(String type) {
+    public BlockCopperGrate(String type, boolean waxed) {
         super(Material.ROCK);
-        setRegistryName(type + (type.isEmpty() ? "" : "_") + "copper_grate");
-        setUnlocalizedName(type + (type.isEmpty() ? "" : "_") + "copper_grate");
+        setRegistryName((waxed ? "waxed_" : "") + type + (type.isEmpty() ? "" : "_") + "copper_grate");
+        setUnlocalizedName((waxed ? "waxed_" : "") + type + (type.isEmpty() ? "" : "_") + "copper_grate");
         setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
     }
 

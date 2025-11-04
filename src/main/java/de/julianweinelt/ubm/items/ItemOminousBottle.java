@@ -1,7 +1,7 @@
 package de.julianweinelt.ubm.items;
 
+import de.julianweinelt.ubm.effects.ModEffects;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
-import de.julianweinelt.ubm.misc.effect.ModPotions;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,7 +31,7 @@ public class ItemOminousBottle extends ItemFood {
     protected void onFoodEaten(@Nonnull ItemStack stack, @Nonnull World worldIn, @Nonnull EntityPlayer player) {
         if (!worldIn.isRemote) {
             int level = stack.getMetadata();
-            player.addPotionEffect(new PotionEffect(ModPotions.BAD_OMEN, 100*60*20, level));
+            player.addPotionEffect(new PotionEffect(ModEffects.BAD_OMEN, 100*60*20, level));
         }
     }
 

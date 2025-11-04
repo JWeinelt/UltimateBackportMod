@@ -69,6 +69,7 @@ public class ContainerSmithingTable extends Container {
         materials.put(Items.DIAMOND, "diamond");
         materials.put(ModItems.AMETHYST_SHARD, "amethyst");
         materials.put(Items.REDSTONE, "redstone");
+        materials.put(ModItems.COPPER_INGOT, "copper");
 
         if (trim.getItem() instanceof ItemArmorTrim && materials.containsKey(material.getItem()) && piece.getItem() instanceof ItemArmor) {
             result = new ItemStack(piece.getItem());
