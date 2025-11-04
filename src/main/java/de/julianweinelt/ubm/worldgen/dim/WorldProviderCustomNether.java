@@ -11,25 +11,31 @@ import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nonnull;
 
 public class WorldProviderCustomNether extends WorldProvider {
     @Override
     protected void init() {
-        this.biomeProvider = new BiomeProviderNether();
+        this.biomeProvider = new BiomeProviderNether(world.getSeed());
     }
 
     @Override
+    @Nonnull
     public IChunkGenerator createChunkGenerator() {
         return new ChunkGeneratorHell(world, true, world.getSeed());
     }
 
     @Override
+    @Nonnull
     public DimensionType getDimensionType() {
         return DimensionType.getById(ModDimension.CUSTOM_NETHER_DIM_ID);
     }
 
     @Override
-    public boolean canBlockFreeze(BlockPos pos, boolean byWater) {
+    public boolean canBlockFreeze(@Nonnull BlockPos pos, boolean byWater) {
         return false;
     }
 
@@ -39,12 +45,13 @@ public class WorldProviderCustomNether extends WorldProvider {
     }
 
     @Override
-    public WorldSleepResult canSleepAt(EntityPlayer player, BlockPos pos) {
+    @Nonnull
+    public WorldSleepResult canSleepAt(@Nonnull EntityPlayer player, @Nonnull BlockPos pos) {
         return WorldSleepResult.BED_EXPLODES;
     }
 
     @Override
-    public boolean canDoRainSnowIce(Chunk chunk) {
+    public boolean canDoRainSnowIce(@Nonnull Chunk chunk) {
         return false;
     }
 
@@ -59,8 +66,47 @@ public class WorldProviderCustomNether extends WorldProvider {
     }
 
     @Override
+    public boolean doesWaterVaporize() {
+        return true;
+    }
+
+    @Override
+    public boolean isNether() {
+        return true;
+    }
+
+    @Override
+    public boolean isSurfaceWorld() {
+        return false;
+    }
+
+
+    @Override
+    protected void generateLightBrightnessTable()
+    {
+        float f = 0.1F;
+
+        for (int i = 0; i <= 15; ++i)
+        {
+            float f1 = 1.0F - (float)i / 15.0F;
+            this.lightBrightnessTable[i] = (1.0F - f1) / (f1 * 3.0F + 1.0F) * 0.9F + 0.1F;
+        }
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public boolean doesXZShowFog(int x, int z)
+    {
+        return true;
+    }
+
+
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    @Nonnull
     public Vec3d getFogColor(float celestialAngle, float partialTicks) {
-        BlockPos pos = new BlockPos(0, 64, 0); // Fallback, falls Welt null ist
+        BlockPos pos = new BlockPos(0, 64, 0);
         if (this.world != null && this.world.getPlayerEntityByName(Minecraft.getMinecraft().player.getName()) != null) {
             pos = this.world.getPlayerEntityByName(Minecraft.getMinecraft().player.getName()).getPosition();
         }

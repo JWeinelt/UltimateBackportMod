@@ -11,6 +11,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -79,8 +80,7 @@ public class ChunkGeneratorHell implements IChunkGenerator
     double[] noiseData4;
     double[] dr;
 
-    public ChunkGeneratorHell(World worldIn, boolean generateStructures, long seed)
-    {
+    public ChunkGeneratorHell(World worldIn, boolean generateStructures, long seed) {
         this.world = worldIn;
         this.generateStructures = generateStructures;
         this.rand = new Random(seed);
@@ -108,8 +108,7 @@ public class ChunkGeneratorHell implements IChunkGenerator
         this.genNetherCaves = TerrainGen.getModdedMapGen(genNetherCaves, InitMapGenEvent.EventType.NETHER_CAVE);
     }
 
-    public void prepareHeights(int p_185936_1_, int p_185936_2_, ChunkPrimer primer)
-    {
+    public void prepareHeights(int p_185936_1_, int p_185936_2_, ChunkPrimer primer) {
         int i = 4;
         int j = this.world.getSeaLevel() / 2 + 1;
         int k = 5;
@@ -177,11 +176,12 @@ public class ChunkGeneratorHell implements IChunkGenerator
     public void buildSurfaces(int chunkX, int chunkZ, ChunkPrimer primer) {
         Biome[] biomes = this.world.getBiomeProvider().getBiomes(null, chunkX * 16, chunkZ * 16, 16, 16);
 
-        int seaLevel = this.world.getSeaLevel();
-
         for (int x = 0; x < 16; ++x) {
             for (int z = 0; z < 16; ++z) {
                 Biome biome = biomes[z + x * 16];
+                if (biome == null) {
+                    biome = Biomes.HELL;
+                }
 
                 IBlockState topBlock = biome.topBlock != null ? biome.topBlock : NETHERRACK;
                 IBlockState fillerBlock = biome.fillerBlock != null ? biome.fillerBlock : NETHERRACK;

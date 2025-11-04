@@ -67,7 +67,6 @@ public class UBM {
             configDir.mkdirs();
         }
 
-        KeyBindings.init();
         ModEffects.init();
         ModPotionTypes.init();
 
