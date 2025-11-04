@@ -15,7 +15,7 @@ import net.minecraft.world.gen.IChunkGenerator;
 public class WorldProviderCustomNether extends WorldProvider {
     @Override
     protected void init() {
-        this.biomeProvider = new BiomeProviderNether();
+        this.biomeProvider = new BiomeProviderNether(world.getSeed());
     }
 
     @Override
