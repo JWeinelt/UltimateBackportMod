@@ -63,6 +63,7 @@ public class ClientProxy extends CommonProxy {
         ClientEventHandler.registerParticles();
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCampfire.class, new RenderTileEntityCampfire());
 
+        KeyBindings.init();
 
         MinecraftForge.EVENT_BUS.register(new SwimClientHandler());
 
