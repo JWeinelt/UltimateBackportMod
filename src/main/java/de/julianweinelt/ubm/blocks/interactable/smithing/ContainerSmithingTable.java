@@ -1,14 +1,15 @@
 package de.julianweinelt.ubm.blocks.interactable.smithing;
 
-import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.items.ItemArmorTrim;
 import de.julianweinelt.ubm.items.ModItems;
-import de.julianweinelt.ubm.misc.ModMaterials;
 import de.julianweinelt.ubm.util.ItemStackHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.inventory.*;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryBasic;
+import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -49,7 +50,6 @@ public class ContainerSmithingTable extends Container {
     @Override
     public void onCraftMatrixChanged(@Nonnull IInventory inventoryIn) {
         super.onCraftMatrixChanged(inventoryIn);
-        UBM.getLogger().info("Matrix");
         updateOutput();
     }
 
