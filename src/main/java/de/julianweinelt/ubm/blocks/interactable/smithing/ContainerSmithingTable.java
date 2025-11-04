@@ -3,6 +3,7 @@ package de.julianweinelt.ubm.blocks.interactable.smithing;
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.items.ItemArmorTrim;
 import de.julianweinelt.ubm.items.ModItems;
+import de.julianweinelt.ubm.misc.ModMaterials;
 import de.julianweinelt.ubm.util.ItemStackHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -69,6 +70,41 @@ public class ContainerSmithingTable extends Container {
         materials.put(Items.DIAMOND, "diamond");
         materials.put(ModItems.AMETHYST_SHARD, "amethyst");
         materials.put(Items.REDSTONE, "redstone");
+
+        if (trim.getItem() instanceof ItemArmorTrim) {
+            ItemArmorTrim t = (ItemArmorTrim) trim.getItem();
+            if (!t.getArmorTrim().equals("netherite_upgrade")) return;
+            if (piece.getItem().getRegistryName() == null) return;
+            if (piece.getItem().getRegistryName().getResourcePath().contains("diamond")) {
+                Item rs;
+                if (piece.getItem().equals(Items.DIAMOND_HELMET)) {
+                    rs = ModItems.NETHERITE_HELMET;
+                } else if (piece.getItem().equals(Items.DIAMOND_CHESTPLATE)) {
+                    rs = ModItems.NETHERITE_CHESTPLATE;
+                } else if (piece.getItem().equals(Items.DIAMOND_LEGGINGS)) {
+                    rs = ModItems.NETHERITE_LEGGINGS;
+                } else if (piece.getItem().equals(Items.DIAMOND_BOOTS)) {
+                    rs = ModItems.NETHERITE_BOOTS;
+                } else if (piece.getItem().equals(Items.DIAMOND_SWORD)) {
+                    rs = ModItems.NETHERITE_SWORD;
+                } else if (piece.getItem().equals(Items.DIAMOND_PICKAXE)) {
+                    rs = ModItems.NETHERITE_PICKAXE;
+                } else if (piece.getItem().equals(Items.DIAMOND_SHOVEL)) {
+                    rs = ModItems.NETHERITE_SHOVEL;
+                } else if (piece.getItem().equals(Items.DIAMOND_AXE)) {
+                    rs = ModItems.NETHERITE_AXE;
+                } else if (piece.getItem().equals(Items.DIAMOND_HOE)) {
+                    rs = ModItems.NETHERITE_HOE;
+                } else rs = null;
+
+                if (rs != null) {
+                    result = new ItemStack(rs);
+                    result.setItemDamage(piece.getItemDamage());
+                    result.setStackDisplayName(piece.getDisplayName());
+                    result.setTagCompound(piece.getTagCompound());
+                }
+            }
+        }
 
         if (trim.getItem() instanceof ItemArmorTrim && materials.containsKey(material.getItem()) && piece.getItem() instanceof ItemArmor) {
             result = new ItemStack(piece.getItem());
