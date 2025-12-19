@@ -1763,9 +1763,6 @@ public class ModBlocks {
         GRANITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("granite_slab", Material.ROCK, GRANITE_SLAB)
                 .setCreativeTab(TB_AQUATIC);
         registerSlab(GRANITE_SLAB, GRANITE_SLAB_D, event);
-
-
-
     }
 
     @SideOnly(Side.SERVER)

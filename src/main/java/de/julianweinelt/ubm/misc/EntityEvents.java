@@ -22,6 +22,8 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod.EventBusSubscriber(modid = UBM.MODID)
 public class EntityEvents {
@@ -29,6 +31,7 @@ public class EntityEvents {
     private static float spyglassZoom = 1.0F;
 
     @SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public static void onFovUpdate(FOVUpdateEvent event) {
         EntityPlayer player = event.getEntity();
         ItemStack stack = player.getActiveItemStack();
@@ -46,6 +49,7 @@ public class EntityEvents {
         event.setNewfov(spyglassZoom);
     }
     @SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public void onRenderOverlay(RenderGameOverlayEvent.Post event) {
         Minecraft mc = Minecraft.getMinecraft();
         EntityPlayer player = mc.player;
@@ -119,6 +123,7 @@ public class EntityEvents {
     }
 
     @SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public static void onRenderOverlay(RenderGameOverlayEvent.Pre event) {
         Minecraft mc = Minecraft.getMinecraft();
         EntityPlayer player = mc.player;
@@ -139,6 +144,7 @@ public class EntityEvents {
     }
 
     //@SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public static void onRenderHearts(RenderGameOverlayEvent.Pre event) {
         if (event.getType() != RenderGameOverlayEvent.ElementType.HEALTH) return;
 
