@@ -32,6 +32,8 @@ With UBM, you can experience the best of both worlds:
 * 📂 Make sure you run **Minecraft Forge 1.12.2**
 * 🎮 Launch the game and enjoy modern Minecraft in a classic world!
 
+*When installing the mod on **servers,** you **don't** need to install PathFinderAPI! It's only needed on your own computer, the **client.***
+
 ## 📂 Dependencies
 - UBM needs **Pathfinder API** to run. This library helps it creating the **modern command suggestion UI.**
 <!-- - **GeckoLib** will be required in future to make mob animations more like in 1.21.x -->
