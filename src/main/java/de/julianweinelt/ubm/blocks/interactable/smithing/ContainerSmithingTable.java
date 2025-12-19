@@ -23,7 +23,19 @@ public class ContainerSmithingTable extends Container {
     private final IInventory craftMatrix = new InventorySmithing(this, "Smithing", false, 3);
     private final IInventory craftResult = new InventoryBasic("Result", false, 1);
 
+    private final Map<Item, Item> DIAMOND_TO_NETHERITE_ITEMS = new HashMap<>();
+
     public ContainerSmithingTable(InventoryPlayer playerInv) {
+        DIAMOND_TO_NETHERITE_ITEMS.put(Items.DIAMOND_HELMET, ModItems.NETHERITE_HELMET);
+        DIAMOND_TO_NETHERITE_ITEMS.put(Items.DIAMOND_CHESTPLATE, ModItems.NETHERITE_CHESTPLATE);
+        DIAMOND_TO_NETHERITE_ITEMS.put(Items.DIAMOND_LEGGINGS, ModItems.NETHERITE_LEGGINGS);
+        DIAMOND_TO_NETHERITE_ITEMS.put(Items.DIAMOND_BOOTS, ModItems.NETHERITE_BOOTS);
+        DIAMOND_TO_NETHERITE_ITEMS.put(Items.DIAMOND_SWORD, ModItems.NETHERITE_SWORD);
+        DIAMOND_TO_NETHERITE_ITEMS.put(Items.DIAMOND_AXE, ModItems.NETHERITE_AXE);
+        DIAMOND_TO_NETHERITE_ITEMS.put(Items.DIAMOND_PICKAXE, ModItems.NETHERITE_PICKAXE);
+        DIAMOND_TO_NETHERITE_ITEMS.put(Items.DIAMOND_SHOVEL, ModItems.NETHERITE_SHOVEL);
+        DIAMOND_TO_NETHERITE_ITEMS.put(Items.DIAMOND_HOE, ModItems.NETHERITE_HOE);
+
         this.addSlotToContainer(new SlotArmorTrim(craftMatrix, 0, 8, 48));
         this.addSlotToContainer(new Slot(craftMatrix, 1, 26, 48));
         this.addSlotToContainer(new Slot(craftMatrix, 2, 44, 48));
@@ -76,28 +88,8 @@ public class ContainerSmithingTable extends Container {
             ItemArmorTrim t = (ItemArmorTrim) trim.getItem();
             if (!t.getArmorTrim().equals("netherite_upgrade")) return;
             if (piece.getItem().getRegistryName() == null) return;
-            if (piece.getItem().getRegistryName().getResourcePath().contains("diamond")) {
-                Item rs;
-                if (piece.getItem().equals(Items.DIAMOND_HELMET)) {
-                    rs = ModItems.NETHERITE_HELMET;
-                } else if (piece.getItem().equals(Items.DIAMOND_CHESTPLATE)) {
-                    rs = ModItems.NETHERITE_CHESTPLATE;
-                } else if (piece.getItem().equals(Items.DIAMOND_LEGGINGS)) {
-                    rs = ModItems.NETHERITE_LEGGINGS;
-                } else if (piece.getItem().equals(Items.DIAMOND_BOOTS)) {
-                    rs = ModItems.NETHERITE_BOOTS;
-                } else if (piece.getItem().equals(Items.DIAMOND_SWORD)) {
-                    rs = ModItems.NETHERITE_SWORD;
-                } else if (piece.getItem().equals(Items.DIAMOND_PICKAXE)) {
-                    rs = ModItems.NETHERITE_PICKAXE;
-                } else if (piece.getItem().equals(Items.DIAMOND_SHOVEL)) {
-                    rs = ModItems.NETHERITE_SHOVEL;
-                } else if (piece.getItem().equals(Items.DIAMOND_AXE)) {
-                    rs = ModItems.NETHERITE_AXE;
-                } else if (piece.getItem().equals(Items.DIAMOND_HOE)) {
-                    rs = ModItems.NETHERITE_HOE;
-                } else rs = null;
-
+            if (DIAMOND_TO_NETHERITE_ITEMS.containsKey(piece.getItem())) {
+                Item rs = DIAMOND_TO_NETHERITE_ITEMS.get(piece.getItem());
                 if (rs != null) {
                     result = new ItemStack(rs);
                     result.setItemDamage(piece.getItemDamage());
@@ -125,7 +117,7 @@ public class ContainerSmithingTable extends Container {
     }
 
     @Override
-    public void onContainerClosed(EntityPlayer playerIn) {
+    public void onContainerClosed(@Nonnull EntityPlayer playerIn) {
         ItemStack trim = craftMatrix.getStackInSlot(0);
         ItemStack piece = craftMatrix.getStackInSlot(1);
         ItemStack material = craftMatrix.getStackInSlot(2);
@@ -156,7 +148,7 @@ public class ContainerSmithingTable extends Container {
                     return ItemStack.EMPTY;
                 }
                 slot.onSlotChange(stackInSlot, stack);
-            } else if (index >= 0 && index <= 2) {
+            } else if (index <= 2) {
                 if (!this.mergeItemStack(stackInSlot, 4, this.inventorySlots.size(), true)) {
                     return ItemStack.EMPTY;
                 }
@@ -168,9 +160,9 @@ public class ContainerSmithingTable extends Container {
                 } else if (isValidMaterial(stackInSlot.getItem())) {
                     if (!this.mergeItemStack(stackInSlot, 2, 3, false)) return ItemStack.EMPTY;
                 } else {
-                    if (index >= 4 && index <= 31) {
+                    if (index <= 31) {
                         if (!this.mergeItemStack(stackInSlot, 31, this.inventorySlots.size(), false)) return ItemStack.EMPTY;
-                    } else if (index >= 31 && index < this.inventorySlots.size()) {
+                    } else if (index < this.inventorySlots.size()) {
                         if (!this.mergeItemStack(stackInSlot, 4, 31, false)) {
                             return ItemStack.EMPTY;
                         }
