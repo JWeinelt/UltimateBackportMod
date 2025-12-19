@@ -9,6 +9,7 @@ import de.julianweinelt.ubm.items.tools.*;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.misc.ModMaterials;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
@@ -25,9 +26,22 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Mod.EventBusSubscriber(modid = UBM.MODID)
 public class ModItems {
+    private static final List<Item> items = new ArrayList<>();
+
+    private static final CreativeTabs TB_NETHER = ModCreativeTabs.UBM_TAB_NETHER;
+    private static final CreativeTabs TB_CAVES = ModCreativeTabs.UBM_TAB_CAVES;
+    private static final CreativeTabs TB_WILD = ModCreativeTabs.UBM_TAB_WILD;
+    private static final CreativeTabs TB_AQUATIC = ModCreativeTabs.UBM_TAB_AQUATIC;
+    private static final CreativeTabs TB_PILLAGE = ModCreativeTabs.UBM_TAB_PILLAGE;
+    private static final CreativeTabs TB_TRAILS_TALES = ModCreativeTabs.UBM_TAB_TRAILS_TALES;
+
     public static Item TRIM_NETHERITE_UPGRADE;
+    // Do not touch. They are referenced via Reflection
     public static Item TRIM_SENTRY;
     public static Item TRIM_DUNE;
     public static Item TRIM_WARD;
@@ -93,26 +107,7 @@ public class ModItems {
 
     public static Item SPYGLASS;
 
-    public static Item ANGLER_POTTERY_SHERD;
-    public static Item ARCHER_POTTERY_SHERD;
-    public static Item ARMS_UP_POTTERY_SHERD;
-    public static Item BLADE_POTTERY_SHERD;
-    public static Item BURN_POTTERY_SHERD;
-    public static Item BREWER_POTTERY_SHERD;
-    public static Item DANGER_POTTERY_SHERD;
-    public static Item EXPLORER_POTTERY_SHERD;
-    public static Item FRIEND_POTTERY_SHERD;
-    public static Item HEART_POTTERY_SHERD;
-    public static Item HEARTBREAK_POTTERY_SHERD;
-    public static Item HOWL_POTTERY_SHERD;
-    public static Item MINER_POTTERY_SHERD;
-    public static Item MOURNER_POTTERY_SHERD;
-    public static Item PLENTY_POTTERY_SHERD;
-    public static Item PRIZE_POTTERY_SHERD;
-    public static Item SHEAF_POTTERY_SHERD;
-    public static Item SHELTER_POTTERY_SHERD;
-    public static Item SKULL_POTTERY_SHERD;
-    public static Item SNORT_POTTERY_SHERD;
+    public static Item POTTERY_SHERD;
 
     public static Item POWDER_SNOW_BUCKET;
 
@@ -178,6 +173,9 @@ public class ModItems {
     public static Item RAW_COPPER;
     public static Item RAW_GOLD;
 
+    public static Item TRIAL_KEY;
+    public static Item TRIAL_KEY_OMINOUS;
+
     private static final String[] COLORS = {
             "black", "red", "green", "brown", "blue", "purple", "cyan",
             "light_gray", "gray", "pink", "lime", "yellow", "light_blue", "magenta",
@@ -193,21 +191,24 @@ public class ModItems {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         OMINOUS_BOTTLE = new ItemOminousBottle();
-        event.getRegistry().register(OMINOUS_BOTTLE);
+        register(OMINOUS_BOTTLE, event);
+
 
         //Armor trims
         TRIM_NETHERITE_UPGRADE = new ItemArmorTrim("netherite_upgrade")
                 .setRegistryName("netherite_upgrade_template")
                 .setUnlocalizedName("netherite_upgrade_template")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_WILD);
-        event.getRegistry().register(TRIM_NETHERITE_UPGRADE);
+                .setCreativeTab(TB_WILD);
+        register(TRIM_NETHERITE_UPGRADE, event);
+
 
         for (String s : TRIMS) {
             Item item = new ItemArmorTrim(s.toLowerCase())
                     .setRegistryName(s.toLowerCase() + "_armor_trim")
                     .setUnlocalizedName(s.toLowerCase() + "_armor_trim")
-                    .setCreativeTab(ModCreativeTabs.UBM_TAB_WILD);
-            event.getRegistry().register(item);
+                    .setCreativeTab(TB_WILD);
+            register(item, event);
+
 
             try {
                 ModItems.class.getField("TRIM_" + s).set(null, item);
@@ -216,52 +217,65 @@ public class ModItems {
             }
         }
 
+        TRIAL_KEY = new ModItem("trial_key", TB_TRAILS_TALES);
+        register(TRIAL_KEY, event);
+        TRIAL_KEY_OMINOUS = new ModItem("trial_key_ominous", TB_TRAILS_TALES);
+        register(TRIAL_KEY_OMINOUS, event);
 
-        NETHERITE_SCRAP = new Item()
-                .setUnlocalizedName("netherite_scrap")
-                .setRegistryName("netherite_scrap")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(NETHERITE_SCRAP);
-        COPPER_INGOT = new Item()
-                .setUnlocalizedName("copper_ingot")
-                .setRegistryName("copper_ingot")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(COPPER_INGOT);
-        COPPER_TORCH = new Item()
-                .setUnlocalizedName("copper_torch")
-                .setRegistryName("copper_torch")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_COPPER_AGE);
-        event.getRegistry().register(COPPER_TORCH);
+        POTTERY_SHERD = new ItemPotterySherd();
+        event.getRegistry().register(POTTERY_SHERD);
+
+        NETHERITE_SCRAP = new ModItem("netherite_scrap", TB_NETHER);
+        register(NETHERITE_SCRAP, event);
+
+        COPPER_INGOT = new ModItem("copper_ingot", TB_CAVES);
+        register(COPPER_INGOT, event);
+
+        COPPER_TORCH = new ModItem("copper_torch", ModCreativeTabs.UBM_TAB_COPPER_AGE);
+        register(COPPER_TORCH, event);
+
         NETHERITE_INGOT = new ItemNetheriteIngot();
-        event.getRegistry().register(NETHERITE_INGOT);
+        register(NETHERITE_INGOT, event);
+
         WOLF_ARMOR = new Item()
                 .setUnlocalizedName("wolf_armor")
                 .setRegistryName("wolf_armor")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES)
+                .setCreativeTab(TB_TRAILS_TALES)
                 .setMaxDamage(200)
                 .setMaxStackSize(1);
-        event.getRegistry().register(WOLF_ARMOR);
+        register(WOLF_ARMOR, event);
+
         NETHERITE_SWORD = new NetheriteSword(ModMaterials.NETHERITE);
-        event.getRegistry().register(NETHERITE_SWORD);
+        register(NETHERITE_SWORD, event);
+
         NETHERITE_AXE = new NetheriteAxe(Item.ToolMaterial.DIAMOND);
-        event.getRegistry().register(NETHERITE_AXE);
+        register(NETHERITE_AXE, event);
+
         NETHERITE_PICKAXE = new NetheritePickAxe(Item.ToolMaterial.DIAMOND);
-        event.getRegistry().register(NETHERITE_PICKAXE);
+        register(NETHERITE_PICKAXE, event);
+
         NETHERITE_SHOVEL = new NetheriteShovel(Item.ToolMaterial.DIAMOND);
-        event.getRegistry().register(NETHERITE_SHOVEL);
+        register(NETHERITE_SHOVEL, event);
+
         NETHERITE_HOE = new NetheriteHoe(Item.ToolMaterial.DIAMOND);
-        event.getRegistry().register(NETHERITE_HOE);
+        register(NETHERITE_HOE, event);
+
 
         COPPER_SWORD = new CopperSword(ModMaterials.COPPER);
-        event.getRegistry().register(COPPER_SWORD);
+        register(COPPER_SWORD, event);
+
         COPPER_AXE = new CopperAxe(Item.ToolMaterial.DIAMOND);
-        event.getRegistry().register(COPPER_AXE);
+        register(COPPER_AXE, event);
+
         COPPER_PICKAXE = new CopperPickAxe(Item.ToolMaterial.DIAMOND);
-        event.getRegistry().register(COPPER_PICKAXE);
+        register(COPPER_PICKAXE, event);
+
         COPPER_SHOVEL = new CopperShovel(Item.ToolMaterial.DIAMOND);
-        event.getRegistry().register(COPPER_SHOVEL);
+        register(COPPER_SHOVEL, event);
+
         COPPER_HOE = new CopperHoe(Item.ToolMaterial.DIAMOND);
-        event.getRegistry().register(COPPER_HOE);
+        register(COPPER_HOE, event);
+
 
         COPPER_HELMET = new ItemArmor(ModMaterials.COPPER_ARMOR, 0, EntityEquipmentSlot.HEAD)
                 .setUnlocalizedName("copper_helmet")
@@ -284,169 +298,65 @@ public class ModItems {
                 .setCreativeTab(ModCreativeTabs.UBM_TAB_COPPER_AGE);
 
 
-        event.getRegistry().register(COPPER_HELMET);
-        event.getRegistry().register(COPPER_CHESTPLATE);
-        event.getRegistry().register(COPPER_LEGGINGS);
-        event.getRegistry().register(COPPER_BOOTS);
+        register(COPPER_HELMET, event);
+
+        register(COPPER_CHESTPLATE, event);
+
+        register(COPPER_LEGGINGS, event);
+
+        register(COPPER_BOOTS, event);
+
 
 
         NETHERITE_HELMET = new ItemArmor(ModMaterials.NETHERITE_ARMOR, 0, EntityEquipmentSlot.HEAD)
                 .setUnlocalizedName("netherite_helmet")
                 .setRegistryName("netherite_helmet")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+                .setCreativeTab(TB_NETHER);
 
         NETHERITE_CHESTPLATE = new ItemArmor(ModMaterials.NETHERITE_ARMOR, 0, EntityEquipmentSlot.CHEST)
                 .setUnlocalizedName("netherite_chestplate")
                 .setRegistryName("netherite_chestplate")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+                .setCreativeTab(TB_NETHER);
 
         NETHERITE_LEGGINGS = new ItemArmor(ModMaterials.NETHERITE_ARMOR, 0, EntityEquipmentSlot.LEGS)
                 .setUnlocalizedName("netherite_leggings")
                 .setRegistryName("netherite_leggings")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
+                .setCreativeTab(TB_NETHER);
 
         NETHERITE_BOOTS = new ItemArmor(ModMaterials.NETHERITE_ARMOR, 0, EntityEquipmentSlot.FEET)
                 .setUnlocalizedName("netherite_boots")
                 .setRegistryName("netherite_boots")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_NETHER);
-        event.getRegistry().register(NETHERITE_HELMET);
-        event.getRegistry().register(NETHERITE_CHESTPLATE);
-        event.getRegistry().register(NETHERITE_LEGGINGS);
-        event.getRegistry().register(NETHERITE_BOOTS);
+                .setCreativeTab(TB_NETHER);
+        register(NETHERITE_HELMET, event);
 
+        register(NETHERITE_CHESTPLATE, event);
 
-        ANGLER_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("angler_pottery_sherd")
-                .setRegistryName("angler_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-        ARCHER_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("archer_pottery_sherd")
-                .setRegistryName("archer_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
+        register(NETHERITE_LEGGINGS, event);
 
-        ARMS_UP_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("arms_up_pottery_sherd")
-                .setRegistryName("arms_up_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        BLADE_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("blade_pottery_sherd")
-                .setRegistryName("blade_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        BURN_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("burn_pottery_sherd")
-                .setRegistryName("burn_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        BREWER_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("brewer_pottery_sherd")
-                .setRegistryName("brewer_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        DANGER_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("danger_pottery_sherd")
-                .setRegistryName("danger_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        EXPLORER_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("explorer_pottery_sherd")
-                .setRegistryName("explorer_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        FRIEND_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("friend_pottery_sherd")
-                .setRegistryName("friend_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        HEART_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("heart_pottery_sherd")
-                .setRegistryName("heart_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        HEARTBREAK_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("heartbreak_pottery_sherd")
-                .setRegistryName("heartbreak_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        HOWL_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("howl_pottery_sherd")
-                .setRegistryName("howl_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        MINER_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("miner_pottery_sherd")
-                .setRegistryName("miner_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        MOURNER_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("mourner_pottery_sherd")
-                .setRegistryName("mourner_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        PLENTY_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("plenty_pottery_sherd")
-                .setRegistryName("plenty_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        PRIZE_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("prize_pottery_sherd")
-                .setRegistryName("prize_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        SHEAF_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("sheaf_pottery_sherd")
-                .setRegistryName("sheaf_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        SHELTER_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("shelter_pottery_sherd")
-                .setRegistryName("shelter_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        SKULL_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("skull_pottery_sherd")
-                .setRegistryName("skull_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
-
-        SNORT_POTTERY_SHERD = new Item()
-                .setUnlocalizedName("snort_pottery_sherd")
-                .setRegistryName("snort_pottery_sherd")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
+        register(NETHERITE_BOOTS, event);
 
         POWDER_SNOW_BUCKET = new Item()
                 .setUnlocalizedName("powder_snow_bucket")
                 .setRegistryName("powder_snow_bucket")
                 .setMaxStackSize(1)
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
+                .setCreativeTab(TB_CAVES);
 
-        COPPER_NUGGET = new Item()
-                .setUnlocalizedName("copper_nugget")
-                .setRegistryName("copper_nugget")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_COPPER_AGE);
+        COPPER_NUGGET = new ModItem("copper_nugget", ModCreativeTabs.UBM_TAB_COPPER_AGE);
 
-        CANDLE = new Item()
-                .setUnlocalizedName("candle")
-                .setRegistryName("candle")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
+        CANDLE = new ModItem("candle", TB_TRAILS_TALES);
 
-        HONEYCOMB = new Item()
-                .setUnlocalizedName("honeycomb")
-                .setRegistryName("honeycomb")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
+        HONEYCOMB = new ModItem("honeycomb", ModCreativeTabs.UBM_TAB_BEES);
 
-        HONEY_BOTTLE = new ItemFood(2, 2, false) //TODO: Move to dedicated class
-                .setUnlocalizedName("honey_bottle")
-                .setRegistryName("honey_bottle")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_BEES);
+        HONEY_BOTTLE = new ItemHoneyBottle();
         
         for (String color : COLORS) {
             Item item = new Item()
                     .setRegistryName(color + "_candle")
                     .setUnlocalizedName(color + "_candle")
-                    .setCreativeTab(ModCreativeTabs.UBM_TAB_TRAILS_TALES);
+                    .setCreativeTab(TB_TRAILS_TALES);
 
-            event.getRegistry().register(item);
+            register(item, event);
+
 
             try {
                 ModItems.class.getField(color.toUpperCase() + "_CANDLE").set(null, item);
@@ -461,37 +371,25 @@ public class ModItems {
         GLOW_BERRIES = new ItemGlowBerry();
         BAMBOO_RAFT = new ItemBambooRaft();
 
-        event.getRegistry().register(ANGLER_POTTERY_SHERD);
-        event.getRegistry().register(ARCHER_POTTERY_SHERD);
-        event.getRegistry().register(ARMS_UP_POTTERY_SHERD);
-        event.getRegistry().register(BLADE_POTTERY_SHERD);
-        event.getRegistry().register(BREWER_POTTERY_SHERD);
-        event.getRegistry().register(BURN_POTTERY_SHERD);
-        event.getRegistry().register(DANGER_POTTERY_SHERD);
-        event.getRegistry().register(EXPLORER_POTTERY_SHERD);
-        event.getRegistry().register(FRIEND_POTTERY_SHERD);
-        event.getRegistry().register(HEART_POTTERY_SHERD);
-        event.getRegistry().register(HEARTBREAK_POTTERY_SHERD);
-        event.getRegistry().register(HOWL_POTTERY_SHERD);
-        event.getRegistry().register(MINER_POTTERY_SHERD);
-        event.getRegistry().register(MOURNER_POTTERY_SHERD);
-        event.getRegistry().register(PLENTY_POTTERY_SHERD);
-        event.getRegistry().register(PRIZE_POTTERY_SHERD);
-        event.getRegistry().register(SHEAF_POTTERY_SHERD);
-        event.getRegistry().register(SHELTER_POTTERY_SHERD);
-        event.getRegistry().register(SKULL_POTTERY_SHERD);
-        event.getRegistry().register(SNORT_POTTERY_SHERD);
-        event.getRegistry().register(POWDER_SNOW_BUCKET);
+        register(POWDER_SNOW_BUCKET, event);
 
-        event.getRegistry().register(SWEET_BERRY);
-        event.getRegistry().register(GLOW_BERRIES);
-        event.getRegistry().register(BAMBOO_RAFT);
 
-        event.getRegistry().register(CANDLE);
+        register(SWEET_BERRY, event);
 
-        event.getRegistry().register(HONEYCOMB);
-        event.getRegistry().register(HONEY_BOTTLE);
-        event.getRegistry().register(COPPER_NUGGET);
+        register(GLOW_BERRIES, event);
+
+        register(BAMBOO_RAFT, event);
+
+
+        register(CANDLE, event);
+
+
+        register(HONEYCOMB, event);
+
+        register(HONEY_BOTTLE, event);
+
+        register(COPPER_NUGGET, event);
+
 
 
         // Spawn Eggs
@@ -526,215 +424,81 @@ public class ModItems {
         SPAWN_EGG_PILLAGER = new ItemSpawnEggCustom(EntityPillager.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "pillager");
         SPAWN_EGG_RAVAGER = new ItemSpawnEggCustom(EntityGlowSquid.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "ravager");//TODO: Add Entity
 
-        event.getRegistry().register(SPAWN_EGG_FROG);
-        event.getRegistry().register(SPAWN_EGG_TURTLE);
-        event.getRegistry().register(SPAWN_EGG_GOAT);
-        event.getRegistry().register(SPAWN_EGG_BEE);
-        event.getRegistry().register(SPAWN_EGG_DOLPHIN);
-        event.getRegistry().register(SPAWN_EGG_WARDEN);
-        event.getRegistry().register(SPAWN_EGG_WOLF);
-        event.getRegistry().register(SPAWN_EGG_VILLAGER);
-        event.getRegistry().register(SPAWN_EGG_ALLAY);
-        event.getRegistry().register(SPAWN_EGG_WANDERING_TRADER);
-        event.getRegistry().register(SPAWN_EGG_STRIDER);
-        event.getRegistry().register(SPAWN_EGG_SNIFFER);
-        event.getRegistry().register(SPAWN_EGG_ARMADILLO);
-        event.getRegistry().register(SPAWN_EGG_BREEZE);
-        event.getRegistry().register(SPAWN_EGG_CAMEL);
-        event.getRegistry().register(SPAWN_EGG_CAT);
-        event.getRegistry().register(SPAWN_EGG_HOGLIN);
-        event.getRegistry().register(SPAWN_EGG_PIGLIN);
-        event.getRegistry().register(SPAWN_EGG_FOX);
-        event.getRegistry().register(SPAWN_EGG_CREAKING);
-        event.getRegistry().register(SPAWN_EGG_PHANTOM);
-        event.getRegistry().register(SPAWN_EGG_AXOLOTL);
-        event.getRegistry().register(SPAWN_EGG_ZOGLIN);
+        register(SPAWN_EGG_FROG, event);
+        register(SPAWN_EGG_TURTLE, event);
+        register(SPAWN_EGG_GOAT, event);
+        register(SPAWN_EGG_BEE, event);
+        register(SPAWN_EGG_DOLPHIN, event);
+        register(SPAWN_EGG_WARDEN, event);
+        register(SPAWN_EGG_WOLF, event);
+        register(SPAWN_EGG_VILLAGER, event);
+        register(SPAWN_EGG_ALLAY, event);
+        register(SPAWN_EGG_WANDERING_TRADER, event);
+        register(SPAWN_EGG_STRIDER, event);
+        register(SPAWN_EGG_SNIFFER, event);
+        register(SPAWN_EGG_ARMADILLO, event);
+        register(SPAWN_EGG_BREEZE, event);
+        register(SPAWN_EGG_CAMEL, event);
+        register(SPAWN_EGG_CAT, event);
+        register(SPAWN_EGG_HOGLIN, event);
+        register(SPAWN_EGG_PIGLIN, event);
+        register(SPAWN_EGG_FOX, event);
+        register(SPAWN_EGG_CREAKING, event);
+        register(SPAWN_EGG_PHANTOM, event);
+        register(SPAWN_EGG_AXOLOTL, event);
+        register(SPAWN_EGG_ZOGLIN, event);
+        register(SPAWN_EGG_COD, event);
+        register(SPAWN_EGG_SALMON, event);
+        register(SPAWN_EGG_PUFFERFISH, event);
+        register(SPAWN_EGG_TROPICAL_FISH, event);
+        register(SPAWN_EGG_GLOW_SQUID, event);
+        register(SPAWN_EGG_PILLAGER, event);
+        register(SPAWN_EGG_RAVAGER, event);
 
-        event.getRegistry().register(SPAWN_EGG_COD);
-        event.getRegistry().register(SPAWN_EGG_SALMON);
-        event.getRegistry().register(SPAWN_EGG_PUFFERFISH);
-        event.getRegistry().register(SPAWN_EGG_TROPICAL_FISH);
-        event.getRegistry().register(SPAWN_EGG_GLOW_SQUID);
+        AMETHYST_SHARD = new ModItem("amethyst_shard", TB_CAVES);
+        register(AMETHYST_SHARD, event);
 
-        event.getRegistry().register(SPAWN_EGG_PILLAGER);
-        event.getRegistry().register(SPAWN_EGG_RAVAGER);
 
-        AMETHYST_SHARD = new Item()
-                .setUnlocalizedName("amethyst_shard")
-                .setRegistryName("amethyst_shard")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(AMETHYST_SHARD);
+        TADPOLE_BUCKET = new ModItem("bucket_tadpole", TB_CAVES);
+        register(TADPOLE_BUCKET, event);
 
-        TADPOLE_BUCKET = new Item()
-                .setUnlocalizedName("bucket_tadpole")
-                .setRegistryName("bucket_tadpole")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(TADPOLE_BUCKET);
 
-        TRIDENT = new Item()
-                .setUnlocalizedName("trident")
-                .setRegistryName("trident")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_AQUATIC);
-        event.getRegistry().register(TRIDENT);
+        TRIDENT = new ModItem("trident", TB_AQUATIC);
+        register(TRIDENT, event);
+
 
         CROSSBOW = new ItemCrossbow()
                 .setUnlocalizedName("crossbow")
                 .setRegistryName("crossbow");
-        event.getRegistry().register(CROSSBOW);
-        RAW_GOLD = new Item()
-                .setUnlocalizedName("raw_gold")
-                .setRegistryName("raw_gold")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(RAW_GOLD);
-        RAW_IRON = new Item()
-                .setUnlocalizedName("raw_iron")
-                .setRegistryName("raw_iron")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(RAW_IRON);
-        RAW_COPPER = new Item()
-                .setUnlocalizedName("raw_copper")
-                .setRegistryName("raw_copper")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(RAW_COPPER);
+        register(CROSSBOW, event);
+
+        RAW_GOLD = new ModItem("raw_gold", TB_CAVES);
+        register(RAW_GOLD, event);
+
+        RAW_IRON = new ModItem("raw_iron", TB_CAVES);
+        register(RAW_IRON, event);
+
+        RAW_COPPER = new ModItem("raw_copper", TB_CAVES);
+        register(RAW_COPPER, event);
+
 
         SPYGLASS = new ItemSpyglass()
                 .setUnlocalizedName("spyglass")
                 .setRegistryName("spyglass")
-                .setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
-        event.getRegistry().register(SPYGLASS);
+                .setCreativeTab(TB_CAVES);
+        register(SPYGLASS, event);
+
     }
 
     @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void onModelEvent(final ModelRegistryEvent event) {
-        registerItemModel(OMINOUS_BOTTLE);
-        registerItemModel(NETHERITE_SCRAP);
-        registerItemModel(NETHERITE_INGOT);
-        registerItemModel(NETHERITE_SWORD);
-        registerItemModel(NETHERITE_AXE);
-        registerItemModel(NETHERITE_PICKAXE);
-        registerItemModel(NETHERITE_SHOVEL);
-        registerItemModel(NETHERITE_HOE);
-        registerItemModel(NETHERITE_HELMET);
-        registerItemModel(NETHERITE_CHESTPLATE);
-        registerItemModel(NETHERITE_LEGGINGS);
-        registerItemModel(NETHERITE_BOOTS);
+        for (Item m : items) registerItemModel(m);
+    }
 
-        registerItemModel(SPYGLASS);
-
-        registerItemModel(COPPER_SWORD);
-        registerItemModel(COPPER_PICKAXE);
-        registerItemModel(COPPER_SHOVEL);
-        registerItemModel(COPPER_AXE);
-        registerItemModel(COPPER_HOE);
-        registerItemModel(COPPER_HELMET);
-        registerItemModel(COPPER_CHESTPLATE);
-        registerItemModel(COPPER_LEGGINGS);
-        registerItemModel(COPPER_BOOTS);
-
-        registerItemModel(ANGLER_POTTERY_SHERD);
-        registerItemModel(ARCHER_POTTERY_SHERD);
-        registerItemModel(ARMS_UP_POTTERY_SHERD);
-        registerItemModel(BLADE_POTTERY_SHERD);
-        registerItemModel(BURN_POTTERY_SHERD);
-        registerItemModel(BREWER_POTTERY_SHERD);
-        registerItemModel(DANGER_POTTERY_SHERD);
-        registerItemModel(EXPLORER_POTTERY_SHERD);
-        registerItemModel(FRIEND_POTTERY_SHERD);
-        registerItemModel(HEART_POTTERY_SHERD);
-        registerItemModel(HEARTBREAK_POTTERY_SHERD);
-        registerItemModel(HOWL_POTTERY_SHERD);
-        registerItemModel(MINER_POTTERY_SHERD);
-        registerItemModel(MOURNER_POTTERY_SHERD);
-        registerItemModel(PLENTY_POTTERY_SHERD);
-        registerItemModel(PRIZE_POTTERY_SHERD);
-        registerItemModel(SHEAF_POTTERY_SHERD);
-        registerItemModel(SHELTER_POTTERY_SHERD);
-        registerItemModel(SKULL_POTTERY_SHERD);
-        registerItemModel(SNORT_POTTERY_SHERD);
-
-        registerItemModel(COPPER_TORCH);
-
-        registerItemModel(POWDER_SNOW_BUCKET);
-        registerItemModel(SWEET_BERRY);
-        registerItemModel(GLOW_BERRIES);
-
-        registerItemModel(BAMBOO_RAFT);
-
-        registerItemModel(SPAWN_EGG_FROG);
-        registerItemModel(SPAWN_EGG_TURTLE);
-        registerItemModel(SPAWN_EGG_BEE);
-        registerItemModel(SPAWN_EGG_GOAT);
-        registerItemModel(SPAWN_EGG_DOLPHIN);
-        registerItemModel(SPAWN_EGG_WARDEN);
-        registerItemModel(SPAWN_EGG_WOLF);
-        registerItemModel(SPAWN_EGG_VILLAGER);
-
-        registerItemModel(CANDLE);
-        registerItemModel(BLACK_CANDLE);
-        registerItemModel(RED_CANDLE);
-        registerItemModel(GREEN_CANDLE);
-        registerItemModel(BROWN_CANDLE);
-        registerItemModel(BLUE_CANDLE);
-        registerItemModel(PURPLE_CANDLE);
-        registerItemModel(CYAN_CANDLE);
-        registerItemModel(LIGHT_GRAY_CANDLE);
-        registerItemModel(GRAY_CANDLE);
-        registerItemModel(PINK_CANDLE);
-        registerItemModel(LIME_CANDLE);
-        registerItemModel(YELLOW_CANDLE);
-        registerItemModel(LIGHT_BLUE_CANDLE);
-        registerItemModel(MAGENTA_CANDLE);
-        registerItemModel(ORANGE_CANDLE);
-        registerItemModel(WHITE_CANDLE);
-
-        registerItemModel(HONEYCOMB);
-        registerItemModel(HONEY_BOTTLE);
-        registerItemModel(AMETHYST_SHARD);
-        registerItemModel(TADPOLE_BUCKET);
-
-        registerItemModel(RAW_IRON);
-        registerItemModel(RAW_GOLD);
-        registerItemModel(RAW_COPPER);
-
-        registerItemModel(COPPER_NUGGET);
-
-        registerItemModel(SPAWN_EGG_ALLAY);
-        registerItemModel(SPAWN_EGG_SNIFFER);
-        registerItemModel(SPAWN_EGG_FOX);
-        registerItemModel(SPAWN_EGG_CAT);
-        registerItemModel(SPAWN_EGG_PHANTOM);
-        registerItemModel(SPAWN_EGG_AXOLOTL);
-        registerItemModel(SPAWN_EGG_STRIDER);
-        registerItemModel(SPAWN_EGG_WANDERING_TRADER);
-        registerItemModel(SPAWN_EGG_ZOGLIN);
-        registerItemModel(SPAWN_EGG_HOGLIN);
-        registerItemModel(SPAWN_EGG_PIGLIN);
-        registerItemModel(SPAWN_EGG_CAMEL);
-        registerItemModel(SPAWN_EGG_ARMADILLO);
-        registerItemModel(SPAWN_EGG_BREEZE);
-        registerItemModel(SPAWN_EGG_CREAKING);
-        registerItemModel(SPAWN_EGG_COD);
-        registerItemModel(SPAWN_EGG_SALMON);
-        registerItemModel(SPAWN_EGG_PUFFERFISH);
-        registerItemModel(SPAWN_EGG_TROPICAL_FISH);
-        registerItemModel(SPAWN_EGG_GLOW_SQUID);
-        registerItemModel(SPAWN_EGG_PILLAGER);
-        registerItemModel(SPAWN_EGG_RAVAGER);
-        registerItemModel(COPPER_INGOT);
-
-        registerItemModel(WOLF_ARMOR);
-        registerItemModel(TRIDENT);
-        registerItemModel(CROSSBOW);
-        registerItemModel(TRIM_NETHERITE_UPGRADE);
-
-        for (String s : TRIMS) {
-            try {
-                registerItemModel((Item) ModItems.class.getField("TRIM_" + s).get(null));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+    public static void register(Item itm, RegistryEvent.Register<Item> ev) {
+        ev.getRegistry() .register(itm);
+        items.add(itm);
     }
 
     @SideOnly(Side.CLIENT)

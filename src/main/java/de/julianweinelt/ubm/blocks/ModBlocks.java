@@ -13,8 +13,8 @@ import de.julianweinelt.ubm.items.BlockCopperTorch;
 import de.julianweinelt.ubm.items.ModItems;
 import de.julianweinelt.ubm.misc.AdvancementHelper;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
-import de.julianweinelt.ubm.misc.ModSounds;
 import de.julianweinelt.ubm.worldgen.ModBiomes;
+import de.julianweinelt.ubm.worldgen.ModDimension;
 import de.julianweinelt.ubm.worldgen.WorldGenBeeNest;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -473,10 +473,7 @@ public class ModBlocks {
                 .setCreativeTab(TB_PILLAGE);
         register(SMOOTH_STONE, event);
 
-        GRINDSTONE = new BlockRotated(Material.ROCK)
-                .setUnlocalizedName("grindstone")
-                .setRegistryName("grindstone")
-                .setCreativeTab(TB_PILLAGE);
+        GRINDSTONE = new BlockGrindstone(Material.ROCK);
         register(GRINDSTONE, event);
 
 
@@ -593,31 +590,16 @@ public class ModBlocks {
         register(CRIMSON_HYPHAE, event);
         WARPED_STEM = new BlockStrippedStem("warped", TB_NETHER, false);
         register(WARPED_STEM, event);
-        WARPED_HYPHAE = new Block(Material.WOOD)
-                .setUnlocalizedName("warped_hyphae")
-                .setRegistryName("warped_hyphae")
-                .setCreativeTab(TB_NETHER);
+        WARPED_HYPHAE = new BlockStrippedWood("warped", TB_NETHER, false, true);
         register(WARPED_HYPHAE, event);
 
-        STRIPPED_CRIMSON_STEM = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_crimson_stem")
-                .setRegistryName("stripped_crimson_stem")
-                .setCreativeTab(TB_NETHER);
+        STRIPPED_CRIMSON_STEM = new BlockModLog("stripped_crimson_stem").setCreativeTab(TB_NETHER);
         register(STRIPPED_CRIMSON_STEM, event);
-        STRIPPED_CRIMSON_HYPHAE = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_crimson_hyphae")
-                .setRegistryName("stripped_crimson_hyphae")
-                .setCreativeTab(TB_NETHER);
+        STRIPPED_CRIMSON_HYPHAE = new BlockModLog("stripped_crimson_hyphae").setCreativeTab(TB_NETHER);
         register(STRIPPED_CRIMSON_HYPHAE, event);
-        STRIPPED_WARPED_STEM = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_warped_stem")
-                .setRegistryName("stripped_warped_stem")
-                .setCreativeTab(TB_NETHER);
+        STRIPPED_WARPED_STEM = new BlockModLog("stripped_warped_stem").setCreativeTab(TB_NETHER);
         register(STRIPPED_WARPED_STEM, event);
-        STRIPPED_WARPED_HYPHAE = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_warped_hyphae")
-                .setRegistryName("stripped_warped_hyphae")
-                .setCreativeTab(TB_NETHER);
+        STRIPPED_WARPED_HYPHAE = new BlockModLog("stripped_warped_hyphae").setCreativeTab(TB_NETHER);
         register(STRIPPED_WARPED_HYPHAE, event);
         BLACKSTONE = new Block(Material.ROCK)
                 .setUnlocalizedName("blackstone")
@@ -701,55 +683,37 @@ public class ModBlocks {
         STRIPPED_OAK_STEM = new BlockStrippedStem("oak", TB_PILLAGE, true);
         register(STRIPPED_OAK_STEM, event);
 
-        STRIPPED_OAK_WOOD = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_oak_wood")
-                .setRegistryName("stripped_oak_wood")
-                .setCreativeTab(TB_PILLAGE);
+        STRIPPED_OAK_WOOD = new BlockStrippedWood("oak", TB_PILLAGE, true);
         register(STRIPPED_OAK_WOOD, event);
 
         STRIPPED_SPRUCE_STEM = new BlockStrippedStem("spruce", TB_PILLAGE, true);
         register(STRIPPED_SPRUCE_STEM, event);
-        STRIPPED_SPRUCE_WOOD = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_spruce_wood")
-                .setRegistryName("stripped_spruce_wood")
-                .setCreativeTab(TB_PILLAGE);
+        STRIPPED_SPRUCE_WOOD = new BlockStrippedWood("spruce", TB_PILLAGE, true);
         register(STRIPPED_SPRUCE_WOOD, event);
 
         STRIPPED_BIRCH_STEM = new BlockStrippedStem("birch", TB_PILLAGE, true);
         register(STRIPPED_BIRCH_STEM, event);
 
-        STRIPPED_BIRCH_WOOD = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_birch_wood")
-                .setRegistryName("stripped_birch_wood")
-                .setCreativeTab(TB_PILLAGE);
+        STRIPPED_BIRCH_WOOD = new BlockStrippedWood("birch", TB_PILLAGE, true);
         register(STRIPPED_BIRCH_WOOD, event);
 
 
         STRIPPED_DARK_OAK_STEM = new BlockStrippedStem("dark_oak", TB_PILLAGE, true);
         register(STRIPPED_DARK_OAK_STEM, event);
 
-        STRIPPED_DARK_OAK_WOOD = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_dark_oak_wood")
-                .setRegistryName("stripped_dark_oak_wood")
-                .setCreativeTab(TB_PILLAGE);
+        STRIPPED_DARK_OAK_WOOD = new BlockStrippedWood("dark_oak", TB_PILLAGE, true);
         register(STRIPPED_DARK_OAK_WOOD, event);
 
         STRIPPED_ACACIA_STEM = new BlockStrippedStem("acacia", TB_PILLAGE, true);
         register(STRIPPED_ACACIA_STEM, event);
 
-        STRIPPED_ACACIA_WOOD = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_acacia_wood")
-                .setRegistryName("stripped_acacia_wood")
-                .setCreativeTab(TB_PILLAGE);
+        STRIPPED_ACACIA_WOOD = new BlockStrippedWood("acacia", TB_PILLAGE, true);
         register(STRIPPED_ACACIA_WOOD, event);
 
         STRIPPED_JUNGLE_STEM = new BlockStrippedStem("jungle", TB_PILLAGE, true);
         register(STRIPPED_JUNGLE_STEM, event);
 
-        STRIPPED_JUNGLE_WOOD = new Block(Material.WOOD)
-                .setUnlocalizedName("stripped_jungle_wood")
-                .setRegistryName("stripped_jungle_wood")
-                .setCreativeTab(TB_PILLAGE);
+        STRIPPED_JUNGLE_WOOD = new BlockStrippedWood("jungle", TB_PILLAGE, true);
         register(STRIPPED_JUNGLE_WOOD, event);
 
 
@@ -860,7 +824,7 @@ public class ModBlocks {
                 .setCreativeTab(TB_CAVES);
         register(CHISELED_COPPER, event);
 
-        COPPER_GRATE = new BlockCopperGrate("");
+        COPPER_GRATE = new BlockCopperGrate("", false);
         register(COPPER_GRATE, event);
 
         CUT_COPPER = new Block(Material.ROCK)
@@ -887,7 +851,7 @@ public class ModBlocks {
                 .setCreativeTab(TB_CAVES);
         register(EXPOSED_CHISELED_COPPER, event);
 
-        EXPOSED_COPPER_GRATE = new BlockCopperGrate("exposed");
+        EXPOSED_COPPER_GRATE = new BlockCopperGrate("exposed", false);
         register(EXPOSED_COPPER_GRATE, event);
 
         EXPOSED_CUT_COPPER = new Block(Material.ROCK)
@@ -914,7 +878,7 @@ public class ModBlocks {
                 .setCreativeTab(TB_CAVES);
         register(WEATHERED_CHISELED_COPPER, event);
 
-        WEATHERED_COPPER_GRATE = new BlockCopperGrate("weathered");
+        WEATHERED_COPPER_GRATE = new BlockCopperGrate("weathered", false);
         register(WEATHERED_COPPER_GRATE, event);
 
         WEATHERED_CUT_COPPER = new Block(Material.ROCK)
@@ -941,7 +905,7 @@ public class ModBlocks {
                 .setCreativeTab(TB_CAVES);
         register(OXIDIZED_CHISELED_COPPER, event);
 
-        OXIDIZED_COPPER_GRATE = new BlockCopperGrate("oxidized");
+        OXIDIZED_COPPER_GRATE = new BlockCopperGrate("oxidized", false);
         register(OXIDIZED_COPPER_GRATE, event);
 
         OXIDIZED_CUT_COPPER = new Block(Material.ROCK)
@@ -969,10 +933,7 @@ public class ModBlocks {
                 .setCreativeTab(TB_CAVES);
         register(WAXED_CHISELED_COPPER, event);
 
-        WAXED_COPPER_GRATE = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_copper_grate")
-                .setRegistryName("waxed_copper_grate")
-                .setCreativeTab(TB_CAVES);
+        WAXED_COPPER_GRATE = new BlockCopperGrate("", true);
         register(WAXED_COPPER_GRATE, event);
 
         WAXED_CUT_COPPER = new Block(Material.ROCK)
@@ -1000,10 +961,7 @@ public class ModBlocks {
                 .setCreativeTab(TB_CAVES);
         register(WAXED_EXPOSED_CHISELED_COPPER, event);
 
-        WAXED_EXPOSED_COPPER_GRATE = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_exposed_copper_grate")
-                .setRegistryName("waxed_exposed_copper_grate")
-                .setCreativeTab(TB_CAVES);
+        WAXED_EXPOSED_COPPER_GRATE = new BlockCopperGrate("exposed", true);
         register(WAXED_EXPOSED_COPPER_GRATE, event);
 
         WAXED_EXPOSED_CUT_COPPER = new Block(Material.ROCK)
@@ -1031,10 +989,7 @@ public class ModBlocks {
                 .setCreativeTab(TB_CAVES);
         register(WAXED_WEATHERED_CHISELED_COPPER, event);
 
-        WAXED_WEATHERED_COPPER_GRATE = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_weathered_copper_grate")
-                .setRegistryName("waxed_weathered_copper_grate")
-                .setCreativeTab(TB_CAVES);
+        WAXED_WEATHERED_COPPER_GRATE = new BlockCopperGrate("weathered", true);
         register(WAXED_WEATHERED_COPPER_GRATE, event);
 
         WAXED_WEATHERED_CUT_COPPER = new Block(Material.ROCK)
@@ -1062,10 +1017,7 @@ public class ModBlocks {
                 .setCreativeTab(TB_CAVES);
         register(WAXED_OXIDIZED_CHISELED_COPPER, event);
 
-        WAXED_OXIDIZED_COPPER_GRATE = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_oxidized_copper_grate")
-                .setRegistryName("waxed_oxidized_copper_grate")
-                .setCreativeTab(TB_CAVES);
+        WAXED_OXIDIZED_COPPER_GRATE = new BlockCopperGrate("oxidized", true);
         register(WAXED_OXIDIZED_COPPER_GRATE, event);
 
         WAXED_OXIDIZED_CUT_COPPER = new Block(Material.ROCK)
@@ -1811,9 +1763,6 @@ public class ModBlocks {
         GRANITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("granite_slab", Material.ROCK, GRANITE_SLAB)
                 .setCreativeTab(TB_AQUATIC);
         registerSlab(GRANITE_SLAB, GRANITE_SLAB_D, event);
-
-
-
     }
 
     @SideOnly(Side.SERVER)

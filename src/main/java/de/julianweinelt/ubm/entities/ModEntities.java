@@ -11,6 +11,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -109,6 +111,7 @@ public class ModEntities {
 
     @SideOnly(Side.CLIENT)
     public static void registerRenders() {
+        UBM.getLogger().info("Registering Renderers");
         RenderingRegistry.registerEntityRenderingHandler(EntityBee.class, renderManager ->
                 new RenderLiving<EntityBee>(renderManager, new ModelBee(), 0.5F) {
                     @Override
@@ -178,17 +181,17 @@ public class ModEntities {
                 new RenderLiving<EntitySalmon>(renderManager, new ModelSalmon(), 0.5F) {
                     @Override
                     protected ResourceLocation getEntityTexture(@Nullable EntitySalmon entity) {
+                        if (entity == null) return new ResourceLocation(MODID, "textures/entity/salmon.png");
+                        if (entity.getDisplayName().getUnformattedText().equals("Salami")) {
+                            return new ResourceLocation(MODID, "textures/entity/fish/salami.png");
+                        }
                         return new ResourceLocation(MODID, "textures/entity/fish/salmon.png");
                     }
 
                     @Override
                     protected void preRenderCallback(@Nonnull EntitySalmon entityLivingBaseIn, float partialTickTime) {
-                        Random random = entityLivingBaseIn.getRNG();
-                        float min = 0.3F;
-                        float max = 1.2F;
-
-                        float scale = random.nextFloat() * (max - min) + min;
-                        //GlStateManager.scale(scale, scale, scale);
+                        float scale = entityLivingBaseIn.getScale();
+                        GlStateManager.scale(scale, scale, scale);
                     }
                 }
         );
@@ -216,6 +219,7 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntityGlowSquid.class, RenderGlowSquid::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityTropicalFish.class, RenderTropicalFish::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityPillager.class, RenderPillager::new);
+        UBM.getLogger().info("Registered Renderers");
     }
 
     @SubscribeEvent

@@ -1,0 +1,50 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "ubm:blocks/decorated_pot/decorated_pot_base",
+		"1": "ubm:blocks/decorated_pot/angler_pottery_pattern",
+		"particle": "ubm:blocks/decorated_pot/decorated_pot_base"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 2],
+			"to": [15, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 2]},
+			"faces": {
+				"north": {"uv": [1, 0, 15, 16], "texture": "#1"},
+				"east": {"uv": [1, 0, 15, 16], "texture": "#1"},
+				"south": {"uv": [1, 0, 15, 16], "texture": "#1"},
+				"west": {"uv": [1, 0, 15, 16], "texture": "#1"},
+				"up": {"uv": [0, 6.5, 7, 13.5], "texture": "#0"},
+				"down": {"uv": [7, 6.5, 14, 13.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [4, 17, 5],
+			"to": [12, 21, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 17, 5]},
+			"faces": {
+				"north": {"uv": [0, 4, 5, 6], "texture": "#0"},
+				"east": {"uv": [0, 4, 5, 6], "texture": "#0"},
+				"south": {"uv": [5, 4, 10, 6], "texture": "#0"},
+				"west": {"uv": [0, 4, 5, 6], "texture": "#0"},
+				"up": {"uv": [4, 0, 8, 4], "texture": "#0"},
+				"down": {"uv": [8, 0, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"from": [5, 16, 6],
+			"to": [11, 17, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [5, 16, 6]},
+			"faces": {
+				"north": {"uv": [12, 4, 16, 5.5], "texture": "#0"},
+				"east": {"uv": [12, 4, 16, 5.5], "texture": "#0"},
+				"south": {"uv": [12, 4, 16, 5.5], "texture": "#0"},
+				"west": {"uv": [12, 4, 16, 5.5], "texture": "#0"},
+				"up": {"uv": [4, 0, 8, 4], "texture": "#0"},
+				"down": {"uv": [8, 0, 12, 4], "texture": "#0"}
+			}
+		}
+	]
+}

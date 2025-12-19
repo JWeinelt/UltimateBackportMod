@@ -3,6 +3,7 @@ package de.julianweinelt.ubm.misc;
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.items.ItemSpyglass;
+import de.julianweinelt.ubm.items.ModItems;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
@@ -21,16 +22,20 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod.EventBusSubscriber(modid = UBM.MODID)
 public class EntityEvents {
 
-    private static float spyglassZoom = 1.0F; // Standard-FOV (kein Zoom)
+    private static float spyglassZoom = 1.0F;
 
     @SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public static void onFovUpdate(FOVUpdateEvent event) {
         EntityPlayer player = event.getEntity();
         ItemStack stack = player.getActiveItemStack();
+        if (stack.getItem() != ModItems.SPYGLASS) return;
 
         boolean active = !stack.isEmpty() && stack.getItem() instanceof ItemSpyglass;
 
@@ -40,9 +45,11 @@ public class EntityEvents {
             spyglassZoom += (1.0F - spyglassZoom) * 0.2F;
         }
 
+        Minecraft.getMinecraft().renderGlobal.setDisplayListEntitiesDirty();
         event.setNewfov(spyglassZoom);
     }
     @SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public void onRenderOverlay(RenderGameOverlayEvent.Post event) {
         Minecraft mc = Minecraft.getMinecraft();
         EntityPlayer player = mc.player;
@@ -116,6 +123,7 @@ public class EntityEvents {
     }
 
     @SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public static void onRenderOverlay(RenderGameOverlayEvent.Pre event) {
         Minecraft mc = Minecraft.getMinecraft();
         EntityPlayer player = mc.player;
@@ -136,6 +144,7 @@ public class EntityEvents {
     }
 
     //@SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public static void onRenderHearts(RenderGameOverlayEvent.Pre event) {
         if (event.getType() != RenderGameOverlayEvent.ElementType.HEALTH) return;
 

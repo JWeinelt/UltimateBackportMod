@@ -1,5 +1,6 @@
 package de.julianweinelt.ubm.items;
 
+import de.julianweinelt.ubm.entities.EntityWarden;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -12,12 +13,15 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.Objects;
 
 public class ItemSpawnEggCustom extends Item {
     private final Class<? extends Entity> entityClass;
@@ -54,6 +58,10 @@ public class ItemSpawnEggCustom extends Item {
                     double z = blockpos.getZ() + 0.5;
 
                     Entity entity = EntityList.createEntityByIDFromName(EntityList.getKey(entityClass), worldIn);
+                    if (Objects.equals(entityName, "warden") && !(entity instanceof EntityWarden)) {
+                        playerIn.sendMessage(new TextComponentString("§cThis entity has not been added yet!"));
+                        return new ActionResult<>(EnumActionResult.PASS, stack);
+                    }
                     if (entity != null) {
                         entity.setPosition(x, y, z);
                         worldIn.spawnEntity(entity);
