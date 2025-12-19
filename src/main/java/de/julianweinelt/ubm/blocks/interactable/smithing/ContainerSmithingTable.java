@@ -114,8 +114,8 @@ public class ContainerSmithingTable extends Container {
             }
             String mat = materials.get(material.getItem());
             NBTTagCompound compound = result.getTagCompound();
-            compound.setString("trim", ((ItemArmorTrim) trim.getItem()).getArmorTrim());
-            compound.setString("trimMaterial", mat.toUpperCase());
+            compound.setString("ubm:trim", ((ItemArmorTrim) trim.getItem()).getArmorTrim());
+            compound.setString("ubm:trimMaterial", mat.toUpperCase());
             result.setTagCompound(compound);
             ItemStackHelper.setLore(result, "§5Armor Trim: " + ((ItemArmorTrim) trim.getItem()).getArmorTrim(), "§6Material: " + mat);
         }

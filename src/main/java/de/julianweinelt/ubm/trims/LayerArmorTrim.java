@@ -45,8 +45,10 @@ public class LayerArmorTrim extends LayerBipedArmor {
             NBTTagCompound trim = stack.getTagCompound();
             if (trim == null) continue;
 
-            String pattern = trim.getString("trim").isEmpty() ? "tide" : trim.getString("trim");
-            String material = trim.getString("trimMaterial").isEmpty() ? "emerald" : trim.getString("trimMaterial");
+            String pattern = trim.getString("ubm:trim").isEmpty() ? "unknown" : trim.getString("ubm:trim");
+            String material = trim.getString("ubm:trimMaterial").isEmpty() ? "unknown" : trim.getString("ubm:trimMaterial");
+
+            if (pattern.equals("unknown") || material.equals("unknown")) continue;
 
             String overlayPath = (slot == EntityEquipmentSlot.LEGS)
                     ? "textures/equipment/trims/entity/humanoid_leggings/" + pattern + ".png"
