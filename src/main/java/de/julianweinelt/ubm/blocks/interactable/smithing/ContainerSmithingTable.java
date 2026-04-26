@@ -10,9 +10,7 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.inventory.Slot;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.nbt.NBTTagCompound;
 
 import javax.annotation.Nonnull;
@@ -170,7 +168,9 @@ public class ContainerSmithingTable extends Container {
             } else {
                 if (stackInSlot.getItem() instanceof ItemArmorTrim) {
                     if (!this.mergeItemStack(stackInSlot, 0, 1, false)) return ItemStack.EMPTY;
-                } else if (stackInSlot.getItem() instanceof ItemArmor) {
+                } else if (stackInSlot.getItem() instanceof ItemArmor
+                        || stackInSlot.getItem() instanceof ItemTool
+                        || stackInSlot.getItem() instanceof ItemSword) {
                     if (!this.mergeItemStack(stackInSlot, 1, 2, false)) return ItemStack.EMPTY;
                 } else if (isValidMaterial(stackInSlot.getItem())) {
                     if (!this.mergeItemStack(stackInSlot, 2, 3, false)) return ItemStack.EMPTY;
