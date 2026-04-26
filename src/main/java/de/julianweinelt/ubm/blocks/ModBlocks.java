@@ -321,6 +321,11 @@ public class ModBlocks {
     public static Block DEAD_BUBBLE_CORAL;
     public static Block DEAD_FIRE_CORAL;
     public static Block DEAD_HORN_CORAL;
+    public static Block DEAD_TUBE_CORAL_BLOCK;
+    public static Block DEAD_BRAIN_CORAL_BLOCK;
+    public static Block DEAD_BUBBLE_CORAL_BLOCK;
+    public static Block DEAD_FIRE_CORAL_BLOCK;
+    public static Block DEAD_HORN_CORAL_BLOCK;
     public static Block DEAD_TUBE_CORAL_FAN;
     public static Block DEAD_BRAIN_CORAL_FAN;
     public static Block DEAD_BUBBLE_CORAL_FAN;
@@ -461,6 +466,33 @@ public class ModBlocks {
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         CAMPFIRE = new BlockCampFire(false);
         register(CAMPFIRE, event);
+
+        DEAD_TUBE_CORAL_BLOCK = new BlockCoralBlock("tube", true, null);
+        register(DEAD_TUBE_CORAL_BLOCK, event);
+        TUBE_CORAL_BLOCK = new BlockCoralBlock("tube", false, DEAD_TUBE_CORAL_BLOCK);
+        register(TUBE_CORAL_BLOCK, event);
+
+        DEAD_HORN_CORAL_BLOCK = new BlockCoralBlock("horn", true, null);
+        register(DEAD_HORN_CORAL_BLOCK, event);
+        HORN_CORAL_BLOCK = new BlockCoralBlock("horn", false, DEAD_HORN_CORAL_BLOCK);
+        register(HORN_CORAL_BLOCK, event);
+
+        DEAD_BRAIN_CORAL_BLOCK = new BlockCoralBlock("brain", true, null);
+        register(DEAD_BRAIN_CORAL_BLOCK, event);
+        BRAIN_CORAL_BLOCK = new BlockCoralBlock("brain", false, DEAD_BRAIN_CORAL_BLOCK);
+        register(BRAIN_CORAL_BLOCK, event);
+
+        DEAD_BUBBLE_CORAL_BLOCK = new BlockCoralBlock("bubble", true, null);
+        register(DEAD_BUBBLE_CORAL_BLOCK, event);
+        BUBBLE_CORAL_BLOCK = new BlockCoralBlock("bubble", false, DEAD_BUBBLE_CORAL_BLOCK);
+        register(BUBBLE_CORAL_BLOCK, event);
+
+        DEAD_FIRE_CORAL_BLOCK = new BlockCoralBlock("fire", true, null);
+        register(DEAD_FIRE_CORAL_BLOCK, event);
+        FIRE_CORAL_BLOCK = new BlockCoralBlock("fire", false, DEAD_FIRE_CORAL_BLOCK);
+        register(FIRE_CORAL_BLOCK, event);
+
+
 
         LOOM = new BlockRotated(Material.WOOD)
                 .setUnlocalizedName("loom")
