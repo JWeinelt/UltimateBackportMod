@@ -74,9 +74,10 @@ public class ContainerSmithingTable extends Container {
 
         if (trim.getItem() instanceof ItemArmorTrim) {
             ItemArmorTrim t = (ItemArmorTrim) trim.getItem();
-            if (!t.getArmorTrim().equals("netherite_upgrade")) return;
-            if (piece.getItem().getRegistryName() == null) return;
-            if (piece.getItem().getRegistryName().getResourcePath().contains("diamond")) {
+            if (piece.getItem().getRegistryName() != null
+                    && piece.getItem().getRegistryName().getResourcePath().contains("diamond")
+                    && t.getArmorTrim().equals("netherite_upgrade")
+                    && material.getItem().equals(ModItems.NETHERITE_INGOT)) {
                 Item rs;
                 if (piece.getItem().equals(Items.DIAMOND_HELMET)) {
                     rs = ModItems.NETHERITE_HELMET;
@@ -107,20 +108,26 @@ public class ContainerSmithingTable extends Container {
             }
         }
 
-        if (trim.getItem() instanceof ItemArmorTrim && materials.containsKey(material.getItem()) && piece.getItem() instanceof ItemArmor) {
-            result = new ItemStack(piece.getItem());
-            if (!result.hasTagCompound()) {
-                result.setTagCompound(new NBTTagCompound());
+        if (trim.getItem() instanceof ItemArmorTrim
+                && materials.containsKey(material.getItem()) && piece.getItem() instanceof ItemArmor) {
+            ItemArmorTrim t = (ItemArmorTrim) trim.getItem();
+            if (!t.getArmorTrim().equals("netherite_upgrade")) {
+                result = new ItemStack(piece.getItem());
+                if (!result.hasTagCompound()) {
+                    result.setTagCompound(new NBTTagCompound());
+                }
+                String mat = materials.get(material.getItem());
+                NBTTagCompound compound = result.getTagCompound();
+                compound.setString("trim", ((ItemArmorTrim) trim.getItem()).getArmorTrim());
+                compound.setString("trimMaterial", mat.toUpperCase());
+                result.setTagCompound(compound);
+                ItemStackHelper.setLore(result, "§5Armor Trim: " + ((ItemArmorTrim) trim.getItem()).getArmorTrim(), "§6Material: " + mat);
             }
-            String mat = materials.get(material.getItem());
-            NBTTagCompound compound = result.getTagCompound();
-            compound.setString("trim", ((ItemArmorTrim) trim.getItem()).getArmorTrim());
-            compound.setString("trimMaterial", mat.toUpperCase());
-            result.setTagCompound(compound);
-            ItemStackHelper.setLore(result, "§5Armor Trim: " + ((ItemArmorTrim) trim.getItem()).getArmorTrim(), "§6Material: " + mat);
         }
 
-        if (result == ItemStack.EMPTY) return;
+        /*if (result == ItemStack.EMPTY) {
+            return;
+        }*/
         craftResult.setInventorySlotContents(0, result);
     }
 
