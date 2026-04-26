@@ -29,13 +29,17 @@ minecraft {
 
 repositories {
     maven {
-        name = "unifiedvisionReleases"
-        url = uri("https://repo.codeblocksmc.de/releases")
+        name = "maven-releases"
+        url = uri("https://repo.codeblocksmc.com/repository/maven-releases")
+        credentials {
+            username = project.findProperty("repoUser")
+            password = project.findProperty("repoPassword")
+        }
     }
 }
 
 dependencies {
-    implementation("de.julianweinelt.pathfinder:PathFinderAPI:1.1.1")
+    implementation("de.julianweinelt.pathfinder:PathFinderAPI:1.1.2")
 }
 
 processResources {
