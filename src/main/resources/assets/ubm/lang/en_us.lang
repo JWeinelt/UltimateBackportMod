@@ -264,6 +264,8 @@ item.mangrove_door.name=Mangrove Door
 
 item.bamboo_door.name=Bamboo Door
 
+item.copper_torch.name=Copper Torch
+
 item.sentry_armor_trim.name=Sentry Armor Trim
 item.flow_armor_trim.name=Flow Armor Trim
 item.bolt_armor_trim.name=Bolt Armor Trim
