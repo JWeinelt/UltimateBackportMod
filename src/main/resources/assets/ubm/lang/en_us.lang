@@ -104,6 +104,7 @@ tile.crimson_stairs.name=Crimson Stairs
 tile.warped_fence.name=Warped Fence
 tile.crimson_fence.name=Crimson Fence
 tile.crimson_button.name=Crimson Button
+tile.jungle_button.name=Jungle Button
 tile.smithing_table.name=Smithing Table
 tile.dried_kelp_block.name=Dried Kelp Block
 tile.spruce_button.name=Spruce Button
@@ -173,6 +174,17 @@ tile.mangrove_pressure_plate.name=Mangrove Pressure Plate
 tile.packed_mud.name=Packed Mud
 tile.mangrove_button.name=Mangrove Button
 tile.mud_bricks.name=Mud Bricks
+
+tile.tube_coral_block.name=Tube Coral Block
+tile.brain_coral_block.name=Brain Coral Block
+tile.bubble_coral_block.name=Bubble Coral Block
+tile.horn_coral_block.name=Horn Coral Block
+tile.fire_coral_block.name=Fire Coral Block
+tile.dead_tube_coral_block.name=Dead Tube Coral Block
+tile.dead_brain_coral_block.name=Dead Brain Coral Block
+tile.dead_bubble_coral_block.name=Dead Bubble Coral Block
+tile.dead_horn_coral_block.name=Dead Horn Coral Block
+tile.dead_fire_coral_block.name=Dead Fire Coral Block
 
 tile.blackstone_polished_wall.name=Polished Blackstone Wall
 tile.blackstone_polished_brick_wall.name=Polished Blackstone Brick Wall
@@ -295,6 +307,8 @@ item.pottery_sherd.snort.name=Snort Pottery Sherd
 
 item.wolf_armor.name=Wolf Armor
 
+item.trial_key_ominous.name=Ominous Trial Key
+
 item.copper_helmet.name=Copper Helmet
 item.copper_chestplate.name=Copper Chestplate
 item.copper_leggings.name=Copper Leggings
@@ -322,6 +336,17 @@ tile.waxed_weathered_copper_trapdoor.name=Waxed Weathered Copper Trapdoor
 tile.weathered_copper_trapdoor.name=Weathered Copper Trapdoor
 tile.waxed_oxidized_copper_trapdoor.name=Waxed Oxidized Copper Trapdoor
 tile.oxidized_copper_trapdoor.name=Oxidized Copper Trapdoor
+
+tile.tuff_wall.name=Tuff Wall
+tile.tuff_stairs.name=Tuff Stairs
+tile.tuff_bricks.name=Tuff Bricks
+tile.tuff_brick_stairs.name=Tuff Brick Stairs
+tile.tuff_brick_wall.name=Tuff Brick Wall
+tile.polished_tuff_stairs=Polished Tuff Stairs
+tile.chiseled_tuff.name=Chiseled Tuff
+tile.chiseled_tuff_bricks.name=Chiseled Tuff Bricks
+tile.polished_tuff_wall.name=Polished Tuff Wall
+tile.polished_tuff.name=Polished Tuff
 
 item.glow_berries.name=Glow Berries
 item.bucket_tadpole.name=Bucket of Tadpole
@@ -353,6 +378,9 @@ deepslate_cobbled_slab.name=Cobbled Deepslate Slab
 deepslate_tile_slab.name=Deepslate Tile Slab
 deepslate_brick_slab.name=Deepslate Brick Slab
 mangrove_slab.name=Mangrove Slab
+tuff_slab.name=Tuff Slab
+tuff_brick_slab.name=Tuff Brick Slab
+polished_tuff_slab.name=Polished Tuff Slab
 
 
 item.netherite_scrap.name=Netherite Scrap
