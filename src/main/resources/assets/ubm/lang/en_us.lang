@@ -252,7 +252,7 @@ tile.bamboo_pressure_plate.name=Bamboo Pressure Plate
 tile.bamboo_stairs.name=Bamboo Stairs
 tile.bamboo_planks.name=Bamboo Planks
 
-tile.polished_blackstone_slab.name=Polished Blackstone Slab
+polished_blackstone_slab.name=Polished Blackstone Slab
 tile.polished_blackstone_bricks_slab.name=Polished Blackstone Brick Slab
 
 tile.sculk_sensor.name=Sculk Sensor
