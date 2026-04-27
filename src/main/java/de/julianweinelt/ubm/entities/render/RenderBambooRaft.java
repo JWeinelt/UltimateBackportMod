@@ -6,6 +6,7 @@ import net.minecraft.client.renderer.entity.RenderBoat;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 
 import javax.annotation.Nonnull;
 
@@ -24,13 +25,24 @@ public class RenderBambooRaft extends RenderBoat {
         GlStateManager.translate((float) x, (float) y + 0.375F, (float) z);
         GlStateManager.rotate(180.0F - entityYaw, 0.0F, 1.0F, 0.0F);
 
-        this.bindEntityTexture(entity);
+        float timeSinceHit = (float) entity.getTimeSinceHit() - partialTicks;
+        float damageTaken = entity.getDamageTaken() - partialTicks;
+        if (damageTaken < 0.0F) damageTaken = 0.0F;
 
+        if (timeSinceHit > 0.0F) {
+            GlStateManager.rotate(
+                    MathHelper.sin(timeSinceHit) * timeSinceHit * damageTaken / 10.0F
+                            * (float) entity.getForwardDirection(),
+                    1.0F, 0.0F, 0.0F
+            );
+        }
+
+        GlStateManager.scale(-1.0F, -1.0F, 1.0F);
+
+        this.bindTexture(TEXTURE);
         model.render(entity, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
 
         GlStateManager.popMatrix();
-
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
     }
 
     @Nonnull
