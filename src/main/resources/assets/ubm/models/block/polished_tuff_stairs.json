@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "ubm:blocks/polished_tuff",
+    "top": "ubm:blocks/polished_tuff",
+    "side": "ubm:blocks/polished_tuff"
+  }
+}
