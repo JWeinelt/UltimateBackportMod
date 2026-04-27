@@ -209,7 +209,25 @@ public class ModBlocks {
     public static Block MEDIUM_AMETHYST_BUD;
     public static Block LARGE_AMETHYST_BUD;
     public static BlockMod CALCITE;
+
     public static BlockMod TUFF;
+    public static Block TUFF_STAIRS;
+    public static BlockSlab TUFF_SLAB;
+    public static BlockSlab TUFF_SLAB_D;
+    public static Block TUFF_WALL;
+    public static Block CHISELED_TUFF;
+    public static BlockMod POLISHED_TUFF;
+    public static Block POLISHED_TUFF_STAIRS;
+    public static BlockSlab POLISHED_TUFF_SLAB;
+    public static BlockSlab POLISHED_TUFF_SLAB_D;
+    public static Block POLISHED_TUFF_WALL;
+    public static BlockMod TUFF_BRICKS;
+    public static Block TUFF_BRICK_STAIRS;
+    public static BlockSlab TUFF_BRICK_SLAB;
+    public static BlockSlab TUFF_BRICK_SLAB_D;
+    public static Block TUFF_BRICK_WALL;
+    public static Block CHISELED_TUFF_BRICKS;
+
     public static Block COPPER_ORE;
     public static BlockMod DEEPSLATE;
     public static Block DEEPSLATE_ORE_COPPER;
@@ -1049,8 +1067,39 @@ public class ModBlocks {
         CALCITE = new BlockMod(Material.ROCK, "calcite").creativeTab(TB_CAVES).soundType(SoundType.STONE);
         register(CALCITE, event);
 
+
         TUFF = new BlockMod(Material.ROCK, "tuff").creativeTab(TB_CAVES).soundType(SoundType.STONE);
         register(TUFF, event);
+        TUFF_BRICKS = new BlockMod(Material.ROCK, "tuff_bricks").creativeTab(TB_TRAILS_TALES).soundType(SoundType.STONE);
+        register(TUFF_BRICKS, event);
+        POLISHED_TUFF = new BlockMod(Material.ROCK, "polished_tuff").creativeTab(TB_TRAILS_TALES).soundType(SoundType.STONE);
+        register(POLISHED_TUFF, event);
+        CHISELED_TUFF = new BlockModColumn("chiseled_tuff").setCreativeTab(TB_TRAILS_TALES);
+        register(CHISELED_TUFF, event);
+        CHISELED_TUFF_BRICKS = new BlockModColumn("chiseled_tuff_bricks").setCreativeTab(TB_TRAILS_TALES);
+        register(CHISELED_TUFF_BRICKS, event);
+
+        TUFF_STAIRS = new BlockModStairs(TUFF.getDefaultState(), "tuff_stairs")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(TUFF_STAIRS, event);
+
+        TUFF_WALL = new BlockModWall(TUFF, "tuff_wall")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(TUFF_WALL, event);
+
+        TUFF_BRICK_STAIRS = new BlockModStairs(TUFF_BRICKS.getDefaultState(), "tuff_brick_stairs")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(TUFF_BRICK_STAIRS, event);
+        TUFF_BRICK_WALL = new BlockModWall(TUFF_BRICKS, "tuff_brick_wall")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(TUFF_BRICK_WALL, event);
+        POLISHED_TUFF_WALL = new BlockModWall(POLISHED_TUFF, "polished_tuff_wall")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(POLISHED_TUFF_WALL, event);
+
+        POLISHED_TUFF_STAIRS = new BlockModStairs(POLISHED_TUFF.getDefaultState(), "polished_tuff_stairs")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(POLISHED_TUFF_STAIRS, event);
 
         COPPER_ORE = new Block(Material.ROCK)
                 .setUnlocalizedName("copper_ore")
@@ -1771,6 +1820,24 @@ public class ModBlocks {
         GRANITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("granite_slab", Material.ROCK, GRANITE_SLAB)
                 .setCreativeTab(TB_AQUATIC);
         registerSlab(GRANITE_SLAB, GRANITE_SLAB_D, event);
+
+        TUFF_SLAB = (BlockSlab) new BlockModHalfSlab("tuff_slab", Material.ROCK)
+                .setCreativeTab(TB_TRAILS_TALES);
+        TUFF_SLAB_D = (BlockSlab) new BlockModDoubleSlab("tuff_slab", Material.ROCK, TUFF_SLAB)
+                .setCreativeTab(TB_TRAILS_TALES);
+        registerSlab(TUFF_SLAB, TUFF_SLAB_D, event);
+
+        TUFF_BRICK_SLAB = (BlockSlab) new BlockModHalfSlab("tuff_brick_slab", Material.ROCK)
+                .setCreativeTab(TB_TRAILS_TALES);
+        TUFF_BRICK_SLAB_D = (BlockSlab) new BlockModDoubleSlab("tuff_brick_slab", Material.ROCK, TUFF_BRICK_SLAB)
+                .setCreativeTab(TB_TRAILS_TALES);
+        registerSlab(TUFF_BRICK_SLAB, TUFF_BRICK_SLAB_D, event);
+
+        POLISHED_TUFF_SLAB = (BlockSlab) new BlockModHalfSlab("polished_tuff_slab", Material.ROCK)
+                .setCreativeTab(TB_TRAILS_TALES);
+        POLISHED_TUFF_SLAB_D = (BlockSlab) new BlockModDoubleSlab("polished_tuff_slab", Material.ROCK, POLISHED_TUFF_SLAB)
+                .setCreativeTab(TB_TRAILS_TALES);
+        registerSlab(POLISHED_TUFF_SLAB, POLISHED_TUFF_SLAB_D, event);
     }
 
     @SideOnly(Side.SERVER)
