@@ -203,7 +203,7 @@ public class ModBlocks {
 
     public static Block TINTED_GLASS;
     public static BlockMod AMETHYST_BLOCK;
-    public static Block BUDDING_AMETHYST;
+    public static BlockMod BUDDING_AMETHYST;
     public static Block AMETHYST_CLUSTER;
     public static Block SMALL_AMETHYST_BUD;
     public static Block MEDIUM_AMETHYST_BUD;
@@ -606,10 +606,8 @@ public class ModBlocks {
         register(LARGE_AMETHYST_BUD, event);
         AMETHYST_CLUSTER = new BlockAmethystBud("amethyst_cluster");
         register(AMETHYST_CLUSTER, event);
-        BUDDING_AMETHYST = new Block(Material.ROCK)
-                .setUnlocalizedName("budding_amethyst")
-                .setRegistryName("budding_amethyst")
-                .setCreativeTab(TB_CAVES);
+        BUDDING_AMETHYST = new BlockMod(Material.ROCK, "budding_amethyst")
+                .creativeTab(TB_CAVES);
         register(BUDDING_AMETHYST, event);
 
 

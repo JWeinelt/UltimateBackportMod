@@ -109,6 +109,9 @@ public class UBM {
         ModRecipes.init();
         ModSounds.SoundTypes.init();
         ModBlocks.AMETHYST_BLOCK.soundType(ModSounds.SoundTypes.AMETHYST_BLOCK);
+        ModBlocks.BUDDING_AMETHYST.soundType(ModSounds.SoundTypes.AMETHYST_BLOCK);
+        ModBlocks.TUFF.soundType(ModSounds.SoundTypes.TUFF);
+        ModBlocks.TUFF_BRICKS.soundType(ModSounds.SoundTypes.TUFF);
     }
 
     @Mod.EventHandler
