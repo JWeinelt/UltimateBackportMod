@@ -1,0 +1,21 @@
+{
+  "parent": "ubm:trial_chamber",
+  "display": {
+    "icon": { "item": "ubm:copper_bulb" },
+    "title": {
+      "translate": "advancement.ubm.lighten_up.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.lighten_up.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

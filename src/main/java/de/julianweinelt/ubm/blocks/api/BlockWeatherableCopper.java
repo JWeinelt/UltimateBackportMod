@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.blocks.api;
 
 import de.julianweinelt.ubm.items.ModItems;
+import de.julianweinelt.ubm.misc.AdvancementHelper;
 import de.julianweinelt.ubm.misc.ModSounds;
 import de.julianweinelt.ubm.particles.ParticleWaxOn;
 import net.minecraft.block.Block;
@@ -42,6 +43,10 @@ public abstract class BlockWeatherableCopper extends Block implements IWeatherab
                     world.playSound(null, pos, ModSounds.ITEM_AXE_SCRAPE,
                             SoundCategory.BLOCKS, 1.0f, 1.0f);
                     player.swingArm(hand);
+
+                    if (this instanceof BlockCopperBulb) {
+                        AdvancementHelper.grantAdvancement(player, "lighten_up");
+                    }
                     if (!player.capabilities.isCreativeMode)
                         held.damageItem(1, player);
                 }
@@ -55,6 +60,7 @@ public abstract class BlockWeatherableCopper extends Block implements IWeatherab
                     double z = pos.getZ();
 
                     Random rand = new Random();
+                    AdvancementHelper.grantAdvancement(player, "wax_on");
 
                     for (int i = 0; i < 10; i++) {
                         double offsetX = (rand.nextDouble() - 0.5D) * 0.3D;
