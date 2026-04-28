@@ -8,31 +8,27 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scala.tools.cmd.Opt;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.function.Supplier;
 
-public class BlockCopperBulb extends BlockWeatherableCopper {
+public class BlockWaxedCopperBulb extends BlockWaxedCopper {
     public static final PropertyBool LIT = PropertyBool.create("lit");
     public static final PropertyBool POWERED = PropertyBool.create("powered");
 
-    private Supplier<Block> weatheredVariant;
-    private Supplier<Block> unweatheredVariant;
-    private Supplier<Block> waxedVariant;
+    private Supplier<Block> unwaxedVariant;
 
     private String type;
 
-    public BlockCopperBulb(String type,
-                           @Nullable Supplier<Block> weatheredVariant, @Nullable Supplier<Block> unweatheredVariant,
-                           @Nonnull Supplier<Block> waxedVariant) {
+    public BlockWaxedCopperBulb(String type,
+                                @Nonnull Supplier<Block> unwaxedVariant) {
         super(Material.ROCK);
         this.type = type;
-        this.weatheredVariant = weatheredVariant;
-        this.unweatheredVariant = unweatheredVariant;
-        this.waxedVariant = waxedVariant;
-        String name = (type.isEmpty() ? "" : type + "_") + "copper_bulb";
+        this.unwaxedVariant = unwaxedVariant;
+        String name = "waxed_" + (type.isEmpty() ? "" : type + "_") + "copper_bulb";
         this.setUnlocalizedName(name);
         this.setRegistryName(name);
         setCreativeTab(ModCreativeTabs.UBM_TAB_CAVES);
@@ -112,17 +108,7 @@ public class BlockCopperBulb extends BlockWeatherableCopper {
     }
 
     @Override
-    public Optional<Block> getWeatheredVariant() {
-        return weatheredVariant != null ? Optional.ofNullable(weatheredVariant.get()) : Optional.empty();
-    }
-
-    @Override
-    public Optional<Block> getWaxedVariant() {
-        return waxedVariant != null ? Optional.ofNullable(waxedVariant.get()) : Optional.empty();
-    }
-
-    @Override
-    public Optional<Block> getUnweatheredVariant() {
-        return unweatheredVariant != null ? Optional.ofNullable(unweatheredVariant.get()) : Optional.empty();
+    public Optional<Block> getUnwaxedVariant() {
+        return unwaxedVariant != null ? Optional.ofNullable(unwaxedVariant.get()) : Optional.empty();
     }
 }
