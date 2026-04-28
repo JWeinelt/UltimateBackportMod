@@ -136,8 +136,6 @@ public class ModSounds {
     public static SoundEvent BLOCK_LODESTONE_PLACE;
     public static SoundEvent BLOCK_MOSS_BREAK;
     public static SoundEvent BLOCK_MOSS_STEP;
-    public static SoundEvent BLOCK_NETHERITE_BREAK;
-    public static SoundEvent BLOCK_NETHERITE_STEP;
     public static SoundEvent BLOCK_NYLIUM_BREAK;
     public static SoundEvent BLOCK_NYLIUM_STEP;
     public static SoundEvent BLOCK_POINTED_DRIPSTONE_DRIP_LAVA;
@@ -307,8 +305,6 @@ public class ModSounds {
         BLOCK_LODESTONE_PLACE = register(event, "block.lodestone.place");
         BLOCK_MOSS_BREAK = register(event, "block.moss.break");
         BLOCK_MOSS_STEP = register(event, "block.moss.step");
-        BLOCK_NETHERITE_BREAK = register(event, "block.netherite.break");
-        BLOCK_NETHERITE_STEP = register(event, "block.netherite.step");
         BLOCK_NYLIUM_BREAK = register(event, "block.nylium.break");
         BLOCK_NYLIUM_STEP = register(event, "block.nylium.step");
         BLOCK_POINTED_DRIPSTONE_DRIP_LAVA = register(event, "block.pointed_dripstone.drip_lava");

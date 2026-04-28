@@ -2,10 +2,12 @@ package de.julianweinelt.ubm.blocks.api;
 
 import de.julianweinelt.ubm.items.ModItems;
 import de.julianweinelt.ubm.misc.ModSounds;
+import de.julianweinelt.ubm.particles.ParticleWaxOn;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
@@ -16,6 +18,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
+import java.util.Random;
 
 public abstract class BlockWeatherableCopper extends Block implements IWeatherable {
 
@@ -36,7 +39,7 @@ public abstract class BlockWeatherableCopper extends Block implements IWeatherab
             return getUnweatheredVariant().map(prev -> {
                 if (!world.isRemote) {
                     world.setBlockState(pos, prev.getDefaultState());
-                    world.playSound(null, pos, ModSounds.ITEM_AXE_WAX_OFF,
+                    world.playSound(null, pos, ModSounds.ITEM_AXE_SCRAPE,
                             SoundCategory.BLOCKS, 1.0f, 1.0f);
                     player.swingArm(hand);
                     if (!player.capabilities.isCreativeMode)
@@ -47,6 +50,23 @@ public abstract class BlockWeatherableCopper extends Block implements IWeatherab
         } else if (held.getItem().equals(ModItems.HONEYCOMB)) {
             return getWaxedVariant().map(waxed -> {
                 if (!world.isRemote) {
+                    double x = pos.getX();
+                    double y = pos.getY();
+                    double z = pos.getZ();
+
+                    Random rand = new Random();
+
+                    for (int i = 0; i < 10; i++) {
+                        double offsetX = (rand.nextDouble() - 0.5D) * 0.3D;
+                        double offsetZ = (rand.nextDouble() - 0.5D) * 0.3D;
+
+                        Minecraft.getMinecraft().effectRenderer.addEffect(
+                                new ParticleWaxOn(
+                                        world, x + offsetX, y,z + offsetZ, 0.0D, 0.0D, 0.0D
+                                )
+                        );
+                    }
+
                     world.setBlockState(pos, waxed.getDefaultState());
                     world.playSound(null, pos, ModSounds.ITEM_HONEYCOMB_WAX_ON,
                             SoundCategory.BLOCKS, 1.0f, 1.0f);

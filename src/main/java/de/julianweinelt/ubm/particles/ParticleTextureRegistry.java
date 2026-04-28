@@ -10,8 +10,9 @@ import net.minecraftforge.fml.relauncher.Side;
 public class ParticleTextureRegistry {
     @SubscribeEvent
     public static void registerTextures(TextureStitchEvent.Pre event) {
-        event.getMap().registerSprite(new ResourceLocation("ubm:particle/copper_flame"));
-        event.getMap().registerSprite(new ResourceLocation("ubm:particle/big_smoke_2"));
+        event.getMap().registerSprite(new ResourceLocation("ubm", "particle/copper_flame"));
+        event.getMap().registerSprite(new ResourceLocation("ubm", "particle/big_smoke_2"));
+        event.getMap().registerSprite(new ResourceLocation("ubm", "particle/wax"));
     }
 
     @SubscribeEvent

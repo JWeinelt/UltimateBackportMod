@@ -3843,7 +3843,7 @@
       "ubm:block/moss/step6"
     ]
   },
-  "block.netherite.break": {
+  "block.netherite_block.break": {
     "category": "block",
     "sounds": [
       "ubm:block/netherite/break1",
@@ -3852,7 +3852,7 @@
       "ubm:block/netherite/break4"
     ]
   },
-  "block.netherite.step": {
+  "block.netherite_block.step": {
     "category": "block",
     "sounds": [
       "ubm:block/netherite/step1",
@@ -4234,12 +4234,12 @@
       "ubm:item/axe/wax_off3"
     ]
   },
-  "item.honey_comb.wax_on": {
+  "item.honeycomb.wax_on": {
     "category": "block",
     "sounds": [
-      "ubm:item/axe/wax_on1",
-      "ubm:item/axe/wax_on2",
-      "ubm:item/axe/wax_on3"
+      "ubm:item/honeycomb/wax_on1",
+      "ubm:item/honeycomb/wax_on2",
+      "ubm:item/honeycomb/wax_on3"
     ]
   }
 }
