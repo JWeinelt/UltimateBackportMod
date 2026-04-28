@@ -1,5 +1,7 @@
 package de.julianweinelt.ubm.blocks.api;
 
+import de.julianweinelt.ubm.blocks.BlockCopperBlock;
+import de.julianweinelt.ubm.misc.AdvancementHelper;
 import de.julianweinelt.ubm.misc.ModSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -37,6 +39,7 @@ public abstract class BlockWaxedCopper extends Block implements IWaxedCopper {
                     world.setBlockState(pos, prev.getDefaultState());
                     world.playSound(null, pos, ModSounds.ITEM_AXE_WAX_OFF,
                             SoundCategory.BLOCKS, 1.0f, 1.0f);
+                    AdvancementHelper.grantAdvancement(player, "wax_off");
                     if (!player.capabilities.isCreativeMode)
                         held.damageItem(1, player);
                 }
