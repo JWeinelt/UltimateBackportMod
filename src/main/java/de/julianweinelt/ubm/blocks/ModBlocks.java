@@ -1854,38 +1854,6 @@ public class ModBlocks {
             event.setCanceled(true);
             event.setCancellationResult(EnumActionResult.SUCCESS);
         }
-        if (!heldItem.isEmpty() && heldItem.getItem() == ModItems.HONEYCOMB) {
-            ResourceLocation res = block.getRegistryName();
-            if (WAXED_VARIANTS.containsKey(res)) {
-                AdvancementHelper.grantAdvancement(player, "wax_on");
-                if (!world.isRemote) {
-                    world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(WAXED_VARIANTS.get(res)).getDefaultState(), 3);
-                    if (!player.isCreative()) heldItem.shrink(1);
-                    world.playSound(null, pos, SoundEvents.BLOCK_SLIME_HIT, SoundCategory.BLOCKS, 1f, 1f);
-                }
-                event.setCanceled(true);
-            }
-        }
-        if (!heldItem.isEmpty() && heldItem.getItem() instanceof ItemAxe) {
-            ResourceLocation res = block.getRegistryName();
-            if (UNWAXED_VARIANTS.containsKey(res)) {
-                AdvancementHelper.grantAdvancement(player, "wax_off");
-                if (!world.isRemote) {
-                    world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(UNWAXED_VARIANTS.get(res)).getDefaultState(), 3);
-                    if (!player.isCreative()) heldItem.damageItem(1, player);
-                    world.playSound(null, pos, SoundEvents.BLOCK_WOOD_HIT, SoundCategory.BLOCKS, 1f, 0.8f);
-                }
-                event.setCanceled(true);
-            }
-            if (PREVIOUS_OXIDATION.containsKey(res)) {
-                if (!world.isRemote) {
-                    world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(PREVIOUS_OXIDATION.get(res)).getDefaultState(), 3);
-                    if (!player.isCreative()) heldItem.damageItem(1, player);
-                    world.playSound(null, pos, SoundEvents.BLOCK_WOOD_HIT, SoundCategory.BLOCKS, 1f, 0.8f);
-                }
-                event.setCanceled(true);
-            }
-        }
     }
 
     @SubscribeEvent
