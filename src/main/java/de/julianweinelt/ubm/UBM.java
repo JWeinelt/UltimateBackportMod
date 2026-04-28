@@ -106,19 +106,6 @@ public class UBM {
     public void init(FMLInitializationEvent event) {
         NetworkRegistry.INSTANCE.registerGuiHandler(UBM.instance, new GuiHandler());
         proxy.init(event);
-        ModBlocks.WAXED_VARIANTS.put(ModBlocks.COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_COPPER_BLOCK.getRegistryName());
-        ModBlocks.WAXED_VARIANTS.put(ModBlocks.EXPOSED_COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_EXPOSED_COPPER_BLOCK.getRegistryName());
-        ModBlocks.WAXED_VARIANTS.put(ModBlocks.WEATHERED_COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_WEATHERED_COPPER_BLOCK.getRegistryName());
-        ModBlocks.WAXED_VARIANTS.put(ModBlocks.OXIDIZED_COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_OXIDIZED_COPPER_BLOCK.getRegistryName());
-
-        ModBlocks.UNWAXED_VARIANTS.put(ModBlocks.WAXED_COPPER_BLOCK.getRegistryName(), ModBlocks.COPPER_BLOCK.getRegistryName());
-        ModBlocks.UNWAXED_VARIANTS.put(ModBlocks.WAXED_EXPOSED_COPPER_BLOCK.getRegistryName(), ModBlocks.EXPOSED_COPPER_BLOCK.getRegistryName());
-        ModBlocks.UNWAXED_VARIANTS.put(ModBlocks.WAXED_WEATHERED_COPPER_BLOCK.getRegistryName(), ModBlocks.WEATHERED_COPPER_BLOCK.getRegistryName());
-        ModBlocks.UNWAXED_VARIANTS.put(ModBlocks.WAXED_OXIDIZED_COPPER_BLOCK.getRegistryName(), ModBlocks.OXIDIZED_COPPER_BLOCK.getRegistryName());
-
-        ModBlocks.PREVIOUS_OXIDATION.put(ModBlocks.EXPOSED_COPPER_BLOCK.getRegistryName(), ModBlocks.COPPER_BLOCK.getRegistryName());
-        ModBlocks.PREVIOUS_OXIDATION.put(ModBlocks.WEATHERED_COPPER_BLOCK.getRegistryName(), ModBlocks.EXPOSED_COPPER_BLOCK.getRegistryName());
-        ModBlocks.PREVIOUS_OXIDATION.put(ModBlocks.OXIDIZED_COPPER_BLOCK.getRegistryName(), ModBlocks.WEATHERED_COPPER_BLOCK.getRegistryName());
 
         ModRecipes.init();
         ModSounds.SoundTypes.init();

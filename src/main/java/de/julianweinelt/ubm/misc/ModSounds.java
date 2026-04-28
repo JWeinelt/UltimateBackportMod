@@ -171,9 +171,19 @@ public class ModSounds {
     public static SoundEvent BLOCK_TUFF_BREAK;
     public static SoundEvent BLOCK_TUFF_STEP;
 
+    public static SoundEvent ITEM_AXE_SCRAPE;
+    public static SoundEvent ITEM_AXE_STRIP;
+    public static SoundEvent ITEM_AXE_WAX_OFF;
+    public static SoundEvent ITEM_HONEYCOMB_WAX_ON;
+
 
     @SubscribeEvent
     public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
+        ITEM_AXE_SCRAPE = register(event, "item.axe.scrape");
+        ITEM_AXE_STRIP = register(event, "item.axe.strip");
+        ITEM_AXE_WAX_OFF = register(event, "item.axe.wax_off");
+        ITEM_HONEYCOMB_WAX_ON = register(event, "item.honeycomb.wax_on");
+
         BEE_HURT = register(event, "mob.bee.hurt");
         BEE_AGGRESSIVE = register(event, "mob.bee.aggressive");
         BEE_DEATH = register(event, "mob.bee.death");

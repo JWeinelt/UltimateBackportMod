@@ -4208,5 +4208,38 @@
       "ubm:block/tuff/step5",
       "ubm:block/tuff/step6"
     ]
+  },
+  "item.axe.scrape": {
+    "category": "block",
+    "sounds": [
+      "ubm:item/axe/scrape1",
+      "ubm:item/axe/scrape2",
+      "ubm:item/axe/scrape3"
+    ]
+  },
+  "item.axe.strip": {
+    "category": "block",
+    "sounds": [
+      "ubm:item/axe/strip1",
+      "ubm:item/axe/strip2",
+      "ubm:item/axe/strip3",
+      "ubm:item/axe/strip4"
+    ]
+  },
+  "item.axe.wax_off": {
+    "category": "block",
+    "sounds": [
+      "ubm:item/axe/wax_off1",
+      "ubm:item/axe/wax_off2",
+      "ubm:item/axe/wax_off3"
+    ]
+  },
+  "item.honey_comb.wax_on": {
+    "category": "block",
+    "sounds": [
+      "ubm:item/axe/wax_on1",
+      "ubm:item/axe/wax_on2",
+      "ubm:item/axe/wax_on3"
+    ]
   }
 }
