@@ -11,6 +11,7 @@ import de.julianweinelt.ubm.trims.LayerArmorTrim;
 import de.julianweinelt.ubm.trims.TrimColorHelper;
 import de.julianweinelt.ubm.worldgen.WorldTypeModern;
 import de.julianweinelt.ubm.worldgen.WorldTypeSelectableBiome;
+import de.julianweinelt.ubm.worldgen.nether.WorldTypeCustomNether;
 import de.julianweinelt.ubm.worldgen.structure.village.ModCustomVillage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -69,7 +70,7 @@ public class ClientProxy extends CommonProxy {
 
         new WorldTypeSelectableBiome("selectable_biome");
         new WorldTypeModern();
-
+        new WorldTypeCustomNether();
 
 
         String basePath = "textures/equipment/trims/color_palettes/";

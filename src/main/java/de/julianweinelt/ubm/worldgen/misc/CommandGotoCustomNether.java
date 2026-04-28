@@ -1,10 +1,12 @@
 package de.julianweinelt.ubm.worldgen.misc;
 
-import de.julianweinelt.ubm.worldgen.ModDimension;
+import de.julianweinelt.ubm.worldgen.ModDimensions;
+import de.julianweinelt.ubm.worldgen.nether.CustomTeleporter;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.WorldServer;
 
 public class CommandGotoCustomNether extends CommandBase {
 
@@ -22,9 +24,11 @@ public class CommandGotoCustomNether extends CommandBase {
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) {
         if (sender instanceof EntityPlayerMP) {
             EntityPlayerMP player = (EntityPlayerMP) sender;
-            int dimensionId = ModDimension.CUSTOM_NETHER_DIM_ID;
 
-            player.changeDimension(dimensionId);
+            int dimensionId = ModDimensions.CUSTOM_NETHER.getId();
+            WorldServer world = server.getWorld(dimensionId);
+
+            player.changeDimension(dimensionId, new CustomTeleporter(world));
         }
     }
 

@@ -18,6 +18,9 @@ public class ModBiomes {
 
     public static final Biome WARPED_FOREST = register("warped_forest", new BiomeWarpedForest(), null, 10, false);
     public static final Biome CRIMSON_FOREST = register("crimson_forest", new BiomeCrimsonForest(), null, 10, false);
+    public static final Biome NETHER_WASTES = register("nether_wastes2", new BiomeNetherWastes(), null, 10, false);
+    public static final Biome SOUL_SAND_VALLEY = register("soul_sand_valley", new BiomeSoulSandValley(), null, 10, false);
+    //public static final Biome BASALT_DELTAS = register("basalt_deltas", new BiomeBa(), null, 10, false);
     public static final Biome SNOWY_SLOPES = register("snowy_slopes", new BiomeSnowySlopes(), BiomeManager.BiomeType.COOL, 10, true);
     public static final Biome GROVE = register("grove", new BiomeGrove(), BiomeManager.BiomeType.COOL, 10, true);
     public static final Biome WARM_OCEAN = register("warm_ocean", new BiomeWarmOcean(), BiomeManager.BiomeType.WARM, 10, true);

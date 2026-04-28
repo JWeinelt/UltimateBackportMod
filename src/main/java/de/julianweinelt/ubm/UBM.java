@@ -12,10 +12,9 @@ import de.julianweinelt.ubm.effects.ModEffects;
 import de.julianweinelt.ubm.effects.ModPotionTypes;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.misc.CommonProxy;
-import de.julianweinelt.ubm.misc.KeyBindings;
 import de.julianweinelt.ubm.misc.ModRecipes;
 import de.julianweinelt.ubm.misc.ModSounds;
-import de.julianweinelt.ubm.worldgen.ModDimension;
+import de.julianweinelt.ubm.worldgen.ModDimensions;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
 import de.julianweinelt.ubm.worldgen.StructureWorldGen;
 import de.julianweinelt.ubm.worldgen.misc.CommandGotoCustomNether;
@@ -100,7 +99,7 @@ public class UBM {
 
 
         ModCustomVillage.preInit();
-        ModDimension.registerDimensions();
+        ModDimensions.register();
     }
 
     @Mod.EventHandler
