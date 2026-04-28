@@ -10,9 +10,7 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.inventory.Slot;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.nbt.NBTTagCompound;
 
 import javax.annotation.Nonnull;
@@ -74,9 +72,10 @@ public class ContainerSmithingTable extends Container {
 
         if (trim.getItem() instanceof ItemArmorTrim) {
             ItemArmorTrim t = (ItemArmorTrim) trim.getItem();
-            if (!t.getArmorTrim().equals("netherite_upgrade")) return;
-            if (piece.getItem().getRegistryName() == null) return;
-            if (piece.getItem().getRegistryName().getResourcePath().contains("diamond")) {
+            if (piece.getItem().getRegistryName() != null
+                    && piece.getItem().getRegistryName().getResourcePath().contains("diamond")
+                    && t.getArmorTrim().equals("netherite_upgrade")
+                    && material.getItem().equals(ModItems.NETHERITE_INGOT)) {
                 Item rs;
                 if (piece.getItem().equals(Items.DIAMOND_HELMET)) {
                     rs = ModItems.NETHERITE_HELMET;
@@ -107,10 +106,20 @@ public class ContainerSmithingTable extends Container {
             }
         }
 
-        if (trim.getItem() instanceof ItemArmorTrim && materials.containsKey(material.getItem()) && piece.getItem() instanceof ItemArmor) {
-            result = new ItemStack(piece.getItem());
-            if (!result.hasTagCompound()) {
-                result.setTagCompound(new NBTTagCompound());
+        if (trim.getItem() instanceof ItemArmorTrim
+                && materials.containsKey(material.getItem()) && piece.getItem() instanceof ItemArmor) {
+            ItemArmorTrim t = (ItemArmorTrim) trim.getItem();
+            if (!t.getArmorTrim().equals("netherite_upgrade")) {
+                result = new ItemStack(piece.getItem());
+                if (!result.hasTagCompound()) {
+                    result.setTagCompound(new NBTTagCompound());
+                }
+                String mat = materials.get(material.getItem());
+                NBTTagCompound compound = result.getTagCompound();
+                compound.setString("trim", ((ItemArmorTrim) trim.getItem()).getArmorTrim());
+                compound.setString("trimMaterial", mat.toUpperCase());
+                result.setTagCompound(compound);
+                ItemStackHelper.setLore(result, "§5Armor Trim: " + ((ItemArmorTrim) trim.getItem()).getArmorTrim(), "§6Material: " + mat);
             }
             String mat = materials.get(material.getItem());
             NBTTagCompound compound = result.getTagCompound();
@@ -120,7 +129,9 @@ public class ContainerSmithingTable extends Container {
             ItemStackHelper.setLore(result, "§5Armor Trim: " + ((ItemArmorTrim) trim.getItem()).getArmorTrim(), "§6Material: " + mat);
         }
 
-        if (result == ItemStack.EMPTY) return;
+        /*if (result == ItemStack.EMPTY) {
+            return;
+        }*/
         craftResult.setInventorySlotContents(0, result);
     }
 
@@ -163,7 +174,9 @@ public class ContainerSmithingTable extends Container {
             } else {
                 if (stackInSlot.getItem() instanceof ItemArmorTrim) {
                     if (!this.mergeItemStack(stackInSlot, 0, 1, false)) return ItemStack.EMPTY;
-                } else if (stackInSlot.getItem() instanceof ItemArmor) {
+                } else if (stackInSlot.getItem() instanceof ItemArmor
+                        || ((stackInSlot.getItem() instanceof ItemTool
+                        || stackInSlot.getItem() instanceof ItemSword) && stackInSlot.getItem().getRegistryName().getResourcePath().contains("diamond"))) {
                     if (!this.mergeItemStack(stackInSlot, 1, 2, false)) return ItemStack.EMPTY;
                 } else if (isValidMaterial(stackInSlot.getItem())) {
                     if (!this.mergeItemStack(stackInSlot, 2, 3, false)) return ItemStack.EMPTY;

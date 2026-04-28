@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "ubm:chiseled_tuff_bricks",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ubm:chiseled_tuff_bricks"
+    },
+    "axis=none": {
+      "model": "ubm:chiseled_tuff_bricks"
+    },
+    "axis=z": {
+      "model": "ubm:chiseled_tuff_bricks",
+      "x": 90
+    }
+  }
+}

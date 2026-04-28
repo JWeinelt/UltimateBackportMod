@@ -203,13 +203,31 @@ public class ModBlocks {
 
     public static Block TINTED_GLASS;
     public static BlockMod AMETHYST_BLOCK;
-    public static Block BUDDING_AMETHYST;
+    public static BlockMod BUDDING_AMETHYST;
     public static Block AMETHYST_CLUSTER;
     public static Block SMALL_AMETHYST_BUD;
     public static Block MEDIUM_AMETHYST_BUD;
     public static Block LARGE_AMETHYST_BUD;
     public static BlockMod CALCITE;
+
     public static BlockMod TUFF;
+    public static Block TUFF_STAIRS;
+    public static BlockSlab TUFF_SLAB;
+    public static BlockSlab TUFF_SLAB_D;
+    public static Block TUFF_WALL;
+    public static Block CHISELED_TUFF;
+    public static BlockMod POLISHED_TUFF;
+    public static Block POLISHED_TUFF_STAIRS;
+    public static BlockSlab POLISHED_TUFF_SLAB;
+    public static BlockSlab POLISHED_TUFF_SLAB_D;
+    public static Block POLISHED_TUFF_WALL;
+    public static BlockMod TUFF_BRICKS;
+    public static Block TUFF_BRICK_STAIRS;
+    public static BlockSlab TUFF_BRICK_SLAB;
+    public static BlockSlab TUFF_BRICK_SLAB_D;
+    public static Block TUFF_BRICK_WALL;
+    public static Block CHISELED_TUFF_BRICKS;
+
     public static Block COPPER_ORE;
     public static BlockMod DEEPSLATE;
     public static Block DEEPSLATE_ORE_COPPER;
@@ -321,6 +339,11 @@ public class ModBlocks {
     public static Block DEAD_BUBBLE_CORAL;
     public static Block DEAD_FIRE_CORAL;
     public static Block DEAD_HORN_CORAL;
+    public static Block DEAD_TUBE_CORAL_BLOCK;
+    public static Block DEAD_BRAIN_CORAL_BLOCK;
+    public static Block DEAD_BUBBLE_CORAL_BLOCK;
+    public static Block DEAD_FIRE_CORAL_BLOCK;
+    public static Block DEAD_HORN_CORAL_BLOCK;
     public static Block DEAD_TUBE_CORAL_FAN;
     public static Block DEAD_BRAIN_CORAL_FAN;
     public static Block DEAD_BUBBLE_CORAL_FAN;
@@ -462,6 +485,33 @@ public class ModBlocks {
         CAMPFIRE = new BlockCampFire(false);
         register(CAMPFIRE, event);
 
+        DEAD_TUBE_CORAL_BLOCK = new BlockCoralBlock("tube", true, null);
+        register(DEAD_TUBE_CORAL_BLOCK, event);
+        TUBE_CORAL_BLOCK = new BlockCoralBlock("tube", false, DEAD_TUBE_CORAL_BLOCK);
+        register(TUBE_CORAL_BLOCK, event);
+
+        DEAD_HORN_CORAL_BLOCK = new BlockCoralBlock("horn", true, null);
+        register(DEAD_HORN_CORAL_BLOCK, event);
+        HORN_CORAL_BLOCK = new BlockCoralBlock("horn", false, DEAD_HORN_CORAL_BLOCK);
+        register(HORN_CORAL_BLOCK, event);
+
+        DEAD_BRAIN_CORAL_BLOCK = new BlockCoralBlock("brain", true, null);
+        register(DEAD_BRAIN_CORAL_BLOCK, event);
+        BRAIN_CORAL_BLOCK = new BlockCoralBlock("brain", false, DEAD_BRAIN_CORAL_BLOCK);
+        register(BRAIN_CORAL_BLOCK, event);
+
+        DEAD_BUBBLE_CORAL_BLOCK = new BlockCoralBlock("bubble", true, null);
+        register(DEAD_BUBBLE_CORAL_BLOCK, event);
+        BUBBLE_CORAL_BLOCK = new BlockCoralBlock("bubble", false, DEAD_BUBBLE_CORAL_BLOCK);
+        register(BUBBLE_CORAL_BLOCK, event);
+
+        DEAD_FIRE_CORAL_BLOCK = new BlockCoralBlock("fire", true, null);
+        register(DEAD_FIRE_CORAL_BLOCK, event);
+        FIRE_CORAL_BLOCK = new BlockCoralBlock("fire", false, DEAD_FIRE_CORAL_BLOCK);
+        register(FIRE_CORAL_BLOCK, event);
+
+
+
         LOOM = new BlockRotated(Material.WOOD)
                 .setUnlocalizedName("loom")
                 .setRegistryName("loom")
@@ -556,10 +606,8 @@ public class ModBlocks {
         register(LARGE_AMETHYST_BUD, event);
         AMETHYST_CLUSTER = new BlockAmethystBud("amethyst_cluster");
         register(AMETHYST_CLUSTER, event);
-        BUDDING_AMETHYST = new Block(Material.ROCK)
-                .setUnlocalizedName("budding_amethyst")
-                .setRegistryName("budding_amethyst")
-                .setCreativeTab(TB_CAVES);
+        BUDDING_AMETHYST = new BlockMod(Material.ROCK, "budding_amethyst")
+                .creativeTab(TB_CAVES);
         register(BUDDING_AMETHYST, event);
 
 
@@ -812,225 +860,112 @@ public class ModBlocks {
                 ORANGE_CANDLE, WHITE_CANDLE
         );
 
-        COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("copper_block")
-                .setRegistryName("copper_block")
-                .setCreativeTab(TB_CAVES);
-        register(COPPER_BLOCK, event);
+        COPPER_BLOCK = new BlockCopperBlock("copper_block", () -> EXPOSED_COPPER_BLOCK, null, () -> WAXED_COPPER_BLOCK);
+        EXPOSED_COPPER_BLOCK = new BlockCopperBlock("exposed_copper_block",
+                () -> COPPER_BLOCK, () -> COPPER_BLOCK, () -> WAXED_EXPOSED_COPPER_BLOCK);
+        WEATHERED_COPPER_BLOCK = new BlockCopperBlock("weathered_copper_block", () -> EXPOSED_COPPER_BLOCK,
+                () -> OXIDIZED_COPPER_BLOCK, () -> WAXED_WEATHERED_COPPER_BLOCK);
+        OXIDIZED_COPPER_BLOCK = new BlockCopperBlock("oxidized_copper_block", null, () -> WEATHERED_COPPER_BLOCK,
+                () -> WAXED_OXIDIZED_COPPER_BLOCK);
 
-        CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("chiseled_copper")
-                .setRegistryName("chiseled_copper")
-                .setCreativeTab(TB_CAVES);
-        register(CHISELED_COPPER, event);
+
+        CHISELED_COPPER = new BlockCopperBlock("chiseled_copper",
+                () -> EXPOSED_CHISELED_COPPER, null, () -> WAXED_CHISELED_COPPER);
+        EXPOSED_CHISELED_COPPER = new BlockCopperBlock("exposed_chiseled_copper", () -> WEATHERED_CHISELED_COPPER,
+                () -> CHISELED_COPPER, () -> WAXED_EXPOSED_CHISELED_COPPER);
+        WEATHERED_CHISELED_COPPER = new BlockCopperBlock("weathered_chiseled_copper", () -> OXIDIZED_CHISELED_COPPER,
+                () -> EXPOSED_CHISELED_COPPER, () -> WAXED_WEATHERED_CHISELED_COPPER);
+        OXIDIZED_CHISELED_COPPER = new BlockCopperBlock("oxidized_chiseled_copper", null,
+                () -> WEATHERED_CHISELED_COPPER, () -> WAXED_OXIDIZED_CHISELED_COPPER);
 
         COPPER_GRATE = new BlockCopperGrate("", false);
-        register(COPPER_GRATE, event);
-
-        CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("cut_copper")
-                .setRegistryName("cut_copper")
-                .setCreativeTab(TB_CAVES);
-        register(CUT_COPPER, event);
-
-        COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("copper_bulb")
-                .setRegistryName("copper_bulb")
-                .setCreativeTab(TB_CAVES);
-        register(COPPER_BULB, event);
-
-        EXPOSED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("exposed_copper_block")
-                .setRegistryName("exposed_copper_block")
-                .setCreativeTab(TB_CAVES);
-        register(EXPOSED_COPPER_BLOCK, event);
-
-        EXPOSED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("exposed_chiseled_copper")
-                .setRegistryName("exposed_chiseled_copper")
-                .setCreativeTab(TB_CAVES);
-        register(EXPOSED_CHISELED_COPPER, event);
-
         EXPOSED_COPPER_GRATE = new BlockCopperGrate("exposed", false);
-        register(EXPOSED_COPPER_GRATE, event);
-
-        EXPOSED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("exposed_cut_copper")
-                .setRegistryName("exposed_cut_copper")
-                .setCreativeTab(TB_CAVES);
-        register(EXPOSED_CUT_COPPER, event);
-
-        EXPOSED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("exposed_copper_bulb")
-                .setRegistryName("exposed_copper_bulb")
-                .setCreativeTab(TB_CAVES);
-        register(EXPOSED_COPPER_BULB, event);
-
-        WEATHERED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("weathered_copper_block")
-                .setRegistryName("weathered_copper_block")
-                .setCreativeTab(TB_CAVES);
-        register(WEATHERED_COPPER_BLOCK, event);
-
-        WEATHERED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("weathered_chiseled_copper")
-                .setRegistryName("weathered_chiseled_copper")
-                .setCreativeTab(TB_CAVES);
-        register(WEATHERED_CHISELED_COPPER, event);
-
         WEATHERED_COPPER_GRATE = new BlockCopperGrate("weathered", false);
-        register(WEATHERED_COPPER_GRATE, event);
-
-        WEATHERED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("weathered_cut_copper")
-                .setRegistryName("weathered_cut_copper")
-                .setCreativeTab(TB_CAVES);
-        register(WEATHERED_CUT_COPPER, event);
-
-        WEATHERED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("weathered_copper_bulb")
-                .setRegistryName("weathered_copper_bulb")
-                .setCreativeTab(TB_CAVES);
-        register(WEATHERED_COPPER_BULB, event);
-
-        OXIDIZED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("oxidized_copper_block")
-                .setRegistryName("oxidized_copper_block")
-                .setCreativeTab(TB_CAVES);
-        register(OXIDIZED_COPPER_BLOCK, event);
-
-        OXIDIZED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("oxidized_chiseled_copper")
-                .setRegistryName("oxidized_chiseled_copper")
-                .setCreativeTab(TB_CAVES);
-        register(OXIDIZED_CHISELED_COPPER, event);
-
         OXIDIZED_COPPER_GRATE = new BlockCopperGrate("oxidized", false);
-        register(OXIDIZED_COPPER_GRATE, event);
 
-        OXIDIZED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("oxidized_cut_copper")
-                .setRegistryName("oxidized_cut_copper")
-                .setCreativeTab(TB_CAVES);
-        register(OXIDIZED_CUT_COPPER, event);
+        CUT_COPPER = new BlockCopperBlock("cut_copper", () -> EXPOSED_CUT_COPPER, null, () -> WAXED_CUT_COPPER);
+        EXPOSED_CUT_COPPER = new BlockCopperBlock("exposed_cut_copper",
+                () -> WEATHERED_CUT_COPPER, () -> CUT_COPPER, () -> WAXED_EXPOSED_CUT_COPPER);
+        WEATHERED_CUT_COPPER = new BlockCopperBlock("weathered_cut_copper",
+                () -> OXIDIZED_CUT_COPPER, () -> EXPOSED_CUT_COPPER, () -> WAXED_WEATHERED_CUT_COPPER);
+        OXIDIZED_CUT_COPPER = new BlockCopperBlock("oxidized_cut_copper", null,
+                () -> WEATHERED_CUT_COPPER, () -> WAXED_OXIDIZED_CUT_COPPER);
 
-        OXIDIZED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("oxidized_copper_bulb")
-                .setRegistryName("oxidized_copper_bulb")
-                .setCreativeTab(TB_CAVES);
-        register(OXIDIZED_COPPER_BULB, event);
+        COPPER_BULB = new BlockCopperBulb("", () -> EXPOSED_COPPER_BULB, null, () -> WAXED_COPPER_BULB);
+        EXPOSED_COPPER_BULB = new BlockCopperBulb("exposed",
+                () -> WEATHERED_COPPER_BULB, () -> COPPER_BULB, () -> WAXED_COPPER_BULB);
+        WEATHERED_COPPER_BULB = new BlockCopperBulb("weathered",
+                () -> OXIDIZED_COPPER_BULB, () -> EXPOSED_COPPER_BULB, () -> WAXED_WEATHERED_COPPER_BULB);
+        OXIDIZED_COPPER_BULB = new BlockCopperBulb("oxidized", null,
+                () -> WEATHERED_COPPER_BULB, () -> WAXED_OXIDIZED_COPPER_BULB);
+        WAXED_COPPER_BULB = new BlockWaxedCopperBulb("", () -> COPPER_BULB);
+        WAXED_EXPOSED_COPPER_BULB = new BlockWaxedCopperBulb("exposed", () -> EXPOSED_COPPER_BULB);
+        WAXED_WEATHERED_COPPER_BULB = new BlockWaxedCopperBulb("weathered", () -> WEATHERED_COPPER_BULB);
+        WAXED_OXIDIZED_COPPER_BULB = new BlockWaxedCopperBulb("oxidized", () -> OXIDIZED_COPPER_BULB);
 
         // WAXED
-        WAXED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_copper_block")
-                .setRegistryName("waxed_copper_block")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_COPPER_BLOCK, event);
+        WAXED_COPPER_BLOCK = new BlockWaxedCopperBlock("waxed_copper_block", () -> COPPER_BLOCK);
+        WAXED_EXPOSED_COPPER_BLOCK = new BlockWaxedCopperBlock("waxed_exposed_copper_block", () -> EXPOSED_COPPER_BLOCK);
+        WAXED_WEATHERED_COPPER_BLOCK = new BlockWaxedCopperBlock("waxed_weathered_copper_block", () -> WEATHERED_COPPER_BLOCK);
+        WAXED_OXIDIZED_COPPER_BLOCK = new BlockWaxedCopperBlock("waxed_oxidized_copper_block", () -> OXIDIZED_COPPER_BLOCK);
 
-        WAXED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_chiseled_copper")
-                .setRegistryName("waxed_chiseled_copper")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_CHISELED_COPPER, event);
+        WAXED_CHISELED_COPPER = new BlockWaxedCopperBlock("waxed_chiseled_copper", () -> CHISELED_COPPER);
+        WAXED_EXPOSED_CHISELED_COPPER = new BlockWaxedCopperBlock("waxed_exposed_chiseled_copper", () -> EXPOSED_CHISELED_COPPER);
+        WAXED_WEATHERED_CHISELED_COPPER = new BlockWaxedCopperBlock("waxed_weathered_chiseled_copper", () -> WEATHERED_CHISELED_COPPER);
+        WAXED_OXIDIZED_CHISELED_COPPER = new BlockWaxedCopperBlock("waxed_oxidized_chiseled_copper", () -> OXIDIZED_CHISELED_COPPER);
 
         WAXED_COPPER_GRATE = new BlockCopperGrate("", true);
-        register(WAXED_COPPER_GRATE, event);
-
-        WAXED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_cut_copper")
-                .setRegistryName("waxed_cut_copper")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_CUT_COPPER, event);
-
-        WAXED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_copper_bulb")
-                .setRegistryName("waxed_copper_bulb")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_COPPER_BULB, event);
-
-// WAXED_EXPOSED
-        WAXED_EXPOSED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_exposed_copper_block")
-                .setRegistryName("waxed_exposed_copper_block")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_EXPOSED_COPPER_BLOCK, event);
-
-        WAXED_EXPOSED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_exposed_chiseled_copper")
-                .setRegistryName("waxed_exposed_chiseled_copper")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_EXPOSED_CHISELED_COPPER, event);
-
         WAXED_EXPOSED_COPPER_GRATE = new BlockCopperGrate("exposed", true);
-        register(WAXED_EXPOSED_COPPER_GRATE, event);
-
-        WAXED_EXPOSED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_exposed_cut_copper")
-                .setRegistryName("waxed_exposed_cut_copper")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_EXPOSED_CUT_COPPER, event);
-
-        WAXED_EXPOSED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_exposed_copper_bulb")
-                .setRegistryName("waxed_exposed_copper_bulb")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_EXPOSED_COPPER_BULB, event);
-
-// WAXED_WEATHERED
-        WAXED_WEATHERED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_weathered_copper_block")
-                .setRegistryName("waxed_weathered_copper_block")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_WEATHERED_COPPER_BLOCK, event);
-
-        WAXED_WEATHERED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_weathered_chiseled_copper")
-                .setRegistryName("waxed_weathered_chiseled_copper")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_WEATHERED_CHISELED_COPPER, event);
-
         WAXED_WEATHERED_COPPER_GRATE = new BlockCopperGrate("weathered", true);
-        register(WAXED_WEATHERED_COPPER_GRATE, event);
-
-        WAXED_WEATHERED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_weathered_cut_copper")
-                .setRegistryName("waxed_weathered_cut_copper")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_WEATHERED_CUT_COPPER, event);
-
-        WAXED_WEATHERED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_weathered_copper_bulb")
-                .setRegistryName("waxed_weathered_copper_bulb")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_WEATHERED_COPPER_BULB, event);
-
-// WAXED_OXIDIZED
-        WAXED_OXIDIZED_COPPER_BLOCK = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_oxidized_copper_block")
-                .setRegistryName("waxed_oxidized_copper_block")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_OXIDIZED_COPPER_BLOCK, event);
-
-        WAXED_OXIDIZED_CHISELED_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_oxidized_chiseled_copper")
-                .setRegistryName("waxed_oxidized_chiseled_copper")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_OXIDIZED_CHISELED_COPPER, event);
-
         WAXED_OXIDIZED_COPPER_GRATE = new BlockCopperGrate("oxidized", true);
-        register(WAXED_OXIDIZED_COPPER_GRATE, event);
 
-        WAXED_OXIDIZED_CUT_COPPER = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_oxidized_cut_copper")
-                .setRegistryName("waxed_oxidized_cut_copper")
-                .setCreativeTab(TB_CAVES);
-        register(WAXED_OXIDIZED_CUT_COPPER, event);
+        WAXED_CUT_COPPER = new BlockWaxedCopperBlock("waxed_cut_copper", () -> CUT_COPPER);
+        WAXED_EXPOSED_CUT_COPPER = new BlockWaxedCopperBlock("waxed_exposed_cut_copper", () -> EXPOSED_CUT_COPPER);
+        WAXED_WEATHERED_CUT_COPPER = new BlockWaxedCopperBlock("waxed_weathered_cut_copper", () -> WEATHERED_CUT_COPPER);
+        WAXED_OXIDIZED_CUT_COPPER = new BlockWaxedCopperBlock("waxed_oxidized_cut_copper", () -> OXIDIZED_CUT_COPPER);
 
-        WAXED_OXIDIZED_COPPER_BULB = new Block(Material.ROCK)
-                .setUnlocalizedName("waxed_oxidized_copper_bulb")
-                .setRegistryName("waxed_oxidized_copper_bulb")
-                .setCreativeTab(TB_CAVES);
+
+        register(COPPER_BLOCK, event);
+        register(EXPOSED_COPPER_BLOCK, event);
+        register(WEATHERED_COPPER_BLOCK, event);
+        register(OXIDIZED_COPPER_BLOCK, event);
+        register(CHISELED_COPPER, event);
+        register(COPPER_GRATE, event);
+        register(CUT_COPPER, event);
+        register(COPPER_BULB, event);
+        register(EXPOSED_COPPER_BULB, event);
+        register(WEATHERED_COPPER_BULB, event);
+        register(OXIDIZED_COPPER_BULB, event);
+        register(WAXED_COPPER_BULB, event);
+        register(WAXED_EXPOSED_COPPER_BULB, event);
+        register(WAXED_WEATHERED_COPPER_BULB, event);
         register(WAXED_OXIDIZED_COPPER_BULB, event);
+        register(EXPOSED_CHISELED_COPPER, event);
+        register(EXPOSED_COPPER_GRATE, event);
+        register(EXPOSED_CUT_COPPER, event);
+        register(WEATHERED_CHISELED_COPPER, event);
+        register(WEATHERED_COPPER_GRATE, event);
+        register(WEATHERED_CUT_COPPER, event);
+        register(OXIDIZED_CHISELED_COPPER, event);
+        register(OXIDIZED_COPPER_GRATE, event);
+        register(OXIDIZED_CUT_COPPER, event);
+
+        register(WAXED_COPPER_BLOCK, event);
+        register(WAXED_COPPER_GRATE, event);
+        register(WAXED_CHISELED_COPPER, event);
+        register(WAXED_CUT_COPPER, event);
+        register(WAXED_EXPOSED_COPPER_BLOCK, event);
+        register(WAXED_EXPOSED_CHISELED_COPPER, event);
+        register(WAXED_EXPOSED_COPPER_GRATE, event);
+        register(WAXED_EXPOSED_CUT_COPPER, event);
+        register(WAXED_WEATHERED_COPPER_BLOCK, event);
+        register(WAXED_WEATHERED_CHISELED_COPPER, event);
+        register(WAXED_WEATHERED_COPPER_GRATE, event);
+        register(WAXED_WEATHERED_CUT_COPPER, event);
+        register(WAXED_OXIDIZED_COPPER_BLOCK, event);
+        register(WAXED_OXIDIZED_CHISELED_COPPER, event);
+        register(WAXED_OXIDIZED_COPPER_GRATE, event);
+        register(WAXED_OXIDIZED_CUT_COPPER, event);
 
         TINTED_GLASS = new BlockTintedGlass();
         register(TINTED_GLASS, event);
@@ -1041,8 +976,39 @@ public class ModBlocks {
         CALCITE = new BlockMod(Material.ROCK, "calcite").creativeTab(TB_CAVES).soundType(SoundType.STONE);
         register(CALCITE, event);
 
+
         TUFF = new BlockMod(Material.ROCK, "tuff").creativeTab(TB_CAVES).soundType(SoundType.STONE);
         register(TUFF, event);
+        TUFF_BRICKS = new BlockMod(Material.ROCK, "tuff_bricks").creativeTab(TB_TRAILS_TALES).soundType(SoundType.STONE);
+        register(TUFF_BRICKS, event);
+        POLISHED_TUFF = new BlockMod(Material.ROCK, "polished_tuff").creativeTab(TB_TRAILS_TALES).soundType(SoundType.STONE);
+        register(POLISHED_TUFF, event);
+        CHISELED_TUFF = new BlockModColumn("chiseled_tuff").setCreativeTab(TB_TRAILS_TALES);
+        register(CHISELED_TUFF, event);
+        CHISELED_TUFF_BRICKS = new BlockModColumn("chiseled_tuff_bricks").setCreativeTab(TB_TRAILS_TALES);
+        register(CHISELED_TUFF_BRICKS, event);
+
+        TUFF_STAIRS = new BlockModStairs(TUFF.getDefaultState(), "tuff_stairs")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(TUFF_STAIRS, event);
+
+        TUFF_WALL = new BlockModWall(TUFF, "tuff_wall")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(TUFF_WALL, event);
+
+        TUFF_BRICK_STAIRS = new BlockModStairs(TUFF_BRICKS.getDefaultState(), "tuff_brick_stairs")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(TUFF_BRICK_STAIRS, event);
+        TUFF_BRICK_WALL = new BlockModWall(TUFF_BRICKS, "tuff_brick_wall")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(TUFF_BRICK_WALL, event);
+        POLISHED_TUFF_WALL = new BlockModWall(POLISHED_TUFF, "polished_tuff_wall")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(POLISHED_TUFF_WALL, event);
+
+        POLISHED_TUFF_STAIRS = new BlockModStairs(POLISHED_TUFF.getDefaultState(), "polished_tuff_stairs")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(POLISHED_TUFF_STAIRS, event);
 
         COPPER_ORE = new Block(Material.ROCK)
                 .setUnlocalizedName("copper_ore")
@@ -1763,6 +1729,24 @@ public class ModBlocks {
         GRANITE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("granite_slab", Material.ROCK, GRANITE_SLAB)
                 .setCreativeTab(TB_AQUATIC);
         registerSlab(GRANITE_SLAB, GRANITE_SLAB_D, event);
+
+        TUFF_SLAB = (BlockSlab) new BlockModHalfSlab("tuff_slab", Material.ROCK)
+                .setCreativeTab(TB_TRAILS_TALES);
+        TUFF_SLAB_D = (BlockSlab) new BlockModDoubleSlab("tuff_slab", Material.ROCK, TUFF_SLAB)
+                .setCreativeTab(TB_TRAILS_TALES);
+        registerSlab(TUFF_SLAB, TUFF_SLAB_D, event);
+
+        TUFF_BRICK_SLAB = (BlockSlab) new BlockModHalfSlab("tuff_brick_slab", Material.ROCK)
+                .setCreativeTab(TB_TRAILS_TALES);
+        TUFF_BRICK_SLAB_D = (BlockSlab) new BlockModDoubleSlab("tuff_brick_slab", Material.ROCK, TUFF_BRICK_SLAB)
+                .setCreativeTab(TB_TRAILS_TALES);
+        registerSlab(TUFF_BRICK_SLAB, TUFF_BRICK_SLAB_D, event);
+
+        POLISHED_TUFF_SLAB = (BlockSlab) new BlockModHalfSlab("polished_tuff_slab", Material.ROCK)
+                .setCreativeTab(TB_TRAILS_TALES);
+        POLISHED_TUFF_SLAB_D = (BlockSlab) new BlockModDoubleSlab("polished_tuff_slab", Material.ROCK, POLISHED_TUFF_SLAB)
+                .setCreativeTab(TB_TRAILS_TALES);
+        registerSlab(POLISHED_TUFF_SLAB, POLISHED_TUFF_SLAB_D, event);
     }
 
     @SideOnly(Side.SERVER)
@@ -1869,38 +1853,6 @@ public class ModBlocks {
 
             event.setCanceled(true);
             event.setCancellationResult(EnumActionResult.SUCCESS);
-        }
-        if (!heldItem.isEmpty() && heldItem.getItem() == ModItems.HONEYCOMB) {
-            ResourceLocation res = block.getRegistryName();
-            if (WAXED_VARIANTS.containsKey(res)) {
-                AdvancementHelper.grantAdvancement(player, "wax_on");
-                if (!world.isRemote) {
-                    world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(WAXED_VARIANTS.get(res)).getDefaultState(), 3);
-                    if (!player.isCreative()) heldItem.shrink(1);
-                    world.playSound(null, pos, SoundEvents.BLOCK_SLIME_HIT, SoundCategory.BLOCKS, 1f, 1f);
-                }
-                event.setCanceled(true);
-            }
-        }
-        if (!heldItem.isEmpty() && heldItem.getItem() instanceof ItemAxe) {
-            ResourceLocation res = block.getRegistryName();
-            if (UNWAXED_VARIANTS.containsKey(res)) {
-                AdvancementHelper.grantAdvancement(player, "wax_off");
-                if (!world.isRemote) {
-                    world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(UNWAXED_VARIANTS.get(res)).getDefaultState(), 3);
-                    if (!player.isCreative()) heldItem.damageItem(1, player);
-                    world.playSound(null, pos, SoundEvents.BLOCK_WOOD_HIT, SoundCategory.BLOCKS, 1f, 0.8f);
-                }
-                event.setCanceled(true);
-            }
-            if (PREVIOUS_OXIDATION.containsKey(res)) {
-                if (!world.isRemote) {
-                    world.setBlockState(pos, ForgeRegistries.BLOCKS.getValue(PREVIOUS_OXIDATION.get(res)).getDefaultState(), 3);
-                    if (!player.isCreative()) heldItem.damageItem(1, player);
-                    world.playSound(null, pos, SoundEvents.BLOCK_WOOD_HIT, SoundCategory.BLOCKS, 1f, 0.8f);
-                }
-                event.setCanceled(true);
-            }
         }
     }
 
