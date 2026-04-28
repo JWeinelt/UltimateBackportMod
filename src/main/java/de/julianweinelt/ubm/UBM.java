@@ -5,6 +5,7 @@ import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.blocks.api.sign.TileEntityModSign;
 import de.julianweinelt.ubm.blocks.interactable.smithing.GuiHandler;
 import de.julianweinelt.ubm.blocks.interactable.smithing.TileEntitySmithingTable;
+import de.julianweinelt.ubm.blocks.tiles.TileEntityBlastFurnace;
 import de.julianweinelt.ubm.blocks.tiles.TileEntitySculkSensor;
 import de.julianweinelt.ubm.configuration.ModConfig;
 import de.julianweinelt.ubm.effects.ModEffects;
@@ -93,6 +94,7 @@ public class UBM {
         GameRegistry.registerWorldGenerator(new StructureWorldGen(), 0);
 
         GameRegistry.registerTileEntity(TileEntitySmithingTable.class, new ResourceLocation("ubm", "smithing_table"));
+        GameRegistry.registerTileEntity(TileEntityBlastFurnace.class, new ResourceLocation("ubm", "blast_furnace"));
         GameRegistry.registerTileEntity(TileEntityModSign.class, new ResourceLocation("ubm", "sign_te"));
         GameRegistry.registerTileEntity(TileEntitySculkSensor.class, new ResourceLocation("ubm", "sculk_sensor_te"));
 

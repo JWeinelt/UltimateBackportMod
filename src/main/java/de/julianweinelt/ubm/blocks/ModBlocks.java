@@ -2,6 +2,7 @@ package de.julianweinelt.ubm.blocks;
 
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.blocks.api.*;
+import de.julianweinelt.ubm.blocks.interactable.BlockBlastFurnace;
 import de.julianweinelt.ubm.blocks.interactable.BlockSmithingTable;
 import de.julianweinelt.ubm.blocks.plant.BlockGlowBerryVine;
 import de.julianweinelt.ubm.blocks.plant.BlockGlowLichen;
@@ -541,10 +542,7 @@ public class ModBlocks {
                 .setUnlocalizedName("smoker")
                 .setCreativeTab(TB_PILLAGE);
         register(SMOKER, event);
-        BLAST_FURNACE = new BlockRotated(Material.ROCK)
-                .setRegistryName("blast_furnace")
-                .setUnlocalizedName("blast_furnace")
-                .setCreativeTab(TB_PILLAGE);
+        BLAST_FURNACE = new BlockBlastFurnace();
         register(BLAST_FURNACE, event);
         CARTOGRAPHY_TABLE = new BlockRotated(Material.WOOD)
                 .setRegistryName("cartography_table")
