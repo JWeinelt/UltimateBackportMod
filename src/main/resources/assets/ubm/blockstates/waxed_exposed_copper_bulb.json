@@ -1,1 +1,8 @@
-{"variants":{"normal":{"model":"ubm:waxed_exposed_copper_bulb"}}}
+{
+  "variants": {
+    "lit=false,powered=false": { "model": "ubm:waxed_exposed_copper_bulb" },
+    "lit=false,powered=true": { "model": "ubm:waxed_exposed_copper_bulb_powered" },
+    "lit=true,powered=false": { "model": "ubm:waxed_exposed_copper_bulb_lit" },
+    "lit=true,powered=true": { "model": "ubm:waxed_exposed_copper_bulb_lit_powered" }
+  }
+}

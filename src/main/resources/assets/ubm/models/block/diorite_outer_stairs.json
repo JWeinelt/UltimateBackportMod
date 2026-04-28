@@ -1,8 +1,8 @@
 {
   "parent": "block/outer_stairs",
   "textures": {
-    "bottom": "minecraft:blocks/diorite",
-    "top": "minecraft:blocks/diorite",
-    "side": "minecraft:blocks/diorite"
+    "bottom": "ubm:blocks/diorite",
+    "top": "ubm:blocks/diorite",
+    "side": "ubm:blocks/diorite"
   }
 }

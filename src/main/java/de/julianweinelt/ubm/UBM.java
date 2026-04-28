@@ -7,19 +7,24 @@ import de.julianweinelt.ubm.blocks.interactable.smithing.GuiHandler;
 import de.julianweinelt.ubm.blocks.interactable.smithing.TileEntitySmithingTable;
 import de.julianweinelt.ubm.blocks.tiles.TileEntitySculkSensor;
 import de.julianweinelt.ubm.configuration.ModConfig;
+import de.julianweinelt.ubm.effects.ModEffects;
+import de.julianweinelt.ubm.effects.ModPotionTypes;
 import de.julianweinelt.ubm.entities.ModEntities;
 import de.julianweinelt.ubm.misc.CommonProxy;
 import de.julianweinelt.ubm.misc.KeyBindings;
 import de.julianweinelt.ubm.misc.ModRecipes;
 import de.julianweinelt.ubm.misc.ModSounds;
+import de.julianweinelt.ubm.worldgen.ModDimension;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
 import de.julianweinelt.ubm.worldgen.StructureWorldGen;
+import de.julianweinelt.ubm.worldgen.misc.CommandGotoCustomNether;
 import de.julianweinelt.ubm.worldgen.structure.village.ModCustomVillage;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
@@ -33,7 +38,7 @@ import java.io.InputStream;
 public class UBM {
     public static final String MODID = "ubm";
     public static final String NAME = "Ultimate Backport Mod";
-    public static final String VERSION = "1.1.0";
+    public static final String VERSION = "1.2.2";
 
     private static Logger logger;
     public static UBM instance;
@@ -55,12 +60,16 @@ public class UBM {
         logger = event.getModLog();
         instance = this;
 
+        proxy.preInit(event);
+
         configDir = event.getModConfigurationDirectory();
         if (!configDir.exists()) {
             configDir.mkdirs();
         }
 
         KeyBindings.init();
+        ModEffects.init();
+        ModPotionTypes.init();
 
         File configFile = new File(configDir, MODID + ".cfg");
 
@@ -90,30 +99,27 @@ public class UBM {
 
 
         ModCustomVillage.preInit();
+        ModDimension.registerDimensions();
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         NetworkRegistry.INSTANCE.registerGuiHandler(UBM.instance, new GuiHandler());
         proxy.init(event);
-        ModBlocks.WAXED_VARIANTS.put(ModBlocks.COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_COPPER_BLOCK.getRegistryName());
-        ModBlocks.WAXED_VARIANTS.put(ModBlocks.EXPOSED_COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_EXPOSED_COPPER_BLOCK.getRegistryName());
-        ModBlocks.WAXED_VARIANTS.put(ModBlocks.WEATHERED_COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_WEATHERED_COPPER_BLOCK.getRegistryName());
-        ModBlocks.WAXED_VARIANTS.put(ModBlocks.OXIDIZED_COPPER_BLOCK.getRegistryName(), ModBlocks.WAXED_OXIDIZED_COPPER_BLOCK.getRegistryName());
-
-        ModBlocks.UNWAXED_VARIANTS.put(ModBlocks.WAXED_COPPER_BLOCK.getRegistryName(), ModBlocks.COPPER_BLOCK.getRegistryName());
-        ModBlocks.UNWAXED_VARIANTS.put(ModBlocks.WAXED_EXPOSED_COPPER_BLOCK.getRegistryName(), ModBlocks.EXPOSED_COPPER_BLOCK.getRegistryName());
-        ModBlocks.UNWAXED_VARIANTS.put(ModBlocks.WAXED_WEATHERED_COPPER_BLOCK.getRegistryName(), ModBlocks.WEATHERED_COPPER_BLOCK.getRegistryName());
-        ModBlocks.UNWAXED_VARIANTS.put(ModBlocks.WAXED_OXIDIZED_COPPER_BLOCK.getRegistryName(), ModBlocks.OXIDIZED_COPPER_BLOCK.getRegistryName());
-
-        ModBlocks.PREVIOUS_OXIDATION.put(ModBlocks.EXPOSED_COPPER_BLOCK.getRegistryName(), ModBlocks.COPPER_BLOCK.getRegistryName());
-        ModBlocks.PREVIOUS_OXIDATION.put(ModBlocks.WEATHERED_COPPER_BLOCK.getRegistryName(), ModBlocks.EXPOSED_COPPER_BLOCK.getRegistryName());
-        ModBlocks.PREVIOUS_OXIDATION.put(ModBlocks.OXIDIZED_COPPER_BLOCK.getRegistryName(), ModBlocks.WEATHERED_COPPER_BLOCK.getRegistryName());
 
         ModRecipes.init();
         ModSounds.SoundTypes.init();
         ModBlocks.AMETHYST_BLOCK.soundType(ModSounds.SoundTypes.AMETHYST_BLOCK);
+        ModBlocks.BUDDING_AMETHYST.soundType(ModSounds.SoundTypes.AMETHYST_BLOCK);
+        ModBlocks.TUFF.soundType(ModSounds.SoundTypes.TUFF);
+        ModBlocks.TUFF_BRICKS.soundType(ModSounds.SoundTypes.TUFF);
     }
+
+    @Mod.EventHandler
+    public void onServerStarting(FMLServerStartingEvent event) {
+        event.registerServerCommand(new CommandGotoCustomNether());
+    }
+
 
     public static Logger getLogger() {
         return logger;

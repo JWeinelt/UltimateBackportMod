@@ -1,13 +1,9 @@
 package de.julianweinelt.ubm.entities.models;
 
-
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-
-import javax.annotation.Nonnull;
-
 
 public class ModelVillager extends ModelBase {
 	private final ModelRenderer body;

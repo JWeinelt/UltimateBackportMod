@@ -136,8 +136,6 @@ public class ModSounds {
     public static SoundEvent BLOCK_LODESTONE_PLACE;
     public static SoundEvent BLOCK_MOSS_BREAK;
     public static SoundEvent BLOCK_MOSS_STEP;
-    public static SoundEvent BLOCK_NETHERITE_BREAK;
-    public static SoundEvent BLOCK_NETHERITE_STEP;
     public static SoundEvent BLOCK_NYLIUM_BREAK;
     public static SoundEvent BLOCK_NYLIUM_STEP;
     public static SoundEvent BLOCK_POINTED_DRIPSTONE_DRIP_LAVA;
@@ -171,9 +169,19 @@ public class ModSounds {
     public static SoundEvent BLOCK_TUFF_BREAK;
     public static SoundEvent BLOCK_TUFF_STEP;
 
+    public static SoundEvent ITEM_AXE_SCRAPE;
+    public static SoundEvent ITEM_AXE_STRIP;
+    public static SoundEvent ITEM_AXE_WAX_OFF;
+    public static SoundEvent ITEM_HONEYCOMB_WAX_ON;
+
 
     @SubscribeEvent
     public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
+        ITEM_AXE_SCRAPE = register(event, "item.axe.scrape");
+        ITEM_AXE_STRIP = register(event, "item.axe.strip");
+        ITEM_AXE_WAX_OFF = register(event, "item.axe.wax_off");
+        ITEM_HONEYCOMB_WAX_ON = register(event, "item.honeycomb.wax_on");
+
         BEE_HURT = register(event, "mob.bee.hurt");
         BEE_AGGRESSIVE = register(event, "mob.bee.aggressive");
         BEE_DEATH = register(event, "mob.bee.death");
@@ -297,8 +305,6 @@ public class ModSounds {
         BLOCK_LODESTONE_PLACE = register(event, "block.lodestone.place");
         BLOCK_MOSS_BREAK = register(event, "block.moss.break");
         BLOCK_MOSS_STEP = register(event, "block.moss.step");
-        BLOCK_NETHERITE_BREAK = register(event, "block.netherite.break");
-        BLOCK_NETHERITE_STEP = register(event, "block.netherite.step");
         BLOCK_NYLIUM_BREAK = register(event, "block.nylium.break");
         BLOCK_NYLIUM_STEP = register(event, "block.nylium.step");
         BLOCK_POINTED_DRIPSTONE_DRIP_LAVA = register(event, "block.pointed_dripstone.drip_lava");

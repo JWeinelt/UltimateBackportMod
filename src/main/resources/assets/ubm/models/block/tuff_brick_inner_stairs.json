@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "ubm:blocks/tuff_bricks",
+    "top": "ubm:blocks/tuff_bricks",
+    "side": "ubm:blocks/tuff_bricks"
+  }
+}

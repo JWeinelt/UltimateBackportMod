@@ -2,19 +2,23 @@ package de.julianweinelt.ubm.blocks;
 
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import java.util.Random;
 
 public class BlockHoneyBlock extends Block {
     protected static final AxisAlignedBB HONEY_AABB =
-            new AxisAlignedBB(0.0D, 0.0D, 0.0D,
+            new AxisAlignedBB(0.07D, 0.07D, 0.07D,
                     0.9375D, 0.9375D, 0.9375D);
 
     public BlockHoneyBlock() {
@@ -40,5 +44,13 @@ public class BlockHoneyBlock extends Block {
     @Override
     public boolean isFullCube(@Nonnull IBlockState state) {
         return false;
+    }
+
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    @Nonnull
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.CUTOUT_MIPPED;
     }
 }

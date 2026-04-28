@@ -3843,7 +3843,7 @@
       "ubm:block/moss/step6"
     ]
   },
-  "block.netherite.break": {
+  "block.netherite_block.break": {
     "category": "block",
     "sounds": [
       "ubm:block/netherite/break1",
@@ -3852,7 +3852,7 @@
       "ubm:block/netherite/break4"
     ]
   },
-  "block.netherite.step": {
+  "block.netherite_block.step": {
     "category": "block",
     "sounds": [
       "ubm:block/netherite/step1",
@@ -4207,6 +4207,39 @@
       "ubm:block/tuff/step4",
       "ubm:block/tuff/step5",
       "ubm:block/tuff/step6"
+    ]
+  },
+  "item.axe.scrape": {
+    "category": "block",
+    "sounds": [
+      "ubm:item/axe/scrape1",
+      "ubm:item/axe/scrape2",
+      "ubm:item/axe/scrape3"
+    ]
+  },
+  "item.axe.strip": {
+    "category": "block",
+    "sounds": [
+      "ubm:item/axe/strip1",
+      "ubm:item/axe/strip2",
+      "ubm:item/axe/strip3",
+      "ubm:item/axe/strip4"
+    ]
+  },
+  "item.axe.wax_off": {
+    "category": "block",
+    "sounds": [
+      "ubm:item/axe/wax_off1",
+      "ubm:item/axe/wax_off2",
+      "ubm:item/axe/wax_off3"
+    ]
+  },
+  "item.honeycomb.wax_on": {
+    "category": "block",
+    "sounds": [
+      "ubm:item/honeycomb/wax_on1",
+      "ubm:item/honeycomb/wax_on2",
+      "ubm:item/honeycomb/wax_on3"
     ]
   }
 }

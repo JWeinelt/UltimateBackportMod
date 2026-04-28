@@ -1,9 +1,7 @@
 package de.julianweinelt.ubm.worldgen;
 
-import de.julianweinelt.ubm.worldgen.biome.BiomeGrove;
-import de.julianweinelt.ubm.worldgen.biome.BiomeNetherForest;
-import de.julianweinelt.ubm.worldgen.biome.BiomeSnowySlopes;
-import de.julianweinelt.ubm.worldgen.biome.BiomeWarmOcean;
+import de.julianweinelt.ubm.UBM;
+import de.julianweinelt.ubm.worldgen.biome.*;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.event.RegistryEvent;
@@ -14,11 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = UBM.MODID)
 public class ModBiomes {
     private static final List<BiomeData> BIOMES = new ArrayList<>();
 
-    public static final Biome NETHER_FOREST = register("nether_forest", new BiomeNetherForest(), BiomeManager.BiomeType.DESERT, 10, false);
+    public static final Biome WARPED_FOREST = register("warped_forest", new BiomeWarpedForest(), null, 10, false);
+    public static final Biome CRIMSON_FOREST = register("crimson_forest", new BiomeCrimsonForest(), null, 10, false);
     public static final Biome SNOWY_SLOPES = register("snowy_slopes", new BiomeSnowySlopes(), BiomeManager.BiomeType.COOL, 10, true);
     public static final Biome GROVE = register("grove", new BiomeGrove(), BiomeManager.BiomeType.COOL, 10, true);
     public static final Biome WARM_OCEAN = register("warm_ocean", new BiomeWarmOcean(), BiomeManager.BiomeType.WARM, 10, true);
@@ -38,6 +37,7 @@ public class ModBiomes {
 
     public static void init() {
         for (BiomeData data : BIOMES) {
+            if (data.type == null) continue;
             BiomeManager.addBiome(data.type, new BiomeManager.BiomeEntry(data.biome, data.weight));
             if (data.spawn) {
                 BiomeManager.addSpawnBiome(data.biome);
