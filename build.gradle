@@ -1,11 +1,11 @@
 buildscript {
     repositories {
-        jcenter()
-        maven { url = "https://files.minecraftforge.net/maven" }
         maven {
             name = "maven-releases"
             url = uri("https://repo.codeblocksmc.com/maven-releases")
         }
+        jcenter()
+        maven { url = "https://files.minecraftforge.net/maven" }
         maven {
             url = "https://repo.codemc.io/repository/maven-public/"
         }
