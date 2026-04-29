@@ -5,26 +5,23 @@ import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.blocks.api.sign.TileEntityModSign;
 import de.julianweinelt.ubm.blocks.interactable.smithing.GuiHandler;
 import de.julianweinelt.ubm.blocks.interactable.smithing.TileEntitySmithingTable;
+import de.julianweinelt.ubm.blocks.tiles.TileEntityBell;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityBlastFurnace;
 import de.julianweinelt.ubm.blocks.tiles.TileEntitySculkSensor;
-import de.julianweinelt.ubm.configuration.ModYamlConfig;
 import de.julianweinelt.ubm.effects.ModEffects;
 import de.julianweinelt.ubm.effects.ModPotionTypes;
 import de.julianweinelt.ubm.entities.ModEntities;
-import de.julianweinelt.ubm.misc.proxy.CommonProxy;
 import de.julianweinelt.ubm.misc.ModRecipes;
 import de.julianweinelt.ubm.misc.ModSounds;
-import de.julianweinelt.ubm.worldgen.ModDimension;
+import de.julianweinelt.ubm.misc.proxy.CommonProxy;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
 import de.julianweinelt.ubm.worldgen.StructureWorldGen;
-import de.julianweinelt.ubm.worldgen.misc.CommandGotoCustomNether;
 import de.julianweinelt.ubm.worldgen.structure.village.ModCustomVillage;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -37,7 +34,7 @@ import java.io.File;
 public class UBM {
     public static final String MODID = "ubm";
     public static final String NAME = "Ultimate Backport Mod";
-    public static final String VERSION = "1.2.2";
+    public static final String VERSION = "1.2.3";
 
     private static Logger logger;
     public static UBM instance;
@@ -68,7 +65,7 @@ public class UBM {
 
         configDir = event.getModConfigurationDirectory();
         if (!configDir.exists()) {
-            configDir.mkdirs();
+            if (configDir.mkdirs()) logger.debug("Created config directory");
         }
 
         ModEffects.init();
@@ -84,10 +81,10 @@ public class UBM {
         GameRegistry.registerTileEntity(TileEntityBlastFurnace.class, new ResourceLocation("ubm", "blast_furnace"));
         GameRegistry.registerTileEntity(TileEntityModSign.class, new ResourceLocation("ubm", "sign_te"));
         GameRegistry.registerTileEntity(TileEntitySculkSensor.class, new ResourceLocation("ubm", "sculk_sensor_te"));
+        GameRegistry.registerTileEntity(TileEntityBell.class, "bell_te");
 
 
         ModCustomVillage.preInit();
-        ModDimension.registerDimensions();
     }
 
     @Mod.EventHandler
@@ -101,11 +98,6 @@ public class UBM {
         ModBlocks.BUDDING_AMETHYST.soundType(ModSounds.SoundTypes.AMETHYST_BLOCK);
         ModBlocks.TUFF.soundType(ModSounds.SoundTypes.TUFF);
         ModBlocks.TUFF_BRICKS.soundType(ModSounds.SoundTypes.TUFF);
-    }
-
-    @Mod.EventHandler
-    public void onServerStarting(FMLServerStartingEvent event) {
-        event.registerServerCommand(new CommandGotoCustomNether());
     }
 
 

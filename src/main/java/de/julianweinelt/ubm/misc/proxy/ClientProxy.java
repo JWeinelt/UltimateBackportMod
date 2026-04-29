@@ -1,7 +1,9 @@
 package de.julianweinelt.ubm.misc.proxy;
 
 import de.julianweinelt.ubm.UBM;
+import de.julianweinelt.ubm.blocks.tiles.RenderTileEntityBell;
 import de.julianweinelt.ubm.blocks.tiles.RenderTileEntityCampfire;
+import de.julianweinelt.ubm.blocks.tiles.TileEntityBell;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityCampfire;
 import de.julianweinelt.ubm.configuration.ModYamlConfig;
 import de.julianweinelt.ubm.effects.PotionIconRenderer;
@@ -43,6 +45,7 @@ public class ClientProxy extends CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
         File configDir = event.getModConfigurationDirectory();
         ModYamlConfig.init(configDir);
+        ModYamlConfig.instance().load();
 
         MinecraftForge.EVENT_BUS.register(this);
         ModEntities.registerRenders();
@@ -67,6 +70,7 @@ public class ClientProxy extends CommonProxy {
 
         ClientEventHandler.registerParticles();
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCampfire.class, new RenderTileEntityCampfire());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBell.class, new RenderTileEntityBell());
 
         KeyBindings.init();
 

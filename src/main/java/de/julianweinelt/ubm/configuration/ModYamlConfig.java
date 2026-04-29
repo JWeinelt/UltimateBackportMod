@@ -23,9 +23,9 @@ public class ModYamlConfig {
     private ModYamlConfig(File configFolder) {
         logger = UBM.getLogger();
         this.configFolder = new File(configFolder, "ubm");
-        if (configFolder.mkdirs()) UBM.getLogger().debug("Created config folder");
-        this.configFile = new File(configFolder, "ubm.yml");
-        this.serverConfigs = new File(configFolder, "servers");
+        if (this.configFolder.mkdirs()) UBM.getLogger().debug("Created config folder");
+        this.configFile = new File(this.configFolder, "ubm.yml");
+        this.serverConfigs = new File(this.configFolder, "servers");
         if (serverConfigs.mkdirs()) UBM.getLogger().debug("Created server configs folder");
         instance = this;
 
