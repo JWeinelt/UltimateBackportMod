@@ -1,4 +1,4 @@
-package de.julianweinelt.ubm.misc;
+package de.julianweinelt.ubm.misc.proxy;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;

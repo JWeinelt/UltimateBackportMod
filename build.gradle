@@ -3,13 +3,20 @@ buildscript {
         jcenter()
         maven { url = "https://files.minecraftforge.net/maven" }
         maven {
-            name = "unifiedvisionReleases"
-            url = uri("https://repo.codeblocksmc.de/releases")
+            name = "maven-releases"
+            url = uri("https://repo.codeblocksmc.com/maven-releases")
+        }
+        maven {
+            url = "https://repo.codemc.io/repository/maven-public/"
         }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
+}
+
+plugins {
+    id "com.github.johnrengelman.shadow" version "1.2.3"
 }
 
 apply plugin: 'net.minecraftforge.gradle.forge'
@@ -40,6 +47,7 @@ repositories {
 
 dependencies {
     implementation("de.julianweinelt.pathfinder:PathFinderAPI:1.1.2")
+    implementation("dev.dejvokep:boosted-yaml:1.3.1")
 }
 
 processResources {

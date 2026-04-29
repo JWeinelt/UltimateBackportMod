@@ -1,0 +1,293 @@
+#        _ _   _                 _           ___            _                     _
+# /\ /\| | |_(_)_ __ ___   __ _| |_ ___    / __\ __ _  ___| | ___ __   ___  _ __| |_
+#/ / \ \ | __| | '_ ` _ \ / _` | __/ _ \  /__\/// _` |/ __| |/ / '_ \ / _ \| '__| __|
+#\ \_/ / | |_| | | | | | | (_| | ||  __/ / \/  \ (_| | (__|   <| |_) | (_) | |  | |_
+# \___/|_|\__|_|_| |_| |_|\__,_|\__\___| \_____/\__,_|\___|_|\_\ .__/ \___/|_|   \__|
+#                                                         _    |_|
+#                                        /\/\   ___   __| |
+#                                       /    \ / _ \ / _` |
+#                                      / /\/\ \ (_) | (_| |
+#                                      \/    \/\___/ \__,_|
+
+# Configuration of the Ultimate Backport Mod
+# INFORMATION: This file will be downloaded from servers with ubm installed.
+# Your normal configuration won't be affected by the settings of the server.
+
+# Configuration version. DO NOT TOUCH!
+config-version: "D1"
+
+# This defines which features will be activated by default.
+# You have to choose between these levels:
+# RELEASE - Fully tested features
+# BETA - Features that may include bugs
+# DEVELOPMENT - Features that are in the works
+feature-level: RELEASE
+
+# Change these values to configure entities added by UBM
+## These values exist for entities:
+## - enabled: Whether the entity is enabled or not.
+## - health: The health of the entity (in half-hearts).
+## - damage: The damage the entity deals (in half-hearts).
+## - spawnWeight: The weight of the entity when spawning.
+## - feedItems: The items the entity can be fed with.
+## - spawnNaturally: Whether the entity spawns naturally or not.
+## - spawnBiomes: The biomes the entity can spawn in.
+## Some entities have additional options, which are documented below.
+entities:
+  # Allays are passive mobs spawning in pillager outposts.
+  # If you give them an item, they will pick up all items of that type in a certain radius and bring them to you.
+  allay:
+    enabled: true
+    health: 20
+    # Defines the behavior of the allay: if it should bring items to players
+    bring-items-to-player: true
+    # Defines the radius allays can see items.
+    item-radius: 16
+
+    # Allays can dance on jukeboxes. If holding an amethyst shard, they can duplicate themselves.
+    enable-duplication: true
+    # Defined in minutes.
+    duplication-cooldown: 5
+
+    spawn:
+      weight: 10
+      biomes: []
+      outpost:
+        enabled: true
+        spawn-chance: 10
+      woodland-mansion:
+        enabled: true
+        spawn-chance: 10
+  # The armadillo is a passive mob that spawns in deserts and savanna.
+  # When using a brush on it, it will drop a scute, which can be used to craft wolf armor.
+  # The armadillo rolls to a ball when attacked, making it harder to hit.
+  armadillo:
+    enabled: true
+    health: 12
+    feed-items:
+      - "minecraft:spider_eye"
+    spawn:
+      weight: 10
+      biomes:
+        - BADLANDS
+        - ERODED_BADLANDS
+        - SAVANNA
+        - SAVANNA_PLATEAU
+        - WINDSWEPT_SAVANNA
+        - WOODED_BADLANDS
+  # Axolotls are passive mobs that spawn in water.
+  # They can be fed with tropical fish buckets and will attack tropical fish in water.
+  # They can also be bucketed and can play dead when attacked.
+  # You can team up with them to fight underwater mobs like guardians.
+  axolotl:
+    enabled: true
+    health: 12
+    feed-items:
+      - "ubm:bucket_tropical_fish"
+    spawn:
+      weight: 10
+      biomes:
+        - LUSH_CAVES
+    bucket-interaction: true
+    play-dead-when-attacked: true
+    attack-damage: 4
+    attacks-entities:
+      - "ubm:tropical_fish"
+      - "ubm:cod"
+      - "ubm:salmon"
+      - "ubm:pufferfish"
+      - "minecraft:squid"
+      - "ubm:tadpole"
+      - "minecraft:guardian"
+      - "minecraft:elder_guardian"
+      - "ubm:drowned"
+
+  bee:
+    enabled: true
+    health: 10
+    damage:
+      easy-damage: 2
+      normal-damage: 2
+      hard-damage: 3
+      easy-poison: false
+      normal-poison: true
+      hard-poison: true
+    feed-items:
+      - "minecraft:red_flower"
+      - "minecraft:yellow_flower"
+      - "ubm:eyeblossom"
+      - "ubm:mangrove_propagule"
+      - "ubm:flowering_azalea"
+      - "ubm:flowering_azalea_leaves"
+      - "ubm:cherry_leaves"
+      - "ubm:pink_petals"
+      - "ubm:wildflowers"
+      - "ubm:spore_blossom"
+      - "ubm:cactus_flower"
+      - "minecraft:chorus_flower"
+    flower-radius: 22
+
+  bogged:
+    enabled: true
+    health: 16
+    spawn:
+      biomes:
+        - SWAMP
+        - "ubm:MANGROVE_SWAMP"
+  breeze:
+    enabled: true
+    health: 30
+    damage:
+      easy-damage: 1
+      normal-damage: 1
+      hard-damage: 1.5
+  camel:
+    enabled: true
+    health: 32
+    spawn:
+      biomes:
+        - DESERT
+      spawn-in-desert-village: true
+    feed-items:
+      - "minecraft:cactus"
+  camel-husk:
+    enabled: true
+    health: 32
+    spawn:
+      biomes:
+        - DESERT
+  cat:
+    enabled: true
+    health: 10
+    # If enabled, tamed cats will have double health.
+    enable-bedrock-edition-health: false
+    take-fall-damage: false
+    bring-gifts: true
+    possible-gifts: 7
+    gifts:
+      0:
+        item: "minecraft:rabbit_foot"
+        chance: 16.13
+      1:
+        item: "minecraft:rabbit_hide"
+        chance: 16.13
+      2:
+        item: "minecraft:string"
+        chance: 16.13
+      3:
+        item: "minecraft:feather"
+        chance: 16.13
+      4:
+        item: "minecraft:rotten_flesh"
+        chance: 16.13
+      5:
+        item: "minecraft:raw_chicken"
+        chance: 16.13
+      6:
+        item: "ubm:phantom_membrane"
+        chance: 3.22
+    feed-items:
+      - "ubm:salmon"
+      - "ubm:cod"
+  cod:
+    enabled: true
+    health: 3
+    spawn:
+      weight: 16
+      biomes:
+        - COLD_OCEAN
+        - DEEP_COLD_OCEAN
+        - LUKEWARM_OCEAN
+        - DEEP_LUKEWARM_OCEAN
+        - OCEAN
+        - DEEP_OCEAN
+  copper-golem:
+    enabled: true
+    health: 12
+
+  creaking:
+    enabled: true
+    health: 1
+  dolphin:
+    enabled: true
+    health: 10
+  drowned:
+    enabled: true
+    health: 20
+  fox:
+    enabled: true
+    health: 10
+  frog:
+    enabled: true
+    health: 10
+  glow-squid:
+    enabled: true
+    health: 10
+  goat:
+    enabled: true
+    health: 10
+  happy-ghast:
+    enabled: true
+    health: 20
+  hoglin:
+    enabled: true
+    health: 40
+  panda:
+    enabled: true
+    health: 20
+  phantom:
+    enabled: true
+    health: 20
+  pillager:
+    enabled: true
+    health: 24
+  piglin:
+    enabled: true
+    health: 16
+  piglin-brute:
+    enabled: true
+    health: 50
+  pufferfish:
+    enabled: true
+    health: 3
+  ravager:
+    enabled: true
+    health: 100
+  salmon:
+    enabled: true
+    health: 3
+  sniffer:
+    enabled: true
+    health: 14
+  strider:
+    enabled: true
+    health: 20
+  tadpole:
+    enabled: true
+    health: 6
+  turtle:
+    enabled: true
+    health: 30
+  tropical-fish:
+    enabled: true
+    health: 3
+  wandering-trader:
+    enabled: true
+    health: 20
+  warden:
+    enabled: true
+    health: 500
+  zombie-piglin:
+    enabled: true
+    health: 20
+  zoglin:
+    enabled: true
+    health: 40
+
+  # Mob votes
+  barnacle:
+    enabled: true
+    health: 10
+  crab:
+    enabled: true
+    health: 10

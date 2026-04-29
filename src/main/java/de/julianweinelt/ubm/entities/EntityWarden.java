@@ -1,7 +1,6 @@
 package de.julianweinelt.ubm.entities;
 
-import de.julianweinelt.ubm.configuration.ModConfig;
-import de.julianweinelt.ubm.configuration.section.ConfigSectionEntity;
+import de.julianweinelt.ubm.configuration.ModYamlConfig;
 import de.julianweinelt.ubm.entities.ai.EntityAIAttackPlayerWarden;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityCreature;
@@ -42,11 +41,10 @@ public class EntityWarden extends EntityCreature {
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
 
-        ConfigSectionEntity conf = ModConfig.getEntityConfig("warden");
-        int detectRange = conf.getAsInt("detectRange");
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(conf.getHealth() / 2.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(
+                ModYamlConfig.entityHealth("warden") / 2.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
-        this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(detectRange);
+        this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(20);
     }
 
     @Override

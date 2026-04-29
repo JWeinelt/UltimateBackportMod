@@ -1,18 +1,14 @@
 package de.julianweinelt.ubm.entities;
 
-import de.julianweinelt.ubm.configuration.ModConfig;
+import de.julianweinelt.ubm.configuration.ModYamlConfig;
 import de.julianweinelt.ubm.entities.ai.EntityAIDolphinBreath;
 import de.julianweinelt.ubm.entities.ai.EntityAIDolphinFindWater;
 import de.julianweinelt.ubm.entities.ai.EntityAIDolphinJump;
 import de.julianweinelt.ubm.entities.ai.EntityAIDolphinSwimAround;
 import de.julianweinelt.ubm.misc.ModSounds;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.EntityGuardian;
-import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
@@ -48,7 +44,9 @@ public class EntityDolphin extends EntityWaterMob {
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ModConfig.getEntityConfig("dolphin").getHealth() / 2.0D);
+
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(
+                ModYamlConfig.entityHealth("dolphin") / 2.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
     }
 

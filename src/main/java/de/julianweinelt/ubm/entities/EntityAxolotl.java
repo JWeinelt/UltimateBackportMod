@@ -1,6 +1,6 @@
 package de.julianweinelt.ubm.entities;
 
-import de.julianweinelt.ubm.configuration.ModConfig;
+import de.julianweinelt.ubm.configuration.ModYamlConfig;
 import de.julianweinelt.ubm.entities.ai.EntityAISwimAround;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -49,7 +49,9 @@ public class EntityAxolotl extends EntityWaterMob {
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
 
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ModConfig.getEntityConfig("axolotl").getHealth() / 2.0D);
+
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(
+                ModYamlConfig.entityHealth("axolotl") / 2.0D);
 
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
     }

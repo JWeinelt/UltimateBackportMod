@@ -1,11 +1,14 @@
-package de.julianweinelt.ubm.misc;
+package de.julianweinelt.ubm.misc.proxy;
 
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.blocks.tiles.RenderTileEntityCampfire;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityCampfire;
+import de.julianweinelt.ubm.configuration.ModYamlConfig;
 import de.julianweinelt.ubm.effects.PotionIconRenderer;
 import de.julianweinelt.ubm.entities.ModEntities;
-import de.julianweinelt.ubm.items.ModItems;
+import de.julianweinelt.ubm.misc.ClientEventHandler;
+import de.julianweinelt.ubm.misc.KeyBindings;
+import de.julianweinelt.ubm.misc.ModModels;
 import de.julianweinelt.ubm.qol.SwimClientHandler;
 import de.julianweinelt.ubm.trims.LayerArmorTrim;
 import de.julianweinelt.ubm.trims.TrimColorHelper;
@@ -13,7 +16,6 @@ import de.julianweinelt.ubm.worldgen.WorldTypeModern;
 import de.julianweinelt.ubm.worldgen.WorldTypeSelectableBiome;
 import de.julianweinelt.ubm.worldgen.structure.village.ModCustomVillage;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLivingBase;
 import net.minecraft.client.renderer.entity.RenderPlayer;
@@ -22,7 +24,6 @@ import net.minecraft.entity.item.EntityArmorStand;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -32,6 +33,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.awt.*;
+import java.io.File;
 import java.util.Map;
 
 @SideOnly(Side.CLIENT)
@@ -39,6 +41,9 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void preInit(FMLPreInitializationEvent event) {
+        File configDir = event.getModConfigurationDirectory();
+        ModYamlConfig.init(configDir);
+
         MinecraftForge.EVENT_BUS.register(this);
         ModEntities.registerRenders();
     }
