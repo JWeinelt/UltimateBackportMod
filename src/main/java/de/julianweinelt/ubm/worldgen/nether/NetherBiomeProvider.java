@@ -57,14 +57,24 @@ public class NetherBiomeProvider extends BiomeProvider {
 
     @Override
     public Biome[] getBiomesForGeneration(Biome[] cache, int x, int z, int width, int height) {
+
         if (cache == null || cache.length < width * height) {
             cache = new Biome[width * height];
         }
 
         int[] ids = layerGeneration.getInts(x, z, width, height);
-        for (int i = 0; i < ids.length; i++) {
-            Biome b = Biome.getBiome(ids[i]);
-            cache[i] = b != null ? b : allowedBiomes[0];
+
+        for (int i = 0; i < width * height; i++) {
+
+            int id = ids[i];
+
+            Biome biome = Biome.getBiome(id);
+
+            if (biome == null || !Arrays.asList(allowedBiomes).contains(biome)) {
+                biome = allowedBiomes[0];
+            }
+
+            cache[i] = biome;
         }
 
         return cache;

@@ -77,25 +77,28 @@ public class NetherChunkGenerator implements IChunkGenerator {
         return chunk;
     }
 
-    
+
     private void fillTerrain(ChunkPrimer primer, int cx, int cz) {
+
         generateNoiseBuffers(cx, cz);
 
         for (int ix = 0; ix < 4; ix++) {
             for (int iz = 0; iz < 4; iz++) {
-                for (int iy = 0; iy < 16; iy++) {
 
+                for (int iy = 0; iy < 16; iy++) {
 
                     double n000 = noiseAt(ix, iy, iz);
                     double n100 = noiseAt(ix + 1, iy, iz);
                     double n010 = noiseAt(ix, iy + 1, iz);
                     double n110 = noiseAt(ix + 1, iy + 1, iz);
+
                     double n001 = noiseAt(ix, iy, iz + 1);
                     double n101 = noiseAt(ix + 1, iy, iz + 1);
                     double n011 = noiseAt(ix, iy + 1, iz + 1);
                     double n111 = noiseAt(ix + 1, iy + 1, iz + 1);
 
                     for (int dy = 0; dy < 8; dy++) {
+
                         double ty = dy / 8.0;
 
                         double nx00 = lerp(n000, n010, ty);
@@ -104,30 +107,39 @@ public class NetherChunkGenerator implements IChunkGenerator {
                         double nx11 = lerp(n101, n111, ty);
 
                         for (int dx = 0; dx < 4; dx++) {
+
                             double tx = dx / 4.0;
+
                             double nxz0 = lerp(nx00, nx10, tx);
                             double nxz1 = lerp(nx01, nx11, tx);
 
                             for (int dz = 0; dz < 4; dz++) {
+
                                 double tz = dz / 4.0;
+
                                 double val = lerp(nxz0, nxz1, tz);
 
-                                int bx = ix * 4 + dx;
-                                int by = iy * 8 + dy;
-                                int bz = iz * 4 + dz;
+                                int x = ix * 4 + dx;
+                                int y = iy * 8 + dy;
+                                int z = iz * 4 + dz;
 
-                                if (by >= 128) continue;
+                                if (y >= 128) continue;
 
-                                if (val > 0.2) {
-                                    primer.setBlockState(bx, by, bz, NETHERRACK);
+                                double heightBias = (y - 64) / 64.0;
+
+                                double density = val - heightBias * 0.4;
+
+                                if (density > 0.05) {
+                                    primer.setBlockState(x, y, z, NETHERRACK);
                                 } else {
-                                    if (by < 32) {
-                                        primer.setBlockState(bx, by, bz, LAVA);
-                                    } else {
-                                        primer.setBlockState(bx, by, bz, AIR);
-                                    }
+                                    primer.setBlockState(x, y, z, AIR);
                                 }
 
+                                if (y < 32 && density < -0.2) {
+                                    if (rand.nextFloat() < 0.03f) {
+                                        primer.setBlockState(x, y, z, LAVA);
+                                    }
+                                }
                             }
                         }
                     }
@@ -162,6 +174,7 @@ public class NetherChunkGenerator implements IChunkGenerator {
         }
 
 
+
         double absY = iy * 8.0;
         double topBias = Math.max(0, (absY - 100.0) / 16.0);
         double bottomBias = Math.max(0, (30.0 - absY) / 16.0);
@@ -169,7 +182,11 @@ public class NetherChunkGenerator implements IChunkGenerator {
         blended += bottomBias;
         blended -= topBias;
 
-        return blended;
+        double density = blended;
+        density -= 0.4;
+        density *= 1.8;
+
+        return density;
     }
 
 
@@ -178,6 +195,7 @@ public class NetherChunkGenerator implements IChunkGenerator {
 
     
     private void buildSurface(ChunkPrimer primer, int cx, int cz) {
+        if (true) return;
         Biome[] biomes = world.getBiomeProvider().getBiomes(
                 null, cx * 16, cz * 16, 16, 16
         );
