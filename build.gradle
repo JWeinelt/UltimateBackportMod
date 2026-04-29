@@ -37,7 +37,7 @@ minecraft {
 repositories {
     maven {
         name = "maven-releases"
-        url = uri("https://repo.codeblocksmc.com/repository/maven-releases")
+        url = uri("https://repo.codeblocksmc.com/repository/maven-releases/")
         credentials {
             username = project.findProperty("repoUser")
             password = project.findProperty("repoPassword")
