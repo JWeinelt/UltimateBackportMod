@@ -1421,23 +1421,43 @@ public class ModBlocks {
                 .setCreativeTab(TB_TRAILS_TALES);
         register(PALE_OAK_BUTTON, event);
         ACACIA_BUTTON = new BlockModButton(true, "acacia_button")
-                .setCreativeTab(TB_AQUATIC);
+                .setCreativeTab(CreativeTabs.REDSTONE);
         register(ACACIA_BUTTON, event);
         JUNGLE_BUTTON = new BlockModButton(true, "jungle_button")
-                .setCreativeTab(TB_AQUATIC);
+                .setCreativeTab(CreativeTabs.REDSTONE);
         register(JUNGLE_BUTTON, event);
         DARK_OAK_BUTTON = new BlockModButton(true, "dark_oak_button")
-                .setCreativeTab(TB_AQUATIC);
+                .setCreativeTab(CreativeTabs.REDSTONE);
         register(DARK_OAK_BUTTON, event);
         BIRCH_BUTTON = new BlockModButton(true, "birch_button")
-                .setCreativeTab(TB_AQUATIC);
+                .setCreativeTab(CreativeTabs.REDSTONE);
         register(BIRCH_BUTTON, event);
         SPRUCE_BUTTON = new BlockModButton(true, "spruce_button")
-                .setCreativeTab(TB_AQUATIC);
+                .setCreativeTab(CreativeTabs.REDSTONE);
         register(SPRUCE_BUTTON, event);
         BAMBOO_BUTTON = new BlockModButton(true, "bamboo_button")
-                .setCreativeTab(TB_TRAILS_TALES);
+                .setCreativeTab(CreativeTabs.REDSTONE);
         register(BAMBOO_BUTTON, event);
+
+
+
+        SPRUCE_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "spruce_pressure_plate")
+                .setCreativeTab(CreativeTabs.REDSTONE);
+        register(SPRUCE_PRESSURE_PLATE, event);
+        BIRCH_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "birch_pressure_plate")
+                .setCreativeTab(CreativeTabs.REDSTONE);
+        register(BIRCH_PRESSURE_PLATE, event);
+        JUNGLE_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "jungle_pressure_plate")
+                .setCreativeTab(CreativeTabs.REDSTONE);
+        register(JUNGLE_PRESSURE_PLATE, event);
+        ACACIA_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "acacia_pressure_plate")
+                .setCreativeTab(CreativeTabs.REDSTONE);
+        register(ACACIA_PRESSURE_PLATE, event);
+        DARK_OAK_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "dark_oak_pressure_plate")
+                .setCreativeTab(CreativeTabs.REDSTONE);
+        register(DARK_OAK_PRESSURE_PLATE, event);
+
+
 
         PALE_OAK_FENCE = new BlockModFence(Material.WOOD, "pale_oak_fence")
                 .setCreativeTab(TB_TRAILS_TALES);

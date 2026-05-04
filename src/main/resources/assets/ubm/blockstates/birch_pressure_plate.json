@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "powered=false": { "model": "ubm:birch_pressure_plate_up" },
+    "powered=true": { "model": "ubm:birch_pressure_plate_down" }
+  }
+}
