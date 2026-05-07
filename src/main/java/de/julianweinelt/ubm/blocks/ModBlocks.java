@@ -1781,7 +1781,7 @@ public class ModBlocks {
     @SubscribeEvent
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
         for (Block b : blocks) {
-            UBM.getLogger().info("Registering item blocks for {}", b.getRegistryName().toString());
+            UBM.getLogger().debug("Registering item blocks for {}", b.getRegistryName().toString());
             registerItem(b, event);
         }
         registerSlabItems(event);
