@@ -1,6 +1,6 @@
 package de.julianweinelt.ubm.entities;
 
-import de.julianweinelt.ubm.configuration.ModConfig;
+import de.julianweinelt.ubm.configuration.ModYamlConfig;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.world.World;
@@ -14,6 +14,8 @@ public class EntityGlowSquid extends EntitySquid {
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
 
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ModConfig.getEntityConfig("glowsquid").getHealth() / 2.0D);
+
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(
+                ModYamlConfig.entityHealth("glow-squid") / 2.0D);
     }
 }

@@ -1,0 +1,15 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "ubm:blackstone"
+    }
+  },
+  "result": {
+    "item": "ubm:blackstone_slab",
+    "count": 6
+  }
+}

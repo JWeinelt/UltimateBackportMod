@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "powered=false": { "model": "ubm:spruce_pressure_plate_up" },
+    "powered=true": { "model": "ubm:spruce_pressure_plate_down" }
+  }
+}

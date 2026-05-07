@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "powered=false": { "model": "ubm:acacia_pressure_plate_up" },
+    "powered=true": { "model": "ubm:acacia_pressure_plate_down" }
+  }
+}

@@ -15,16 +15,15 @@ import net.minecraft.world.World;
 import javax.annotation.Nonnull;
 
 public class BlockRotated extends Block {
+    public static final PropertyEnum<EnumHorizontalFacing> FACING =
+            PropertyEnum.create("facing", EnumHorizontalFacing.class);
+
     public BlockRotated(Material materialIn) {
         super(materialIn);
         this.setDefaultState(this.blockState.getBaseState()
                 .withProperty(FACING, EnumHorizontalFacing.NORTH));
     }
 
-
-
-    public static final PropertyEnum<EnumHorizontalFacing> FACING =
-            PropertyEnum.create("facing", EnumHorizontalFacing.class);
 
     @Override
     @Nonnull

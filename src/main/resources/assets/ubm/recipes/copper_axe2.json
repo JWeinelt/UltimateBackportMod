@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX ",
+    "XY ",
+    " Y "
+  ],
+  "key": {
+    "X": {
+      "item": "ubm:copper_ingot"
+    },
+    "Y": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "ubm:copper_axe"
+  }
+}
