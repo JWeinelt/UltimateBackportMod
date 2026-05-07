@@ -579,6 +579,8 @@ advancement.ubm.trial_chamber.title=Minecraft: Trial(s) Edition
 advancement.ubm.trial_chamber.desc=Step foot in a Trial Chamber
 advancement.ubm.lighten_up.title=Lighten Up
 advancement.ubm.lighten_up.desc=Scrape a Copper Bulb with an Axe to make it brighter
+advancement.ubm.use_lodestone.title=Country lode, take me home
+advancement.ubm.use_lodestone.desc=Use a Compass on a Lodestone
 
 death.attack.frostbite=%1$s froze to death
 
