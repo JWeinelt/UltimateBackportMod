@@ -39,4 +39,11 @@ public class SmithingTableRecipe {
     public static SmithingTableRecipe ofNetherite(Item input, Item netherite) {
         return new SmithingTableRecipe(new ItemStack(input), new ItemStack(ModItems.TRIM_NETHERITE_UPGRADE), new ItemStack(ModItems.NETHERITE_INGOT), new ItemStack(netherite));
     }
+
+    public boolean anythingEmpty() {
+        return piece.isEmpty() || template.isEmpty() || material.isEmpty() || result.isEmpty();
+    }
+    public boolean anythingNull() {
+        return piece == null || template == null || material == null || result == null;
+    }
 }

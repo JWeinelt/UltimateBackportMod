@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.api.jei;
 
 import de.julianweinelt.ubm.api.SmithingTableRecipe;
+import de.julianweinelt.ubm.api.SmithingTableRecipeManager;
 import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.blocks.interactable.smithing.GuiSmithingTable;
 import de.julianweinelt.ubm.items.ModItem;
@@ -13,8 +14,11 @@ import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
+
+import static de.julianweinelt.ubm.UBM.getLogger;
 
 @JEIPlugin
 public class JEIHook implements IModPlugin {
@@ -25,18 +29,13 @@ public class JEIHook implements IModPlugin {
     }
 
     @Override
-    public void register(IModRegistry registry) {
+    public void register(@Nonnull IModRegistry registry) {
 
         List<SmithingTableRecipeWrapper> recipes = new ArrayList<>();
-        recipes.add(new SmithingTableRecipeWrapper(SmithingTableRecipe.ofNetherite(Items.DIAMOND_AXE,ModItems.NETHERITE_AXE)));
-        recipes.add(new SmithingTableRecipeWrapper(SmithingTableRecipe.ofNetherite(Items.DIAMOND_SWORD,ModItems.NETHERITE_SWORD)));
-        recipes.add(new SmithingTableRecipeWrapper(SmithingTableRecipe.ofNetherite(Items.DIAMOND_SHOVEL,ModItems.NETHERITE_SHOVEL)));
-        recipes.add(new SmithingTableRecipeWrapper(SmithingTableRecipe.ofNetherite(Items.DIAMOND_PICKAXE,ModItems.NETHERITE_PICKAXE)));
-        recipes.add(new SmithingTableRecipeWrapper(SmithingTableRecipe.ofNetherite(Items.DIAMOND_HOE,ModItems.NETHERITE_HOE)));
-        recipes.add(new SmithingTableRecipeWrapper(SmithingTableRecipe.ofNetherite(Items.DIAMOND_HELMET,ModItems.NETHERITE_HELMET)));
-        recipes.add(new SmithingTableRecipeWrapper(SmithingTableRecipe.ofNetherite(Items.DIAMOND_CHESTPLATE,ModItems.NETHERITE_CHESTPLATE)));
-        recipes.add(new SmithingTableRecipeWrapper(SmithingTableRecipe.ofNetherite(Items.DIAMOND_LEGGINGS,ModItems.NETHERITE_LEGGINGS)));
-        recipes.add(new SmithingTableRecipeWrapper(SmithingTableRecipe.ofNetherite(Items.DIAMOND_BOOTS,ModItems.NETHERITE_BOOTS)));
+        for (SmithingTableRecipe r : SmithingTableRecipeManager.instance().getRecipes()) {
+            recipes.add(new SmithingTableRecipeWrapper(r));
+        }
+        getLogger().info("Registered {} JEI recipes", recipes.size());
 
         registry.addRecipes(recipes, SmithingTableCategory.UID);
 

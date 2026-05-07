@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm;
 
 
+import de.julianweinelt.ubm.api.SmithingTableRecipeManager;
 import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.blocks.api.sign.TileEntityModSign;
 import de.julianweinelt.ubm.blocks.interactable.smithing.GuiHandler;
@@ -67,6 +68,7 @@ public class UBM {
         if (!configDir.exists()) {
             if (configDir.mkdirs()) logger.debug("Created config directory");
         }
+        SmithingTableRecipeManager.init(configDir);
 
         ModEffects.init();
         ModPotionTypes.init();
@@ -98,6 +100,10 @@ public class UBM {
         ModBlocks.BUDDING_AMETHYST.soundType(ModSounds.SoundTypes.AMETHYST_BLOCK);
         ModBlocks.TUFF.soundType(ModSounds.SoundTypes.TUFF);
         ModBlocks.TUFF_BRICKS.soundType(ModSounds.SoundTypes.TUFF);
+
+        if (SmithingTableRecipeManager.instance().checkDefaultsCreated()) {
+            SmithingTableRecipeManager.instance().loadRecipes();
+        } else SmithingTableRecipeManager.instance().saveDefaults();
     }
 
 
