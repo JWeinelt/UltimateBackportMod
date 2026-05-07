@@ -12,7 +12,7 @@ import de.julianweinelt.ubm.blocks.tiles.TileEntitySculkSensor;
 import de.julianweinelt.ubm.effects.ModEffects;
 import de.julianweinelt.ubm.effects.ModPotionTypes;
 import de.julianweinelt.ubm.entities.ModEntities;
-import de.julianweinelt.ubm.misc.ModRecipes;
+import de.julianweinelt.ubm.misc.recipes.ModRecipes;
 import de.julianweinelt.ubm.misc.ModSounds;
 import de.julianweinelt.ubm.misc.proxy.CommonProxy;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;

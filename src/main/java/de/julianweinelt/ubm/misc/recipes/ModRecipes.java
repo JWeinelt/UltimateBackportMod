@@ -1,10 +1,14 @@
-package de.julianweinelt.ubm.misc;
+package de.julianweinelt.ubm.misc.recipes;
 
 import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.items.ModItems;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.registries.ForgeRegistry;
 
 public class ModRecipes {
     public static void init() {
@@ -28,5 +32,11 @@ public class ModRecipes {
         GameRegistry.addSmelting(ModBlocks.DEEPSLATE_TILES, new ItemStack(ModBlocks.DEEPSLATE_TILES_CRACKED, 1), 0.1F);
         GameRegistry.addSmelting(ModBlocks.DEEPSLATE_BRICKS, new ItemStack(ModBlocks.DEEPSLATE_BRICKS_CRACKED, 1), 0.1F);
 
+        removeRecipe(new ResourceLocation("minecraft", "wooden_button"));
+    }
+
+    public static void removeRecipe(ResourceLocation target) {
+        ForgeRegistry<IRecipe> recipeRegistry = (ForgeRegistry<IRecipe>) ForgeRegistries.RECIPES;
+        recipeRegistry.remove(target);
     }
 }
