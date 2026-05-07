@@ -6,11 +6,11 @@
   "key": {
     "#": [
       {
-        "item": "ubm:crimson_planks"
+        "item": "ubm:bamboo_planks"
       }
     ]
   },
   "result": {
-    "item": "ubm:crimson_button"
+    "item": "ubm:bamboo_button"
   }
 }

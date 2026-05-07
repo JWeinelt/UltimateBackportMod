@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm;
 
 
+import de.julianweinelt.ubm.api.SmithingTableRecipeManager;
 import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.blocks.api.sign.TileEntityModSign;
 import de.julianweinelt.ubm.blocks.interactable.smithing.GuiHandler;
@@ -11,7 +12,7 @@ import de.julianweinelt.ubm.blocks.tiles.TileEntitySculkSensor;
 import de.julianweinelt.ubm.effects.ModEffects;
 import de.julianweinelt.ubm.effects.ModPotionTypes;
 import de.julianweinelt.ubm.entities.ModEntities;
-import de.julianweinelt.ubm.misc.ModRecipes;
+import de.julianweinelt.ubm.misc.recipes.ModRecipes;
 import de.julianweinelt.ubm.misc.ModSounds;
 import de.julianweinelt.ubm.misc.proxy.CommonProxy;
 import de.julianweinelt.ubm.worldgen.PowderSnowWorldGen;
@@ -67,6 +68,7 @@ public class UBM {
         if (!configDir.exists()) {
             if (configDir.mkdirs()) logger.debug("Created config directory");
         }
+        SmithingTableRecipeManager.init(configDir);
 
         ModEffects.init();
         ModPotionTypes.init();
@@ -98,6 +100,10 @@ public class UBM {
         ModBlocks.BUDDING_AMETHYST.soundType(ModSounds.SoundTypes.AMETHYST_BLOCK);
         ModBlocks.TUFF.soundType(ModSounds.SoundTypes.TUFF);
         ModBlocks.TUFF_BRICKS.soundType(ModSounds.SoundTypes.TUFF);
+
+        if (SmithingTableRecipeManager.instance().checkDefaultsCreated()) {
+            SmithingTableRecipeManager.instance().loadRecipes();
+        } else SmithingTableRecipeManager.instance().saveDefaults();
     }
 
 

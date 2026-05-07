@@ -1,3 +1,4 @@
+
 buildscript {
     repositories {
         maven {
@@ -8,6 +9,17 @@ buildscript {
         maven { url = "https://files.minecraftforge.net/maven" }
         maven {
             url = "https://repo.codemc.io/repository/maven-public/"
+        }
+
+        maven {
+            // location of the maven that hosts JEI files
+            name = "Progwml6 maven"
+            url = "https://dvs1.progwml6.com/files/maven/"
+        }
+        maven {
+            // location of a maven mirror for JEI files, as a fallback
+            name = "ModMaven"
+            url = "https://modmaven.dev"
         }
     }
     dependencies {
@@ -21,14 +33,14 @@ plugins {
 
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = '1.2.3'
+version = '1.2.4'
 group = 'de.julianweinelt.ubm'
 archivesBaseName = 'ubm'
 
 sourceCompatibility = targetCompatibility = '1.8'
 
 minecraft {
-    version = "1.12.2-14.23.5.2768"
+    version = "1.12.2-14.23.5.2816"
     runDir = "run"
 
     mappings = "snapshot_20171003"
@@ -43,11 +55,26 @@ repositories {
             password = project.findProperty("repoPassword")
         }
     }
+
+    maven {
+        // location of the maven that hosts JEI files
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
 }
 
 dependencies {
     implementation("de.julianweinelt.pathfinder:PathFinderAPI:1.1.2")
     implementation("dev.dejvokep:boosted-yaml:1.3.1")
+    // compile against the JEI API but do not include it at runtime
+    deobfProvided "mezz.jei:jei_1.12.2:4.16.1.1013:api"
+    // at runtime, use the full JEI jar
+    runtime "mezz.jei:jei_1.12.2:4.16.1.1013"
 }
 
 processResources {

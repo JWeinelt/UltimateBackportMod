@@ -7,11 +7,11 @@
     "#": [
       {
         "item": "minecraft:planks",
-        "data": 3
+        "data": 0
       }
     ]
   },
   "result": {
-    "item": "ubm:jungle_button"
+    "item": "minecraft:wooden_button"
   }
 }

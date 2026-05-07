@@ -6,12 +6,11 @@
   "key": {
     "#": [
       {
-        "item": "minecraft:planks",
-        "data": 0
+        "item": "ubm:pale_oak_planks"
       }
     ]
   },
   "result": {
-    "item": "minecraft:wooden_button"
+    "item": "ubm:pale_oak_button"
   }
 }
