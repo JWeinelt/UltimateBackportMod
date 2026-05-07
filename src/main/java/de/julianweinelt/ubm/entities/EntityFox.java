@@ -1,6 +1,6 @@
 package de.julianweinelt.ubm.entities;
 
-import de.julianweinelt.ubm.configuration.ModConfig;
+import de.julianweinelt.ubm.configuration.ModYamlConfig;
 import de.julianweinelt.ubm.items.ModItems;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.IEntityLivingData;
@@ -96,7 +96,9 @@ public class EntityFox extends EntityAnimal {
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
 
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ModConfig.getEntityConfig("fox").getHealth() / 2.0D);
+
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(
+                ModYamlConfig.entityHealth("fox") / 2.0D);
     }
 
     @Override

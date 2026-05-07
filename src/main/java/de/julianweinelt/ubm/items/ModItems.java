@@ -175,6 +175,7 @@ public class ModItems {
 
     public static Item TRIAL_KEY;
     public static Item TRIAL_KEY_OMINOUS;
+    public static Item BREEZE_ROD;
 
     private static final String[] COLORS = {
             "black", "red", "green", "brown", "blue", "purple", "cyan",
@@ -365,33 +366,18 @@ public class ModItems {
             }
         }
 
-
-
         SWEET_BERRY = new ItemSweetBerry();
         GLOW_BERRIES = new ItemGlowBerry();
         BAMBOO_RAFT = new ItemBambooRaft();
 
         register(POWDER_SNOW_BUCKET, event);
-
-
         register(SWEET_BERRY, event);
-
         register(GLOW_BERRIES, event);
-
         register(BAMBOO_RAFT, event);
-
-
         register(CANDLE, event);
-
-
         register(HONEYCOMB, event);
-
         register(HONEY_BOTTLE, event);
-
         register(COPPER_NUGGET, event);
-
-
-
         // Spawn Eggs
         SPAWN_EGG_FROG = new ItemSpawnEggCustom(EntityFrog.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "frog");
         SPAWN_EGG_TURTLE = new ItemSpawnEggCustom(EntityTurtle.class, ModCreativeTabs.UBM_TAB_SPAWN_EGGS, "turtle");
@@ -457,6 +443,9 @@ public class ModItems {
 
         AMETHYST_SHARD = new ModItem("amethyst_shard", TB_CAVES);
         register(AMETHYST_SHARD, event);
+
+        BREEZE_ROD = new ModItem("breeze_rod", TB_TRAILS_TALES);
+        register(BREEZE_ROD, event);
 
 
         TADPOLE_BUCKET = new ModItem("bucket_tadpole", TB_CAVES);

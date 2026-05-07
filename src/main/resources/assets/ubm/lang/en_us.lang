@@ -584,3 +584,6 @@ death.attack.frostbite=%1$s froze to death
 
 key.categories.ubm=Ultimate Backport Mod
 key.ubm.open_new_chat=Open New Chat GUI (Beta)
+
+container.blast_furnace=Blast Furnace
+container.smithing_table=Upgrade Gear

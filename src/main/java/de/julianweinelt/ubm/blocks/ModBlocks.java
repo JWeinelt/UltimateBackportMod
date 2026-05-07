@@ -2,6 +2,7 @@ package de.julianweinelt.ubm.blocks;
 
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.blocks.api.*;
+import de.julianweinelt.ubm.blocks.interactable.BlockBlastFurnace;
 import de.julianweinelt.ubm.blocks.interactable.BlockSmithingTable;
 import de.julianweinelt.ubm.blocks.plant.BlockGlowBerryVine;
 import de.julianweinelt.ubm.blocks.plant.BlockGlowLichen;
@@ -11,10 +12,8 @@ import de.julianweinelt.ubm.blocks.tiles.TileEntityBeeNest;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityCampfire;
 import de.julianweinelt.ubm.items.BlockCopperTorch;
 import de.julianweinelt.ubm.items.ModItems;
-import de.julianweinelt.ubm.misc.AdvancementHelper;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.worldgen.ModBiomes;
-import de.julianweinelt.ubm.worldgen.ModDimension;
 import de.julianweinelt.ubm.worldgen.WorldGenBeeNest;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -35,7 +34,6 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -525,6 +523,8 @@ public class ModBlocks {
 
         GRINDSTONE = new BlockGrindstone(Material.ROCK);
         register(GRINDSTONE, event);
+        BELL = new BlockBell(Material.ANVIL);
+        register(BELL, event);
 
 
         SOUL_CAMPFIRE = new BlockCampFire(true)
@@ -541,10 +541,7 @@ public class ModBlocks {
                 .setUnlocalizedName("smoker")
                 .setCreativeTab(TB_PILLAGE);
         register(SMOKER, event);
-        BLAST_FURNACE = new BlockRotated(Material.ROCK)
-                .setRegistryName("blast_furnace")
-                .setUnlocalizedName("blast_furnace")
-                .setCreativeTab(TB_PILLAGE);
+        BLAST_FURNACE = new BlockBlastFurnace();
         register(BLAST_FURNACE, event);
         CARTOGRAPHY_TABLE = new BlockRotated(Material.WOOD)
                 .setRegistryName("cartography_table")
@@ -1424,23 +1421,43 @@ public class ModBlocks {
                 .setCreativeTab(TB_TRAILS_TALES);
         register(PALE_OAK_BUTTON, event);
         ACACIA_BUTTON = new BlockModButton(true, "acacia_button")
-                .setCreativeTab(TB_AQUATIC);
+                .setCreativeTab(CreativeTabs.REDSTONE);
         register(ACACIA_BUTTON, event);
         JUNGLE_BUTTON = new BlockModButton(true, "jungle_button")
-                .setCreativeTab(TB_AQUATIC);
+                .setCreativeTab(CreativeTabs.REDSTONE);
         register(JUNGLE_BUTTON, event);
         DARK_OAK_BUTTON = new BlockModButton(true, "dark_oak_button")
-                .setCreativeTab(TB_AQUATIC);
+                .setCreativeTab(CreativeTabs.REDSTONE);
         register(DARK_OAK_BUTTON, event);
         BIRCH_BUTTON = new BlockModButton(true, "birch_button")
-                .setCreativeTab(TB_AQUATIC);
+                .setCreativeTab(CreativeTabs.REDSTONE);
         register(BIRCH_BUTTON, event);
         SPRUCE_BUTTON = new BlockModButton(true, "spruce_button")
-                .setCreativeTab(TB_AQUATIC);
+                .setCreativeTab(CreativeTabs.REDSTONE);
         register(SPRUCE_BUTTON, event);
         BAMBOO_BUTTON = new BlockModButton(true, "bamboo_button")
-                .setCreativeTab(TB_TRAILS_TALES);
+                .setCreativeTab(CreativeTabs.REDSTONE);
         register(BAMBOO_BUTTON, event);
+
+
+
+        SPRUCE_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "spruce_pressure_plate")
+                .setCreativeTab(CreativeTabs.REDSTONE);
+        register(SPRUCE_PRESSURE_PLATE, event);
+        BIRCH_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "birch_pressure_plate")
+                .setCreativeTab(CreativeTabs.REDSTONE);
+        register(BIRCH_PRESSURE_PLATE, event);
+        JUNGLE_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "jungle_pressure_plate")
+                .setCreativeTab(CreativeTabs.REDSTONE);
+        register(JUNGLE_PRESSURE_PLATE, event);
+        ACACIA_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "acacia_pressure_plate")
+                .setCreativeTab(CreativeTabs.REDSTONE);
+        register(ACACIA_PRESSURE_PLATE, event);
+        DARK_OAK_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING, Material.WOOD, "dark_oak_pressure_plate")
+                .setCreativeTab(CreativeTabs.REDSTONE);
+        register(DARK_OAK_PRESSURE_PLATE, event);
+
+
 
         PALE_OAK_FENCE = new BlockModFence(Material.WOOD, "pale_oak_fence")
                 .setCreativeTab(TB_TRAILS_TALES);
@@ -1764,7 +1781,7 @@ public class ModBlocks {
     @SubscribeEvent
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
         for (Block b : blocks) {
-            UBM.getLogger().info("Registering item blocks for {}", b.getRegistryName().toString());
+            UBM.getLogger().debug("Registering item blocks for {}", b.getRegistryName().toString());
             registerItem(b, event);
         }
         registerSlabItems(event);

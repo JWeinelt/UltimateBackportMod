@@ -1,11 +1,11 @@
 package de.julianweinelt.ubm.entities;
 
-import de.julianweinelt.ubm.configuration.ModConfig;
+import de.julianweinelt.ubm.configuration.ModYamlConfig;
 import de.julianweinelt.ubm.entities.ai.EntityAIFlyToFlower;
 import de.julianweinelt.ubm.entities.ai.EntityAIHurtByTargetFlying;
 import de.julianweinelt.ubm.misc.ModSounds;
-import net.minecraft.entity.*;
-import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.entity.EntityCreature;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -37,7 +37,9 @@ public class EntityBee extends EntityCreature {
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(ModConfig.getEntityConfig("bee").getHealth() / 2.0D);
+
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(
+                ModYamlConfig.entityHealth("bee") / 2.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
     }
 
