@@ -12,7 +12,8 @@
   "logoFile": "",
   "screenshots": [],
   "dependencies": [
-    "pathfinder"
+    "pathfinder",
+    "after:jei"
   ]
 }
 ]
