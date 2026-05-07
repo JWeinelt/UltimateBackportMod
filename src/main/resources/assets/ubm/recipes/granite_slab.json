@@ -1,9 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "X  ",
-    "XX ",
-    "XXX"
+    "###"
   ],
   "key": {
     "X": {
@@ -12,7 +10,7 @@
     }
   },
   "result": {
-    "item": "ubm:granite_stairs",
-    "count": 4
+    "item": "ubm:granite_slab",
+    "count": 6
   }
 }

@@ -6,11 +6,11 @@
   "key": {
     "#": [
       {
-        "item": "ubm:crimson_planks"
+        "item": "ubm:mangrove_planks"
       }
     ]
   },
   "result": {
-    "item": "ubm:crimson_button"
+    "item": "ubm:mangrove_button"
   }
 }

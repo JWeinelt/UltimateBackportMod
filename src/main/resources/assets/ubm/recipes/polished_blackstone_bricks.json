@@ -1,0 +1,17 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "   ",
+    "XX ",
+    "XX "
+  ],
+  "key": {
+    "X": {
+      "item": "ubm:polished_blackstone"
+    }
+  },
+  "result": {
+    "item": "ubm:polished_blackstone_bricks",
+    "count": 4
+  }
+}

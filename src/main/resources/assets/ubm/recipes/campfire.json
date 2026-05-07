@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " Z ",
+    "ZYZ",
+    "XXX"
+  ],
+  "key": {
+    "Z": { "item": "minecraft:stick" },
+    "X": { "type": "forge:ore_dict", "ore": "logWood" },
+    "Y": [
+        {
+          "item": "minecraft:coal"
+        },
+        {
+          "item": "minecraft:charcoal"
+        }
+      ]
+  },
+  "result": {
+    "item": "ubm:campfire"
+  }
+}

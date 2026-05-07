@@ -8,10 +8,45 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.ForgeRegistry;
 
 public class ModRecipes {
     public static void init() {
+        OreDictionary.registerOre("logWood", ModBlocks.PALE_OAK_LOG);
+        OreDictionary.registerOre("logWood", ModBlocks.PALE_OAK_WOOD);
+        OreDictionary.registerOre("logWood", ModBlocks.CHERRY_LOG);
+        OreDictionary.registerOre("logWood", ModBlocks.CHERRY_WOOD);
+        OreDictionary.registerOre("logWood", ModBlocks.MANGROVE_LOG);
+        OreDictionary.registerOre("logWood", ModBlocks.MANGROVE_WOOD);
+        OreDictionary.registerOre("logWood", ModBlocks.CRIMSON_STEM);
+        OreDictionary.registerOre("logWood", ModBlocks.WARPED_STEM);
+        OreDictionary.registerOre("logWood", ModBlocks.WARPED_HYPHAE);
+        OreDictionary.registerOre("logWood", ModBlocks.CRIMSON_HYPHAE);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_ACACIA_STEM);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_ACACIA_WOOD);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_BIRCH_STEM);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_BIRCH_WOOD);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_CHERRY_LOG);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_CHERRY_WOOD);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_CRIMSON_STEM);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_WARPED_STEM);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_CRIMSON_HYPHAE);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_WARPED_HYPHAE);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_PALE_OAK_LOG);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_PALE_OAK_WOOD);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_JUNGLE_STEM);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_JUNGLE_WOOD);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_SPRUCE_STEM);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_SPRUCE_WOOD);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_MANGROVE_LOG);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_MANGROVE_WOOD);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_OAK_STEM);
+        OreDictionary.registerOre("logWood", ModBlocks.STRIPPED_OAK_WOOD);
+
+        OreDictionary.registerOre("cobblestone", ModBlocks.DEEPSLATE_COBBLED);
+        OreDictionary.registerOre("cobblestone", ModBlocks.BLACKSTONE);
+
         GameRegistry.addSmelting(ModItems.RAW_GOLD, new ItemStack(Items.GOLD_INGOT, 1), 0.7F);
         GameRegistry.addSmelting(ModItems.RAW_IRON, new ItemStack(Items.IRON_INGOT, 1), 0.7F);
         GameRegistry.addSmelting(ModItems.RAW_COPPER, new ItemStack(ModItems.COPPER_INGOT, 1), 0.7F);
