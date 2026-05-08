@@ -44,7 +44,7 @@ public class ItemOminousBottle extends ItemFood {
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         int level = stack.getMetadata();
-        tooltip.add("§9Bad Omen " + getLevelString(level) + " (01:40:00)");
+        tooltip.add("§9Bad Omen " + getLevelString(level) + "(01:40:00)");
     }
 
     @Override
@@ -64,10 +64,10 @@ public class ItemOminousBottle extends ItemFood {
 
     private String getLevelString(int level) {
         switch (level) {
-            case 1: return "II";
-            case 2: return "III";
-            case 3: return "IV";
-            case 4: return "V";
+            case 1: return "II ";
+            case 2: return "III ";
+            case 3: return "IV ";
+            case 4: return "V ";
             default: return "";
         }
     }
