@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "CBC",
+    "CCC"
+  ],
+  "key": {
+    "A": {
+        "item": "ubm:flow_armor_trim"
+    },
+    "B": {
+      "item": "ubm:breeze_rod"
+    },
+    "C": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "ubm:flow_armor_trim",
+    "count": 2
+  }
+}

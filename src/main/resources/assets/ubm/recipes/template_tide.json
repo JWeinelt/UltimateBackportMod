@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "CBC",
+    "CCC"
+  ],
+  "key": {
+    "A": {
+        "item": "ubm:tide_armor_trim"
+    },
+    "B": {
+      "item": "minecraft:prismarine",
+      "data": 0
+    },
+    "C": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "ubm:tide_armor_trim",
+    "count": 2
+  }
+}
