@@ -79,6 +79,8 @@ public class ModItems {
     public static Item NETHERITE_LEGGINGS;
     public static Item NETHERITE_BOOTS;
 
+    public static Item DRIED_KELP;
+
     public static Item COPPER_NUGGET;
     public static Item COPPER_HELMET;
     public static Item COPPER_CHESTPLATE;
@@ -222,6 +224,8 @@ public class ModItems {
         register(TRIAL_KEY, event);
         TRIAL_KEY_OMINOUS = new ModItem("trial_key_ominous", TB_TRAILS_TALES);
         register(TRIAL_KEY_OMINOUS, event);
+        DRIED_KELP = new ModItem("dried_kelp", TB_AQUATIC);
+        register(DRIED_KELP, event);
 
         POTTERY_SHERD = new ItemPotterySherd();
         event.getRegistry().register(POTTERY_SHERD);
