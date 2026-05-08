@@ -1,0 +1,8 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "bottom": "ubm:blocks/mud_bricks",
+    "top": "ubm:blocks/mud_bricks",
+    "side": "ubm:blocks/mud_bricks"
+  }
+}

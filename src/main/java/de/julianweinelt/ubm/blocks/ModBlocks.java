@@ -1770,6 +1770,12 @@ public class ModBlocks {
         POLISHED_TUFF_SLAB_D = (BlockSlab) new BlockModDoubleSlab("polished_tuff_slab", Material.ROCK, POLISHED_TUFF_SLAB)
                 .setCreativeTab(TB_TRAILS_TALES);
         registerSlab(POLISHED_TUFF_SLAB, POLISHED_TUFF_SLAB_D, event);
+
+        MUD_BRICK_SLAB = (BlockSlab) new BlockModHalfSlab("mud_brick_slab", Material.ROCK)
+                .setCreativeTab(TB_WILD);
+        MUD_BRICK_SLAB_D = (BlockSlab) new BlockModDoubleSlab("mud_brick_slab", Material.ROCK, MUD_BRICK_SLAB)
+                .setCreativeTab(TB_WILD);
+        registerSlab(MUD_BRICK_SLAB, MUD_BRICK_SLAB_D, event);
     }
 
     @SideOnly(Side.SERVER)
