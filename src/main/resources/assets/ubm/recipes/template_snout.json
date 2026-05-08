@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "CBC",
+    "CCC"
+  ],
+  "key": {
+    "A": {
+        "item": "ubm:snout_armor_trim"
+    },
+    "B": {
+      "item": "ubm:blackstone"
+    },
+    "C": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "ubm:snout_armor_trim",
+    "count": 2
+  }
+}

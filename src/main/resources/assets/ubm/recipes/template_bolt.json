@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "CBC",
+    "CCC"
+  ],
+  "key": {
+    "A": {
+        "item": "ubm:bolt_armor_trim"
+    },
+    "B": [
+      {"item": "ubm:copper_block"},
+      {"item": "ubm:exposed_copper_block"},
+      {"item": "ubm:weathered_copper_block"},
+      {"item": "ubm:oxidized_copper_block"},
+      {"item": "ubm:waxed_copper_block"},
+      {"item": "ubm:waxed_exposed_copper_block"},
+      {"item": "ubm:waxed_weathered_copper_block"},
+      {"item": "ubm:waxed_oxidized_copper_block"}
+    ],
+    "C": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "ubm:bolt_armor_trim",
+    "count": 2
+  }
+}

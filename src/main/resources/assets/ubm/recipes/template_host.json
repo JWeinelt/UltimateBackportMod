@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "CBC",
+    "CCC"
+  ],
+  "key": {
+    "A": {
+        "item": "ubm:host_armor_trim"
+    },
+    "B": {
+      "item": "minecraft:stained_hardened_clay"
+    },
+    "C": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "ubm:host_armor_trim",
+    "count": 2
+  }
+}
