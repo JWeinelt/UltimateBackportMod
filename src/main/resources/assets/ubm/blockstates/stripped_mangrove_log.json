@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "ubm:stripped_mangrove_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ubm:stripped_mangrove_log"
+    },
+    "axis=none": {
+      "model": "ubm:stripped_mangrove_log"
+    },
+    "axis=z": {
+      "model": "ubm:stripped_mangrove_log",
+      "x": 90
+    }
+  }
+}

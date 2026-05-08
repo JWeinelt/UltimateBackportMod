@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "ubm:stripped_mangrove_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ubm:stripped_mangrove_wood"
+    },
+    "axis=none": {
+      "model": "ubm:stripped_mangrove_wood"
+    },
+    "axis=z": {
+      "model": "ubm:stripped_mangrove_wood",
+      "x": 90
+    }
+  }
+}

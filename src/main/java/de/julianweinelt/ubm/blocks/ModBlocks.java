@@ -1319,6 +1319,12 @@ public class ModBlocks {
         MANGROVE_WOOD = new BlockModLog("mangrove_wood")
                 .setCreativeTab(TB_WILD);
         register(MANGROVE_WOOD, event);
+        STRIPPED_MANGROVE_LOG = new BlockModLog("stripped_mangrove_log")
+                .setCreativeTab(TB_WILD);
+        register(MANGROVE_LOG, event);
+        STRIPPED_MANGROVE_WOOD = new BlockModLog("stripped_mangrove_wood")
+                .setCreativeTab(TB_WILD);
+        register(MANGROVE_WOOD, event);
         MANGROVE_FENCE = new BlockModFence(Material.WOOD, "mangrove_fence")
                 .setCreativeTab(TB_WILD);
         register(MANGROVE_FENCE, event);
