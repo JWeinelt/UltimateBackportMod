@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "ubm:mangrove_stem"},
+    {"item": "ubm:mangrove_hyphae"},
+    {"item": "ubm:stripped_mangrove_stem"},
+    {"item": "ubm:stripped_mangrove_stem"}
+  ],
+  "result": {
+    "item": "ubm:mangrove_planks",
+    "count": 4
+  }
+}
