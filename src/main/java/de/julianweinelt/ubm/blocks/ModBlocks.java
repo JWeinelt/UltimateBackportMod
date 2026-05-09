@@ -63,7 +63,6 @@ public class ModBlocks {
 
     public static Block SMITHING_TABLE;
     public static Block FLETCHING_TABLE;
-    public static Block FLETCHING_TABLE;
     public static Block LOOM;
     public static Block CARTOGRAPHY_TABLE;
     public static Block SMOKER;
@@ -126,6 +125,16 @@ public class ModBlocks {
     public static Block STRIPPED_BIRCH_WOOD;
     public static Block STRIPPED_JUNGLE_STEM;
     public static Block STRIPPED_JUNGLE_WOOD;
+
+    public static Block CHAIN;
+    public static Block COPPER_CHAIN;
+    public static Block EXPOSED_COPPER_CHAIN;
+    public static Block WEATHERED_COPPER_CHAIN;
+    public static Block OXIDIZED_COPPER_CHAIN;
+    public static Block WAXED_COPPER_CHAIN;
+    public static Block WAXED_EXPOSED_COPPER_CHAIN;
+    public static Block WAXED_WEATHERED_COPPER_CHAIN;
+    public static Block WAXED_OXIDIZED_COPPER_CHAIN;
 
     public static Block GLOW_LICHEN;
     public static Block GLOW_BERRIES;
@@ -481,6 +490,13 @@ public class ModBlocks {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
+        CHAIN = new BlockModChain()
+                .setRegistryName("chain")
+                .setUnlocalizedName("chain")
+                .setCreativeTab(TB_NETHER);
+        register(CHAIN, event);
+
+
         CAMPFIRE = new BlockCampFire(false);
         register(CAMPFIRE, event);
 
@@ -1322,10 +1338,10 @@ public class ModBlocks {
         register(MANGROVE_WOOD, event);
         STRIPPED_MANGROVE_LOG = new BlockModLog("stripped_mangrove_log")
                 .setCreativeTab(TB_WILD);
-        register(MANGROVE_LOG, event);
+        register(STRIPPED_MANGROVE_LOG, event);
         STRIPPED_MANGROVE_WOOD = new BlockModLog("stripped_mangrove_wood")
                 .setCreativeTab(TB_WILD);
-        register(MANGROVE_WOOD, event);
+        register(STRIPPED_MANGROVE_WOOD, event);
         MANGROVE_FENCE = new BlockModFence(Material.WOOD, "mangrove_fence")
                 .setCreativeTab(TB_WILD);
         register(MANGROVE_FENCE, event);

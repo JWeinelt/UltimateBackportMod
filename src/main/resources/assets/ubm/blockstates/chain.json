@@ -1,0 +1,33 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "ubm:chain",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "ubm:chain",
+      "x": 90,
+      "y": 90
+    },
+    "facing=west": {
+      "model": "ubm:chain",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "ubm:chain",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "ubm:chain",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "ubm:chain"
+    },
+    "facing=up,powered=true": {
+      "model": "ubm:chain"
+    }
+  }
+}
