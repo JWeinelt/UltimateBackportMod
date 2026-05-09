@@ -1,5 +1,5 @@
 {
-  "type": "crafting_shaped",
+  "type": "minecraft:crafting_shaped",
   "pattern": [
     "###"
   ],
@@ -10,6 +10,7 @@
   },
   "result": {
     "item": "ubm:blackstone_slab",
-    "count": 6
+    "count": 6,
+    "data": 0
   }
 }

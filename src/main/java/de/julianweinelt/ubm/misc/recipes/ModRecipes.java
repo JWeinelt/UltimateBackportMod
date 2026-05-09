@@ -17,8 +17,8 @@ public class ModRecipes {
         OreDictionary.registerOre("logWood", ModBlocks.PALE_OAK_WOOD);
         OreDictionary.registerOre("logWood", ModBlocks.CHERRY_LOG);
         OreDictionary.registerOre("logWood", ModBlocks.CHERRY_WOOD);
-        OreDictionary.registerOre("logWood", ModBlocks.MANGROVE_LOG);
-        OreDictionary.registerOre("logWood", ModBlocks.MANGROVE_WOOD);
+        //OreDictionary.registerOre("logWood", ModBlocks.MANGROVE_LOG);
+        //OreDictionary.registerOre("logWood", ModBlocks.MANGROVE_WOOD);
         OreDictionary.registerOre("logWood", ModBlocks.CRIMSON_STEM);
         OreDictionary.registerOre("logWood", ModBlocks.WARPED_STEM);
         OreDictionary.registerOre("logWood", ModBlocks.WARPED_HYPHAE);

@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "ubm:packed_mud"
+    "#": {
+      "item": "ubm:packed_mud"
+    }
   },
   "pattern": [
     "##",
@@ -10,6 +12,6 @@
   ],
   "result": {
     "count": 4,
-    "id": "ubm:mud_bricks"
+    "item": "ubm:mud_bricks"
   }
 }

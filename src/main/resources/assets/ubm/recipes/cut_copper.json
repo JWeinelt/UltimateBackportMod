@@ -3,15 +3,15 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "ubm:mud_bricks"
+      "item": "ubm:copper_block"
     }
   },
   "pattern": [
-    "###"
+    "##",
+    "##"
   ],
   "result": {
-    "count": 6,
-    "item": "ubm:mud_brick_slab",
-    "data": 0
+    "count": 4,
+    "item": "ubm:cut_copper"
   }
 }

@@ -1,10 +1,10 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {"item": "ubm:mangrove_stem"},
-    {"item": "ubm:mangrove_hyphae"},
-    {"item": "ubm:stripped_mangrove_stem"},
-    {"item": "ubm:stripped_mangrove_stem"}
+    {"item": "ubm:mangrove_log"},
+    {"item": "ubm:mangrove_wood"},
+    {"item": "ubm:stripped_mangrove_log"},
+    {"item": "ubm:stripped_mangrove_wood"}
   ],
   "result": {
     "item": "ubm:mangrove_planks",

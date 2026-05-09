@@ -2,16 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "ubm:mud_bricks"
+      "item": "ubm:waxed_copper_block"
     }
   },
   "pattern": [
-    "#  ",
-    "## ",
-    "###"
+    "##",
+    "##"
   ],
   "result": {
     "count": 4,
-    "item": "ubm:mud_brick_stairs"
+    "item": "ubm:waxed_cut_copper"
   }
 }

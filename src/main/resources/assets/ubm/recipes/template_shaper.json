@@ -10,7 +10,8 @@
         "item": "ubm:shaper_armor_trim"
     },
     "B": {
-      "item": "minecraft:stained_hardened_clay"
+      "item": "minecraft:stained_hardened_clay",
+      "data": 0
     },
     "C": {
       "item": "minecraft:diamond"
