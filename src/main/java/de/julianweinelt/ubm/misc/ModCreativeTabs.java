@@ -39,25 +39,25 @@ public class ModCreativeTabs {
     public static final CreativeTabs UBM_TAB_CAVES = new CreativeTabs("ubm_tab_caves") {
         @Override
         public ItemStack getTabIconItem() {
-            return new ItemStack(ModItems.POWDER_SNOW_BUCKET);
+            return new ItemStack(ModItems.SPYGLASS);
         }
     };
     public static final CreativeTabs UBM_TAB_WILD = new CreativeTabs("ubm_tab_wild") {
         @Override
         public ItemStack getTabIconItem() {
-            return new ItemStack(ModBlocks.PEARLESCENT_FROGLIGHT);
+            return new ItemStack(ModItems.TRIM_SENTRY);
         }
     };
     public static final CreativeTabs UBM_TAB_TRAILS_TALES = new CreativeTabs("ubm_tab_trails_tales") {
         @Override
         public ItemStack getTabIconItem() {
-            return new ItemStack(ModItems.CANDLE);
+            return new ItemStack(ModItems.TRIAL_KEY);
         }
     };
     public static final CreativeTabs UBM_TAB_COPPER_AGE = new CreativeTabs("ubm_tab_copper_age") {
         @Override
         public ItemStack getTabIconItem() {
-            return new ItemStack(ModItems.COPPER_NUGGET);
+            return new ItemStack(ModItems.COPPER_SWORD);
         }
     };
 }

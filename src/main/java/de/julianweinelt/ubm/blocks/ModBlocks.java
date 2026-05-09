@@ -63,6 +63,7 @@ public class ModBlocks {
 
     public static Block SMITHING_TABLE;
     public static Block FLETCHING_TABLE;
+    public static Block FLETCHING_TABLE;
     public static Block LOOM;
     public static Block CARTOGRAPHY_TABLE;
     public static Block SMOKER;
