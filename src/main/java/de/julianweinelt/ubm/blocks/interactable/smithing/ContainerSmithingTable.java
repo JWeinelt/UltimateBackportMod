@@ -69,6 +69,7 @@ public class ContainerSmithingTable extends Container {
         materials.put(ModItems.AMETHYST_SHARD, "amethyst");
         materials.put(Items.REDSTONE, "redstone");
         materials.put(ModItems.COPPER_INGOT, "copper");
+        materials.put(ModItems.RESIN_BRICK, "resin");
 
         if (trim.getItem() instanceof ItemArmorTrim) {
             ItemArmorTrim t = (ItemArmorTrim) trim.getItem();
@@ -214,6 +215,7 @@ public class ContainerSmithingTable extends Container {
                 || item == Items.DIAMOND
                 || item == Items.REDSTONE
                 || item == ModItems.AMETHYST_SHARD
+                || item == ModItems.RESIN_BRICK
                 || item == ModItems.NETHERITE_INGOT;
     }
 }
