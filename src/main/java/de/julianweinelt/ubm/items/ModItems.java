@@ -179,6 +179,9 @@ public class ModItems {
     public static Item TRIAL_KEY_OMINOUS;
     public static Item BREEZE_ROD;
 
+    public static Item RESIN_CLUMP;
+    public static Item RESIN_BRICK;
+
     private static final String[] COLORS = {
             "black", "red", "green", "brown", "blue", "purple", "cyan",
             "light_gray", "gray", "pink", "lime", "yellow", "light_blue", "magenta",
@@ -480,6 +483,11 @@ public class ModItems {
                 .setRegistryName("spyglass")
                 .setCreativeTab(TB_CAVES);
         register(SPYGLASS, event);
+
+        RESIN_CLUMP = new ModItem("resin_clump", TB_TRAILS_TALES);
+        RESIN_BRICK = new ModItem("resin_brick", TB_TRAILS_TALES);
+        register(RESIN_CLUMP, event);
+        register(RESIN_BRICK, event);
 
     }
 
