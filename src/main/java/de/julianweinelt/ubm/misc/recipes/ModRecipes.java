@@ -3,6 +3,7 @@ package de.julianweinelt.ubm.misc.recipes;
 import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.items.ModItems;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
@@ -66,6 +67,7 @@ public class ModRecipes {
         GameRegistry.addSmelting(ModBlocks.DEEPSLATE_COBBLED, new ItemStack(ModBlocks.DEEPSLATE, 1), 0.1F);
         GameRegistry.addSmelting(ModBlocks.DEEPSLATE_TILES, new ItemStack(ModBlocks.DEEPSLATE_TILES_CRACKED, 1), 0.1F);
         GameRegistry.addSmelting(ModBlocks.DEEPSLATE_BRICKS, new ItemStack(ModBlocks.DEEPSLATE_BRICKS_CRACKED, 1), 0.1F);
+        GameRegistry.addSmelting(ModItems.RESIN_CLUMP, new ItemStack(ModItems.RESIN_BRICK, 1), 0.1F);
 
         removeRecipe(new ResourceLocation("minecraft", "wooden_button"));
     }

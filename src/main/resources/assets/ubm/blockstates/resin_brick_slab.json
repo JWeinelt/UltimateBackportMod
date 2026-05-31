@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "ubm:half_slab_resin_brick"
+    },
+    "half=top,variant=default": {
+      "model": "ubm:upper_slab_resin_brick"
+    }
+  }
+}

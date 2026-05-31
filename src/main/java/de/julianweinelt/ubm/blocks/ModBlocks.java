@@ -288,6 +288,13 @@ public class ModBlocks {
     public static BlockSlab DIORITE_SLAB;
     public static BlockSlab DIORITE_SLAB_D;
 
+    public static Block RESIN_BLOCK;
+    public static Block RESIN_BRICKS;
+    public static Block RESIN_BRICK_STAIRS;
+    public static BlockSlab RESIN_BRICK_SLAB;
+    public static BlockSlab RESIN_BRICK_SLAB_D;
+    public static Block RESIN_BRICK_WALL;
+
     public static Block ROOTED_DIRT;
     public static Block SMOOTH_BASALT;
 
@@ -525,7 +532,15 @@ public class ModBlocks {
         FIRE_CORAL_BLOCK = new BlockCoralBlock("fire", false, DEAD_FIRE_CORAL_BLOCK);
         register(FIRE_CORAL_BLOCK, event);
 
-
+        RESIN_BLOCK = new BlockMod(Material.ROCK, "resin_block").setCreativeTab(TB_TRAILS_TALES);
+        register(RESIN_BLOCK, event);
+        RESIN_BRICKS = new BlockMod(Material.ROCK, "resin_bricks").setCreativeTab(TB_TRAILS_TALES);
+        register(RESIN_BRICKS, event);
+        RESIN_BRICK_STAIRS = new BlockModStairs(RESIN_BRICKS.getDefaultState(), "resin_brick_stairs")
+                .setCreativeTab(TB_TRAILS_TALES);
+        register(RESIN_BRICK_STAIRS, event);
+        RESIN_BRICK_WALL = new BlockModWall(RESIN_BRICKS, "resin_brick_wall").setCreativeTab(TB_TRAILS_TALES);
+        register(RESIN_BRICK_WALL, event);
 
         LOOM = new BlockRotated(Material.WOOD)
                 .setUnlocalizedName("loom")
@@ -1565,6 +1580,12 @@ public class ModBlocks {
         MANGROVE_SLAB_D = (BlockSlab) new BlockModDoubleSlab("mangrove_slab", Material.WOOD, MANGROVE_SLAB)
                 .setCreativeTab(TB_WILD);
         registerSlab(MANGROVE_SLAB, MANGROVE_SLAB_D, event);
+
+        RESIN_BRICK_SLAB = (BlockSlab) new BlockModHalfSlab("resin_brick_slab", Material.ROCK)
+                .setCreativeTab(TB_TRAILS_TALES);
+        RESIN_BRICK_SLAB_D = (BlockSlab) new BlockModDoubleSlab("resin_brick_slab", Material.ROCK, RESIN_BRICK_SLAB)
+                .setCreativeTab(TB_TRAILS_TALES);
+        registerSlab(RESIN_BRICK_SLAB, RESIN_BRICK_SLAB_D, event);
 
         CHERRY_SLAB = (BlockSlab) new BlockModHalfSlab("cherry_slab", Material.WOOD)
                 .setCreativeTab(TB_TRAILS_TALES);
