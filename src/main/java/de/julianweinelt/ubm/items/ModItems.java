@@ -178,6 +178,8 @@ public class ModItems {
     public static Item TRIAL_KEY;
     public static Item TRIAL_KEY_OMINOUS;
     public static Item BREEZE_ROD;
+    public static Item WIND_CHARGE;
+    public static Item MACE;
 
     public static Item RESIN_CLUMP;
     public static Item RESIN_BRICK;
@@ -235,6 +237,9 @@ public class ModItems {
 
         NETHERITE_SCRAP = new ModItem("netherite_scrap", TB_NETHER);
         register(NETHERITE_SCRAP, event);
+
+        MACE = new ItemMace();
+        register(MACE, event);
 
         COPPER_INGOT = new ModItem("copper_ingot", TB_CAVES);
         register(COPPER_INGOT, event);

@@ -4241,5 +4241,28 @@
       "ubm:item/honeycomb/wax_on2",
       "ubm:item/honeycomb/wax_on3"
     ]
+  },
+  "item.mace.groundhit": {
+    "category": "block",
+    "sounds": [
+      "ubm:item/mace/smash_ground1",
+      "ubm:item/mace/smash_ground2",
+      "ubm:item/mace/smash_ground3",
+      "ubm:item/mace/smash_ground4"
+    ]
+  },
+  "item.mace.groundhit.heavy": {
+    "category": "block",
+    "sounds": [
+      "ubm:item/mace/smash_ground_heavy"
+    ]
+  },
+  "item.mace.airhit": {
+    "category": "block",
+    "sounds": [
+      "ubm:item/mace/smash_air1",
+      "ubm:item/mace/smash_air2",
+      "ubm:item/mace/smash_air3"
+    ]
   }
 }

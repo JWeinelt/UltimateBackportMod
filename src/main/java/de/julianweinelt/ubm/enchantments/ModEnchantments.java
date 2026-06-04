@@ -15,15 +15,20 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod.EventBusSubscriber
 public class ModEnchantments {
-
     public static final Enchantment SWIFT_SNEAK = new EnchantmentSwiftSneak();
     public static final Enchantment QUICK_CHARGE = new EnchantmentQuickCharge();
+    public static final Enchantment BREACH = new EnchantmentBreach();
+    public static final Enchantment DENSITY = new EnchantmentDensity();
+    public static final Enchantment WINDBURST = new EnchantmentWindburst();
 
     @SubscribeEvent
     public static void registerEnchantments(RegistryEvent.Register<Enchantment> event) {
         event.getRegistry().registerAll(
                 SWIFT_SNEAK,
-                QUICK_CHARGE
+                QUICK_CHARGE,
+                BREACH,
+                DENSITY,
+                WINDBURST
         );
     }
 

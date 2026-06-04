@@ -20,7 +20,9 @@ public class ModSounds {
     public static SoundEvent BEE_HIVE_ENTER;
     public static SoundEvent BEE_HIVE_EXIT;
 
-
+    public static SoundEvent MACE_GROUND;
+    public static SoundEvent MACE_AIR;
+    public static SoundEvent MACE_GROUND_HEAVY;
 
     public static SoundEvent FROG_DEATH;
     public static SoundEvent FROG_EAT;
@@ -337,6 +339,10 @@ public class ModSounds {
         BLOCK_SWEET_BERRY_BUSH_PLACE = register(event, "block.sweet_berry_bush.place");
         BLOCK_TUFF_BREAK = register(event, "block.tuff.break");
         BLOCK_TUFF_STEP = register(event, "block.tuff.step");
+
+        MACE_GROUND = register(event, "item.mace.groundhit");
+        MACE_AIR = register(event, "item.mace.groundhit.heavy");
+        MACE_GROUND_HEAVY = register(event, "item.mace.airhit");
     }
 
     private static SoundEvent register(RegistryEvent.Register<SoundEvent> event, String name) {
