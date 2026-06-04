@@ -495,6 +495,8 @@ public class ModBlocks {
     public static Block PALE_OAK_SAPLING;
     public static Block PALE_OAK_LEAVES;
 
+    public static Block HEAVY_CORE;
+
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         CHAIN = new BlockModChain()
@@ -557,6 +559,9 @@ public class ModBlocks {
         register(GRINDSTONE, event);
         BELL = new BlockBell(Material.ANVIL);
         register(BELL, event);
+
+        HEAVY_CORE = new BlockHeavyCore();
+        event.getRegistry().register(HEAVY_CORE);
 
 
         SOUL_CAMPFIRE = new BlockCampFire(true)

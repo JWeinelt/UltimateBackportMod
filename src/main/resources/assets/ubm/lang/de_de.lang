@@ -407,6 +407,7 @@ item.orange_candle.name=Orange Kerze
 item.white_candle.name=Weiße Kerze
 
 item.mace.name=Stretkolben (BETA)
+tile.heavy_core.name=Schwerer Kern
 
 item.bamboo_raft.name=Bambusfloß
 

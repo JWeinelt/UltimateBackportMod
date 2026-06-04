@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.items;
 
 import de.julianweinelt.ubm.UBM;
+import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.entities.*;
 import de.julianweinelt.ubm.entities.custom.EntityCustomWolf;
 import de.julianweinelt.ubm.entities.EntitySalmon;
@@ -240,6 +241,8 @@ public class ModItems {
 
         MACE = new ItemMace();
         register(MACE, event);
+
+        event.getRegistry().register(new ItemBlockHeavyCore(ModBlocks.HEAVY_CORE));
 
         COPPER_INGOT = new ModItem("copper_ingot", TB_CAVES);
         register(COPPER_INGOT, event);
@@ -500,6 +503,10 @@ public class ModItems {
     @SideOnly(Side.CLIENT)
     public static void onModelEvent(final ModelRegistryEvent event) {
         for (Item m : items) registerItemModel(m);
+
+
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.HEAVY_CORE),
+                0, new ModelResourceLocation("ubm:heavy_core", "inventory"));
     }
 
     public static void register(Item itm, RegistryEvent.Register<Item> ev) {
