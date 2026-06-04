@@ -4264,5 +4264,24 @@
       "ubm:item/mace/smash_air2",
       "ubm:item/mace/smash_air3"
     ]
+  },
+
+  "block.heavy_core.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/heavy_core/break1",
+      "ubm:block/heavy_core/break2",
+      "ubm:block/heavy_core/break3",
+      "ubm:block/heavy_core/break4"
+    ]
+  },
+  "block.heavy_core.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/heavy_core/step1",
+      "ubm:block/heavy_core/step2",
+      "ubm:block/heavy_core/step3",
+      "ubm:block/heavy_core/step4"
+    ]
   }
 }

@@ -170,6 +170,8 @@ public class ModSounds {
     public static SoundEvent BLOCK_SWEET_BERRY_BUSH_PLACE;
     public static SoundEvent BLOCK_TUFF_BREAK;
     public static SoundEvent BLOCK_TUFF_STEP;
+    public static SoundEvent BLOCK_HEAVY_CORE_BREAK;
+    public static SoundEvent BLOCK_HEAVY_CORE_STEP;
 
     public static SoundEvent ITEM_AXE_SCRAPE;
     public static SoundEvent ITEM_AXE_STRIP;
@@ -339,6 +341,8 @@ public class ModSounds {
         BLOCK_SWEET_BERRY_BUSH_PLACE = register(event, "block.sweet_berry_bush.place");
         BLOCK_TUFF_BREAK = register(event, "block.tuff.break");
         BLOCK_TUFF_STEP = register(event, "block.tuff.step");
+        BLOCK_HEAVY_CORE_BREAK = register(event, "block.heavy_core.break");
+        BLOCK_HEAVY_CORE_STEP = register(event, "block.heavy_core.step");
 
         MACE_GROUND = register(event, "item.mace.groundhit");
         MACE_AIR = register(event, "item.mace.groundhit.heavy");
@@ -359,6 +363,7 @@ public class ModSounds {
         public static SoundType CALCITE;
         public static SoundType TUFF;
         public static SoundType DEEPSLATE;
+        public static SoundType HEAVY_CORE;
 
         public static void init() {
             NETHERITE_BLOCK = new SoundType(
@@ -384,6 +389,14 @@ public class ModSounds {
                     BLOCK_CALCITE_PLACE,
                     SoundEvents.BLOCK_STONE_HIT,
                     SoundEvents.BLOCK_STONE_FALL
+            );
+            HEAVY_CORE = new SoundType(
+                    1, 1,
+                    BLOCK_HEAVY_CORE_BREAK,
+                    BLOCK_HEAVY_CORE_STEP,
+                    BLOCK_HEAVY_CORE_BREAK,
+                    BLOCK_HEAVY_CORE_STEP,
+                    BLOCK_HEAVY_CORE_STEP
             );
             AMETHYST_BLOCK = new SoundType(
                     1, 1,
