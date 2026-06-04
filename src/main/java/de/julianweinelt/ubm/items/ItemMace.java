@@ -8,6 +8,7 @@ import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import net.minecraft.enchantment.*;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
@@ -60,17 +61,28 @@ public class ItemMace extends Item {
     }
 
     @Override
+    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
+        return true;
+    }
+
+    @Override
+    public int getItemEnchantability() {
+        return 15;
+    }
+
+    @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, @Nonnull Enchantment enchantment) {
-        if (stack.isItemEnchanted()) return false;
-        if (enchantment instanceof EnchantmentDamage) return true;
+        if (enchantment.equals(Enchantments.FIRE_ASPECT)) return true;
+        if (enchantment.equals(Enchantments.BANE_OF_ARTHROPODS)) return true;
+        if (enchantment.equals(Enchantments.SHARPNESS)) return true;
+        if (enchantment.equals(Enchantments.VANISHING_CURSE)) return true;
+        if (enchantment.equals(Enchantments.SMITE)) return true;
+        if (enchantment.equals(Enchantments.MENDING)) return true;
+        if (enchantment.equals(Enchantments.UNBREAKING)) return true;
+        if (enchantment.equals(Enchantments.LOOTING)) return true;
         if (enchantment instanceof EnchantmentBreach) return true;
         if (enchantment instanceof EnchantmentDensity) return true;
-        if (enchantment instanceof EnchantmentWindburst) return true;
-        if (enchantment instanceof EnchantmentFireAspect) return true;
-        if (enchantment instanceof EnchantmentDurability) return true;
-        if (enchantment instanceof EnchantmentMending) return true;
-        if (enchantment instanceof EnchantmentVanishingCurse) return true;
-        return super.canApplyAtEnchantingTable(stack, enchantment);
+        return false;
     }
 
     @Override
@@ -78,4 +90,6 @@ public class ItemMace extends Item {
     public String getItemStackDisplayName(@Nonnull ItemStack stack) {
         return TextFormatting.LIGHT_PURPLE + super.getItemStackDisplayName(stack);
     }
+
+
 }
