@@ -429,6 +429,7 @@ item.white_candle.name=White Candle
 
 item.mace.name=Mace (BETA)
 tile.heavy_core.name=Heavy Core
+tile.trial_spawner.name=Trial Spawner
 
 item.bamboo_raft.name=Bamboo Raft
 

@@ -4283,5 +4283,117 @@
       "ubm:block/heavy_core/step3",
       "ubm:block/heavy_core/step4"
     ]
+  },
+
+
+  "block.trial_spawner.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/step1",
+      "ubm:block/trial_spawner/step2",
+      "ubm:block/trial_spawner/step3",
+      "ubm:block/trial_spawner/step4",
+      "ubm:block/trial_spawner/step5"
+    ]
+  },
+  "block.trial_spawner.about_to_spawn": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/about_to_spawn_item"
+    ]
+  },
+  "block.trial_spawner.ambient": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/ambient1",
+      "ubm:block/trial_spawner/ambient2",
+      "ubm:block/trial_spawner/ambient3",
+      "ubm:block/trial_spawner/ambient4",
+      "ubm:block/trial_spawner/ambient5"
+    ]
+  },
+  "block.trial_spawner.ambient.ominous": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/ambient_ominous1",
+      "ubm:block/trial_spawner/ambient_ominous2",
+      "ubm:block/trial_spawner/ambient_ominous3",
+      "ubm:block/trial_spawner/ambient_ominous4",
+      "ubm:block/trial_spawner/ambient_ominous5"
+    ]
+  },
+  "block.trial_spawner.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/break1",
+      "ubm:block/trial_spawner/break2",
+      "ubm:block/trial_spawner/break3"
+    ]
+  },
+  "block.trial_spawner.close_shutter": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/close_shutter"
+    ]
+  },
+  "block.trial_spawner.detect_player": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/detect_player1",
+      "ubm:block/trial_spawner/detect_player2",
+      "ubm:block/trial_spawner/detect_player3"
+    ]
+  },
+  "block.trial_spawner.eject_item": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/eject_item1"
+    ]
+  },
+  "block.trial_spawner.activate.ominous": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/close_shutter"
+    ]
+  },
+  "block.trial_spawner.open_shutter": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/open_shutter"
+    ]
+  },
+  "block.trial_spawner.place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/place1",
+      "ubm:block/trial_spawner/place2",
+      "ubm:block/trial_spawner/place3"
+    ]
+  },
+  "block.trial_spawner.spawn": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/spawn1",
+      "ubm:block/trial_spawner/spawn2",
+      "ubm:block/trial_spawner/spawn3",
+      "ubm:block/trial_spawner/spawn4"
+    ]
+  },
+  "block.trial_spawner.spawn_item": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/spawn_item1",
+      "ubm:block/trial_spawner/spawn_item2",
+      "ubm:block/trial_spawner/spawn_item3",
+      "ubm:block/trial_spawner/spawn_item4"
+    ]
+  },
+  "block.trial_spawner.spawn_item_begin": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/trial_spawner/spawn_item_begin1",
+      "ubm:block/trial_spawner/spawn_item_begin2",
+      "ubm:block/trial_spawner/spawn_item_begin3"
+    ]
   }
 }

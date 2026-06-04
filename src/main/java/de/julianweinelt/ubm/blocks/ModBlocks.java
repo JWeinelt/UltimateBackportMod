@@ -75,6 +75,8 @@ public class ModBlocks {
 
     public static Block TARGET;
 
+    public static Block TRIAL_SPAWNER;
+
     public static Block CRIMSON_STEM;
     public static Block CRIMSON_HYPHAE;
     public static Block STRIPPED_CRIMSON_STEM;
@@ -563,6 +565,8 @@ public class ModBlocks {
         HEAVY_CORE = new BlockHeavyCore();
         event.getRegistry().register(HEAVY_CORE);
 
+        TRIAL_SPAWNER = new BlockTrialSpawner();
+        register(TRIAL_SPAWNER, event);
 
         SOUL_CAMPFIRE = new BlockCampFire(true)
                 .setCreativeTab(TB_NETHER);

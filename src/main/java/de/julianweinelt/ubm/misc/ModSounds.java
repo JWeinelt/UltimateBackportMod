@@ -178,6 +178,21 @@ public class ModSounds {
     public static SoundEvent ITEM_AXE_WAX_OFF;
     public static SoundEvent ITEM_HONEYCOMB_WAX_ON;
 
+    public static SoundEvent TRIAL_SPAWNER_ABOUT_TO_SPAWN_ITEM;
+    public static SoundEvent TRIAL_SPAWNER_AMBIENT;
+    public static SoundEvent TRIAL_SPAWNER_AMBIENT_OMINOUS;
+    public static SoundEvent TRIAL_SPAWNER_BREAK;
+    public static SoundEvent TRIAL_SPAWNER_CLOSE_SHUTTER;
+    public static SoundEvent TRIAL_SPAWNER_DETECT_PLAYER;
+    public static SoundEvent TRIAL_SPAWNER_EJECT_ITEM;
+    public static SoundEvent TRIAL_SPAWNER_ACTIVATE_OMINOUS;
+    public static SoundEvent TRIAL_SPAWNER_OPEN_SHUTTER;
+    public static SoundEvent TRIAL_SPAWNER_PLACE;
+    public static SoundEvent TRIAL_SPAWNER_SPAWN;
+    public static SoundEvent TRIAL_SPAWNER_SPAWN_ITEM;
+    public static SoundEvent TRIAL_SPAWNER_SPAWN_ITEM_BEGIN;
+    public static SoundEvent TRIAL_SPAWNER_STEP;
+
 
     @SubscribeEvent
     public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
@@ -344,6 +359,21 @@ public class ModSounds {
         BLOCK_HEAVY_CORE_BREAK = register(event, "block.heavy_core.break");
         BLOCK_HEAVY_CORE_STEP = register(event, "block.heavy_core.step");
 
+        TRIAL_SPAWNER_STEP = register(event, "block.trial_spawner.step");
+        TRIAL_SPAWNER_ABOUT_TO_SPAWN_ITEM = register(event, "block.trial_spawner.about_to_spawn");
+        TRIAL_SPAWNER_AMBIENT = register(event, "block.trial_spawner.ambient");
+        TRIAL_SPAWNER_AMBIENT_OMINOUS = register(event, "block.trial_spawner.ambient.ominous");
+        TRIAL_SPAWNER_BREAK = register(event, "block.trial_spawner.break");
+        TRIAL_SPAWNER_CLOSE_SHUTTER = register(event, "block.trial_spawner.close_shutter");
+        TRIAL_SPAWNER_DETECT_PLAYER = register(event, "block.trial_spawner.detect_player");
+        TRIAL_SPAWNER_EJECT_ITEM = register(event, "block.trial_spawner.eject_item");
+        TRIAL_SPAWNER_OPEN_SHUTTER = register(event, "block.trial_spawner.open_shutter");
+        TRIAL_SPAWNER_ACTIVATE_OMINOUS = register(event, "block.trial_spawner.activate.ominous");
+        TRIAL_SPAWNER_PLACE = register(event, "block.trial_spawner.place");
+        TRIAL_SPAWNER_SPAWN = register(event, "block.trial_spawner.spawn");
+        TRIAL_SPAWNER_SPAWN_ITEM = register(event, "block.trial_spawner.spawn_item");
+        TRIAL_SPAWNER_SPAWN_ITEM_BEGIN = register(event, "block.trial_spawner.spawn_item_begin");
+
         MACE_GROUND = register(event, "item.mace.groundhit");
         MACE_AIR = register(event, "item.mace.groundhit.heavy");
         MACE_GROUND_HEAVY = register(event, "item.mace.airhit");
@@ -364,6 +394,7 @@ public class ModSounds {
         public static SoundType TUFF;
         public static SoundType DEEPSLATE;
         public static SoundType HEAVY_CORE;
+        public static SoundType TRIAL_SPAWNER;
 
         public static void init() {
             NETHERITE_BLOCK = new SoundType(
@@ -373,6 +404,14 @@ public class ModSounds {
                     BLOCK_NETHERITE_BLOCK_PLACE,
                     SoundEvents.BLOCK_STONE_HIT,
                     SoundEvents.BLOCK_STONE_FALL
+            );
+            TRIAL_SPAWNER = new SoundType(
+                    1.0F, 1.0F,
+                    TRIAL_SPAWNER_BREAK,
+                    TRIAL_SPAWNER_STEP,
+                    TRIAL_SPAWNER_PLACE,
+                    TRIAL_SPAWNER_STEP,
+                    TRIAL_SPAWNER_STEP
             );
             SWEET_BERRY_BUSH = new SoundType(
                     1, 1,
