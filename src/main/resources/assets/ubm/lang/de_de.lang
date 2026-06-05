@@ -104,6 +104,7 @@ tile.crimson_stairs.name=Karmesintreppen
 tile.warped_fence.name=Wirrzaun
 tile.crimson_fence.name=Karmesinzaun
 tile.crimson_button.name=Karmesin
+tile.jungle_button.name=Jungle Button
 tile.smithing_table.name=Schmiedetisch
 tile.dried_kelp_block.name=Getrockneter Seetang block
 tile.spruce_button.name=Fichtenholzknopf
@@ -174,6 +175,17 @@ tile.packed_mud.name=Fester Schlamm
 tile.mangrove_button.name=Mangrovenholzknopf
 tile.mud_bricks.name=Schlammziegel
 
+tile.tube_coral_block.name=Tube Coral Block
+tile.brain_coral_block.name=Brain Coral Block
+tile.bubble_coral_block.name=Bubble Coral Block
+tile.horn_coral_block.name=Horn Coral Block
+tile.fire_coral_block.name=Fire Coral Block
+tile.dead_tube_coral_block.name=Dead Tube Coral Block
+tile.dead_brain_coral_block.name=Dead Brain Coral Block
+tile.dead_bubble_coral_block.name=Dead Bubble Coral Block
+tile.dead_horn_coral_block.name=Dead Horn Coral Block
+tile.dead_fire_coral_block.name=Dead Fire Coral Block
+
 tile.blackstone_polished_wall.name=Polierte Schwarzsteinmauer
 tile.blackstone_polished_brick_wall.name=Polierte Schwarzsteinziegelmauer
 tile.diorite_stairs.name=Diorittreppe
@@ -240,7 +252,7 @@ tile.bamboo_pressure_plate.name=Bambusdruckplatte
 tile.bamboo_stairs.name=Bambustreppe
 tile.bamboo_planks.name=Bambusbretter
 
-tile.polished_blackstone_slab.name=Polierte Schwarzsteintreppe
+polished_blackstone_slab.name=Polished Blackstone Slab
 tile.polished_blackstone_bricks_slab.name=Polierte Schwarzsteinziegeltreppe
 
 tile.sculk_sensor.name=Sculk-Sensor
@@ -251,6 +263,8 @@ tile.sculk_catalyst.name=Sculk-Katalysator
 item.mangrove_door.name=Mangrovenholztür
 
 item.bamboo_door.name=Bambustür
+
+item.copper_torch.name=Copper Torch
 
 item.sentry_armor_trim.name=Wachen-Rüstungsbesatz
 item.flow_armor_trim.name=Fluss-Rüstungsbesatz
@@ -272,28 +286,9 @@ item.shaper_armor_trim.name=Gestalter-Rüstungsbesatz
 item.host_armor_trim.name=Gastwirts-Rüstungsbesatz
 item.netherite_upgrade_template.name=Netheritaufwertung
 
-item.angler_pottery_sherd.name=Angler-Töpferscherbe
-item.archer_pottery_sherd.name=Schützen-Töpferscherbe
-item.arms_up_pottery_sherd.name=Gebärden-Töpferscherbe
-item.blade_pottery_sherd.name=Klingen-Töpferscherbe
-item.brewer_pottery_sherd.name=Brauer-Töpferscherbe
-item.burn_pottery_sherd.name=Flammen-Töpferscherbe
-item.danger_pottery_sherd.name=Gefahren-Töpferscherbe
-item.explorer_pottery_sherd.name=Entdecker-Töpferscherbe
-item.friend_pottery_sherd.name=Freundes-Töpferscherbe
-item.heart_pottery_sherd.name=Herz-Töpferscherbe
-item.heartbreak_pottery_sherd.name=Herzschmerz-Töpferscherbe
-item.howl_pottery_sherd.name=Geheul-Töpferscherbe
-item.miner_pottery_sherd.name=Bergarbeiter-Töpferscherbe
-item.mourner_pottery_sherd.name=Wimmerer-Töpferscherbe
-item.plenty_pottery_sherd.name=Reichtums-Töpferscherbe
-item.prize_pottery_sherd.name=Juwelen-Töpferscherbe
-item.sheaf_pottery_sherd.name=Garben-Töpferscherbe
-item.shelter_pottery_sherd.name=Zufluchts-Töpferscherbe
-item.skull_pottery_sherd.name=Totenkopf-Töpferscherbe
-item.snort_pottery_sherd.name=Schnaub-Töpferscherbe
-
 item.wolf_armor.name=Wolfsrüstung
+
+item.trial_key_ominous.name=Ominous Trial Key
 
 item.copper_helmet.name=Kupferhelm
 item.copper_chestplate.name=Kupferbrustplatte
@@ -322,6 +317,17 @@ tile.waxed_weathered_copper_trapdoor.name=Gewachste verwitterte Kupferfalltür
 tile.weathered_copper_trapdoor.name=Verwitterte Kupferfalltür
 tile.waxed_oxidized_copper_trapdoor.name=Gewachste oxidierte Kupferfalltür
 tile.oxidized_copper_trapdoor.name=Oxidierte Kupferfalltür
+
+tile.tuff_wall.name=Tuff Wall
+tile.tuff_stairs.name=Tuff Stairs
+tile.tuff_bricks.name=Tuff Bricks
+tile.tuff_brick_stairs.name=Tuff Brick Stairs
+tile.tuff_brick_wall.name=Tuff Brick Wall
+tile.polished_tuff_stairs=Polished Tuff Stairs
+tile.chiseled_tuff.name=Chiseled Tuff
+tile.chiseled_tuff_bricks.name=Chiseled Tuff Bricks
+tile.polished_tuff_wall.name=Polished Tuff Wall
+tile.polished_tuff.name=Polished Tuff
 
 item.glow_berries.name=Leuchtbeeren
 item.bucket_tadpole.name=Kaulquappeneimer
@@ -353,6 +359,9 @@ deepslate_cobbled_slab.name=Bruchtiefenschieferstufe
 deepslate_tile_slab.name=Tiefenschieferfliesenstufe
 deepslate_brick_slab.name=Tiefenschieferstufe
 mangrove_slab.name=Mangrovenholzstufe
+tuff_slab.name=Tuff Slab
+tuff_brick_slab.name=Tuff Brick Slab
+polished_tuff_slab.name=Polished Tuff Slab
 
 
 item.netherite_scrap.name=Netheritplatten
@@ -397,7 +406,10 @@ item.magenta_candle.name=Magenta Kerze
 item.orange_candle.name=Orange Kerze
 item.white_candle.name=Weiße Kerze
 
-item.bamboo_raft.name=Bamusfloß
+item.mace.name=Streitkolben (BETA)
+tile.heavy_core.name=Schwerer Kern
+
+item.bamboo_raft.name=Bambusfloß
 
 itemGroup.ubm_tab_nether=Nether Update
 itemGroup.ubm_tab_trails_tales=Pfade und Erzählungen
@@ -515,8 +527,37 @@ advancement.ubm.tadpole_in_a_bucket.title=Im Eimer
 advancement.ubm.tadpole_in_a_bucket.desc=Fang eine Kaulquappe in einem Eimer
 advancement.ubm.hero_of_the_village.title=Dorfheld
 advancement.ubm.hero_of_the_village.desc=Verteidige ein Dorf erfolgreich vor einem Überfall
+advancement.ubm.it_spreads.title=It Spreads
+advancement.ubm.it_spreads.desc=Kill a mob near a Sculk Catalyst
+advancement.ubm.trial_chamber.title=Minecraft: Trial(s) Edition
+advancement.ubm.trial_chamber.desc=Step foot in a Trial Chamber
+advancement.ubm.lighten_up.title=Lighten Up
+advancement.ubm.lighten_up.desc=Scrape a Copper Bulb with an Axe to make it brighter
 
 death.attack.frostbite=%1$s erfror
 
 key.categories.ubm=Ultimate Backport Mod
-key.ubm.open_new_chat=Neues Chat-UI öffnen (Beta)
+
+container.blast_furnace=Blast Furnace
+container.smithing_table=Upgrade Gearkey.ubm.open_new_chat
+item.pottery_sherd.angler.name=Angler-Töpferscherbe
+item.pottery_sherd.archer.name=Schützen-Töpferscherbe
+item.pottery_sherd.arms_up.name=Gebärden-Töpferscherbe
+item.pottery_sherd.blade.name=Klingen-Töpferscherbe
+item.pottery_sherd.brewer.name=Brauer-Töpferscherbe
+item.pottery_sherd.burn.name=Flammen-Töpferscherbe
+item.pottery_sherd.danger.name=Gefahren-Töpferscherbe
+item.pottery_sherd.explorer.name=Entdecker-Töpferscherbe
+item.pottery_sherd.friend.name=Freundes-Töpferscherbe
+item.pottery_sherd.heart.name=Herz-Töpferscherbe
+item.pottery_sherd.heartbreak.name=Herzschmerz-Töpferscherbe
+item.pottery_sherd.howl.name=Geheul-Töpferscherbe
+item.pottery_sherd.miner.name=Bergarbeiter-Töpferscherbe
+item.pottery_sherd.mourner.name=Wimmerer-Töpferscherbe
+item.pottery_sherd.plenty.name=Reichtums-Töpferscherbe
+item.pottery_sherd.prize.name=Juwelen-Töpferscherbe
+item.pottery_sherd.sheaf.name=Garben-Töpferscherbe
+item.pottery_sherd.shelter.name=Zufluchts-Töpferscherbe
+item.pottery_sherd.skull.name=Totenkopf-Töpferscherbe
+item.pottery_sherd.snort.name=Schnaub-Töpferscherbe
+tile.polished_blackstone_slab.name=Polierte Schwarzsteintreppe
