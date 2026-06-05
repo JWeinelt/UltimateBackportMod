@@ -26,6 +26,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityArmorStand;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.item.Item;
 import net.minecraft.world.ColorizerFoliage;
 import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -66,6 +67,10 @@ public class ClientProxy extends CommonProxy {
                     return ColorizerFoliage.getFoliageColorBasic();
                 },
                 ModBlocks.MANGROVE_LEAVES
+        );
+        Minecraft.getMinecraft().getItemColors().registerItemColorHandler(
+                (stack, tintIndex) -> ColorizerFoliage.getFoliageColorBasic(),
+                Item.getItemFromBlock(ModBlocks.MANGROVE_LEAVES)
         );
 
         Map<Class<? extends Entity>, Render<? extends Entity>> renderMap =

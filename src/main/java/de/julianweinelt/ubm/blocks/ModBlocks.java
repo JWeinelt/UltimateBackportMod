@@ -510,10 +510,14 @@ public class ModBlocks {
         register(MANGROVE_ROOTS, event);
         MUDDY_MANGROVE_ROOTS = new BlockModColumn("muddy_mangrove_roots").setCreativeTab(TB_WILD);
         register(MUDDY_MANGROVE_ROOTS, event);
-        MANGROVE_LEAVES = new BlockNewLeaf().setCreativeTab(TB_WILD)
+        MANGROVE_LEAVES = new BlockModTransparent(Material.LEAVES).setCreativeTab(TB_WILD)
                 .setRegistryName("mangrove_leaves")
                 .setUnlocalizedName("mangrove_leaves");
         register(MANGROVE_LEAVES, event);
+        PALE_OAK_LEAVES = new BlockModTransparent(Material.LEAVES).setCreativeTab(TB_TRAILS_TALES)
+                .setRegistryName("pale_oak_leaves")
+                .setUnlocalizedName("pale_oak_leaves");
+        register(PALE_OAK_LEAVES, event);
 
         CHAIN = new BlockModChain()
                 .setRegistryName("chain")
