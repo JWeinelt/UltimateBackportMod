@@ -1,0 +1,9 @@
+{
+  "parent": "ubm:block/template_vault",
+  "textures": {
+    "bottom": "ubm:blocks/vault_bottom",
+    "front": "ubm:blocks/vault_front_ejecting",
+    "side": "ubm:blocks/vault_side_on",
+    "top": "ubm:blocks/vault_top_ejecting"
+  }
+}

@@ -73,6 +73,9 @@ public class ModBlocks {
     public static Block CAMPFIRE;
     public static Block GRINDSTONE;
 
+    public static Block VAULT;
+    public static Block VAULT_OMINOUS;
+
     public static Block TARGET;
 
     public static Block TRIAL_SPAWNER;
@@ -409,6 +412,8 @@ public class ModBlocks {
     public static Block MUD_BRICK_STAIRS;
     public static Block MUD_BRICK_WALL;
     public static Block MUDDY_MANGROVE_ROOTS;
+    public static Block MANGROVE_ROOTS;
+    public static Block MANGROVE_LEAVES;
 
     public static Block CHISILED_BOOKSHELF;
     public static Block SNIFFER_EGG;
@@ -501,11 +506,23 @@ public class ModBlocks {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
+        MANGROVE_ROOTS = new BlockModColumn("mangrove_roots").setCreativeTab(TB_WILD);
+        register(MANGROVE_ROOTS, event);
+        MUDDY_MANGROVE_ROOTS = new BlockModColumn("muddy_mangrove_roots").setCreativeTab(TB_WILD);
+        register(MUDDY_MANGROVE_ROOTS, event);
+        MANGROVE_LEAVES = new BlockNewLeaf().setCreativeTab(TB_WILD)
+                .setRegistryName("mangrove_leaves")
+                .setUnlocalizedName("mangrove_leaves");
+        register(MANGROVE_LEAVES, event);
+
         CHAIN = new BlockModChain()
                 .setRegistryName("chain")
                 .setUnlocalizedName("chain")
                 .setCreativeTab(TB_NETHER);
         register(CHAIN, event);
+
+        VAULT = new BlockVault();
+        register(VAULT, event);
 
 
         CAMPFIRE = new BlockCampFire(false);

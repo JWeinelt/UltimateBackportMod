@@ -395,6 +395,8 @@ public class ModSounds {
         public static SoundType DEEPSLATE;
         public static SoundType HEAVY_CORE;
         public static SoundType TRIAL_SPAWNER;
+        public static SoundType VAULT;
+        public static SoundType COPPER;
 
         public static void init() {
             NETHERITE_BLOCK = new SoundType(

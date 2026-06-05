@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "facing=north,state=inactive": { "model": "ubm:vault" },
+    "facing=south,state=inactive": { "model": "ubm:vault", "y": 180 },
+    "facing=west,state=inactive": { "model": "ubm:vault", "y": 270 },
+    "facing=east,state=inactive": { "model": "ubm:vault", "y": 90 },
+
+    "facing=north,state=active": { "model": "ubm:vault_active" },
+    "facing=south,state=active": { "model": "ubm:vault_active", "y": 180 },
+    "facing=west,state=active": { "model": "ubm:vault_active", "y": 270 },
+    "facing=east,state=active": { "model": "ubm:vault_active", "y": 90 },
+
+    "facing=north,state=ejecting": { "model": "ubm:vault_ejecting_reward" },
+    "facing=south,state=ejecting": { "model": "ubm:vault_ejecting_reward", "y": 180 },
+    "facing=west,state=ejecting": { "model": "ubm:vault_ejecting_reward", "y": 270 },
+    "facing=east,state=ejecting": { "model": "ubm:vault_ejecting_reward", "y": 90 },
+
+    "facing=north,state=unlocking": { "model": "ubm:vault_unlocking" },
+    "facing=south,state=unlocking": { "model": "ubm:vault_unlocking", "y": 180 },
+    "facing=west,state=unlocking": { "model": "ubm:vault_unlocking", "y": 270 },
+    "facing=east,state=unlocking": { "model": "ubm:vault_unlocking", "y": 90 }
+  }
+}
