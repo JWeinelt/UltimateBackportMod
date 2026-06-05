@@ -1,1 +1,6 @@
-{"parent":"block/cube_all","textures":{"all":"ubm:blocks/mangrove_leaves"}}
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "ubm:blocks/mangrove_leaves"
+  }
+}
