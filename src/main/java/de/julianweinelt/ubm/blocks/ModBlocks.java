@@ -2,6 +2,9 @@ package de.julianweinelt.ubm.blocks;
 
 import de.julianweinelt.ubm.UBM;
 import de.julianweinelt.ubm.blocks.api.*;
+import de.julianweinelt.ubm.blocks.api.sign.BlockModStandingSign;
+import de.julianweinelt.ubm.blocks.api.sign.BlockModWallSign;
+import de.julianweinelt.ubm.blocks.api.sign.TileEntityModSign;
 import de.julianweinelt.ubm.blocks.interactable.BlockBlastFurnace;
 import de.julianweinelt.ubm.blocks.interactable.BlockSmithingTable;
 import de.julianweinelt.ubm.blocks.plant.BlockGlowBerryVine;
@@ -86,7 +89,6 @@ public class ModBlocks {
     public static Block CRIMSON_STAIRS;
     public static Block CRIMSON_PRESSURE_PLATE;
     public static Block CRIMSON_BUTTON;
-    public static Block CRIMSON_SIGN;
     public static Block CRIMSON_FENCE;
     public static Block CRIMSON_FENCE_GATE;
     public static Block CRIMSON_DOOR;
@@ -104,7 +106,6 @@ public class ModBlocks {
     public static Block WARPED_STAIRS;
     public static Block WARPED_PRESSURE_PLATE;
     public static Block WARPED_BUTTON;
-    public static Block WARPED_SIGN;
     public static Block WARPED_FENCE;
     public static Block WARPED_FENCE_GATE;
     public static Block WARPED_DOOR;
@@ -417,17 +418,6 @@ public class ModBlocks {
     public static Block TORCHFLOWER;
     public static Block PINK_PETALS;
 
-    public static Block HANGING_SIGN_OAK;
-    public static Block HANGING_SIGN_SPRUCE;
-    public static Block HANGING_SIGN_BIRCH;
-    public static Block HANGING_SIGN_ACACIA;
-    public static Block HANGING_SIGN_JUNGLE;
-    public static Block HANGING_SIGN_DARK_OAK;
-    public static Block HANGING_SIGN_PALE_OAK;
-    public static Block HANGING_SIGN_MANGROVE;
-    public static Block HANGING_SIGN_CHERRY;
-    public static Block HANGING_SIGN_BAMBOO;
-
     public static Block MANGROVE_PLANKS;
     public static Block MANGROVE_LOG;
     public static Block MANGROVE_WOOD;
@@ -442,7 +432,6 @@ public class ModBlocks {
     public static Block MANGROVE_FENCE_GATE;
     public static Block STRIPPED_MANGROVE_LOG;
     public static Block STRIPPED_MANGROVE_WOOD;
-    public static Block MANGROVE_SIGN;
     public static Block BLOCK_OF_BAMBOO;
     public static Block STRIPPED_BAMBOO;
     public static Block BAMBOO_MOSAIC;
@@ -473,7 +462,6 @@ public class ModBlocks {
     public static Block CHERRY_FENCE_GATE;
     public static Block STRIPPED_CHERRY_LOG;
     public static Block STRIPPED_CHERRY_WOOD;
-    public static Block CHERRY_SIGN;
     public static Block CHERRY_SAPLING;
     public static Block CHERRY_LEAVES;
 
@@ -491,9 +479,12 @@ public class ModBlocks {
     public static Block PALE_OAK_FENCE_GATE;
     public static Block STRIPPED_PALE_OAK_LOG;
     public static Block STRIPPED_PALE_OAK_WOOD;
-    public static Block PALE_OAK_SIGN;
     public static Block PALE_OAK_SAPLING;
     public static Block PALE_OAK_LEAVES;
+
+    public static Block MANGROVE_STANDING_SIGN;
+    public static Block MANGROVE_WALL_SIGN;
+
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -1567,11 +1558,13 @@ public class ModBlocks {
 
         registerSlabs(event);
 
+        registerSigns(event);
 
         ModBiomes.init();
         GameRegistry.registerTileEntity(TileEntityBeeNest.class, new ResourceLocation("ubm", "bee_nest"));
         GameRegistry.registerWorldGenerator(new WorldGenBeeNest(), 0);
         GameRegistry.registerTileEntity(TileEntityCampfire.class, new ResourceLocation("ubm", "campfire"));
+        GameRegistry.registerTileEntity(TileEntityModSign.class, "mangrove_sign_te");
     }
 
     private static void registerSlabs(RegistryEvent.Register<Block> event) {
@@ -1814,6 +1807,13 @@ public class ModBlocks {
         MUD_BRICK_SLAB_D = (BlockSlab) new BlockModDoubleSlab("mud_brick_slab", Material.ROCK, MUD_BRICK_SLAB)
                 .setCreativeTab(TB_WILD);
         registerSlab(MUD_BRICK_SLAB, MUD_BRICK_SLAB_D, event);
+    }
+
+    private static void registerSigns(RegistryEvent.Register<Block> event) {
+        MANGROVE_STANDING_SIGN = new BlockModStandingSign("mangrove_sign");
+        MANGROVE_WALL_SIGN = new BlockModWallSign("mangrove_sign");
+        register(MANGROVE_STANDING_SIGN, event);
+        register(MANGROVE_WALL_SIGN, event);
     }
 
     @SideOnly(Side.SERVER)

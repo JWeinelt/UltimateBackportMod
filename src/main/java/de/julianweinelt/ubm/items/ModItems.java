@@ -1,6 +1,8 @@
 package de.julianweinelt.ubm.items;
 
 import de.julianweinelt.ubm.UBM;
+import de.julianweinelt.ubm.blocks.ModBlocks;
+import de.julianweinelt.ubm.blocks.api.sign.ItemModSign;
 import de.julianweinelt.ubm.entities.*;
 import de.julianweinelt.ubm.entities.custom.EntityCustomWolf;
 import de.julianweinelt.ubm.entities.EntitySalmon;
@@ -182,6 +184,9 @@ public class ModItems {
     public static Item RESIN_CLUMP;
     public static Item RESIN_BRICK;
 
+
+    public static Item MANGROVE_SIGN_ITEM;
+
     private static final String[] COLORS = {
             "black", "red", "green", "brown", "blue", "purple", "cyan",
             "light_gray", "gray", "pink", "lime", "yellow", "light_blue", "magenta",
@@ -196,6 +201,9 @@ public class ModItems {
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
+        MANGROVE_SIGN_ITEM = new ItemModSign("mangrove", ModBlocks.MANGROVE_STANDING_SIGN, ModBlocks.MANGROVE_WALL_SIGN);
+        register(MANGROVE_SIGN_ITEM, event);
+
         OMINOUS_BOTTLE = new ItemOminousBottle();
         register(OMINOUS_BOTTLE, event);
 
