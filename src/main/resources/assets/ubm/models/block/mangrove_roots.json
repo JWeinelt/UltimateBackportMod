@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "ubm:blocks/mangrove_roots_top",
+    "side": "ubm:blocks/mangrove_roots_side"
+  }
+}
