@@ -50,10 +50,6 @@ repositories {
     maven {
         name = "maven-releases"
         url = uri("https://repo.julianweinelt.de/releases")
-        credentials {
-            username = project.findProperty("repoUser")
-            password = project.findProperty("repoPassword")
-        }
     }
 
     maven {
