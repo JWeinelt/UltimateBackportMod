@@ -3,7 +3,7 @@ buildscript {
     repositories {
         maven {
             name = "maven-releases"
-            url = uri("https://repo.codeblocksmc.com/maven-releases")
+            url = uri("https://repo.julianweinelt.de/releases")
         }
         jcenter()
         maven { url = "https://files.minecraftforge.net/maven" }
@@ -49,7 +49,7 @@ minecraft {
 repositories {
     maven {
         name = "maven-releases"
-        url = uri("https://repo.codeblocksmc.com/repository/maven-releases/")
+        url = uri("https://repo.julianweinelt.de/releases")
         credentials {
             username = project.findProperty("repoUser")
             password = project.findProperty("repoPassword")
