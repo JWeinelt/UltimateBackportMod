@@ -1,5 +1,4 @@
 pipeline {
-    agent {label 'Linux-Build'}
 
     tools {
         jdk 'java8'
@@ -7,6 +6,7 @@ pipeline {
 
     stages {
         stage('Build') {
+            agent {label 'Linux-Build'}
             steps {
                 sh './gradlew build'
             }
