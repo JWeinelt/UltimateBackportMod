@@ -1,5 +1,5 @@
 pipeline {
-    agent {label  'linux'}
+    agent {label 'Linux-Build'}
 
     tools {
         jdk 'java8'
