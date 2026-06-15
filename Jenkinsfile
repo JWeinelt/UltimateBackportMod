@@ -9,7 +9,12 @@ pipeline {
         stage('Build') {
             agent {label 'Linux-Build'}
             steps {
+                cleanWs()
+        
+                checkout scm
                 sh './gradlew build'
+
+                archiveArtifacts artifacts: 'build/lib/*.jar'
             }
         }
     }
