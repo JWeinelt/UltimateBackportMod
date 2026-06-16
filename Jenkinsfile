@@ -14,7 +14,7 @@ pipeline {
                 checkout scm
                 sh './gradlew build'
 
-                archiveArtifacts artifacts: 'build/lib/*.jar'
+                archiveArtifacts artifacts: 'build/libs/*.jar'
             }
         }
     }
