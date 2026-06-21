@@ -1,12 +1,12 @@
 {
-  "parent": "minecraft:adventure/kill_a_mob",
+  "parent": "minecraft:adventure/trade",
   "display": {
-    "icon": { "item": "ubm:trident" },
+    "icon": { "item": "minecraft:emerald" },
     "title": {
-      "translate": "advancement.ubm.throw_trident.title"
+      "translate": "advancement.ubm.trade_at_world_height.title"
     },
     "description": {
-      "translate": "advancement.ubm.throw_trident.desc"
+      "translate": "advancement.ubm.trade_at_world_height.desc"
     },
     "frame": "task",
     "show_toast": true,

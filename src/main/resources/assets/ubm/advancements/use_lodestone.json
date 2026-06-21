@@ -1,12 +1,12 @@
 {
-  "parent": "minecraft:adventure/kill_a_mob",
+  "parent": "minecraft:adventure/root",
   "display": {
-    "icon": { "item": "ubm:trident" },
+    "icon": { "item": "ubm:honeycomb" },
     "title": {
-      "translate": "advancement.ubm.throw_trident.title"
+      "translate": "advancement.ubm.use_lodestone.title"
     },
     "description": {
-      "translate": "advancement.ubm.throw_trident.desc"
+      "translate": "advancement.ubm.use_lodestone.desc"
     },
     "frame": "task",
     "show_toast": true,
