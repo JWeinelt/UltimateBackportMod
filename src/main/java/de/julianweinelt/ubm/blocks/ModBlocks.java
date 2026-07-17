@@ -503,6 +503,7 @@ public class ModBlocks {
     public static Block PALE_OAK_LEAVES;
 
     public static Block HEAVY_CORE;
+    public static Block CHISELED_DEEPSLATE;
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -718,6 +719,12 @@ public class ModBlocks {
                 .setRegistryName("polished_blackstone")
                 .setCreativeTab(TB_NETHER);
         register(POLISHED_BLACKSTONE, event);
+
+        CHISELED_DEEPSLATE = new Block(Material.ROCK)
+                .setUnlocalizedName("chiseled_deepslate")
+                .setRegistryName("chiseled_deepslate")
+                .setCreativeTab(TB_CAVES);
+        register(CHISELED_DEEPSLATE, event);
 
         CHISELED_POLISHED_BLACKSTONE = new Block(Material.ROCK)
                 .setUnlocalizedName("chiseled_polished_blackstone")
