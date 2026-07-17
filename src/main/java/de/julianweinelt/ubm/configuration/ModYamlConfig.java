@@ -1,13 +1,14 @@
 package de.julianweinelt.ubm.configuration;
 
 import de.julianweinelt.ubm.UBM;
-import dev.dejvokep.boostedyaml.YamlDocument;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.nio.file.Files;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import org.apache.logging.log4j.Logger;
+import org.yaml.snakeyaml.Yaml;
 
 public class ModYamlConfig {
     private final Logger logger;
@@ -16,9 +17,10 @@ public class ModYamlConfig {
 
     private final File serverConfigs;
 
-    private YamlDocument config = null;
+    private Map<String, Object> config = null;
 
     private static ModYamlConfig instance;
+    private final Yaml yaml = new Yaml();
 
     private ModYamlConfig(File configFolder) {
         logger = UBM.getLogger();
@@ -41,33 +43,52 @@ public class ModYamlConfig {
         new ModYamlConfig(configFolder);
     }
 
+
     public void load() {
         try {
-            InputStream iS = getClass().getResourceAsStream("config.yml");
-            if (iS == null) throw new IOException("Default config file not found");
-            config = YamlDocument.create(configFile, iS);
+            if (!configFile.exists()) {
+                InputStream input = getClass()
+                        .getClassLoader()
+                        .getResourceAsStream("config.yml");
+
+                if (input == null) {
+                    throw new IOException("Default config.yml not found");
+                }
+
+                try (FileOutputStream output = new FileOutputStream(configFile)) {
+                    byte[] buffer = new byte[4096];
+                    int length;
+
+                    while ((length = input.read(buffer)) > 0) {
+                        output.write(buffer, 0, length);
+                    }
+                }
+            }
+
+            try (FileInputStream input = new FileInputStream(configFile)) {
+                config = yaml.load(input);
+            }
+
         } catch (IOException e) {
-            logger.error(e);
+            logger.error("Could not load config", e);
         }
     }
 
+
+
     public void save() {
-        try {
-            config.save();
+        try (FileWriter writer = new FileWriter(configFile)) {
+            yaml.dump(config, writer);
         } catch (IOException e) {
-            logger.error(e);
+            logger.error("Could not save config", e);
         }
     }
 
     public void reload() {
-        try {
-            config.reload();
-        } catch (IOException e) {
-            logger.error(e);
-        }
+        load();
     }
     public String getConfigData() {
-        return config.dump();
+        return config.toString();
     }
 
     public void saveServerConfig(String server, String data) {
@@ -78,20 +99,74 @@ public class ModYamlConfig {
         }
     }
 
-    public void applyData(String server) {
-        try {
-            config = YamlDocument.create(new File(serverConfigs, server + ".yml"));
-        } catch (IOException e) {
-            logger.error(e);
-        }
-    }
-
-    public static YamlDocument config() {
+    public static Map<String, Object> config() {
         return instance().config;
     }
 
     public static float entityHealth(String entityName) {
-        return config().getFloat("entities." + entityName + ".health");
+        Object value = instance().config
+                .get("entities");
+
+        if (!(value instanceof Map)) {
+            return 20.0F;
+        }
+
+        Map<?, ?> entities = (Map<?, ?>) value;
+        Object entity = entities.get(entityName);
+
+        if (!(entity instanceof Map)) {
+            return 20.0F;
+        }
+
+        Object health = ((Map<?, ?>) entity).get("health");
+
+        if (health instanceof Number) {
+            return ((Number) health).floatValue();
+        }
+
+        return 20.0F;
     }
 
+    @SuppressWarnings("unchecked")
+    public Object get(String path) {
+        if (config == null || path == null || path.isEmpty()) {
+            return null;
+        }
+
+        String[] keys = path.split("\\.");
+        Object current = config;
+
+        for (String key : keys) {
+            if (!(current instanceof Map)) {
+                return null;
+            }
+
+            current = ((Map<String, Object>) current).get(key);
+        }
+
+        return current;
+    }
+
+    @SuppressWarnings("unchecked")
+    public void set(String path, Object value) {
+        if (config == null || path == null || path.isEmpty()) {
+            return;
+        }
+
+        String[] keys = path.split("\\.");
+        Map<String, Object> current = config;
+
+        for (int i = 0; i < keys.length - 1; i++) {
+            Object next = current.get(keys[i]);
+
+            if (!(next instanceof Map)) {
+                next = new LinkedHashMap<String, Object>();
+                current.put(keys[i], next);
+            }
+
+            current = (Map<String, Object>) next;
+        }
+
+        current.put(keys[keys.length - 1], value);
+    }
 }
