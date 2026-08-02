@@ -1,0 +1,21 @@
+{
+  "parent": "ubm:trim_with_all_armor_patterns",
+  "display": {
+    "icon": { "item": "ubm:rib_armor_trim" },
+    "title": {
+      "translate": "advancement.ubm.trim_with_all_exclusive_armor_patterns.title"
+    },
+    "description": {
+      "translate": "advancement.ubm.trim_with_all_exclusive_armor_patterns.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

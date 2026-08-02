@@ -1,12 +1,12 @@
 {
-  "parent": "minecraft:adventure/kill_a_mob",
+  "parent": "minecraft:nether/root",
   "display": {
-    "icon": { "item": "ubm:trident" },
+    "icon": { "item": "minecraft:gold_ingot" },
     "title": {
-      "translate": "advancement.ubm.throw_trident.title"
+      "translate": "advancement.ubm.distract_piglin.title"
     },
     "description": {
-      "translate": "advancement.ubm.throw_trident.desc"
+      "translate": "advancement.ubm.distract_piglin.desc"
     },
     "frame": "task",
     "show_toast": true,
