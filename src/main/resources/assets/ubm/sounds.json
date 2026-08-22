@@ -4395,5 +4395,89 @@
       "ubm:block/trial_spawner/spawn_item_begin2",
       "ubm:block/trial_spawner/spawn_item_begin3"
     ]
+  },
+
+  "block.vault.activate": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/vault/activate"
+    ]
+  },
+  "block.vault.ambient": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/vault/ambient1",
+      "ubm:block/vault/ambient2",
+      "ubm:block/vault/ambient3"
+    ]
+  },
+  "block.vault.break": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/vault/break1",
+      "ubm:block/vault/break2",
+      "ubm:block/vault/break3",
+      "ubm:block/vault/break4"
+    ]
+  },
+  "block.vault.deactivate": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/vault/deactivate"
+    ]
+  },
+  "block.vault.eject": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/vault/eject1",
+      "ubm:block/vault/eject2",
+      "ubm:block/vault/eject3"
+    ]
+  },
+  "block.vault.insert": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/vault/insert"
+    ]
+  },
+  "block.vault.insert_fail": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/vault/insert_fail"
+    ]
+  },
+  "block.vault.open_shutter": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/vault/open_shutter"
+    ]
+  },
+  "block.vault.place": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/vault/place1",
+      "ubm:block/vault/place2",
+      "ubm:block/vault/place3",
+      "ubm:block/vault/place4"
+    ]
+  },
+  "block.vault.reject_rewarded_player": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/vault/reject_rewarded_player"
+    ]
+  },
+  "block.vault.step": {
+    "category": "block",
+    "sounds": [
+      "ubm:block/vault/step1",
+      "ubm:block/vault/step2",
+      "ubm:block/vault/step3",
+      "ubm:block/vault/step4",
+      "ubm:block/vault/step5",
+      "ubm:block/vault/step6",
+      "ubm:block/vault/step7",
+      "ubm:block/vault/step8"
+    ]
   }
 }

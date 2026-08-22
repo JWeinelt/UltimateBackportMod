@@ -15,7 +15,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
 
@@ -59,14 +58,13 @@ public class BlockHeavyCore extends Block {
         return AABB;
     }
 
-    @Nullable
     @Override
     public AxisAlignedBB getCollisionBoundingBox(@Nonnull IBlockState blockState, @Nonnull IBlockAccess worldIn, @Nonnull BlockPos pos) {
         return AABB;
     }
 
     @Override
-    public SoundType getSoundType(IBlockState state, World world, BlockPos pos, @Nullable Entity entity) {
+    public SoundType getSoundType(IBlockState state, World world, BlockPos pos, Entity entity) {
         return ModSounds.SoundTypes.HEAVY_CORE;
     }
 }

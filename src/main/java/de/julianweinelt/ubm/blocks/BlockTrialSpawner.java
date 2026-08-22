@@ -20,7 +20,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
 
@@ -90,7 +89,7 @@ public class BlockTrialSpawner extends Block {
     }
 
     @Override
-    public SoundType getSoundType(IBlockState state, World world, BlockPos pos, @Nullable Entity entity) {
+    public SoundType getSoundType(IBlockState state, World world, BlockPos pos, Entity entity) {
         return ModSounds.SoundTypes.TRIAL_SPAWNER;
     }
 

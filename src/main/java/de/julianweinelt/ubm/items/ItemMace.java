@@ -5,6 +5,7 @@ import de.julianweinelt.ubm.enchantments.EnchantmentBreach;
 import de.julianweinelt.ubm.enchantments.EnchantmentDensity;
 import de.julianweinelt.ubm.enchantments.EnchantmentWindburst;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.*;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -14,8 +15,11 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class ItemMace extends Item {
     public ItemMace() {
@@ -91,5 +95,11 @@ public class ItemMace extends Item {
         return TextFormatting.LIGHT_PURPLE + super.getItemStackDisplayName(stack);
     }
 
-
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        tooltip.add("I guess some undiscovered bugs may occur");
+        tooltip.add("while using this little friend.");
+        tooltip.add("If you find any, please report them to me.");
+        tooltip.add("Have fun distracting your friends!");
+    }
 }

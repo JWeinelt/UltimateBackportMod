@@ -192,6 +192,18 @@ public class ModSounds {
     public static SoundEvent TRIAL_SPAWNER_SPAWN_ITEM;
     public static SoundEvent TRIAL_SPAWNER_SPAWN_ITEM_BEGIN;
     public static SoundEvent TRIAL_SPAWNER_STEP;
+    
+    public static SoundEvent BLOCK_VAULT_ACTIVATE;
+    public static SoundEvent BLOCK_VAULT_AMBIENT;
+    public static SoundEvent BLOCK_VAULT_BREAK;
+    public static SoundEvent BLOCK_VAULT_DEACTIVATE;
+    public static SoundEvent BLOCK_VAULT_EJECT;
+    public static SoundEvent BLOCK_VAULT_INSERT;
+    public static SoundEvent BLOCK_VAULT_INSERT_FAIL;
+    public static SoundEvent BLOCK_VAULT_OPEN_SHUTTER;
+    public static SoundEvent BLOCK_VAULT_PLACE;
+    public static SoundEvent BLOCK_VAULT_REJECT_REWARDED_PLAYER;
+    public static SoundEvent BLOCK_VAULT_STEP;
 
 
     @SubscribeEvent
@@ -377,6 +389,18 @@ public class ModSounds {
         MACE_GROUND = register(event, "item.mace.groundhit");
         MACE_AIR = register(event, "item.mace.groundhit.heavy");
         MACE_GROUND_HEAVY = register(event, "item.mace.airhit");
+        
+        BLOCK_VAULT_ACTIVATE = register(event, "block.vault.activate");
+        BLOCK_VAULT_AMBIENT = register(event, "block.vault.ambient");
+        BLOCK_VAULT_BREAK = register(event, "block.vault.break");
+        BLOCK_VAULT_DEACTIVATE = register(event, "block.vault.deactivate");
+        BLOCK_VAULT_EJECT = register(event, "block.vault.eject");
+        BLOCK_VAULT_INSERT = register(event, "block.vault.insert");
+        BLOCK_VAULT_INSERT_FAIL = register(event, "block.vault.insert_fail");
+        BLOCK_VAULT_OPEN_SHUTTER = register(event, "block.vault.open_shutter");
+        BLOCK_VAULT_PLACE = register(event, "block.vault.place");
+        BLOCK_VAULT_REJECT_REWARDED_PLAYER = register(event, "block.vault.reject_rewarded_player");
+        BLOCK_VAULT_STEP = register(event, "block.vault.step");
     }
 
     private static SoundEvent register(RegistryEvent.Register<SoundEvent> event, String name) {
@@ -460,6 +484,14 @@ public class ModSounds {
                     BLOCK_DEEPSLATE_BREAK,
                     BLOCK_DEEPSLATE_STEP,
                     BLOCK_DEEPSLATE_PLACE,
+                    SoundEvents.BLOCK_STONE_HIT,
+                    SoundEvents.BLOCK_STONE_FALL
+            );
+            VAULT = new SoundType(
+                    1, 1,
+                    BLOCK_VAULT_BREAK,
+                    BLOCK_VAULT_STEP,
+                    BLOCK_VAULT_PLACE,
                     SoundEvents.BLOCK_STONE_HIT,
                     SoundEvents.BLOCK_STONE_FALL
             );

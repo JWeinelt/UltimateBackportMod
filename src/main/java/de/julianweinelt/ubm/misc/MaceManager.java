@@ -83,8 +83,8 @@ public class MaceManager {
             }
             if (EnchantmentHelper.getEnchantments(stack).containsKey(ModEnchantments.WINDBURST)) {
                 int level = EnchantmentHelper.getEnchantmentLevel(ModEnchantments.WINDBURST, stack);
-                double blocks = level;
-                double[] multiplier = {2.02D, 2.04D, 2.06D};
+                double blocks = level; // TODO: Wrong multiplier
+                double[] multiplier = {2.02D, 0.95, 1.52D};
                 blocks *= multiplier[level - 1];
                 player.motionY += blocks;
                 player.velocityChanged = true;

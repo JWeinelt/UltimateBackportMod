@@ -2,6 +2,7 @@ package de.julianweinelt.ubm.blocks;
 
 import de.julianweinelt.ubm.blocks.api.EnumHorizontalFacing;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityVault;
+import de.julianweinelt.ubm.items.ModItems;
 import de.julianweinelt.ubm.misc.ModCreativeTabs;
 import de.julianweinelt.ubm.misc.ModSounds;
 import net.minecraft.block.Block;
@@ -12,17 +13,19 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
 
@@ -116,8 +119,8 @@ public class BlockVault extends Block {
 
     @Override
     @Nonnull
-    public SoundType getSoundType(@Nonnull IBlockState state, @Nonnull World world, @Nonnull BlockPos pos, @Nullable Entity entity) {
-        return ModSounds.SoundTypes.TRIAL_SPAWNER;
+    public SoundType getSoundType(@Nonnull IBlockState state, @Nonnull World world, @Nonnull BlockPos pos, Entity entity) {
+        return ModSounds.SoundTypes.VAULT;
     }
 
     @Override
@@ -128,6 +131,24 @@ public class BlockVault extends Block {
     @Override
     public TileEntity createTileEntity(@Nonnull World world, @Nonnull IBlockState state) {
         return new TileEntityVault();
+    }
+
+    @Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
+                                    EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+        if (playerIn.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getItem() != ModItems.TRIAL_KEY) {
+            return false;
+        }
+
+        TileEntity tile = worldIn.getTileEntity(pos);
+        if (tile instanceof TileEntityVault) {
+            TileEntityVault te = (TileEntityVault) tile;
+            if (!worldIn.isRemote) {
+                te.onPlayerActivate(playerIn, pos, state);
+            }
+            return true;
+        }
+        return false;
     }
 
     public enum EnumVaultState implements IStringSerializable {

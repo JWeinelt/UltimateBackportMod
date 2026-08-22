@@ -1,13 +1,19 @@
 package de.julianweinelt.ubm.blocks.tiles;
 
 import de.julianweinelt.ubm.blocks.BlockVault;
+import de.julianweinelt.ubm.items.ModItem;
+import de.julianweinelt.ubm.items.ModItems;
+import de.julianweinelt.ubm.misc.ModSounds;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nonnull;
 import java.util.HashSet;
@@ -67,6 +73,26 @@ public class TileEntityVault extends TileEntity implements ITickable {
                         BlockVault.FACING,
                         state.getValue(BlockVault.FACING)
                 ));
+            }
+        }
+    }
+
+    public void onPlayerActivate(EntityPlayer player, BlockPos pos, IBlockState state) {
+        if (player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getItem() == ModItems.TRIAL_KEY) {
+            if (state.getValue(BlockVault.STATE) == BlockVault.EnumVaultState.ACTIVE) {
+                world.setBlockState(pos, state.withProperty(
+                                BlockVault.STATE,
+                                BlockVault.EnumVaultState.UNLOCKING
+                        ).withProperty(
+                                BlockVault.FACING,
+                                state.getValue(BlockVault.FACING)
+                        )
+                );
+                if (!player.isCreative()) {
+                    player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).shrink(1);
+                }
+                if (player.world.isRemote) return;
+                world.playSound(null, pos, ModSounds.BLOCK_VAULT_INSERT, SoundCategory.BLOCKS, 1, 1);
             }
         }
     }
