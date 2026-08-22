@@ -1,6 +1,5 @@
 package de.julianweinelt.ubm.blocks;
 
-import de.julianweinelt.ubm.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
@@ -22,6 +21,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nonnull;
 import java.util.Random;
 
 public class BlockCandle extends Block {
@@ -66,11 +66,13 @@ public class BlockCandle extends Block {
     }
 
     @Override
+    @Nonnull
     protected BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, CANDLES, LIT);
     }
 
     @Override
+    @Nonnull
     public IBlockState getStateFromMeta(int meta) {
         int candles = (meta & 3) + 1;
         boolean lit = (meta & 4) != 0;
@@ -89,9 +91,9 @@ public class BlockCandle extends Block {
     }
 
     @Override
-    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state,
-                                    EntityPlayer player, EnumHand hand,
-                                    EnumFacing facing, float hitX, float hitY, float hitZ) {
+    public boolean onBlockActivated(World world, @Nonnull BlockPos pos, @Nonnull IBlockState state,
+                                    EntityPlayer player, @Nonnull EnumHand hand,
+                                    @Nonnull EnumFacing facing, float hitX, float hitY, float hitZ) {
 
         ItemStack heldItem = player.getHeldItem(hand);
 
@@ -126,34 +128,36 @@ public class BlockCandle extends Block {
     }
 
     @Override
-    public boolean isFullCube(IBlockState state) {
+    public boolean isFullCube(@Nonnull IBlockState state) {
         return false;
     }
 
     @Override
-    public boolean isOpaqueCube(IBlockState state) {
+    public boolean isOpaqueCube(@Nonnull IBlockState state) {
         return false;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
+    @Nonnull
     public BlockRenderLayer getBlockLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 
     @Override
-    public boolean isTopSolid(IBlockState state) {
+    public boolean isTopSolid(@Nonnull IBlockState state) {
         return true; // Boden darunter wird nicht durchsichtig
     }
 
     @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+    @Nonnull
+    public AxisAlignedBB getBoundingBox(IBlockState state, @Nonnull IBlockAccess source, @Nonnull BlockPos pos) {
         return BOUNDING_BOXES[state.getValue(CANDLES) - 1];
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rand) {
+    public void randomDisplayTick(IBlockState state, @Nonnull World world, @Nonnull BlockPos pos, @Nonnull Random rand) {
         if (!state.getValue(LIT)) return;
 
         int candles = state.getValue(CANDLES);

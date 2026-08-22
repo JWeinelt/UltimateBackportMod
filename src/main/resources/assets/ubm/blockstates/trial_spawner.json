@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "state=inactive": {
+      "model": "ubm:trial_spawner_inactive"
+    },
+    "state=active": {
+      "model": "ubm:trial_spawner_active"
+    },
+    "state=ejecting": {
+      "model": "ubm:trial_spawner_ejecting"
+    },
+    "state=inactive_ominous": {
+      "model": "ubm:trial_spawner_inactive_ominous"
+    },
+    "state=active_ominous": {
+      "model": "ubm:trial_spawner_active_ominous"
+    },
+    "state=ejecting_ominous": {
+      "model": "ubm:trial_spawner_ejecting_ominous"
+    }
+  }
+}

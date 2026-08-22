@@ -1,0 +1,8 @@
+{
+  "parent": "ubm:block/cube_bottom_top_inner_faces",
+  "textures": {
+    "bottom": "ubm:blocks/trial_spawner_bottom",
+    "side": "ubm:blocks/trial_spawner_side_active",
+    "top": "ubm:blocks/trial_spawner_top_active"
+  }
+}

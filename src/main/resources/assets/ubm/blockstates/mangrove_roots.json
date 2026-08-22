@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "ubm:mangrove_roots",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ubm:mangrove_roots"
+    },
+    "axis=none": {
+      "model": "ubm:mangrove_roots"
+    },
+    "axis=z": {
+      "model": "ubm:mangrove_roots",
+      "x": 90
+    }
+  }
+}

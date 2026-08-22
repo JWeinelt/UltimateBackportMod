@@ -1,17 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "X  ",
-    "XX ",
-    "XXX"
+    " # ",
+    " I "
   ],
   "key": {
-    "X": {
-      "item": "ubm:crimson_planks"
+    "#": {
+      "item": "ubm:heavy_core"
+    },
+    "I": {
+      "item": "ubm:breeze_rod"
     }
   },
   "result": {
-    "item": "ubm:crimson_stairs",
-    "count": 4
+    "item": "ubm:mace"
   }
 }

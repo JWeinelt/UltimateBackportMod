@@ -427,6 +427,10 @@ item.magenta_candle.name=Magenta Candle
 item.orange_candle.name=Orange Candle
 item.white_candle.name=White Candle
 
+item.mace.name=Mace (BETA)
+tile.heavy_core.name=Heavy Core
+tile.trial_spawner.name=Trial Spawner
+
 item.bamboo_raft.name=Bamboo Raft
 
 itemGroup.ubm_tab_nether=Nether Update
@@ -495,6 +499,10 @@ egg.pillager.name=Spawn Pillager
 egg.ravager.name=Spawn Ravager
 
 enchantment.swift_sneak=Swift Sneak
+enchantment.quick_charge=Quick Charge
+enchantment.breach=Breach
+enchantment.wind_burst=Wind Burst
+enchantment.density=Density
 
 generator.selectable_biome=Single Biome
 generator.modern_world=Modern World

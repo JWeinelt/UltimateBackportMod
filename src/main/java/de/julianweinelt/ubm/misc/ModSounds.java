@@ -20,7 +20,9 @@ public class ModSounds {
     public static SoundEvent BEE_HIVE_ENTER;
     public static SoundEvent BEE_HIVE_EXIT;
 
-
+    public static SoundEvent MACE_GROUND;
+    public static SoundEvent MACE_AIR;
+    public static SoundEvent MACE_GROUND_HEAVY;
 
     public static SoundEvent FROG_DEATH;
     public static SoundEvent FROG_EAT;
@@ -168,11 +170,40 @@ public class ModSounds {
     public static SoundEvent BLOCK_SWEET_BERRY_BUSH_PLACE;
     public static SoundEvent BLOCK_TUFF_BREAK;
     public static SoundEvent BLOCK_TUFF_STEP;
+    public static SoundEvent BLOCK_HEAVY_CORE_BREAK;
+    public static SoundEvent BLOCK_HEAVY_CORE_STEP;
 
     public static SoundEvent ITEM_AXE_SCRAPE;
     public static SoundEvent ITEM_AXE_STRIP;
     public static SoundEvent ITEM_AXE_WAX_OFF;
     public static SoundEvent ITEM_HONEYCOMB_WAX_ON;
+
+    public static SoundEvent TRIAL_SPAWNER_ABOUT_TO_SPAWN_ITEM;
+    public static SoundEvent TRIAL_SPAWNER_AMBIENT;
+    public static SoundEvent TRIAL_SPAWNER_AMBIENT_OMINOUS;
+    public static SoundEvent TRIAL_SPAWNER_BREAK;
+    public static SoundEvent TRIAL_SPAWNER_CLOSE_SHUTTER;
+    public static SoundEvent TRIAL_SPAWNER_DETECT_PLAYER;
+    public static SoundEvent TRIAL_SPAWNER_EJECT_ITEM;
+    public static SoundEvent TRIAL_SPAWNER_ACTIVATE_OMINOUS;
+    public static SoundEvent TRIAL_SPAWNER_OPEN_SHUTTER;
+    public static SoundEvent TRIAL_SPAWNER_PLACE;
+    public static SoundEvent TRIAL_SPAWNER_SPAWN;
+    public static SoundEvent TRIAL_SPAWNER_SPAWN_ITEM;
+    public static SoundEvent TRIAL_SPAWNER_SPAWN_ITEM_BEGIN;
+    public static SoundEvent TRIAL_SPAWNER_STEP;
+    
+    public static SoundEvent BLOCK_VAULT_ACTIVATE;
+    public static SoundEvent BLOCK_VAULT_AMBIENT;
+    public static SoundEvent BLOCK_VAULT_BREAK;
+    public static SoundEvent BLOCK_VAULT_DEACTIVATE;
+    public static SoundEvent BLOCK_VAULT_EJECT;
+    public static SoundEvent BLOCK_VAULT_INSERT;
+    public static SoundEvent BLOCK_VAULT_INSERT_FAIL;
+    public static SoundEvent BLOCK_VAULT_OPEN_SHUTTER;
+    public static SoundEvent BLOCK_VAULT_PLACE;
+    public static SoundEvent BLOCK_VAULT_REJECT_REWARDED_PLAYER;
+    public static SoundEvent BLOCK_VAULT_STEP;
 
 
     @SubscribeEvent
@@ -337,6 +368,39 @@ public class ModSounds {
         BLOCK_SWEET_BERRY_BUSH_PLACE = register(event, "block.sweet_berry_bush.place");
         BLOCK_TUFF_BREAK = register(event, "block.tuff.break");
         BLOCK_TUFF_STEP = register(event, "block.tuff.step");
+        BLOCK_HEAVY_CORE_BREAK = register(event, "block.heavy_core.break");
+        BLOCK_HEAVY_CORE_STEP = register(event, "block.heavy_core.step");
+
+        TRIAL_SPAWNER_STEP = register(event, "block.trial_spawner.step");
+        TRIAL_SPAWNER_ABOUT_TO_SPAWN_ITEM = register(event, "block.trial_spawner.about_to_spawn");
+        TRIAL_SPAWNER_AMBIENT = register(event, "block.trial_spawner.ambient");
+        TRIAL_SPAWNER_AMBIENT_OMINOUS = register(event, "block.trial_spawner.ambient.ominous");
+        TRIAL_SPAWNER_BREAK = register(event, "block.trial_spawner.break");
+        TRIAL_SPAWNER_CLOSE_SHUTTER = register(event, "block.trial_spawner.close_shutter");
+        TRIAL_SPAWNER_DETECT_PLAYER = register(event, "block.trial_spawner.detect_player");
+        TRIAL_SPAWNER_EJECT_ITEM = register(event, "block.trial_spawner.eject_item");
+        TRIAL_SPAWNER_OPEN_SHUTTER = register(event, "block.trial_spawner.open_shutter");
+        TRIAL_SPAWNER_ACTIVATE_OMINOUS = register(event, "block.trial_spawner.activate.ominous");
+        TRIAL_SPAWNER_PLACE = register(event, "block.trial_spawner.place");
+        TRIAL_SPAWNER_SPAWN = register(event, "block.trial_spawner.spawn");
+        TRIAL_SPAWNER_SPAWN_ITEM = register(event, "block.trial_spawner.spawn_item");
+        TRIAL_SPAWNER_SPAWN_ITEM_BEGIN = register(event, "block.trial_spawner.spawn_item_begin");
+
+        MACE_GROUND = register(event, "item.mace.groundhit");
+        MACE_AIR = register(event, "item.mace.groundhit.heavy");
+        MACE_GROUND_HEAVY = register(event, "item.mace.airhit");
+        
+        BLOCK_VAULT_ACTIVATE = register(event, "block.vault.activate");
+        BLOCK_VAULT_AMBIENT = register(event, "block.vault.ambient");
+        BLOCK_VAULT_BREAK = register(event, "block.vault.break");
+        BLOCK_VAULT_DEACTIVATE = register(event, "block.vault.deactivate");
+        BLOCK_VAULT_EJECT = register(event, "block.vault.eject");
+        BLOCK_VAULT_INSERT = register(event, "block.vault.insert");
+        BLOCK_VAULT_INSERT_FAIL = register(event, "block.vault.insert_fail");
+        BLOCK_VAULT_OPEN_SHUTTER = register(event, "block.vault.open_shutter");
+        BLOCK_VAULT_PLACE = register(event, "block.vault.place");
+        BLOCK_VAULT_REJECT_REWARDED_PLAYER = register(event, "block.vault.reject_rewarded_player");
+        BLOCK_VAULT_STEP = register(event, "block.vault.step");
     }
 
     private static SoundEvent register(RegistryEvent.Register<SoundEvent> event, String name) {
@@ -353,6 +417,10 @@ public class ModSounds {
         public static SoundType CALCITE;
         public static SoundType TUFF;
         public static SoundType DEEPSLATE;
+        public static SoundType HEAVY_CORE;
+        public static SoundType TRIAL_SPAWNER;
+        public static SoundType VAULT;
+        public static SoundType COPPER;
 
         public static void init() {
             NETHERITE_BLOCK = new SoundType(
@@ -362,6 +430,14 @@ public class ModSounds {
                     BLOCK_NETHERITE_BLOCK_PLACE,
                     SoundEvents.BLOCK_STONE_HIT,
                     SoundEvents.BLOCK_STONE_FALL
+            );
+            TRIAL_SPAWNER = new SoundType(
+                    1.0F, 1.0F,
+                    TRIAL_SPAWNER_BREAK,
+                    TRIAL_SPAWNER_STEP,
+                    TRIAL_SPAWNER_PLACE,
+                    TRIAL_SPAWNER_STEP,
+                    TRIAL_SPAWNER_STEP
             );
             SWEET_BERRY_BUSH = new SoundType(
                     1, 1,
@@ -378,6 +454,14 @@ public class ModSounds {
                     BLOCK_CALCITE_PLACE,
                     SoundEvents.BLOCK_STONE_HIT,
                     SoundEvents.BLOCK_STONE_FALL
+            );
+            HEAVY_CORE = new SoundType(
+                    1, 1,
+                    BLOCK_HEAVY_CORE_BREAK,
+                    BLOCK_HEAVY_CORE_STEP,
+                    BLOCK_HEAVY_CORE_BREAK,
+                    BLOCK_HEAVY_CORE_STEP,
+                    BLOCK_HEAVY_CORE_STEP
             );
             AMETHYST_BLOCK = new SoundType(
                     1, 1,
@@ -400,6 +484,14 @@ public class ModSounds {
                     BLOCK_DEEPSLATE_BREAK,
                     BLOCK_DEEPSLATE_STEP,
                     BLOCK_DEEPSLATE_PLACE,
+                    SoundEvents.BLOCK_STONE_HIT,
+                    SoundEvents.BLOCK_STONE_FALL
+            );
+            VAULT = new SoundType(
+                    1, 1,
+                    BLOCK_VAULT_BREAK,
+                    BLOCK_VAULT_STEP,
+                    BLOCK_VAULT_PLACE,
                     SoundEvents.BLOCK_STONE_HIT,
                     SoundEvents.BLOCK_STONE_FALL
             );

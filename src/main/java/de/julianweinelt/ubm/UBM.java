@@ -6,9 +6,7 @@ import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.blocks.api.sign.TileEntityModSign;
 import de.julianweinelt.ubm.blocks.interactable.smithing.GuiHandler;
 import de.julianweinelt.ubm.blocks.interactable.smithing.TileEntitySmithingTable;
-import de.julianweinelt.ubm.blocks.tiles.TileEntityBell;
-import de.julianweinelt.ubm.blocks.tiles.TileEntityBlastFurnace;
-import de.julianweinelt.ubm.blocks.tiles.TileEntitySculkSensor;
+import de.julianweinelt.ubm.blocks.tiles.*;
 import de.julianweinelt.ubm.effects.ModEffects;
 import de.julianweinelt.ubm.effects.ModPotionTypes;
 import de.julianweinelt.ubm.entities.ModEntities;
@@ -84,6 +82,8 @@ public class UBM {
         GameRegistry.registerTileEntity(TileEntityModSign.class, new ResourceLocation("ubm", "sign_te"));
         GameRegistry.registerTileEntity(TileEntitySculkSensor.class, new ResourceLocation("ubm", "sculk_sensor_te"));
         GameRegistry.registerTileEntity(TileEntityBell.class, "bell_te");
+        GameRegistry.registerTileEntity(TileEntityTrialSpawner.class, "trial_spawner_te");
+        GameRegistry.registerTileEntity(TileEntityVault.class, "vault_te");
 
 
         ModCustomVillage.preInit();

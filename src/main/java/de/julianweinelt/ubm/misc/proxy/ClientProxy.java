@@ -1,6 +1,7 @@
 package de.julianweinelt.ubm.misc.proxy;
 
 import de.julianweinelt.ubm.UBM;
+import de.julianweinelt.ubm.blocks.ModBlocks;
 import de.julianweinelt.ubm.blocks.tiles.RenderTileEntityBell;
 import de.julianweinelt.ubm.blocks.tiles.RenderTileEntityCampfire;
 import de.julianweinelt.ubm.blocks.tiles.TileEntityBell;
@@ -25,6 +26,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityArmorStand;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.item.Item;
+import net.minecraft.world.ColorizerFoliage;
+import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -54,6 +58,20 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void init(FMLInitializationEvent e) {
         MinecraftForge.EVENT_BUS.register(new PotionIconRenderer());
+
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(
+                (state, world, pos, tintIndex) -> {
+                    if (world != null && pos != null) {
+                        return BiomeColorHelper.getFoliageColorAtPos(world, pos);
+                    }
+                    return ColorizerFoliage.getFoliageColorBasic();
+                },
+                ModBlocks.MANGROVE_LEAVES
+        );
+        Minecraft.getMinecraft().getItemColors().registerItemColorHandler(
+                (stack, tintIndex) -> ColorizerFoliage.getFoliageColorBasic(),
+                Item.getItemFromBlock(ModBlocks.MANGROVE_LEAVES)
+        );
 
         Map<Class<? extends Entity>, Render<? extends Entity>> renderMap =
                 Minecraft.getMinecraft().getRenderManager().entityRenderMap;
